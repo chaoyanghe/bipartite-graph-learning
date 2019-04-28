@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: pygcn
+Version: 0.1
+Summary: Graph Convolutional Networks in PyTorch
+Home-page: https://tkipf.github.io
+Author: Thomas Kipf
+Author-email: thomas.kipf@gmail.com
+License: MIT
+Download-URL: https://github.com/tkipf/pygcn
+Description: UNKNOWN
+Platform: UNKNOWN
