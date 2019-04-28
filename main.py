@@ -1,2 +1,3 @@
 import sys
-sys.path.insert(0, "./Node2Vec")
+print(sys.path)
+sys.path.insert(0, "./Node2Vec/")
