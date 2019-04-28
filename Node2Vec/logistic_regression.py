@@ -42,7 +42,7 @@ def load_node_attr(fname, ind=None):
         data = data.reindex(ind, copy=False, fill_value=0)
     #converters = {0: lambda s: u2i_dict[s.decode("utf-8")], 1: decode_helper, 4: decode_helper, 5: decode_helper, 6: decode_helper,
     #              7: decode_helper, 8: decode_helper, 9: decode_helper, 10: decode_helper}
-    print data.shape
+    print(data.shape)
     trans = MinMaxScaler().fit(data)
     #data_values = data.values / data.values.max(axis=0)
     return pd.DataFrame(trans.transform(data), index=data.index, columns=data.columns)
