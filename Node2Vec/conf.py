@@ -28,7 +28,7 @@ weighted = ""
 method = "tmp"
 #local version
 input_folder = "./../data/"
-output_folder = "out"
+output_folder = "./out"
 #seven version
 #input_folder = "/opt/ml/disk/cdg_data"
 #output_folder = "/opt/ml/env/out"
