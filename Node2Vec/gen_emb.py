@@ -29,7 +29,6 @@ if __name__=="__main__":
     emb_alpha = conf.emb_alpha
     is_weighted = conf.weighted 
     input_file = os.path.join(input_folder, "edgelist")
-    # nodelist_file = os.path.join(input_folder, "user_list")
     nodelist_file = None
     res_file = "./%s.res"%(method)
     walk_file = os.path.join(output_folder, "%s.walks"%(method))
