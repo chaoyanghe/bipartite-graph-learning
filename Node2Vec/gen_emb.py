@@ -4,8 +4,9 @@
 # Royrong(royrong@tencent.com) 2018/10/24
 # The parameters are defined in conf.py
 import os
-from Node2Vec import conf
 import time
+
+import conf
 
 method = conf.method
 input_folder = conf.input_folder

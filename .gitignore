@@ -1,8 +1,9 @@
-
+.idea
 .idea/bipartite-graph-learning.iml
 .idea/Icon
 .idea/inspectionProfiles/Icon
 .idea/libraries/Icon
 .idea/misc.xml
 .idea/workspace.xml
-docs/Icon
+.idea/*
+__pycache__
