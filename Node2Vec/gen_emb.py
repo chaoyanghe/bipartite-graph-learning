@@ -4,6 +4,8 @@
 # Royrong(royrong@tencent.com) 2018/10/24
 # The parameters are defined in conf.py
 import os
+import sys
+
 import time
 
 import conf
