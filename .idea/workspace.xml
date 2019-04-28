@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95d193b3-02cc-4e74-9dcd-f24465651725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/bipartite-graph-learning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bipartite-graph-learning.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="95d193b3-02cc-4e74-9dcd-f24465651725" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,16 +274,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551750739634</updated>
-      <workItem from="1556424747147" duration="6793000" />
+      <workItem from="1556424747147" duration="6868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6793000" />
+    <option name="totallyTimeSpent" value="6868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-194" y="-1207" width="1403" height="1107" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20793535" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

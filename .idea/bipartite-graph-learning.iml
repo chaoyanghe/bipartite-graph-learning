@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Node2Vec" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/preprocessing" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/data" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/docs" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6 (venv)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
