@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+python ./main.py
+
 model="node2vec"
 #model="GCN"
 #model="GraphSage"
