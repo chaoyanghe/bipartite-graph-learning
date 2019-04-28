@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95d193b3-02cc-4e74-9dcd-f24465651725" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Node2Vec/run_node2vec.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Node2Vec/run_node2vec.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state>
+              <caret selection-start-column="2" selection-end-line="3" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -91,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Node2Vec/run_node2vec.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+            <state relative-caret-position="153">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -133,13 +131,13 @@
         <option value="$PROJECT_DIR$/gen_emb.py" />
         <option value="$PROJECT_DIR$/HGCN/hgcn.sh" />
         <option value="$PROJECT_DIR$/Node2Vec/demo.py" />
-        <option value="$PROJECT_DIR$/Node2Vec/run_node2vec.sh" />
         <option value="$PROJECT_DIR$/GraphSage/example_supervised.sh" />
         <option value="$PROJECT_DIR$/GraphSage/requirements.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Node2Vec/gen_emb.py" />
         <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/Node2Vec/__init__.py" />
+        <option value="$PROJECT_DIR$/Node2Vec/run_node2vec.sh" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -278,12 +276,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551750739634</updated>
-      <workItem from="1556424747147" duration="7639000" />
+      <workItem from="1556424747147" duration="7801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7639000" />
+    <option name="totallyTimeSpent" value="7801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-198" y="-1148" width="1403" height="1107" extended-state="0" />
@@ -304,7 +302,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2671371" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.31854838" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -499,13 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Node2Vec/run_node2vec.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GraphSage/LICENSE.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -551,13 +542,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Node2Vec/run_node2vec.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state>
+          <caret selection-start-column="2" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
