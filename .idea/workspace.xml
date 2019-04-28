@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95d193b3-02cc-4e74-9dcd-f24465651725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Node2Vec/logistic_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Node2Vec/logistic_regression.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Node2Vec/run_node2vec.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Node2Vec/run_node2vec.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/Node2Vec/run_node2vec.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -284,12 +283,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551750739634</updated>
-      <workItem from="1556424747147" duration="8218000" />
+      <workItem from="1556424747147" duration="8255000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8218000" />
+    <option name="totallyTimeSpent" value="8255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-198" y="-1148" width="1403" height="1107" extended-state="0" />
@@ -552,7 +551,7 @@
     <entry file="file://$PROJECT_DIR$/Node2Vec/run_node2vec.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
