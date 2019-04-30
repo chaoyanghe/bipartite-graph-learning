@@ -335,22 +335,28 @@ class BipartiteGraphDataLoader:
         plt.show()
 
 
-def __generate_features_and_labels(self):
-    logging.info("__generate_features_and_labels. START")
+    def __generate_features_and_labels(self):
+        logging.info("__generate_features_and_labels. START")
 
-    logging.info("__generate_features_and_labels. END")
-
-
-def get_batch_num(self):
-    pass
+        logging.info("__generate_features_and_labels. END")
 
 
-def get_one_batch_group_u_with_adjacent(self, batch_index):
-    return None, None, None
+    def get_batch_num(self):
+        pass
 
 
-def get_one_batch_group_v_with_adjacent(self, batch_index):
-    return None, None, None
+    def get_one_batch_group_u_with_adjacent(self, batch_index):
+        start_index = self.batch_size * batch_index
+        end_index = self.batch_size * (batch_index + 1)
+        if end_index >= len(self.u_list):
+            end_index = len(self.u_list) - 1
+
+
+        return None, None, None
+
+
+    def get_one_batch_group_v_with_adjacent(self, batch_index):
+        return None, None, None
 
 
 if __name__ == "__main__":
