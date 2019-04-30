@@ -9,9 +9,13 @@ class GCN(nn.Module):
         super(GCN, self).__init__()
 
         self.gc1 = GraphConvolution(infeat, outfeat)
+        # self.gc2 = GraphConvolution(hidfeat, outfeat)
+        # self.dropout = dropout
 
     def forward(self, x, adj):
         x = F.relu(self.gc1(x, adj))
+        # x = F.dropout(x, self.dropout, training=self.training)
+        # x = F.relu(self.gc2(x, adj))
 
         return x
 

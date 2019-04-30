@@ -23,21 +23,47 @@ STEP_LOSS = {1: 'step1_loss',
              4: 'step4_loss'}
 
 
-def create_metrics_files(csvname='training_loss.csv'):
+def create_decoder_metrics_files(csvname='decoder_training_loss.csv'):
+    """
+    The csv file structure is
+    [epoch, step1_loss, step2_loss, step3_loss, step4_loss]
+
+    :param csvname: csv file name
+    :return: None
+    """
     path = os.path.join(EXPERIMENTS_PATH, csvname)
     if not os.path.exists(path):
         with open(path, 'w') as csvfile:
             writer = csv.writer(csvfile)
-            COLUMN_NAMES = ['epochs', 'step1_loss', 'step2_loss', 'step3_loss', 'step4_loss']
+            COLUMN_NAMES = ['epochs', STEP_LOSS[1], STEP_LOSS[2], STEP_LOSS[3], STEP_LOSS[4]]
             writer.writerow(COLUMN_NAMES)
         csvfile.close()
     else:
         raise Exception('File already exists')
 
+def create_gan_metrics_files(csvname='gan_training_loss_step1.csv'):
+    """
+    The csv file structure is
+    [epoch, discriminator loss, generator loss]
 
-def print_metrics(step, epoch, loss, csvname='training_loss.csv'):
+    :param csvname: csv file name, four files for four learning steps
+    :return: None
+    """
+    path = os.path.join(EXPERIMENTS_PATH, csvname)
+    if not os.path.exists(path):
+        with open(path, 'w') as csvfile:
+            writer = csv.writer(csvfile)
+            COLUMN_NAMES = ['epochs', 'dis_loss', 'gen_loss']
+            writer.writerow(COLUMN_NAMES)
+        csvfile.close()
+    else:
+        raise Exception('File already exists.')
+
+def print_metrics(step, epoch, loss, csvname='decoder_training_loss.csv'):
     """write the metrics to file"""
-    path = os.join.path(EXPERIMENTS_PATH, csvname)
+    path = os.path.join(EXPERIMENTS_PATH, csvname)
+    if not os.path.exists(path):
+        raise Exception('No file exists.')
     metrics = pd.read_csv(path)
     # the first step to build the table
     if step == 1:
@@ -47,7 +73,13 @@ def print_metrics(step, epoch, loss, csvname='training_loss.csv'):
         metrics.loc[int(epoch)-1, STEP_LOSS[step]] = loss  # epoch starts from 1
     metrics.to_csv(path, index=False)
 
-# TODO: add the writing function for gan
-def print_gan_metrics(step, epoch, loss):
+
+def print_gan_metrics(epoch, dis_loss, gen_loss, csvname='gan_training_loss_step1.csv'):
     """write the GAN metrics to file"""
-    pass
+    path = os.path.join(EXPERIMENTS_PATH, csvname)
+    if not os.path.exists(path):
+        raise Exception('No file exists.')
+    metrics = pd.read_csv(path)
+    metric = {'epochs': epoch, 'dis_loss': dis_loss, 'gen_loss': gen_loss}
+    metrics = metrics.append(metric, ignore_index=True)
+    metrics.to_csv(path, index=False)

@@ -26,7 +26,7 @@ def load_written_data():
     if not os.path.exists(TRAINING_LOSS_PATH):
         training_loss = pd.read_csv(TRAINING_LOSS_PATH)
     else:
-        raise ValueError('File do not exist.')
+        raise Exception('File does not exist.')
 
     if training_loss is not None:
         training_loss.sort_values(by=EPOCHS, inplace=True)

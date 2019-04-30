@@ -4,14 +4,14 @@ from __future__ import print_function
 import torch.nn as nn
 import torch.optim as optim
 from torch.nn import init
-from utils import (LEARNING_RATE, WEIGHT_DECAY, DROPOUT)
+from utils import (LEARNING_RATE, WEIGHT_DECAY, HIDDEN_DIMENSIONS)
 
 
 class Decoder(nn.Module):
     def __init__(self, infeat, outfeat):
         super(Decoder, self).__init__()
 
-        hidfeat = 2  # define the hidden layer dimension
+        hidfeat = HIDDEN_DIMENSIONS  # define the hidden layer dimension
         self.main = nn.Sequential(
             nn.Linear(infeat, hidfeat),
             nn.ReLU(),
@@ -24,7 +24,7 @@ class Decoder(nn.Module):
 
 def _weights_init(m):
     if isinstance(m, nn.Linear):
-        init.xavier_uniform(m.weight)
+        init.xavier_uniform_(m.weight)
         init.constant_(m.bias, 0)
 
 class HGCNDecoder(object):
@@ -54,3 +54,11 @@ class HGCNDecoder(object):
               'Epoch: {:04d}'.format(epoch),
               'Loss: {:.4f}'.format(loss.item())
               )
+
+    # validation
+    def forward(self, target, input):
+        output = self.netD(input)
+        self.decoder_output = output
+        loss = self._loss(output, target)
+
+        print('Validation Loss: {:.4f}'.format(loss.item()))

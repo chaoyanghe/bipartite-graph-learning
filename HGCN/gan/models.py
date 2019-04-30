@@ -29,7 +29,7 @@ class Discriminator(nn.Module):
 
 def _weights_init(m):
     if isinstance(m, nn.Linear):
-        init.xavier_uniform(m.weight)
+        init.xavier_uniform_(m.weight)
         init.constant_(m.bias, 0)
 
 # generator is GCN
@@ -96,3 +96,33 @@ class GAN(object):
               'Epoch: {:04d}'.format(epoch),
               'dis loss: {:.4f}'.format(lossD.item()),
               'gen loss: {:.4f}'.format(lossG.item()))
+
+    # validation
+    def forward(self, real_data, netG_output):
+        # output from generator, and real data
+        real = real_data
+        fake = netG_output
+        ############################
+        # (1) Update D network: maximize log(D(x)) + log(1 - D(G(z)))
+        ###########################
+        # train with real
+        label = torch.full((real.size()[0], 1), REAL_LABEL, device=self.device)
+        output = self.netD(real)
+        label.fill_(REAL_LABEL)
+        lossD_real = self._loss(output, label)
+
+        # train with fake
+        output = self.netD(fake.detach())  # calculate the gradient for discriminator
+        label.fill_(FAKE_LABEL)
+        lossD_fake = self._loss(output, label)
+        lossD = lossD_real + lossD_fake
+
+        ############################
+        # (2) Update G network: maximize log(D(G(z)))
+        ###########################
+        label.fill_(REAL_LABEL)
+        output = self.netD(fake)
+        lossG = self._loss(output, label)
+
+        print('Validation dis Loss: {:.4f}'.format(lossD.item()),
+              'Validation gen loss: {:.4f}'.format(lossG.item()))

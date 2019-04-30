@@ -2,7 +2,7 @@ import argparse
 import torch
 from train import HeterogeneousGCN
 from data.utils import load_data
-from utils import (MODEL, EPOCHS, LEARNING_RATE, WEIGHT_DECAY, DROPOUT)
+from utils import (MODEL, EPOCHS, LEARNING_RATE, WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS)
 
 
 def parse_args():
@@ -16,8 +16,8 @@ def parse_args():
                         help='Initial learning rate.')
     parser.add_argument('--weight_decay', type=float, default=WEIGHT_DECAY,
                         help='Weight decay (L2 loss on parameters).')
-    parser.add_argument('--hidden', type=int, default=16,
-                        help='Number of hidden units.')
+    parser.add_argument('--hidden', type=int, default=HIDDEN_DIMENSIONS,
+                        help='Number of hidden units in GCN.')
     parser.add_argument('--dropout', type=float, default=DROPOUT,
                         help='Dropout rate (1 - keep probability).')
     parser.add_argument('--gpu', type=bool, default=False,
@@ -28,6 +28,8 @@ def parse_args():
 
 def main():
     args = parse_args()
+    #hidden_dimensions = args.hidden
+    #dropout = args.dropout
 
     adjU, adjV, featuresU, featuresV = load_data()
     device = torch.device("cuda:0" if torch.cuda.is_available() and args.gpu else "cpu")
