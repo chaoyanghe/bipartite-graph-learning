@@ -175,6 +175,7 @@ def run_exp(input_folder, emb_file, args):
         # Testing 
         if args.verbose:
             print("Start testing ...")
+
         test_predict_prob = clf.predict_proba(test_x)[:, 1]
         s_idx = np.argsort(-test_predict_prob)
         if args.verbose:
@@ -182,6 +183,9 @@ def run_exp(input_folder, emb_file, args):
         rank_test = test_y[s_idx]
         judge_n = np.sum(test_predict_prob > 0.5)
         pos_n = np.sum(test_y == 1)
+
+        # Area Under Curve of ROC (Receiver operating characteristic):
+        # https://en.wikipedia.org/wiki/Receiver_operating_characteristic
         auc_s = auc(test_y, test_predict_prob)
         print("auc: %.6f" % (auc_s))
 

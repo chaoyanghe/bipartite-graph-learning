@@ -1,0 +1,74 @@
+2019-04-30 Tuesday 11:28:53  bipartite_graph_data_loader.py : INFO  BipartiteGraphDataLoader __init__().
+2019-04-30 Tuesday 11:28:53  bipartite_graph_data_loader.py : INFO  group_u_list_file_path = ./Tencent-QQ/node_list
+2019-04-30 Tuesday 11:28:53  bipartite_graph_data_loader.py : INFO  group_u_attr_file_path = ./Tencent-QQ/node_attr
+2019-04-30 Tuesday 11:28:53  bipartite_graph_data_loader.py : INFO  group_u_label_file_path = ./Tencent-QQ/node_true
+2019-04-30 Tuesday 11:28:53  bipartite_graph_data_loader.py : INFO  edge_list_file_path = ./Tencent-QQ/edgelist
+2019-04-30 Tuesday 11:28:53  bipartite_graph_data_loader.py : INFO  group_v_list_file_path = ./Tencent-QQ/group_list
+2019-04-30 Tuesday 11:28:53  bipartite_graph_data_loader.py : INFO  group_v_attr_file_path = ./Tencent-QQ/group_attr
+2019-04-30 Tuesday 11:28:53  bipartite_graph_data_loader.py : INFO  group_v_label_file_path = None
+2019-04-30 Tuesday 11:28:53  bipartite_graph_data_loader.py : INFO  BipartiteGraphDataLoader __init__(). END
+2019-04-30 Tuesday 11:28:53  bipartite_graph_data_loader.py : INFO  ##### generate_adjacent_matrix_feature_and_labels. START
+2019-04-30 Tuesday 11:28:54  bipartite_graph_data_loader.py : INFO  u_list len = 1089436. [1, 147696, 273506, 392748, 508487, 622186, 734157, 844221, 953738, 1063374, 1171549]
+2019-04-30 Tuesday 11:29:09  bipartite_graph_data_loader.py : INFO  before merging with u_list, the len is = 1089436
+2019-04-30 Tuesday 11:29:10  bipartite_graph_data_loader.py : INFO  after merging with u_list, the len is = 1089436
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  u_attribute = (1089436, 2): [[1
+  array([9.97789892e-01, 5.19000000e-01, 2.94396130e-04, 1.00000000e+00,
+       1.66732932e-04, 1.67461930e-04, 5.33441927e-03, 1.32652081e-07])]
+ [147696
+  array([1.15072934e-01, 9.00000000e-03, 4.69442477e-04, 9.66666667e-01,
+       3.37516057e-06, 6.52449076e-06, 8.97538312e-02, 1.02040062e-07])]
+ [273506
+  array([2.16295860e-01, 4.53333333e-02, 1.76637678e-03, 9.00000000e-01,
+       0.00000000e+00, 1.42451382e-03, 0.00000000e+00, 5.25506322e-06])]
+ [392748
+  array([3.17518786e-01, 8.80000000e-02, 2.74186233e-02, 1.00000000e+00,
+       0.00000000e+00, 1.42016416e-03, 0.00000000e+00, 6.84688819e-06])]
+ [508487
+  array([3.06320908e-01, 1.66666667e-03, 1.27306435e-04, 1.00000000e-01,
+       0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 1.01233946e-04])]
+ [622186
+  array([6.14704582e-01, 1.07666667e-01, 9.79463881e-03, 1.00000000e+00,
+       1.41756744e-05, 9.88025385e-03, 9.25511909e-06, 3.21528237e-05])]
+ [734157
+  array([4.10195963e-01, 3.54666667e-01, 5.99931573e-03, 1.00000000e+00,
+       6.68281794e-05, 1.34861224e-02, 1.21473438e-05, 3.26936360e-05])]
+ [844221
+  array([7.67054663e-01, 3.23333333e-01, 2.00507634e-03, 9.00000000e-01,
+       4.22570104e-04, 1.06566682e-04, 9.94925303e-05, 7.14280437e-08])]
+ [953738
+  array([4.54250774e-01, 1.04333333e-01, 2.95987460e-03, 9.66666667e-01,
+       0.00000000e+00, 2.03564112e-03, 0.00000000e+00, 4.95914704e-06])]
+ [1063374
+  array([7.67644025e-02, 2.93333333e-02, 1.77115077e-02, 1.00000000e+00,
+       0.00000000e+00, 5.13912389e-03, 0.00000000e+00, 4.90404540e-05])]
+ [1171549
+  array([5.58420510e-01, 2.12333333e-01, 9.26949977e-03, 1.00000000e+00,
+       5.60276655e-05, 2.69939931e-02, 1.15688989e-06, 3.53466776e-05])]]
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  v_list len = 179853. [0, 157278, 444254, 912585]
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  count_no_attribute = 89682
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  count_10 = 124
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  count_14 = 134
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  count_15 = 18997
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  count_16 = 30893
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  count_17 = 40023
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  count_more_than_17 = 0
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  count_all = 179853
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  before merging with v_list, the len is = 90047
+2019-04-30 Tuesday 11:29:11  bipartite_graph_data_loader.py : INFO  after merging with v_list, the len is = 90047
+2019-04-30 Tuesday 11:29:12  bipartite_graph_data_loader.py : INFO  v_attribute = (90047, 2): [[0
+  array([0.2       , 0.1798    , 0.93850236, 0.99999971, 0.00565306,
+       0.01803607, 0.00572995, 0.00504493, 0.00196833, 0.00704416,
+       0.04005086, 0.00287608, 0.52941176, 0.16017798, 0.484375  ,
+       0.        ])]
+ [441341
+  array([1.00000000e-01, 5.64000000e-02, 9.85003389e-01, 9.99999406e-01,
+       9.74082063e-04, 4.00801603e-03, 5.23168909e-03, 3.91034912e-04,
+       1.88710610e-03, 1.83398287e-03, 2.38397966e-03, 1.68813305e-03,
+       5.58823529e-01, 1.63120567e-01, 5.18229167e-01, 0.00000000e+00])]]
+2019-04-30 Tuesday 11:29:15  bipartite_graph_data_loader.py : INFO  group U length = 1089518
+2019-04-30 Tuesday 11:29:15  bipartite_graph_data_loader.py : INFO  group V length = 179890
+2019-04-30 Tuesday 11:29:15  bipartite_graph_data_loader.py : INFO  before filter, the len is = 1089436
+2019-04-30 Tuesday 11:29:16  bipartite_graph_data_loader.py : INFO  after filter, the len is = 1089436
+2019-04-30 Tuesday 11:29:16  bipartite_graph_data_loader.py : INFO  before filter, the len is = 90047
+2019-04-30 Tuesday 11:29:16  bipartite_graph_data_loader.py : INFO  after filter, the len is = 90047
+2019-04-30 Tuesday 11:29:16  bipartite_graph_data_loader.py : INFO  __generate_adjacent_matrix START

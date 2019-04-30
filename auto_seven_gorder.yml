@@ -1,0 +1,64 @@
+common:
+  algorithm: RANDOM_SEARCH
+  objectValueName: fvalue
+  optimizationType: MAXIMIZE
+  studyName: graphcomb
+notification:
+  ifAlarmNotification: False
+parameterConfigs:
+- discreteValues:
+  - 64
+  - 128
+  - 256
+  - 512 
+  name: batch_size
+  type: ENUM_INT
+- discreteValues:
+  - 50
+  - 100
+  - 150
+  name: steps
+  type: ENUM_INT
+- max: 0.01
+  min: 0.0001
+  name: learning_rate
+  type: LOG10
+- discreteValues:
+  - 64
+  - 128
+  - 256
+  name: n_hidden
+  type: ENUM_INT
+- max: 0.01
+  min: 0.0001
+  name: rl_learning_rate
+  type: LOG10
+- discreteValues:
+  - 50
+  - 100
+  - 200
+  - 300
+  name: n_iterations
+  type: ENUM_INT
+- max: 15
+  min: 1 
+  name: n_trains
+  type: INT
+- max: 1.0
+  min: 0.1
+  name: tuning_rate
+  type: FLOAT
+schedulerConfig:
+  parallelNum: 50
+  trialNum: 1000
+  maxConsFailNum: 20
+workerConfig:
+  runPlatform: SEVEN
+  sevenConfig:
+    cluster: dev
+    user: royrong
+  configFiles:
+  - run_rl_dnn_gorder_seven.sh
+  runCmd: sh main.sh
+  retryNum: 2
+
