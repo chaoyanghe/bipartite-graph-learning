@@ -1,5 +1,6 @@
 import logging
 
+import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 from networkx.algorithms.bipartite import biadjacency_matrix
@@ -53,22 +54,16 @@ class BipartiteGraphDataLoader:
         logging.info("BipartiteGraphDataLoader __init__(). END")
 
     def test(self):
-
-        B = nx.Graph()
-        # Add nodes with the node attribute "bipartite"
-        B.add_nodes_from([1, 2, 3], bipartite=0)
-        B.add_nodes_from(['a', 'b'], bipartite=1)
-        # Add edges only between nodes of opposite node sets
-        B.add_edges_from([(1, 'a'), (1, 'b'), (2, 'b'), (2, 'c'), (3, 'c'), (5, 'a')])
-        adj_test = biadjacency_matrix(B, [3, 2, 1, 4, 5, 6])
-        print(adj_test.shape)
-        adj = adj_test.toarray()
-        print(adj)
-
-
+        plot_x = [i for i in range(10000000)]
+        plot_y = [2 * i for i in range(10000000)]
+        plt.plot(plot_x, plot_y, color="red", linewidth=2)
+        plt.ylabel("Neighborhood Number")
+        plt.xlabel("Count")
+        plt.title("Neighborhood Number Distribution")
+        plt.show()
         print("")
 
-    def generate_adjacent_matrix_feature_and_labels(self):
+    def load(self):
         logging.info("##### generate_adjacent_matrix_feature_and_labels. START")
         self.u_list = self.__load_u_list()
         # sample and print several value to evaluate the correctness
@@ -87,6 +82,14 @@ class BipartiteGraphDataLoader:
         group_u_dict, group_v_dict = self.__load_adjacent_list()
         self.u_attr_dict, self.u_attr_array, u_node_list = self.__filter_unused_nodes(u_attr_dict, group_u_dict)
         self.v_attr_dict, self.v_attr_array, v_node_list = self.__filter_unused_nodes(v_attr_dict, group_v_dict)
+
+        f_edge_list = open(self.edge_list_file_path, 'r')
+        for l in f_edge_list:
+            items = l.strip('\n').split(" ")
+            v = int(items[0])
+            u = int(items[1])
+            if int(v) in self.v_attr_dict.keys() and int(u) in self.u_attr_dict.keys():
+                self.edge_list.append((u, v))
 
         self.__generate_adjacent_matrix(self.u_attr_array, self.v_attr_array, u_node_list, v_node_list)
         logging.info("#### generate_adjacent_matrix_feature_and_labels. END")
@@ -254,16 +257,6 @@ class BipartiteGraphDataLoader:
             if u not in group_u_dict.keys():
                 group_u_dict[int(u)] = u
 
-            self.edge_list.append((u, v))
-
-        # f_edge_list2 = open(self.edge_list_file_path, 'r')
-        # for l in f_edge_list2:
-        #     items = l.strip('\n').split(" ")
-        #     u = items[1]
-        #     v = items[0]
-        #     if int(v) in group_v_dict.keys() and int(u) in group_u_dict.keys():
-        #         self.edge_list.append((u, v))
-
         logging.info("group U length = " + str(len(group_u_dict)))
         logging.info("group V length = " + str(len(group_v_dict)))
         return group_u_dict, group_v_dict
@@ -287,44 +280,77 @@ class BipartiteGraphDataLoader:
         dimension_u = len(u_attr_array)
         dimension_v = len(v_attr_array)
 
-        # edgef = open(EDGE_LIST_PATH, 'rb')
-        # #G = nx.read_weighted_edgelist(edgef)
-        # G = nx.from_edgelist(self.edge_list)
-        # #adj = nx.adjacency_matrix(G)
-        # adj = biadjacency_matrix(G, u_node_list, v_node_list)
-        # print(adj.shape)
+        print("u_node_list = %d" % len(u_node_list))
+        print("v_node_list = %d" % len(v_node_list))
+        print("edge_list = %d" % len(self.edge_list))  # 1979756(after filter); 991734(after filter)
+
+        B_u = nx.Graph()
+        # Add nodes with the node attribute "bipartite"
+        B_u.add_nodes_from(u_node_list, bipartite=0)
+        B_u.add_nodes_from(v_node_list, bipartite=1)
+
+        # Add edges only between nodes of opposite node sets
+        B_u.add_edges_from(self.edge_list)
+
+        u_adjacent_matrix = biadjacency_matrix(B_u, u_node_list, v_node_list)
+        logging.info(u_adjacent_matrix)
+        print(u_adjacent_matrix.shape)
+        self.u_adjacent_matrix = u_adjacent_matrix.toarray()
+
+        B_v = nx.Graph()
+        # Add nodes with the node attribute "bipartite"
+        B_v.add_nodes_from(v_node_list, bipartite=0)
+        B_v.add_nodes_from(u_node_list, bipartite=1)
+
+        # Add edges only between nodes of opposite node sets
+        B_v.add_edges_from(self.edge_list)
+
+        v_adjacent_matrix = biadjacency_matrix(B_v, v_node_list, u_node_list)
+        logging.info(v_adjacent_matrix)
+        print(v_adjacent_matrix.shape)
+        self.v_adjacent_matrix = v_adjacent_matrix.toarray()
+
+    def plot_neighborhood_number_distribution(self):
+        count_list = np.sum(self.u_adjacent_matrix[0:100000], axis=1)
+        u_adj_ner_count_dict = {}
+        for idx in range(len(count_list)):
+            neigher_num = count_list[idx]
+            if neigher_num not in u_adj_ner_count_dict.keys():
+                u_adj_ner_count_dict[neigher_num] = 0
+            u_adj_ner_count_dict[neigher_num] += 1
+
+        print(len(u_adj_ner_count_dict))
+        plot_x = []
+        plot_y = []
+        for neigher_num in sorted(u_adj_ner_count_dict.keys()):
+            if neigher_num == 0 or u_adj_ner_count_dict[neigher_num] == 0:
+                continue
+            plot_x.append(neigher_num)
+            plot_y.append(u_adj_ner_count_dict[neigher_num])
+
+        plt.plot(plot_x, plot_y, color="red", linewidth=2)
+        plt.xlabel("Neighborhood Number")
+        plt.ylabel("Count")
+        plt.title("Neighborhood Number Distribution")
+        plt.show()
 
 
-        # B_u = nx.Graph()
-        # # Add nodes with the node attribute "bipartite"
-        # B_u.add_nodes_from(u_node_list, bipartite=0)
-        #
-        # B_u.add_nodes_from(v_node_list, bipartite=1)
-        # # Add edges only between nodes of opposite node sets
-        # for iter in self.edge_list:
-        #     B_u.add_edge(iter[0], iter[1])
-        # #B_u.add_edges_from()
-        #
-        # self.u_adjacent_matrix = biadjacency_matrix(B_u, u_node_list, v_node_list)
-        # logging.info(self.u_adjacent_matrix)
-        # print(self.u_adjacent_matrix.shape)
-        # adj = self.u_adjacent_matrix.toarray()
-        # for idx in range(len(u_node_list)):
-        #     print(np.max(adj[12] == 1))
+def __generate_features_and_labels(self):
+    logging.info("__generate_features_and_labels. START")
 
-    def __generate_features_and_labels(self):
-        logging.info("__generate_features_and_labels. START")
+    logging.info("__generate_features_and_labels. END")
 
-        logging.info("__generate_features_and_labels. END")
 
-    def get_batch_num(self):
-        pass
+def get_batch_num(self):
+    pass
 
-    def get_one_batch_group_u_with_adjacent(self, batch_index):
-        return None, None, None
 
-    def get_one_batch_group_v_with_adjacent(self, batch_index):
-        return None, None, None
+def get_one_batch_group_u_with_adjacent(self, batch_index):
+    return None, None, None
+
+
+def get_one_batch_group_v_with_adjacent(self, batch_index):
+    return None, None, None
 
 
 if __name__ == "__main__":
@@ -339,5 +365,6 @@ if __name__ == "__main__":
     bipartite_graph_data_loader = BipartiteGraphDataLoader(10, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
                                                            EDGE_LIST_PATH,
                                                            GROUP_LIST_PATH, GROUP_ATTR_PATH)
-    #bipartite_graph_data_loader.test()
-    bipartite_graph_data_loader.generate_adjacent_matrix_feature_and_labels()
+    # bipartite_graph_data_loader.test()
+    bipartite_graph_data_loader.load()
+    bipartite_graph_data_loader.plot_neighborhood_number_distribution()

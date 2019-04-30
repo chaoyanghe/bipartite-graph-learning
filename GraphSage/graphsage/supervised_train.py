@@ -76,8 +76,8 @@ def calc_f1(y_true, y_pred):
 def evaluate(sess, model, minibatch_iter, size=None):
     t_test = time.time()
     feed_dict_val, labels = minibatch_iter.node_val_feed_dict(size)
-    node_outs_val = sess.run([model.preds, model.loss],
-                             feed_dict=feed_dict_val)
+    node_outs_val = sess.load([model.preds, model.loss],
+                              feed_dict=feed_dict_val)
     mic, mac = calc_f1(labels, node_outs_val[0])
     return node_outs_val[1], mic, mac, (time.time() - t_test)
 
@@ -104,8 +104,8 @@ def incremental_evaluate(sess, model, minibatch_iter, size, test=False):
     while not finished:
         feed_dict_val, batch_labels, finished, _ = minibatch_iter.incremental_node_val_feed_dict(size, iter_num,
                                                                                                  test=test)
-        node_outs_val = sess.run([model.preds, model.loss],
-                                 feed_dict=feed_dict_val)
+        node_outs_val = sess.load([model.preds, model.loss],
+                                  feed_dict=feed_dict_val)
         val_preds.append(node_outs_val[0])
         labels.append(batch_labels)
         val_losses.append(node_outs_val[1])

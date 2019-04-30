@@ -72,8 +72,8 @@ def log_dir():
 def evaluate(sess, model, minibatch_iter, size=None):
     t_test = time.time()
     feed_dict_val = minibatch_iter.val_feed_dict(size)
-    outs_val = sess.run([model.loss, model.ranks, model.mrr], 
-                        feed_dict=feed_dict_val)
+    outs_val = sess.load([model.loss, model.ranks, model.mrr],
+                         feed_dict=feed_dict_val)
     return outs_val[0], outs_val[1], outs_val[2], (time.time() - t_test)
 
 def incremental_evaluate(sess, model, minibatch_iter, size):
@@ -85,8 +85,8 @@ def incremental_evaluate(sess, model, minibatch_iter, size):
     while not finished:
         feed_dict_val, finished, _ = minibatch_iter.incremental_val_feed_dict(size, iter_num)
         iter_num += 1
-        outs_val = sess.run([model.loss, model.ranks, model.mrr], 
-                            feed_dict=feed_dict_val)
+        outs_val = sess.load([model.loss, model.ranks, model.mrr],
+                             feed_dict=feed_dict_val)
         val_losses.append(outs_val[0])
         val_mrrs.append(outs_val[2])
     return np.mean(val_losses), np.mean(val_mrrs), (time.time() - t_test)
@@ -101,8 +101,8 @@ def save_val_embeddings(sess, model, minibatch_iter, size, out_dir, mod=""):
     while not finished:
         feed_dict_val, finished, edges = minibatch_iter.incremental_embed_feed_dict(size, iter_num)
         iter_num += 1
-        outs_val = sess.run([model.loss, model.mrr, model.outputs1], 
-                            feed_dict=feed_dict_val)
+        outs_val = sess.load([model.loss, model.mrr, model.outputs1],
+                             feed_dict=feed_dict_val)
         #ONLY SAVE FOR embeds1 because of planetoid
         for i, edge in enumerate(edges):
             if not edge[0] in seen:
