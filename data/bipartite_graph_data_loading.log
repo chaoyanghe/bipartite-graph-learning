@@ -1,0 +1,12 @@
+2019-04-30 Tuesday 19:46:03  bipartite_graph_data_loader.py : INFO  BipartiteGraphDataLoader __init__().
+2019-04-30 Tuesday 19:46:03  bipartite_graph_data_loader.py : INFO  group_u_list_file_path = ./Tencent-QQ/node_list
+2019-04-30 Tuesday 19:46:03  bipartite_graph_data_loader.py : INFO  group_u_attr_file_path = ./Tencent-QQ/node_attr
+2019-04-30 Tuesday 19:46:03  bipartite_graph_data_loader.py : INFO  group_u_label_file_path = ./Tencent-QQ/node_true
+2019-04-30 Tuesday 19:46:03  bipartite_graph_data_loader.py : INFO  edge_list_file_path = ./Tencent-QQ/edgelist
+2019-04-30 Tuesday 19:46:03  bipartite_graph_data_loader.py : INFO  group_v_list_file_path = ./Tencent-QQ/group_list
+2019-04-30 Tuesday 19:46:03  bipartite_graph_data_loader.py : INFO  group_v_attr_file_path = ./Tencent-QQ/group_attr
+2019-04-30 Tuesday 19:46:03  bipartite_graph_data_loader.py : INFO  group_v_label_file_path = None
+2019-04-30 Tuesday 19:46:03  bipartite_graph_data_loader.py : INFO  BipartiteGraphDataLoader __init__(). END
+2019-04-30 Tuesday 19:46:03  bipartite_graph_data_loader.py : INFO  ##### generate_adjacent_matrix_feature_and_labels. START
+2019-04-30 Tuesday 19:46:26  bipartite_graph_data_loader.py : INFO  before merging with u_list, the len is = 1089436
+2019-04-30 Tuesday 19:46:27  bipartite_graph_data_loader.py : INFO  after merging with u_list, the len is = 1089436
