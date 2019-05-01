@@ -59,7 +59,7 @@ class GAN(object):
         # binary_cross_entropy = nn.BCELoss(logits, labels)
         return loss
 
-    def forward_backward(self, real_data, netG_output, step, epoch):
+    def forward_backward(self, real_data, netG_output, step, epoch, iter):
         # output from generator, and real data
         real = real_data
         fake = netG_output
@@ -94,11 +94,12 @@ class GAN(object):
 
         print('Step: {:01d}'.format(step),
               'Epoch: {:04d}'.format(epoch),
-              'dis loss: {:.4f}'.format(lossD.item()),
-              'gen loss: {:.4f}'.format(lossG.item()))
+              "Iterations: {:04d}".format(iter),
+              'dis loss: {:.04f}'.format(lossD.item()),
+              'gen loss: {:.04f}'.format(lossG.item()))
 
     # validation
-    def forward(self, real_data, netG_output):
+    def forward(self, real_data, netG_output, iter):
         # output from generator, and real data
         real = real_data
         fake = netG_output
@@ -124,5 +125,6 @@ class GAN(object):
         output = self.netD(fake)
         lossG = self._loss(output, label)
 
-        print('Validation dis Loss: {:.4f}'.format(lossD.item()),
-              'Validation gen loss: {:.4f}'.format(lossG.item()))
+        print('Iterations: {:.04f}'.format(iter),
+              'Validation dis Loss: {:.04f}'.format(lossD.item()),
+              'Validation gen loss: {:.04f}'.format(lossG.item()))
