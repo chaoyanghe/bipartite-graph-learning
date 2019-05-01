@@ -4,17 +4,17 @@ from __future__ import print_function
 import torch
 import torch.nn as nn
 import torch.optim as optim
-
 from torch.nn import init
+
 from data.utils import (REAL_LABEL, FAKE_LABEL)
-from utils import (LEARNING_RATE, WEIGHT_DECAY, DROPOUT)
+from utils import (LEARNING_RATE, WEIGHT_DECAY)
 
 
 class Discriminator(nn.Module):
     def __init__(self, infeat, outfeat):
         super(Discriminator, self).__init__()
 
-        hidfeat = 2 # define the hidden layer dimension
+        hidfeat = 2  # define the hidden layer dimension
         self.main = nn.Sequential(
             nn.Linear(infeat, hidfeat),  # default initialization
             nn.ReLU(),
@@ -22,15 +22,16 @@ class Discriminator(nn.Module):
             nn.Sigmoid()
         )
 
-
     def forward(self, input):
         output = self.main(input)
         return output
+
 
 def _weights_init(m):
     if isinstance(m, nn.Linear):
         init.xavier_uniform_(m.weight)
         init.constant_(m.bias, 0)
+
 
 # generator is GCN
 class GAN(object):
@@ -59,7 +60,7 @@ class GAN(object):
         # binary_cross_entropy = nn.BCELoss(logits, labels)
         return loss
 
-    def forward_backward(self, real_data, netG_output, step, epoch):
+    def forward_backward(self, real_data, netG_output, step, epoch, iter):
         # output from generator, and real data
         real = real_data
         fake = netG_output
@@ -94,11 +95,12 @@ class GAN(object):
 
         print('Step: {:01d}'.format(step),
               'Epoch: {:04d}'.format(epoch),
-              'dis loss: {:.4f}'.format(lossD.item()),
-              'gen loss: {:.4f}'.format(lossG.item()))
+              "Iterations: {:04d}".format(iter),
+              'dis loss: {:.04f}'.format(lossD.item()),
+              'gen loss: {:.04f}'.format(lossG.item()))
 
     # validation
-    def forward(self, real_data, netG_output):
+    def forward(self, real_data, netG_output, iter):
         # output from generator, and real data
         real = real_data
         fake = netG_output
@@ -124,5 +126,6 @@ class GAN(object):
         output = self.netD(fake)
         lossG = self._loss(output, label)
 
-        print('Validation dis Loss: {:.4f}'.format(lossD.item()),
-              'Validation gen loss: {:.4f}'.format(lossG.item()))
+        print('Iterations: {:.04f}'.format(iter),
+              'Validation dis Loss: {:.04f}'.format(lossD.item()),
+              'Validation gen loss: {:.04f}'.format(lossG.item()))
