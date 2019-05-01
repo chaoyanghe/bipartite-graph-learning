@@ -19,6 +19,8 @@ class BipartiteGraphDataLoader:
         logging.info("BipartiteGraphDataLoader __init__().")
 
         self.batch_size = batch_size
+        self.batch_num_u = 0
+        self.batch_num_v = 0
         logging.info("group_u_list_file_path = %s" % group_u_list_file_path)
         logging.info("group_u_attr_file_path = %s" % group_u_attr_file_path)
         logging.info("group_u_label_file_path = %s" % group_u_label_file_path)
@@ -37,11 +39,11 @@ class BipartiteGraphDataLoader:
         self.group_v_attr_file_path = group_v_attr_file_path
         self.group_v_label_file_path = group_v_label_file_path
 
-        self.u_list = []
+        self.u_node_list = []
         self.u_attr_dict = {}
         self.u_attr_array = []
 
-        self.v_list = []
+        self.v_node_list = []
         self.v_attr_dict = {}
         self.v_attr_array = []
 
@@ -51,56 +53,83 @@ class BipartiteGraphDataLoader:
 
         self.u_label = []
 
+        self.batches_u = []
+        self.batches_v = []
         logging.info("BipartiteGraphDataLoader __init__(). END")
 
     def test(self):
-        plot_x = [i for i in range(10000000)]
-        plot_y = [2 * i for i in range(10000000)]
-        plt.plot(plot_x, plot_y, color="red", linewidth=2)
-        plt.ylabel("Neighborhood Number")
-        plt.xlabel("Count")
-        plt.title("Neighborhood Number Distribution")
-        plt.show()
+        adjU = [[1, 1],
+                [1, 0],
+                [1, 0],
+                [1, 1],
+                [1, 1],
+                [0, 1],
+                [0, 1]]
+        adjV = [[1, 1, 1, 1, 0, 1, 0],
+                [1, 0, 0, 0, 0, 0, 1]]
+        featuresU = np.random.rand(14).reshape(7, 2)
+        featuresV = np.random.rand(8).reshape(2, 4)
+        self.gernerate_mini_batch(featuresU, featuresV, np.array(adjU), np.array(adjV))
         print("")
 
     def load(self):
         logging.info("##### generate_adjacent_matrix_feature_and_labels. START")
-        self.u_list = self.__load_u_list()
-        # sample and print several value to evaluate the correctness
-        logging.info("u_list len = %d. %s" % (len(self.u_list), str(self.u_list[0::100000])))
+        u_list = self.__load_u_list()
+        u_attr_dict, u_attr_array = self.__load_u_attribute(u_list)
+        logging.info("u_attribute = %s: %s" % (u_attr_array.shape, u_attr_array[0::100000]))  # 1089436
 
-        u_attr_dict, u_attr_array = self.__load_u_attribute()
-        logging.info("u_attribute = %s: %s" % (u_attr_array.shape, u_attr_array[0::100000]))
+        v_list = self.__load_v_list()
+        v_attr_dict, v_attr_array = self.__load_v_attribute(v_list)
+        logging.info("v_attribute = %s: %s" % (v_attr_array.shape, v_attr_array[0::50000]))  # 90047
 
-        self.v_list = self.__load_v_list()
-        # sample and print several value to evaluate the correctness
-        logging.info("v_list len = %d. %s" % (len(self.v_list), str(self.v_list[0::50000])))
-
-        v_attr_dict, v_attr_array = self.__load_v_attribute()
-        logging.info("v_attribute = %s: %s" % (v_attr_array.shape, v_attr_array[0::50000]))
-
-        group_u_dict, group_v_dict = self.__load_adjacent_list()
-        self.u_attr_dict, self.u_attr_array, u_node_list = self.__filter_unused_nodes(u_attr_dict, group_u_dict)
-        self.v_attr_dict, self.v_attr_array, v_node_list = self.__filter_unused_nodes(v_attr_dict, group_v_dict)
-
+        # choose the edge whose nodes have attribute
         f_edge_list = open(self.edge_list_file_path, 'r')
+        edge_count = 0
         for l in f_edge_list:
             items = l.strip('\n').split(" ")
             v = int(items[0])
             u = int(items[1])
-            if int(v) in self.v_attr_dict.keys() and int(u) in self.u_attr_dict.keys():
+            edge_count += 1
+            if int(v) in v_attr_dict.keys() and int(u) in u_attr_dict.keys():
                 self.edge_list.append((u, v))
 
-        self.__generate_adjacent_matrix(self.u_attr_array, self.v_attr_array, u_node_list, v_node_list)
+        logging.info("raw edge_list len = %d" % edge_count)  # 1979756
+        logging.info("edge_list len = %d" % len(self.edge_list))  # 991734
+
+        # load all the nodes without duplicate
+        self.u_node_list, self.v_node_list = self.__load_unique_node_in_edge_list(self.edge_list)
+
+        # sample and print several value to evaluate the correctness
+        logging.info("u_list len = %d. %s" % (len(self.u_node_list), str(self.u_node_list[0::50000])))  # 619030
+        logging.info("v_list len = %d. %s" % (len(self.v_node_list), str(self.v_node_list[0::10000])))  # 90044
+
+        # delete the nodes which do not have the attribute
+        # delete the nodes which have attribute but are not in the edge list (isolated)
+        self.u_attr_dict, self.u_attr_array = self.__filter_illegal_nodes(u_attr_dict, self.u_node_list)
+        self.v_attr_dict, self.v_attr_array = self.__filter_illegal_nodes(v_attr_dict, self.v_node_list)
+        logging.info("u feature shape = %s" % str(self.u_attr_array.shape))
+        logging.info("v feature shape = %s" % str(self.v_attr_array.shape))
+
+        self.u_adjacent_matrix, self.v_adjacent_matrix = self.__generate_adjacent_matrix(self.u_node_list,
+                                                                                         self.v_node_list,
+                                                                                         self.edge_list)
+
+        self.u_label = self.__generate_u_labels(self.u_node_list)
+
+        # for mini-batch
+        self.gernerate_mini_batch(self.u_attr_array, self.v_attr_array,
+                                  self.u_adjacent_matrix, self.v_adjacent_matrix)
+
         logging.info("#### generate_adjacent_matrix_feature_and_labels. END")
 
     def __load_u_list(self):
+        u_list = []
         f_group_u_list = open(self.group_u_list_file_path)
         for l in f_group_u_list:
-            self.u_list.append(int(l))
-        return self.u_list
+            u_list.append(int(l))
+        return u_list
 
-    def __load_u_attribute(self):
+    def __load_u_attribute(self, u_list):
         """ Load the node (u) attributes vector.
             If there is no attribute vector, ignore it.
         """
@@ -139,7 +168,7 @@ class BipartiteGraphDataLoader:
         logging.info("before merging with u_list, the len is = %d" % len(temp_attr_dict))
         u_attr_dict = {}
         u_attr_array = []
-        for u in self.u_list:
+        for u in u_list:
             if u in temp_attr_dict.keys():
                 u_attr_dict[int(u)] = temp_attr_dict[u]
                 u_attr_array.append((u, temp_attr_dict[u]))
@@ -149,12 +178,13 @@ class BipartiteGraphDataLoader:
         return u_attr_dict, np.array(u_attr_array)
 
     def __load_v_list(self):
+        v_list = []
         f_group_v_list = open(self.group_v_list_file_path)
         for l in f_group_v_list:
-            self.v_list.append(int(l))
-        return self.v_list
+            v_list.append(int(l))
+        return v_list
 
-    def __load_v_attribute(self):
+    def __load_v_attribute(self, v_list):
         v_attr = []
         count_no_attribute = 0
         count_10 = 0
@@ -168,6 +198,7 @@ class BipartiteGraphDataLoader:
 
         for l in f_v_attr:
             count_all += 1
+
             l = l.strip('\n').split("\t")
             dimension = len(l)
 
@@ -234,7 +265,7 @@ class BipartiteGraphDataLoader:
         logging.info("before merging with v_list, the len is = %d" % len(v_attr))
         v_attr_dict = {}
         v_attr_array = []
-        for v in self.v_list:
+        for v in v_list:
             if v in temp_attr_dict.keys():
                 v_attr_dict[int(v)] = temp_attr_dict[v]
                 v_attr_array.append((v, temp_attr_dict[v]))
@@ -243,46 +274,36 @@ class BipartiteGraphDataLoader:
 
         return v_attr_dict, np.array(v_attr_array)
 
-    def __load_adjacent_list(self):
-        f_edge_list = open(self.edge_list_file_path, 'r')
-        group_u_dict = {}
-        group_v_dict = {}
-        for l in f_edge_list:
-            items = l.strip('\n').split(" ")
-            v = items[0]
-            if v not in group_v_dict.keys():
-                group_v_dict[int(v)] = v
+    def __load_unique_node_in_edge_list(self, edge_list):
+        u_unique_dict = {}
+        v_unique_dict = {}
+        for (u, v) in edge_list:
+            if v not in v_unique_dict.keys():
+                v_unique_dict[int(v)] = v
 
-            u = items[1]
-            if u not in group_u_dict.keys():
-                group_u_dict[int(u)] = u
+            if u not in u_unique_dict.keys():
+                u_unique_dict[int(u)] = u
 
-        logging.info("group U length = " + str(len(group_u_dict)))
-        logging.info("group V length = " + str(len(group_v_dict)))
-        return group_u_dict, group_v_dict
+        logging.info("group U length = " + str(len(u_unique_dict)))
+        logging.info("group V length = " + str(len(v_unique_dict)))
+        return [u for u in u_unique_dict.keys()], [v for v in v_unique_dict.keys()]
 
-    def __filter_unused_nodes(self, attr_dict, group_dict):
+    def __filter_illegal_nodes(self, attr_dict, unique_node_list):
         ret_attr_dict = {}
         ret_attr_array = []
-        ret_node_list = []
         logging.info("before filter, the len is = %d" % len(attr_dict))
-        for node in attr_dict.keys():
-            if int(node) in group_dict.keys():
-                ret_attr_dict[node] = attr_dict[node]
-                ret_attr_array.append(attr_dict[node])
-                ret_node_list.append(node)
-
+        for node in unique_node_list:
+            ret_attr_dict[node] = attr_dict[node]
+            ret_attr_array.append(attr_dict[node])
         logging.info("after filter, the len is = %d" % len(ret_attr_array))
-        return ret_attr_dict, ret_attr_array, ret_node_list
+        return ret_attr_dict, np.array(ret_attr_array)
 
-    def __generate_adjacent_matrix(self, u_attr_array, v_attr_array, u_node_list, v_node_list):
+    def __generate_adjacent_matrix(self, u_node_list, v_node_list, edge_list):
         logging.info("__generate_adjacent_matrix START")
-        dimension_u = len(u_attr_array)
-        dimension_v = len(v_attr_array)
 
         print("u_node_list = %d" % len(u_node_list))
         print("v_node_list = %d" % len(v_node_list))
-        print("edge_list = %d" % len(self.edge_list))  # 1979756(after filter); 991734(after filter)
+        print("edge_list = %d" % len(edge_list))  # 1979756(after filter); 991734(after filter)
 
         B_u = nx.Graph()
         # Add nodes with the node attribute "bipartite"
@@ -290,12 +311,12 @@ class BipartiteGraphDataLoader:
         B_u.add_nodes_from(v_node_list, bipartite=1)
 
         # Add edges only between nodes of opposite node sets
-        B_u.add_edges_from(self.edge_list)
+        B_u.add_edges_from(edge_list)
 
         u_adjacent_matrix = biadjacency_matrix(B_u, u_node_list, v_node_list)
         logging.info(u_adjacent_matrix)
         print(u_adjacent_matrix.shape)
-        self.u_adjacent_matrix = u_adjacent_matrix.toarray()
+        u_adjacent_matrix_np = u_adjacent_matrix.toarray()
 
         B_v = nx.Graph()
         # Add nodes with the node attribute "bipartite"
@@ -303,12 +324,13 @@ class BipartiteGraphDataLoader:
         B_v.add_nodes_from(u_node_list, bipartite=1)
 
         # Add edges only between nodes of opposite node sets
-        B_v.add_edges_from(self.edge_list)
+        B_v.add_edges_from(edge_list)
 
         v_adjacent_matrix = biadjacency_matrix(B_v, v_node_list, u_node_list)
         logging.info(v_adjacent_matrix)
         print(v_adjacent_matrix.shape)
-        self.v_adjacent_matrix = v_adjacent_matrix.toarray()
+        v_adjacent_matrix_np = v_adjacent_matrix.toarray()
+        return u_adjacent_matrix_np, v_adjacent_matrix_np
 
     def plot_neighborhood_number_distribution(self):
         count_list = np.sum(self.u_adjacent_matrix[0:100000], axis=1)
@@ -332,31 +354,83 @@ class BipartiteGraphDataLoader:
         plt.xlabel("Neighborhood Number")
         plt.ylabel("Count")
         plt.title("Neighborhood Number Distribution")
+        plt.axis([0, 50, 0, 5000])
         plt.show()
 
+    def __generate_u_labels(self, u_node_list):
+        f_label = open(self.group_u_label_file_path)
+        true_set = set([int(x.strip()) for x in f_label])
+        u_label = []
+        for n in u_node_list:
+            if n in true_set:
+                u_label.append(1)
+            else:
+                u_label.append(0)
+        return u_label
 
-    def __generate_features_and_labels(self):
-        logging.info("__generate_features_and_labels. START")
+    def gernerate_mini_batch(self, u_attr_array, v_attr_array, u_adjacent_matrix, v_adjacent_matrix):
+        u_num = u_attr_array.shape[0]
+        print("u number: " + str(u_num))
+        print("u_adjacent_matrix: " + str(u_adjacent_matrix.shape))
 
-        logging.info("__generate_features_and_labels. END")
+        v_num = v_attr_array.shape[0]
+        print("v number: " + str(v_num))
+        print("v_adjacent_matrix: " + str(v_adjacent_matrix.shape))
 
+        self.batch_num_u = int(u_num / self.batch_size) + 1
+        print("batch_num_u = %d" % self.batch_num_u)
 
-    def get_batch_num(self):
-        pass
+        self.batch_num_v = int(v_num / self.batch_size) + 1
+        print("batch_num_v = %d" % self.batch_num_v)
 
+        for batch_index in range(self.batch_num_u):
+            start_index = self.batch_size * batch_index
+            end_index = self.batch_size * (batch_index + 1)
+            if batch_index == self.batch_num_u - 1:
+                end_index = u_num
+                start_index = end_index - self.batch_size
+                if start_index < 0:
+                    start_index = 0
+            tup = (u_attr_array[start_index:end_index], u_adjacent_matrix[start_index:end_index])
+            self.batches_u.append(tup)
+        # print(self.batches_u)
+
+        for batch_index in range(self.batch_num_v):
+            start_index = self.batch_size * batch_index
+            end_index = self.batch_size * (batch_index + 1)
+            if batch_index == self.batch_num_v - 1:
+                end_index = v_num
+                start_index = end_index - self.batch_size
+                if start_index < 0:
+                    start_index = 0
+                print(start_index)
+            tup = (v_attr_array[start_index:end_index], v_adjacent_matrix[start_index:end_index])
+            self.batches_v.append(tup)
+        # print(self.batches_v)
+
+    def get_batch_num_u(self):
+        return self.batch_num_u
+
+    def get_batch_num_v(self):
+        return self.batch_num_v
 
     def get_one_batch_group_u_with_adjacent(self, batch_index):
-        start_index = self.batch_size * batch_index
-        end_index = self.batch_size * (batch_index + 1)
-        if end_index >= len(self.u_list):
-            end_index = len(self.u_list) - 1
-
-
-        return None, None, None
-
+        if batch_index >= self.batch_num_u:
+            raise Exception("batch_index is larger than the batch number")
+        (u_attr_batch, u_adaj_batch) = self.batches_u[batch_index]
+        return u_attr_batch, u_adaj_batch
 
     def get_one_batch_group_v_with_adjacent(self, batch_index):
-        return None, None, None
+        if batch_index >= self.batch_num_v:
+            raise Exception("batch_index is larger than the batch number")
+        (v_attr_batch, v_adaj_batch) = self.batches_v[batch_index]
+        return v_attr_batch, v_adaj_batch
+
+    def get_u_attr_array(self):
+        return self.u_attr_array
+
+    def get_v_attr_array(self):
+        return self.v_attr_array
 
 
 if __name__ == "__main__":
@@ -368,9 +442,15 @@ if __name__ == "__main__":
 
     GROUP_LIST_PATH = "./Tencent-QQ/group_list"
     GROUP_ATTR_PATH = "./Tencent-QQ/group_attr"
-    bipartite_graph_data_loader = BipartiteGraphDataLoader(10, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
+    bipartite_graph_data_loader = BipartiteGraphDataLoader(100, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
                                                            EDGE_LIST_PATH,
                                                            GROUP_LIST_PATH, GROUP_ATTR_PATH)
-    # bipartite_graph_data_loader.test()
+    #bipartite_graph_data_loader.test()
     bipartite_graph_data_loader.load()
-    bipartite_graph_data_loader.plot_neighborhood_number_distribution()
+    # bipartite_graph_data_loader.plot_neighborhood_number_distribution()
+
+    u_attr_batch, u_adaj_batch = bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(1)
+    count_list = np.sum(u_adaj_batch, axis=1)
+    print(u_adaj_batch[0])
+    print(count_list)
+

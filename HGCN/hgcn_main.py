@@ -1,7 +1,11 @@
 import argparse
+
+import numpy as np
 import torch
-from train import HeterogeneousGCN
+
+from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
 from data.utils import load_data
+from train import HeterogeneousGCN
 from utils import (MODEL, EPOCHS, LEARNING_RATE, WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS)
 
 
@@ -28,12 +32,24 @@ def parse_args():
 
 def main():
     args = parse_args()
-    #hidden_dimensions = args.hidden
-    #dropout = args.dropout
+    # hidden_dimensions = args.hidden
+    # dropout = args.dropout
 
-    adjU, adjV, featuresU, featuresV = load_data()
+    NODE_LIST_PATH = "./../data/Tencent-QQ/node_list"
+    NODE_ATTR_PATH = "./../data/Tencent-QQ/node_attr"
+    NODE_LABEL_PATH = "./../data/Tencent-QQ/node_true"
+
+    EDGE_LIST_PATH = "./../data/Tencent-QQ/edgelist"
+
+    GROUP_LIST_PATH = "./../data/Tencent-QQ/group_list"
+    GROUP_ATTR_PATH = "./../data/Tencent-QQ/group_attr"
+    bipartite_graph_data_loader = BipartiteGraphDataLoader(100, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
+                                                           EDGE_LIST_PATH,
+                                                           GROUP_LIST_PATH, GROUP_ATTR_PATH)
+    bipartite_graph_data_loader.load()
+
     device = torch.device("cuda:0" if torch.cuda.is_available() and args.gpu else "cpu")
-    hgcn = HeterogeneousGCN(adjU, adjV, featuresU, featuresV, device)
+    hgcn = HeterogeneousGCN(bipartite_graph_data_loader, device)
     if args.model == 'gan_gcn':
         hgcn.adversarial_train()
     else:
