@@ -327,7 +327,6 @@ class BipartiteGraphDataLoader:
         B_v.add_edges_from(edge_list)
 
         v_adjacent_matrix = biadjacency_matrix(B_v, v_node_list, u_node_list)
-        logging.info(v_adjacent_matrix)
         print(v_adjacent_matrix.shape)
         v_adjacent_matrix_np = v_adjacent_matrix.toarray()
         return u_adjacent_matrix_np, v_adjacent_matrix_np
