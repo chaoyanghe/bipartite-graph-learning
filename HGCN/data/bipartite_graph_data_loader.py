@@ -316,7 +316,7 @@ class BipartiteGraphDataLoader:
 
         u_adjacent_matrix = biadjacency_matrix(B_u, u_node_list, v_node_list)
         logging.info(u_adjacent_matrix.shape)
-        u_adjacent_matrix_np = u_adjacent_matrix.toarray()
+        u_adjacent_matrix_np = u_adjacent_matrix.todense().A
         B_u.clear()
         logging.info("end to load bipartite for u")
 
@@ -331,7 +331,7 @@ class BipartiteGraphDataLoader:
 
         v_adjacent_matrix = biadjacency_matrix(B_v, v_node_list, u_node_list)
         logging.info(v_adjacent_matrix.shape)
-        v_adjacent_matrix_np = v_adjacent_matrix.toarray()
+        v_adjacent_matrix_np = v_adjacent_matrix.todense().A
         B_v.clear()
         logging.info("end to load bipartite for u")
         return u_adjacent_matrix_np, v_adjacent_matrix_np
