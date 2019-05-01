@@ -171,7 +171,7 @@ class BipartiteGraphDataLoader:
         for u in u_list:
             if u in temp_attr_dict.keys():
                 u_attr_dict[int(u)] = temp_attr_dict[u]
-                u_attr_array.append((u, temp_attr_dict[u]))
+                u_attr_array.append(temp_attr_dict[u])
 
         logging.info("after merging with u_list, the len is = %d" % len(u_attr_dict))
 
@@ -268,7 +268,7 @@ class BipartiteGraphDataLoader:
         for v in v_list:
             if v in temp_attr_dict.keys():
                 v_attr_dict[int(v)] = temp_attr_dict[v]
-                v_attr_array.append((v, temp_attr_dict[v]))
+                v_attr_array.append(temp_attr_dict[v])
 
         logging.info("after merging with v_list, the len is = %d" % len(v_attr_dict))
 
