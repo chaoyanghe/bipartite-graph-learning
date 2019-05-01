@@ -301,10 +301,11 @@ class BipartiteGraphDataLoader:
     def __generate_adjacent_matrix(self, u_node_list, v_node_list, edge_list):
         logging.info("__generate_adjacent_matrix START")
 
-        print("u_node_list = %d" % len(u_node_list))
-        print("v_node_list = %d" % len(v_node_list))
-        print("edge_list = %d" % len(edge_list))  # 1979756(after filter); 991734(after filter)
+        logging.info("u_node_list = %d" % len(u_node_list))
+        logging.info("v_node_list = %d" % len(v_node_list))
+        logging.info("edge_list = %d" % len(edge_list))  # 1979756(after filter); 991734(after filter)
 
+        logging.info("start to load bipartite for u")
         B_u = nx.Graph()
         # Add nodes with the node attribute "bipartite"
         B_u.add_nodes_from(u_node_list, bipartite=0)
@@ -314,9 +315,12 @@ class BipartiteGraphDataLoader:
         B_u.add_edges_from(edge_list)
 
         u_adjacent_matrix = biadjacency_matrix(B_u, u_node_list, v_node_list)
-        print(u_adjacent_matrix.shape)
+        logging.info(u_adjacent_matrix.shape)
         u_adjacent_matrix_np = u_adjacent_matrix.toarray()
+        B_u.clear()
+        logging.info("end to load bipartite for u")
 
+        logging.info("start to load bipartite for u")
         B_v = nx.Graph()
         # Add nodes with the node attribute "bipartite"
         B_v.add_nodes_from(v_node_list, bipartite=0)
@@ -326,8 +330,10 @@ class BipartiteGraphDataLoader:
         B_v.add_edges_from(edge_list)
 
         v_adjacent_matrix = biadjacency_matrix(B_v, v_node_list, u_node_list)
-        print(v_adjacent_matrix.shape)
+        logging.info(v_adjacent_matrix.shape)
         v_adjacent_matrix_np = v_adjacent_matrix.toarray()
+        B_v.clear()
+        logging.info("end to load bipartite for u")
         return u_adjacent_matrix_np, v_adjacent_matrix_np
 
     def plot_neighborhood_number_distribution(self):
