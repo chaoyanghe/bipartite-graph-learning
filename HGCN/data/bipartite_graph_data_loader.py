@@ -12,7 +12,7 @@ class BipartiteGraphDataLoader:
                  group_v_list_file_path, group_v_attr_file_path, group_v_label_file_path=None):
 
         logging.basicConfig(filename='bipartite_graph_data_loading.log', filemode='w',
-                            format='%(asctime)s  %(filename)s : %(levelname)s  %(message)s',
+                            format='%(asctime)s  %(filename)s : %(lineno)d : %(levelname)s  %(message)s',
                             datefmt='%Y-%m-%d %A %H:%M:%S',
                             level=logging.INFO)
 
