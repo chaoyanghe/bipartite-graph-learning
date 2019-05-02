@@ -5,6 +5,7 @@ import torch
 import logging
 
 from data.utils import load_data
+from log.hgcn_log_utils import HGCNLog
 from decoder.models import HGCNDecoder
 from gan.models import GAN
 
