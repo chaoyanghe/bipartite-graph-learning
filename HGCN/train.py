@@ -28,6 +28,8 @@ class AdversarialHGCNLayer(object):
         self.batch_num_v = bipartite_graph_data_loader.get_batch_num_v()
         self.u_attr = bipartite_graph_data_loader.get_u_attr_array()
         self.v_attr = bipartite_graph_data_loader.get_v_attr_array()
+        self.u_attr = torch.FloatTensor(self.u_attr).to(device)
+        self.v_attr = torch.FloatTensor(self.v_attr).to(device)
 
         self.bipartite_graph_data_loader = bipartite_graph_data_loader
         self.device = device
@@ -41,6 +43,7 @@ class AdversarialHGCNLayer(object):
             for iter in range(self.batch_num_u):
                 # load batch data, potential memory bug
                 u_input, u_adj = self.bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(iter)
+                u_input, u_adj = torch.FloatTensor(u_input).to(self.device), torch.FloatTensor(u_adj).to(self.device)
                 # training
                 gcn_explicit_output = self.gcn_explicit(self.v_attr, u_adj)
                 # record the last epoch output from gcn as new hidden representation
@@ -59,6 +62,7 @@ class AdversarialHGCNLayer(object):
             for iter in range(self.batch_num_v):
                 # load batch data
                 v_input, v_adj = self.bipartite_graph_data_loader.get_one_batch_group_v_with_adjacent(iter)
+                v_input, v_adj = torch.FloatTensor(v_input).to(self.device), torch.FloatTensor(v_adj).to(self.device)
                 gcn_implicit_output = self.gcn_implicit(u_explicit_attr, v_adj)
                 if i == EPOCHS - 1:
                     v_implicit_attr = torch.cat((v_implicit_attr, gcn_implicit_output.detach()), 0)
@@ -73,6 +77,7 @@ class AdversarialHGCNLayer(object):
         for i in range(EPOCHS):
             for iter in range(self.batch_num_u):
                 _, u_adj = self.bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(iter)
+                u_adj = torch.FloatTensor(u_adj).to(self.device)
                 gcn_merge_output = self.gcn_merge(v_implicit_attr, u_adj)
                 if i == EPOCHS - 1:
                     u_merge_attr = torch.cat((u_merge_attr, gcn_merge_output.detach()), 0)
@@ -89,6 +94,7 @@ class AdversarialHGCNLayer(object):
         for i in range(EPOCHS):
             for iter in range(self.batch_num_v):
                 _, v_adj = self.bipartite_graph_data_loader.get_one_batch_group_v_with_adjacent(iter)
+                v_adj = torch.FloatTensor(v_adj).to(self.device)
                 gcn_opposite_output = self.gcn_opposite(u_merge_attr, v_adj)
                 start_batch = iter * self.batch_size
                 v_input = v_implicit_attr[start_batch:start_batch + self.batch_size]

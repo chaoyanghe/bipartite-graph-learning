@@ -3,7 +3,6 @@ import logging
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
-import torch
 from networkx.algorithms.bipartite import biadjacency_matrix
 
 
@@ -395,7 +394,7 @@ class BipartiteGraphDataLoader:
                 #     start_index = 0
             tup = (u_attr_array[start_index:end_index], u_adjacent_matrix[start_index:end_index])
             self.batches_u.append(tup)
-        print(self.batches_u)
+        # print(self.batches_u)
 
         for batch_index in range(self.batch_num_v):
             start_index = self.batch_size * batch_index
@@ -408,7 +407,7 @@ class BipartiteGraphDataLoader:
                 # logging.info(start_index)
             tup = (v_attr_array[start_index:end_index], v_adjacent_matrix[start_index:end_index])
             self.batches_v.append(tup)
-        print(self.batches_v)
+        # print(self.batches_v)
 
     def get_u_attr_dimensions(self):
         return self.u_attr_array.shape[1]
@@ -430,8 +429,6 @@ class BipartiteGraphDataLoader:
         if batch_index >= self.batch_num_u:
             raise Exception("batch_index is larger than the batch number")
         (u_attr_batch, u_adaj_batch) = self.batches_u[batch_index]
-        u_attr_batch = torch.FloatTensor(u_attr_batch).to(self.device)
-        u_adaj_batch = torch.FloatTensor(u_adaj_batch).to(self.device)
         return u_attr_batch, u_adaj_batch
 
     def get_one_batch_group_v_with_adjacent(self, batch_index):
@@ -442,18 +439,16 @@ class BipartiteGraphDataLoader:
         if batch_index >= self.batch_num_v:
             raise Exception("batch_index is larger than the batch number")
         (v_attr_batch, v_adaj_batch) = self.batches_v[batch_index]
-        v_attr_batch = torch.FloatTensor(v_attr_batch).to(self.device)
-        v_adaj_batch = torch.FloatTensor(v_adaj_batch).to(self.device)
         return v_attr_batch, v_adaj_batch
 
     def get_u_attr_array(self):
-        return torch.FloatTensor(self.u_attr_array).to(self.device)
+        return self.u_attr_array
 
     def get_v_attr_array(self):
         """
         :return: Tensor
         """
-        return torch.FloatTensor(self.v_attr_array).to(self.device)
+        return self.v_attr_array
 
 
 if __name__ == "__main__":
