@@ -12,7 +12,6 @@ class BipartiteGraphDataLoader:
                  edge_list_file_path,
                  group_v_list_file_path, group_v_attr_file_path, group_v_label_file_path=None, device='cpu'):
 
-
         logging.info("BipartiteGraphDataLoader __init__().")
 
         self.device = device
@@ -474,7 +473,7 @@ if __name__ == "__main__":
     bipartite_graph_data_loader = BipartiteGraphDataLoader(100, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
                                                            EDGE_LIST_PATH,
                                                            GROUP_LIST_PATH, GROUP_ATTR_PATH)
-    #bipartite_graph_data_loader.test()
+    # bipartite_graph_data_loader.test()
     bipartite_graph_data_loader.load()
     # bipartite_graph_data_loader.plot_neighborhood_number_distribution()
 
@@ -482,4 +481,3 @@ if __name__ == "__main__":
     count_list = np.sum(u_adaj_batch, axis=1)
     logging.info(u_adaj_batch[0])
     logging.info(count_list)
-
