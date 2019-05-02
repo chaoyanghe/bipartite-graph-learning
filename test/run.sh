@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-python memory_profiler.py
+python -m memory_profiler memory_profiler.py
