@@ -1,16 +1,14 @@
 from __future__ import division
 from __future__ import print_function
 
-import torch
 import logging
 
-from data.utils import load_data
-from log.hgcn_log_utils import HGCNLog
-from decoder.models import HGCNDecoder
-from gan.models import GAN
+import torch
 
+from data.utils import load_data
+from gan.models import GAN
 from pygcn.models import GCN
-from utils import (EPOCHS, VALIDATE_ITER)
+from utils import (EPOCHS)
 
 """Single layer for adversarial loss"""
 
@@ -35,10 +33,9 @@ class AdversarialHGCNLayer(object):
         self.device = device
         self.batch_size = bipartite_graph_data_loader.batch_size
 
-
     def relation_learning(self):
         # explicit
-        print('Step 1: Explicit relation learning')
+        logging.info('Step 1: Explicit relation learning')
         u_explicit_attr = torch.FloatTensor([]).to(self.device)
         for i in range(EPOCHS):
             for iter in range(self.batch_num_u):
@@ -56,7 +53,7 @@ class AdversarialHGCNLayer(object):
                 #     self.gan_explicit.forward(u_input, gcn_explicit_output, iter)
 
         # implicit
-        print('Step 2: Implicit relation learning')
+        logging.info('Step 2: Implicit relation learning')
         v_implicit_attr = torch.FloatTensor([]).to(self.device)
         for i in range(EPOCHS):
             for iter in range(self.batch_num_v):
@@ -71,7 +68,7 @@ class AdversarialHGCNLayer(object):
                 #     self.gan_implicit.forward(v_input, gcn_implicit_output, iter)
 
         # merge
-        print('Step 3: Merge relation learning')
+        logging.info('Step 3: Merge relation learning')
         u_merge_attr = torch.FloatTensor([]).to(self.device)
         for i in range(EPOCHS):
             for iter in range(self.batch_num_u):
@@ -88,7 +85,7 @@ class AdversarialHGCNLayer(object):
                 #     self.gan_merge.forward(u_explicit_attr, gcn_merge_output, iter)
 
         # opposite
-        print('Step 4: Opposite relation learning')
+        logging.info('Step 4: Opposite relation learning')
         for i in range(EPOCHS):
             for iter in range(self.batch_num_v):
                 _, v_adj = self.bipartite_graph_data_loader.get_one_batch_group_v_with_adjacent(iter)
@@ -103,7 +100,6 @@ class AdversarialHGCNLayer(object):
 
 
 """Single layer for decoder layer"""
-
 
 # class DecoderGCNLayer(object):
 #     def __init__(self, featuresU_dimensions, featuresV_dimensions, device, dimensions_output_from_gcn=2):
@@ -120,7 +116,7 @@ class AdversarialHGCNLayer(object):
 #
 #     def relation_learning(self):
 #         # explicit
-#         print('Step 1: Explicit relation learning')
+#         logging.info('Step 1: Explicit relation learning')
 #         last_epoch_explicit_output_from_decoder = []
 #         for i in range(EPOCHS):  # separate the data into batches
 #             for iter in range(Number of batches):
@@ -138,7 +134,7 @@ class AdversarialHGCNLayer(object):
 #                     self.decoder_explicit.forward(u_input, gcn_explicit_output, iter)
 #
 #         # implicit
-#         print('Step 2: Implicit relation learning')
+#         logging.info('Step 2: Implicit relation learning')
 #         last_epoch_implicit_output_from_decoder = []
 #         for i in range(EPOCHS):
 #             for iter in range(Number of batches):
@@ -153,7 +149,7 @@ class AdversarialHGCNLayer(object):
 #                     self.decoder_implicit.forward(v_input, gcn_implicit_output, iter)
 #
 #         # merge
-#         print('Step 3: Merge relation learning')
+#         logging.info('Step 3: Merge relation learning')
 #         # the output is the output from decoder, since we can set different dimensions of the output from GCN
 #         last_epoch_merge_output_from_decoder = []
 #         for i in range(EPOCHS):
@@ -170,7 +166,7 @@ class AdversarialHGCNLayer(object):
 #                     self.decoder_merge.forward(last_epoch_explicit_output_from_decoder[iter], gcn_merge_output, iter)
 #
 #         # opposite
-#         print('Step 4: Opposite relation learning')
+#         logging.info('Step 4: Opposite relation learning')
 #         for i in range(EPOCHS):
 #             for iter in range(Number of batches):
 #                 batch_index = BipartiteGraphDataLoader.get_batch_num()

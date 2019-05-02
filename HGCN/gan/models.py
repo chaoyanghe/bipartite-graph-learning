@@ -1,6 +1,8 @@
 from __future__ import division
 from __future__ import print_function
 
+import logging
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -126,6 +128,6 @@ class GAN(object):
         output = self.netD(fake)
         lossG = self._loss(output, label)
 
-        print('Iterations: {:.04f}'.format(iter),
+        logging.info('Iterations: {:.04f}'.format(iter),
               'Validation dis Loss: {:.04f}'.format(lossD.item()),
               'Validation gen loss: {:.04f}'.format(lossG.item()))

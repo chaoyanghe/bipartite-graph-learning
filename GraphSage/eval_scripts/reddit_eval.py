@@ -1,5 +1,7 @@
 from __future__ import print_function
 import json
+import logging
+
 import numpy as np
 
 from networkx.readwrite import json_graph
@@ -14,12 +16,12 @@ def run_regression(train_embeds, train_labels, test_embeds, test_labels):
     dummy.fit(train_embeds, train_labels)
     log = SGDClassifier(loss="log", n_jobs=55)
     log.fit(train_embeds, train_labels)
-    print("Test scores")
-    print(f1_score(test_labels, log.predict(test_embeds), average="micro"))
-    print("Train scores")
-    print(f1_score(train_labels, log.predict(train_embeds), average="micro"))
-    print("Random baseline")
-    print(f1_score(test_labels, dummy.predict(test_embeds), average="micro"))
+    logging.info("Test scores")
+    logging.info(f1_score(test_labels, log.predict(test_embeds), average="micro"))
+    logging.info("Train scores")
+    logging.info(f1_score(train_labels, log.predict(train_embeds), average="micro"))
+    logging.info("Random baseline")
+    logging.info(f1_score(test_labels, dummy.predict(test_embeds), average="micro"))
 
 if __name__ == '__main__':
     parser = ArgumentParser("Run evaluation on Reddit data.")
@@ -31,7 +33,7 @@ if __name__ == '__main__':
     data_dir = args.embed_dir
     setting = args.setting
 
-    print("Loading data...")
+    logging.info("Loading data...")
     G = json_graph.node_link_graph(json.load(open(dataset_dir + "/reddit-G.json")))
     labels = json.load(open(dataset_dir + "/reddit-class_map.json"))
     
@@ -41,7 +43,7 @@ if __name__ == '__main__':
     test_labels = [labels[i] for i in test_ids]
 
     if data_dir == "feat":
-        print("Using only features..")
+        logging.info("Using only features..")
         feats = np.load(dataset_dir + "/reddit-feats.npy")
         ## Logistic gets thrown off by big counts, so log transform num comments and score
         feats[:,0] = np.log(feats[:,0]+1.0)
@@ -50,7 +52,7 @@ if __name__ == '__main__':
         feat_id_map = {id:val for id,val in feat_id_map.iteritems()}
         train_feats = feats[[feat_id_map[id] for id in train_ids]] 
         test_feats = feats[[feat_id_map[id] for id in test_ids]] 
-        print("Running regression..")
+        logging.info("Running regression..")
         from sklearn.preprocessing import StandardScaler
         scaler = StandardScaler()
         scaler.fit(train_feats)
@@ -59,7 +61,7 @@ if __name__ == '__main__':
         run_regression(train_feats, train_labels, test_feats, test_labels)
 
     elif "n2v" in data_dir:
-        print("Doing it N2V style.")
+        logging.info("Doing it N2V style.")
         base_embeds = np.load(data_dir + "/val.npy")
         base_id_map = {}
         with open(data_dir + "/val.txt") as fp:
@@ -73,7 +75,7 @@ if __name__ == '__main__':
         train_embeds = base_embeds[[base_id_map[id] for id in train_ids]] 
         test_embeds = tuned_embeds[[tuned_id_map[id] for id in test_ids]] 
 
-        print("Running regression..")
+        logging.info("Running regression..")
         run_regression(train_embeds, train_labels, test_embeds, test_labels)
 
         # loading feats
@@ -90,7 +92,7 @@ if __name__ == '__main__':
         train_embeds = scaler.transform(train_embeds)
         test_embeds = scaler.transform(test_embeds)
 
-        print("Running regression with feats..")
+        logging.info("Running regression with feats..")
         run_regression(train_embeds, train_labels, test_embeds, test_labels)
     else:
         embeds = np.load(data_dir + "/val.npy")
@@ -101,5 +103,5 @@ if __name__ == '__main__':
         train_embeds = embeds[[id_map[id] for id in train_ids]] 
         test_embeds = embeds[[id_map[id] for id in test_ids]] 
 
-        print("Running regression..")
+        logging.info("Running regression..")
         run_regression(train_embeds, train_labels, test_embeds, test_labels)

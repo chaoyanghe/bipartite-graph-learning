@@ -1,6 +1,7 @@
 from __future__ import division
 from __future__ import print_function
 
+import logging
 import os
 import time
 
@@ -270,7 +271,7 @@ def train(train_data, test_data=None):
         minibatch.shuffle()
 
         iter = 0
-        print('Epoch: %04d' % (epoch + 1))
+        logging.info('Epoch: %04d' % (epoch + 1))
         epoch_val_costs.append(0)
         while not minibatch.end():
             # Construct feed dictionary
@@ -302,7 +303,7 @@ def train(train_data, test_data=None):
 
             if total_steps % FLAGS.print_every == 0:
                 train_f1_mic, train_f1_mac = calc_f1(labels, outs[-1])
-                print("Iter:", '%04d' % iter,
+                logging.info("Iter:", '%04d' % iter,
                       "train_loss=", "{:.5f}".format(train_cost),
                       "train_f1_mic=", "{:.5f}".format(train_f1_mic),
                       "train_f1_mac=", "{:.5f}".format(train_f1_mac),
@@ -320,10 +321,10 @@ def train(train_data, test_data=None):
         if total_steps > FLAGS.max_total_steps:
             break
 
-    print("Optimization Finished!")
+    logging.info("Optimization Finished!")
     sess.run(val_adj_info.op)
     val_cost, val_f1_mic, val_f1_mac, duration = incremental_evaluate(sess, model, minibatch, FLAGS.batch_size)
-    print("Full validation stats:",
+    logging.info("Full validation stats:",
           "loss=", "{:.5f}".format(val_cost),
           "f1_micro=", "{:.5f}".format(val_f1_mic),
           "f1_macro=", "{:.5f}".format(val_f1_mac),
@@ -332,7 +333,7 @@ def train(train_data, test_data=None):
         fp.write("loss={:.5f} f1_micro={:.5f} f1_macro={:.5f} time={:.5f}".
                  format(val_cost, val_f1_mic, val_f1_mac, duration))
 
-    print("Writing test set stats to file (don't peak!)")
+    logging.info("Writing test set stats to file (don't peak!)")
     val_cost, val_f1_mic, val_f1_mac, duration = incremental_evaluate(sess, model, minibatch, FLAGS.batch_size,
                                                                       test=True)
     with open(log_dir() + "test_stats.txt", "w") as fp:
@@ -341,9 +342,9 @@ def train(train_data, test_data=None):
 
 
 def main(argv=None):
-    print("Loading training data..")
+    logging.info("Loading training data..")
     train_data = load_data(FLAGS.train_prefix)
-    print("Done loading training data..")
+    logging.info("Done loading training data..")
     train(train_data)
 
 

@@ -1,7 +1,7 @@
 # coding=utf-8
 # Example script for the user classification
 # Royrong (royrong@tencent.com) 2018/10/24
-
+import logging
 import os
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 
@@ -41,31 +41,31 @@ def load_node_attr(fname, ind=None):
     data.fillna(0, inplace=True)
     data.drop_duplicates(inplace=True)
     data.drop([2, 3], axis=1, inplace=True)
-    print(
+    logging.info(
         "WARN: Column 2,3 in attr_data is dropped! If you do not want to drop any column, please uncomment line 39 in logistic_regression.py.")
     if ind is not None:
         data = data.reindex(ind, copy=False, fill_value=0)
     # converters = {0: lambda s: u2i_dict[s.decode("utf-8")], 1: decode_helper, 4: decode_helper, 5: decode_helper, 6: decode_helper,
     #              7: decode_helper, 8: decode_helper, 9: decode_helper, 10: decode_helper}
-    print("data.shape")
+    logging.info("data.shape")
     trans = MinMaxScaler().fit(data)
     # data_values = data.values / data.values.max(axis=0)
     return pd.DataFrame(trans.transform(data), index=data.index, columns=data.columns)
 
 
 def construct_data(data, y, attr_data=None):
-    print("Construct:")
+    logging.info("Construct:")
     # sh = data.shape
-    # print(sh)
+    # logging.info(sh)
     if attr_data is not None:
         data = data.merge(attr_data, how="outer", right_index=True, left_index=True)
         data.fillna(0, inplace=True)
     y = y.reindex(data.index, fill_value=0)
-    # print(type(data))
-    # print(data.shape)
+    # logging.info(type(data))
+    # logging.info(data.shape)
     # remove the embeddding to run pure LR on attributes. 32 is the embe dim.
     # data = data.iloc[:,32:]
-    # print(data.shape)
+    # logging.info(data.shape)
     return data, y
 
 
@@ -110,7 +110,7 @@ def run_exp(input_folder, emb_file, args):
     # Load Data
     ## index
     if args.verbose:
-        print("Loading index from %s ..." % os.path.join(input_folder, args.node_file))
+        logging.info("Loading index from %s ..." % os.path.join(input_folder, args.node_file))
     node_id_file = os.path.join(input_folder, args.node_file)
     node_ids = load_index_data(node_id_file)
 
@@ -121,32 +121,32 @@ def run_exp(input_folder, emb_file, args):
         node_attr_file = None
     if node_attr_file is not None:
         if args.verbose:
-            print("Loading attributes from %s ..." % os.path.join(input_folder, 'node_attr'))
+            logging.info("Loading attributes from %s ..." % os.path.join(input_folder, 'node_attr'))
         attr_data = load_node_attr(node_attr_file, node_ids)
     else:
         if args.verbose:
-            print("Cannot find %s. Skip loading attributes." % os.path.join(input_folder, 'node_attr'))
+            logging.info("Cannot find %s. Skip loading attributes." % os.path.join(input_folder, 'node_attr'))
         attr_data = None
 
     ## emb
     if args.verbose:
-        print("Loading emb from %s ..." % emb_file)
+        logging.info("Loading emb from %s ..." % emb_file)
     data = load_emb_data(emb_file, node_ids)
 
     ## labels
     if args.verbose:
-        print("Loading labels from %s ..." % os.path.join(input_folder, 'node_true'))
+        logging.info("Loading labels from %s ..." % os.path.join(input_folder, 'node_true'))
     node_label_file = os.path.join(input_folder, 'node_true')
     node_labels = load_label_data(node_label_file, node_ids)
 
     ## Construct data
     if args.verbose:
-        print("Constructing data ...")
+        logging.info("Constructing data ...")
     user_x, user_y = construct_data(data, node_labels, attr_data)
     del data, node_labels, attr_data
     if args.verbose:
-        print("user: %d" % (user_y.shape[0]))
-        print(user_x.shape)
+        logging.info("user: %d" % (user_y.shape[0]))
+        logging.info(user_x.shape)
 
     # Self split
     test_ratio = [0.9]
@@ -162,24 +162,24 @@ def run_exp(input_folder, emb_file, args):
         test_rec[test_size] = []
         # Resplitting
         if args.verbose:
-            print("Splitting data ...")
+            logging.info("Splitting data ...")
         train_x, test_x, train_y, test_y = train_test_split(user_x, user_y, test_size=test_size, random_state=42)
         del user_x, user_y
         test_y = test_y.values
         # Training
         if args.verbose:
-            print("Start training ...")
+            logging.info("Start training ...")
         clf = SGDClassifier(loss='log', alpha=args.alpha, max_iter=args.max_iter, shuffle=True, n_jobs=48,
                             class_weight='balanced', verbose=args.verbose, tol=None)
         clf.fit(train_x, train_y)
         # Testing 
         if args.verbose:
-            print("Start testing ...")
+            logging.info("Start testing ...")
 
         test_predict_prob = clf.predict_proba(test_x)[:, 1]
         s_idx = np.argsort(-test_predict_prob)
         if args.verbose:
-            print(s_idx)
+            logging.info(s_idx)
         rank_test = test_y[s_idx]
         judge_n = np.sum(test_predict_prob > 0.5)
         pos_n = np.sum(test_y == 1)
@@ -187,19 +187,19 @@ def run_exp(input_folder, emb_file, args):
         # Area Under Curve of ROC (Receiver operating characteristic):
         # https://en.wikipedia.org/wiki/Receiver_operating_characteristic
         auc_s = auc(test_y, test_predict_prob)
-        print("auc: %.6f" % (auc_s))
+        logging.info("auc: %.6f" % (auc_s))
 
         N_list = [1000, 10000, pos_n, judge_n]
         if args.verbose:
-            print("Test Size: %f" % (test_size))
+            logging.info("Test Size: %f" % (test_size))
         for n in N_list:
             res_test = ap(rank_test, n)
             (prec, rec) = prec_rec(rank_test, n)
             if n == 10000:
-                print("object_value=%.5f" % prec)
+                logging.info("object_value=%.5f" % prec)
             if n > len(rank_test):
                 n = "all"
-            print("Test AP@%s:\t%.5f\tPrec: %.5f\tRec: %.5f" % (str(n), res_test, prec, rec))
+            logging.info("Test AP@%s:\t%.5f\tPrec: %.5f\tRec: %.5f" % (str(n), res_test, prec, rec))
             test_aps[test_size].append(res_test)
             test_prec[test_size].append(prec)
             test_rec[test_size].append(rec)

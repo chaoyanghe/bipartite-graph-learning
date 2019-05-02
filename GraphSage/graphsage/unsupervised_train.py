@@ -1,6 +1,7 @@
 from __future__ import division
 from __future__ import print_function
 
+import logging
 import os
 import time
 import tensorflow as tf
@@ -261,7 +262,7 @@ def train(train_data, test_data=None):
         minibatch.shuffle() 
 
         iter = 0
-        print('Epoch: %04d' % (epoch + 1))
+        logging.info('Epoch: %04d' % (epoch + 1))
         epoch_val_costs.append(0)
         while not minibatch.end():
             # Construct feed dictionary
@@ -297,7 +298,7 @@ def train(train_data, test_data=None):
             avg_time = (avg_time * total_steps + time.time() - t) / (total_steps + 1)
 
             if total_steps % FLAGS.print_every == 0:
-                print("Iter:", '%04d' % iter, 
+                logging.info("Iter:", '%04d' % iter,
                       "train_loss=", "{:.5f}".format(train_cost),
                       "train_mrr=", "{:.5f}".format(train_mrr), 
                       "train_mrr_ema=", "{:.5f}".format(train_shadow_mrr), # exponential moving average
@@ -315,7 +316,7 @@ def train(train_data, test_data=None):
         if total_steps > FLAGS.max_total_steps:
                 break
     
-    print("Optimization Finished!")
+    logging.info("Optimization Finished!")
     if FLAGS.save_embeddings:
         sess.run(val_adj_info.op)
 
@@ -351,7 +352,7 @@ def train(train_data, test_data=None):
                 fixed_n2v=True)
             
             start_time = time.time()
-            print("Doing test training for n2v.")
+            logging.info("Doing test training for n2v.")
             test_steps = 0
             for epoch in range(FLAGS.n2v_test_epochs):
                 test_minibatch.shuffle()
@@ -361,22 +362,22 @@ def train(train_data, test_data=None):
                     outs = sess.run([model.opt_op, model.loss, model.ranks, model.aff_all, 
                         model.mrr, model.outputs1], feed_dict=feed_dict)
                     if test_steps % FLAGS.print_every == 0:
-                        print("Iter:", '%04d' % test_steps, 
+                        logging.info("Iter:", '%04d' % test_steps,
                               "train_loss=", "{:.5f}".format(outs[1]),
                               "train_mrr=", "{:.5f}".format(outs[-2]))
                     test_steps += 1
             train_time = time.time() - start_time
             save_val_embeddings(sess, model, minibatch, FLAGS.validate_batch_size, log_dir(), mod="-test")
-            print("Total time: ", train_time+walk_time)
-            print("Walk time: ", walk_time)
-            print("Train time: ", train_time)
+            logging.info("Total time: ", train_time+walk_time)
+            logging.info("Walk time: ", walk_time)
+            logging.info("Train time: ", train_time)
 
     
 
 def main(argv=None):
-    print("Loading training data..")
+    logging.info("Loading training data..")
     train_data = load_data(FLAGS.train_prefix, load_walks=True)
-    print("Done loading training data..")
+    logging.info("Done loading training data..")
     train(train_data)
 
 if __name__ == '__main__':

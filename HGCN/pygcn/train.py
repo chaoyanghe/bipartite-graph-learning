@@ -1,6 +1,7 @@
 from __future__ import division
 from __future__ import print_function
 
+import logging
 import time
 import argparse
 import numpy as np
@@ -77,7 +78,7 @@ def train(epoch):
 
     loss_val = F.nll_loss(output[idx_val], labels[idx_val])
     acc_val = accuracy(output[idx_val], labels[idx_val])
-    print('Epoch: {:04d}'.format(epoch+1),
+    logging.info('Epoch: {:04d}'.format(epoch+1),
           'loss_train: {:.4f}'.format(loss_train.item()),
           'acc_train: {:.4f}'.format(acc_train.item()),
           'loss_val: {:.4f}'.format(loss_val.item()),
@@ -90,7 +91,7 @@ def test():
     output = model(features, adj)
     loss_test = F.nll_loss(output[idx_test], labels[idx_test])
     acc_test = accuracy(output[idx_test], labels[idx_test])
-    print("Test set results:",
+    logging.info("Test set results:",
           "loss= {:.4f}".format(loss_test.item()),
           "accuracy= {:.4f}".format(acc_test.item()))
 
@@ -99,8 +100,8 @@ def test():
 t_total = time.time()
 for epoch in range(args.epochs):
     train(epoch)
-print("Optimization Finished!")
-print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
+logging.info("Optimization Finished!")
+logging.info("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
 # Testing
 test()

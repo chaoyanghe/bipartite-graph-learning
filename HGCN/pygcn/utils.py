@@ -1,3 +1,5 @@
+import logging
+
 import numpy as np
 import scipy.sparse as sp
 import torch
@@ -14,7 +16,7 @@ def encode_onehot(labels):
 
 def load_data(path="../data/cora/", dataset="cora"):
     """Load citation network dataset (cora only for now)"""
-    print('Loading {} dataset...'.format(dataset))
+    logging.info('Loading {} dataset...'.format(dataset))
 
     idx_features_labels = np.genfromtxt("{}{}.content".format(path, dataset),
                                         dtype=np.dtype(str))

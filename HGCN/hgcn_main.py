@@ -1,9 +1,9 @@
 import argparse
+import logging
 
 import torch
 
 from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
-from log.hgcn_log_utils import HGCNLog
 from train import HeterogeneousGCN
 from utils import (MODEL, EPOCHS, LEARNING_RATE, WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS)
 
@@ -34,6 +34,11 @@ def main():
     # hidden_dimensions = args.hidden
     # dropout = args.dropout
 
+    logging.basicConfig(filename="./HGCN.log",
+                        level=logging.DEBUG,
+                        format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                        datefmt='%a, %d %b %Y %H:%M:%S')
+
     NODE_LIST_PATH = "./../data/Tencent-QQ/node_list"
     NODE_ATTR_PATH = "./../data/Tencent-QQ/node_attr"
     NODE_LABEL_PATH = "./../data/Tencent-QQ/node_true"
@@ -50,10 +55,8 @@ def main():
 
     hgcn = HeterogeneousGCN(bipartite_graph_data_loader, device)
     if args.model == 'gan_gcn':
-        HGCNLog.init('gan_gcn')
         hgcn.adversarial_train()
     else:
-        HGCNLog.init('decoder')
         hgcn.decoder_train()
 
 

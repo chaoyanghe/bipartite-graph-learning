@@ -1,5 +1,7 @@
 from __future__ import print_function
 import json
+import logging
+
 import numpy as np
 
 from networkx.readwrite import json_graph
@@ -25,9 +27,9 @@ def run_regression(train_embeds, train_labels, test_embeds, test_labels):
 
     f1 = 0
     for i in range(test_labels.shape[1]):
-        print("F1 score", f1_score(test_labels[:,i], log.predict(test_embeds)[:,i], average="micro"))
+        logging.info("F1 score", f1_score(test_labels[:,i], log.predict(test_embeds)[:,i], average="micro"))
     for i in range(test_labels.shape[1]):
-        print("Random baseline F1 score", f1_score(test_labels[:,i], dummy.predict(test_embeds)[:,i], average="micro"))
+        logging.info("Random baseline F1 score", f1_score(test_labels[:,i], dummy.predict(test_embeds)[:,i], average="micro"))
 
 if __name__ == '__main__':
     parser = ArgumentParser("Run evaluation on PPI data.")
@@ -39,7 +41,7 @@ if __name__ == '__main__':
     data_dir = args.embed_dir
     setting = args.setting
 
-    print("Loading data...")
+    logging.info("Loading data...")
     G = json_graph.node_link_graph(json.load(open(dataset_dir + "/ppi-G.json")))
     labels = json.load(open(dataset_dir + "/ppi-class_map.json"))
     labels = {int(i):l for i, l in labels.iteritems()}
@@ -50,10 +52,10 @@ if __name__ == '__main__':
     if train_labels.ndim == 1:
         train_labels = np.expand_dims(train_labels, 1)
     test_labels = np.array([labels[i] for i in test_ids])
-    print("running", data_dir)
+    logging.info("running", data_dir)
 
     if data_dir == "feat":
-        print("Using only features..")
+        logging.info("Using only features..")
         feats = np.load(dataset_dir + "/ppi-feats.npy")
         ## Logistic gets thrown off by big counts, so log transform num comments and score
         feats[:,0] = np.log(feats[:,0]+1.0)
@@ -62,7 +64,7 @@ if __name__ == '__main__':
         feat_id_map = {int(id):val for id,val in feat_id_map.iteritems()}
         train_feats = feats[[feat_id_map[id] for id in train_ids]] 
         test_feats = feats[[feat_id_map[id] for id in test_ids]] 
-        print("Running regression..")
+        logging.info("Running regression..")
         from sklearn.preprocessing import StandardScaler
         scaler = StandardScaler()
         scaler.fit(train_feats)
@@ -78,5 +80,5 @@ if __name__ == '__main__':
         train_embeds = embeds[[id_map[id] for id in train_ids]] 
         test_embeds = embeds[[id_map[id] for id in test_ids]] 
 
-        print("Running regression..")
+        logging.info("Running regression..")
         run_regression(train_embeds, train_labels, test_embeds, test_labels)

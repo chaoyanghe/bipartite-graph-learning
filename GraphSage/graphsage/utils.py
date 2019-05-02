@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import json
+import logging
 import os
 import random
 import sys
@@ -29,7 +30,7 @@ def load_data(prefix, normalize=True, load_walks=False):
     if os.path.exists(prefix + "-feats.npy"):
         feats = np.load(prefix + "-feats.npy")
     else:
-        print("No features present.. Only identity features will be used.")
+        logging.info("No features present.. Only identity features will be used.")
         feats = None
     id_map = json.load(open(prefix + "-id_map.json"))
     id_map = {conversion(k): int(v) for k, v in id_map.items()}
@@ -49,11 +50,11 @@ def load_data(prefix, normalize=True, load_walks=False):
         if not 'val' in G.node[node] or not 'test' in G.node[node]:
             G.remove_node(node)
             broken_count += 1
-    print("Removed {:d} nodes that lacked proper annotations due to networkx versioning issues".format(broken_count))
+    logging.info("Removed {:d} nodes that lacked proper annotations due to networkx versioning issues".format(broken_count))
 
     ## Make sure the graph has edge train_removed annotations
     ## (some datasets might already have this..)
-    print("Loaded data.. now preprocessing..")
+    logging.info("Loaded data.. now preprocessing..")
     for edge in G.edges():
         if (G.node[edge[0]]['val'] or G.node[edge[1]]['val'] or
                 G.node[edge[0]]['test'] or G.node[edge[1]]['test']):
@@ -91,7 +92,7 @@ def run_random_walks(G, nodes, num_walks=N_WALKS):
                     pairs.append((node, curr_node))
                 curr_node = next_node
         if count % 1000 == 0:
-            print("Done walks for", count, "nodes")
+            logging.info("Done walks for", count, "nodes")
     return pairs
 
 

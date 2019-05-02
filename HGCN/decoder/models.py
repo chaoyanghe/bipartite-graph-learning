@@ -53,7 +53,7 @@ class HGCNDecoder(object):
         loss.backward()
         self.optimizer.step()
 
-        print('Step: {:01d}'.format(step),
+        logging.info('Step: {:01d}'.format(step),
               'Epoch: {:04d}'.format(epoch),
               'Iterations: {:04d}'.format(iter),
               'Loss: {:.4f}'.format(loss.item())
@@ -65,5 +65,5 @@ class HGCNDecoder(object):
         self.decoder_output = output
         loss = self._loss(output, target)
 
-        print('Iterations: {:.04d}'.format(iter),
+        logging.info('Iterations: {:.04d}'.format(iter),
               'Validation Loss: {:.4f}'.format(loss.item()))

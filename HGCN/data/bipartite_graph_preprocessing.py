@@ -64,23 +64,23 @@ for l in nodein:
 
 # Load feature. len(node_attr) > len(node_list)
 data, feature = load_node_attr(NODE_ATTR_PATH, NODE_LIST_PATH, node_list)
-print("data = %s" % data[0])
-print("features = %s" % feature[0])
-print(data.shape)
-print(feature.shape)
+logging.info("data = %s" % data[0])
+logging.info("features = %s" % feature[0])
+logging.info(data.shape)
+logging.info(feature.shape)
 
 # Load adj
 G = nx.read_weighted_edgelist(edgef)
-print(len(G))
+logging.info(len(G))
 adj = nx.adjacency_matrix(G)
-print(adj.shape)
+logging.info(adj.shape)
 
 adj = adj * adj.T
 node_list = np.asarray(node_list)
 adj = adj[node_list, :]
 adj = adj[:, node_list]
 
-print(adj.shape)
+logging.info(adj.shape)
 
 adj[adj > 0] = 1
 
@@ -111,10 +111,10 @@ perm = np.random.permutation(nnz)
 train_idx = perm[0:int(0.8 * nnz)]
 val_idx = perm[int(0.8 * nnz):int(0.9 * nnz)]
 test_idx = perm[int(0.9 * nnz):]
-print(train_idx)
-print(val_idx)
-print(test_idx)
-print("%d: %d: %d" % (len(train_idx), len(val_idx), len(test_idx)))
+logging.info(train_idx)
+logging.info(val_idx)
+logging.info(test_idx)
+logging.info("%d: %d: %d" % (len(train_idx), len(val_idx), len(test_idx)))
 np.savez_compressed("anping.npz", feature=feature, label=labels, train_idx=train_idx, val_idx=val_idx,
                     test_idx=test_idx, node_list=node_list)
 sp.save_npz("anping_adj.npz", adj)
@@ -132,7 +132,7 @@ featuresV = np.random.rand(10).reshape(2, 5)
 G_test = nx.read_weighted_edgelist(edgef_test)
 
 adj = nx.adjacency_matrix(G_test)
-# print(adj[[0,1], :])
+# logging.info(adj[[0,1], :])
 
-print(adj[:, [0, 1]])
-print(adj.shape)
+logging.info(adj[:, [0, 1]])
+logging.info(adj.shape)

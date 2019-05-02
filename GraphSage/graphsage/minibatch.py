@@ -1,6 +1,8 @@
 from __future__ import division
 from __future__ import print_function
 
+import logging
+
 import numpy as np
 
 np.random.seed(123)
@@ -49,8 +51,8 @@ class EdgeMinibatchIterator(object):
             else:
                 self.train_edges = self.val_edges = self.edges
 
-        print(len([n for n in G.nodes() if not G.node[n]['test'] and not G.node[n]['val']]), 'train nodes')
-        print(len([n for n in G.nodes() if G.node[n]['test'] or G.node[n]['val']]), 'test nodes')
+        logging.info(len([n for n in G.nodes() if not G.node[n]['test'] and not G.node[n]['val']]), 'train nodes')
+        logging.info(len([n for n in G.nodes() if G.node[n]['test'] or G.node[n]['val']]), 'test nodes')
         self.val_set_size = len(self.val_edges)
 
     def _n2v_prune(self, edges):
@@ -70,7 +72,7 @@ class EdgeMinibatchIterator(object):
                 continue
             else:
                 new_edge_list.append((n1,n2))
-        print("Unexpected missing:", missing)
+        logging.info("Unexpected missing:", missing)
         return new_edge_list
 
     def construct_adj(self):

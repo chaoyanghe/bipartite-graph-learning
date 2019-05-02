@@ -12,10 +12,6 @@ class BipartiteGraphDataLoader:
                  edge_list_file_path,
                  group_v_list_file_path, group_v_attr_file_path, group_v_label_file_path=None, device='cpu'):
 
-        logging.basicConfig(filename='bipartite_graph_data_loading.log', filemode='w',
-                            format='%(asctime)s  %(filename)s : %(lineno)d : %(levelname)s  %(message)s',
-                            datefmt='%Y-%m-%d %A %H:%M:%S',
-                            level=logging.INFO)
 
         logging.info("BipartiteGraphDataLoader __init__().")
 
@@ -73,7 +69,7 @@ class BipartiteGraphDataLoader:
         featuresU = np.random.rand(14).reshape(7, 2)
         featuresV = np.random.rand(8).reshape(2, 4)
         self.gernerate_mini_batch(featuresU, featuresV, np.array(adjU), np.array(adjV))
-        print("")
+        logging.info("")
 
     def load(self):
         logging.info("##### generate_adjacent_matrix_feature_and_labels. START")
@@ -244,7 +240,7 @@ class BipartiteGraphDataLoader:
                 count_17 += 1
             if dimension > 17 or dimension < 10:
                 count_more_than_17 += 1
-            # print(attribute_item)
+            # logging.info(attribute_item)
             v_attr.append(attribute_item)
         logging.info("count_no_attribute = %d" % count_no_attribute)
         logging.info("count_10 = %d" % count_10)
@@ -348,7 +344,7 @@ class BipartiteGraphDataLoader:
                 u_adj_ner_count_dict[neigher_num] = 0
             u_adj_ner_count_dict[neigher_num] += 1
 
-        print(len(u_adj_ner_count_dict))
+        logging.info(len(u_adj_ner_count_dict))
         plot_x = []
         plot_y = []
         for neigher_num in sorted(u_adj_ner_count_dict.keys()):
@@ -377,18 +373,18 @@ class BipartiteGraphDataLoader:
 
     def gernerate_mini_batch(self, u_attr_array, v_attr_array, u_adjacent_matrix, v_adjacent_matrix):
         u_num = u_attr_array.shape[0]
-        print("u number: " + str(u_num))
-        print("u_adjacent_matrix: " + str(u_adjacent_matrix.shape))
+        logging.info("u number: " + str(u_num))
+        logging.info("u_adjacent_matrix: " + str(u_adjacent_matrix.shape))
 
         v_num = v_attr_array.shape[0]
-        print("v number: " + str(v_num))
-        print("v_adjacent_matrix: " + str(v_adjacent_matrix.shape))
+        logging.info("v number: " + str(v_num))
+        logging.info("v_adjacent_matrix: " + str(v_adjacent_matrix.shape))
 
         self.batch_num_u = int(u_num / self.batch_size) + 1
-        print("batch_num_u = %d" % self.batch_num_u)
+        logging.info("batch_num_u = %d" % self.batch_num_u)
 
         self.batch_num_v = int(v_num / self.batch_size) + 1
-        print("batch_num_v = %d" % self.batch_num_v)
+        logging.info("batch_num_v = %d" % self.batch_num_v)
 
         for batch_index in range(self.batch_num_u):
             start_index = self.batch_size * batch_index
@@ -400,7 +396,7 @@ class BipartiteGraphDataLoader:
                     start_index = 0
             tup = (u_attr_array[start_index:end_index], u_adjacent_matrix[start_index:end_index])
             self.batches_u.append(tup)
-        # print(self.batches_u)
+        # logging.info(self.batches_u)
 
         for batch_index in range(self.batch_num_v):
             start_index = self.batch_size * batch_index
@@ -410,10 +406,10 @@ class BipartiteGraphDataLoader:
                 start_index = end_index - self.batch_size
                 if start_index < 0:
                     start_index = 0
-                print(start_index)
+                logging.info(start_index)
             tup = (v_attr_array[start_index:end_index], v_adjacent_matrix[start_index:end_index])
             self.batches_v.append(tup)
-        # print(self.batches_v)
+        # logging.info(self.batches_v)
 
     def get_u_attr_dimensions(self):
         return self.u_attr_array.shape[1]
@@ -462,6 +458,11 @@ class BipartiteGraphDataLoader:
 
 
 if __name__ == "__main__":
+    logging.basicConfig(filename='bipartite_graph_data_loading.log', filemode='w',
+                        format='%(asctime)s  %(filename)s : %(lineno)d : %(levelname)s  %(message)s',
+                        datefmt='%Y-%m-%d %A %H:%M:%S',
+                        level=logging.INFO)
+
     NODE_LIST_PATH = "./Tencent-QQ/node_list"
     NODE_ATTR_PATH = "./Tencent-QQ/node_attr"
     NODE_LABEL_PATH = "./Tencent-QQ/node_true"
@@ -479,6 +480,6 @@ if __name__ == "__main__":
 
     u_attr_batch, u_adaj_batch = bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(1)
     count_list = np.sum(u_adaj_batch, axis=1)
-    print(u_adaj_batch[0])
-    print(count_list)
+    logging.info(u_adaj_batch[0])
+    logging.info(count_list)
 

@@ -3,6 +3,7 @@
 # The example of embedding generation  and classification demostration.
 # Royrong(royrong@tencent.com) 2018/10/24
 # The parameters are defined in conf.py
+import logging
 import os
 import sys
 
@@ -33,11 +34,11 @@ if __name__=="__main__":
     res_file = "./%s.res"%(method)
     walk_file = os.path.join(output_folder, "%s.walks"%(method))
     start = time.time()
-    print("Start Graph Embedding")
+    logging.info("Start Graph Embedding")
     # Graph random sampling. 
     if not os.path.exists(walk_file):
         binary = "./bin/rd_w"
-        print("%s not found. Perform Random Walk."%(walk_file))
+        logging.info("%s not found. Perform Random Walk."%(walk_file))
         #if nodelist_file is None:
         #    walk_cmd = "%s -input %s -output %s -samplelength %d -repeat %d -p %f -q 1.0 -max_node_idx 1000000000 -num_threads 38"%(binary, input_file, walk_file,l,r,p)
         #else:
@@ -50,8 +51,8 @@ if __name__=="__main__":
                                                                                           r,
                                                                                           p,
                                                                                           is_weighted)
-        #print(walk_file)
-        print(walk_cmd)
+        #logging.info(walk_file)
+        logging.info(walk_cmd)
         os.system(walk_cmd)
     emb_file = os.path.join(output_folder, "./%s.emb"%(method)) 
     
@@ -74,13 +75,13 @@ if __name__=="__main__":
 
          #"numactl --interleave=all"
         emb_cmd = "%s -train %s -output %s -size %s -window %d -negative %d -sample %f -vocab-max-size %d -threads %d -iter %d -min-count %d -save-vocab %s -batch-size %d -debug 4 -alpha %s"%(binary, data, output_file, emb_size, window, negative, sample, vocabmaxsize, ncores, niters, mincount, savevocab, batchsize, alpha)
-        print(emb_cmd)
+        logging.info(emb_cmd)
         os.system(emb_cmd)
     elif not os.path.exists(walk_file):
-        print("no walk file")
+        logging.info("no walk file")
     
     end = time.time()
-    print("Finish Embedding. Embedding Time: %d, Embedding File Path: %s"%(end - start, emb_file))
+    logging.info("Finish Embedding. Embedding Time: %d, Embedding File Path: %s"%(end - start, emb_file))
 
 
 
