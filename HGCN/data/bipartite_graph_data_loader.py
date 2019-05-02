@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 import torch
+from memory_profiler import profile
 from networkx.algorithms.bipartite import biadjacency_matrix
 
 
@@ -422,6 +423,7 @@ class BipartiteGraphDataLoader:
     def get_batch_num_v(self):
         return self.batch_num_v
 
+    @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def get_one_batch_group_u_with_adjacent(self, batch_index):
         """
         :param batch_index: batch index, iterate from batch_num_u
@@ -434,6 +436,7 @@ class BipartiteGraphDataLoader:
         u_adaj_batch = torch.FloatTensor(u_adaj_batch).to(self.device)
         return u_attr_batch, u_adaj_batch
 
+    @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def get_one_batch_group_v_with_adjacent(self, batch_index):
         """
         :param batch_index: batch index, iterate from batch_num_v
@@ -474,10 +477,10 @@ if __name__ == "__main__":
                                                            EDGE_LIST_PATH,
                                                            GROUP_LIST_PATH, GROUP_ATTR_PATH)
     bipartite_graph_data_loader.test()
-    #bipartite_graph_data_loader.load()
+    # bipartite_graph_data_loader.load()
     # bipartite_graph_data_loader.plot_neighborhood_number_distribution()
 
-    #u_attr_batch, u_adaj_batch = bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(1)
-    #count_list = np.sum(u_adaj_batch, axis=1)
-    #logging.info(u_adaj_batch[0])
-    #logging.info(count_list)
+    # u_attr_batch, u_adaj_batch = bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(1)
+    # count_list = np.sum(u_adaj_batch, axis=1)
+    # logging.info(u_adaj_batch[0])
+    # logging.info(count_list)

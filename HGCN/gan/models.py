@@ -19,7 +19,7 @@ class Discriminator(nn.Module):
         hidfeat = 2  # define the hidden layer dimension
         self.main = nn.Sequential(
             nn.Linear(infeat, hidfeat),  # default initialization
-            nn.ReLU(),
+            nn.ReLU(inplace=True),
             nn.Linear(hidfeat, outfeat),
             nn.Sigmoid()
         )

@@ -4,6 +4,7 @@ from __future__ import print_function
 import logging
 
 import torch
+from memory_profiler import profile
 
 from data.utils import load_data
 from gan.models import GAN
@@ -33,6 +34,7 @@ class AdversarialHGCNLayer(object):
         self.device = device
         self.batch_size = bipartite_graph_data_loader.batch_size
 
+    @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def relation_learning(self):
         # explicit
         logging.info('Step 1: Explicit relation learning')
