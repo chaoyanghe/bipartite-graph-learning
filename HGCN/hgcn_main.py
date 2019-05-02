@@ -3,6 +3,7 @@ import argparse
 import numpy as np
 import torch
 
+from log.hgcn_log_utils import HGCNLog
 from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
 from data.utils import load_data
 from train import HeterogeneousGCN
@@ -43,16 +44,19 @@ def main():
 
     GROUP_LIST_PATH = "./../data/Tencent-QQ/group_list"
     GROUP_ATTR_PATH = "./../data/Tencent-QQ/group_attr"
+    device = torch.device("cuda:0" if torch.cuda.is_available() and args.gpu else "cpu")
     bipartite_graph_data_loader = BipartiteGraphDataLoader(100, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
                                                            EDGE_LIST_PATH,
-                                                           GROUP_LIST_PATH, GROUP_ATTR_PATH)
+                                                           GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
     bipartite_graph_data_loader.load()
 
-    device = torch.device("cuda:0" if torch.cuda.is_available() and args.gpu else "cpu")
+
     hgcn = HeterogeneousGCN(bipartite_graph_data_loader, device)
     if args.model == 'gan_gcn':
+        HGCNLog.init('gan_gcn')
         hgcn.adversarial_train()
     else:
+        HGCNLog.init('decoder')
         hgcn.decoder_train()
 
 

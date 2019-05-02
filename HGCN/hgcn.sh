@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/python3
 
-# python hgcn_main.py --model gan_gcn
-python ./hgcn_main.py --model decoder_gcn --gpu False
+python3 hgcn_main.py --model gan_gcn --gpu False
+# python ./hgcn_main.py --model decoder_gcn --gpu False

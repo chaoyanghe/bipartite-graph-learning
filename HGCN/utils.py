@@ -1,9 +1,9 @@
 MODEL = ['gan_gcn', 'decoder_gcn']
-EPOCHS = 10
+EPOCHS = 1
 LEARNING_RATE = 0.001
 WEIGHT_DECAY = 0.1
 DROPOUT = 0.5
-HIDDEN_DIMENSIONS = 2  # hidden layer in Decoder
+HIDDEN_DIMENSIONS = 10  # hidden layer in Decoder
 VALIDATE_ITER = 5  # validate the model every # iterations
 
 

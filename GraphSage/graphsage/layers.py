@@ -36,7 +36,7 @@ class Layer(object):
         _call(inputs): Defines computation graph of layer
             (i.e. takes input, returns output)
         __call__(inputs): Wrapper for _call()
-        _log_vars(): Log all variables
+        _log_vars(): log all variables
     """
 
     def __init__(self, **kwargs):

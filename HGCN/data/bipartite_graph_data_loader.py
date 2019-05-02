@@ -3,13 +3,14 @@ import logging
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
+import torch
 from networkx.algorithms.bipartite import biadjacency_matrix
 
 
 class BipartiteGraphDataLoader:
     def __init__(self, batch_size, group_u_list_file_path, group_u_attr_file_path, group_u_label_file_path,
                  edge_list_file_path,
-                 group_v_list_file_path, group_v_attr_file_path, group_v_label_file_path=None):
+                 group_v_list_file_path, group_v_attr_file_path, group_v_label_file_path=None, device='cpu'):
 
         logging.basicConfig(filename='bipartite_graph_data_loading.log', filemode='w',
                             format='%(asctime)s  %(filename)s : %(lineno)d : %(levelname)s  %(message)s',
@@ -17,6 +18,8 @@ class BipartiteGraphDataLoader:
                             level=logging.INFO)
 
         logging.info("BipartiteGraphDataLoader __init__().")
+
+        self.device = device
 
         self.batch_size = batch_size
         self.batch_num_u = 0
@@ -412,6 +415,12 @@ class BipartiteGraphDataLoader:
             self.batches_v.append(tup)
         # print(self.batches_v)
 
+    def get_u_attr_dimensions(self):
+        return self.u_attr_array.shape[1]
+
+    def get_v_attr_dimensions(self):
+        return self.v_attr_array.shape[1]
+
     def get_batch_num_u(self):
         return self.batch_num_u
 
@@ -419,22 +428,37 @@ class BipartiteGraphDataLoader:
         return self.batch_num_v
 
     def get_one_batch_group_u_with_adjacent(self, batch_index):
+        """
+        :param batch_index: batch index, iterate from batch_num_u
+        :return: Tensor
+        """
         if batch_index >= self.batch_num_u:
             raise Exception("batch_index is larger than the batch number")
         (u_attr_batch, u_adaj_batch) = self.batches_u[batch_index]
+        u_attr_batch = torch.FloatTensor(u_attr_batch).to(self.device)
+        u_adaj_batch = torch.FloatTensor(u_adaj_batch).to(self.device)
         return u_attr_batch, u_adaj_batch
 
     def get_one_batch_group_v_with_adjacent(self, batch_index):
+        """
+        :param batch_index: batch index, iterate from batch_num_v
+        :return: Tensor
+        """
         if batch_index >= self.batch_num_v:
             raise Exception("batch_index is larger than the batch number")
         (v_attr_batch, v_adaj_batch) = self.batches_v[batch_index]
+        v_attr_batch = torch.FloatTensor(v_attr_batch).to(self.device)
+        v_adaj_batch = torch.FloatTensor(v_adaj_batch).to(self.device)
         return v_attr_batch, v_adaj_batch
 
     def get_u_attr_array(self):
-        return self.u_attr_array
+        return torch.FloatTensor(self.u_attr_array).to(self.device)
 
     def get_v_attr_array(self):
-        return self.v_attr_array
+        """
+        :return: Tensor
+        """
+        return torch.FloatTensor(self.v_attr_array).to(self.device)
 
 
 if __name__ == "__main__":
