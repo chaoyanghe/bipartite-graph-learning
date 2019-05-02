@@ -390,25 +390,25 @@ class BipartiteGraphDataLoader:
             end_index = self.batch_size * (batch_index + 1)
             if batch_index == self.batch_num_u - 1:
                 end_index = u_num
-                start_index = end_index - self.batch_size
-                if start_index < 0:
-                    start_index = 0
+                # start_index = end_index - self.batch_size
+                # if start_index < 0:
+                #     start_index = 0
             tup = (u_attr_array[start_index:end_index], u_adjacent_matrix[start_index:end_index])
             self.batches_u.append(tup)
-        # logging.info(self.batches_u)
+        print(self.batches_u)
 
         for batch_index in range(self.batch_num_v):
             start_index = self.batch_size * batch_index
             end_index = self.batch_size * (batch_index + 1)
             if batch_index == self.batch_num_v - 1:
                 end_index = v_num
-                start_index = end_index - self.batch_size
-                if start_index < 0:
-                    start_index = 0
-                logging.info(start_index)
+                # start_index = end_index - self.batch_size
+                # if start_index < 0:
+                #     start_index = 0
+                # logging.info(start_index)
             tup = (v_attr_array[start_index:end_index], v_adjacent_matrix[start_index:end_index])
             self.batches_v.append(tup)
-        # logging.info(self.batches_v)
+        print(self.batches_v)
 
     def get_u_attr_dimensions(self):
         return self.u_attr_array.shape[1]
@@ -470,14 +470,14 @@ if __name__ == "__main__":
 
     GROUP_LIST_PATH = "./Tencent-QQ/group_list"
     GROUP_ATTR_PATH = "./Tencent-QQ/group_attr"
-    bipartite_graph_data_loader = BipartiteGraphDataLoader(100, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
+    bipartite_graph_data_loader = BipartiteGraphDataLoader(3, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
                                                            EDGE_LIST_PATH,
                                                            GROUP_LIST_PATH, GROUP_ATTR_PATH)
-    # bipartite_graph_data_loader.test()
-    bipartite_graph_data_loader.load()
+    bipartite_graph_data_loader.test()
+    #bipartite_graph_data_loader.load()
     # bipartite_graph_data_loader.plot_neighborhood_number_distribution()
 
-    u_attr_batch, u_adaj_batch = bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(1)
-    count_list = np.sum(u_adaj_batch, axis=1)
-    logging.info(u_adaj_batch[0])
-    logging.info(count_list)
+    #u_attr_batch, u_adaj_batch = bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(1)
+    #count_list = np.sum(u_adaj_batch, axis=1)
+    #logging.info(u_adaj_batch[0])
+    #logging.info(count_list)
