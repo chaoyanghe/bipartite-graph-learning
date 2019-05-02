@@ -1,11 +1,9 @@
 import argparse
 
-import numpy as np
 import torch
 
-from log.hgcn_log_utils import HGCNLog
 from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
-from data.utils import load_data
+from log.hgcn_log_utils import HGCNLog
 from train import HeterogeneousGCN
 from utils import (MODEL, EPOCHS, LEARNING_RATE, WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS)
 
@@ -49,7 +47,6 @@ def main():
                                                            EDGE_LIST_PATH,
                                                            GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
     bipartite_graph_data_loader.load()
-
 
     hgcn = HeterogeneousGCN(bipartite_graph_data_loader, device)
     if args.model == 'gan_gcn':
