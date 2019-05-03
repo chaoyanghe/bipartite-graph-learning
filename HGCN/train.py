@@ -2,7 +2,8 @@ from __future__ import division
 from __future__ import print_function
 
 import logging
-
+from time import sleep
+import numpy as np
 import torch
 
 from data.utils import load_data
@@ -42,14 +43,16 @@ class AdversarialHGCNLayer(object):
         for i in range(EPOCHS):
             for iter in range(self.batch_num_u):
                 # load batch data, potential memory bug
-                u_input, u_adj = self.bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(iter)
-                u_input, u_adj = torch.FloatTensor(u_input).to(self.device), torch.FloatTensor(u_adj).to(self.device)
+                u_input_, u_adj_ = self.bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(iter)
+                u_input, u_adj = torch.FloatTensor(u_input_).to(self.device), torch.FloatTensor(u_adj_).to(self.device)
                 # training
                 gcn_explicit_output = self.gcn_explicit(self.v_attr, u_adj)
+
                 # record the last epoch output from gcn as new hidden representation
                 if i == EPOCHS - 1:
                     u_explicit_attr = torch.cat((u_explicit_attr, gcn_explicit_output.detach()), 0)
                 self.gan_explicit.forward_backward(u_input, gcn_explicit_output, step=1, epoch=i, iter=iter)
+                del u_input, u_adj
                 # validation
                 # if iter % VALIDATE_ITER == 0:
                 #     gcn_explicit_output = self.gcn_explicit(self.v_attr, u_adj)
@@ -67,6 +70,7 @@ class AdversarialHGCNLayer(object):
                 if i == EPOCHS - 1:
                     v_implicit_attr = torch.cat((v_implicit_attr, gcn_implicit_output.detach()), 0)
                 self.gan_implicit.forward_backward(v_input, gcn_implicit_output, step=2, epoch=i, iter=iter)
+                del v_input, v_adj
                 # if iter % VALIDATE_ITER == 0:
                 #     gcn_implicit_output = self.gcn_implicit(self.u_attr, v_adj)
                 #     self.gan_implicit.forward(v_input, gcn_implicit_output, iter)

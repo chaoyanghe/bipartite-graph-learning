@@ -53,6 +53,7 @@ def main():
                                                            GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
     bipartite_graph_data_loader.load()
 
+
     hgcn = HeterogeneousGCN(bipartite_graph_data_loader, device)
     if args.model == 'gan_gcn':
         hgcn.adversarial_train()
