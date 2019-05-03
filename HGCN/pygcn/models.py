@@ -1,7 +1,10 @@
+import logging
+
 import torch.nn as nn
 import torch.nn.functional as F
 
 from pygcn.layers import GraphConvolution
+
 
 # one layer GCN
 class GCN(nn.Module):
@@ -13,7 +16,8 @@ class GCN(nn.Module):
         # self.dropout = dropout
 
     def forward(self, x, adj):
-        x = F.relu(self.gc1(x, adj))
+        logging.info("forward")
+        x = F.relu(self.gc1(x, adj), inplace=True)
         # x = F.dropout(x, self.dropout, training=self.training)
         # x = F.relu(self.gc2(x, adj))
 

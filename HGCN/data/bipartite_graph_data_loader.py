@@ -3,6 +3,7 @@ import logging
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
+import torch
 from networkx.algorithms.bipartite import biadjacency_matrix
 
 
@@ -73,11 +74,11 @@ class BipartiteGraphDataLoader:
         logging.info("##### generate_adjacent_matrix_feature_and_labels. START")
         u_list = self.__load_u_list()
         u_attr_dict, u_attr_array = self.__load_u_attribute(u_list)
-        logging.info("u_attribute = %s: %s" % (u_attr_array.shape, u_attr_array[0::100000]))  # 1089436
+        #        logging.info("u_attribute = %s: %s" % (u_attr_array.shape, u_attr_array[0::100000]))  # 1089436
 
         v_list = self.__load_v_list()
         v_attr_dict, v_attr_array = self.__load_v_attribute(v_list)
-        logging.info("v_attribute = %s: %s" % (v_attr_array.shape, v_attr_array[0::50000]))  # 90047
+        #       logging.info("v_attribute = %s: %s" % (v_attr_array.shape, v_attr_array[0::50000]))  # 90047
 
         # choose the edge whose nodes have attribute
         f_edge_list = open(self.edge_list_file_path, 'r')
@@ -104,8 +105,8 @@ class BipartiteGraphDataLoader:
         # delete the nodes which have attribute but are not in the edge list (isolated)
         self.u_attr_dict, self.u_attr_array = self.__filter_illegal_nodes(u_attr_dict, self.u_node_list)
         self.v_attr_dict, self.v_attr_array = self.__filter_illegal_nodes(v_attr_dict, self.v_node_list)
-        logging.info("u feature shape = %s" % str(self.u_attr_array.shape))
-        logging.info("v feature shape = %s" % str(self.v_attr_array.shape))
+        # logging.info("u feature shape = %s" % str(self.u_attr_array.shape))
+        # logging.info("v feature shape = %s" % str(self.v_attr_array.shape))
 
         self.u_adjacent_matrix, self.v_adjacent_matrix = self.__generate_adjacent_matrix(self.u_node_list,
                                                                                          self.v_node_list,
@@ -155,6 +156,7 @@ class BipartiteGraphDataLoader:
 
         # normalize per dim
         data[:, 1:] = data[:, 1:] / data[:, 1:].max(axis=0)
+        data = data.tolist()
 
         # attr_dict: {id : [feature1, ..., feature10]}
         temp_attr_dict = {}
@@ -172,7 +174,7 @@ class BipartiteGraphDataLoader:
 
         logging.info("after merging with u_list, the len is = %d" % len(u_attr_dict))
 
-        return u_attr_dict, np.array(u_attr_array)
+        return u_attr_dict, u_attr_array
 
     def __load_v_list(self):
         v_list = []
@@ -250,8 +252,9 @@ class BipartiteGraphDataLoader:
         logging.info("count_all = %d" % count_all)
 
         # normalize per dim
-        v_attr_np = np.array(v_attr, dtype=np.float64)
+        v_attr_np = np.array(v_attr, dtype=np.float64, copy=False)
         v_attr_np[:, 1:] = v_attr_np[:, 1:] / v_attr_np[:, 1:].max(axis=0)
+        v_attr_np = v_attr_np.tolist()
 
         # attr_dict: {id : [feature1, ..., feature10]}
         temp_attr_dict = {}
@@ -269,7 +272,7 @@ class BipartiteGraphDataLoader:
 
         logging.info("after merging with v_list, the len is = %d" % len(v_attr_dict))
 
-        return v_attr_dict, np.array(v_attr_array)
+        return v_attr_dict, v_attr_array
 
     def __load_unique_node_in_edge_list(self, edge_list):
         u_unique_dict = {}
@@ -293,7 +296,7 @@ class BipartiteGraphDataLoader:
             ret_attr_dict[node] = attr_dict[node]
             ret_attr_array.append(attr_dict[node])
         logging.info("after filter, the len is = %d" % len(ret_attr_array))
-        return ret_attr_dict, np.array(ret_attr_array)
+        return ret_attr_dict, ret_attr_array
 
     def __generate_adjacent_matrix(self, u_node_list, v_node_list, edge_list):
         logging.info("__generate_adjacent_matrix START")
@@ -311,10 +314,17 @@ class BipartiteGraphDataLoader:
         # Add edges only between nodes of opposite node sets
         B_u.add_edges_from(edge_list)
 
-        u_adjacent_matrix = biadjacency_matrix(B_u, u_node_list, v_node_list)
-        logging.info(u_adjacent_matrix.shape)
-        u_adjacent_matrix_np = u_adjacent_matrix.todense().A
+        u_adjacent_matrix_np = biadjacency_matrix(B_u, u_node_list, v_node_list)
+        logging.info(u_adjacent_matrix_np.shape)
+        # u_adjacent_matrix_np = u_adjacent_matrix.todense().A
         B_u.clear()
+
+        # print("start to transform the data type")
+        # for idx in range(len(u_adjacent_matrix_np)):
+        #     u_adj_float_idx = list(map(float, u_adjacent_matrix_np[idx]))
+        #     u_adjacent_matrix_np[idx] = u_adj_float_idx
+        # print("end to transform the data type")
+
         logging.info("end to load bipartite for u")
 
         logging.info("start to load bipartite for u")
@@ -326,10 +336,17 @@ class BipartiteGraphDataLoader:
         # Add edges only between nodes of opposite node sets
         B_v.add_edges_from(edge_list)
 
-        v_adjacent_matrix = biadjacency_matrix(B_v, v_node_list, u_node_list)
-        logging.info(v_adjacent_matrix.shape)
-        v_adjacent_matrix_np = v_adjacent_matrix.todense().A
+        v_adjacent_matrix_np = biadjacency_matrix(B_v, v_node_list, u_node_list)
+        logging.info(v_adjacent_matrix_np.shape)
+        # v_adjacent_matrix_np = v_adjacent_matrix.todense().A
         B_v.clear()
+
+        # print("start to transform the data type")
+        # for idx in range(len(v_adjacent_matrix_np)):
+        #     v_adj_float_idx = list(map(float, v_adjacent_matrix_np[idx]))
+        #     v_adjacent_matrix_np[idx] = v_adj_float_idx
+        # print("end to transform the data type")
+
         logging.info("end to load bipartite for u")
         return u_adjacent_matrix_np, v_adjacent_matrix_np
 
@@ -370,11 +387,11 @@ class BipartiteGraphDataLoader:
         return u_label
 
     def gernerate_mini_batch(self, u_attr_array, v_attr_array, u_adjacent_matrix, v_adjacent_matrix):
-        u_num = u_attr_array.shape[0]
+        u_num = len(u_attr_array)
         logging.info("u number: " + str(u_num))
         logging.info("u_adjacent_matrix: " + str(u_adjacent_matrix.shape))
 
-        v_num = v_attr_array.shape[0]
+        v_num = len(v_attr_array)
         logging.info("v number: " + str(v_num))
         logging.info("v_adjacent_matrix: " + str(v_adjacent_matrix.shape))
 
@@ -389,9 +406,6 @@ class BipartiteGraphDataLoader:
             end_index = self.batch_size * (batch_index + 1)
             if batch_index == self.batch_num_u - 1:
                 end_index = u_num
-                # start_index = end_index - self.batch_size
-                # if start_index < 0:
-                #     start_index = 0
             tup = (u_attr_array[start_index:end_index], u_adjacent_matrix[start_index:end_index])
             self.batches_u.append(tup)
         # print(self.batches_u)
@@ -401,19 +415,15 @@ class BipartiteGraphDataLoader:
             end_index = self.batch_size * (batch_index + 1)
             if batch_index == self.batch_num_v - 1:
                 end_index = v_num
-                # start_index = end_index - self.batch_size
-                # if start_index < 0:
-                #     start_index = 0
-                # logging.info(start_index)
             tup = (v_attr_array[start_index:end_index], v_adjacent_matrix[start_index:end_index])
             self.batches_v.append(tup)
         # print(self.batches_v)
 
     def get_u_attr_dimensions(self):
-        return self.u_attr_array.shape[1]
+        return len(self.u_attr_array[0])
 
     def get_v_attr_dimensions(self):
-        return self.v_attr_array.shape[1]
+        return len(self.v_attr_array[0])
 
     def get_batch_num_u(self):
         return self.batch_num_u
@@ -442,14 +452,19 @@ class BipartiteGraphDataLoader:
         return np.copy(v_attr_batch), np.copy(v_adaj_batch)
 
     def get_u_attr_array(self):
-        return np.copy(self.u_attr_array)
+        return self.u_attr_array
 
     def get_v_attr_array(self):
         """
-        :return: Tensor
+        :return: numpy
         """
-        return np.copy(self.v_attr_array)
+        return self.v_attr_array
 
+    def get_u_adj(self):
+        return self.u_adjacent_matrix
+
+    def get_v_adj(self):
+        return self.v_adjacent_matrix
 
 if __name__ == "__main__":
     logging.basicConfig(filename='bipartite_graph_data_loading.log', filemode='w',
@@ -457,22 +472,22 @@ if __name__ == "__main__":
                         datefmt='%Y-%m-%d %A %H:%M:%S',
                         level=logging.INFO)
 
-    NODE_LIST_PATH = "./Tencent-QQ/node_list"
-    NODE_ATTR_PATH = "./Tencent-QQ/node_attr"
-    NODE_LABEL_PATH = "./Tencent-QQ/node_true"
+    NODE_LIST_PATH = "./../../data/Tencent-QQ/node_list"
+    NODE_ATTR_PATH = "./../../data/Tencent-QQ/node_attr"
+    NODE_LABEL_PATH = "./../../data/Tencent-QQ/node_true"
 
-    EDGE_LIST_PATH = "./Tencent-QQ/edgelist"
+    EDGE_LIST_PATH = "./../../data/Tencent-QQ/edgelist"
 
-    GROUP_LIST_PATH = "./Tencent-QQ/group_list"
-    GROUP_ATTR_PATH = "./Tencent-QQ/group_attr"
+    GROUP_LIST_PATH = "./../../data/Tencent-QQ/group_list"
+    GROUP_ATTR_PATH = "./../../data/Tencent-QQ/group_attr"
     bipartite_graph_data_loader = BipartiteGraphDataLoader(3, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
                                                            EDGE_LIST_PATH,
                                                            GROUP_LIST_PATH, GROUP_ATTR_PATH)
-    bipartite_graph_data_loader.test()
-    #bipartite_graph_data_loader.load()
-    # bipartite_graph_data_loader.plot_neighborhood_number_distribution()
+    # bipartite_graph_data_loader.test()
+    bipartite_graph_data_loader.load()
+    bipartite_graph_data_loader.plot_neighborhood_number_distribution()
 
-    #u_attr_batch, u_adaj_batch = bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(1)
-    #count_list = np.sum(u_adaj_batch, axis=1)
-    #logging.info(u_adaj_batch[0])
-    #logging.info(count_list)
+    # u_attr_batch, u_adaj_batch = bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(1)
+    # count_list = np.sum(u_adaj_batch, axis=1)
+    # logging.info(u_adaj_batch[0])
+    # logging.info(count_list)
