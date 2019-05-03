@@ -63,11 +63,11 @@ class AdversarialHGCNLayer(object):
                 u_attr_batch = self.u_attr[start_index:end_index]
                 u_adj_batch = self.u_adj[start_index:end_index]
 
-                u_attr_tensor = torch.as_tensor(u_attr_batch, dtype=torch.float)
-                u_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(u_adj_batch)
+                u_attr_tensor = torch.as_tensor(u_attr_batch, dtype=torch.float, device=self.device)
+                u_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(u_adj_batch).to(device=self.device)
                 logging.info('finished loading the tensor')
                 # training
-                gcn_explicit_output = self.gcn_explicit(torch.as_tensor(self.v_attr), u_adj_tensor)
+                gcn_explicit_output = self.gcn_explicit(torch.as_tensor(self.v_attr, device=self.device), u_adj_tensor)
                 logging.info('finished GCN step')
                 # record the last epoch output from gcn as new hidden representation
                 if i == EPOCHS - 1:
@@ -91,8 +91,8 @@ class AdversarialHGCNLayer(object):
                 v_attr_batch = self.v_attr[start_index:end_index]
                 v_adj_batch = self.v_adj[start_index:end_index]
 
-                v_attr_tensor = torch.as_tensor(v_attr_batch, dtype=torch.float)
-                v_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(v_adj_batch)
+                v_attr_tensor = torch.as_tensor(v_attr_batch, dtype=torch.float, device=self.device)
+                v_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(v_adj_batch).to(device=self.device)
 
                 # training
                 gcn_implicit_output = self.gcn_implicit(u_explicit_attr, v_adj_tensor)
@@ -116,7 +116,7 @@ class AdversarialHGCNLayer(object):
                 if iter == self.batch_num_u - 1:
                     end_index = self.u_num
                 u_adj_batch = self.u_adj[start_index:end_index]
-                u_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(u_adj_batch)
+                u_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(u_adj_batch).to(device=self.device)
 
                 gcn_merge_output = self.gcn_merge(v_implicit_attr, u_adj_tensor)
                 if i == EPOCHS - 1:
@@ -138,7 +138,7 @@ class AdversarialHGCNLayer(object):
                 if iter == self.batch_num_u - 1:
                     end_index = self.u_num
                 v_adj_batch = self.v_adj[start_index:end_index]
-                v_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(v_adj_batch)
+                v_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(v_adj_batch).to(device=self.device)
 
                 gcn_opposite_output = self.gcn_opposite(u_merge_attr, v_adj_tensor)
                 start_batch = iter * self.batch_size
