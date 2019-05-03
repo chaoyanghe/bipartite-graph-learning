@@ -95,11 +95,8 @@ class GAN(object):
         lossG.backward()
         self.optimizerG.step()
 
-        print('Step: {:01d}'.format(step),
-              'Epoch: {:04d}'.format(epoch),
-              "Iterations: {:04d}".format(iter),
-              'dis loss: {:.04f}'.format(lossD.item()),
-              'gen loss: {:.04f}'.format(lossG.item()))
+        logging.info("Step: %s, Epoch: %s, Iterations: %s, dis loss: %s, gen loss: %s" % (
+            step, epoch, iter, lossD.item(), lossG.item()))
 
     # validation
     def forward(self, real_data, netG_output, iter):
@@ -128,6 +125,5 @@ class GAN(object):
         output = self.netD(fake)
         lossG = self._loss(output, label)
 
-        logging.info('Iterations: {:.04f}'.format(iter),
-              'Validation dis Loss: {:.04f}'.format(lossD.item()),
-              'Validation gen loss: {:.04f}'.format(lossG.item()))
+        logging.info("terations: %s, dis loss: %s, gen loss: %s" % (
+            iter, lossD.item(), lossG.item()))
