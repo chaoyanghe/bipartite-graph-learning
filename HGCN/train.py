@@ -2,6 +2,7 @@ from __future__ import division
 from __future__ import print_function
 
 import logging
+from time import sleep
 
 import torch
 from memory_profiler import profile
@@ -16,6 +17,7 @@ from utils import (EPOCHS)
 
 class AdversarialHGCNLayer(object):
     def __init__(self, bipartite_graph_data_loader, u_attr_dimensions, v_attr_dimensions, device):
+        logging.info('AdversarialHGCNLayer')
         self.gcn_explicit = GCN(v_attr_dimensions, u_attr_dimensions).to(device)
         self.gcn_implicit = GCN(u_attr_dimensions, v_attr_dimensions).to(device)
         self.gcn_merge = GCN(v_attr_dimensions, u_attr_dimensions).to(device)
@@ -25,16 +27,19 @@ class AdversarialHGCNLayer(object):
         self.gan_merge = GAN(self.gcn_merge, u_attr_dimensions, device, outfeat=1)
         self.gan_opposite = GAN(self.gcn_opposite, v_attr_dimensions, device, outfeat=1)
 
+        self.bipartite_graph_data_loader = bipartite_graph_data_loader
+        self.device = device
+        self.batch_size = bipartite_graph_data_loader.batch_size
+
+        logging.info('AdversarialHGCNLayer')
         self.batch_num_u = bipartite_graph_data_loader.get_batch_num_u()
         self.batch_num_v = bipartite_graph_data_loader.get_batch_num_v()
         self.u_attr = bipartite_graph_data_loader.get_u_attr_array()
         self.v_attr = bipartite_graph_data_loader.get_v_attr_array()
-        self.u_attr = torch.FloatTensor(self.u_attr).to(device)
-        self.v_attr = torch.FloatTensor(self.v_attr).to(device)
-
-        self.bipartite_graph_data_loader = bipartite_graph_data_loader
-        self.device = device
-        self.batch_size = bipartite_graph_data_loader.batch_size
+        self.u_adj = bipartite_graph_data_loader.get_u_adj()
+        self.v_adj = bipartite_graph_data_loader.get_v_adj()
+        self.u_num = len(self.u_attr)
+        logging.info('AdversarialHGCNLayer')
 
     @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def relation_learning(self):
@@ -43,20 +48,30 @@ class AdversarialHGCNLayer(object):
         u_explicit_attr = torch.FloatTensor([]).to(self.device)
         for i in range(EPOCHS):
             for iter in range(self.batch_num_u):
-                # load batch data, potential memory bug
-                u_input, u_adj = self.bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(iter)
-                u_input, u_adj = torch.FloatTensor(u_input).to(self.device), torch.FloatTensor(u_adj).to(self.device)
+                start_index = self.batch_size * iter
+                end_index = self.batch_size * (iter + 1)
+                if iter == self.batch_num_u - 1:
+                    end_index = self.u_num
+                u_attr_batch = self.u_attr[start_index:end_index]
+                u_adj_batch = self.u_adj[start_index:end_index]
+                u_attr_tensor = torch.as_tensor(u_attr_batch, dtype=torch.float)
+
+                ### here the data type is not float, so TORCH will allocate new memory.
+                u_adj_tensor = torch.as_tensor(u_adj_batch, dtype=torch.float)
+
+                print(iter)
                 # training
-                gcn_explicit_output = self.gcn_explicit(self.v_attr, u_adj)
+                gcn_explicit_output = self.gcn_explicit(torch.as_tensor(self.v_attr), u_adj_tensor)
                 # record the last epoch output from gcn as new hidden representation
                 if i == EPOCHS - 1:
                     u_explicit_attr = torch.cat((u_explicit_attr, gcn_explicit_output.detach()), 0)
-                self.gan_explicit.forward_backward(u_input, gcn_explicit_output, step=1, epoch=i, iter=iter)
+                self.gan_explicit.forward_backward(u_attr_tensor, gcn_explicit_output, step=1, epoch=i, iter=iter)
+
                 # validation
                 # if iter % VALIDATE_ITER == 0:
                 #     gcn_explicit_output = self.gcn_explicit(self.v_attr, u_adj)
                 #     self.gan_explicit.forward(u_input, gcn_explicit_output, iter)
-
+        sleep(100000)
         # implicit
         logging.info('Step 2: Implicit relation learning')
         v_implicit_attr = torch.FloatTensor([]).to(self.device)
@@ -210,10 +225,12 @@ class HeterogeneousGCN(object):
     #     decoder_hgcn.relation_learning()
 
     def adversarial_train(self):
+        logging.info('adversarial_train')
         adversarial_hgcn = AdversarialHGCNLayer(self.bipartite_graph_data_loader,
                                                 self.u_attr_dimensions,
                                                 self.v_attr_dimensions,
                                                 self.device)
+        logging.info('relation_learning')
         adversarial_hgcn.relation_learning()
 
 

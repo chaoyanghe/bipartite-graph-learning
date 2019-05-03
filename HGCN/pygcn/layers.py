@@ -30,7 +30,7 @@ class GraphConvolution(Module):
 
     def forward(self, input, adj):
         support = torch.mm(input, self.weight)
-        output = torch.mm(adj, support)
+        output = torch.mm(adj, support) #
         if self.bias is not None:
             return output + self.bias
         else:
