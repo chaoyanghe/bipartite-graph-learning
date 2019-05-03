@@ -5,7 +5,6 @@ import logging
 
 import numpy as np
 import torch
-from memory_profiler import profile
 
 from data.utils import load_data
 from gan.models import GAN
@@ -13,6 +12,8 @@ from pygcn.models import GCN
 from utils import (EPOCHS)
 
 """Single layer for adversarial loss"""
+
+
 class AdversarialHGCNLayer(object):
     def __init__(self, bipartite_graph_data_loader, u_attr_dimensions, v_attr_dimensions, device):
         logging.info('AdversarialHGCNLayer')
@@ -48,13 +49,13 @@ class AdversarialHGCNLayer(object):
         shape = torch.Size(sparse_mx.shape)
         return torch.sparse.FloatTensor(indices, values, shape)
 
-    @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def relation_learning(self):
         # explicit
         logging.info('Step 1: Explicit relation learning')
         u_explicit_attr = torch.FloatTensor([]).to(self.device)
         for i in range(EPOCHS):
             for iter in range(self.batch_num_u):
+                logging.info('load adj and attribute')
                 start_index = self.batch_size * iter
                 end_index = self.batch_size * (iter + 1)
                 if iter == self.batch_num_u - 1:
@@ -64,14 +65,15 @@ class AdversarialHGCNLayer(object):
 
                 u_attr_tensor = torch.as_tensor(u_attr_batch, dtype=torch.float)
                 u_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(u_adj_batch)
-
+                logging.info('finished loading the tensor')
                 # training
                 gcn_explicit_output = self.gcn_explicit(torch.as_tensor(self.v_attr), u_adj_tensor)
+                logging.info('finished GCN step')
                 # record the last epoch output from gcn as new hidden representation
                 if i == EPOCHS - 1:
                     u_explicit_attr = torch.cat((u_explicit_attr, gcn_explicit_output.detach()), 0)
                 self.gan_explicit.forward_backward(u_attr_tensor, gcn_explicit_output, step=1, epoch=i, iter=iter)
-
+                logging.info('finished GAN step')
                 # validation
                 # if iter % VALIDATE_ITER == 0:
                 #     gcn_explicit_output = self.gcn_explicit(self.v_attr, u_adj)
@@ -150,8 +152,9 @@ class AdversarialHGCNLayer(object):
 
 """Single layer for decoder layer"""
 
-
 """Model selection / start training"""
+
+
 class HeterogeneousGCN(object):
     def __init__(self, bipartite_graph_data_loader, device):
         # self.hidden_dimensions = hidden_dimensions
