@@ -47,6 +47,7 @@ def main():
 
     GROUP_LIST_PATH = "./../data/Tencent-QQ/group_list"
     GROUP_ATTR_PATH = "./../data/Tencent-QQ/group_attr"
+    
     device = torch.device("cuda:0" if torch.cuda.is_available() and args.gpu else "cpu")
     logging.info("device = %s" % device)
     bipartite_graph_data_loader = BipartiteGraphDataLoader(100, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
