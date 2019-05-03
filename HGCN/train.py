@@ -84,10 +84,10 @@ class AdversarialHGCNLayer(object):
         logging.info('Step 2: Implicit relation learning')
         v_implicit_attr = torch.FloatTensor([]).to(self.device)
         for i in range(EPOCHS):
-            for iter in range(self.batch_num_u):
+            for iter in range(self.batch_num_v):
                 start_index = self.batch_size * iter
                 end_index = self.batch_size * (iter + 1)
-                if iter == self.batch_num_u - 1:
+                if iter == self.batch_num_v - 1:
                     end_index = self.v_num
                 v_attr_batch = self.v_attr[start_index:end_index]
                 v_adj_batch = self.v_adj[start_index:end_index]
@@ -133,10 +133,10 @@ class AdversarialHGCNLayer(object):
         # opposite
         logging.info('Step 4: Opposite relation learning')
         for i in range(EPOCHS):
-            for iter in range(self.batch_num_u):
+            for iter in range(self.batch_num_v):
                 start_index = self.batch_size * iter
                 end_index = self.batch_size * (iter + 1)
-                if iter == self.batch_num_u - 1:
+                if iter == self.batch_num_v - 1:
                     end_index = self.v_num
                 v_adj_batch = self.v_adj[start_index:end_index]
                 v_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(v_adj_batch).to(device=self.device)
