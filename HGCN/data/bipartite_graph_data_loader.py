@@ -3,6 +3,7 @@ import logging
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
+import torch
 from networkx.algorithms.bipartite import biadjacency_matrix
 
 
@@ -313,9 +314,9 @@ class BipartiteGraphDataLoader:
         # Add edges only between nodes of opposite node sets
         B_u.add_edges_from(edge_list)
 
-        u_adjacent_matrix = biadjacency_matrix(B_u, u_node_list, v_node_list)
-        logging.info(u_adjacent_matrix.shape)
-        u_adjacent_matrix_np = u_adjacent_matrix.todense().A
+        u_adjacent_matrix_np = biadjacency_matrix(B_u, u_node_list, v_node_list)
+        logging.info(u_adjacent_matrix_np.shape)
+        # u_adjacent_matrix_np = u_adjacent_matrix.todense().A
         B_u.clear()
 
         # print("start to transform the data type")
@@ -335,9 +336,9 @@ class BipartiteGraphDataLoader:
         # Add edges only between nodes of opposite node sets
         B_v.add_edges_from(edge_list)
 
-        v_adjacent_matrix = biadjacency_matrix(B_v, v_node_list, u_node_list)
-        logging.info(v_adjacent_matrix.shape)
-        v_adjacent_matrix_np = v_adjacent_matrix.todense().A
+        v_adjacent_matrix_np = biadjacency_matrix(B_v, v_node_list, u_node_list)
+        logging.info(v_adjacent_matrix_np.shape)
+        # v_adjacent_matrix_np = v_adjacent_matrix.todense().A
         B_v.clear()
 
         # print("start to transform the data type")
@@ -461,7 +462,6 @@ class BipartiteGraphDataLoader:
 
     def get_v_adj(self):
         return self.v_adjacent_matrix
-
 
 if __name__ == "__main__":
     logging.basicConfig(filename='bipartite_graph_data_loading.log', filemode='w',

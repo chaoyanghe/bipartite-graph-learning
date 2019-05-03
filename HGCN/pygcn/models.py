@@ -3,6 +3,7 @@ import torch.nn.functional as F
 
 from pygcn.layers import GraphConvolution
 
+
 # one layer GCN
 class GCN(nn.Module):
     def __init__(self, infeat, outfeat):

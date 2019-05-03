@@ -12,6 +12,8 @@ from gan.models import GAN
 from pygcn.models import GCN
 from utils import (EPOCHS)
 
+import numpy as np
+
 """Single layer for adversarial loss"""
 
 
@@ -41,6 +43,15 @@ class AdversarialHGCNLayer(object):
         self.u_num = len(self.u_attr)
         logging.info('AdversarialHGCNLayer')
 
+    def sparse_mx_to_torch_sparse_tensor(self, sparse_mx):
+        """Convert a scipy sparse matrix to a torch sparse tensor."""
+        sparse_mx = sparse_mx.tocoo().astype(np.float32)
+        indices = torch.from_numpy(
+            np.vstack((sparse_mx.row, sparse_mx.col)).astype(np.int64))
+        values = torch.from_numpy(sparse_mx.data)
+        shape = torch.Size(sparse_mx.shape)
+        return torch.sparse.FloatTensor(indices, values, shape)
+
     @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def relation_learning(self):
         # explicit
@@ -56,8 +67,8 @@ class AdversarialHGCNLayer(object):
                 u_adj_batch = self.u_adj[start_index:end_index]
                 u_attr_tensor = torch.as_tensor(u_attr_batch, dtype=torch.float)
 
-                ### here the data type is not float, so TORCH will allocate new memory.
-                u_adj_tensor = torch.as_tensor(u_adj_batch, dtype=torch.float)
+                # here the data type is not float, so TORCH will allocate new memory.
+                u_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(u_adj_batch)
 
                 print(iter)
                 # training
