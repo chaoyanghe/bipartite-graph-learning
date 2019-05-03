@@ -1,3 +1,4 @@
+import logging
 import math
 
 import torch
@@ -29,8 +30,11 @@ class GraphConvolution(Module):
             self.bias.data.uniform_(-stdv, stdv)
 
     def forward(self, input, adj):
+        logging.info("forward")
         support = torch.mm(input, self.weight)
+        logging.info("support")
         output = torch.spmm(adj, support)
+        logging.info("output")
         if self.bias is not None:
             return output + self.bias
         else:

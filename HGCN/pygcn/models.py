@@ -1,3 +1,5 @@
+import logging
+
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -14,6 +16,7 @@ class GCN(nn.Module):
         # self.dropout = dropout
 
     def forward(self, x, adj):
+        logging.info("forward")
         x = F.relu(self.gc1(x, adj), inplace=True)
         # x = F.dropout(x, self.dropout, training=self.training)
         # x = F.relu(self.gc2(x, adj))
