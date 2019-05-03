@@ -120,8 +120,7 @@ class AdversarialHGCNLayer(object):
                 gcn_merge_output = self.gcn_merge(v_implicit_attr, u_adj_tensor)
                 if i == EPOCHS - 1:
                     u_merge_attr = torch.cat((u_merge_attr, gcn_merge_output.detach()), 0)
-                start_batch = iter * self.batch_size
-                u_input = u_explicit_attr[start_batch:start_batch + self.batch_size]
+                u_input = u_explicit_attr[start_index:end_index]
                 self.gan_merge.forward_backward(u_input, gcn_merge_output,
                                                 step=3, epoch=i, iter=iter)
                 # if iter % VALIDATE_ITER == 0:
@@ -140,8 +139,7 @@ class AdversarialHGCNLayer(object):
                 v_adj_tensor = self.sparse_mx_to_torch_sparse_tensor(v_adj_batch).to(device=self.device)
 
                 gcn_opposite_output = self.gcn_opposite(u_merge_attr, v_adj_tensor)
-                start_batch = iter * self.batch_size
-                v_input = v_implicit_attr[start_batch:start_batch + self.batch_size]
+                v_input = v_implicit_attr[start_index:end_index]
                 self.gan_opposite.forward_backward(v_input, gcn_opposite_output,
                                                    step=4, epoch=i, iter=iter)
                 # if iter % VALIDATE_ITER == 0:
