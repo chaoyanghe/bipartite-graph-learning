@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 from networkx.algorithms.bipartite import biadjacency_matrix
-from scipy.sparse import coo_matrix
 
 
 class BipartiteGraphDataLoader:
@@ -481,7 +480,7 @@ if __name__ == "__main__":
     bipartite_graph_data_loader = BipartiteGraphDataLoader(3, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
                                                            EDGE_LIST_PATH,
                                                            GROUP_LIST_PATH, GROUP_ATTR_PATH)
-    #bipartite_graph_data_loader.test()
+    # bipartite_graph_data_loader.test()
     bipartite_graph_data_loader.load()
     bipartite_graph_data_loader.plot_neighborhood_number_distribution()
 
