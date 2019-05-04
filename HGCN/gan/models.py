@@ -12,11 +12,12 @@ from data.utils import (REAL_LABEL, FAKE_LABEL)
 
 
 class Discriminator(nn.Module):
-    def __init__(self, infeat, hidfeat, outfeat):
+    def __init__(self, infeat, hidfeat, outfeat, dropout):
         super(Discriminator, self).__init__()
         self.main = nn.Sequential(
             nn.Linear(infeat, hidfeat),
             nn.ReLU(inplace=True),
+            nn.Dropout(p=dropout, inplace=True),
             nn.Linear(hidfeat, outfeat),
             nn.Sigmoid()
         )
@@ -34,11 +35,12 @@ def _weights_init(m):
 
 # generator is GCN
 class GAN(object):
-    def __init__(self, netG, infeat, hidfeat, learning_rate, weight_decay, device, outfeat):  # binary classification
+    def __init__(self, netG, infeat, hidfeat, learning_rate, weight_decay,
+                 dropout, device, outfeat):  # binary classification
         """ Data from set U and V are used for generator alternatively
         """
 
-        self.netD = Discriminator(infeat, hidfeat, outfeat).to(device)
+        self.netD = Discriminator(infeat, hidfeat, outfeat, dropout).to(device)
         self.netD.apply(_weights_init)
         self.netG = netG
         self.optimizerG = optim.Adam(self.netG.parameters(),

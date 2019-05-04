@@ -3,19 +3,19 @@ from __future__ import print_function
 
 import torch.nn as nn
 import torch.optim as optim
-from torch.nn import init
+import logging
 
-from utils import (LEARNING_RATE, WEIGHT_DECAY, HIDDEN_DIMENSIONS)
+from torch.nn import init
 
 
 class Decoder(nn.Module):
-    def __init__(self, infeat, outfeat):
+    def __init__(self, infeat, hidfeat, outfeat, dropout):
         super(Decoder, self).__init__()
 
-        hidfeat = HIDDEN_DIMENSIONS  # define the hidden layer dimension
         self.main = nn.Sequential(
             nn.Linear(infeat, hidfeat),
             nn.ReLU(),
+            nn.Dropout(p=dropout, inplace=True),
             nn.Linear(hidfeat, outfeat)
         )
 
@@ -31,13 +31,13 @@ def _weights_init(m):
 
 
 class HGCNDecoder(object):
-    def __init__(self, netG, infeat, outfeat, device):
-        self.netD = Decoder(infeat, outfeat).to(device)
+    def __init__(self, netG, infeat, outfeat, hidfeat, learning_rate, weight_decay, dropout, device):
+        self.netD = Decoder(infeat, hidfeat, outfeat, dropout).to(device)
         self.netD.apply(_weights_init)
         self.netG = netG
         self.optimizer = optim.Adam(list(self.netG.parameters()) + list(self.netD.parameters()),
-                                    lr=LEARNING_RATE,
-                                    weight_decay=WEIGHT_DECAY)
+                                    lr=learning_rate,
+                                    weight_decay=weight_decay)
         self.decoder_output = 0
 
     def _loss(self, input, target):
@@ -47,23 +47,23 @@ class HGCNDecoder(object):
 
     def forward_backward(self, target, input, step, epoch, iter):
         self.optimizer.zero_grad()
-        output = self.netD(input)  # input == output from GCN
+        output = self.netD(input)
         self.decoder_output = output
         loss = self._loss(output, target)
         loss.backward()
         self.optimizer.step()
 
         logging.info('Step: {:01d}'.format(step),
-              'Epoch: {:04d}'.format(epoch),
-              'Iterations: {:04d}'.format(iter),
-              'Loss: {:.4f}'.format(loss.item())
-              )
+                     'Epoch: {:04d}'.format(epoch),
+                     'Iterations: {:04d}'.format(iter),
+                     'Loss: {:.4f}'.format(loss.item())
+                     )
 
-    # validation
-    def forward(self, target, input, iter):
-        output = self.netD(input)
-        self.decoder_output = output
-        loss = self._loss(output, target)
-
-        logging.info('Iterations: {:.04d}'.format(iter),
-              'Validation Loss: {:.4f}'.format(loss.item()))
+    # # validation
+    # def forward(self, target, input, iter):
+    #     output = self.netD(input)
+    #     self.decoder_output = output
+    #     loss = self._loss(output, target)
+    #
+    #     logging.info('Iterations: {:.04d}'.format(iter),
+    #                  'Validation Loss: {:.4f}'.format(loss.item()))

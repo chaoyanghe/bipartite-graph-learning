@@ -26,7 +26,7 @@ def sparse_mx_to_torch_sparse_tensor(sparse_mx):
 
 class AdversarialHGCNLayer(object):
     def __init__(self, bipartite_graph_data_loader, u_attr_dimensions, v_attr_dimensions,
-                 dis_hidden_dim, epochs, learning_rate, weight_decay, device):
+                 dis_hidden_dim, epochs, learning_rate, weight_decay, dropout, device):
         logging.info('AdversarialHGCNLayer')
         self.gcn_explicit = GCN(v_attr_dimensions, u_attr_dimensions).to(device)
         self.gcn_implicit = GCN(u_attr_dimensions, v_attr_dimensions).to(device)
@@ -35,13 +35,13 @@ class AdversarialHGCNLayer(object):
 
         # outfeat=1: binary classification
         self.gan_explicit = GAN(self.gcn_explicit, u_attr_dimensions, dis_hidden_dim,
-                                learning_rate, weight_decay, device, outfeat=1)
+                                learning_rate, weight_decay, dropout, device, outfeat=1)
         self.gan_implicit = GAN(self.gcn_implicit, v_attr_dimensions, dis_hidden_dim,
-                                learning_rate, weight_decay, device, outfeat=1)
+                                learning_rate, weight_decay, dropout, device, outfeat=1)
         self.gan_merge = GAN(self.gcn_merge, u_attr_dimensions, dis_hidden_dim,
-                             learning_rate, weight_decay, device, outfeat=1)
+                             learning_rate, weight_decay, dropout, device, outfeat=1)
         self.gan_opposite = GAN(self.gcn_opposite, v_attr_dimensions, dis_hidden_dim,
-                                learning_rate, weight_decay, device, outfeat=1)
+                                learning_rate, weight_decay, dropout, device, outfeat=1)
 
         self.bipartite_graph_data_loader = bipartite_graph_data_loader
         self.batch_size = bipartite_graph_data_loader.batch_size
@@ -194,6 +194,7 @@ class HeterogeneousGCN(object):
         self.dis_hidden_dim = args.dis_hidden
         self.learning_rate = args.lr
         self.weight_decay = args.weight_decay
+        self.dropout = args.dropout
         self.u_attr_dimensions = bipartite_graph_data_loader.get_u_attr_dimensions()
         self.v_attr_dimensions = bipartite_graph_data_loader.get_v_attr_dimensions()
         self.bipartite_graph_data_loader = bipartite_graph_data_loader
@@ -208,6 +209,7 @@ class HeterogeneousGCN(object):
                                                 self.epochs,
                                                 self.learning_rate,
                                                 self.weight_decay,
+                                                self.droput,
                                                 self.device)
         logging.info('relation_learning')
         adversarial_hgcn.relation_learning()
