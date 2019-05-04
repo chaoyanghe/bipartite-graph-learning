@@ -20,6 +20,7 @@ if __name__ == "__main__":
     hgcn_node_file = os.path.join(output_folder, "./node_list")
 
     res_file = os.path.join(output_folder, "./%s.res" % (method))
+    print(res_file)
 
     # Performing example logistic regression
     if os.path.exists(emb_file):
