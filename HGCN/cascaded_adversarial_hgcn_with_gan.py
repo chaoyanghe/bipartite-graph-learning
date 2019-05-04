@@ -63,7 +63,6 @@ class CascadedAdversarialHGCN(object):
         u_explicit_attr = torch.FloatTensor([]).to(self.device)
         for i in range(self.epochs):
             for iter in range(self.batch_num_u):
-                logging.info('load adj and attribute')
                 start_index = self.batch_size * iter
                 end_index = self.batch_size * (iter + 1)
                 if iter == self.batch_num_u - 1:
@@ -73,16 +72,13 @@ class CascadedAdversarialHGCN(object):
 
                 u_attr_tensor = torch.as_tensor(u_attr_batch, dtype=torch.float, device=self.device)
                 u_adj_tensor = self.__sparse_mx_to_torch_sparse_tensor(u_adj_batch).to(device=self.device)
-                logging.info('finished loading the tensor')
                 # training
                 gcn_explicit_output = self.gcn_explicit(torch.as_tensor(self.v_attr, device=self.device), u_adj_tensor)
-                logging.info('finished GCN step')
 
                 # record the last epoch output from gcn as new hidden representation
                 if i == self.epochs - 1:
                     u_explicit_attr = torch.cat((u_explicit_attr, gcn_explicit_output.detach()), 0)
                 self.gan_explicit.forward_backward(u_attr_tensor, gcn_explicit_output, step=1, epoch=i, iter=iter)
-                logging.info('finished GAN step')
 
         # implicit
         logging.info('Step 2: Implicit relation learning')
