@@ -122,7 +122,7 @@ class CascadedAdversarialHGCN(object):
                 self.gan_merge.forward_backward(u_input, gcn_merge_output,
                                                 step=3, epoch=i, iter=iter)
 
-        self.__save_embedding_to_file(u_merge_attr.cpu().numpy(), self.bipartite_graph_data_loader.get_u_adj())
+        self.__save_embedding_to_file(u_merge_attr.cpu().numpy(), self.bipartite_graph_data_loader.get_u_list())
 
     def __sparse_mx_to_torch_sparse_tensor(self, sparse_mx):
         """Convert a scipy sparse matrix to a torch sparse tensor."""
@@ -146,7 +146,9 @@ class CascadedAdversarialHGCN(object):
         """
         logging.info("start to save embedding file")
         node_num = gcn_merge_output.shape[0]
+        logging.info("node_num = %s" % node_num)
         dimension_embedding = gcn_merge_output.shape[1]
+        logging.info("dimension_embedding = %s" % dimension_embedding)
         output_folder = "./out"
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
