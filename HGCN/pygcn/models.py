@@ -22,5 +22,3 @@ class GCN(nn.Module):
         # x = F.relu(self.gc2(x, adj))
 
         return x
-
-

@@ -439,7 +439,7 @@ class BipartiteGraphDataLoader:
         if batch_index >= self.batch_num_u:
             raise Exception("batch_index is larger than the batch number")
         (u_attr_batch, u_adaj_batch) = self.batches_u[batch_index]
-        return u_attr_batch, u_adaj_batch
+        return np.copy(u_attr_batch), np.copy(u_adaj_batch)
 
     def get_one_batch_group_v_with_adjacent(self, batch_index):
         """
@@ -449,12 +449,15 @@ class BipartiteGraphDataLoader:
         if batch_index >= self.batch_num_v:
             raise Exception("batch_index is larger than the batch number")
         (v_attr_batch, v_adaj_batch) = self.batches_v[batch_index]
-        return v_attr_batch, v_adaj_batch
+        return np.copy(v_attr_batch), np.copy(v_adaj_batch)
 
     def get_u_attr_array(self):
         return self.u_attr_array
 
     def get_v_attr_array(self):
+        """
+        :return: numpy
+        """
         return self.v_attr_array
 
     def get_u_adj(self):

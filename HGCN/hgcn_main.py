@@ -2,25 +2,26 @@ import argparse
 import logging
 
 import torch
+import numpy as np
 
 from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
 from train import HeterogeneousGCN
-from utils import (MODEL, EPOCHS, LEARNING_RATE, WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS)
+from utils import (MODEL, RANDOM_SEED, EPOCHS, LEARNING_RATE, WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS)
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--model', type=str, default='gan_gcn', choices=MODEL, required=True)
-    parser.add_argument('--seed', type=int, default=42, help='Random seed.')
+    parser.add_argument('--seed', type=int, default=RANDOM_SEED, help='Random seed.')
     parser.add_argument('--epochs', type=int, default=EPOCHS,
                         help='Number of epochs to train.')
     parser.add_argument('--lr', type=float, default=LEARNING_RATE,
                         help='Initial learning rate.')
     parser.add_argument('--weight_decay', type=float, default=WEIGHT_DECAY,
                         help='Weight decay (L2 loss on parameters).')
-    parser.add_argument('--hidden', type=int, default=HIDDEN_DIMENSIONS,
-                        help='Number of hidden units in GCN.')
+    parser.add_argument('--dis_hidden', type=int, default=HIDDEN_DIMENSIONS,
+                        help='Number of hidden units for discriminator in GAN model.')
     parser.add_argument('--dropout', type=float, default=DROPOUT,
                         help='Dropout rate (1 - keep probability).')
     parser.add_argument('--gpu', type=bool, default=False,
@@ -31,7 +32,6 @@ def parse_args():
 
 def main():
     args = parse_args()
-    # hidden_dimensions = args.hidden
     # dropout = args.dropout
 
     logging.basicConfig(filename="./HGCN.log",
@@ -54,8 +54,12 @@ def main():
                                                            EDGE_LIST_PATH,
                                                            GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
     bipartite_graph_data_loader.load()
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+    if torch.cuda.is_available() and args.gpu:
+        torch.cuda.manual_seed(args.seed)
 
-    hgcn = HeterogeneousGCN(bipartite_graph_data_loader, device)
+    hgcn = HeterogeneousGCN(bipartite_graph_data_loader, args, device)
     if args.model == 'gan_gcn':
         hgcn.adversarial_train()
     else:
