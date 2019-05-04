@@ -8,8 +8,8 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.nn import init
 
-from data.utils import (REAL_LABEL, FAKE_LABEL)
-
+REAL_LABEL = 1
+FAKE_LABEL = 0
 
 class Discriminator(nn.Module):
     def __init__(self, infeat, hidfeat, outfeat, dropout):

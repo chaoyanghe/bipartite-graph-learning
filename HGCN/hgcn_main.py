@@ -26,13 +26,15 @@ def parse_args():
                         help='Dropout rate (1 - keep probability).')
     parser.add_argument('--gpu', type=bool, default=False,
                         help='Whether to use CPU or GPU')
+    parser.add_argument('batch', type=int, default=BATCH_SIZE,
+                        help='batch size')
 
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
-    # dropout = args.dropout
+    batch_size = args.batch
 
     logging.basicConfig(filename="./HGCN.log",
                         level=logging.DEBUG,
@@ -50,7 +52,7 @@ def main():
     
     device = torch.device("cuda:0" if torch.cuda.is_available() and args.gpu else "cpu")
     logging.info("device = %s" % device)
-    bipartite_graph_data_loader = BipartiteGraphDataLoader(100, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
+    bipartite_graph_data_loader = BipartiteGraphDataLoader(batch_size, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
                                                            EDGE_LIST_PATH,
                                                            GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
     bipartite_graph_data_loader.load()

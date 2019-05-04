@@ -6,6 +6,7 @@ WEIGHT_DECAY = 0.1
 HIDDEN_DIMENSIONS = 10  # hidden layer units for discriminator in GAN model
 VALIDATE_ITER = 5  # validate the model every # iterations
 DROPOUT = 0.5
+BATCH_SIZE = 100
 
 
 

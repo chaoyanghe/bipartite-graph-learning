@@ -13,41 +13,36 @@ parameterConfigs:
   - 512 
   name: batch_size
   type: ENUM_INT
-- discreteValues:
-  - 50
-  - 100
-  - 150
-  name: steps
-  type: ENUM_INT
 - max: 0.01
   min: 0.0001
-  name: learning_rate
+  name: lr
   type: LOG10
 - discreteValues:
+  - 8
+  - 16
+  - 32
+  - 48
   - 64
-  - 128
-  - 256
-  name: n_hidden
+  name: dis_hidden
   type: ENUM_INT
-- max: 0.01
-  min: 0.0001
-  name: rl_learning_rate
-  type: LOG10
 - discreteValues:
-  - 50
-  - 100
-  - 200
-  - 300
-  name: n_iterations
-  type: ENUM_INT
-- max: 15
-  min: 1 
-  name: n_trains
+  - 0.2
+  - 0.4
+  - 0.6
+  - 0.8
+  name: dropout
+  type: ENUM_FLOAT
+- max: 20
+  min: 1
+  name: epochs
   type: INT
-- max: 1.0
-  min: 0.1
-  name: tuning_rate
-  type: FLOAT
+- discreteValues:
+  - 0.001
+  - 0.0001
+  - 0.00001
+  - 0.0005
+  name: weight_decay
+  type: ENUM_FLOAT
 schedulerConfig:
   parallelNum: 50
   trialNum: 1000
