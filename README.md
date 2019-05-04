@@ -1,0 +1,1 @@
+Heterogeneous Graph Convolutional Networks with Adversarial Learning
