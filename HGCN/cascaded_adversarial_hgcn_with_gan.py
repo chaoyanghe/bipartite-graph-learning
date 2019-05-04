@@ -79,7 +79,6 @@ class CascadedAdversarialHGCN(object):
                     u_explicit_attr = torch.cat((u_explicit_attr, gcn_explicit_output.detach()), 0)
                 self.gan_explicit.forward_backward(u_attr_tensor, gcn_explicit_output, step=1, epoch=i, iter=iter)
 
-        print(u_explicit_attr.numpy())
         # implicit
         logging.info('Step 2: Implicit relation learning')
         v_implicit_attr = torch.FloatTensor([]).to(self.device)
