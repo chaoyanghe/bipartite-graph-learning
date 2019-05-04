@@ -166,6 +166,7 @@ def run_exp(input_folder, emb_file, args):
         train_x, test_x, train_y, test_y = train_test_split(user_x, user_y, test_size=test_size, random_state=42)
         del user_x, user_y
         test_y = test_y.values
+
         # Training
         if args.verbose:
             logging.info("Start training ...")
@@ -204,7 +205,7 @@ def run_exp(input_folder, emb_file, args):
             test_prec[test_size].append(prec)
             test_rec[test_size].append(rec)
 
-    # Write the test result.
+    # Write the evaluation result.
     fout = open(args.res_file, 'w')
     for ts in test_ratio:
         name = emb_file.split('/')[-1]
