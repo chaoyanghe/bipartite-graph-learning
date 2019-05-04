@@ -1,8 +1,8 @@
 common:
   algorithm: RANDOM_SEARCH
-  objectValueName: hgcn_auc
+  objectValueName: auc
   optimizationType: MAXIMIZE
-  studyName: graphcomb
+  studyName: CascadedAdversarialHGCN
 notification:
   ifAlarmNotification: False
 parameterConfigs:

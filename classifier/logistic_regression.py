@@ -189,7 +189,7 @@ def run_exp(input_folder, emb_file, args):
         # Area Under Curve of ROC (Receiver operating characteristic):
         # https://en.wikipedia.org/wiki/Receiver_operating_characteristic
         auc_s = auc(test_y, test_predict_prob)
-        logging.info("auc: %.6f" % (auc_s))
+        logging.info("auc=%.6f" % (auc_s))
 
         N_list = [1000, 10000, pos_n, judge_n]
         if args.verbose:

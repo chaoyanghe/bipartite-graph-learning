@@ -47,7 +47,7 @@ if __name__ == "__main__":
         for l in fin:
             ap = ap + float(l.strip().split(' ')[-2])
         fout = open(os.path.join(output_folder, "result_file"), 'w')
-        fout.write("hgcn_auc=%f" % (ap))
+        fout.write("object_value=%f" % (ap))
         fout.close()
     else:
         logging.info("No res file.")
