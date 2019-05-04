@@ -38,6 +38,7 @@ if __name__ == "__main__":
                      it)
         os.system(lr_cmd)
     else:
+        print("no emb file")
         logging.info("no emb file")
         exit(1)
     res_file = res_file + ".prec_rec"
