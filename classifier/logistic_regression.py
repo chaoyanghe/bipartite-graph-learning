@@ -239,6 +239,9 @@ def main():
     parser.add_argument("--max_iter", default=100, type=int)
     parser.add_argument("--alpha", default=0.005, type=float)
     args = parser.parse_args()
+
+    print("input_folder = %s" % args.input_folder)
+    print("emb_file = %s" % args.emb_file)
     run_exp(args.input_folder, args.emb_file, args)
 
 
