@@ -33,7 +33,7 @@ if __name__ == "__main__":
     # Performing example logistic regression 
     if os.path.exists(emb_file):
         max_iter = 300
-        lr_cmd = "python ./../classifier/logistic_regression.py --verbose 0 --input_folder %s --emb_file %s --res_file %s --max_iter %d" % (
+        lr_cmd = "python ./logistic_regression.py --verbose 0 --input_folder %s --emb_file %s --res_file %s --max_iter %d" % (
             input_folder, emb_file, res_file, it)
         # lr_cmd = "python example_logistic_regression.py  --input_folder %s --emb_file %s --res_file %s --max_iter %d"%(input_folder, emb_file, res_file, it)
         os.system(lr_cmd)
