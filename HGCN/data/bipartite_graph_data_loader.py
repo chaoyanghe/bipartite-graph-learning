@@ -155,7 +155,6 @@ class BipartiteGraphDataLoader:
         data = np.loadtxt(f_u_attr, delimiter='\t', converters=converters, usecols=(0, 1, 4, 5, 6, 7, 8, 9, 10))
 
         # normalize per dim
-        #data[:, 1:] = data[:, 1:] / data[:, 1:].max(axis=0)
         min_max_scaler = preprocessing.MinMaxScaler()
         data[:, 1:] = min_max_scaler.fit_transform(data[:, 1:])
 
@@ -256,7 +255,10 @@ class BipartiteGraphDataLoader:
 
         # normalize per dim
         v_attr_np = np.array(v_attr, dtype=np.float64, copy=False)
-        v_attr_np[:, 1:] = v_attr_np[:, 1:] / v_attr_np[:, 1:].max(axis=0)
+
+        min_max_scaler = preprocessing.MinMaxScaler()
+        v_attr_np[:, 1:] = min_max_scaler.fit_transform(v_attr_np[:, 1:])
+
         v_attr_np = v_attr_np.tolist()
 
         # attr_dict: {id : [feature1, ..., feature10]}
@@ -487,9 +489,9 @@ if __name__ == "__main__":
     # print("u_attr = %s " % u_attr[0])
 
     data = np.array([[9.51025e+05, 3.03200e+03, 1.86000e+02, 1.50900e+03, 3.00000e+01, 0.00000e+00,
- 7.00000e+00, 0.00000e+00, 1.57000e+02],
+                      7.00000e+00, 0.00000e+00, 1.57000e+02],
                      [7.37389e+05, 3.23300e+03, 6.52000e+02, 1.12600e+03, 2.90000e+01, 0.00000e+00,
- 8.88000e+02, 0.00000e+00, 7.31000e+02]])
+                      8.88000e+02, 0.00000e+00, 7.31000e+02]])
 
     min_max_scaler = preprocessing.MinMaxScaler()
     X_train_minmax = min_max_scaler.fit_transform(data)
@@ -500,7 +502,7 @@ if __name__ == "__main__":
     # #data[:, 1:] = data[:, 1:] / (data[:, 1:].max(axis=0) - data[:, 1:].min(axis=0))
     # print(data[:, 1:])
     # print(data[:, 1:].min(axis=0) / (data[:, 1:].max(axis=0)- data[:, 1:].min(axis=0)))
-    #print(data[0])
+    # print(data[0])
     # u_attr_batch, u_adaj_batch = bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(1)
     # count_list = np.sum(u_adaj_batch, axis=1)
     # logging.info(u_adaj_batch[0])
