@@ -25,4 +25,4 @@ python3 ./HGCN/hgcn_main.py \
 --dis_hidden 10 \
 --dropout 0.5
 
-python3 ./HGCN/classification.py
+python3 ./HGCN/classification.py --res_file ./out/hgcn.res

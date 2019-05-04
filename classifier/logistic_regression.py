@@ -111,7 +111,9 @@ def run_exp(input_folder, emb_file, args):
     ## index
     if args.verbose:
         logging.info("Loading index from %s ..." % os.path.join(input_folder, args.node_file))
-    node_id_file = os.path.join(input_folder, args.node_file)
+    node_id_file = args.node_file
+    if args.node_file is "node_list":
+        node_id_file = os.path.join(input_folder, node_id_file)
     print("node_id_file = %s" % node_id_file)
     node_ids = load_index_data(node_id_file)
 
