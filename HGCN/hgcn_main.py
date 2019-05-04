@@ -1,12 +1,12 @@
 import argparse
 import logging
 
-import torch
 import numpy as np
+import torch
 
+from cascaded_adversarial_hgcn_with_gan import CascadedAdversarialHGCN
+from conf import (MODEL, RANDOM_SEED, BATCH_SIZE, EPOCHS, LEARNING_RATE, WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS)
 from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
-from train import HeterogeneousGCN
-from utils import (MODEL, RANDOM_SEED, EPOCHS, LEARNING_RATE, WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS)
 
 
 def parse_args():
@@ -26,7 +26,7 @@ def parse_args():
                         help='Dropout rate (1 - keep probability).')
     parser.add_argument('--gpu', type=bool, default=False,
                         help='Whether to use CPU or GPU')
-    parser.add_argument('batch', type=int, default=BATCH_SIZE,
+    parser.add_argument('--batch_size', type=int, default=BATCH_SIZE,
                         help='batch size')
 
     return parser.parse_args()
@@ -34,38 +34,39 @@ def parse_args():
 
 def main():
     args = parse_args()
-    batch_size = args.batch
 
+    # log configuration
     logging.basicConfig(filename="./HGCN.log",
                         level=logging.DEBUG,
                         format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')
 
-    NODE_LIST_PATH = "./../data/Tencent-QQ/node_list"
-    NODE_ATTR_PATH = "./../data/Tencent-QQ/node_attr"
-    NODE_LABEL_PATH = "./../data/Tencent-QQ/node_true"
-
-    EDGE_LIST_PATH = "./../data/Tencent-QQ/edgelist"
-
-    GROUP_LIST_PATH = "./../data/Tencent-QQ/group_list"
-    GROUP_ATTR_PATH = "./../data/Tencent-QQ/group_attr"
-    
+    # initialization
+    np.random.seed(args.seed)
     device = torch.device("cuda:0" if torch.cuda.is_available() and args.gpu else "cpu")
     logging.info("device = %s" % device)
-    bipartite_graph_data_loader = BipartiteGraphDataLoader(batch_size, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
-                                                           EDGE_LIST_PATH,
-                                                           GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
-    bipartite_graph_data_loader.load()
-    np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     if torch.cuda.is_available() and args.gpu:
         torch.cuda.manual_seed(args.seed)
 
-    hgcn = HeterogeneousGCN(bipartite_graph_data_loader, args, device)
+    # load the bipartite graph data
+    NODE_LIST_PATH = "./../data/Tencent-QQ/node_list"
+    NODE_ATTR_PATH = "./../data/Tencent-QQ/node_attr"
+    NODE_LABEL_PATH = "./../data/Tencent-QQ/node_true"
+    EDGE_LIST_PATH = "./../data/Tencent-QQ/edgelist"
+    GROUP_LIST_PATH = "./../data/Tencent-QQ/group_list"
+    GROUP_ATTR_PATH = "./../data/Tencent-QQ/group_attr"
+    bipartite_graph_data_loader = BipartiteGraphDataLoader(args.batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
+                                                           NODE_LABEL_PATH,
+                                                           EDGE_LIST_PATH,
+                                                           GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
+    bipartite_graph_data_loader.load()
+
+    # start the adversarial learning (output the embedding result into ./out directory)
+    hgcn = CascadedAdversarialHGCN(bipartite_graph_data_loader, args, device)
     if args.model == 'gan_gcn':
-        hgcn.adversarial_train()
-    else:
-        hgcn.decoder_train()
+        # start training
+        hgcn.adversarial_learning()
 
 
 if __name__ == '__main__':

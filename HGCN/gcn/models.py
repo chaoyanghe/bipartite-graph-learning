@@ -3,7 +3,7 @@ import logging
 import torch.nn as nn
 import torch.nn.functional as F
 
-from pygcn.layers import GraphConvolution
+from gcn.layers import GraphConvolution
 
 
 # one layer GCN

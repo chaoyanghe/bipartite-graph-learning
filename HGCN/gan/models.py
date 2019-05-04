@@ -11,13 +11,14 @@ from torch.nn import init
 REAL_LABEL = 1
 FAKE_LABEL = 0
 
+
 class Discriminator(nn.Module):
     def __init__(self, infeat, hidfeat, outfeat, dropout):
         super(Discriminator, self).__init__()
         self.main = nn.Sequential(
             nn.Linear(infeat, hidfeat),
             nn.ReLU(inplace=True),
-            nn.Dropout(p=dropout, inplace=True),
+            nn.Dropout(p=dropout),
             nn.Linear(hidfeat, outfeat),
             nn.Sigmoid()
         )

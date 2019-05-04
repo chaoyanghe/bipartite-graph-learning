@@ -3,7 +3,6 @@ import logging
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
-import torch
 from networkx.algorithms.bipartite import biadjacency_matrix
 
 
@@ -318,13 +317,6 @@ class BipartiteGraphDataLoader:
         logging.info(u_adjacent_matrix_np.shape)
         # u_adjacent_matrix_np = u_adjacent_matrix.todense().A
         B_u.clear()
-
-        # print("start to transform the data type")
-        # for idx in range(len(u_adjacent_matrix_np)):
-        #     u_adj_float_idx = list(map(float, u_adjacent_matrix_np[idx]))
-        #     u_adjacent_matrix_np[idx] = u_adj_float_idx
-        # print("end to transform the data type")
-
         logging.info("end to load bipartite for u")
 
         logging.info("start to load bipartite for u")
@@ -340,13 +332,6 @@ class BipartiteGraphDataLoader:
         logging.info(v_adjacent_matrix_np.shape)
         # v_adjacent_matrix_np = v_adjacent_matrix.todense().A
         B_v.clear()
-
-        # print("start to transform the data type")
-        # for idx in range(len(v_adjacent_matrix_np)):
-        #     v_adj_float_idx = list(map(float, v_adjacent_matrix_np[idx]))
-        #     v_adjacent_matrix_np[idx] = v_adj_float_idx
-        # print("end to transform the data type")
-
         logging.info("end to load bipartite for u")
         return u_adjacent_matrix_np, v_adjacent_matrix_np
 
@@ -465,6 +450,13 @@ class BipartiteGraphDataLoader:
 
     def get_v_adj(self):
         return self.v_adjacent_matrix
+
+    def get_u_list(self):
+        return self.u_node_list
+
+    def get_v_list(self):
+        return self.v_node_list
+
 
 if __name__ == "__main__":
     logging.basicConfig(filename='bipartite_graph_data_loading.log', filemode='w',

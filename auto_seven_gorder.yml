@@ -1,6 +1,6 @@
 common:
   algorithm: RANDOM_SEARCH
-  objectValueName: fvalue
+  objectValueName: hgcn_auc
   optimizationType: MAXIMIZE
   studyName: graphcomb
 notification:
@@ -53,7 +53,7 @@ workerConfig:
     cluster: dev
     user: royrong
   configFiles:
-  - run_rl_dnn_gorder_seven.sh
-  runCmd: sh main.sh
+  - run_hgcn.sh
+  runCmd: sh run_hgcn.sh
   retryNum: 2
 
