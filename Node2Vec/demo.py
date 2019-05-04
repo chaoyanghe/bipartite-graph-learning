@@ -31,7 +31,7 @@ if __name__ == "__main__":
     emb_file = os.path.join(output_folder, "./%s.emb" % (method))
     logging.info("This is the demo for logistic regression using the embedding vectors")
 
-    hgcn_node_file = "../out/node_list"
+    hgcn_node_file = "hgcn_node_list"
     print(hgcn_node_file)
 
     # Performing example logistic regression 
