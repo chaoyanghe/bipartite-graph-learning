@@ -29,7 +29,7 @@ def load_label_data(fname, ind):
 
 
 def load_index_data(fname):
-    ind = pd.read_csv(fname, delimiter='\t', index_col=1, header=None)
+    ind = pd.read_csv(fname, delimiter='\t', index_col=0, header=None)
     return ind.index
 
 
