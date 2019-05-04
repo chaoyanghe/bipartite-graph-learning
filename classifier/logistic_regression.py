@@ -22,9 +22,13 @@ def load_emb_data(fname, ind=None):
 
 def load_label_data(fname, ind):
     true_label = np.loadtxt(fname, dtype=int)
+    print("true_label = %s" % true_label)
     y = pd.DataFrame(np.zeros(ind.shape), index=ind, dtype=int)
+    print(y)
     # cp()
-    y.loc[true_label] = 1
+    for label_id in true_label:
+        if label_id in y.index:
+            y.loc[label_id] = 1
     return y
 
 
@@ -126,6 +130,7 @@ def run_exp(input_folder, emb_file, args):
         if args.verbose:
             logging.info("Loading attributes from %s ..." % os.path.join(input_folder, 'node_attr'))
         attr_data = load_node_attr(node_attr_file, node_ids)
+        print("attr_data.shape = %s" % attr_data.shape[0])
     else:
         if args.verbose:
             logging.info("Cannot find %s. Skip loading attributes." % os.path.join(input_folder, 'node_attr'))
@@ -135,11 +140,14 @@ def run_exp(input_folder, emb_file, args):
     if args.verbose:
         logging.info("Loading emb from %s ..." % emb_file)
     data = load_emb_data(emb_file, node_ids)
+    print("emb_file len = %s" % data.shape[0])
 
     ## labels
     if args.verbose:
         logging.info("Loading labels from %s ..." % os.path.join(input_folder, 'node_true'))
     node_label_file = os.path.join(input_folder, 'node_true')
+    print("node_label_file = %s" % node_label_file)
+    print("nodes_ids = %s" % node_ids)
     node_labels = load_label_data(node_label_file, node_ids)
 
     ## Construct data
