@@ -15,9 +15,11 @@ if __name__ == "__main__":
     it = conf.it
 
     emb_file = os.path.join(output_folder, "/%s.emb" % (method))
+    print(emb_file)
 
     # the HGCN node list is smaller than the raw node list because some illegal nodes are filtered
     hgcn_node_file = os.path.join(output_folder, "/node_list")
+    print(hgcn_node_file)
 
     res_file = os.path.join(output_folder, "/hgcn.res")
     print(res_file)
