@@ -30,11 +30,15 @@ if __name__ == "__main__":
     res_file = os.path.join(output_folder, "./%s.res" % (method))
     emb_file = os.path.join(output_folder, "./%s.emb" % (method))
     logging.info("This is the demo for logistic regression using the embedding vectors")
+
+    hgcn_node_file = "../out/node_list"
+    print(hgcn_node_file)
+
     # Performing example logistic regression 
     if os.path.exists(emb_file):
         max_iter = 300
-        lr_cmd = "python ./../classifier/logistic_regression.py --verbose 0 --input_folder %s --emb_file %s --res_file %s --max_iter %d" % (
-            input_folder, emb_file, res_file, it)
+        lr_cmd = "python ./../classifier/logistic_regression.py --verbose 0 --input_folder %s --emb_file %s --node_file %s --res_file %s --max_iter %d" % (
+            input_folder, emb_file, hgcn_node_file, res_file, it)
         # lr_cmd = "python example_logistic_regression.py  --input_folder %s --emb_file %s --res_file %s --max_iter %d"%(input_folder, emb_file, res_file, it)
         os.system(lr_cmd)
     else:
