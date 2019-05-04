@@ -9,7 +9,7 @@ from torch.nn.modules.module import Module
 
 class GraphConvolution(Module):
     """
-    Simple GCN layer, similar to https://arxiv.org/abs/1609.02907
+    Simple GCN layer
     """
 
     def __init__(self, in_features, out_features, bias=True):

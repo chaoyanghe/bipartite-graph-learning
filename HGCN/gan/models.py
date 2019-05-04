@@ -9,16 +9,13 @@ import torch.optim as optim
 from torch.nn import init
 
 from data.utils import (REAL_LABEL, FAKE_LABEL)
-from utils import (LEARNING_RATE, WEIGHT_DECAY)
 
 
 class Discriminator(nn.Module):
-    def __init__(self, infeat, outfeat):
+    def __init__(self, infeat, hidfeat, outfeat):
         super(Discriminator, self).__init__()
-
-        hidfeat = 2  # define the hidden layer dimension
         self.main = nn.Sequential(
-            nn.Linear(infeat, hidfeat),  # default initialization
+            nn.Linear(infeat, hidfeat),
             nn.ReLU(inplace=True),
             nn.Linear(hidfeat, outfeat),
             nn.Sigmoid()
@@ -37,22 +34,19 @@ def _weights_init(m):
 
 # generator is GCN
 class GAN(object):
-    def __init__(self, netG, infeat, device, outfeat=1):  # binary classification
+    def __init__(self, netG, infeat, hidfeat, learning_rate, weight_decay, device, outfeat):  # binary classification
         """ Data from set U and V are used for generator alternatively
         """
-        # self.infeat = infeat  # dimension for real_data
-        # self.hidfeat = hidfeat  # hidden layer dimension
-        # self.outfeat = outfeat  # output layer dimension
 
-        self.netD = Discriminator(infeat, outfeat).to(device)
+        self.netD = Discriminator(infeat, hidfeat, outfeat).to(device)
         self.netD.apply(_weights_init)
         self.netG = netG
         self.optimizerG = optim.Adam(self.netG.parameters(),
-                                     lr=LEARNING_RATE,
-                                     weight_decay=WEIGHT_DECAY)
+                                     lr=learning_rate,
+                                     weight_decay=weight_decay)
         self.optimizerD = optim.Adam(self.netD.parameters(),
-                                     lr=LEARNING_RATE,
-                                     weight_decay=WEIGHT_DECAY)
+                                     lr=learning_rate,
+                                     weight_decay=weight_decay)
 
         self.device = device
 
@@ -98,32 +92,32 @@ class GAN(object):
         logging.info("Step: %s, Epoch: %s, Iterations: %s, dis loss: %s, gen loss: %s" % (
             step, epoch, iter, lossD.item(), lossG.item()))
 
-    # validation
-    def forward(self, real_data, netG_output, iter):
-        # output from generator, and real data
-        real = real_data
-        fake = netG_output
-        ############################
-        # (1) Update D network: maximize log(D(x)) + log(1 - D(G(z)))
-        ###########################
-        # train with real
-        label = torch.full((real.size()[0], 1), REAL_LABEL, device=self.device)
-        output = self.netD(real)
-        label.fill_(REAL_LABEL)
-        lossD_real = self._loss(output, label)
-
-        # train with fake
-        output = self.netD(fake.detach())  # calculate the gradient for discriminator
-        label.fill_(FAKE_LABEL)
-        lossD_fake = self._loss(output, label)
-        lossD = lossD_real + lossD_fake
-
-        ############################
-        # (2) Update G network: maximize log(D(G(z)))
-        ###########################
-        label.fill_(REAL_LABEL)
-        output = self.netD(fake)
-        lossG = self._loss(output, label)
-
-        logging.info("terations: %s, dis loss: %s, gen loss: %s" % (
-            iter, lossD.item(), lossG.item()))
+    # # validation
+    # def forward(self, real_data, netG_output, iter):
+    #     # output from generator, and real data
+    #     real = real_data
+    #     fake = netG_output
+    #     ############################
+    #     # (1) Update D network: maximize log(D(x)) + log(1 - D(G(z)))
+    #     ###########################
+    #     # train with real
+    #     label = torch.full((real.size()[0], 1), REAL_LABEL, device=self.device)
+    #     output = self.netD(real)
+    #     label.fill_(REAL_LABEL)
+    #     lossD_real = self._loss(output, label)
+    #
+    #     # train with fake
+    #     output = self.netD(fake.detach())  # calculate the gradient for discriminator
+    #     label.fill_(FAKE_LABEL)
+    #     lossD_fake = self._loss(output, label)
+    #     lossD = lossD_real + lossD_fake
+    #
+    #     ############################
+    #     # (2) Update G network: maximize log(D(G(z)))
+    #     ###########################
+    #     label.fill_(REAL_LABEL)
+    #     output = self.netD(fake)
+    #     lossG = self._loss(output, label)
+    #
+    #     logging.info("terations: %s, dis loss: %s, gen loss: %s" % (
+    #         iter, lossD.item(), lossG.item()))

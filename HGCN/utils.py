@@ -1,10 +1,11 @@
 MODEL = ['gan_gcn', 'decoder_gcn']
+RANDOM_SEED = 42
 EPOCHS = 1
 LEARNING_RATE = 0.001
 WEIGHT_DECAY = 0.1
-DROPOUT = 0.5
-HIDDEN_DIMENSIONS = 10  # hidden layer in Decoder
+HIDDEN_DIMENSIONS = 10  # hidden layer units for discriminator in GAN model
 VALIDATE_ITER = 5  # validate the model every # iterations
+DROPOUT = 0.5
 
 
 
