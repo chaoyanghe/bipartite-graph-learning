@@ -22,6 +22,9 @@ if __name__ == "__main__":
     print(hgcn_node_file)
 
     res_file = str(output_folder) + "/hgcn.res"
+    f = open(res_file, "+w")
+    f.write("")
+    f.close()
     print(res_file)
 
     # Performing example logistic regression
