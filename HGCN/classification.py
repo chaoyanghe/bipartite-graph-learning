@@ -14,12 +14,12 @@ if __name__ == "__main__":
 
     it = conf.it
 
-    emb_file = os.path.join(output_folder, "./%s.emb" % (method))
+    emb_file = os.path.join(output_folder, "/%s.emb" % (method))
 
     # the HGCN node list is smaller than the raw node list because some illegal nodes are filtered
-    hgcn_node_file = os.path.join(output_folder, "./node_list")
+    hgcn_node_file = os.path.join(output_folder, "/node_list")
 
-    res_file = os.path.join(output_folder, "./hgcn.res")
+    res_file = os.path.join(output_folder, "/hgcn.res")
     print(res_file)
 
     # Performing example logistic regression
