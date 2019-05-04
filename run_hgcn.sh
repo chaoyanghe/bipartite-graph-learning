@@ -15,6 +15,7 @@
 
 
 # for local
+rm -rf ./out
 python3 ./HGCN/hgcn_main.py \
 --model gan_gcn \
 --gpu False \
