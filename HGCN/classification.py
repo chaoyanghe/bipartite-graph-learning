@@ -27,7 +27,7 @@ if __name__ == "__main__":
         lr_cmd = "python ./../classifier/logistic_regression.py --verbose 0 " \
                  "--input_folder %s " \
                  "--emb_file %s " \
-                 "--node_file" \
+                 "--node_file %s" \
                  "--res_file %s " \
                  "--max_iter %d" % (
                      input_folder,
