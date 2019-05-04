@@ -50,12 +50,12 @@ def main():
         torch.cuda.manual_seed(args.seed)
 
     # load the bipartite graph data
-    NODE_LIST_PATH = "./../data/Tencent-QQ/node_list"
-    NODE_ATTR_PATH = "./../data/Tencent-QQ/node_attr"
-    NODE_LABEL_PATH = "./../data/Tencent-QQ/node_true"
-    EDGE_LIST_PATH = "./../data/Tencent-QQ/edgelist"
-    GROUP_LIST_PATH = "./../data/Tencent-QQ/group_list"
-    GROUP_ATTR_PATH = "./../data/Tencent-QQ/group_attr"
+    NODE_LIST_PATH = "./data/Tencent-QQ/node_list"
+    NODE_ATTR_PATH = "./data/Tencent-QQ/node_attr"
+    NODE_LABEL_PATH = "./data/Tencent-QQ/node_true"
+    EDGE_LIST_PATH = "./data/Tencent-QQ/edgelist"
+    GROUP_LIST_PATH = "./data/Tencent-QQ/group_list"
+    GROUP_ATTR_PATH = "./data/Tencent-QQ/group_attr"
     bipartite_graph_data_loader = BipartiteGraphDataLoader(args.batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
                                                            NODE_LABEL_PATH,
                                                            EDGE_LIST_PATH,
