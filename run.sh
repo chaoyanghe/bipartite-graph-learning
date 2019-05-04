@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-model="node2vec"
+#model="node2vec"
 #model="GCN"
 #model="GraphSage"
-#model="HGCN"
+model="HGCN"
 
 if [ $model == node2vec ]
 then
