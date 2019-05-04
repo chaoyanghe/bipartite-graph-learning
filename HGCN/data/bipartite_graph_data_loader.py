@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 from networkx.algorithms.bipartite import biadjacency_matrix
+from sklearn import preprocessing
 
 
 class BipartiteGraphDataLoader:
@@ -154,7 +155,10 @@ class BipartiteGraphDataLoader:
         data = np.loadtxt(f_u_attr, delimiter='\t', converters=converters, usecols=(0, 1, 4, 5, 6, 7, 8, 9, 10))
 
         # normalize per dim
-        data[:, 1:] = data[:, 1:] / data[:, 1:].max(axis=0)
+        #data[:, 1:] = data[:, 1:] / data[:, 1:].max(axis=0)
+        min_max_scaler = preprocessing.MinMaxScaler()
+        data[:, 1:] = min_max_scaler.fit_transform(data[:, 1:])
+
         data = data.tolist()
 
         # attr_dict: {id : [feature1, ..., feature10]}
@@ -464,21 +468,39 @@ if __name__ == "__main__":
                         datefmt='%Y-%m-%d %A %H:%M:%S',
                         level=logging.INFO)
 
-    NODE_LIST_PATH = "./../../data/Tencent-QQ/node_list"
-    NODE_ATTR_PATH = "./../../data/Tencent-QQ/node_attr"
-    NODE_LABEL_PATH = "./../../data/Tencent-QQ/node_true"
+    # NODE_LIST_PATH = "./../../data/Tencent-QQ/node_list"
+    # NODE_ATTR_PATH = "./../../data/Tencent-QQ/node_attr"
+    # NODE_LABEL_PATH = "./../../data/Tencent-QQ/node_true"
+    #
+    # EDGE_LIST_PATH = "./../../data/Tencent-QQ/edgelist"
+    #
+    # GROUP_LIST_PATH = "./../../data/Tencent-QQ/group_list"
+    # GROUP_ATTR_PATH = "./../../data/Tencent-QQ/group_attr"
+    # bipartite_graph_data_loader = BipartiteGraphDataLoader(3, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
+    #                                                        EDGE_LIST_PATH,
+    #                                                        GROUP_LIST_PATH, GROUP_ATTR_PATH)
+    # # bipartite_graph_data_loader.test()
+    # bipartite_graph_data_loader.load()
+    # # bipartite_graph_data_loader.plot_neighborhood_number_distribution()
+    # u_attr = bipartite_graph_data_loader.get_u_attr_array()
+    # #for i in range(len(u_attr)):
+    # print("u_attr = %s " % u_attr[0])
 
-    EDGE_LIST_PATH = "./../../data/Tencent-QQ/edgelist"
+    data = np.array([[9.51025e+05, 3.03200e+03, 1.86000e+02, 1.50900e+03, 3.00000e+01, 0.00000e+00,
+ 7.00000e+00, 0.00000e+00, 1.57000e+02],
+                     [7.37389e+05, 3.23300e+03, 6.52000e+02, 1.12600e+03, 2.90000e+01, 0.00000e+00,
+ 8.88000e+02, 0.00000e+00, 7.31000e+02]])
 
-    GROUP_LIST_PATH = "./../../data/Tencent-QQ/group_list"
-    GROUP_ATTR_PATH = "./../../data/Tencent-QQ/group_attr"
-    bipartite_graph_data_loader = BipartiteGraphDataLoader(3, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
-                                                           EDGE_LIST_PATH,
-                                                           GROUP_LIST_PATH, GROUP_ATTR_PATH)
-    # bipartite_graph_data_loader.test()
-    bipartite_graph_data_loader.load()
-    bipartite_graph_data_loader.plot_neighborhood_number_distribution()
+    min_max_scaler = preprocessing.MinMaxScaler()
+    X_train_minmax = min_max_scaler.fit_transform(data)
+    print(data)
+    print(X_train_minmax)
 
+    # len(data)
+    # #data[:, 1:] = data[:, 1:] / (data[:, 1:].max(axis=0) - data[:, 1:].min(axis=0))
+    # print(data[:, 1:])
+    # print(data[:, 1:].min(axis=0) / (data[:, 1:].max(axis=0)- data[:, 1:].min(axis=0)))
+    #print(data[0])
     # u_attr_batch, u_adaj_batch = bipartite_graph_data_loader.get_one_batch_group_u_with_adjacent(1)
     # count_list = np.sum(u_adaj_batch, axis=1)
     # logging.info(u_adaj_batch[0])
