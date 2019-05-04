@@ -2,10 +2,11 @@ from __future__ import division
 from __future__ import print_function
 
 import logging
+import os
+
 import numpy as np
 import torch
 
-from data.utils import load_data
 from gan.models import GAN
 from pygcn.models import GCN
 
@@ -137,6 +138,8 @@ class AdversarialHGCNLayer(object):
                 #     gcn_merge_output = self.gcn_merge(v_implicit_attr, u_adj)
                 #     self.gan_merge.forward(u_explicit_attr, gcn_merge_output, iter)
 
+        self.save_embedding_to_file(u_merge_attr.numpy(), None)
+
         # opposite
         logging.info('Step 4: Opposite relation learning')
         for i in range(self.epochs):
@@ -155,6 +158,31 @@ class AdversarialHGCNLayer(object):
                 # if iter % VALIDATE_ITER == 0:
                 #     gcn_opposite_output = self.gcn_merge(u_merge_attr, v_adj)
                 #     self.gan_opposite.forward(v_implicit_attr, gcn_opposite_output, iter)
+
+    # format:
+    # line1: number of the node, dimension of the embedding vector
+    # line2: node_id, embedding vector
+    # line3: ...
+    # lineN: node_id, embedding vector
+    def save_embedding_to_file(self, gcn_merge_output, node_id_list):
+        gcn_merge_output = np.zeros((1000, 32))
+        node_id_list = np.zeros((1000, 1))
+        node_num = gcn_merge_output.shape[0]
+        dimension_embedding = gcn_merge_output[1]
+        output_folder = "./out"
+        if not os.path.exists(output_folder):
+            os.makedirs(output_folder)
+        f = open(output_folder + '/hgcn.emb', 'w')
+        f.write(node_num + " " + dimension_embedding + "\n")
+        for n_idx in range(node_num):
+            f.write(node_id_list[n_idx] + ' ')
+            emb_vec = gcn_merge_output[n_idx]
+            for d_idx in range(dimension_embedding):
+                if d_idx != dimension_embedding - 1:
+                    f.write(emb_vec[d_idx] + ' ')
+                else:
+                    f.write(emb_vec[d_idx])
+        f.close()
 
 
 """Model selection / start training"""
@@ -186,7 +214,4 @@ class HeterogeneousGCN(object):
 
 
 if __name__ == '__main__':
-    adjU, adjV, featuresU, featuresV = load_data()
-    h_gcn = HeterogeneousGCN(adjU, adjV, featuresU, featuresV)
-    # h_gcn.adversarial_train()
-    h_gcn.decoder_train()
+    print("")
