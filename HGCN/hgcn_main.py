@@ -47,6 +47,7 @@ def main():
     # torch.manual_seed(args.seed)
     if torch.cuda.is_available() and args.gpu:
         torch.cuda.manual_seed(args.seed)
+    torch.autograd.set_detect_anomaly(True)
 
     # load the bipartite graph data
     NODE_LIST_PATH = "./data/Tencent-QQ/node_list"

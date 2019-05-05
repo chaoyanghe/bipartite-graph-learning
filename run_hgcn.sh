@@ -22,8 +22,8 @@ python3 ./HGCN/hgcn_main.py \
 --batch_size 100 \
 --epochs 1 \
 --lr 0.0003 \
---weight_decay 0.1 \
---dis_hidden 10 \
+--weight_decay 0.0005 \
+--dis_hidden 64 \
 --dropout 0.5
 
 python3 ./HGCN/classification.py

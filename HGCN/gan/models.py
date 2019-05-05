@@ -18,7 +18,7 @@ class Discriminator(nn.Module):
         self.main = nn.Sequential(
             nn.Linear(infeat, hidfeat),
             nn.ReLU(),
-            # nn.Dropout(p=dropout),
+            nn.Dropout(p=dropout),
             nn.Linear(hidfeat, outfeat),
             nn.Sigmoid()
         )
