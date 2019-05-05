@@ -18,12 +18,12 @@ class GCN(nn.Module):
     def forward(self, x, adj):
         # follow the best practice here:
         # https://github.com/soumith/talks/blob/master/2017-ICCV_Venice/How_To_Train_a_GAN.pdf
-        x = F.leaky_relu(self.gc1(x, adj))
-        x = self.fc1(x)
+        x = F.tanh(self.gc1(x, adj))
+        #x = self.fc1(x)
 
         # follow the best practice here:
         # https://github.com/soumith/talks/blob/master/2017-ICCV_Venice/How_To_Train_a_GAN.pdf
-        x = F.tanh(x)
+        #x = F.tanh(x)
 
         # x = F.dropout(x, self.dropout, training=self.training)
         # x = self.gc2(x, adj)
