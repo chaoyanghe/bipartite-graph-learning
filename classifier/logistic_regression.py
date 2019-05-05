@@ -174,6 +174,7 @@ def run_exp(input_folder, emb_file, args):
         # Resplitting
         if args.verbose:
             logging.info("Splitting data ...")
+            print("Splitting data ...")
         train_x, test_x, train_y, test_y = train_test_split(user_x, user_y, test_size=test_size, random_state=42)
         del user_x, user_y
         test_y = test_y.values
@@ -181,12 +182,14 @@ def run_exp(input_folder, emb_file, args):
         # Training
         if args.verbose:
             logging.info("Start training ...")
+            print("Start training ...")
         clf = SGDClassifier(loss='log', alpha=args.alpha, max_iter=args.max_iter, shuffle=True, n_jobs=48,
                             class_weight='balanced', verbose=args.verbose, tol=None)
         clf.fit(train_x, train_y)
         # Testing 
         if args.verbose:
             logging.info("Start testing ...")
+            print("Start testing ...")
 
         test_predict_prob = clf.predict_proba(test_x)[:, 1]
         s_idx = np.argsort(-test_predict_prob)
