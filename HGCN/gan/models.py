@@ -59,6 +59,7 @@ class GAN(object):
         # binary_cross_entropy = nn.BCELoss(logits, labels)
         return loss
 
+
     def forward_backward(self, real_data, netG_output, step, epoch, iter):
         # output from generator, and real data
         real = real_data
@@ -67,28 +68,28 @@ class GAN(object):
         # (1) Update D network: maximize log(D(x)) + log(1 - D(G(z)))
         ###########################
         # train with real
-        label = torch.full((real.size()[0], 1), REAL_LABEL, device=self.device)
+        label_real = torch.full((real.size()[0], 1), REAL_LABEL, device=self.device, requires_grad=False)
+        label_fake = torch.full((real.size()[0], 1), FAKE_LABEL, device=self.device, requires_grad=False)
+
         self.optimizerD.zero_grad()
+
         output = self.netD(real)
-        label.fill_(REAL_LABEL)
-        lossD_real = self._loss(output, label)
-        lossD_real.backward()
+        lossD_real = self._loss(output, label_real)
 
         # train with fake
         output = self.netD(fake.detach())  # calculate the gradient for discriminator
-        label.fill_(FAKE_LABEL)
-        lossD_fake = self._loss(output, label)
-        lossD_fake.backward()
+        lossD_fake = self._loss(output, label_fake)
+
         lossD = lossD_real + lossD_fake
+        lossD.backward()
         self.optimizerD.step()
 
         ############################
         # (2) Update G network: maximize log(D(G(z)))
         ###########################
         self.optimizerG.zero_grad()
-        label.fill_(REAL_LABEL)
         output = self.netD(fake)
-        lossG = self._loss(output, label)
+        lossG = self._loss(output, label_real)
         lossG.backward()
         self.optimizerG.step()
 
