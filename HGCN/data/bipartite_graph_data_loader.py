@@ -155,7 +155,9 @@ class BipartiteGraphDataLoader:
         data = np.loadtxt(f_u_attr, delimiter='\t', converters=converters, usecols=(0, 1, 4, 5, 6, 7, 8, 9, 10))
 
         # normalize per dim
-        min_max_scaler = preprocessing.MinMaxScaler()
+        # follow the best practice here:
+        # https://github.com/soumith/talks/blob/master/2017-ICCV_Venice/How_To_Train_a_GAN.pdf
+        min_max_scaler = preprocessing.MinMaxScaler(feature_range=(-1, 1))
         data[:, 1:] = min_max_scaler.fit_transform(data[:, 1:])
 
         data = data.tolist()
@@ -256,7 +258,9 @@ class BipartiteGraphDataLoader:
         # normalize per dim
         v_attr_np = np.array(v_attr, dtype=np.float64, copy=False)
 
-        min_max_scaler = preprocessing.MinMaxScaler()
+        # follow the best practice here:
+        # https://github.com/soumith/talks/blob/master/2017-ICCV_Venice/How_To_Train_a_GAN.pdf
+        min_max_scaler = preprocessing.MinMaxScaler(feature_range=(-1, 1))
         v_attr_np[:, 1:] = min_max_scaler.fit_transform(v_attr_np[:, 1:])
 
         v_attr_np = v_attr_np.tolist()

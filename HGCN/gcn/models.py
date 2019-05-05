@@ -1,5 +1,4 @@
 import torch.nn as nn
-import torch.nn.functional as F
 
 from gcn.layers import GraphConvolution
 
@@ -16,8 +15,14 @@ class GCN(nn.Module):
         self.fc1 = nn.Linear(hidden_dimension, outfeat)
 
     def forward(self, x, adj):
-        x = F.relu(self.gc1(x, adj))
+        # follow the best practice here:
+        # https://github.com/soumith/talks/blob/master/2017-ICCV_Venice/How_To_Train_a_GAN.pdf
+        x = nn.LeakyReLU(self.gc1(x, adj))
         x = self.fc1(x)
+
+        # follow the best practice here:
+        # https://github.com/soumith/talks/blob/master/2017-ICCV_Venice/How_To_Train_a_GAN.pdf
+        x = nn.Tanh(x)
 
         # x = F.dropout(x, self.dropout, training=self.training)
         # x = self.gc2(x, adj)

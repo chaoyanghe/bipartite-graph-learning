@@ -20,10 +20,10 @@ python3 ./HGCN/hgcn_main.py \
 --model gan_gcn \
 --gpu False \
 --batch_size 100 \
---epochs 1 \
+--epochs 3 \
 --lr 0.0003 \
 --weight_decay 0.0005 \
---dis_hidden 64 \
+--dis_hidden 32 \
 --dropout 0.5
 
 python3 ./HGCN/classification.py

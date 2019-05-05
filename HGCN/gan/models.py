@@ -17,7 +17,9 @@ class Discriminator(nn.Module):
         super(Discriminator, self).__init__()
         self.main = nn.Sequential(
             nn.Linear(infeat, hidfeat),
-            nn.ReLU(),
+            # follow the best practice here:
+            # https://github.com/soumith/talks/blob/master/2017-ICCV_Venice/How_To_Train_a_GAN.pdf
+            nn.LeakyReLU(),
             nn.Dropout(p=dropout),
             nn.Linear(hidfeat, outfeat),
             nn.Sigmoid()
@@ -44,9 +46,13 @@ class GAN(object):
         self.netD = Discriminator(infeat, hidfeat, outfeat, dropout).to(device)
         self.netD.apply(_weights_init)
         self.netG = netG
-        self.optimizerG = optim.Adam(self.netG.parameters(),
-                                     lr=learning_rate,
-                                     weight_decay=weight_decay)
+
+        # follow the best practice here:
+        # https://github.com/soumith/talks/blob/master/2017-ICCV_Venice/How_To_Train_a_GAN.pdf
+        self.optimizerG = optim.SGD(self.netG.parameters(),
+                                    lr=learning_rate,
+                                    weight_decay=weight_decay)
+
         self.optimizerD = optim.Adam(self.netD.parameters(),
                                      lr=learning_rate,
                                      weight_decay=weight_decay)
@@ -58,7 +64,6 @@ class GAN(object):
         loss = criterion(logits, labels)
         # binary_cross_entropy = nn.BCELoss(logits, labels)
         return loss
-
 
     def forward_backward(self, real_data, netG_output, step, epoch, iter):
         # output from generator, and real data
