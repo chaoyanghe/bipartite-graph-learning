@@ -205,7 +205,7 @@ def run_exp(input_folder, emb_file, args):
         logging.info("auc=%.6f" % (auc_s))
         print("auc=%.6f" % (auc_s))
         fauc = open(args.res_file+"_auc", 'w')
-        fauc.write(auc_s + "\n")
+        fauc.write(str(auc_s))
         fauc.close()
 
         N_list = [1000, 10000, pos_n, judge_n]

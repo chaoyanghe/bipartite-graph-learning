@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -9,21 +10,26 @@ class GCN(nn.Module):
     def __init__(self, infeat, outfeat):
         super(GCN, self).__init__()
 
-        hidden_dimension = 24
-        self.gc1 = GraphConvolution(infeat, hidden_dimension)
+        hidden_dimension1 = 32
+        hidden_dimension2 = 24
+        self.gc1 = GraphConvolution(infeat, hidden_dimension1)
         # self.gc2 = GraphConvolution(hidfeat, outfeat)
         # self.dropout = dropout
-        self.fc1 = nn.Linear(hidden_dimension, outfeat)
+        self.fc1 = nn.Linear(hidden_dimension1, hidden_dimension2)
+        self.fc2 = nn.Linear(hidden_dimension2, outfeat)
 
     def forward(self, x, adj):
         # follow the best practice here:
         # https://github.com/soumith/talks/blob/master/2017-ICCV_Venice/How_To_Train_a_GAN.pdf
-        x = F.tanh(self.gc1(x, adj))
-        #x = self.fc1(x)
+        x = F.leaky_relu(self.gc1(x, adj))
+        x = self.fc1(x)
+
+        x = F.leaky_relu(x)
+        x = self.fc2(x)
 
         # follow the best practice here:
         # https://github.com/soumith/talks/blob/master/2017-ICCV_Venice/How_To_Train_a_GAN.pdf
-        #x = F.tanh(x)
+        x = torch.tanh(x)
 
         # x = F.dropout(x, self.dropout, training=self.training)
         # x = self.gc2(x, adj)
