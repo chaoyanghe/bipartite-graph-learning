@@ -21,7 +21,7 @@ python3 ./HGCN/hgcn_main.py \
 --gpu False \
 --batch_size 100 \
 --epochs 1 \
---lr 0.001 \
+--lr 0.0003 \
 --weight_decay 0.1 \
 --dis_hidden 10 \
 --dropout 0.5
