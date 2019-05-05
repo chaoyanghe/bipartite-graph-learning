@@ -2,7 +2,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from gcn.layers import GraphConvolution
-
+import logging
 
 # one layer GCN
 class GCN(nn.Module):
@@ -14,8 +14,12 @@ class GCN(nn.Module):
         # self.dropout = dropout
 
     def forward(self, x, adj):
-        x = F.leaky_relu(self.gc1(x, adj))
+        x = F.relu(self.gc1(x, adj))
         # x = F.dropout(x, self.dropout, training=self.training)
         # x = self.gc2(x, adj)
 
+        return x
+
+    def aggregation(self, x, adj):
+        x = self.gc1(x, adj)
         return x

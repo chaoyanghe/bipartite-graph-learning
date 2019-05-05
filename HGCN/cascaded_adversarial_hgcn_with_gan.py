@@ -116,7 +116,8 @@ class CascadedAdversarialHGCN(object):
 
                 gcn_merge_output = self.gcn_merge(v_implicit_attr, u_adj_tensor)
                 if i == self.epochs - 1:
-                    u_merge_attr = torch.cat((u_merge_attr, gcn_merge_output.detach()), 0)
+                    node_embedding = self.gcn_merge.aggregation(v_implicit_attr, u_adj_tensor)
+                    u_merge_attr = torch.cat((u_merge_attr, node_embedding.detach()), 0)
                 u_input = u_explicit_attr[start_index:end_index]
                 self.gan_merge.forward_backward(u_input, gcn_merge_output,
                                                 step=3, epoch=i, iter=iter)
