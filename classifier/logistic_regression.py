@@ -203,6 +203,10 @@ def run_exp(input_folder, emb_file, args):
         # https://en.wikipedia.org/wiki/Receiver_operating_characteristic
         auc_s = auc(test_y, test_predict_prob)
         logging.info("auc=%.6f" % (auc_s))
+        print("auc=%.6f" % (auc_s))
+        fauc = open(args.res_file+"_auc", 'w')
+        fauc.write(auc_s + "\n")
+        fauc.close()
 
         N_list = [1000, 10000, pos_n, judge_n]
         if args.verbose:
