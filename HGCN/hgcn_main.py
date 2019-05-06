@@ -1,6 +1,7 @@
 import argparse
 import logging
 
+import numpy as np
 import torch
 
 from cascaded_adversarial_hgcn_with_gan import CascadedAdversarialHGCN
@@ -51,12 +52,13 @@ def main():
                         datefmt='%a, %d %b %Y %H:%M:%S')
 
     # initialization
-    # np.random.seed(args.seed)
+    # https://pytorch.org/docs/stable/notes/randomness.html
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+
     device = torch.device("cuda:0" if torch.cuda.is_available() and args.gpu else "cpu")
     logging.info("device = %s" % device)
-    # torch.manual_seed(args.seed)
-    if torch.cuda.is_available() and args.gpu:
-        torch.cuda.manual_seed(args.seed)
+
     torch.autograd.set_detect_anomaly(True)
 
     # load the bipartite graph data
