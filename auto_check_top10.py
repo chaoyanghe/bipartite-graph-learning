@@ -1,6 +1,22 @@
 import os
 from time import sleep
 
+def topten(auc_dict):
+    auc_dict = auc_dict.sort(reverse=True)
+
+    print("HGCN. The top 10 AUC will be:")
+    auc_top10 = auc_dict[0:9]
+    for index in range(10):
+        (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[index]
+        str = "--batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f" % (
+            batch_size,
+            epochs,
+            lr,
+            weight_decay,
+            dis_hidden,
+            dropout)
+        print("auc = %f. Parameters: %s" % (auc_top10[index], str))
+
 if __name__ == "__main__":
     # 972 parallel processes
     hpo_batch_size = [500, 1000, 1500]  # 3
@@ -41,24 +57,12 @@ if __name__ == "__main__":
                                 hpo_cnt += 1
         if len(auc_dict) == 972:
             print("all genrated!")
+            topten(auc_dict)
             bool_all_generated = True
         else:
+            print("generated len = %d" % len(auc_dict))
+            topten(auc_dict)
             auc_dict.clear()
             paras.clear()
             print("start next round checking")
             sleep(3)
-
-    auc_dict = auc_dict.sort(reverse=True)
-
-    print("HGCN. The top 10 AUC will be:")
-    auc_top10 = auc_dict[0:9]
-    for index in range(10):
-        (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[index]
-        str = "--batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f" % (
-            batch_size,
-            epochs,
-            lr,
-            weight_decay,
-            dis_hidden,
-            dropout)
-        print("auc = %f. Parameters: %s" % (auc_top10[index], str))
