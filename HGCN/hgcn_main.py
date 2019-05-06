@@ -42,6 +42,7 @@ def main():
     print("weight_decay = " + str(args.weight_decay))
     print("dis_hidden = " + str(args.dis_hidden))
     print("dropout = " + str(args.dropout))
+    print("rank = " + str(rank))
 
     # log configuration
     logging.basicConfig(filename="./HGCN.log",
@@ -63,6 +64,7 @@ def main():
     if rank != -1:
         data_path = "/mnt/shared/home/bipartite-graph-learning/"
 
+    print(data_path)
     NODE_LIST_PATH = data_path + "data/Tencent-QQ/node_list"
     NODE_ATTR_PATH = data_path + "data/Tencent-QQ/node_attr"
     NODE_LABEL_PATH = data_path + "data/Tencent-QQ/node_true"
