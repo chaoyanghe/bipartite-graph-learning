@@ -5,10 +5,13 @@ from time import sleep
 def topten(auc_dict, paras):
     if len(auc_dict) < 10:
         return
-    auc_list_sorted = [v for v in sorted(auc_dict.values(), reverse=True)]
+
+    auc_dict_sorted = sorted(auc_dict.items(), key=lambda d: d[1], reverse=True)
 
     print("HGCN. The top 10 AUC will be:")
-    for index in range(10):
+    cnt = 0
+    for key in auc_dict.keys():
+        (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[key]
         str = "--batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f" % (
             batch_size,
             epochs,
@@ -17,7 +20,10 @@ def topten(auc_dict, paras):
             dis_hidden,
             dropout)
         print(str)
-        print("index = %d. auc = %f. Parameters: %s" % (index, auc_list_sorted[index], str))
+        print("index = %d. auc = %f. Parameters: %s" % (key, auc_dict_sorted[key], str))
+        cnt+=1
+        if cnt > 10:
+            break
 
 
 if __name__ == "__main__":
