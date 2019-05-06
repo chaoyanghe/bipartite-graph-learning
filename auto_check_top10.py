@@ -30,7 +30,7 @@ if __name__ == "__main__":
     hpo_dropout = [0.4, 0.5, 0.6]  # 3
 
     bool_all_generated = False
-    auc_dict = []
+    auc_dict = {}
     paras = dict()
     while not bool_all_generated:
         hpo_cnt = 0
