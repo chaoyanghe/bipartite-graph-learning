@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
     (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[rank]
 
-    hgcn_cmd = "python3 ./HGCN/hgcn_main.py --model gan_gcn --gpu False --batch_size %s --epochs % --lr %s --weight_decay %s --dis_hidden %s --dropout %s --rank %s" % (
+    hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 ./HGCN/hgcn_main.py --model gan_gcn --gpu False --batch_size %s --epochs % --lr %s --weight_decay %s --dis_hidden %s --dropout %s --rank %s" % (
         str(batch_size),
         str(epochs),
         str(lr),
@@ -59,5 +59,5 @@ if __name__ == "__main__":
         str(rank))
     os.system(hgcn_cmd)
 
-    lr_cmd = "python3 ./HGCN/classification.py --rank %s" % rank
+    lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 ./HGCN/classification.py --rank %s" % rank
     os.system(lr_cmd)
