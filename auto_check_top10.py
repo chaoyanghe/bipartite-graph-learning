@@ -5,7 +5,7 @@ from time import sleep
 def topten(auc_dict):
     if len(auc_dict) < 10:
         return
-    auc_dict = auc_dict.sort(reverse=True)
+    auc_list = auc_dict.sort(reverse=True)
 
     print("HGCN. The top 10 AUC will be:")
     for index in range(10):
@@ -17,7 +17,7 @@ def topten(auc_dict):
             dis_hidden,
             dropout)
         print(str)
-        print("auc = %f. Parameters: %s" % (auc_dict[index], str))
+        print("auc = %f. Parameters: %s" % (auc_list[index], str))
 
 
 if __name__ == "__main__":
