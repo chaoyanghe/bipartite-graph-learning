@@ -191,7 +191,7 @@ class CascadedAdversarialHGCN(object):
         logging.info("dimension_embedding = %s" % dimension_embedding)
         output_folder = "./out"
         if self.rank != -1:
-            output_folder = "/mnt/shared/home/bipartite-graph-learning/out" + str(self.rank)
+            output_folder = "/mnt/shared/home/bipartite-graph-learning/out/" + str(self.rank)
 
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
