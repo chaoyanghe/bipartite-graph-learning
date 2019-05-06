@@ -15,7 +15,7 @@ if __name__ == "__main__":
             for lr in hpo_lr:
                 for weight_decay in hpo_weight_decay:
                     for dis_hidden in hpo_dis_hidden:
-                        for dropout in hpo_dis_hidden:
+                        for dropout in hpo_dropout:
                             paras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout)
                             result_path = "/mnt/shared/home/bipartite-graph-learning/" + str(hpo_cnt)
                             with open(result_path + "hgcn.res_auc", "r") as f:

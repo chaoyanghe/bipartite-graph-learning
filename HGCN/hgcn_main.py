@@ -36,11 +36,17 @@ def parse_args():
 def main():
     args = parse_args()
     rank = args.rank
+    print("batch_size = " + str(args.batch_size))
+    print("epochs = " + str(args.epochs))
+    print("lr = " + str(args.lr))
+    print("weight_decay = " + str(args.weight_decay))
+    print("dis_hidden = " + str(args.dis_hidden))
+    print("dropout = " + str(args.dropout))
 
     # log configuration
     logging.basicConfig(filename="./HGCN.log",
                         level=logging.DEBUG,
-                        format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                        format=str(rank) + '%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')
 
     # initialization
@@ -56,7 +62,7 @@ def main():
     data_path = "./"
     if rank != -1:
         data_path = "/mnt/shared/home/bipartite-graph-learning/"
-        
+
     NODE_LIST_PATH = data_path + "data/Tencent-QQ/node_list"
     NODE_ATTR_PATH = data_path + "data/Tencent-QQ/node_attr"
     NODE_LABEL_PATH = data_path + "data/Tencent-QQ/node_true"
