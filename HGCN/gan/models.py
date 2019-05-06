@@ -43,6 +43,9 @@ class GAN(object):
         """ Data from set U and V are used for generator alternatively
         """
 
+        self.iteration_cnt = 0
+        self.log_interval = 100
+
         self.netD = Discriminator(infeat, hidfeat, outfeat, dropout).to(device)
         self.netD.apply(_weights_init)
         self.netG = netG
@@ -98,9 +101,10 @@ class GAN(object):
         lossG.backward()
         self.optimizerG.step()
 
-        # logging.info("Step: %s, Epoch: %s, Iterations: %s, dis loss: %s, gen loss: %s" % (
-        #     step, epoch, iter, lossD.item(), lossG.item()))
-
+        if self.iteration_cnt % self.log_interval == 0:
+            logging.info("Step: %s, Epoch: %s, Iterations: %s, dis loss: %s, gen loss: %s" % (
+                step, epoch, iter, lossD.item(), lossG.item()))
+        self.iteration_cnt += 1
     # # validation
     # def forward(self, real_data, netG_output, iter):
     #     # output from generator, and real data
