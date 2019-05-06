@@ -15,7 +15,6 @@ rank = comm.Get_rank()
 size = comm.Get_size()
 
 if __name__ == "__main__":
-    args = parse_args()
     setproctitle.setproctitle("HGCN:" + str(rank))
 
     logging.basicConfig(filename="./HGCN.log",
