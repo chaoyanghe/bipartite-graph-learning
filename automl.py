@@ -18,7 +18,7 @@ if __name__ == "__main__":
     setproctitle.setproctitle("HGCN:" + str(rank))
 
     logging.basicConfig(filename="./HGCN.log",
-                        level=logging.DEBUG,
+                        level=logging.INFO,
                         format=str(rank) + ' - %(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')
 
@@ -49,6 +49,7 @@ if __name__ == "__main__":
 
     (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[rank]
 
+    print("start hgcn_cmd")
     hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/hgcn_main.py --model gan_gcn --gpu False --batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f --rank %d" % (
         batch_size,
         epochs,
@@ -57,6 +58,10 @@ if __name__ == "__main__":
         dis_hidden,
         dropout,
         rank)
+    os.system(hgcn_cmd)
+    print("end hgcn_cmd")
 
+    print("start lr_cmd")
     lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/classification.py --rank %s" % rank
     os.system(lr_cmd)
+    print("end lr_cmd")
