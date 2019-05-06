@@ -79,7 +79,7 @@ def main():
     bipartite_graph_data_loader.load()
 
     # start the adversarial learning (output the embedding result into ./out directory)
-    hgcn = CascadedAdversarialHGCN(bipartite_graph_data_loader, args, device)
+    hgcn = CascadedAdversarialHGCN(bipartite_graph_data_loader, args, device, rank)
     if args.model == 'gan_gcn':
         # start training
         hgcn.adversarial_learning()

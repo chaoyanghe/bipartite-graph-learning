@@ -22,7 +22,7 @@ python3 ./HGCN/hgcn_main.py \
 --batch_size 1000 \
 --epochs 3 \
 --lr 0.0003 \
---weight_decay 0.001 \
+--weight_decay 0.0005 \
 --dis_hidden 24 \
 --dropout 0.5
 
