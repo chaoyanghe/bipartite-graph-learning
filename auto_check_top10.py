@@ -20,7 +20,7 @@ def topten(auc_dict, paras):
             dis_hidden,
             dropout)
         print(str)
-        print("index = %d. auc = %f. Parameters: %s" % (auc_dict_sorted[key][0], auc_dict_sorted[key][0][1], str))
+        print("index = %d. auc = %f. Parameters: %s" % (auc_dict_sorted[key][0], auc_dict_sorted[key][1], str))
         cnt += 1
         if cnt > 10:
             break
