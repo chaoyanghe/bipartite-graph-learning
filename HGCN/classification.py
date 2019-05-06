@@ -3,11 +3,25 @@ import os
 
 import conf
 
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--rank', type=int, default=-1,
+                        help='process ID for MPI Simple AutoML')
+
+    return parser.parse_args()
+
+
 if __name__ == "__main__":
+    args = parse_args()
+    rank = args.rank
 
     method = conf.method
     input_folder = conf.input_folder
     output_folder = conf.output_folder
+    if rank != -1:
+        input_folder = "/mnt/shared/home/bipartite-graph-learning/data/Tencent-QQ"
+        output_folder = "/mnt/shared/home/bipartite-graph-learning/out/" + str(rank)
 
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)

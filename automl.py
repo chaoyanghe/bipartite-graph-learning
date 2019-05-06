@@ -18,7 +18,8 @@ if __name__ == "__main__":
     args = parse_args()
     setproctitle.setproctitle("HGCN:" + str(rank))
 
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(filename="./HGCN.log",
+                        level=logging.DEBUG,
                         format=str(rank) + ' - %(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')
 
@@ -49,14 +50,15 @@ if __name__ == "__main__":
 
     (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[rank]
 
-    hgcn_cmd = "python3 ./HGCN/hgcn_main.py --model gan_gcn --gpu False --batch_size %s --epochs % --lr %s --weight_decay %s --dis_hidden %s --dropout %s" % (
+    hgcn_cmd = "python3 ./HGCN/hgcn_main.py --model gan_gcn --gpu False --batch_size %s --epochs % --lr %s --weight_decay %s --dis_hidden %s --dropout %s --rank %s" % (
         str(batch_size),
         str(epochs),
         str(lr),
         str(weight_decay),
         str(dis_hidden),
-        str(dropout))
+        str(dropout),
+        str(rank))
     os.system(hgcn_cmd)
 
-    lr_cmd = "python3 ./HGCN/classification.py"
+    lr_cmd = "python3 ./HGCN/classification.py --rank %s" % rank
     os.system(lr_cmd)

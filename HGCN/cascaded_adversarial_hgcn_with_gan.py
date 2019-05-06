@@ -189,6 +189,9 @@ class CascadedAdversarialHGCN(object):
         dimension_embedding = gcn_merge_output.shape[1]
         logging.info("dimension_embedding = %s" % dimension_embedding)
         output_folder = "./out"
+        if rank != -1:
+            output_folder = "/mnt/shared/home/bipartite-graph-learning/out" + str(rank)
+
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
         f_emb = open(output_folder + '/hgcn.emb', 'w')

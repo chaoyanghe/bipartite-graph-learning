@@ -27,12 +27,15 @@ def parse_args():
                         help='Whether to use CPU or GPU')
     parser.add_argument('--batch_size', type=int, default=BATCH_SIZE,
                         help='batch size')
+    parser.add_argument('--rank', type=int, default=-1,
+                        help='process ID for MPI Simple AutoML')
 
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
+    rank = args.rank
 
     # log configuration
     logging.basicConfig(filename="./HGCN.log",
@@ -50,12 +53,17 @@ def main():
     torch.autograd.set_detect_anomaly(True)
 
     # load the bipartite graph data
-    NODE_LIST_PATH = "./data/Tencent-QQ/node_list"
-    NODE_ATTR_PATH = "./data/Tencent-QQ/node_attr"
-    NODE_LABEL_PATH = "./data/Tencent-QQ/node_true"
-    EDGE_LIST_PATH = "./data/Tencent-QQ/edgelist"
-    GROUP_LIST_PATH = "./data/Tencent-QQ/group_list"
-    GROUP_ATTR_PATH = "./data/Tencent-QQ/group_attr"
+    data_path = "./"
+    if rank != -1:
+        data_path = "/mnt/shared/home/bipartite-graph-learning/"
+        
+    NODE_LIST_PATH = data_path + "data/Tencent-QQ/node_list"
+    NODE_ATTR_PATH = data_path + "data/Tencent-QQ/node_attr"
+    NODE_LABEL_PATH = data_path + "data/Tencent-QQ/node_true"
+    EDGE_LIST_PATH = data_path + "data/Tencent-QQ/edgelist"
+    GROUP_LIST_PATH = data_path + "data/Tencent-QQ/group_list"
+    GROUP_ATTR_PATH = data_path + "data/Tencent-QQ/group_attr"
+
     bipartite_graph_data_loader = BipartiteGraphDataLoader(args.batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
                                                            NODE_LABEL_PATH,
                                                            EDGE_LIST_PATH,
