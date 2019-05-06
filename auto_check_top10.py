@@ -18,7 +18,7 @@ if __name__ == "__main__":
                         for dropout in hpo_dropout:
                             paras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout)
                             result_path = "/mnt/shared/home/bipartite-graph-learning/" + str(hpo_cnt)
-                            with open(result_path + "hgcn.res_auc", "r") as f:
+                            with open(result_path + "/hgcn.res_auc", "r") as f:
                                 first_line = f.readline()
                             auc_value = first_line.split("_")
                             # read the AUC value
