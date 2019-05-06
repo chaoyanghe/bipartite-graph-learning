@@ -19,7 +19,6 @@ def topten(auc_dict, paras):
             weight_decay,
             dis_hidden,
             dropout)
-        print(str)
         print("index = %d. auc = %f. Parameters: %s" % (auc_dict_sorted[key][0], auc_dict_sorted[key][1], str))
         cnt += 1
         if cnt > 10:
