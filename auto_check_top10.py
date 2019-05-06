@@ -9,7 +9,6 @@ def topten(auc_dict):
 
     print("HGCN. The top 10 AUC will be:")
     for index in range(10):
-        (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[index]
         str = "--batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f" % (
             batch_size,
             epochs,
@@ -17,6 +16,7 @@ def topten(auc_dict):
             weight_decay,
             dis_hidden,
             dropout)
+        print(str)
         print("auc = %f. Parameters: %s" % (auc_dict[index], str))
 
 
