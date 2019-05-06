@@ -42,7 +42,7 @@ if __name__ == "__main__":
                         for dis_hidden in hpo_dis_hidden:
                             for dropout in hpo_dropout:
                                 paras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout)
-                                auc_file = "/mnt/shared/home/bipartite-graph-learning/out/" + str(hpo_cnt) + "/hgcn.res_auc"
+                                auc_file = "/mnt/shared/home/bipartite-graph-learning/out/%d/hgcn.res_auc" % hpo_cnt
                                 if os.path.exists(auc_file):
                                     with open(auc_file, "r") as f:
                                         first_line = f.readline()
