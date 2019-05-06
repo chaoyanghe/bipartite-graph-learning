@@ -2,10 +2,10 @@ import os
 from time import sleep
 
 
-def topten(auc_dict):
+def topten(auc_dict, paras):
     if len(auc_dict) < 10:
         return
-    auc_list = auc_dict.sort(reverse=True)
+    auc_list_sorted = [v for v in sorted(auc_dict.values())]
 
     print("HGCN. The top 10 AUC will be:")
     for index in range(10):
@@ -17,7 +17,7 @@ def topten(auc_dict):
             dis_hidden,
             dropout)
         print(str)
-        print("auc = %f. Parameters: %s" % (auc_list[index], str))
+        print("index = %d. auc = %f. Parameters: %s" % (index, auc_list_sorted[index], str))
 
 
 if __name__ == "__main__":
@@ -56,15 +56,15 @@ if __name__ == "__main__":
                                             hpo_cnt)
                                         print("auc = %s. Parameters: %s" % (auc_value, str))
                                         # read the AUC value
-                                        auc_dict.append(float(auc_value[0]))
+                                        auc_dict[hpo_cnt] = float(auc_value[0])
                                 hpo_cnt += 1
         if len(auc_dict) == 972:
             print("all genrated!")
-            topten(auc_dict)
+            topten(auc_dict, paras)
             bool_all_generated = True
         else:
             print("generated len = %d" % len(auc_dict))
-            topten(auc_dict)
+            topten(auc_dict, paras)
             auc_dict.clear()
             paras.clear()
             print("start next round checking")
