@@ -54,6 +54,11 @@ if __name__ == "__main__":
     auc_top10 = auc_dict[0:9]
     for index in range(10):
         (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[index]
-        print("auc = %s. (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = (%s, %s, %s, %s, %s, %s)" % (
-            str(auc_top10[index]), str(batch_size), str(epochs), str(lr), str(weight_decay), str(dis_hidden),
-            str(dropout)))
+        str = "--batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f" % (
+            batch_size,
+            epochs,
+            lr,
+            weight_decay,
+            dis_hidden,
+            dropout)
+        print("auc = %f. Parameters: %s" % (auc_top10[index], str))
