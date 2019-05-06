@@ -8,7 +8,6 @@ def topten(auc_dict):
     auc_dict = auc_dict.sort(reverse=True)
 
     print("HGCN. The top 10 AUC will be:")
-    auc_top10 = auc_dict[0:9]
     for index in range(10):
         (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[index]
         str = "--batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f" % (
@@ -18,7 +17,7 @@ def topten(auc_dict):
             weight_decay,
             dis_hidden,
             dropout)
-        print("auc = %f. Parameters: %s" % (auc_top10[index], str))
+        print("auc = %f. Parameters: %s" % (auc_dict[index], str))
 
 
 if __name__ == "__main__":
