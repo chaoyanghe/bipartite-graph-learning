@@ -11,6 +11,7 @@ def topten(auc_dict, paras):
     print("HGCN. The top 10 AUC will be:")
     cnt = 0
     for key in auc_dict.keys():
+        print("auc = %f" % auc_dict_sorted[key])
         (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[key]
         str = "--batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f" % (
             batch_size,
@@ -21,7 +22,7 @@ def topten(auc_dict, paras):
             dropout)
         print(str)
         print("index = %d. auc = %f. Parameters: %s" % (key, auc_dict_sorted[key], str))
-        cnt+=1
+        cnt += 1
         if cnt > 10:
             break
 
