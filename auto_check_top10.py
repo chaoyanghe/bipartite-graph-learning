@@ -45,7 +45,7 @@ if __name__ == "__main__":
         else:
             auc_dict.clear()
             paras.clear()
-            print("start netxt round checking")
+            print("start next round checking")
             sleep(3)
 
     auc_dict = auc_dict.sort(reverse=True)
