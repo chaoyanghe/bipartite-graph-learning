@@ -11,7 +11,6 @@ from torch.nn import init
 class Decoder(nn.Module):
     def __init__(self, infeat, hidfeat, outfeat, dropout):
         super(Decoder, self).__init__()
-
         self.main = nn.Sequential(
             nn.Linear(infeat, hidfeat),
             nn.ReLU(),
@@ -38,8 +37,8 @@ class HGCNDecoder(object):
         self.optimizer = optim.Adam(list(self.netG.parameters()) + list(self.netD.parameters()),
                                     lr=learning_rate,
                                     weight_decay=weight_decay)
-        self.decoder_output = 0
 
+    # here is simple MSE loss, probably has different loss
     def _loss(self, input, target):
         criterion = nn.MSELoss()
         loss = criterion(input, target)
@@ -48,17 +47,16 @@ class HGCNDecoder(object):
     def forward_backward(self, target, input, step, epoch, iter):
         self.optimizer.zero_grad()
         output = self.netD(input)
-        self.decoder_output = output
         loss = self._loss(output, target)
         loss.backward()
         self.optimizer.step()
 
-        logging.info('Step: {:01d}'.format(step),
-                     'Epoch: {:04d}'.format(epoch),
-                     'Iterations: {:04d}'.format(iter),
-                     'Loss: {:.4f}'.format(loss.item())
-                     )
+        logging.info("Step: %s, Epoch: %s, Iterations: %s, loss: %s" % (
+            step, epoch, iter, loss.item()))
 
+    def forward(self, input):
+        output = self.netD(input)
+        return output
     # # validation
     # def forward(self, target, input, iter):
     #     output = self.netD(input)

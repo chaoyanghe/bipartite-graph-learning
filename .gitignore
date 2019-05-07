@@ -6,3 +6,5 @@ __pycache__
 */*/__pycache__/*
 HGCN/gcn/__pycache__/models.cpython-36.pyc
 HGCN/gcn/__pycache__/layers.cpython-36.pyc
+HGCN/out
+GraphSage/example_data

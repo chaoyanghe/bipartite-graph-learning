@@ -5,7 +5,9 @@ import numpy as np
 import torch
 
 from cascaded_adversarial_hgcn_with_gan import CascadedAdversarialHGCN
-from conf import (MODEL, RANDOM_SEED, BATCH_SIZE, EPOCHS, LEARNING_RATE, WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS)
+from cascaded_adversarial_hgcn_with_decoder import DecoderGCNLayer
+from conf import (MODEL, RANDOM_SEED, BATCH_SIZE, EPOCHS, LEARNING_RATE,
+                  WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS, GCN_OUTPUT_DIM)
 from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
 
 
@@ -28,6 +30,8 @@ def parse_args():
                         help='Whether to use CPU or GPU')
     parser.add_argument('--batch_size', type=int, default=BATCH_SIZE,
                         help='batch size')
+    parser.add_argument('--gcn_output_dim', type=int, default=GCN_OUTPUT_DIM,
+                        help='The output dimensions of GCN.')
     parser.add_argument('--rank', type=int, default=-1,
                         help='process ID for MPI Simple AutoML')
 
@@ -85,6 +89,9 @@ def main():
     if args.model == 'gan_gcn':
         # start training
         hgcn.adversarial_learning()
+    elif args.model == 'decoder_gcn':
+        hgcn = DecoderGCNLayer(bipartite_graph_data_loader, args, device)
+        hgcn.relation_learning()
 
 
 if __name__ == '__main__':
