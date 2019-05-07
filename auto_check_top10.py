@@ -27,12 +27,12 @@ def topten(auc_dict, paras):
 
 if __name__ == "__main__":
     # 972 parallel processes
-    hpo_batch_size = [500, 1000, 1500]  # 3
-    hpo_epochs = [3, 5, 8, 10]  # 4
-    hpo_lr = [0.0003, 0.0005, 0.001]  # 3
-    hpo_weight_decay = [0.001, 0.0001, 0.00001]  # 3
-    hpo_dis_hidden = [16, 24, 32]  # 3
-    hpo_dropout = [0.4, 0.5, 0.6]  # 3
+    hpo_batch_size = [400, 500, 600, 700]  # 3
+    hpo_epochs = [2, 3, 4]  # 4
+    hpo_lr = [0.0002, 0.0003, 0.0004]  # 3
+    hpo_weight_decay = [0.001, 0.0005, 0.0008]  # 3
+    hpo_dis_hidden = [16, 20, 24]  # 3
+    hpo_dropout = [0.35, 0.4, 0.45]  # 3
 
     bool_all_generated = False
     auc_dict = {}
