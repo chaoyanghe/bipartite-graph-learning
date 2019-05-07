@@ -6,9 +6,7 @@ def topten(auc_dict, paras):
     if len(auc_dict) < 10:
         return
 
-
     auc_dict_sorted = sorted(auc_dict.items(), key=lambda d: d[1], reverse=True)
-    print(auc_dict_sorted)
 
     print("HGCN. The top 10 AUC will be:")
     cnt = 0
