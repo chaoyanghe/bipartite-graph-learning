@@ -1,4 +1,3 @@
-import logging
 from collections import namedtuple
 
 import tensorflow as tf
@@ -84,7 +83,7 @@ class Model(object):
             raise AttributeError("TensorFlow session not provided.")
         saver = tf.train.Saver(self.vars)
         save_path = saver.save(sess, "tmp/%s.ckpt" % self.name)
-        logging.info("Model saved in file: %s" % save_path)
+        print("Model saved in file: %s" % save_path)
 
     def load(self, sess=None):
         if not sess:
@@ -92,7 +91,7 @@ class Model(object):
         saver = tf.train.Saver(self.vars)
         save_path = "tmp/%s.ckpt" % self.name
         saver.restore(sess, save_path)
-        logging.info("Model restored from file: %s" % save_path)
+        print("Model restored from file: %s" % save_path)
 
 
 class MLP(Model):

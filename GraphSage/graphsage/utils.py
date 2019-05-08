@@ -1,13 +1,12 @@
 from __future__ import print_function
 
-import json
-import logging
-import os
-import random
-import sys
-
-import networkx as nx
 import numpy as np
+import random
+import json
+import sys
+import os
+import logging
+import networkx as nx
 from networkx.readwrite import json_graph
 
 version_info = list(map(int, nx.__version__.split('.')))
@@ -20,6 +19,11 @@ N_WALKS = 50
 
 
 def load_data(prefix, normalize=True, load_walks=False):
+    logging.basicConfig(filename="./GraphSage.log",
+                        level=logging.DEBUG,
+                        format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                        datefmt='%a, %d %b %Y %H:%M:%S')
+
     G_data = json.load(open(prefix + "-G.json"))
     G = json_graph.node_link_graph(G_data)
     if isinstance(G.nodes()[0], int):
@@ -30,12 +34,13 @@ def load_data(prefix, normalize=True, load_walks=False):
     if os.path.exists(prefix + "-feats.npy"):
         feats = np.load(prefix + "-feats.npy")
     else:
-        logging.info("No features present.. Only identity features will be used.")
+        print("No features present.. Only identity features will be used.")
         feats = None
     id_map = json.load(open(prefix + "-id_map.json"))
     id_map = {conversion(k): int(v) for k, v in id_map.items()}
     walks = []
     class_map = json.load(open(prefix + "-class_map.json"))
+    logging.info('class map loaded')
     if isinstance(list(class_map.values())[0], list):
         lab_conversion = lambda n: n
     else:
@@ -50,12 +55,17 @@ def load_data(prefix, normalize=True, load_walks=False):
         if not 'val' in G.node[node] or not 'test' in G.node[node]:
             G.remove_node(node)
             broken_count += 1
-    logging.info("Removed {:d} nodes that lacked proper annotations due to networkx versioning issues".format(broken_count))
+    print("Removed {:d} nodes that lacked proper annotations due to networkx versioning issues".format(broken_count))
+    logging.info('bad nodes removed')
 
     ## Make sure the graph has edge train_removed annotations
     ## (some datasets might already have this..)
-    logging.info("Loaded data.. now preprocessing..")
+    print("Loaded data.. now preprocessing..")
+    count = 0
     for edge in G.edges():
+        if count % 1000 == 0:
+            logging.info('Number of edges loaded: ' + str(count))
+        count += 1
         if (G.node[edge[0]]['val'] or G.node[edge[1]]['val'] or
                 G.node[edge[0]]['test'] or G.node[edge[1]]['test']):
             G[edge[0]][edge[1]]['train_removed'] = True
@@ -69,6 +79,7 @@ def load_data(prefix, normalize=True, load_walks=False):
         scaler = StandardScaler()
         scaler.fit(train_feats)
         feats = scaler.transform(feats)
+    logging.info('Normalized')
 
     if load_walks:
         with open(prefix + "-walks.txt") as fp:
@@ -92,7 +103,7 @@ def run_random_walks(G, nodes, num_walks=N_WALKS):
                     pairs.append((node, curr_node))
                 curr_node = next_node
         if count % 1000 == 0:
-            logging.info("Done walks for", count, "nodes")
+            print("Done walks for", count, "nodes")
     return pairs
 
 

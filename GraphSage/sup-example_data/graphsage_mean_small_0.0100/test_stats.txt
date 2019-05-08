@@ -1,1 +1,1 @@
-loss=0.49113 f1_micro=0.51749 f1_macro=0.30979
+loss=0.49395 f1_micro=0.51735 f1_macro=0.30603

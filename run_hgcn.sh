@@ -21,7 +21,6 @@ python3 ./HGCN/hgcn_main.py \
 --model decoder_gcn \
 --gpu False \
 --batch_size 500 \
-
 --epochs 1 \
 --lr 0.0003 \
 --weight_decay 0.0005 \

@@ -1,7 +1,5 @@
 from __future__ import print_function
 import json
-import logging
-
 import numpy as np
 
 from networkx.readwrite import json_graph
@@ -27,8 +25,8 @@ def run_regression(train_embeds, train_labels, test_embeds, test_labels):
     dummy.fit(train_embeds, train_labels)
     log = SGDClassifier(loss="log", n_jobs=10)
     log.fit(train_embeds, train_labels)
-    logging.info("F1 score:", f1_score(test_labels, log.predict(test_embeds), average="micro"))
-    logging.info("Random baseline f1 score:", f1_score(test_labels, dummy.predict(test_embeds), average="micro"))
+    print("F1 score:", f1_score(test_labels, log.predict(test_embeds), average="micro"))
+    print("Random baseline f1 score:", f1_score(test_labels, dummy.predict(test_embeds), average="micro"))
 
 if __name__ == '__main__':
     parser = ArgumentParser("Run evaluation on citation data.")
@@ -40,7 +38,7 @@ if __name__ == '__main__':
     data_dir = args.embed_dir
     setting = args.setting
 
-    logging.info("Loading data...")
+    print("Loading data...")
     G = json_graph.node_link_graph(json.load(open(dataset_dir + "/isi-G.json")))
      
     train_ids = [n for n in G.nodes() if not G.node[n]['val'] and not G.node[n]['test']]
@@ -49,17 +47,17 @@ if __name__ == '__main__':
     train_labels = get_class_labels(train_ids)
 
     if data_dir == "feat":
-        logging.info("Using only features..")
+        print("Using only features..")
         feats = np.load(dataset_dir + "/isi-feats.npy")
         feat_id_map = json.load(open(dataset_dir + "/isi-id_map.json"))
         feat_id_map = {int(id):val for id,val in feat_id_map.iteritems()}
         train_feats = feats[[feat_id_map[id] for id in train_ids]] 
         test_feats = feats[[feat_id_map[id] for id in test_ids]] 
-        logging.info("Running regression..")
+        print("Running regression..")
         run_regression(train_feats, train_labels, test_feats, test_labels)
 
     elif "n2v" in data_dir:
-        logging.info("Using n2v vectors.")
+        print("Using n2v vectors.")
         base_embeds = np.load(data_dir + "/val.npy")
         base_id_map = {}
         with open(data_dir + "/val.txt") as fp:
@@ -73,7 +71,7 @@ if __name__ == '__main__':
         train_embeds = base_embeds[[base_id_map[id] for id in train_ids]] 
         test_embeds = tuned_embeds[[tuned_id_map[id] for id in test_ids]] 
 
-        logging.info("Running regression..")
+        print("Running regression..")
         run_regression(train_embeds, train_labels, test_embeds, test_labels)
 
         # loading feats
@@ -90,7 +88,7 @@ if __name__ == '__main__':
         train_embeds = scaler.transform(train_embeds)
         test_embeds = scaler.transform(test_embeds)
 
-        logging.info("Running regression with feats..")
+        print("Running regression with feats..")
         run_regression(train_embeds, train_labels, test_embeds, test_labels)
     else:
         embeds = np.load(data_dir + "/val.npy")
@@ -101,5 +99,5 @@ if __name__ == '__main__':
         train_embeds = embeds[[id_map[id] for id in train_ids]] 
         test_embeds = embeds[[id_map[id] for id in test_ids]] 
 
-        logging.info("Running regression..")
+        print("Running regression..")
         run_regression(train_embeds, train_labels, test_embeds, test_labels)
