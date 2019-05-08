@@ -5,6 +5,7 @@ import os
 import time
 import tensorflow as tf
 import numpy as np
+import logging
 
 from graphsage.models import SampleAndAggregate, SAGEInfo, Node2VecModel
 from graphsage.minibatch import EdgeMinibatchIterator
@@ -147,6 +148,7 @@ def train(train_data, test_data=None):
 
     context_pairs = train_data[3] if FLAGS.random_context else None
     placeholders = construct_placeholders()
+    logging.info('edge minibatch')
     minibatch = EdgeMinibatchIterator(G,
                                       id_map,
                                       placeholders, batch_size=FLAGS.batch_size,
@@ -156,6 +158,7 @@ def train(train_data, test_data=None):
     adj_info_ph = tf.placeholder(tf.int32, shape=minibatch.adj.shape)
     adj_info = tf.Variable(adj_info_ph, trainable=False, name="adj_info")
 
+    logging.info('choose model')
     if FLAGS.model == 'graphsage_mean':
         # Create model
         sampler = UniformNeighborSampler(adj_info)
@@ -265,6 +268,7 @@ def train(train_data, test_data=None):
     train_adj_info = tf.assign(adj_info, minibatch.adj)
     val_adj_info = tf.assign(adj_info, minibatch.test_adj)
     for epoch in range(FLAGS.epochs):
+        logging.info('training epoch: ' + str(epoch))
         minibatch.shuffle()
 
         iter = 0
@@ -383,10 +387,15 @@ def train(train_data, test_data=None):
 
 def main(argv=None):
     print("Loading training data..")
-    train_data = load_data(FLAGS.train_prefix, load_walks=True)
+    train_data = load_data(FLAGS.train_prefix, load_walks=False)
     print("Done loading training data..")
+    logging.info('start training')
     train(train_data)
 
 
 if __name__ == '__main__':
+    logging.basicConfig(filename="./GraphSage.log",
+                        level=logging.DEBUG,
+                        format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                        datefmt='%a, %d %b %Y %H:%M:%S')
     tf.app.run()

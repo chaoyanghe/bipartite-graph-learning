@@ -81,11 +81,16 @@ def load_data(prefix, normalize=True, load_walks=False):
         feats = scaler.transform(feats)
     logging.info('Normalized')
 
+    count = 0
     if load_walks:
         with open(prefix + "-walks.txt") as fp:
             for line in fp:
+                if count % 1000 == 0:
+                    logging.info('lines read: ' + str(count))
+                count += 1
                 walks.append(map(conversion, line.split()))
 
+    logging.info('data all loaded')
     return G, feats, id_map, walks, class_map
 
 
