@@ -30,8 +30,8 @@ if __name__ == "__main__":
     # 972 parallel processes
     hpo_batch_size = [400, 500, 600, 700]  # 3
     hpo_epochs = [2, 3, 4]  # 4
-    hpo_lr = [0.0002, 0.0003, 0.0004]  # 3
-    hpo_weight_decay = [0.001, 0.0005, 0.0008]  # 3
+    hpo_lr = [0.0002, 0.0003]  # 3
+    hpo_weight_decay = [0.001, 0.0005]  # 3
     hpo_dis_hidden = [16, 20, 24]  # 3
     hpo_dropout = [0.35, 0.4, 0.45]  # 3
     hpo_gcn_output = [16, 20, 24]  # 3
