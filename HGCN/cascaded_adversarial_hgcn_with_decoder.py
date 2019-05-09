@@ -13,8 +13,9 @@ from gcn.models import GCN
 
 
 class DecoderGCNLayer(object):
-    def __init__(self, bipartite_graph_data_loader, args, device):
+    def __init__(self, bipartite_graph_data_loader, args, device, rank):
         """For decoder layer, we can define any output dimension from GCN layer"""
+        self.rank = rank
         u_attr_dimensions = bipartite_graph_data_loader.get_u_attr_dimensions()
         v_attr_dimensions = bipartite_graph_data_loader.get_v_attr_dimensions()
         decoder_hidden_dim = args.dis_hidden
@@ -192,6 +193,9 @@ class DecoderGCNLayer(object):
         dimension_embedding = gcn_merge_output.shape[1]
         logging.info("dimension_embedding = %s" % dimension_embedding)
         output_folder = "./out"
+        if self.rank != -1:
+            output_folder = "/mnt/shared/home/bipartite-graph-learning/out/" + str(self.rank)
+
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
         f_emb = open(output_folder + '/hgcn.emb', 'w')

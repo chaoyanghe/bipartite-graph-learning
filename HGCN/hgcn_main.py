@@ -90,7 +90,7 @@ def main():
         # start training
         hgcn.adversarial_learning()
     elif args.model == 'decoder_gcn':
-        hgcn = DecoderGCNLayer(bipartite_graph_data_loader, args, device)
+        hgcn = DecoderGCNLayer(bipartite_graph_data_loader, args, device, rank)
         hgcn.relation_learning()
 
 
