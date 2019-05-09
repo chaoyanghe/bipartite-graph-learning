@@ -45,10 +45,12 @@ if __name__ == "__main__":
                 for weight_decay in hpo_weight_decay:
                     for dis_hidden in hpo_dis_hidden:
                         for dropout in hpo_dropout:
-                            paras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout)
-                            hpo_cnt += 1
+                            for gcn_output_dim in hpo_gcn_output:
+                                paras[hpo_cnt] = (
+                                batch_size, epochs, lr, weight_decay, dis_hidden, dropout, gcn_output_dim)
+                                hpo_cnt += 1
 
-    (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[rank]
+    (batch_size, epochs, lr, weight_decay, dis_hidden, dropout, gcn_output_dim) = paras[rank]
 
     print("start hgcn_cmd")
     hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/hgcn_main.py " \
