@@ -37,8 +37,8 @@ if __name__ == "__main__":
     hpo_dropout = [0.35, 0.4, 0.45]  # 3
     hpo_gcn_output = [16, 20, 24]  # 3
 
-    hpo_cnt = 0
     paras = dict()
+    cnt = 0
     for batch_size in hpo_batch_size:
         for epochs in hpo_epochs:
             for lr in hpo_lr:
@@ -47,7 +47,7 @@ if __name__ == "__main__":
                         for dropout in hpo_dropout:
                             for gcn_output_dim in hpo_gcn_output:
                                 paras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout, gcn_output_dim)
-                                hpo_cnt += 1
+                                cnt += 1
 
     (batch_size, epochs, lr, weight_decay, dis_hidden, dropout, gcn_output_dim) = paras[rank]
 
