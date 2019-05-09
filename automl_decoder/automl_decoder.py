@@ -46,9 +46,9 @@ if __name__ == "__main__":
                     for dis_hidden in hpo_dis_hidden:
                         for dropout in hpo_dropout:
                             for gcn_output_dim in hpo_gcn_output:
-                                aras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout, gcn_output_dim)
-                                hpo_cnt+=1
-                                
+                                paras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout, gcn_output_dim)
+                                hpo_cnt += 1
+
     (batch_size, epochs, lr, weight_decay, dis_hidden, dropout, gcn_output_dim) = paras[rank]
 
     print("start hgcn_cmd")
