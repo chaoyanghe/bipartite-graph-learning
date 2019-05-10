@@ -39,13 +39,14 @@ if __name__ == "__main__":
 
     paras = dict()
     cnt = 0
-    for batch_size in hpo_batch_size:
-        for epochs in hpo_epochs:
-            for lr in hpo_lr:
-                for weight_decay in hpo_weight_decay:
-                    for dis_hidden in hpo_dis_hidden:
-                        for dropout in hpo_dropout:
-                            for gcn_output_dim in hpo_gcn_output:
+
+    for gcn_output_dim in hpo_gcn_output:
+        for batch_size in hpo_batch_size:
+            for epochs in hpo_epochs:
+                for lr in hpo_lr:
+                    for weight_decay in hpo_weight_decay:
+                        for dis_hidden in hpo_dis_hidden:
+                            for dropout in hpo_dropout:
                                 paras[cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout, gcn_output_dim)
                                 cnt += 1
 
