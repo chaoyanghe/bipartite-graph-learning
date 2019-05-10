@@ -510,15 +510,15 @@ class GraphSageDataLoader:
             temp_node = {}
             temp_node['id'] = i
             temp_node['test'] = False
-            if i < len(self.u_list):
-                temp_node['feature'] = self.u_attr[i]
-                if self.id_map_u[i] in self.node_true:
-                    temp_node['label'] = [1, 0]
-                else:
-                    temp_node['label'] = [0, 1]
-            else:
-                temp_node['feature'] = self.v_attr[i - len(self.u_list)]
-                temp_node['label'] = [0, 1]
+            # if i < len(self.u_list):
+            #     temp_node['feature'] = self.u_attr[i]
+            #     if self.id_map_u[i] in self.node_true:
+            #         temp_node['label'] = [1, 0]
+            #     else:
+            #         temp_node['label'] = [0, 1]
+            # else:
+            #     temp_node['feature'] = self.v_attr[i - len(self.u_list)]
+            #     temp_node['label'] = [0, 1]
             if np.random.choice([0, 1], p=[0.3, 0.7]):
                 temp_node['val'] = False
             else:

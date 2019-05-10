@@ -18,7 +18,7 @@ if __name__ == "__main__":
     rank = args.rank
 
     method = conf.method
-    input_folder = conf.input_folder
+    input_folder = conf.input_folder  # original data
     output_folder = conf.output_folder
     if rank != -1:
         input_folder = "/mnt/shared/home/bipartite-graph-learning/data/Tencent-QQ"
