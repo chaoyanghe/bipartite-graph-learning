@@ -15,11 +15,11 @@ minor = version_info[1]
 assert (major <= 1) and (minor <= 11), "networkx major version > 1.11"
 
 WALK_LEN = 5
-N_WALKS = 5
+N_WALKS = 50
 
 
 def load_data(prefix, normalize=True, load_walks=False):
-    logging.basicConfig(filename="./GraphSage.log",
+    logging.basicConfig(filename="./log_embedding/GraphSage.log",
                         level=logging.DEBUG,
                         format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')
@@ -61,11 +61,7 @@ def load_data(prefix, normalize=True, load_walks=False):
     ## Make sure the graph has edge train_removed annotations
     ## (some datasets might already have this..)
     print("Loaded data.. now preprocessing..")
-    count = 0
     for edge in G.edges():
-        if count % 1000 == 0:
-            logging.info('Number of edges loaded: ' + str(count))
-        count += 1
         if (G.node[edge[0]]['val'] or G.node[edge[1]]['val'] or
                 G.node[edge[0]]['test'] or G.node[edge[1]]['test']):
             G[edge[0]][edge[1]]['train_removed'] = True
@@ -85,18 +81,14 @@ def load_data(prefix, normalize=True, load_walks=False):
     if not os.path.exists(prefix + '-walks.txt'):
         nodes = [n for n in G.nodes() if not G.node[n]["val"] and not G.node[n]["test"]]
         pairs = run_random_walks(G, nodes, num_walks=N_WALKS)
+        out_file = prefix + 'walks.txt'
         with open(out_file, "w") as fp:
             fp.write("\n".join([str(p[0]) + "\t" + str(p[1]) for p in pairs]))
 
-    count = 0
     if load_walks:
         with open(prefix + "-walks.txt") as fp:
             for line in fp:
-                if count % 1000 == 0:
-                    logging.info('lines read: ' + str(count))
-                count += 1
                 walks.append(map(conversion, line.split()))
-
     logging.info('data all loaded')
     return G, feats, id_map, walks, class_map
 

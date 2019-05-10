@@ -12,3 +12,4 @@ GraphSage/example_data/bipartite-G.json
 GraphSage/example_data/bipartite-id_map.json
 GraphSage/example_data/bipartite_graph_data_loading.log
 GraphSage/example_data/bipartite-walks.txt
+GraphSage/unsup-example_data

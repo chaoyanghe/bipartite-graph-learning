@@ -17,7 +17,7 @@ size = comm.Get_size()
 if __name__ == "__main__":
     setproctitle.setproctitle("HGCN:" + str(rank))
 
-    logging.basicConfig(filename="./HGCN.log",
+    logging.basicConfig(filename="./HGCN.log_embedding",
                         level=logging.INFO,
                         format=str(rank) + ' - %(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')

@@ -20,7 +20,7 @@ def run_regression(train_embeds, train_labels, test_embeds, test_labels):
     from sklearn.multioutput import MultiOutputClassifier
     dummy = MultiOutputClassifier(DummyClassifier())
     dummy.fit(train_embeds, train_labels)
-    log = MultiOutputClassifier(SGDClassifier(loss="log"), n_jobs=10)
+    log = MultiOutputClassifier(SGDClassifier(loss="log_embedding"), n_jobs=10)
     log.fit(train_embeds, train_labels)
 
     f1 = 0
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     if data_dir == "feat":
         print("Using only features..")
         feats = np.load(dataset_dir + "/ppi-feats.npy")
-        ## Logistic gets thrown off by big counts, so log transform num comments and score
+        ## Logistic gets thrown off by big counts, so log_embedding transform num comments and score
         feats[:,0] = np.log(feats[:,0]+1.0)
         feats[:,1] = np.log(feats[:,1]-min(np.min(feats[:,1]), -1))
         feat_id_map = json.load(open(dataset_dir + "/ppi-id_map.json"))

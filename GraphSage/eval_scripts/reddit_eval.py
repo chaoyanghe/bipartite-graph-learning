@@ -12,7 +12,7 @@ def run_regression(train_embeds, train_labels, test_embeds, test_labels):
     from sklearn.metrics import f1_score
     dummy = DummyClassifier()
     dummy.fit(train_embeds, train_labels)
-    log = SGDClassifier(loss="log", n_jobs=55)
+    log = SGDClassifier(loss="log_embedding", n_jobs=55)
     log.fit(train_embeds, train_labels)
     print("Test scores")
     print(f1_score(test_labels, log.predict(test_embeds), average="micro"))
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     if data_dir == "feat":
         print("Using only features..")
         feats = np.load(dataset_dir + "/reddit-feats.npy")
-        ## Logistic gets thrown off by big counts, so log transform num comments and score
+        ## Logistic gets thrown off by big counts, so log_embedding transform num comments and score
         feats[:,0] = np.log(feats[:,0]+1.0)
         feats[:,1] = np.log(feats[:,1]-min(np.min(feats[:,1]), -1))
         feat_id_map = json.load(open(dataset_dir + "reddit-id_map.json"))

@@ -183,7 +183,7 @@ def run_exp(input_folder, emb_file, args):
         if args.verbose:
             logging.info("Start training ...")
             print("Start training ...")
-        clf = SGDClassifier(loss='log', alpha=args.alpha, max_iter=args.max_iter, shuffle=True, n_jobs=48,
+        clf = SGDClassifier(loss='log_embedding', alpha=args.alpha, max_iter=args.max_iter, shuffle=True, n_jobs=48,
                             class_weight='balanced', verbose=args.verbose, tol=None)
         clf.fit(train_x, train_y)
         # Testing 

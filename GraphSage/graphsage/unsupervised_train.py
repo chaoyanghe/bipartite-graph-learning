@@ -24,7 +24,7 @@ flags = tf.app.flags
 FLAGS = flags.FLAGS
 
 tf.app.flags.DEFINE_boolean('log_device_placement', False,
-                            """Whether to log device placement.""")
+                            """Whether to log_embedding device placement.""")
 # core params..
 flags.DEFINE_string('model', 'graphsage', 'model names. See README for possible values.')
 flags.DEFINE_float('learning_rate', 0.00001, 'initial learning rate.')
@@ -39,14 +39,15 @@ flags.DEFINE_integer('max_degree', 100, 'maximum node degree.')
 flags.DEFINE_integer('samples_1', 25, 'number of samples in layer 1')
 flags.DEFINE_integer('samples_2', 10, 'number of users samples in layer 2')
 flags.DEFINE_integer('dim_1', 128, 'Size of output dim (final is 2x this, if using concat)')
+# control the final output embedding dimension, concat means whether to concat the current features with the aggregation
 flags.DEFINE_integer('dim_2', 128, 'Size of output dim (final is 2x this, if using concat)')
 flags.DEFINE_boolean('random_context', True, 'Whether to use random context or direct edges')
 flags.DEFINE_integer('neg_sample_size', 20, 'number of negative samples')
 flags.DEFINE_integer('batch_size', 512, 'minibatch size.')
 flags.DEFINE_integer('n2v_test_epochs', 1, 'Number of new SGD epochs for n2v.')
-flags.DEFINE_integer('identity_dim', 0,
+flags.DEFINE_integer('identity_dim', 128,
                      'Set to positive value to use identity embedding features of that dimension. Default 0.')
-
+# identity_dim: the one-hot vector representing each node
 # logging, saving, validation settings etc.
 flags.DEFINE_boolean('save_embeddings', True, 'whether to save embeddings for all nodes after training')
 flags.DEFINE_string('base_log_dir', '.', 'base directory for logging and saving embeddings')
@@ -62,13 +63,11 @@ GPU_MEM_FRACTION = 0.8
 
 
 def log_dir():
-    logging.info('############ directory ##############')
     log_dir = FLAGS.base_log_dir + "/unsup-" + FLAGS.train_prefix.split("/")[-2]
     log_dir += "/{model:s}_{model_size:s}_{lr:0.6f}/".format(
         model=FLAGS.model,
         model_size=FLAGS.model_size,
         lr=FLAGS.learning_rate)
-    logging.info(log_dir)
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
     return log_dir
@@ -310,6 +309,9 @@ def train(train_data, test_data=None):
             avg_time = (avg_time * total_steps + time.time() - t) / (total_steps + 1)
 
             if total_steps % FLAGS.print_every == 0:
+                logging.info('Iter: %04d, train_loss=%04f, train_mrr=%04f, train_mrr_ema=%04f, val_loss=%04f, '
+                             'val_mrr=%04f, val_mrr_ema=%04f, time=%04f'%(iter, train_cost, train_mrr, train_shadow_mrr,
+                                                                          val_cost, val_mrr, shadow_mrr, avg_time))
                 print("Iter:", '%04d' % iter,
                       "train_loss=", "{:.5f}".format(train_cost),
                       "train_mrr=", "{:.5f}".format(train_mrr),
@@ -330,7 +332,6 @@ def train(train_data, test_data=None):
 
     print("Optimization Finished!")
     if FLAGS.save_embeddings:
-        logging.info('############# save embedding ###############')
         sess.run(val_adj_info.op)
 
         save_val_embeddings(sess, model, minibatch, FLAGS.validate_batch_size, log_dir())
@@ -399,7 +400,7 @@ def main(argv=None):
 
 
 if __name__ == '__main__':
-    logging.basicConfig(filename="./GraphSage.log",
+    logging.basicConfig(filename="./log_embedding/GraphSage.log",
                         level=logging.DEBUG,
                         format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')

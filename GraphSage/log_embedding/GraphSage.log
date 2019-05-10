@@ -1,0 +1,37 @@
+Thu, 09 May 2019 20:54:28 utils.py[line:43] INFO class map loaded
+Thu, 09 May 2019 20:54:28 utils.py[line:59] INFO bad nodes removed
+Thu, 09 May 2019 20:54:29 utils.py[line:78] INFO Normalized
+Thu, 09 May 2019 20:59:07 utils.py[line:43] INFO class map loaded
+Thu, 09 May 2019 20:59:07 utils.py[line:59] INFO bad nodes removed
+Thu, 09 May 2019 20:59:07 utils.py[line:78] INFO Normalized
+Thu, 09 May 2019 20:59:08 utils.py[line:92] INFO data all loaded
+Thu, 09 May 2019 20:59:09 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Thu, 09 May 2019 20:59:09 deprecation.py[line:506] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Thu, 09 May 2019 20:59:11 regularizers.py[line:98] INFO Scale of 0 disables regularizer.
+Thu, 09 May 2019 20:59:11 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Thu, 09 May 2019 21:10:43 utils.py[line:43] INFO class map loaded
+Thu, 09 May 2019 21:10:46 utils.py[line:59] INFO bad nodes removed
+Thu, 09 May 2019 21:10:48 utils.py[line:78] INFO Normalized
+Thu, 09 May 2019 21:11:13 utils.py[line:92] INFO data all loaded
+Thu, 09 May 2019 21:11:14 unsupervised_train.py[line:394] INFO start training
+Thu, 09 May 2019 21:11:14 unsupervised_train.py[line:151] INFO edge minibatch
+Thu, 09 May 2019 21:13:22 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Thu, 09 May 2019 21:13:22 unsupervised_train.py[line:161] INFO choose model
+Thu, 09 May 2019 21:13:25 deprecation.py[line:506] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Thu, 09 May 2019 21:13:25 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:404: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Thu, 09 May 2019 21:13:25 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Thu, 09 May 2019 21:13:42 unsupervised_train.py[line:271] INFO training epoch: 0

@@ -73,7 +73,7 @@ class GAN(object):
         real = real_data
         fake = netG_output
         ############################
-        # (1) Update D network: maximize log(D(x)) + log(1 - D(G(z)))
+        # (1) Update D network: maximize log_embedding(D(x)) + log_embedding(1 - D(G(z)))
         ###########################
         # train with real
         label_real = torch.full((real.size()[0], 1), REAL_LABEL, device=self.device, requires_grad=False)
@@ -93,7 +93,7 @@ class GAN(object):
         self.optimizerD.step()
 
         ############################
-        # (2) Update G network: maximize log(D(G(z)))
+        # (2) Update G network: maximize log_embedding(D(G(z)))
         ###########################
         self.optimizerG.zero_grad()
         output = self.netD(fake)
@@ -111,7 +111,7 @@ class GAN(object):
     #     real = real_data
     #     fake = netG_output
     #     ############################
-    #     # (1) Update D network: maximize log(D(x)) + log(1 - D(G(z)))
+    #     # (1) Update D network: maximize log_embedding(D(x)) + log_embedding(1 - D(G(z)))
     #     ###########################
     #     # train with real
     #     label = torch.full((real.size()[0], 1), REAL_LABEL, device=self.device)
@@ -126,7 +126,7 @@ class GAN(object):
     #     lossD = lossD_real + lossD_fake
     #
     #     ############################
-    #     # (2) Update G network: maximize log(D(G(z)))
+    #     # (2) Update G network: maximize log_embedding(D(G(z)))
     #     ###########################
     #     label.fill_(REAL_LABEL)
     #     output = self.netD(fake)

@@ -49,8 +49,8 @@ def main():
     print("dropout = " + str(args.dropout))
     print("rank = " + str(rank))
 
-    # log configuration
-    logging.basicConfig(filename="./HGCN.log",
+    # log_embedding configuration
+    logging.basicConfig(filename="./HGCN.log_embedding",
                         level=logging.DEBUG,
                         format=str(rank) + '%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')
