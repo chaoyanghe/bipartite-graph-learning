@@ -15,7 +15,7 @@ minor = version_info[1]
 assert (major <= 1) and (minor <= 11), "networkx major version > 1.11"
 
 WALK_LEN = 5
-N_WALKS = 50
+N_WALKS = 5
 
 
 def load_data(prefix, normalize=True, load_walks=False):
@@ -80,6 +80,13 @@ def load_data(prefix, normalize=True, load_walks=False):
         scaler.fit(train_feats)
         feats = scaler.transform(feats)
     logging.info('Normalized')
+
+    # run the random walk
+    if not os.path.exists(prefix + '-walks.txt'):
+        nodes = [n for n in G.nodes() if not G.node[n]["val"] and not G.node[n]["test"]]
+        pairs = run_random_walks(G, nodes, num_walks=N_WALKS)
+        with open(out_file, "w") as fp:
+            fp.write("\n".join([str(p[0]) + "\t" + str(p[1]) for p in pairs]))
 
     count = 0
     if load_walks:

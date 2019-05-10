@@ -62,11 +62,13 @@ GPU_MEM_FRACTION = 0.8
 
 
 def log_dir():
+    logging.info('############ directory ##############')
     log_dir = FLAGS.base_log_dir + "/unsup-" + FLAGS.train_prefix.split("/")[-2]
     log_dir += "/{model:s}_{model_size:s}_{lr:0.6f}/".format(
         model=FLAGS.model,
         model_size=FLAGS.model_size,
         lr=FLAGS.learning_rate)
+    logging.info(log_dir)
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
     return log_dir
@@ -139,7 +141,7 @@ def construct_placeholders():
 
 def train(train_data, test_data=None):
     G = train_data[0]
-    features = train_data[1]
+    features = train_data[1]  # None when no file
     id_map = train_data[2]
 
     if not features is None:
@@ -328,6 +330,7 @@ def train(train_data, test_data=None):
 
     print("Optimization Finished!")
     if FLAGS.save_embeddings:
+        logging.info('############# save embedding ###############')
         sess.run(val_adj_info.op)
 
         save_val_embeddings(sess, model, minibatch, FLAGS.validate_batch_size, log_dir())
@@ -387,7 +390,9 @@ def train(train_data, test_data=None):
 
 def main(argv=None):
     print("Loading training data..")
-    train_data = load_data(FLAGS.train_prefix, load_walks=False)
+    train_data = load_data(FLAGS.train_prefix, load_walks=True)
+    # G, feats (None if no feature file), id_map, walks, class_map
+
     print("Done loading training data..")
     logging.info('start training')
     train(train_data)
