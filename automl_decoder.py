@@ -37,17 +37,18 @@ if __name__ == "__main__":
     hpo_dropout = [0.35, 0.4, 0.45]  # 3
     hpo_gcn_output = [16, 20, 24]  # 3
 
-    hpo_cnt = 0
     paras = dict()
-    for batch_size in hpo_batch_size:
-        for epochs in hpo_epochs:
-            for lr in hpo_lr:
-                for weight_decay in hpo_weight_decay:
-                    for dis_hidden in hpo_dis_hidden:
-                        for dropout in hpo_dropout:
-                            for gcn_output_dim in hpo_gcn_output:
-                                paras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout, gcn_output_dim)
-                                hpo_cnt += 1
+    cnt = 0
+
+    for gcn_output_dim in hpo_gcn_output:
+        for batch_size in hpo_batch_size:
+            for epochs in hpo_epochs:
+                for lr in hpo_lr:
+                    for weight_decay in hpo_weight_decay:
+                        for dis_hidden in hpo_dis_hidden:
+                            for dropout in hpo_dropout:
+                                paras[cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout, gcn_output_dim)
+                                cnt += 1
 
     (batch_size, epochs, lr, weight_decay, dis_hidden, dropout, gcn_output_dim) = paras[rank]
 
@@ -55,14 +56,14 @@ if __name__ == "__main__":
     hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/hgcn_main.py " \
                "--model decoder_gcn --gpu False --batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d" \
                " --dropout %f --gcn_output_dim %d --rank %d" % (
-        batch_size,
-        epochs,
-        lr,
-        weight_decay,
-        dis_hidden,
-        dropout,
-        gcn_output_dim,
-        rank)
+                   batch_size,
+                   epochs,
+                   lr,
+                   weight_decay,
+                   dis_hidden,
+                   dropout,
+                   gcn_output_dim,
+                   rank)
     os.system(hgcn_cmd)
     print("end hgcn_cmd")
 

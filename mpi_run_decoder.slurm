@@ -12,4 +12,4 @@
 # send mail to this address
 #SBATCH --mail-user=chaoyang.he@usc.edu
 
-srun -n 972 /mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/automl_decoder/automl_decoder.py
+srun -n 972 /mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/automl_decoder.py
