@@ -35,3 +35,44 @@ Thu, 09 May 2019 21:13:25 deprecation.py[line:323] WARNING From /Users/apple/Doc
 Instructions for updating:
 Use tf.cast instead.
 Thu, 09 May 2019 21:13:42 unsupervised_train.py[line:271] INFO training epoch: 0
+Thu, 09 May 2019 22:02:48 utils.py[line:43] INFO class map loaded
+Thu, 09 May 2019 22:02:48 utils.py[line:59] INFO bad nodes removed
+Thu, 09 May 2019 22:02:50 utils.py[line:78] INFO Normalized
+Thu, 09 May 2019 22:03:18 utils.py[line:92] INFO data all loaded
+Thu, 09 May 2019 22:03:19 unsupervised_train.py[line:398] INFO start training
+Thu, 09 May 2019 22:03:19 unsupervised_train.py[line:152] INFO edge minibatch
+Thu, 09 May 2019 22:04:56 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Thu, 09 May 2019 22:04:56 unsupervised_train.py[line:162] INFO choose model
+Thu, 09 May 2019 22:04:58 deprecation.py[line:506] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Thu, 09 May 2019 22:04:58 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:404: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Thu, 09 May 2019 22:04:58 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Thu, 09 May 2019 22:05:15 unsupervised_train.py[line:272] INFO training epoch: 0
+Thu, 09 May 2019 22:05:59 unsupervised_train.py[line:314] INFO Iter: 0000, train_loss=18.224373, train_mrr=0.450163, train_mrr_ema=0.450163, val_loss=18.426336, val_mrr=0.204230, val_mrr_ema=0.204230, time=34.638062
+Thu, 09 May 2019 22:06:54 unsupervised_train.py[line:314] INFO Iter: 0050, train_loss=17.576752, train_mrr=0.440754, train_mrr_ema=0.437393, val_loss=17.728203, val_mrr=0.208905, val_mrr_ema=0.207403, time=1.732287
+Thu, 09 May 2019 22:07:41 unsupervised_train.py[line:314] INFO Iter: 0100, train_loss=17.070282, train_mrr=0.409499, train_mrr_ema=0.431591, val_loss=17.356340, val_mrr=0.235525, val_mrr_ema=0.208217, time=1.344311
+Thu, 09 May 2019 22:08:34 unsupervised_train.py[line:314] INFO Iter: 0150, train_loss=16.433273, train_mrr=0.436752, train_mrr_ema=0.434297, val_loss=16.818295, val_mrr=0.213874, val_mrr_ema=0.199233, time=1.243388
+Thu, 09 May 2019 22:09:27 unsupervised_train.py[line:314] INFO Iter: 0200, train_loss=16.086241, train_mrr=0.451482, train_mrr_ema=0.439668, val_loss=16.357662, val_mrr=0.219479, val_mrr_ema=0.203221, time=1.196862
+Thu, 09 May 2019 22:10:08 unsupervised_train.py[line:314] INFO Iter: 0250, train_loss=15.602674, train_mrr=0.484288, train_mrr_ema=0.445767, val_loss=16.220114, val_mrr=0.194517, val_mrr_ema=0.205834, time=1.123882
+Thu, 09 May 2019 22:10:55 unsupervised_train.py[line:314] INFO Iter: 0300, train_loss=15.318233, train_mrr=0.503701, train_mrr_ema=0.457292, val_loss=15.912741, val_mrr=0.237811, val_mrr_ema=0.210695, time=1.092403
+Thu, 09 May 2019 22:11:40 unsupervised_train.py[line:314] INFO Iter: 0350, train_loss=15.213114, train_mrr=0.462187, train_mrr_ema=0.465564, val_loss=15.629611, val_mrr=0.231587, val_mrr_ema=0.214790, time=1.064493
+Thu, 09 May 2019 22:12:26 unsupervised_train.py[line:314] INFO Iter: 0400, train_loss=14.962547, train_mrr=0.505150, train_mrr_ema=0.475222, val_loss=15.380126, val_mrr=0.234171, val_mrr_ema=0.214595, time=1.046065
+Thu, 09 May 2019 22:13:17 unsupervised_train.py[line:314] INFO Iter: 0450, train_loss=14.818345, train_mrr=0.531747, train_mrr_ema=0.483927, val_loss=15.384986, val_mrr=0.212106, val_mrr_ema=0.216615, time=1.041996
+Thu, 09 May 2019 22:14:08 unsupervised_train.py[line:314] INFO Iter: 0500, train_loss=14.722067, train_mrr=0.508765, train_mrr_ema=0.495441, val_loss=15.149689, val_mrr=0.248431, val_mrr_ema=0.219327, time=1.040469
+Thu, 09 May 2019 22:15:05 unsupervised_train.py[line:314] INFO Iter: 0550, train_loss=14.658300, train_mrr=0.499537, train_mrr_ema=0.504106, val_loss=15.137072, val_mrr=0.256397, val_mrr_ema=0.221441, time=1.048513
+Thu, 09 May 2019 22:15:51 unsupervised_train.py[line:314] INFO Iter: 0600, train_loss=14.569431, train_mrr=0.528669, train_mrr_ema=0.510789, val_loss=15.081378, val_mrr=0.245337, val_mrr_ema=0.225064, time=1.037496
+Thu, 09 May 2019 22:16:37 unsupervised_train.py[line:314] INFO Iter: 0650, train_loss=14.529511, train_mrr=0.538792, train_mrr_ema=0.520159, val_loss=14.863439, val_mrr=0.258556, val_mrr_ema=0.226269, time=1.028040
+Thu, 09 May 2019 22:17:28 unsupervised_train.py[line:314] INFO Iter: 0700, train_loss=14.506697, train_mrr=0.531633, train_mrr_ema=0.528261, val_loss=14.948350, val_mrr=0.225351, val_mrr_ema=0.227240, time=1.027276
+Thu, 09 May 2019 22:18:14 unsupervised_train.py[line:314] INFO Iter: 0750, train_loss=14.470734, train_mrr=0.576993, train_mrr_ema=0.533163, val_loss=14.990689, val_mrr=0.203609, val_mrr_ema=0.227577, time=1.019869
+Thu, 09 May 2019 22:18:59 unsupervised_train.py[line:314] INFO Iter: 0800, train_loss=14.506770, train_mrr=0.559565, train_mrr_ema=0.540001, val_loss=14.816903, val_mrr=0.273911, val_mrr_ema=0.232692, time=1.012676
+Thu, 09 May 2019 22:19:48 unsupervised_train.py[line:314] INFO Iter: 0850, train_loss=14.402880, train_mrr=0.526296, train_mrr_ema=0.547030, val_loss=14.755768, val_mrr=0.284753, val_mrr_ema=0.238725, time=1.010737
+Thu, 09 May 2019 22:20:37 unsupervised_train.py[line:314] INFO Iter: 0900, train_loss=14.364040, train_mrr=0.578363, train_mrr_ema=0.554682, val_loss=14.821674, val_mrr=0.222821, val_mrr_ema=0.245946, time=1.008500
+Thu, 09 May 2019 22:21:27 unsupervised_train.py[line:314] INFO Iter: 0950, train_loss=14.377539, train_mrr=0.569964, train_mrr_ema=0.560455, val_loss=14.760252, val_mrr=0.223538, val_mrr_ema=0.244893, time=1.008524
+Thu, 09 May 2019 22:22:12 unsupervised_train.py[line:314] INFO Iter: 1000, train_loss=14.444570, train_mrr=0.539103, train_mrr_ema=0.566828, val_loss=14.690022, val_mrr=0.289266, val_mrr_ema=0.249573, time=1.002996

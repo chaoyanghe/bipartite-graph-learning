@@ -571,7 +571,7 @@ class GraphSageDataLoader:
 
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='bipartite_graph_data_loading.log_embedding', filemode='w',
+    logging.basicConfig(filename='bipartite_graph_data_loading.log', filemode='w',
                         format='%(asctime)s  %(filename)s : %(lineno)d : %(levelname)s  %(message)s',
                         datefmt='%Y-%m-%d %A %H:%M:%S',
                         level=logging.INFO)

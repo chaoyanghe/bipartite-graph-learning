@@ -334,6 +334,7 @@ def train(train_data, test_data=None):
     if FLAGS.save_embeddings:
         sess.run(val_adj_info.op)
 
+        logging.info('######## Saving embedding data to file ##########')
         save_val_embeddings(sess, model, minibatch, FLAGS.validate_batch_size, log_dir())
 
         if FLAGS.model == "n2v":
@@ -387,7 +388,7 @@ def train(train_data, test_data=None):
             print("Total time: ", train_time + walk_time)
             print("Walk time: ", walk_time)
             print("Train time: ", train_time)
-
+        logging.info('############ Embedding data saved #############')
 
 def main(argv=None):
     print("Loading training data..")
@@ -397,6 +398,8 @@ def main(argv=None):
     print("Done loading training data..")
     logging.info('start training')
     train(train_data)
+
+
 
 
 if __name__ == '__main__':
