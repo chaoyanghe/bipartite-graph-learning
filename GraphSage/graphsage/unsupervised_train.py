@@ -6,6 +6,7 @@ import time
 import tensorflow as tf
 import numpy as np
 import logging
+import json
 
 from graphsage.models import SampleAndAggregate, SAGEInfo, Node2VecModel
 from graphsage.minibatch import EdgeMinibatchIterator
@@ -38,9 +39,9 @@ flags.DEFINE_float('weight_decay', 0.0, 'weight for l2 loss on embedding matrix.
 flags.DEFINE_integer('max_degree', 100, 'maximum node degree.')
 flags.DEFINE_integer('samples_1', 25, 'number of samples in layer 1')
 flags.DEFINE_integer('samples_2', 10, 'number of users samples in layer 2')
-flags.DEFINE_integer('dim_1', 128, 'Size of output dim (final is 2x this, if using concat)')
+flags.DEFINE_integer('dim_1', 24, 'Size of output dim (final is 2x this, if using concat)')
 # control the final output embedding dimension, concat means whether to concat the current features with the aggregation
-flags.DEFINE_integer('dim_2', 128, 'Size of output dim (final is 2x this, if using concat)')
+flags.DEFINE_integer('dim_2', 4, 'Size of output dim (final is 2x this, if using concat)')
 flags.DEFINE_boolean('random_context', True, 'Whether to use random context or direct edges')
 flags.DEFINE_integer('neg_sample_size', 20, 'number of negative samples')
 flags.DEFINE_integer('batch_size', 512, 'minibatch size.')
@@ -56,6 +57,8 @@ flags.DEFINE_integer('validate_batch_size', 256, "how many nodes per validation 
 flags.DEFINE_integer('gpu', 1, "which gpu to use.")
 flags.DEFINE_integer('print_every', 50, "How often to print training info.")
 flags.DEFINE_integer('max_total_steps', 10 ** 10, "Maximum total number of iterations")
+flags.DEFINE_integer('walk_len', 5, "(Co-occur) length of one singe random walk")
+flags.DEFINE_integer('n_walks', 50, "Number of random walks start from one node")
 
 os.environ["CUDA_VISIBLE_DEVICES"] = str(FLAGS.gpu)
 
@@ -122,6 +125,38 @@ def save_val_embeddings(sess, model, minibatch_iter, size, out_dir, mod=""):
     np.save(out_dir + name + mod + ".npy", val_embeddings)
     with open(out_dir + name + mod + ".txt", "w") as fp:
         fp.write("\n".join(map(str, nodes)))
+    logging.info('Start saving embedding for succeed tasks')
+    __save_embedding_for_task(val_embeddings, nodes)
+
+
+def __save_embedding_for_task(embedding, node_list):
+    """
+    Function to save the embedding to file for running classification
+    :param embedding: numpy [list1, list2, ...]
+    :param node_list: [node1, node2, ...]
+    :return:
+    """
+    output_file = './out/'
+
+    id_node_map_file = './example_data/bipartite-id_map_node.json'
+    with open(id_node_map_file, 'r') as file:
+        id_node_map = json.load(file)  # (key: str, value: int)
+    file.close()
+    u_num = id_node_map['u_num']
+    logging.info('Number of nodes in set U: ' + str(u_num))
+    output = ''
+    node_list_file = ''
+    output += '%d %d' % (u_num, len(embedding[0])) + '\n'
+    for i in range(len(node_list)):
+        if node_list[i] < u_num:  # we only need the embedding from set U
+            node_list_file += '%d' % id_node_map[str(node_list[i])] + '\n'
+            embedding_output = [str(e) for e in embedding[i]]
+            output += '%d ' % id_node_map[str(node_list[i])] + ' '.join(embedding_output) + '\n'
+    with open(output_file + 'graphsage.emb', 'w') as file1, open(output_file + 'node_list', 'w') as file2:
+        file1.write(output)
+        file2.write(node_list_file)
+    file1.close()
+    file2.close()
 
 
 def construct_placeholders():
@@ -310,8 +345,9 @@ def train(train_data, test_data=None):
 
             if total_steps % FLAGS.print_every == 0:
                 logging.info('Iter: %04d, train_loss=%04f, train_mrr=%04f, train_mrr_ema=%04f, val_loss=%04f, '
-                             'val_mrr=%04f, val_mrr_ema=%04f, time=%04f'%(iter, train_cost, train_mrr, train_shadow_mrr,
-                                                                          val_cost, val_mrr, shadow_mrr, avg_time))
+                             'val_mrr=%04f, val_mrr_ema=%04f, time=%04f' % (
+                                 iter, train_cost, train_mrr, train_shadow_mrr,
+                                 val_cost, val_mrr, shadow_mrr, avg_time))
                 print("Iter:", '%04d' % iter,
                       "train_loss=", "{:.5f}".format(train_cost),
                       "train_mrr=", "{:.5f}".format(train_mrr),
@@ -390,16 +426,15 @@ def train(train_data, test_data=None):
             print("Train time: ", train_time)
         logging.info('############ Embedding data saved #############')
 
+
 def main(argv=None):
     print("Loading training data..")
-    train_data = load_data(FLAGS.train_prefix, load_walks=True)
+    train_data = load_data(FLAGS.train_prefix, FLAGS.walk_len, FLAGS.n_walks, load_walks=True)
     # G, feats (None if no feature file), id_map, walks, class_map
 
     print("Done loading training data..")
     logging.info('start training')
     train(train_data)
-
-
 
 
 if __name__ == '__main__':

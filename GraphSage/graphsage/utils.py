@@ -18,7 +18,7 @@ WALK_LEN = 5
 N_WALKS = 50
 
 
-def load_data(prefix, normalize=True, load_walks=False):
+def load_data(prefix, walk_len, n_walks, normalize=True, load_walks=False):
     logging.basicConfig(filename="./log_embedding/GraphSage.log",
                         level=logging.DEBUG,
                         format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
@@ -78,10 +78,11 @@ def load_data(prefix, normalize=True, load_walks=False):
     logging.info('Normalized')
 
     # run the random walk
+    logging.info('Random walk on the graph')
     if not os.path.exists(prefix + '-walks.txt'):
         nodes = [n for n in G.nodes() if not G.node[n]["val"] and not G.node[n]["test"]]
-        pairs = run_random_walks(G, nodes, num_walks=N_WALKS)
-        out_file = prefix + 'walks.txt'
+        pairs = run_random_walks(G, nodes, walk_len, n_walks)
+        out_file = prefix + '-walks.txt'
         with open(out_file, "w") as fp:
             fp.write("\n".join([str(p[0]) + "\t" + str(p[1]) for p in pairs]))
 
@@ -93,14 +94,14 @@ def load_data(prefix, normalize=True, load_walks=False):
     return G, feats, id_map, walks, class_map
 
 
-def run_random_walks(G, nodes, num_walks=N_WALKS):
+def run_random_walks(G, nodes, walk_len, n_walks):
     pairs = []
     for count, node in enumerate(nodes):
         if G.degree(node) == 0:
             continue
-        for i in range(num_walks):
+        for i in range(n_walks):
             curr_node = node
-            for j in range(WALK_LEN):
+            for j in range(walk_len):
                 next_node = random.choice(G.neighbors(curr_node))
                 # self co-occurrences are useless
                 if curr_node != node:
@@ -119,6 +120,6 @@ if __name__ == "__main__":
     G = json_graph.node_link_graph(G_data)
     nodes = [n for n in G.nodes() if not G.node[n]["val"] and not G.node[n]["test"]]
     G = G.subgraph(nodes)
-    pairs = run_random_walks(G, nodes)
+    pairs = run_random_walks(G, nodes, WALK_LEN, N_WALKS)
     with open(out_file, "w") as fp:
         fp.write("\n".join([str(p[0]) + "\t" + str(p[1]) for p in pairs]))

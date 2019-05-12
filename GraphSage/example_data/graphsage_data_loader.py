@@ -510,15 +510,15 @@ class GraphSageDataLoader:
             temp_node = {}
             temp_node['id'] = i
             temp_node['test'] = False
-            # if i < len(self.u_list):
-            #     temp_node['feature'] = self.u_attr[i]
-            #     if self.id_map_u[i] in self.node_true:
-            #         temp_node['label'] = [1, 0]
-            #     else:
-            #         temp_node['label'] = [0, 1]
-            # else:
-            #     temp_node['feature'] = self.v_attr[i - len(self.u_list)]
-            #     temp_node['label'] = [0, 1]
+            if i < len(self.u_list):
+                temp_node['feature'] = self.u_attr[i]
+                if self.id_map_u[i] in self.node_true:
+                    temp_node['label'] = [1, 0]
+                else:
+                    temp_node['label'] = [0, 1]
+            else:
+                temp_node['feature'] = self.v_attr[i - len(self.u_list)]
+                temp_node['label'] = [0, 1]
             if np.random.choice([0, 1], p=[0.3, 0.7]):
                 temp_node['val'] = False
             else:
@@ -561,12 +561,17 @@ class GraphSageDataLoader:
         with open('./bipartite-class_map.json', 'w') as outfile3:
             json.dump(self.label, outfile3)
 
-    def get_id_map_node(self):
+    def get_id_map_node(self, write_to_file=False):
         """
         :return: dictionary
         """
         id_map_node = self.id_map_u.copy()
         id_map_node.update(self.id_map_v)
+        id_map_node['u_num'] = len(self.u_list)
+        id_map_node['v_num'] = len(self.v_list)
+        if write_to_file:
+            with open('./bipartite-id_map_node.json', 'w') as outfile:
+                json.dump(id_map_node, outfile)
         return id_map_node
 
 
@@ -620,7 +625,10 @@ if __name__ == "__main__":
     logging.info('link form')
     graphsage_loader.link_form()
     graphsage_loader.class_form()
+
+    logging.info('writing data to file')
     graphsage_loader.write_to_json()
+    graphsage_loader.get_id_map_node(True)
 
     # logging.info('######### U adjacent matrix ##########\n' + str(u_adj))
     # logging.info('######### V adjacent matrix ##########\n' + str(v_adj))
