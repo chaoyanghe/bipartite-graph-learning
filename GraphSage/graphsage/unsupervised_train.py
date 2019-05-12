@@ -63,6 +63,7 @@ flags.DEFINE_integer('n_walks', 50, "Number of random walks start from one node"
 os.environ["CUDA_VISIBLE_DEVICES"] = str(FLAGS.gpu)
 
 GPU_MEM_FRACTION = 0.8
+T0 = time.time()
 
 
 def log_dir():
@@ -278,6 +279,7 @@ def train(train_data, test_data=None):
                               lr=FLAGS.learning_rate)
     else:
         raise Exception('Error: model name unrecognized.')
+    print("Time for choosing model: ", time.time() - T0)
 
     config = tf.ConfigProto(log_device_placement=FLAGS.log_device_placement)
     config.gpu_options.allow_growth = True
@@ -304,6 +306,7 @@ def train(train_data, test_data=None):
     train_adj_info = tf.assign(adj_info, minibatch.adj)
     val_adj_info = tf.assign(adj_info, minibatch.test_adj)
     for epoch in range(FLAGS.epochs):
+        tEpoch = time.time()
         logging.info('training epoch: ' + str(epoch))
         minibatch.shuffle()
 
@@ -365,7 +368,7 @@ def train(train_data, test_data=None):
 
         if total_steps > FLAGS.max_total_steps:
             break
-
+        print('Time for one epoch training: %f' % time.time() - tEpoch)
     print("Optimization Finished!")
     if FLAGS.save_embeddings:
         sess.run(val_adj_info.op)
@@ -430,6 +433,7 @@ def train(train_data, test_data=None):
 def main(argv=None):
     print("Loading training data..")
     train_data = load_data(FLAGS.train_prefix, FLAGS.walk_len, FLAGS.n_walks, load_walks=True)
+    print("Time for loading data: ", time.time() - T0)
     # G, feats (None if no feature file), id_map, walks, class_map
 
     print("Done loading training data..")

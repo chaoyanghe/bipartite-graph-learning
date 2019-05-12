@@ -78,8 +78,8 @@ def load_data(prefix, walk_len, n_walks, normalize=True, load_walks=False):
     logging.info('Normalized')
 
     # run the random walk
-    logging.info('Random walk on the graph')
     if not os.path.exists(prefix + '-walks.txt'):
+        logging.info('Random walk on the graph')
         nodes = [n for n in G.nodes() if not G.node[n]["val"] and not G.node[n]["test"]]
         pairs = run_random_walks(G, nodes, walk_len, n_walks)
         out_file = prefix + '-walks.txt'

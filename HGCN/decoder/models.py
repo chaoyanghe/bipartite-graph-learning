@@ -23,10 +23,47 @@ class Decoder(nn.Module):
         return output
 
 
+class Encoder(nn.Module):
+    def __init__(self, infeat, hidfeat, outfeat, dropout):
+        super(Encoder, self).__init__()
+        self.main = nn.Sequential(
+            nn.Linear(infeat, hidfeat),
+            nn.ReLu(),
+            nn.Dropout(p=dropout, inplace=True),
+            nn.Linear(hidfeat, outfeat)
+        )
+
+    def forward(self, input):
+        output = self.main(input)
+        return output
+
+
 def _weights_init(m):
     if isinstance(m, nn.Linear):
         init.xavier_uniform_(m.weight)
         init.constant_(m.bias, 0)
+
+
+class HGCNDecoder(nn.Module):
+    def __init__(self, netG, infeat, outfeat, coder_hidfeat, latent_hidfeat, learning_rate, weight_decay, dropout,
+                 device):
+        super(HGCNDecoder, self).__init__()
+        self.encoder = Encoder(infeat, coder_hidfeat, latent_hidfeat, dropout).to(device)
+        self.decoder = Decoder(latent_hidfeat, coder_hidfeat, outfeat, dropout).to(device)
+        self.encoder.apply(_weights_init)
+        self.decoder.apply(_weights_init)
+        self.netG = netG
+        self.optimizer = optim.Adam(
+            list(self.netG.parameters()) + list(self.encoder.parameters()) + list(self.decoder.parameters()),
+            lr=learning_rate, weight_decay=weight_decay)
+
+    def _loss(self):
+        pass
+
+    def _sample_latent(self):
+        pass
+
+
 
 
 class HGCNDecoder(object):
@@ -43,6 +80,8 @@ class HGCNDecoder(object):
         criterion = nn.MSELoss()
         loss = criterion(input, target)
         return loss
+
+    def _sample_latent(self, h_enc):
 
     def forward_backward(self, target, input, step, epoch, iter):
         self.optimizer.zero_grad()
