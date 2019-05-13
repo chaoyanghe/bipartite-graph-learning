@@ -7,7 +7,7 @@ import torch
 from cascaded_adversarial_hgcn_with_gan import CascadedAdversarialHGCN
 from cascaded_adversarial_hgcn_with_decoder import DecoderGCNLayer
 from conf import (MODEL, RANDOM_SEED, BATCH_SIZE, EPOCHS, LEARNING_RATE,
-                  WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS, GCN_OUTPUT_DIM)
+                  WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS, GCN_OUTPUT_DIM, CODER_HIDDEN_DIMENSIONS, LATENT_DIMENSIONS)
 from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
 
 
@@ -34,6 +34,10 @@ def parse_args():
                         help='The output dimensions of GCN.')
     parser.add_argument('--rank', type=int, default=-1,
                         help='process ID for MPI Simple AutoML')
+    parser.add_argument('--coder_hidfeat', type=int, default=CODER_HIDDEN_DIMENSIONS,
+                        help='Number of hidden units for encoder / decoder in VAE')
+    parser.add_argument('--latent_hidfeat', type=int, default=LATENT_DIMENSIONS,
+                        help='Number of latent units for latent representation in VAE')
 
     return parser.parse_args()
 

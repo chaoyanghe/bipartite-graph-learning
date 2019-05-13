@@ -5436,3 +5436,1455 @@
 -1Sat, 11 May 2019 13:54:16 cascaded_adversarial_hgcn_with_decoder.py[line:192] INFO node_num = 619030
 -1Sat, 11 May 2019 13:54:16 cascaded_adversarial_hgcn_with_decoder.py[line:194] INFO dimension_embedding = 8
 -1Sat, 11 May 2019 13:54:21 cascaded_adversarial_hgcn_with_decoder.py[line:220] INFO saved embedding file
+-1Sun, 12 May 2019 21:13:07 hgcn_main.py[line:68] INFO device = cpu
+-1Sun, 12 May 2019 21:13:07 bipartite_graph_data_loader.py[line:14] INFO BipartiteGraphDataLoader __init__().
+-1Sun, 12 May 2019 21:13:07 bipartite_graph_data_loader.py[line:21] INFO group_u_list_file_path = ./data/Tencent-QQ/node_list
+-1Sun, 12 May 2019 21:13:07 bipartite_graph_data_loader.py[line:22] INFO group_u_attr_file_path = ./data/Tencent-QQ/node_attr
+-1Sun, 12 May 2019 21:13:07 bipartite_graph_data_loader.py[line:23] INFO group_u_label_file_path = ./data/Tencent-QQ/node_true
+-1Sun, 12 May 2019 21:13:07 bipartite_graph_data_loader.py[line:25] INFO edge_list_file_path = ./data/Tencent-QQ/edgelist
+-1Sun, 12 May 2019 21:13:07 bipartite_graph_data_loader.py[line:27] INFO group_v_list_file_path = ./data/Tencent-QQ/group_list
+-1Sun, 12 May 2019 21:13:07 bipartite_graph_data_loader.py[line:28] INFO group_v_attr_file_path = ./data/Tencent-QQ/group_attr
+-1Sun, 12 May 2019 21:13:07 bipartite_graph_data_loader.py[line:29] INFO group_v_label_file_path = None
+-1Sun, 12 May 2019 21:13:07 bipartite_graph_data_loader.py[line:55] INFO BipartiteGraphDataLoader __init__(). END
+-1Sun, 12 May 2019 21:13:07 bipartite_graph_data_loader.py[line:73] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+-1Sun, 12 May 2019 21:13:27 bipartite_graph_data_loader.py[line:170] INFO before merging with u_list, the len is = 1089436
+-1Sun, 12 May 2019 21:13:28 bipartite_graph_data_loader.py[line:178] INFO after merging with u_list, the len is = 1089436
+-1Sun, 12 May 2019 21:13:29 bipartite_graph_data_loader.py[line:248] INFO count_no_attribute = 89682
+-1Sun, 12 May 2019 21:13:29 bipartite_graph_data_loader.py[line:249] INFO count_10 = 124
+-1Sun, 12 May 2019 21:13:29 bipartite_graph_data_loader.py[line:250] INFO count_14 = 134
+-1Sun, 12 May 2019 21:13:29 bipartite_graph_data_loader.py[line:251] INFO count_15 = 18997
+-1Sun, 12 May 2019 21:13:29 bipartite_graph_data_loader.py[line:252] INFO count_16 = 30893
+-1Sun, 12 May 2019 21:13:29 bipartite_graph_data_loader.py[line:253] INFO count_17 = 40023
+-1Sun, 12 May 2019 21:13:29 bipartite_graph_data_loader.py[line:254] INFO count_more_than_17 = 0
+-1Sun, 12 May 2019 21:13:29 bipartite_graph_data_loader.py[line:255] INFO count_all = 179853
+-1Sun, 12 May 2019 21:13:29 bipartite_graph_data_loader.py[line:273] INFO before merging with v_list, the len is = 90047
+-1Sun, 12 May 2019 21:13:30 bipartite_graph_data_loader.py[line:281] INFO after merging with v_list, the len is = 90047
+-1Sun, 12 May 2019 21:13:32 bipartite_graph_data_loader.py[line:93] INFO raw edge_list len = 1979756
+-1Sun, 12 May 2019 21:13:32 bipartite_graph_data_loader.py[line:94] INFO edge_list len = 991734
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:295] INFO group U length = 619030
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:296] INFO group V length = 90044
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:100] INFO u_list len = 619030. [1, 139467, 253828, 358861, 461403, 338688, 262114, 758671, 855102, 951204, 1045871, 1140045, 1062918]
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:101] INFO v_list len = 90044. [0, 48809, 115451, 201816, 309872, 441355, 600161, 795107, 1017863, 1268422]
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:302] INFO before filter, the len is = 1089436
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:306] INFO after filter, the len is = 619030
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:302] INFO before filter, the len is = 90047
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:306] INFO after filter, the len is = 90044
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:310] INFO __generate_adjacent_matrix START
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:312] INFO u_node_list = 619030
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:313] INFO v_node_list = 90044
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:314] INFO edge_list = 991734
+-1Sun, 12 May 2019 21:13:33 bipartite_graph_data_loader.py[line:316] INFO start to load bipartite for u
+-1Sun, 12 May 2019 21:13:46 bipartite_graph_data_loader.py[line:326] INFO (619030, 90044)
+-1Sun, 12 May 2019 21:13:46 bipartite_graph_data_loader.py[line:329] INFO end to load bipartite for u
+-1Sun, 12 May 2019 21:13:46 bipartite_graph_data_loader.py[line:331] INFO start to load bipartite for u
+-1Sun, 12 May 2019 21:13:58 bipartite_graph_data_loader.py[line:341] INFO (90044, 619030)
+-1Sun, 12 May 2019 21:13:59 bipartite_graph_data_loader.py[line:344] INFO end to load bipartite for u
+-1Sun, 12 May 2019 21:13:59 bipartite_graph_data_loader.py[line:386] INFO u number: 619030
+-1Sun, 12 May 2019 21:13:59 bipartite_graph_data_loader.py[line:387] INFO u_adjacent_matrix: (619030, 90044)
+-1Sun, 12 May 2019 21:13:59 bipartite_graph_data_loader.py[line:390] INFO v number: 90044
+-1Sun, 12 May 2019 21:13:59 bipartite_graph_data_loader.py[line:391] INFO v_adjacent_matrix: (90044, 619030)
+-1Sun, 12 May 2019 21:13:59 bipartite_graph_data_loader.py[line:394] INFO batch_num_u = 1239
+-1Sun, 12 May 2019 21:13:59 bipartite_graph_data_loader.py[line:397] INFO batch_num_v = 181
+-1Sun, 12 May 2019 21:13:59 bipartite_graph_data_loader.py[line:120] INFO #### generate_adjacent_matrix_feature_and_labels. END
+-1Sun, 12 May 2019 21:13:59 cascaded_adversarial_hgcn_with_gan.py[line:27] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:13:59 cascaded_adversarial_hgcn_with_gan.py[line:48] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:13:59 cascaded_adversarial_hgcn_with_gan.py[line:57] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:18:37 hgcn_main.py[line:68] INFO device = cpu
+-1Sun, 12 May 2019 21:18:37 bipartite_graph_data_loader.py[line:14] INFO BipartiteGraphDataLoader __init__().
+-1Sun, 12 May 2019 21:18:37 bipartite_graph_data_loader.py[line:21] INFO group_u_list_file_path = ./data/Tencent-QQ/node_list
+-1Sun, 12 May 2019 21:18:37 bipartite_graph_data_loader.py[line:22] INFO group_u_attr_file_path = ./data/Tencent-QQ/node_attr
+-1Sun, 12 May 2019 21:18:37 bipartite_graph_data_loader.py[line:23] INFO group_u_label_file_path = ./data/Tencent-QQ/node_true
+-1Sun, 12 May 2019 21:18:37 bipartite_graph_data_loader.py[line:25] INFO edge_list_file_path = ./data/Tencent-QQ/edgelist
+-1Sun, 12 May 2019 21:18:37 bipartite_graph_data_loader.py[line:27] INFO group_v_list_file_path = ./data/Tencent-QQ/group_list
+-1Sun, 12 May 2019 21:18:37 bipartite_graph_data_loader.py[line:28] INFO group_v_attr_file_path = ./data/Tencent-QQ/group_attr
+-1Sun, 12 May 2019 21:18:37 bipartite_graph_data_loader.py[line:29] INFO group_v_label_file_path = None
+-1Sun, 12 May 2019 21:18:37 bipartite_graph_data_loader.py[line:55] INFO BipartiteGraphDataLoader __init__(). END
+-1Sun, 12 May 2019 21:18:37 bipartite_graph_data_loader.py[line:73] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+-1Sun, 12 May 2019 21:19:02 bipartite_graph_data_loader.py[line:170] INFO before merging with u_list, the len is = 1089436
+-1Sun, 12 May 2019 21:19:03 bipartite_graph_data_loader.py[line:178] INFO after merging with u_list, the len is = 1089436
+-1Sun, 12 May 2019 21:19:05 bipartite_graph_data_loader.py[line:248] INFO count_no_attribute = 89682
+-1Sun, 12 May 2019 21:19:05 bipartite_graph_data_loader.py[line:249] INFO count_10 = 124
+-1Sun, 12 May 2019 21:19:05 bipartite_graph_data_loader.py[line:250] INFO count_14 = 134
+-1Sun, 12 May 2019 21:19:05 bipartite_graph_data_loader.py[line:251] INFO count_15 = 18997
+-1Sun, 12 May 2019 21:19:05 bipartite_graph_data_loader.py[line:252] INFO count_16 = 30893
+-1Sun, 12 May 2019 21:19:05 bipartite_graph_data_loader.py[line:253] INFO count_17 = 40023
+-1Sun, 12 May 2019 21:19:05 bipartite_graph_data_loader.py[line:254] INFO count_more_than_17 = 0
+-1Sun, 12 May 2019 21:19:05 bipartite_graph_data_loader.py[line:255] INFO count_all = 179853
+-1Sun, 12 May 2019 21:19:05 bipartite_graph_data_loader.py[line:273] INFO before merging with v_list, the len is = 90047
+-1Sun, 12 May 2019 21:19:05 bipartite_graph_data_loader.py[line:281] INFO after merging with v_list, the len is = 90047
+-1Sun, 12 May 2019 21:19:08 bipartite_graph_data_loader.py[line:93] INFO raw edge_list len = 1979756
+-1Sun, 12 May 2019 21:19:08 bipartite_graph_data_loader.py[line:94] INFO edge_list len = 991734
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:295] INFO group U length = 619030
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:296] INFO group V length = 90044
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:100] INFO u_list len = 619030. [1, 139467, 253828, 358861, 461403, 338688, 262114, 758671, 855102, 951204, 1045871, 1140045, 1062918]
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:101] INFO v_list len = 90044. [0, 48809, 115451, 201816, 309872, 441355, 600161, 795107, 1017863, 1268422]
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:302] INFO before filter, the len is = 1089436
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:306] INFO after filter, the len is = 619030
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:302] INFO before filter, the len is = 90047
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:306] INFO after filter, the len is = 90044
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:310] INFO __generate_adjacent_matrix START
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:312] INFO u_node_list = 619030
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:313] INFO v_node_list = 90044
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:314] INFO edge_list = 991734
+-1Sun, 12 May 2019 21:19:10 bipartite_graph_data_loader.py[line:316] INFO start to load bipartite for u
+-1Sun, 12 May 2019 21:19:24 bipartite_graph_data_loader.py[line:326] INFO (619030, 90044)
+-1Sun, 12 May 2019 21:19:25 bipartite_graph_data_loader.py[line:329] INFO end to load bipartite for u
+-1Sun, 12 May 2019 21:19:25 bipartite_graph_data_loader.py[line:331] INFO start to load bipartite for u
+-1Sun, 12 May 2019 21:19:39 bipartite_graph_data_loader.py[line:341] INFO (90044, 619030)
+-1Sun, 12 May 2019 21:19:40 bipartite_graph_data_loader.py[line:344] INFO end to load bipartite for u
+-1Sun, 12 May 2019 21:19:40 bipartite_graph_data_loader.py[line:386] INFO u number: 619030
+-1Sun, 12 May 2019 21:19:40 bipartite_graph_data_loader.py[line:387] INFO u_adjacent_matrix: (619030, 90044)
+-1Sun, 12 May 2019 21:19:40 bipartite_graph_data_loader.py[line:390] INFO v number: 90044
+-1Sun, 12 May 2019 21:19:40 bipartite_graph_data_loader.py[line:391] INFO v_adjacent_matrix: (90044, 619030)
+-1Sun, 12 May 2019 21:19:40 bipartite_graph_data_loader.py[line:394] INFO batch_num_u = 1239
+-1Sun, 12 May 2019 21:19:40 bipartite_graph_data_loader.py[line:397] INFO batch_num_v = 181
+-1Sun, 12 May 2019 21:19:40 bipartite_graph_data_loader.py[line:120] INFO #### generate_adjacent_matrix_feature_and_labels. END
+-1Sun, 12 May 2019 21:19:41 cascaded_adversarial_hgcn_with_gan.py[line:27] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:19:41 cascaded_adversarial_hgcn_with_gan.py[line:48] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:19:41 cascaded_adversarial_hgcn_with_gan.py[line:57] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:28:17 hgcn_main.py[line:68] INFO device = cpu
+-1Sun, 12 May 2019 21:28:17 bipartite_graph_data_loader.py[line:14] INFO BipartiteGraphDataLoader __init__().
+-1Sun, 12 May 2019 21:28:17 bipartite_graph_data_loader.py[line:21] INFO group_u_list_file_path = ./data/Tencent-QQ/node_list
+-1Sun, 12 May 2019 21:28:17 bipartite_graph_data_loader.py[line:22] INFO group_u_attr_file_path = ./data/Tencent-QQ/node_attr
+-1Sun, 12 May 2019 21:28:17 bipartite_graph_data_loader.py[line:23] INFO group_u_label_file_path = ./data/Tencent-QQ/node_true
+-1Sun, 12 May 2019 21:28:17 bipartite_graph_data_loader.py[line:25] INFO edge_list_file_path = ./data/Tencent-QQ/edgelist
+-1Sun, 12 May 2019 21:28:17 bipartite_graph_data_loader.py[line:27] INFO group_v_list_file_path = ./data/Tencent-QQ/group_list
+-1Sun, 12 May 2019 21:28:17 bipartite_graph_data_loader.py[line:28] INFO group_v_attr_file_path = ./data/Tencent-QQ/group_attr
+-1Sun, 12 May 2019 21:28:17 bipartite_graph_data_loader.py[line:29] INFO group_v_label_file_path = None
+-1Sun, 12 May 2019 21:28:17 bipartite_graph_data_loader.py[line:55] INFO BipartiteGraphDataLoader __init__(). END
+-1Sun, 12 May 2019 21:28:17 bipartite_graph_data_loader.py[line:73] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+-1Sun, 12 May 2019 21:28:41 bipartite_graph_data_loader.py[line:170] INFO before merging with u_list, the len is = 1089436
+-1Sun, 12 May 2019 21:28:42 bipartite_graph_data_loader.py[line:178] INFO after merging with u_list, the len is = 1089436
+-1Sun, 12 May 2019 21:28:43 bipartite_graph_data_loader.py[line:248] INFO count_no_attribute = 89682
+-1Sun, 12 May 2019 21:28:43 bipartite_graph_data_loader.py[line:249] INFO count_10 = 124
+-1Sun, 12 May 2019 21:28:43 bipartite_graph_data_loader.py[line:250] INFO count_14 = 134
+-1Sun, 12 May 2019 21:28:43 bipartite_graph_data_loader.py[line:251] INFO count_15 = 18997
+-1Sun, 12 May 2019 21:28:43 bipartite_graph_data_loader.py[line:252] INFO count_16 = 30893
+-1Sun, 12 May 2019 21:28:43 bipartite_graph_data_loader.py[line:253] INFO count_17 = 40023
+-1Sun, 12 May 2019 21:28:43 bipartite_graph_data_loader.py[line:254] INFO count_more_than_17 = 0
+-1Sun, 12 May 2019 21:28:43 bipartite_graph_data_loader.py[line:255] INFO count_all = 179853
+-1Sun, 12 May 2019 21:28:44 bipartite_graph_data_loader.py[line:273] INFO before merging with v_list, the len is = 90047
+-1Sun, 12 May 2019 21:28:44 bipartite_graph_data_loader.py[line:281] INFO after merging with v_list, the len is = 90047
+-1Sun, 12 May 2019 21:28:48 bipartite_graph_data_loader.py[line:93] INFO raw edge_list len = 1979756
+-1Sun, 12 May 2019 21:28:48 bipartite_graph_data_loader.py[line:94] INFO edge_list len = 991734
+-1Sun, 12 May 2019 21:28:48 bipartite_graph_data_loader.py[line:295] INFO group U length = 619030
+-1Sun, 12 May 2019 21:28:48 bipartite_graph_data_loader.py[line:296] INFO group V length = 90044
+-1Sun, 12 May 2019 21:28:48 bipartite_graph_data_loader.py[line:100] INFO u_list len = 619030. [1, 139467, 253828, 358861, 461403, 338688, 262114, 758671, 855102, 951204, 1045871, 1140045, 1062918]
+-1Sun, 12 May 2019 21:28:48 bipartite_graph_data_loader.py[line:101] INFO v_list len = 90044. [0, 48809, 115451, 201816, 309872, 441355, 600161, 795107, 1017863, 1268422]
+-1Sun, 12 May 2019 21:28:48 bipartite_graph_data_loader.py[line:302] INFO before filter, the len is = 1089436
+-1Sun, 12 May 2019 21:28:50 bipartite_graph_data_loader.py[line:306] INFO after filter, the len is = 619030
+-1Sun, 12 May 2019 21:28:50 bipartite_graph_data_loader.py[line:302] INFO before filter, the len is = 90047
+-1Sun, 12 May 2019 21:28:51 bipartite_graph_data_loader.py[line:306] INFO after filter, the len is = 90044
+-1Sun, 12 May 2019 21:28:51 bipartite_graph_data_loader.py[line:310] INFO __generate_adjacent_matrix START
+-1Sun, 12 May 2019 21:28:51 bipartite_graph_data_loader.py[line:312] INFO u_node_list = 619030
+-1Sun, 12 May 2019 21:28:51 bipartite_graph_data_loader.py[line:313] INFO v_node_list = 90044
+-1Sun, 12 May 2019 21:28:51 bipartite_graph_data_loader.py[line:314] INFO edge_list = 991734
+-1Sun, 12 May 2019 21:28:51 bipartite_graph_data_loader.py[line:316] INFO start to load bipartite for u
+-1Sun, 12 May 2019 21:29:03 bipartite_graph_data_loader.py[line:326] INFO (619030, 90044)
+-1Sun, 12 May 2019 21:29:04 bipartite_graph_data_loader.py[line:329] INFO end to load bipartite for u
+-1Sun, 12 May 2019 21:29:04 bipartite_graph_data_loader.py[line:331] INFO start to load bipartite for u
+-1Sun, 12 May 2019 21:29:18 bipartite_graph_data_loader.py[line:341] INFO (90044, 619030)
+-1Sun, 12 May 2019 21:29:18 bipartite_graph_data_loader.py[line:344] INFO end to load bipartite for u
+-1Sun, 12 May 2019 21:29:18 bipartite_graph_data_loader.py[line:386] INFO u number: 619030
+-1Sun, 12 May 2019 21:29:18 bipartite_graph_data_loader.py[line:387] INFO u_adjacent_matrix: (619030, 90044)
+-1Sun, 12 May 2019 21:29:18 bipartite_graph_data_loader.py[line:390] INFO v number: 90044
+-1Sun, 12 May 2019 21:29:18 bipartite_graph_data_loader.py[line:391] INFO v_adjacent_matrix: (90044, 619030)
+-1Sun, 12 May 2019 21:29:18 bipartite_graph_data_loader.py[line:394] INFO batch_num_u = 1239
+-1Sun, 12 May 2019 21:29:18 bipartite_graph_data_loader.py[line:397] INFO batch_num_v = 181
+-1Sun, 12 May 2019 21:29:19 bipartite_graph_data_loader.py[line:120] INFO #### generate_adjacent_matrix_feature_and_labels. END
+-1Sun, 12 May 2019 21:29:19 cascaded_adversarial_hgcn_with_gan.py[line:27] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:29:19 cascaded_adversarial_hgcn_with_gan.py[line:48] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:29:19 cascaded_adversarial_hgcn_with_gan.py[line:57] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:33:37 hgcn_main.py[line:68] INFO device = cpu
+-1Sun, 12 May 2019 21:33:37 bipartite_graph_data_loader.py[line:14] INFO BipartiteGraphDataLoader __init__().
+-1Sun, 12 May 2019 21:33:37 bipartite_graph_data_loader.py[line:21] INFO group_u_list_file_path = ./data/Tencent-QQ/node_list
+-1Sun, 12 May 2019 21:33:37 bipartite_graph_data_loader.py[line:22] INFO group_u_attr_file_path = ./data/Tencent-QQ/node_attr
+-1Sun, 12 May 2019 21:33:37 bipartite_graph_data_loader.py[line:23] INFO group_u_label_file_path = ./data/Tencent-QQ/node_true
+-1Sun, 12 May 2019 21:33:37 bipartite_graph_data_loader.py[line:25] INFO edge_list_file_path = ./data/Tencent-QQ/edgelist
+-1Sun, 12 May 2019 21:33:37 bipartite_graph_data_loader.py[line:27] INFO group_v_list_file_path = ./data/Tencent-QQ/group_list
+-1Sun, 12 May 2019 21:33:37 bipartite_graph_data_loader.py[line:28] INFO group_v_attr_file_path = ./data/Tencent-QQ/group_attr
+-1Sun, 12 May 2019 21:33:37 bipartite_graph_data_loader.py[line:29] INFO group_v_label_file_path = None
+-1Sun, 12 May 2019 21:33:37 bipartite_graph_data_loader.py[line:55] INFO BipartiteGraphDataLoader __init__(). END
+-1Sun, 12 May 2019 21:33:37 bipartite_graph_data_loader.py[line:73] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+-1Sun, 12 May 2019 21:34:03 bipartite_graph_data_loader.py[line:170] INFO before merging with u_list, the len is = 1089436
+-1Sun, 12 May 2019 21:34:05 bipartite_graph_data_loader.py[line:178] INFO after merging with u_list, the len is = 1089436
+-1Sun, 12 May 2019 21:34:08 bipartite_graph_data_loader.py[line:248] INFO count_no_attribute = 89682
+-1Sun, 12 May 2019 21:34:08 bipartite_graph_data_loader.py[line:249] INFO count_10 = 124
+-1Sun, 12 May 2019 21:34:08 bipartite_graph_data_loader.py[line:250] INFO count_14 = 134
+-1Sun, 12 May 2019 21:34:08 bipartite_graph_data_loader.py[line:251] INFO count_15 = 18997
+-1Sun, 12 May 2019 21:34:08 bipartite_graph_data_loader.py[line:252] INFO count_16 = 30893
+-1Sun, 12 May 2019 21:34:08 bipartite_graph_data_loader.py[line:253] INFO count_17 = 40023
+-1Sun, 12 May 2019 21:34:08 bipartite_graph_data_loader.py[line:254] INFO count_more_than_17 = 0
+-1Sun, 12 May 2019 21:34:08 bipartite_graph_data_loader.py[line:255] INFO count_all = 179853
+-1Sun, 12 May 2019 21:34:08 bipartite_graph_data_loader.py[line:273] INFO before merging with v_list, the len is = 90047
+-1Sun, 12 May 2019 21:34:08 bipartite_graph_data_loader.py[line:281] INFO after merging with v_list, the len is = 90047
+-1Sun, 12 May 2019 21:34:12 bipartite_graph_data_loader.py[line:93] INFO raw edge_list len = 1979756
+-1Sun, 12 May 2019 21:34:12 bipartite_graph_data_loader.py[line:94] INFO edge_list len = 991734
+-1Sun, 12 May 2019 21:34:13 bipartite_graph_data_loader.py[line:295] INFO group U length = 619030
+-1Sun, 12 May 2019 21:34:13 bipartite_graph_data_loader.py[line:296] INFO group V length = 90044
+-1Sun, 12 May 2019 21:34:13 bipartite_graph_data_loader.py[line:100] INFO u_list len = 619030. [1, 139467, 253828, 358861, 461403, 338688, 262114, 758671, 855102, 951204, 1045871, 1140045, 1062918]
+-1Sun, 12 May 2019 21:34:13 bipartite_graph_data_loader.py[line:101] INFO v_list len = 90044. [0, 48809, 115451, 201816, 309872, 441355, 600161, 795107, 1017863, 1268422]
+-1Sun, 12 May 2019 21:34:13 bipartite_graph_data_loader.py[line:302] INFO before filter, the len is = 1089436
+-1Sun, 12 May 2019 21:34:14 bipartite_graph_data_loader.py[line:306] INFO after filter, the len is = 619030
+-1Sun, 12 May 2019 21:34:14 bipartite_graph_data_loader.py[line:302] INFO before filter, the len is = 90047
+-1Sun, 12 May 2019 21:34:14 bipartite_graph_data_loader.py[line:306] INFO after filter, the len is = 90044
+-1Sun, 12 May 2019 21:34:14 bipartite_graph_data_loader.py[line:310] INFO __generate_adjacent_matrix START
+-1Sun, 12 May 2019 21:34:14 bipartite_graph_data_loader.py[line:312] INFO u_node_list = 619030
+-1Sun, 12 May 2019 21:34:14 bipartite_graph_data_loader.py[line:313] INFO v_node_list = 90044
+-1Sun, 12 May 2019 21:34:14 bipartite_graph_data_loader.py[line:314] INFO edge_list = 991734
+-1Sun, 12 May 2019 21:34:14 bipartite_graph_data_loader.py[line:316] INFO start to load bipartite for u
+-1Sun, 12 May 2019 21:34:30 bipartite_graph_data_loader.py[line:326] INFO (619030, 90044)
+-1Sun, 12 May 2019 21:34:31 bipartite_graph_data_loader.py[line:329] INFO end to load bipartite for u
+-1Sun, 12 May 2019 21:34:31 bipartite_graph_data_loader.py[line:331] INFO start to load bipartite for u
+-1Sun, 12 May 2019 21:34:46 bipartite_graph_data_loader.py[line:341] INFO (90044, 619030)
+-1Sun, 12 May 2019 21:34:47 bipartite_graph_data_loader.py[line:344] INFO end to load bipartite for u
+-1Sun, 12 May 2019 21:34:47 bipartite_graph_data_loader.py[line:386] INFO u number: 619030
+-1Sun, 12 May 2019 21:34:47 bipartite_graph_data_loader.py[line:387] INFO u_adjacent_matrix: (619030, 90044)
+-1Sun, 12 May 2019 21:34:47 bipartite_graph_data_loader.py[line:390] INFO v number: 90044
+-1Sun, 12 May 2019 21:34:47 bipartite_graph_data_loader.py[line:391] INFO v_adjacent_matrix: (90044, 619030)
+-1Sun, 12 May 2019 21:34:47 bipartite_graph_data_loader.py[line:394] INFO batch_num_u = 1239
+-1Sun, 12 May 2019 21:34:47 bipartite_graph_data_loader.py[line:397] INFO batch_num_v = 181
+-1Sun, 12 May 2019 21:34:47 bipartite_graph_data_loader.py[line:120] INFO #### generate_adjacent_matrix_feature_and_labels. END
+-1Sun, 12 May 2019 21:34:47 cascaded_adversarial_hgcn_with_gan.py[line:27] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:34:47 cascaded_adversarial_hgcn_with_gan.py[line:48] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:34:47 cascaded_adversarial_hgcn_with_gan.py[line:57] INFO AdversarialHGCNLayer
+-1Sun, 12 May 2019 21:34:47 cascaded_adversarial_hgcn_with_decoder.py[line:70] INFO Step 1: Explicit relation learning
+-1Sun, 12 May 2019 21:34:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 0, loss: 3.1488351821899414
+-1Sun, 12 May 2019 21:34:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1, loss: 3.5559422969818115
+-1Sun, 12 May 2019 21:34:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 2, loss: 3.0561046600341797
+-1Sun, 12 May 2019 21:34:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 3, loss: 3.1346399784088135
+-1Sun, 12 May 2019 21:34:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 4, loss: 3.191718578338623
+-1Sun, 12 May 2019 21:34:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 5, loss: 3.05129075050354
+-1Sun, 12 May 2019 21:34:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 6, loss: 2.9950673580169678
+-1Sun, 12 May 2019 21:34:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 7, loss: 3.0234055519104004
+-1Sun, 12 May 2019 21:34:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 8, loss: 2.7772862911224365
+-1Sun, 12 May 2019 21:34:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 9, loss: 3.011212110519409
+-1Sun, 12 May 2019 21:34:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 10, loss: 2.952364444732666
+-1Sun, 12 May 2019 21:34:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 11, loss: 2.9847464561462402
+-1Sun, 12 May 2019 21:34:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 12, loss: 2.8271524906158447
+-1Sun, 12 May 2019 21:34:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 13, loss: 3.102252721786499
+-1Sun, 12 May 2019 21:34:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 14, loss: 2.7742505073547363
+-1Sun, 12 May 2019 21:34:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 15, loss: 2.7347471714019775
+-1Sun, 12 May 2019 21:34:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 16, loss: 2.6807656288146973
+-1Sun, 12 May 2019 21:34:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 17, loss: 2.6206634044647217
+-1Sun, 12 May 2019 21:34:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 18, loss: 2.683361530303955
+-1Sun, 12 May 2019 21:34:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 19, loss: 2.4946069717407227
+-1Sun, 12 May 2019 21:34:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 20, loss: 2.501868486404419
+-1Sun, 12 May 2019 21:34:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 21, loss: 2.7259726524353027
+-1Sun, 12 May 2019 21:34:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 22, loss: 2.5464305877685547
+-1Sun, 12 May 2019 21:34:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 23, loss: 2.5657620429992676
+-1Sun, 12 May 2019 21:34:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 24, loss: 2.343182325363159
+-1Sun, 12 May 2019 21:34:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 25, loss: 2.3539347648620605
+-1Sun, 12 May 2019 21:34:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 26, loss: 2.547593593597412
+-1Sun, 12 May 2019 21:34:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 27, loss: 2.3935611248016357
+-1Sun, 12 May 2019 21:34:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 28, loss: 2.490575075149536
+-1Sun, 12 May 2019 21:34:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 29, loss: 2.3280599117279053
+-1Sun, 12 May 2019 21:34:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 30, loss: 2.425278902053833
+-1Sun, 12 May 2019 21:34:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 31, loss: 2.367471694946289
+-1Sun, 12 May 2019 21:34:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 32, loss: 2.3339927196502686
+-1Sun, 12 May 2019 21:34:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 33, loss: 2.335975170135498
+-1Sun, 12 May 2019 21:34:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 34, loss: 2.3997750282287598
+-1Sun, 12 May 2019 21:34:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 35, loss: 2.380706548690796
+-1Sun, 12 May 2019 21:34:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 36, loss: 2.4199397563934326
+-1Sun, 12 May 2019 21:34:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 37, loss: 2.172471523284912
+-1Sun, 12 May 2019 21:34:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 38, loss: 2.297203302383423
+-1Sun, 12 May 2019 21:34:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 39, loss: 2.270998477935791
+-1Sun, 12 May 2019 21:34:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 40, loss: 2.331610679626465
+-1Sun, 12 May 2019 21:34:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 41, loss: 2.3206989765167236
+-1Sun, 12 May 2019 21:34:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 42, loss: 2.161081075668335
+-1Sun, 12 May 2019 21:34:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 43, loss: 2.196272134780884
+-1Sun, 12 May 2019 21:34:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 44, loss: 2.1737563610076904
+-1Sun, 12 May 2019 21:34:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 45, loss: 2.2380635738372803
+-1Sun, 12 May 2019 21:34:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 46, loss: 2.206307888031006
+-1Sun, 12 May 2019 21:34:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 47, loss: 2.165713310241699
+-1Sun, 12 May 2019 21:34:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 48, loss: 2.2110817432403564
+-1Sun, 12 May 2019 21:34:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 49, loss: 2.091134548187256
+-1Sun, 12 May 2019 21:34:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 50, loss: 2.171281099319458
+-1Sun, 12 May 2019 21:34:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 51, loss: 2.067328453063965
+-1Sun, 12 May 2019 21:34:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 52, loss: 2.0831103324890137
+-1Sun, 12 May 2019 21:34:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 53, loss: 2.071162700653076
+-1Sun, 12 May 2019 21:34:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 54, loss: 1.9688647985458374
+-1Sun, 12 May 2019 21:34:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 55, loss: 2.1744725704193115
+-1Sun, 12 May 2019 21:34:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 56, loss: 2.0857982635498047
+-1Sun, 12 May 2019 21:34:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 57, loss: 2.026684522628784
+-1Sun, 12 May 2019 21:34:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 58, loss: 2.0444419384002686
+-1Sun, 12 May 2019 21:34:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 59, loss: 2.0270698070526123
+-1Sun, 12 May 2019 21:34:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 60, loss: 2.0500080585479736
+-1Sun, 12 May 2019 21:34:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 61, loss: 2.0041234493255615
+-1Sun, 12 May 2019 21:34:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 62, loss: 1.963015079498291
+-1Sun, 12 May 2019 21:34:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 63, loss: 1.9289698600769043
+-1Sun, 12 May 2019 21:34:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 64, loss: 1.9700305461883545
+-1Sun, 12 May 2019 21:34:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 65, loss: 1.9464318752288818
+-1Sun, 12 May 2019 21:34:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 66, loss: 1.9083616733551025
+-1Sun, 12 May 2019 21:34:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 67, loss: 2.0544755458831787
+-1Sun, 12 May 2019 21:34:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 68, loss: 1.9008069038391113
+-1Sun, 12 May 2019 21:34:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 69, loss: 1.9179457426071167
+-1Sun, 12 May 2019 21:34:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 70, loss: 1.8801840543746948
+-1Sun, 12 May 2019 21:34:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 71, loss: 1.8353192806243896
+-1Sun, 12 May 2019 21:34:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 72, loss: 1.823296070098877
+-1Sun, 12 May 2019 21:34:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 73, loss: 1.8149056434631348
+-1Sun, 12 May 2019 21:34:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 74, loss: 1.9422760009765625
+-1Sun, 12 May 2019 21:34:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 75, loss: 1.8676713705062866
+-1Sun, 12 May 2019 21:34:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 76, loss: 1.740083932876587
+-1Sun, 12 May 2019 21:34:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 77, loss: 1.8431748151779175
+-1Sun, 12 May 2019 21:34:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 78, loss: 1.8640390634536743
+-1Sun, 12 May 2019 21:35:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 79, loss: 1.8095051050186157
+-1Sun, 12 May 2019 21:35:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 80, loss: 1.8003559112548828
+-1Sun, 12 May 2019 21:35:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 81, loss: 1.80976402759552
+-1Sun, 12 May 2019 21:35:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 82, loss: 1.8150120973587036
+-1Sun, 12 May 2019 21:35:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 83, loss: 1.8591711521148682
+-1Sun, 12 May 2019 21:35:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 84, loss: 1.865191102027893
+-1Sun, 12 May 2019 21:35:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 85, loss: 1.7575984001159668
+-1Sun, 12 May 2019 21:35:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 86, loss: 1.813007116317749
+-1Sun, 12 May 2019 21:35:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 87, loss: 1.8116772174835205
+-1Sun, 12 May 2019 21:35:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 88, loss: 1.8285658359527588
+-1Sun, 12 May 2019 21:35:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 89, loss: 1.7556557655334473
+-1Sun, 12 May 2019 21:35:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 90, loss: 1.7657281160354614
+-1Sun, 12 May 2019 21:35:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 91, loss: 1.6948091983795166
+-1Sun, 12 May 2019 21:35:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 92, loss: 1.736610770225525
+-1Sun, 12 May 2019 21:35:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 93, loss: 1.7173776626586914
+-1Sun, 12 May 2019 21:35:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 94, loss: 1.7610831260681152
+-1Sun, 12 May 2019 21:35:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 95, loss: 1.770006775856018
+-1Sun, 12 May 2019 21:35:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 96, loss: 1.7569762468338013
+-1Sun, 12 May 2019 21:35:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 97, loss: 1.728380799293518
+-1Sun, 12 May 2019 21:35:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 98, loss: 1.693611979484558
+-1Sun, 12 May 2019 21:35:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 99, loss: 1.7899327278137207
+-1Sun, 12 May 2019 21:35:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 100, loss: 1.695447564125061
+-1Sun, 12 May 2019 21:35:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 101, loss: 1.7245451211929321
+-1Sun, 12 May 2019 21:35:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 102, loss: 1.6821297407150269
+-1Sun, 12 May 2019 21:35:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 103, loss: 1.6442075967788696
+-1Sun, 12 May 2019 21:35:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 104, loss: 1.6882002353668213
+-1Sun, 12 May 2019 21:35:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 105, loss: 1.6767040491104126
+-1Sun, 12 May 2019 21:35:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 106, loss: 1.7120554447174072
+-1Sun, 12 May 2019 21:35:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 107, loss: 1.6745938062667847
+-1Sun, 12 May 2019 21:35:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 108, loss: 1.7093687057495117
+-1Sun, 12 May 2019 21:35:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 109, loss: 1.5953372716903687
+-1Sun, 12 May 2019 21:35:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 110, loss: 1.6102768182754517
+-1Sun, 12 May 2019 21:35:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 111, loss: 1.6681278944015503
+-1Sun, 12 May 2019 21:35:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 112, loss: 1.5928399562835693
+-1Sun, 12 May 2019 21:35:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 113, loss: 1.670546531677246
+-1Sun, 12 May 2019 21:35:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 114, loss: 1.6401779651641846
+-1Sun, 12 May 2019 21:35:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 115, loss: 1.5599395036697388
+-1Sun, 12 May 2019 21:35:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 116, loss: 1.673501968383789
+-1Sun, 12 May 2019 21:35:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 117, loss: 1.573540210723877
+-1Sun, 12 May 2019 21:35:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 118, loss: 1.5851202011108398
+-1Sun, 12 May 2019 21:35:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 119, loss: 1.6028801202774048
+-1Sun, 12 May 2019 21:35:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 120, loss: 1.5636529922485352
+-1Sun, 12 May 2019 21:35:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 121, loss: 1.5587965250015259
+-1Sun, 12 May 2019 21:35:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 122, loss: 1.555275797843933
+-1Sun, 12 May 2019 21:35:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 123, loss: 1.6305121183395386
+-1Sun, 12 May 2019 21:35:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 124, loss: 1.5776311159133911
+-1Sun, 12 May 2019 21:35:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 125, loss: 1.5182347297668457
+-1Sun, 12 May 2019 21:35:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 126, loss: 1.5418763160705566
+-1Sun, 12 May 2019 21:35:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 127, loss: 1.52333664894104
+-1Sun, 12 May 2019 21:35:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 128, loss: 1.559470772743225
+-1Sun, 12 May 2019 21:35:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 129, loss: 1.5457046031951904
+-1Sun, 12 May 2019 21:35:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 130, loss: 1.4904488325119019
+-1Sun, 12 May 2019 21:35:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 131, loss: 1.4988389015197754
+-1Sun, 12 May 2019 21:35:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 132, loss: 1.5393357276916504
+-1Sun, 12 May 2019 21:35:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 133, loss: 1.4670765399932861
+-1Sun, 12 May 2019 21:35:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 134, loss: 1.5212904214859009
+-1Sun, 12 May 2019 21:35:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 135, loss: 1.4941221475601196
+-1Sun, 12 May 2019 21:35:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 136, loss: 1.4499826431274414
+-1Sun, 12 May 2019 21:35:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 137, loss: 1.4882559776306152
+-1Sun, 12 May 2019 21:35:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 138, loss: 1.5063389539718628
+-1Sun, 12 May 2019 21:35:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 139, loss: 1.5496068000793457
+-1Sun, 12 May 2019 21:35:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 140, loss: 1.495192050933838
+-1Sun, 12 May 2019 21:35:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 141, loss: 1.5330528020858765
+-1Sun, 12 May 2019 21:35:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 142, loss: 1.5297207832336426
+-1Sun, 12 May 2019 21:35:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 143, loss: 1.4330812692642212
+-1Sun, 12 May 2019 21:35:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 144, loss: 1.4522240161895752
+-1Sun, 12 May 2019 21:35:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 145, loss: 1.4354592561721802
+-1Sun, 12 May 2019 21:35:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 146, loss: 1.3647384643554688
+-1Sun, 12 May 2019 21:35:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 147, loss: 1.4010138511657715
+-1Sun, 12 May 2019 21:35:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 148, loss: 1.5216792821884155
+-1Sun, 12 May 2019 21:35:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 149, loss: 1.4809821844100952
+-1Sun, 12 May 2019 21:35:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 150, loss: 1.4340800046920776
+-1Sun, 12 May 2019 21:35:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 151, loss: 1.4662359952926636
+-1Sun, 12 May 2019 21:35:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 152, loss: 1.4971650838851929
+-1Sun, 12 May 2019 21:35:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 153, loss: 1.4706648588180542
+-1Sun, 12 May 2019 21:35:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 154, loss: 1.4693633317947388
+-1Sun, 12 May 2019 21:35:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 155, loss: 1.4122815132141113
+-1Sun, 12 May 2019 21:35:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 156, loss: 1.4582679271697998
+-1Sun, 12 May 2019 21:35:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 157, loss: 1.4525285959243774
+-1Sun, 12 May 2019 21:35:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 158, loss: 1.5335503816604614
+-1Sun, 12 May 2019 21:35:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 159, loss: 1.4200243949890137
+-1Sun, 12 May 2019 21:35:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 160, loss: 1.4099395275115967
+-1Sun, 12 May 2019 21:35:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 161, loss: 1.4213796854019165
+-1Sun, 12 May 2019 21:35:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 162, loss: 1.3942023515701294
+-1Sun, 12 May 2019 21:35:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 163, loss: 1.4737194776535034
+-1Sun, 12 May 2019 21:35:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 164, loss: 1.4251967668533325
+-1Sun, 12 May 2019 21:35:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 165, loss: 1.3315401077270508
+-1Sun, 12 May 2019 21:35:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 166, loss: 1.4035111665725708
+-1Sun, 12 May 2019 21:35:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 167, loss: 1.3984907865524292
+-1Sun, 12 May 2019 21:35:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 168, loss: 1.3591927289962769
+-1Sun, 12 May 2019 21:35:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 169, loss: 1.3301149606704712
+-1Sun, 12 May 2019 21:35:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 170, loss: 1.4048048257827759
+-1Sun, 12 May 2019 21:35:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 171, loss: 1.353759527206421
+-1Sun, 12 May 2019 21:35:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 172, loss: 1.4112712144851685
+-1Sun, 12 May 2019 21:35:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 173, loss: 1.3828679323196411
+-1Sun, 12 May 2019 21:35:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 174, loss: 1.3839612007141113
+-1Sun, 12 May 2019 21:35:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 175, loss: 1.405280351638794
+-1Sun, 12 May 2019 21:35:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 176, loss: 1.3746802806854248
+-1Sun, 12 May 2019 21:35:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 177, loss: 1.4595838785171509
+-1Sun, 12 May 2019 21:35:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 178, loss: 1.3687744140625
+-1Sun, 12 May 2019 21:35:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 179, loss: 1.3587965965270996
+-1Sun, 12 May 2019 21:35:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 180, loss: 1.407663345336914
+-1Sun, 12 May 2019 21:35:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 181, loss: 1.3372156620025635
+-1Sun, 12 May 2019 21:35:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 182, loss: 1.341148853302002
+-1Sun, 12 May 2019 21:35:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 183, loss: 1.3537453413009644
+-1Sun, 12 May 2019 21:35:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 184, loss: 1.342555046081543
+-1Sun, 12 May 2019 21:35:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 185, loss: 1.3401981592178345
+-1Sun, 12 May 2019 21:35:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 186, loss: 1.3051021099090576
+-1Sun, 12 May 2019 21:35:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 187, loss: 1.3352303504943848
+-1Sun, 12 May 2019 21:35:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 188, loss: 1.3634686470031738
+-1Sun, 12 May 2019 21:35:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 189, loss: 1.2728773355484009
+-1Sun, 12 May 2019 21:35:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 190, loss: 1.3217740058898926
+-1Sun, 12 May 2019 21:35:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 191, loss: 1.2579736709594727
+-1Sun, 12 May 2019 21:35:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 192, loss: 1.3381273746490479
+-1Sun, 12 May 2019 21:35:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 193, loss: 1.3189219236373901
+-1Sun, 12 May 2019 21:35:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 194, loss: 1.2488564252853394
+-1Sun, 12 May 2019 21:35:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 195, loss: 1.2778469324111938
+-1Sun, 12 May 2019 21:35:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 196, loss: 1.250722050666809
+-1Sun, 12 May 2019 21:35:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 197, loss: 1.267564296722412
+-1Sun, 12 May 2019 21:35:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 198, loss: 1.238302230834961
+-1Sun, 12 May 2019 21:35:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 199, loss: 1.32906973361969
+-1Sun, 12 May 2019 21:35:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 200, loss: 1.2571474313735962
+-1Sun, 12 May 2019 21:35:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 201, loss: 1.2923030853271484
+-1Sun, 12 May 2019 21:35:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 202, loss: 1.2532899379730225
+-1Sun, 12 May 2019 21:35:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 203, loss: 1.2682048082351685
+-1Sun, 12 May 2019 21:35:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 204, loss: 1.2983982563018799
+-1Sun, 12 May 2019 21:35:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 205, loss: 1.260473370552063
+-1Sun, 12 May 2019 21:35:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 206, loss: 1.2797496318817139
+-1Sun, 12 May 2019 21:35:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 207, loss: 1.3007358312606812
+-1Sun, 12 May 2019 21:35:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 208, loss: 1.2779098749160767
+-1Sun, 12 May 2019 21:35:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 209, loss: 1.2704975605010986
+-1Sun, 12 May 2019 21:35:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 210, loss: 1.2685834169387817
+-1Sun, 12 May 2019 21:35:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 211, loss: 1.2380017042160034
+-1Sun, 12 May 2019 21:35:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 212, loss: 1.2786718606948853
+-1Sun, 12 May 2019 21:35:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 213, loss: 1.2877838611602783
+-1Sun, 12 May 2019 21:35:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 214, loss: 1.2749674320220947
+-1Sun, 12 May 2019 21:35:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 215, loss: 1.3103113174438477
+-1Sun, 12 May 2019 21:35:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 216, loss: 1.2657053470611572
+-1Sun, 12 May 2019 21:35:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 217, loss: 1.2555675506591797
+-1Sun, 12 May 2019 21:35:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 218, loss: 1.2448086738586426
+-1Sun, 12 May 2019 21:35:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 219, loss: 1.2803152799606323
+-1Sun, 12 May 2019 21:35:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 220, loss: 1.184545874595642
+-1Sun, 12 May 2019 21:35:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 221, loss: 1.1975955963134766
+-1Sun, 12 May 2019 21:35:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 222, loss: 1.215636968612671
+-1Sun, 12 May 2019 21:35:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 223, loss: 1.1939117908477783
+-1Sun, 12 May 2019 21:35:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 224, loss: 1.2709710597991943
+-1Sun, 12 May 2019 21:35:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 225, loss: 1.2292189598083496
+-1Sun, 12 May 2019 21:35:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 226, loss: 1.2194699048995972
+-1Sun, 12 May 2019 21:35:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 227, loss: 1.233214020729065
+-1Sun, 12 May 2019 21:35:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 228, loss: 1.2634587287902832
+-1Sun, 12 May 2019 21:35:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 229, loss: 1.2359451055526733
+-1Sun, 12 May 2019 21:35:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 230, loss: 1.2058290243148804
+-1Sun, 12 May 2019 21:35:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 231, loss: 1.2002099752426147
+-1Sun, 12 May 2019 21:35:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 232, loss: 1.2115623950958252
+-1Sun, 12 May 2019 21:35:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 233, loss: 1.22757089138031
+-1Sun, 12 May 2019 21:35:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 234, loss: 1.1773717403411865
+-1Sun, 12 May 2019 21:35:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 235, loss: 1.220091700553894
+-1Sun, 12 May 2019 21:35:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 236, loss: 1.2282601594924927
+-1Sun, 12 May 2019 21:35:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 237, loss: 1.194584608078003
+-1Sun, 12 May 2019 21:35:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 238, loss: 1.1648612022399902
+-1Sun, 12 May 2019 21:35:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 239, loss: 1.192255973815918
+-1Sun, 12 May 2019 21:35:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 240, loss: 1.18753182888031
+-1Sun, 12 May 2019 21:35:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 241, loss: 1.1398260593414307
+-1Sun, 12 May 2019 21:35:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 242, loss: 1.176460862159729
+-1Sun, 12 May 2019 21:35:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 243, loss: 1.199816107749939
+-1Sun, 12 May 2019 21:35:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 244, loss: 1.1986093521118164
+-1Sun, 12 May 2019 21:35:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 245, loss: 1.1724809408187866
+-1Sun, 12 May 2019 21:35:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 246, loss: 1.1551804542541504
+-1Sun, 12 May 2019 21:35:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 247, loss: 1.2001237869262695
+-1Sun, 12 May 2019 21:35:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 248, loss: 1.1529165506362915
+-1Sun, 12 May 2019 21:35:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 249, loss: 1.160050868988037
+-1Sun, 12 May 2019 21:35:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 250, loss: 1.1753557920455933
+-1Sun, 12 May 2019 21:35:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 251, loss: 1.1601457595825195
+-1Sun, 12 May 2019 21:35:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 252, loss: 1.1708261966705322
+-1Sun, 12 May 2019 21:35:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 253, loss: 1.1501531600952148
+-1Sun, 12 May 2019 21:35:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 254, loss: 1.1888291835784912
+-1Sun, 12 May 2019 21:35:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 255, loss: 1.1878443956375122
+-1Sun, 12 May 2019 21:35:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 256, loss: 1.1541472673416138
+-1Sun, 12 May 2019 21:35:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 257, loss: 1.1982463598251343
+-1Sun, 12 May 2019 21:35:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 258, loss: 1.1800074577331543
+-1Sun, 12 May 2019 21:35:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 259, loss: 1.153050422668457
+-1Sun, 12 May 2019 21:35:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 260, loss: 1.1780935525894165
+-1Sun, 12 May 2019 21:35:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 261, loss: 1.1376556158065796
+-1Sun, 12 May 2019 21:35:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 262, loss: 1.1182340383529663
+-1Sun, 12 May 2019 21:35:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 263, loss: 1.174698829650879
+-1Sun, 12 May 2019 21:35:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 264, loss: 1.1506538391113281
+-1Sun, 12 May 2019 21:35:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 265, loss: 1.161559820175171
+-1Sun, 12 May 2019 21:35:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 266, loss: 1.1424933671951294
+-1Sun, 12 May 2019 21:35:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 267, loss: 1.148375391960144
+-1Sun, 12 May 2019 21:35:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 268, loss: 1.1622328758239746
+-1Sun, 12 May 2019 21:35:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 269, loss: 1.120506763458252
+-1Sun, 12 May 2019 21:35:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 270, loss: 1.1060866117477417
+-1Sun, 12 May 2019 21:35:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 271, loss: 1.1203140020370483
+-1Sun, 12 May 2019 21:35:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 272, loss: 1.154671311378479
+-1Sun, 12 May 2019 21:35:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 273, loss: 1.1073986291885376
+-1Sun, 12 May 2019 21:35:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 274, loss: 1.1541677713394165
+-1Sun, 12 May 2019 21:35:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 275, loss: 1.1440314054489136
+-1Sun, 12 May 2019 21:35:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 276, loss: 1.0974162817001343
+-1Sun, 12 May 2019 21:35:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 277, loss: 1.1560548543930054
+-1Sun, 12 May 2019 21:35:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 278, loss: 1.1267539262771606
+-1Sun, 12 May 2019 21:35:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 279, loss: 1.100960612297058
+-1Sun, 12 May 2019 21:35:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 280, loss: 1.1453912258148193
+-1Sun, 12 May 2019 21:35:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 281, loss: 1.072284460067749
+-1Sun, 12 May 2019 21:35:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 282, loss: 1.1054850816726685
+-1Sun, 12 May 2019 21:35:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 283, loss: 1.158398151397705
+-1Sun, 12 May 2019 21:35:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 284, loss: 1.0581047534942627
+-1Sun, 12 May 2019 21:35:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 285, loss: 1.1172736883163452
+-1Sun, 12 May 2019 21:35:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 286, loss: 1.0863343477249146
+-1Sun, 12 May 2019 21:35:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 287, loss: 1.1231274604797363
+-1Sun, 12 May 2019 21:35:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 288, loss: 1.1052563190460205
+-1Sun, 12 May 2019 21:35:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 289, loss: 1.1109726428985596
+-1Sun, 12 May 2019 21:35:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 290, loss: 1.0853700637817383
+-1Sun, 12 May 2019 21:35:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 291, loss: 1.0751359462738037
+-1Sun, 12 May 2019 21:35:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 292, loss: 1.0580896139144897
+-1Sun, 12 May 2019 21:35:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 293, loss: 1.1180225610733032
+-1Sun, 12 May 2019 21:35:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 294, loss: 1.0953489542007446
+-1Sun, 12 May 2019 21:35:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 295, loss: 1.0792728662490845
+-1Sun, 12 May 2019 21:35:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 296, loss: 1.1056705713272095
+-1Sun, 12 May 2019 21:35:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 297, loss: 1.0970253944396973
+-1Sun, 12 May 2019 21:35:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 298, loss: 1.1008120775222778
+-1Sun, 12 May 2019 21:35:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 299, loss: 1.1496509313583374
+-1Sun, 12 May 2019 21:35:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 300, loss: 1.0866447687149048
+-1Sun, 12 May 2019 21:35:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 301, loss: 1.0532387495040894
+-1Sun, 12 May 2019 21:35:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 302, loss: 1.106980800628662
+-1Sun, 12 May 2019 21:35:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 303, loss: 1.090549349784851
+-1Sun, 12 May 2019 21:35:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 304, loss: 1.0543980598449707
+-1Sun, 12 May 2019 21:35:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 305, loss: 1.0665972232818604
+-1Sun, 12 May 2019 21:35:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 306, loss: 1.0370301008224487
+-1Sun, 12 May 2019 21:35:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 307, loss: 1.052249550819397
+-1Sun, 12 May 2019 21:35:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 308, loss: 1.0819841623306274
+-1Sun, 12 May 2019 21:35:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 309, loss: 1.0658166408538818
+-1Sun, 12 May 2019 21:35:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 310, loss: 1.0550645589828491
+-1Sun, 12 May 2019 21:35:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 311, loss: 1.028685212135315
+-1Sun, 12 May 2019 21:35:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 312, loss: 1.1163241863250732
+-1Sun, 12 May 2019 21:35:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 313, loss: 1.061409831047058
+-1Sun, 12 May 2019 21:35:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 314, loss: 1.0400172472000122
+-1Sun, 12 May 2019 21:35:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 315, loss: 1.0600947141647339
+-1Sun, 12 May 2019 21:35:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 316, loss: 1.0644341707229614
+-1Sun, 12 May 2019 21:35:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 317, loss: 1.0544780492782593
+-1Sun, 12 May 2019 21:35:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 318, loss: 1.0455857515335083
+-1Sun, 12 May 2019 21:35:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 319, loss: 1.025272011756897
+-1Sun, 12 May 2019 21:35:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 320, loss: 1.0337773561477661
+-1Sun, 12 May 2019 21:35:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 321, loss: 1.0601239204406738
+-1Sun, 12 May 2019 21:35:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 322, loss: 1.021722435951233
+-1Sun, 12 May 2019 21:35:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 323, loss: 1.0241607427597046
+-1Sun, 12 May 2019 21:35:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 324, loss: 1.0087318420410156
+-1Sun, 12 May 2019 21:35:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 325, loss: 1.041808843612671
+-1Sun, 12 May 2019 21:35:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 326, loss: 1.0333126783370972
+-1Sun, 12 May 2019 21:35:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 327, loss: 1.0384559631347656
+-1Sun, 12 May 2019 21:35:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 328, loss: 1.0351313352584839
+-1Sun, 12 May 2019 21:35:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 329, loss: 1.0281672477722168
+-1Sun, 12 May 2019 21:35:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 330, loss: 1.022384762763977
+-1Sun, 12 May 2019 21:35:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 331, loss: 1.0494133234024048
+-1Sun, 12 May 2019 21:35:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 332, loss: 1.0365104675292969
+-1Sun, 12 May 2019 21:35:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 333, loss: 1.0305041074752808
+-1Sun, 12 May 2019 21:35:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 334, loss: 1.015148401260376
+-1Sun, 12 May 2019 21:35:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 335, loss: 0.9997685551643372
+-1Sun, 12 May 2019 21:35:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 336, loss: 1.0245767831802368
+-1Sun, 12 May 2019 21:35:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 337, loss: 1.0048120021820068
+-1Sun, 12 May 2019 21:35:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 338, loss: 1.0117093324661255
+-1Sun, 12 May 2019 21:35:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 339, loss: 1.0020619630813599
+-1Sun, 12 May 2019 21:35:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 340, loss: 0.9884327054023743
+-1Sun, 12 May 2019 21:35:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 341, loss: 0.995804488658905
+-1Sun, 12 May 2019 21:35:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 342, loss: 1.0124175548553467
+-1Sun, 12 May 2019 21:35:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 343, loss: 0.9757309556007385
+-1Sun, 12 May 2019 21:35:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 344, loss: 1.019128441810608
+-1Sun, 12 May 2019 21:35:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 345, loss: 0.9848473072052002
+-1Sun, 12 May 2019 21:35:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 346, loss: 1.0138112306594849
+-1Sun, 12 May 2019 21:35:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 347, loss: 1.019139289855957
+-1Sun, 12 May 2019 21:35:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 348, loss: 1.006630778312683
+-1Sun, 12 May 2019 21:35:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 349, loss: 1.0037062168121338
+-1Sun, 12 May 2019 21:35:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 350, loss: 1.0117038488388062
+-1Sun, 12 May 2019 21:35:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 351, loss: 0.9971001744270325
+-1Sun, 12 May 2019 21:35:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 352, loss: 1.0663517713546753
+-1Sun, 12 May 2019 21:35:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 353, loss: 0.9852795004844666
+-1Sun, 12 May 2019 21:35:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 354, loss: 1.017773151397705
+-1Sun, 12 May 2019 21:35:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 355, loss: 1.0414505004882812
+-1Sun, 12 May 2019 21:35:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 356, loss: 0.9956933856010437
+-1Sun, 12 May 2019 21:35:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 357, loss: 0.9911109209060669
+-1Sun, 12 May 2019 21:35:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 358, loss: 0.9886916279792786
+-1Sun, 12 May 2019 21:35:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 359, loss: 0.9810290932655334
+-1Sun, 12 May 2019 21:35:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 360, loss: 0.9945990443229675
+-1Sun, 12 May 2019 21:35:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 361, loss: 0.998766303062439
+-1Sun, 12 May 2019 21:35:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 362, loss: 0.9654110670089722
+-1Sun, 12 May 2019 21:35:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 363, loss: 0.9900263547897339
+-1Sun, 12 May 2019 21:35:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 364, loss: 0.9756001234054565
+-1Sun, 12 May 2019 21:35:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 365, loss: 0.9681136608123779
+-1Sun, 12 May 2019 21:35:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 366, loss: 0.9938345551490784
+-1Sun, 12 May 2019 21:35:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 367, loss: 0.990607738494873
+-1Sun, 12 May 2019 21:35:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 368, loss: 0.9799749851226807
+-1Sun, 12 May 2019 21:35:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 369, loss: 0.9560903310775757
+-1Sun, 12 May 2019 21:35:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 370, loss: 0.9849371910095215
+-1Sun, 12 May 2019 21:35:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 371, loss: 0.9717835187911987
+-1Sun, 12 May 2019 21:35:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 372, loss: 0.9762935638427734
+-1Sun, 12 May 2019 21:35:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 373, loss: 0.9401190876960754
+-1Sun, 12 May 2019 21:35:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 374, loss: 0.9621812701225281
+-1Sun, 12 May 2019 21:35:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 375, loss: 0.9889952540397644
+-1Sun, 12 May 2019 21:35:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 376, loss: 1.002352237701416
+-1Sun, 12 May 2019 21:35:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 377, loss: 1.0028879642486572
+-1Sun, 12 May 2019 21:35:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 378, loss: 0.9702793955802917
+-1Sun, 12 May 2019 21:35:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 379, loss: 0.9631368517875671
+-1Sun, 12 May 2019 21:35:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 380, loss: 0.944385826587677
+-1Sun, 12 May 2019 21:35:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 381, loss: 0.963570773601532
+-1Sun, 12 May 2019 21:35:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 382, loss: 0.9801285266876221
+-1Sun, 12 May 2019 21:35:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 383, loss: 0.9676961302757263
+-1Sun, 12 May 2019 21:35:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 384, loss: 0.9260505437850952
+-1Sun, 12 May 2019 21:35:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 385, loss: 0.9560644626617432
+-1Sun, 12 May 2019 21:35:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 386, loss: 0.9622156620025635
+-1Sun, 12 May 2019 21:35:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 387, loss: 0.9492393136024475
+-1Sun, 12 May 2019 21:35:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 388, loss: 0.9286532402038574
+-1Sun, 12 May 2019 21:35:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 389, loss: 0.9478405714035034
+-1Sun, 12 May 2019 21:35:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 390, loss: 0.943766713142395
+-1Sun, 12 May 2019 21:35:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 391, loss: 0.9232676029205322
+-1Sun, 12 May 2019 21:35:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 392, loss: 0.939226508140564
+-1Sun, 12 May 2019 21:35:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 393, loss: 0.9501444101333618
+-1Sun, 12 May 2019 21:35:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 394, loss: 0.9012267589569092
+-1Sun, 12 May 2019 21:35:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 395, loss: 0.9614845514297485
+-1Sun, 12 May 2019 21:35:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 396, loss: 0.9426432251930237
+-1Sun, 12 May 2019 21:35:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 397, loss: 0.9205605983734131
+-1Sun, 12 May 2019 21:35:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 398, loss: 0.9392468333244324
+-1Sun, 12 May 2019 21:35:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 399, loss: 0.9509873390197754
+-1Sun, 12 May 2019 21:35:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 400, loss: 0.9433016180992126
+-1Sun, 12 May 2019 21:35:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 401, loss: 0.9323359131813049
+-1Sun, 12 May 2019 21:35:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 402, loss: 0.9037894010543823
+-1Sun, 12 May 2019 21:35:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 403, loss: 0.9413502216339111
+-1Sun, 12 May 2019 21:35:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 404, loss: 0.9499077796936035
+-1Sun, 12 May 2019 21:35:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 405, loss: 0.936181902885437
+-1Sun, 12 May 2019 21:35:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 406, loss: 0.9428755640983582
+-1Sun, 12 May 2019 21:35:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 407, loss: 0.9176973104476929
+-1Sun, 12 May 2019 21:35:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 408, loss: 0.9275040626525879
+-1Sun, 12 May 2019 21:35:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 409, loss: 0.9326934814453125
+-1Sun, 12 May 2019 21:35:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 410, loss: 0.9211618900299072
+-1Sun, 12 May 2019 21:35:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 411, loss: 0.9211583733558655
+-1Sun, 12 May 2019 21:35:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 412, loss: 0.9021748304367065
+-1Sun, 12 May 2019 21:35:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 413, loss: 0.9324564337730408
+-1Sun, 12 May 2019 21:35:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 414, loss: 0.9337767362594604
+-1Sun, 12 May 2019 21:35:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 415, loss: 0.903570294380188
+-1Sun, 12 May 2019 21:35:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 416, loss: 0.9158821105957031
+-1Sun, 12 May 2019 21:35:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 417, loss: 0.9272761344909668
+-1Sun, 12 May 2019 21:35:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 418, loss: 0.9064899682998657
+-1Sun, 12 May 2019 21:35:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 419, loss: 0.9161107540130615
+-1Sun, 12 May 2019 21:35:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 420, loss: 0.9108819961547852
+-1Sun, 12 May 2019 21:35:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 421, loss: 0.918788492679596
+-1Sun, 12 May 2019 21:35:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 422, loss: 0.861477792263031
+-1Sun, 12 May 2019 21:35:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 423, loss: 0.9175286889076233
+-1Sun, 12 May 2019 21:35:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 424, loss: 0.9168102145195007
+-1Sun, 12 May 2019 21:35:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 425, loss: 0.920146107673645
+-1Sun, 12 May 2019 21:35:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 426, loss: 0.9195080995559692
+-1Sun, 12 May 2019 21:35:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 427, loss: 0.8817547559738159
+-1Sun, 12 May 2019 21:35:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 428, loss: 0.9105610847473145
+-1Sun, 12 May 2019 21:35:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 429, loss: 0.9030551314353943
+-1Sun, 12 May 2019 21:35:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 430, loss: 0.8880739808082581
+-1Sun, 12 May 2019 21:35:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 431, loss: 0.9157241582870483
+-1Sun, 12 May 2019 21:35:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 432, loss: 0.8760156035423279
+-1Sun, 12 May 2019 21:35:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 433, loss: 0.8856344819068909
+-1Sun, 12 May 2019 21:35:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 434, loss: 0.8798458576202393
+-1Sun, 12 May 2019 21:35:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 435, loss: 0.9160540103912354
+-1Sun, 12 May 2019 21:35:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 436, loss: 0.881188154220581
+-1Sun, 12 May 2019 21:35:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 437, loss: 0.8789380192756653
+-1Sun, 12 May 2019 21:35:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 438, loss: 0.8802609443664551
+-1Sun, 12 May 2019 21:35:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 439, loss: 0.882848858833313
+-1Sun, 12 May 2019 21:35:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 440, loss: 0.8941982388496399
+-1Sun, 12 May 2019 21:35:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 441, loss: 0.8826637268066406
+-1Sun, 12 May 2019 21:35:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 442, loss: 0.881088376045227
+-1Sun, 12 May 2019 21:35:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 443, loss: 0.8758904337882996
+-1Sun, 12 May 2019 21:35:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 444, loss: 0.9002733826637268
+-1Sun, 12 May 2019 21:35:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 445, loss: 0.9001398682594299
+-1Sun, 12 May 2019 21:35:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 446, loss: 0.8559989333152771
+-1Sun, 12 May 2019 21:35:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 447, loss: 0.887845516204834
+-1Sun, 12 May 2019 21:35:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 448, loss: 0.909942626953125
+-1Sun, 12 May 2019 21:35:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 449, loss: 0.8944273591041565
+-1Sun, 12 May 2019 21:35:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 450, loss: 0.8680022954940796
+-1Sun, 12 May 2019 21:35:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 451, loss: 0.8600242733955383
+-1Sun, 12 May 2019 21:35:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 452, loss: 0.8718194961547852
+-1Sun, 12 May 2019 21:35:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 453, loss: 0.8976150751113892
+-1Sun, 12 May 2019 21:35:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 454, loss: 0.8718093037605286
+-1Sun, 12 May 2019 21:35:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 455, loss: 0.8480954766273499
+-1Sun, 12 May 2019 21:35:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 456, loss: 0.8846963047981262
+-1Sun, 12 May 2019 21:35:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 457, loss: 0.8783097267150879
+-1Sun, 12 May 2019 21:35:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 458, loss: 0.8684649467468262
+-1Sun, 12 May 2019 21:35:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 459, loss: 0.8563097715377808
+-1Sun, 12 May 2019 21:35:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 460, loss: 0.8579105734825134
+-1Sun, 12 May 2019 21:35:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 461, loss: 0.8410864472389221
+-1Sun, 12 May 2019 21:35:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 462, loss: 0.8776283264160156
+-1Sun, 12 May 2019 21:35:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 463, loss: 0.8979096412658691
+-1Sun, 12 May 2019 21:35:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 464, loss: 0.877251923084259
+-1Sun, 12 May 2019 21:35:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 465, loss: 0.8702973127365112
+-1Sun, 12 May 2019 21:35:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 466, loss: 0.8755764365196228
+-1Sun, 12 May 2019 21:35:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 467, loss: 0.8604336977005005
+-1Sun, 12 May 2019 21:35:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 468, loss: 0.8835924863815308
+-1Sun, 12 May 2019 21:35:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 469, loss: 0.8617690205574036
+-1Sun, 12 May 2019 21:35:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 470, loss: 0.8278042078018188
+-1Sun, 12 May 2019 21:35:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 471, loss: 0.8341019153594971
+-1Sun, 12 May 2019 21:35:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 472, loss: 0.8568788766860962
+-1Sun, 12 May 2019 21:35:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 473, loss: 0.841452956199646
+-1Sun, 12 May 2019 21:35:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 474, loss: 0.8388916850090027
+-1Sun, 12 May 2019 21:35:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 475, loss: 0.8309071063995361
+-1Sun, 12 May 2019 21:35:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 476, loss: 0.8494572639465332
+-1Sun, 12 May 2019 21:35:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 477, loss: 0.870905339717865
+-1Sun, 12 May 2019 21:35:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 478, loss: 0.8294007778167725
+-1Sun, 12 May 2019 21:35:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 479, loss: 0.8660563230514526
+-1Sun, 12 May 2019 21:35:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 480, loss: 0.8693526983261108
+-1Sun, 12 May 2019 21:36:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 481, loss: 0.8668283224105835
+-1Sun, 12 May 2019 21:36:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 482, loss: 0.8630762696266174
+-1Sun, 12 May 2019 21:36:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 483, loss: 0.8332459926605225
+-1Sun, 12 May 2019 21:36:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 484, loss: 0.8378341794013977
+-1Sun, 12 May 2019 21:36:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 485, loss: 0.8233357667922974
+-1Sun, 12 May 2019 21:36:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 486, loss: 0.817425012588501
+-1Sun, 12 May 2019 21:36:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 487, loss: 0.855043351650238
+-1Sun, 12 May 2019 21:36:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 488, loss: 0.8258301019668579
+-1Sun, 12 May 2019 21:36:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 489, loss: 0.8294225335121155
+-1Sun, 12 May 2019 21:36:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 490, loss: 0.8062093257904053
+-1Sun, 12 May 2019 21:36:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 491, loss: 0.8226995468139648
+-1Sun, 12 May 2019 21:36:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 492, loss: 0.830284595489502
+-1Sun, 12 May 2019 21:36:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 493, loss: 0.8063269853591919
+-1Sun, 12 May 2019 21:36:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 494, loss: 0.8067430257797241
+-1Sun, 12 May 2019 21:36:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 495, loss: 0.8304865956306458
+-1Sun, 12 May 2019 21:36:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 496, loss: 0.8395200967788696
+-1Sun, 12 May 2019 21:36:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 497, loss: 0.823559582233429
+-1Sun, 12 May 2019 21:36:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 498, loss: 0.8420401811599731
+-1Sun, 12 May 2019 21:36:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 499, loss: 0.8074346780776978
+-1Sun, 12 May 2019 21:36:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 500, loss: 0.8116887807846069
+-1Sun, 12 May 2019 21:36:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 501, loss: 0.8314014077186584
+-1Sun, 12 May 2019 21:36:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 502, loss: 0.8247697353363037
+-1Sun, 12 May 2019 21:36:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 503, loss: 0.8147690892219543
+-1Sun, 12 May 2019 21:36:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 504, loss: 0.8128279447555542
+-1Sun, 12 May 2019 21:36:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 505, loss: 0.8075821995735168
+-1Sun, 12 May 2019 21:36:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 506, loss: 0.8020031452178955
+-1Sun, 12 May 2019 21:36:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 507, loss: 0.7858198881149292
+-1Sun, 12 May 2019 21:36:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 508, loss: 0.8434701561927795
+-1Sun, 12 May 2019 21:36:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 509, loss: 0.8208719491958618
+-1Sun, 12 May 2019 21:36:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 510, loss: 0.8162417411804199
+-1Sun, 12 May 2019 21:36:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 511, loss: 0.8270304203033447
+-1Sun, 12 May 2019 21:36:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 512, loss: 0.821143627166748
+-1Sun, 12 May 2019 21:36:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 513, loss: 0.8179270029067993
+-1Sun, 12 May 2019 21:36:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 514, loss: 0.8072975277900696
+-1Sun, 12 May 2019 21:36:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 515, loss: 0.8149868249893188
+-1Sun, 12 May 2019 21:36:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 516, loss: 0.8044629096984863
+-1Sun, 12 May 2019 21:36:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 517, loss: 0.8314054608345032
+-1Sun, 12 May 2019 21:36:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 518, loss: 0.8062404990196228
+-1Sun, 12 May 2019 21:36:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 519, loss: 0.7985735535621643
+-1Sun, 12 May 2019 21:36:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 520, loss: 0.8214215636253357
+-1Sun, 12 May 2019 21:36:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 521, loss: 0.7883051037788391
+-1Sun, 12 May 2019 21:36:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 522, loss: 0.7971304655075073
+-1Sun, 12 May 2019 21:36:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 523, loss: 0.7942997813224792
+-1Sun, 12 May 2019 21:36:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 524, loss: 0.8045822978019714
+-1Sun, 12 May 2019 21:36:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 525, loss: 0.798222541809082
+-1Sun, 12 May 2019 21:36:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 526, loss: 0.7976442575454712
+-1Sun, 12 May 2019 21:36:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 527, loss: 0.7882302403450012
+-1Sun, 12 May 2019 21:36:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 528, loss: 0.7986626625061035
+-1Sun, 12 May 2019 21:36:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 529, loss: 0.796293318271637
+-1Sun, 12 May 2019 21:36:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 530, loss: 0.7954376339912415
+-1Sun, 12 May 2019 21:36:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 531, loss: 0.8147643804550171
+-1Sun, 12 May 2019 21:36:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 532, loss: 0.8125391602516174
+-1Sun, 12 May 2019 21:36:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 533, loss: 0.8178519010543823
+-1Sun, 12 May 2019 21:36:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 534, loss: 0.7876660823822021
+-1Sun, 12 May 2019 21:36:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 535, loss: 0.7815502285957336
+-1Sun, 12 May 2019 21:36:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 536, loss: 0.8095455765724182
+-1Sun, 12 May 2019 21:36:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 537, loss: 0.7863604426383972
+-1Sun, 12 May 2019 21:36:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 538, loss: 0.7930704951286316
+-1Sun, 12 May 2019 21:36:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 539, loss: 0.7723278999328613
+-1Sun, 12 May 2019 21:36:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 540, loss: 0.7732197046279907
+-1Sun, 12 May 2019 21:36:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 541, loss: 0.7912399768829346
+-1Sun, 12 May 2019 21:36:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 542, loss: 0.7734124064445496
+-1Sun, 12 May 2019 21:36:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 543, loss: 0.78783118724823
+-1Sun, 12 May 2019 21:36:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 544, loss: 0.7712035775184631
+-1Sun, 12 May 2019 21:36:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 545, loss: 0.7904141545295715
+-1Sun, 12 May 2019 21:36:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 546, loss: 0.7723898887634277
+-1Sun, 12 May 2019 21:36:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 547, loss: 0.7872253656387329
+-1Sun, 12 May 2019 21:36:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 548, loss: 0.7774668335914612
+-1Sun, 12 May 2019 21:36:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 549, loss: 0.7690961360931396
+-1Sun, 12 May 2019 21:36:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 550, loss: 0.7649998068809509
+-1Sun, 12 May 2019 21:36:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 551, loss: 0.763177752494812
+-1Sun, 12 May 2019 21:36:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 552, loss: 0.7663570642471313
+-1Sun, 12 May 2019 21:36:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 553, loss: 0.7772273421287537
+-1Sun, 12 May 2019 21:36:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 554, loss: 0.7742342948913574
+-1Sun, 12 May 2019 21:36:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 555, loss: 0.795874297618866
+-1Sun, 12 May 2019 21:36:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 556, loss: 0.7782761454582214
+-1Sun, 12 May 2019 21:36:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 557, loss: 0.7675492763519287
+-1Sun, 12 May 2019 21:36:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 558, loss: 0.7732942700386047
+-1Sun, 12 May 2019 21:36:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 559, loss: 0.7689213752746582
+-1Sun, 12 May 2019 21:36:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 560, loss: 0.7833055853843689
+-1Sun, 12 May 2019 21:36:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 561, loss: 0.7480777502059937
+-1Sun, 12 May 2019 21:36:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 562, loss: 0.7730163335800171
+-1Sun, 12 May 2019 21:36:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 563, loss: 0.7723990082740784
+-1Sun, 12 May 2019 21:36:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 564, loss: 0.7570934295654297
+-1Sun, 12 May 2019 21:36:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 565, loss: 0.764634907245636
+-1Sun, 12 May 2019 21:36:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 566, loss: 0.7715664505958557
+-1Sun, 12 May 2019 21:36:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 567, loss: 0.7611674070358276
+-1Sun, 12 May 2019 21:36:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 568, loss: 0.7273343205451965
+-1Sun, 12 May 2019 21:36:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 569, loss: 0.7291088700294495
+-1Sun, 12 May 2019 21:36:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 570, loss: 0.7608613967895508
+-1Sun, 12 May 2019 21:36:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 571, loss: 0.7541559934616089
+-1Sun, 12 May 2019 21:36:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 572, loss: 0.7557964324951172
+-1Sun, 12 May 2019 21:36:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 573, loss: 0.7560453414916992
+-1Sun, 12 May 2019 21:36:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 574, loss: 0.7564166784286499
+-1Sun, 12 May 2019 21:36:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 575, loss: 0.7791372537612915
+-1Sun, 12 May 2019 21:36:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 576, loss: 0.7598621249198914
+-1Sun, 12 May 2019 21:36:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 577, loss: 0.7457443475723267
+-1Sun, 12 May 2019 21:36:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 578, loss: 0.7501199245452881
+-1Sun, 12 May 2019 21:36:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 579, loss: 0.7634288668632507
+-1Sun, 12 May 2019 21:36:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 580, loss: 0.7529516220092773
+-1Sun, 12 May 2019 21:36:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 581, loss: 0.7713062167167664
+-1Sun, 12 May 2019 21:36:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 582, loss: 0.7303970456123352
+-1Sun, 12 May 2019 21:36:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 583, loss: 0.7354220151901245
+-1Sun, 12 May 2019 21:36:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 584, loss: 0.7437715530395508
+-1Sun, 12 May 2019 21:36:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 585, loss: 0.7468859553337097
+-1Sun, 12 May 2019 21:36:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 586, loss: 0.7250807285308838
+-1Sun, 12 May 2019 21:36:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 587, loss: 0.7294178009033203
+-1Sun, 12 May 2019 21:36:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 588, loss: 0.7578786015510559
+-1Sun, 12 May 2019 21:36:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 589, loss: 0.7509288191795349
+-1Sun, 12 May 2019 21:36:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 590, loss: 0.7405319213867188
+-1Sun, 12 May 2019 21:36:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 591, loss: 0.734960675239563
+-1Sun, 12 May 2019 21:36:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 592, loss: 0.763733983039856
+-1Sun, 12 May 2019 21:36:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 593, loss: 0.7419756054878235
+-1Sun, 12 May 2019 21:36:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 594, loss: 0.7319937348365784
+-1Sun, 12 May 2019 21:36:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 595, loss: 0.745466947555542
+-1Sun, 12 May 2019 21:36:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 596, loss: 0.7351347804069519
+-1Sun, 12 May 2019 21:36:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 597, loss: 0.7538862228393555
+-1Sun, 12 May 2019 21:36:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 598, loss: 0.7482848763465881
+-1Sun, 12 May 2019 21:36:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 599, loss: 0.7464418411254883
+-1Sun, 12 May 2019 21:36:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 600, loss: 0.7217899560928345
+-1Sun, 12 May 2019 21:36:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 601, loss: 0.7472593188285828
+-1Sun, 12 May 2019 21:36:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 602, loss: 0.7214922308921814
+-1Sun, 12 May 2019 21:36:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 603, loss: 0.722290575504303
+-1Sun, 12 May 2019 21:36:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 604, loss: 0.7215123176574707
+-1Sun, 12 May 2019 21:36:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 605, loss: 0.7180497646331787
+-1Sun, 12 May 2019 21:36:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 606, loss: 0.7143308520317078
+-1Sun, 12 May 2019 21:36:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 607, loss: 0.7222446799278259
+-1Sun, 12 May 2019 21:36:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 608, loss: 0.7188600301742554
+-1Sun, 12 May 2019 21:36:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 609, loss: 0.7378894090652466
+-1Sun, 12 May 2019 21:36:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 610, loss: 0.7119696140289307
+-1Sun, 12 May 2019 21:36:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 611, loss: 0.7124232649803162
+-1Sun, 12 May 2019 21:36:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 612, loss: 0.741642951965332
+-1Sun, 12 May 2019 21:36:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 613, loss: 0.7426249384880066
+-1Sun, 12 May 2019 21:36:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 614, loss: 0.693088173866272
+-1Sun, 12 May 2019 21:36:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 615, loss: 0.7137470841407776
+-1Sun, 12 May 2019 21:36:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 616, loss: 0.7159410119056702
+-1Sun, 12 May 2019 21:36:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 617, loss: 0.7247887253761292
+-1Sun, 12 May 2019 21:36:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 618, loss: 0.7245504260063171
+-1Sun, 12 May 2019 21:36:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 619, loss: 0.7301445603370667
+-1Sun, 12 May 2019 21:36:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 620, loss: 0.7307139039039612
+-1Sun, 12 May 2019 21:36:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 621, loss: 0.7100591063499451
+-1Sun, 12 May 2019 21:36:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 622, loss: 0.7048817276954651
+-1Sun, 12 May 2019 21:36:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 623, loss: 0.7221106886863708
+-1Sun, 12 May 2019 21:36:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 624, loss: 0.7510622143745422
+-1Sun, 12 May 2019 21:36:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 625, loss: 0.7255446910858154
+-1Sun, 12 May 2019 21:36:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 626, loss: 0.7067053318023682
+-1Sun, 12 May 2019 21:36:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 627, loss: 0.7202404737472534
+-1Sun, 12 May 2019 21:36:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 628, loss: 0.7157649993896484
+-1Sun, 12 May 2019 21:36:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 629, loss: 0.7012467384338379
+-1Sun, 12 May 2019 21:36:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 630, loss: 0.7074183821678162
+-1Sun, 12 May 2019 21:36:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 631, loss: 0.709243655204773
+-1Sun, 12 May 2019 21:36:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 632, loss: 0.7048829793930054
+-1Sun, 12 May 2019 21:36:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 633, loss: 0.6976238489151001
+-1Sun, 12 May 2019 21:36:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 634, loss: 0.7116854190826416
+-1Sun, 12 May 2019 21:36:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 635, loss: 0.6950181722640991
+-1Sun, 12 May 2019 21:36:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 636, loss: 0.6955950260162354
+-1Sun, 12 May 2019 21:36:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 637, loss: 0.7076278924942017
+-1Sun, 12 May 2019 21:36:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 638, loss: 0.7033678293228149
+-1Sun, 12 May 2019 21:36:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 639, loss: 0.6954794526100159
+-1Sun, 12 May 2019 21:36:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 640, loss: 0.7006791234016418
+-1Sun, 12 May 2019 21:36:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 641, loss: 0.7015784382820129
+-1Sun, 12 May 2019 21:36:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 642, loss: 0.7034454345703125
+-1Sun, 12 May 2019 21:36:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 643, loss: 0.6740224361419678
+-1Sun, 12 May 2019 21:36:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 644, loss: 0.7150347828865051
+-1Sun, 12 May 2019 21:36:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 645, loss: 0.6863068342208862
+-1Sun, 12 May 2019 21:36:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 646, loss: 0.6996992826461792
+-1Sun, 12 May 2019 21:36:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 647, loss: 0.7043099999427795
+-1Sun, 12 May 2019 21:36:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 648, loss: 0.6955770254135132
+-1Sun, 12 May 2019 21:36:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 649, loss: 0.7130246758460999
+-1Sun, 12 May 2019 21:36:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 650, loss: 0.687826931476593
+-1Sun, 12 May 2019 21:36:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 651, loss: 0.6684601902961731
+-1Sun, 12 May 2019 21:36:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 652, loss: 0.6977017521858215
+-1Sun, 12 May 2019 21:36:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 653, loss: 0.6862533092498779
+-1Sun, 12 May 2019 21:36:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 654, loss: 0.695359468460083
+-1Sun, 12 May 2019 21:36:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 655, loss: 0.7017821669578552
+-1Sun, 12 May 2019 21:36:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 656, loss: 0.6793078184127808
+-1Sun, 12 May 2019 21:36:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 657, loss: 0.6766626834869385
+-1Sun, 12 May 2019 21:36:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 658, loss: 0.6808436512947083
+-1Sun, 12 May 2019 21:36:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 659, loss: 0.6865174174308777
+-1Sun, 12 May 2019 21:36:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 660, loss: 0.6907322406768799
+-1Sun, 12 May 2019 21:36:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 661, loss: 0.688613772392273
+-1Sun, 12 May 2019 21:36:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 662, loss: 0.6986633539199829
+-1Sun, 12 May 2019 21:36:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 663, loss: 0.6739878058433533
+-1Sun, 12 May 2019 21:36:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 664, loss: 0.6672174334526062
+-1Sun, 12 May 2019 21:36:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 665, loss: 0.6618722677230835
+-1Sun, 12 May 2019 21:36:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 666, loss: 0.6863610744476318
+-1Sun, 12 May 2019 21:36:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 667, loss: 0.6949513554573059
+-1Sun, 12 May 2019 21:36:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 668, loss: 0.6680722236633301
+-1Sun, 12 May 2019 21:36:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 669, loss: 0.6602879762649536
+-1Sun, 12 May 2019 21:36:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 670, loss: 0.6898552179336548
+-1Sun, 12 May 2019 21:36:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 671, loss: 0.6734639406204224
+-1Sun, 12 May 2019 21:36:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 672, loss: 0.6684882640838623
+-1Sun, 12 May 2019 21:36:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 673, loss: 0.6651957035064697
+-1Sun, 12 May 2019 21:36:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 674, loss: 0.6830403208732605
+-1Sun, 12 May 2019 21:36:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 675, loss: 0.6643835306167603
+-1Sun, 12 May 2019 21:36:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 676, loss: 0.6797752976417542
+-1Sun, 12 May 2019 21:36:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 677, loss: 0.6848701238632202
+-1Sun, 12 May 2019 21:36:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 678, loss: 0.6477570533752441
+-1Sun, 12 May 2019 21:36:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 679, loss: 0.6632822751998901
+-1Sun, 12 May 2019 21:36:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 680, loss: 0.6423337459564209
+-1Sun, 12 May 2019 21:36:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 681, loss: 0.6450487375259399
+-1Sun, 12 May 2019 21:36:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 682, loss: 0.6645981669425964
+-1Sun, 12 May 2019 21:36:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 683, loss: 0.6687767505645752
+-1Sun, 12 May 2019 21:36:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 684, loss: 0.6755146980285645
+-1Sun, 12 May 2019 21:36:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 685, loss: 0.6723015904426575
+-1Sun, 12 May 2019 21:36:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 686, loss: 0.6681918501853943
+-1Sun, 12 May 2019 21:36:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 687, loss: 0.6840683221817017
+-1Sun, 12 May 2019 21:36:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 688, loss: 0.6711115837097168
+-1Sun, 12 May 2019 21:36:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 689, loss: 0.6489623785018921
+-1Sun, 12 May 2019 21:36:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 690, loss: 0.6610826849937439
+-1Sun, 12 May 2019 21:36:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 691, loss: 0.6600728034973145
+-1Sun, 12 May 2019 21:36:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 692, loss: 0.6374592185020447
+-1Sun, 12 May 2019 21:36:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 693, loss: 0.6555654406547546
+-1Sun, 12 May 2019 21:36:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 694, loss: 0.6506603360176086
+-1Sun, 12 May 2019 21:36:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 695, loss: 0.6674622893333435
+-1Sun, 12 May 2019 21:36:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 696, loss: 0.6485123038291931
+-1Sun, 12 May 2019 21:36:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 697, loss: 0.6661818027496338
+-1Sun, 12 May 2019 21:36:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 698, loss: 0.6324906349182129
+-1Sun, 12 May 2019 21:36:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 699, loss: 0.6674259305000305
+-1Sun, 12 May 2019 21:36:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 700, loss: 0.6639257669448853
+-1Sun, 12 May 2019 21:36:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 701, loss: 0.6454838514328003
+-1Sun, 12 May 2019 21:36:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 702, loss: 0.6465034484863281
+-1Sun, 12 May 2019 21:36:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 703, loss: 0.6615391969680786
+-1Sun, 12 May 2019 21:36:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 704, loss: 0.6474509239196777
+-1Sun, 12 May 2019 21:36:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 705, loss: 0.6305602192878723
+-1Sun, 12 May 2019 21:36:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 706, loss: 0.6547178030014038
+-1Sun, 12 May 2019 21:36:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 707, loss: 0.6503043174743652
+-1Sun, 12 May 2019 21:36:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 708, loss: 0.6432573199272156
+-1Sun, 12 May 2019 21:36:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 709, loss: 0.6575735211372375
+-1Sun, 12 May 2019 21:36:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 710, loss: 0.6454833149909973
+-1Sun, 12 May 2019 21:36:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 711, loss: 0.6421928405761719
+-1Sun, 12 May 2019 21:36:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 712, loss: 0.6483718156814575
+-1Sun, 12 May 2019 21:36:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 713, loss: 0.6360971927642822
+-1Sun, 12 May 2019 21:36:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 714, loss: 0.6400103569030762
+-1Sun, 12 May 2019 21:36:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 715, loss: 0.6411990523338318
+-1Sun, 12 May 2019 21:36:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 716, loss: 0.6309365630149841
+-1Sun, 12 May 2019 21:36:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 717, loss: 0.652282178401947
+-1Sun, 12 May 2019 21:36:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 718, loss: 0.6321966052055359
+-1Sun, 12 May 2019 21:36:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 719, loss: 0.6352733969688416
+-1Sun, 12 May 2019 21:36:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 720, loss: 0.6388433575630188
+-1Sun, 12 May 2019 21:36:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 721, loss: 0.6302092671394348
+-1Sun, 12 May 2019 21:36:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 722, loss: 0.6469634175300598
+-1Sun, 12 May 2019 21:36:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 723, loss: 0.6362008452415466
+-1Sun, 12 May 2019 21:36:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 724, loss: 0.636462390422821
+-1Sun, 12 May 2019 21:36:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 725, loss: 0.6278768181800842
+-1Sun, 12 May 2019 21:36:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 726, loss: 0.6404439210891724
+-1Sun, 12 May 2019 21:36:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 727, loss: 0.6404526233673096
+-1Sun, 12 May 2019 21:36:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 728, loss: 0.6253309845924377
+-1Sun, 12 May 2019 21:36:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 729, loss: 0.629065990447998
+-1Sun, 12 May 2019 21:36:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 730, loss: 0.6266036033630371
+-1Sun, 12 May 2019 21:36:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 731, loss: 0.6282490491867065
+-1Sun, 12 May 2019 21:36:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 732, loss: 0.6237578988075256
+-1Sun, 12 May 2019 21:36:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 733, loss: 0.627271831035614
+-1Sun, 12 May 2019 21:36:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 734, loss: 0.6198248267173767
+-1Sun, 12 May 2019 21:36:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 735, loss: 0.6240241527557373
+-1Sun, 12 May 2019 21:36:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 736, loss: 0.6208488345146179
+-1Sun, 12 May 2019 21:36:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 737, loss: 0.6255949139595032
+-1Sun, 12 May 2019 21:36:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 738, loss: 0.6062106490135193
+-1Sun, 12 May 2019 21:36:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 739, loss: 0.6388594508171082
+-1Sun, 12 May 2019 21:36:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 740, loss: 0.6072584986686707
+-1Sun, 12 May 2019 21:36:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 741, loss: 0.6078026294708252
+-1Sun, 12 May 2019 21:36:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 742, loss: 0.6139031648635864
+-1Sun, 12 May 2019 21:36:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 743, loss: 0.6278461217880249
+-1Sun, 12 May 2019 21:36:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 744, loss: 0.5948386192321777
+-1Sun, 12 May 2019 21:36:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 745, loss: 0.6090232133865356
+-1Sun, 12 May 2019 21:36:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 746, loss: 0.6153082847595215
+-1Sun, 12 May 2019 21:36:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 747, loss: 0.627068042755127
+-1Sun, 12 May 2019 21:36:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 748, loss: 0.6077738404273987
+-1Sun, 12 May 2019 21:36:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 749, loss: 0.6256232857704163
+-1Sun, 12 May 2019 21:36:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 750, loss: 0.6248458027839661
+-1Sun, 12 May 2019 21:36:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 751, loss: 0.6268543601036072
+-1Sun, 12 May 2019 21:36:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 752, loss: 0.6278850436210632
+-1Sun, 12 May 2019 21:36:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 753, loss: 0.6258130073547363
+-1Sun, 12 May 2019 21:36:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 754, loss: 0.5931938886642456
+-1Sun, 12 May 2019 21:36:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 755, loss: 0.618660569190979
+-1Sun, 12 May 2019 21:36:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 756, loss: 0.6059638261795044
+-1Sun, 12 May 2019 21:36:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 757, loss: 0.5897876024246216
+-1Sun, 12 May 2019 21:36:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 758, loss: 0.6187699437141418
+-1Sun, 12 May 2019 21:36:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 759, loss: 0.6106289029121399
+-1Sun, 12 May 2019 21:36:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 760, loss: 0.6078284978866577
+-1Sun, 12 May 2019 21:36:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 761, loss: 0.5991781949996948
+-1Sun, 12 May 2019 21:36:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 762, loss: 0.6159671545028687
+-1Sun, 12 May 2019 21:36:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 763, loss: 0.6076348423957825
+-1Sun, 12 May 2019 21:36:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 764, loss: 0.6154586672782898
+-1Sun, 12 May 2019 21:36:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 765, loss: 0.6067504286766052
+-1Sun, 12 May 2019 21:36:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 766, loss: 0.5919647216796875
+-1Sun, 12 May 2019 21:36:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 767, loss: 0.6111050844192505
+-1Sun, 12 May 2019 21:36:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 768, loss: 0.5998519659042358
+-1Sun, 12 May 2019 21:36:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 769, loss: 0.6127265095710754
+-1Sun, 12 May 2019 21:36:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 770, loss: 0.6024073958396912
+-1Sun, 12 May 2019 21:36:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 771, loss: 0.6037105321884155
+-1Sun, 12 May 2019 21:36:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 772, loss: 0.6045084595680237
+-1Sun, 12 May 2019 21:36:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 773, loss: 0.5994961261749268
+-1Sun, 12 May 2019 21:36:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 774, loss: 0.6042557954788208
+-1Sun, 12 May 2019 21:36:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 775, loss: 0.609768271446228
+-1Sun, 12 May 2019 21:36:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 776, loss: 0.5952451229095459
+-1Sun, 12 May 2019 21:36:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 777, loss: 0.5896056890487671
+-1Sun, 12 May 2019 21:36:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 778, loss: 0.6090279221534729
+-1Sun, 12 May 2019 21:36:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 779, loss: 0.5817806124687195
+-1Sun, 12 May 2019 21:36:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 780, loss: 0.6120197176933289
+-1Sun, 12 May 2019 21:36:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 781, loss: 0.5980336666107178
+-1Sun, 12 May 2019 21:36:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 782, loss: 0.612569272518158
+-1Sun, 12 May 2019 21:36:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 783, loss: 0.5817661285400391
+-1Sun, 12 May 2019 21:36:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 784, loss: 0.5787111520767212
+-1Sun, 12 May 2019 21:36:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 785, loss: 0.5966911911964417
+-1Sun, 12 May 2019 21:36:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 786, loss: 0.5905463695526123
+-1Sun, 12 May 2019 21:36:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 787, loss: 0.5835492014884949
+-1Sun, 12 May 2019 21:36:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 788, loss: 0.5962337255477905
+-1Sun, 12 May 2019 21:36:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 789, loss: 0.5979673266410828
+-1Sun, 12 May 2019 21:36:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 790, loss: 0.5885189771652222
+-1Sun, 12 May 2019 21:36:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 791, loss: 0.5895213484764099
+-1Sun, 12 May 2019 21:36:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 792, loss: 0.5719529390335083
+-1Sun, 12 May 2019 21:36:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 793, loss: 0.5780027508735657
+-1Sun, 12 May 2019 21:36:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 794, loss: 0.5652353167533875
+-1Sun, 12 May 2019 21:36:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 795, loss: 0.5777170658111572
+-1Sun, 12 May 2019 21:36:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 796, loss: 0.6031036376953125
+-1Sun, 12 May 2019 21:36:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 797, loss: 0.5697063207626343
+-1Sun, 12 May 2019 21:36:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 798, loss: 0.6032227277755737
+-1Sun, 12 May 2019 21:36:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 799, loss: 0.555836021900177
+-1Sun, 12 May 2019 21:36:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 800, loss: 0.5742136240005493
+-1Sun, 12 May 2019 21:36:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 801, loss: 0.5722424387931824
+-1Sun, 12 May 2019 21:36:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 802, loss: 0.5742102861404419
+-1Sun, 12 May 2019 21:36:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 803, loss: 0.5887548923492432
+-1Sun, 12 May 2019 21:36:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 804, loss: 0.5852025151252747
+-1Sun, 12 May 2019 21:36:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 805, loss: 0.5518556833267212
+-1Sun, 12 May 2019 21:36:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 806, loss: 0.5884513854980469
+-1Sun, 12 May 2019 21:36:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 807, loss: 0.5751593708992004
+-1Sun, 12 May 2019 21:36:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 808, loss: 0.5896773338317871
+-1Sun, 12 May 2019 21:36:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 809, loss: 0.5766511559486389
+-1Sun, 12 May 2019 21:36:51 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 810, loss: 0.567865788936615
+-1Sun, 12 May 2019 21:36:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 811, loss: 0.5740829706192017
+-1Sun, 12 May 2019 21:36:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 812, loss: 0.6009469032287598
+-1Sun, 12 May 2019 21:36:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 813, loss: 0.5631260871887207
+-1Sun, 12 May 2019 21:36:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 814, loss: 0.5686338543891907
+-1Sun, 12 May 2019 21:36:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 815, loss: 0.57342129945755
+-1Sun, 12 May 2019 21:36:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 816, loss: 0.5747235417366028
+-1Sun, 12 May 2019 21:36:52 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 817, loss: 0.5796829462051392
+-1Sun, 12 May 2019 21:36:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 818, loss: 0.5733715295791626
+-1Sun, 12 May 2019 21:36:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 819, loss: 0.5641270279884338
+-1Sun, 12 May 2019 21:36:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 820, loss: 0.567559540271759
+-1Sun, 12 May 2019 21:36:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 821, loss: 0.5525367259979248
+-1Sun, 12 May 2019 21:36:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 822, loss: 0.5715091228485107
+-1Sun, 12 May 2019 21:36:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 823, loss: 0.565271258354187
+-1Sun, 12 May 2019 21:36:53 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 824, loss: 0.5557804703712463
+-1Sun, 12 May 2019 21:36:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 825, loss: 0.5740472674369812
+-1Sun, 12 May 2019 21:36:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 826, loss: 0.5630367398262024
+-1Sun, 12 May 2019 21:36:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 827, loss: 0.5642864108085632
+-1Sun, 12 May 2019 21:36:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 828, loss: 0.56230628490448
+-1Sun, 12 May 2019 21:36:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 829, loss: 0.5547634363174438
+-1Sun, 12 May 2019 21:36:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 830, loss: 0.5457358360290527
+-1Sun, 12 May 2019 21:36:54 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 831, loss: 0.5692766904830933
+-1Sun, 12 May 2019 21:36:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 832, loss: 0.5326645374298096
+-1Sun, 12 May 2019 21:36:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 833, loss: 0.5474538207054138
+-1Sun, 12 May 2019 21:36:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 834, loss: 0.5516116619110107
+-1Sun, 12 May 2019 21:36:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 835, loss: 0.5519302487373352
+-1Sun, 12 May 2019 21:36:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 836, loss: 0.5564457774162292
+-1Sun, 12 May 2019 21:36:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 837, loss: 0.54033362865448
+-1Sun, 12 May 2019 21:36:55 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 838, loss: 0.5679636597633362
+-1Sun, 12 May 2019 21:36:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 839, loss: 0.5442181825637817
+-1Sun, 12 May 2019 21:36:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 840, loss: 0.5444971919059753
+-1Sun, 12 May 2019 21:36:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 841, loss: 0.5653139352798462
+-1Sun, 12 May 2019 21:36:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 842, loss: 0.5543614029884338
+-1Sun, 12 May 2019 21:36:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 843, loss: 0.5408874750137329
+-1Sun, 12 May 2019 21:36:56 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 844, loss: 0.5583072304725647
+-1Sun, 12 May 2019 21:36:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 845, loss: 0.5506300926208496
+-1Sun, 12 May 2019 21:36:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 846, loss: 0.557494580745697
+-1Sun, 12 May 2019 21:36:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 847, loss: 0.5470256209373474
+-1Sun, 12 May 2019 21:36:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 848, loss: 0.547995388507843
+-1Sun, 12 May 2019 21:36:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 849, loss: 0.5415063500404358
+-1Sun, 12 May 2019 21:36:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 850, loss: 0.5376778841018677
+-1Sun, 12 May 2019 21:36:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 851, loss: 0.5488466620445251
+-1Sun, 12 May 2019 21:36:57 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 852, loss: 0.5424330234527588
+-1Sun, 12 May 2019 21:36:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 853, loss: 0.5451948046684265
+-1Sun, 12 May 2019 21:36:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 854, loss: 0.5343117713928223
+-1Sun, 12 May 2019 21:36:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 855, loss: 0.5562105774879456
+-1Sun, 12 May 2019 21:36:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 856, loss: 0.550013542175293
+-1Sun, 12 May 2019 21:36:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 857, loss: 0.5466877818107605
+-1Sun, 12 May 2019 21:36:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 858, loss: 0.5487841963768005
+-1Sun, 12 May 2019 21:36:58 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 859, loss: 0.5502422451972961
+-1Sun, 12 May 2019 21:36:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 860, loss: 0.5475608110427856
+-1Sun, 12 May 2019 21:36:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 861, loss: 0.5598599314689636
+-1Sun, 12 May 2019 21:36:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 862, loss: 0.53736811876297
+-1Sun, 12 May 2019 21:36:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 863, loss: 0.5461474657058716
+-1Sun, 12 May 2019 21:36:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 864, loss: 0.5289972424507141
+-1Sun, 12 May 2019 21:36:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 865, loss: 0.5226411819458008
+-1Sun, 12 May 2019 21:36:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 866, loss: 0.5372599959373474
+-1Sun, 12 May 2019 21:36:59 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 867, loss: 0.5286923050880432
+-1Sun, 12 May 2019 21:37:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 868, loss: 0.5428975224494934
+-1Sun, 12 May 2019 21:37:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 869, loss: 0.5444459915161133
+-1Sun, 12 May 2019 21:37:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 870, loss: 0.542299747467041
+-1Sun, 12 May 2019 21:37:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 871, loss: 0.5174293518066406
+-1Sun, 12 May 2019 21:37:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 872, loss: 0.5288186073303223
+-1Sun, 12 May 2019 21:37:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 873, loss: 0.5249186754226685
+-1Sun, 12 May 2019 21:37:00 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 874, loss: 0.5274826288223267
+-1Sun, 12 May 2019 21:37:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 875, loss: 0.5379223823547363
+-1Sun, 12 May 2019 21:37:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 876, loss: 0.5237574577331543
+-1Sun, 12 May 2019 21:37:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 877, loss: 0.5434662699699402
+-1Sun, 12 May 2019 21:37:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 878, loss: 0.5236449241638184
+-1Sun, 12 May 2019 21:37:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 879, loss: 0.5342889428138733
+-1Sun, 12 May 2019 21:37:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 880, loss: 0.530728816986084
+-1Sun, 12 May 2019 21:37:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 881, loss: 0.512639582157135
+-1Sun, 12 May 2019 21:37:01 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 882, loss: 0.5281520485877991
+-1Sun, 12 May 2019 21:37:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 883, loss: 0.5153104662895203
+-1Sun, 12 May 2019 21:37:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 884, loss: 0.5159009695053101
+-1Sun, 12 May 2019 21:37:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 885, loss: 0.5162204504013062
+-1Sun, 12 May 2019 21:37:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 886, loss: 0.5194717049598694
+-1Sun, 12 May 2019 21:37:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 887, loss: 0.5258373022079468
+-1Sun, 12 May 2019 21:37:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 888, loss: 0.5244799852371216
+-1Sun, 12 May 2019 21:37:02 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 889, loss: 0.5286789536476135
+-1Sun, 12 May 2019 21:37:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 890, loss: 0.505204439163208
+-1Sun, 12 May 2019 21:37:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 891, loss: 0.5101740956306458
+-1Sun, 12 May 2019 21:37:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 892, loss: 0.5249574780464172
+-1Sun, 12 May 2019 21:37:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 893, loss: 0.518509566783905
+-1Sun, 12 May 2019 21:37:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 894, loss: 0.517673671245575
+-1Sun, 12 May 2019 21:37:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 895, loss: 0.5101983547210693
+-1Sun, 12 May 2019 21:37:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 896, loss: 0.524053692817688
+-1Sun, 12 May 2019 21:37:03 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 897, loss: 0.5212990045547485
+-1Sun, 12 May 2019 21:37:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 898, loss: 0.5289584398269653
+-1Sun, 12 May 2019 21:37:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 899, loss: 0.5265835523605347
+-1Sun, 12 May 2019 21:37:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 900, loss: 0.5105413198471069
+-1Sun, 12 May 2019 21:37:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 901, loss: 0.5190564393997192
+-1Sun, 12 May 2019 21:37:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 902, loss: 0.49823957681655884
+-1Sun, 12 May 2019 21:37:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 903, loss: 0.5175896286964417
+-1Sun, 12 May 2019 21:37:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 904, loss: 0.5329793095588684
+-1Sun, 12 May 2019 21:37:04 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 905, loss: 0.49629729986190796
+-1Sun, 12 May 2019 21:37:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 906, loss: 0.5174103379249573
+-1Sun, 12 May 2019 21:37:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 907, loss: 0.4885442852973938
+-1Sun, 12 May 2019 21:37:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 908, loss: 0.5109496712684631
+-1Sun, 12 May 2019 21:37:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 909, loss: 0.528926432132721
+-1Sun, 12 May 2019 21:37:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 910, loss: 0.49741289019584656
+-1Sun, 12 May 2019 21:37:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 911, loss: 0.49458521604537964
+-1Sun, 12 May 2019 21:37:05 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 912, loss: 0.5194365382194519
+-1Sun, 12 May 2019 21:37:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 913, loss: 0.5015637874603271
+-1Sun, 12 May 2019 21:37:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 914, loss: 0.5029199123382568
+-1Sun, 12 May 2019 21:37:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 915, loss: 0.510356068611145
+-1Sun, 12 May 2019 21:37:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 916, loss: 0.4955533444881439
+-1Sun, 12 May 2019 21:37:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 917, loss: 0.5060293674468994
+-1Sun, 12 May 2019 21:37:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 918, loss: 0.5180926322937012
+-1Sun, 12 May 2019 21:37:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 919, loss: 0.5144827961921692
+-1Sun, 12 May 2019 21:37:06 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 920, loss: 0.5269107818603516
+-1Sun, 12 May 2019 21:37:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 921, loss: 0.5044378638267517
+-1Sun, 12 May 2019 21:37:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 922, loss: 0.5077053308486938
+-1Sun, 12 May 2019 21:37:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 923, loss: 0.5058164596557617
+-1Sun, 12 May 2019 21:37:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 924, loss: 0.512248694896698
+-1Sun, 12 May 2019 21:37:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 925, loss: 0.49272462725639343
+-1Sun, 12 May 2019 21:37:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 926, loss: 0.4983825087547302
+-1Sun, 12 May 2019 21:37:07 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 927, loss: 0.5030033588409424
+-1Sun, 12 May 2019 21:37:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 928, loss: 0.4992920160293579
+-1Sun, 12 May 2019 21:37:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 929, loss: 0.499808669090271
+-1Sun, 12 May 2019 21:37:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 930, loss: 0.4971066415309906
+-1Sun, 12 May 2019 21:37:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 931, loss: 0.49315762519836426
+-1Sun, 12 May 2019 21:37:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 932, loss: 0.507960319519043
+-1Sun, 12 May 2019 21:37:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 933, loss: 0.49835702776908875
+-1Sun, 12 May 2019 21:37:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 934, loss: 0.4712502956390381
+-1Sun, 12 May 2019 21:37:08 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 935, loss: 0.4994305372238159
+-1Sun, 12 May 2019 21:37:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 936, loss: 0.4949078857898712
+-1Sun, 12 May 2019 21:37:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 937, loss: 0.49640747904777527
+-1Sun, 12 May 2019 21:37:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 938, loss: 0.49667662382125854
+-1Sun, 12 May 2019 21:37:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 939, loss: 0.4781859219074249
+-1Sun, 12 May 2019 21:37:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 940, loss: 0.48602867126464844
+-1Sun, 12 May 2019 21:37:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 941, loss: 0.5009860396385193
+-1Sun, 12 May 2019 21:37:09 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 942, loss: 0.5080978870391846
+-1Sun, 12 May 2019 21:37:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 943, loss: 0.5123616456985474
+-1Sun, 12 May 2019 21:37:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 944, loss: 0.5125809907913208
+-1Sun, 12 May 2019 21:37:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 945, loss: 0.49738723039627075
+-1Sun, 12 May 2019 21:37:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 946, loss: 0.4862176179885864
+-1Sun, 12 May 2019 21:37:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 947, loss: 0.4909933805465698
+-1Sun, 12 May 2019 21:37:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 948, loss: 0.4809025526046753
+-1Sun, 12 May 2019 21:37:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 949, loss: 0.4916571080684662
+-1Sun, 12 May 2019 21:37:10 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 950, loss: 0.47885677218437195
+-1Sun, 12 May 2019 21:37:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 951, loss: 0.47638559341430664
+-1Sun, 12 May 2019 21:37:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 952, loss: 0.4863278567790985
+-1Sun, 12 May 2019 21:37:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 953, loss: 0.4922037720680237
+-1Sun, 12 May 2019 21:37:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 954, loss: 0.4826402962207794
+-1Sun, 12 May 2019 21:37:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 955, loss: 0.47605571150779724
+-1Sun, 12 May 2019 21:37:11 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 956, loss: 0.47721898555755615
+-1Sun, 12 May 2019 21:37:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 957, loss: 0.47899314761161804
+-1Sun, 12 May 2019 21:37:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 958, loss: 0.4923650622367859
+-1Sun, 12 May 2019 21:37:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 959, loss: 0.47996723651885986
+-1Sun, 12 May 2019 21:37:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 960, loss: 0.46541446447372437
+-1Sun, 12 May 2019 21:37:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 961, loss: 0.4679187536239624
+-1Sun, 12 May 2019 21:37:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 962, loss: 0.4776086211204529
+-1Sun, 12 May 2019 21:37:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 963, loss: 0.4966810643672943
+-1Sun, 12 May 2019 21:37:12 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 964, loss: 0.46363726258277893
+-1Sun, 12 May 2019 21:37:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 965, loss: 0.4740864038467407
+-1Sun, 12 May 2019 21:37:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 966, loss: 0.46818020939826965
+-1Sun, 12 May 2019 21:37:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 967, loss: 0.4648566246032715
+-1Sun, 12 May 2019 21:37:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 968, loss: 0.4791163504123688
+-1Sun, 12 May 2019 21:37:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 969, loss: 0.4659814238548279
+-1Sun, 12 May 2019 21:37:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 970, loss: 0.4834250807762146
+-1Sun, 12 May 2019 21:37:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 971, loss: 0.4744998812675476
+-1Sun, 12 May 2019 21:37:13 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 972, loss: 0.48497429490089417
+-1Sun, 12 May 2019 21:37:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 973, loss: 0.4535007178783417
+-1Sun, 12 May 2019 21:37:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 974, loss: 0.47757720947265625
+-1Sun, 12 May 2019 21:37:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 975, loss: 0.4839188754558563
+-1Sun, 12 May 2019 21:37:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 976, loss: 0.4669969081878662
+-1Sun, 12 May 2019 21:37:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 977, loss: 0.4646892845630646
+-1Sun, 12 May 2019 21:37:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 978, loss: 0.4795288145542145
+-1Sun, 12 May 2019 21:37:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 979, loss: 0.48284876346588135
+-1Sun, 12 May 2019 21:37:14 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 980, loss: 0.47620028257369995
+-1Sun, 12 May 2019 21:37:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 981, loss: 0.46457377076148987
+-1Sun, 12 May 2019 21:37:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 982, loss: 0.47406333684921265
+-1Sun, 12 May 2019 21:37:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 983, loss: 0.46452033519744873
+-1Sun, 12 May 2019 21:37:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 984, loss: 0.4436669647693634
+-1Sun, 12 May 2019 21:37:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 985, loss: 0.4648718535900116
+-1Sun, 12 May 2019 21:37:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 986, loss: 0.4461517035961151
+-1Sun, 12 May 2019 21:37:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 987, loss: 0.4669643044471741
+-1Sun, 12 May 2019 21:37:15 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 988, loss: 0.46811333298683167
+-1Sun, 12 May 2019 21:37:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 989, loss: 0.4603317975997925
+-1Sun, 12 May 2019 21:37:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 990, loss: 0.46522510051727295
+-1Sun, 12 May 2019 21:37:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 991, loss: 0.46698930859565735
+-1Sun, 12 May 2019 21:37:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 992, loss: 0.4634084701538086
+-1Sun, 12 May 2019 21:37:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 993, loss: 0.4652550220489502
+-1Sun, 12 May 2019 21:37:16 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 994, loss: 0.4635109007358551
+-1Sun, 12 May 2019 21:37:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 995, loss: 0.48369869589805603
+-1Sun, 12 May 2019 21:37:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 996, loss: 0.4436451494693756
+-1Sun, 12 May 2019 21:37:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 997, loss: 0.45661237835884094
+-1Sun, 12 May 2019 21:37:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 998, loss: 0.4748150706291199
+-1Sun, 12 May 2019 21:37:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 999, loss: 0.456716924905777
+-1Sun, 12 May 2019 21:37:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1000, loss: 0.472243994474411
+-1Sun, 12 May 2019 21:37:17 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1001, loss: 0.4526519179344177
+-1Sun, 12 May 2019 21:37:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1002, loss: 0.4686484634876251
+-1Sun, 12 May 2019 21:37:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1003, loss: 0.46152156591415405
+-1Sun, 12 May 2019 21:37:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1004, loss: 0.45696964859962463
+-1Sun, 12 May 2019 21:37:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1005, loss: 0.4458535611629486
+-1Sun, 12 May 2019 21:37:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1006, loss: 0.4444864094257355
+-1Sun, 12 May 2019 21:37:18 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1007, loss: 0.4591867923736572
+-1Sun, 12 May 2019 21:37:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1008, loss: 0.4451935291290283
+-1Sun, 12 May 2019 21:37:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1009, loss: 0.4619055688381195
+-1Sun, 12 May 2019 21:37:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1010, loss: 0.45133912563323975
+-1Sun, 12 May 2019 21:37:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1011, loss: 0.4580613076686859
+-1Sun, 12 May 2019 21:37:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1012, loss: 0.44282570481300354
+-1Sun, 12 May 2019 21:37:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1013, loss: 0.45436424016952515
+-1Sun, 12 May 2019 21:37:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1014, loss: 0.43635085225105286
+-1Sun, 12 May 2019 21:37:19 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1015, loss: 0.4476422965526581
+-1Sun, 12 May 2019 21:37:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1016, loss: 0.45127275586128235
+-1Sun, 12 May 2019 21:37:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1017, loss: 0.4461863934993744
+-1Sun, 12 May 2019 21:37:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1018, loss: 0.44370004534721375
+-1Sun, 12 May 2019 21:37:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1019, loss: 0.45896828174591064
+-1Sun, 12 May 2019 21:37:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1020, loss: 0.4490817189216614
+-1Sun, 12 May 2019 21:37:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1021, loss: 0.44628235697746277
+-1Sun, 12 May 2019 21:37:20 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1022, loss: 0.45169079303741455
+-1Sun, 12 May 2019 21:37:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1023, loss: 0.4476636052131653
+-1Sun, 12 May 2019 21:37:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1024, loss: 0.44118189811706543
+-1Sun, 12 May 2019 21:37:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1025, loss: 0.439049631357193
+-1Sun, 12 May 2019 21:37:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1026, loss: 0.44807255268096924
+-1Sun, 12 May 2019 21:37:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1027, loss: 0.42185959219932556
+-1Sun, 12 May 2019 21:37:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1028, loss: 0.44818657636642456
+-1Sun, 12 May 2019 21:37:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1029, loss: 0.4348362982273102
+-1Sun, 12 May 2019 21:37:21 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1030, loss: 0.44647637009620667
+-1Sun, 12 May 2019 21:37:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1031, loss: 0.4497479796409607
+-1Sun, 12 May 2019 21:37:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1032, loss: 0.4324440360069275
+-1Sun, 12 May 2019 21:37:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1033, loss: 0.4450095295906067
+-1Sun, 12 May 2019 21:37:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1034, loss: 0.44144323468208313
+-1Sun, 12 May 2019 21:37:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1035, loss: 0.4507342278957367
+-1Sun, 12 May 2019 21:37:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1036, loss: 0.4327033758163452
+-1Sun, 12 May 2019 21:37:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1037, loss: 0.45391443371772766
+-1Sun, 12 May 2019 21:37:22 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1038, loss: 0.4379887282848358
+-1Sun, 12 May 2019 21:37:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1039, loss: 0.42678338289260864
+-1Sun, 12 May 2019 21:37:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1040, loss: 0.4503995478153229
+-1Sun, 12 May 2019 21:37:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1041, loss: 0.42350414395332336
+-1Sun, 12 May 2019 21:37:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1042, loss: 0.43173545598983765
+-1Sun, 12 May 2019 21:37:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1043, loss: 0.431106835603714
+-1Sun, 12 May 2019 21:37:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1044, loss: 0.4329891800880432
+-1Sun, 12 May 2019 21:37:23 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1045, loss: 0.4182034134864807
+-1Sun, 12 May 2019 21:37:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1046, loss: 0.4374544620513916
+-1Sun, 12 May 2019 21:37:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1047, loss: 0.4293196201324463
+-1Sun, 12 May 2019 21:37:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1048, loss: 0.4348677098751068
+-1Sun, 12 May 2019 21:37:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1049, loss: 0.43504756689071655
+-1Sun, 12 May 2019 21:37:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1050, loss: 0.41898924112319946
+-1Sun, 12 May 2019 21:37:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1051, loss: 0.44217175245285034
+-1Sun, 12 May 2019 21:37:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1052, loss: 0.42900118231773376
+-1Sun, 12 May 2019 21:37:24 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1053, loss: 0.4483562707901001
+-1Sun, 12 May 2019 21:37:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1054, loss: 0.43105003237724304
+-1Sun, 12 May 2019 21:37:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1055, loss: 0.43306905031204224
+-1Sun, 12 May 2019 21:37:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1056, loss: 0.4326275587081909
+-1Sun, 12 May 2019 21:37:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1057, loss: 0.419910728931427
+-1Sun, 12 May 2019 21:37:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1058, loss: 0.4288560450077057
+-1Sun, 12 May 2019 21:37:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1059, loss: 0.422810822725296
+-1Sun, 12 May 2019 21:37:25 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1060, loss: 0.4266520142555237
+-1Sun, 12 May 2019 21:37:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1061, loss: 0.41613271832466125
+-1Sun, 12 May 2019 21:37:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1062, loss: 0.4235937297344208
+-1Sun, 12 May 2019 21:37:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1063, loss: 0.42288196086883545
+-1Sun, 12 May 2019 21:37:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1064, loss: 0.4266771674156189
+-1Sun, 12 May 2019 21:37:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1065, loss: 0.4276329576969147
+-1Sun, 12 May 2019 21:37:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1066, loss: 0.4277762472629547
+-1Sun, 12 May 2019 21:37:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1067, loss: 0.4323747456073761
+-1Sun, 12 May 2019 21:37:26 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1068, loss: 0.4150761067867279
+-1Sun, 12 May 2019 21:37:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1069, loss: 0.4177325367927551
+-1Sun, 12 May 2019 21:37:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1070, loss: 0.41796818375587463
+-1Sun, 12 May 2019 21:37:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1071, loss: 0.4172194302082062
+-1Sun, 12 May 2019 21:37:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1072, loss: 0.42734819650650024
+-1Sun, 12 May 2019 21:37:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1073, loss: 0.41792523860931396
+-1Sun, 12 May 2019 21:37:27 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1074, loss: 0.43134981393814087
+-1Sun, 12 May 2019 21:37:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1075, loss: 0.41887789964675903
+-1Sun, 12 May 2019 21:37:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1076, loss: 0.4027457535266876
+-1Sun, 12 May 2019 21:37:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1077, loss: 0.4218257963657379
+-1Sun, 12 May 2019 21:37:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1078, loss: 0.4195680022239685
+-1Sun, 12 May 2019 21:37:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1079, loss: 0.421399861574173
+-1Sun, 12 May 2019 21:37:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1080, loss: 0.41480499505996704
+-1Sun, 12 May 2019 21:37:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1081, loss: 0.4126864969730377
+-1Sun, 12 May 2019 21:37:28 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1082, loss: 0.4173831641674042
+-1Sun, 12 May 2019 21:37:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1083, loss: 0.4087299406528473
+-1Sun, 12 May 2019 21:37:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1084, loss: 0.4169858396053314
+-1Sun, 12 May 2019 21:37:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1085, loss: 0.4026399552822113
+-1Sun, 12 May 2019 21:37:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1086, loss: 0.40599390864372253
+-1Sun, 12 May 2019 21:37:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1087, loss: 0.39878156781196594
+-1Sun, 12 May 2019 21:37:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1088, loss: 0.4122394919395447
+-1Sun, 12 May 2019 21:37:29 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1089, loss: 0.4198726713657379
+-1Sun, 12 May 2019 21:37:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1090, loss: 0.40195232629776
+-1Sun, 12 May 2019 21:37:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1091, loss: 0.41426631808280945
+-1Sun, 12 May 2019 21:37:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1092, loss: 0.4168885350227356
+-1Sun, 12 May 2019 21:37:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1093, loss: 0.40638962388038635
+-1Sun, 12 May 2019 21:37:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1094, loss: 0.4045666456222534
+-1Sun, 12 May 2019 21:37:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1095, loss: 0.4115016758441925
+-1Sun, 12 May 2019 21:37:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1096, loss: 0.41124022006988525
+-1Sun, 12 May 2019 21:37:30 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1097, loss: 0.405914306640625
+-1Sun, 12 May 2019 21:37:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1098, loss: 0.4077991247177124
+-1Sun, 12 May 2019 21:37:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1099, loss: 0.39052820205688477
+-1Sun, 12 May 2019 21:37:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1100, loss: 0.394239604473114
+-1Sun, 12 May 2019 21:37:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1101, loss: 0.3924213647842407
+-1Sun, 12 May 2019 21:37:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1102, loss: 0.39486178755760193
+-1Sun, 12 May 2019 21:37:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1103, loss: 0.4075367748737335
+-1Sun, 12 May 2019 21:37:31 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1104, loss: 0.4093253016471863
+-1Sun, 12 May 2019 21:37:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1105, loss: 0.3993063271045685
+-1Sun, 12 May 2019 21:37:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1106, loss: 0.39665013551712036
+-1Sun, 12 May 2019 21:37:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1107, loss: 0.40241870284080505
+-1Sun, 12 May 2019 21:37:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1108, loss: 0.39860063791275024
+-1Sun, 12 May 2019 21:37:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1109, loss: 0.4133325219154358
+-1Sun, 12 May 2019 21:37:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1110, loss: 0.3970796465873718
+-1Sun, 12 May 2019 21:37:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1111, loss: 0.3952408730983734
+-1Sun, 12 May 2019 21:37:32 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1112, loss: 0.40156760811805725
+-1Sun, 12 May 2019 21:37:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1113, loss: 0.3946792483329773
+-1Sun, 12 May 2019 21:37:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1114, loss: 0.3970808982849121
+-1Sun, 12 May 2019 21:37:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1115, loss: 0.3970348536968231
+-1Sun, 12 May 2019 21:37:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1116, loss: 0.40223029255867004
+-1Sun, 12 May 2019 21:37:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1117, loss: 0.3987601399421692
+-1Sun, 12 May 2019 21:37:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1118, loss: 0.40731731057167053
+-1Sun, 12 May 2019 21:37:33 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1119, loss: 0.4045346975326538
+-1Sun, 12 May 2019 21:37:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1120, loss: 0.4030866324901581
+-1Sun, 12 May 2019 21:37:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1121, loss: 0.3883519172668457
+-1Sun, 12 May 2019 21:37:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1122, loss: 0.39772769808769226
+-1Sun, 12 May 2019 21:37:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1123, loss: 0.390495628118515
+-1Sun, 12 May 2019 21:37:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1124, loss: 0.4057067334651947
+-1Sun, 12 May 2019 21:37:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1125, loss: 0.4001747965812683
+-1Sun, 12 May 2019 21:37:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1126, loss: 0.406363308429718
+-1Sun, 12 May 2019 21:37:34 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1127, loss: 0.3884541392326355
+-1Sun, 12 May 2019 21:37:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1128, loss: 0.39466753602027893
+-1Sun, 12 May 2019 21:37:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1129, loss: 0.4023299217224121
+-1Sun, 12 May 2019 21:37:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1130, loss: 0.39023441076278687
+-1Sun, 12 May 2019 21:37:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1131, loss: 0.4017939865589142
+-1Sun, 12 May 2019 21:37:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1132, loss: 0.398601770401001
+-1Sun, 12 May 2019 21:37:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1133, loss: 0.39530909061431885
+-1Sun, 12 May 2019 21:37:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1134, loss: 0.39618125557899475
+-1Sun, 12 May 2019 21:37:35 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1135, loss: 0.3943190574645996
+-1Sun, 12 May 2019 21:37:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1136, loss: 0.3839370906352997
+-1Sun, 12 May 2019 21:37:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1137, loss: 0.4041239619255066
+-1Sun, 12 May 2019 21:37:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1138, loss: 0.3813600242137909
+-1Sun, 12 May 2019 21:37:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1139, loss: 0.4004842936992645
+-1Sun, 12 May 2019 21:37:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1140, loss: 0.38829928636550903
+-1Sun, 12 May 2019 21:37:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1141, loss: 0.40030166506767273
+-1Sun, 12 May 2019 21:37:36 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1142, loss: 0.3846464455127716
+-1Sun, 12 May 2019 21:37:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1143, loss: 0.3871612548828125
+-1Sun, 12 May 2019 21:37:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1144, loss: 0.38913866877555847
+-1Sun, 12 May 2019 21:37:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1145, loss: 0.37932685017585754
+-1Sun, 12 May 2019 21:37:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1146, loss: 0.38224807381629944
+-1Sun, 12 May 2019 21:37:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1147, loss: 0.38696834444999695
+-1Sun, 12 May 2019 21:37:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1148, loss: 0.38962283730506897
+-1Sun, 12 May 2019 21:37:37 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1149, loss: 0.3853020966053009
+-1Sun, 12 May 2019 21:37:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1150, loss: 0.40214231610298157
+-1Sun, 12 May 2019 21:37:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1151, loss: 0.38826268911361694
+-1Sun, 12 May 2019 21:37:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1152, loss: 0.3867838978767395
+-1Sun, 12 May 2019 21:37:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1153, loss: 0.3734952211380005
+-1Sun, 12 May 2019 21:37:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1154, loss: 0.37348422408103943
+-1Sun, 12 May 2019 21:37:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1155, loss: 0.38511407375335693
+-1Sun, 12 May 2019 21:37:38 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1156, loss: 0.3801020681858063
+-1Sun, 12 May 2019 21:37:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1157, loss: 0.3857823610305786
+-1Sun, 12 May 2019 21:37:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1158, loss: 0.38475629687309265
+-1Sun, 12 May 2019 21:37:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1159, loss: 0.37928885221481323
+-1Sun, 12 May 2019 21:37:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1160, loss: 0.3639501631259918
+-1Sun, 12 May 2019 21:37:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1161, loss: 0.37993741035461426
+-1Sun, 12 May 2019 21:37:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1162, loss: 0.3845546841621399
+-1Sun, 12 May 2019 21:37:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1163, loss: 0.3761548399925232
+-1Sun, 12 May 2019 21:37:39 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1164, loss: 0.3761537969112396
+-1Sun, 12 May 2019 21:37:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1165, loss: 0.3826746940612793
+-1Sun, 12 May 2019 21:37:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1166, loss: 0.37657827138900757
+-1Sun, 12 May 2019 21:37:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1167, loss: 0.38514500856399536
+-1Sun, 12 May 2019 21:37:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1168, loss: 0.3706739544868469
+-1Sun, 12 May 2019 21:37:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1169, loss: 0.3808702528476715
+-1Sun, 12 May 2019 21:37:40 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1170, loss: 0.3782329857349396
+-1Sun, 12 May 2019 21:37:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1171, loss: 0.3640495836734772
+-1Sun, 12 May 2019 21:37:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1172, loss: 0.36943531036376953
+-1Sun, 12 May 2019 21:37:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1173, loss: 0.3603600561618805
+-1Sun, 12 May 2019 21:37:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1174, loss: 0.370059072971344
+-1Sun, 12 May 2019 21:37:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1175, loss: 0.37431174516677856
+-1Sun, 12 May 2019 21:37:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1176, loss: 0.3565031886100769
+-1Sun, 12 May 2019 21:37:41 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1177, loss: 0.36007919907569885
+-1Sun, 12 May 2019 21:37:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1178, loss: 0.38060858845710754
+-1Sun, 12 May 2019 21:37:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1179, loss: 0.3634333908557892
+-1Sun, 12 May 2019 21:37:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1180, loss: 0.3685142397880554
+-1Sun, 12 May 2019 21:37:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1181, loss: 0.3754049241542816
+-1Sun, 12 May 2019 21:37:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1182, loss: 0.3760271668434143
+-1Sun, 12 May 2019 21:37:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1183, loss: 0.37668082118034363
+-1Sun, 12 May 2019 21:37:42 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1184, loss: 0.3707987070083618
+-1Sun, 12 May 2019 21:37:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1185, loss: 0.36080482602119446
+-1Sun, 12 May 2019 21:37:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1186, loss: 0.37535837292671204
+-1Sun, 12 May 2019 21:37:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1187, loss: 0.3841298818588257
+-1Sun, 12 May 2019 21:37:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1188, loss: 0.36137425899505615
+-1Sun, 12 May 2019 21:37:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1189, loss: 0.3616546392440796
+-1Sun, 12 May 2019 21:37:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1190, loss: 0.3689829111099243
+-1Sun, 12 May 2019 21:37:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1191, loss: 0.37523266673088074
+-1Sun, 12 May 2019 21:37:43 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1192, loss: 0.37066686153411865
+-1Sun, 12 May 2019 21:37:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1193, loss: 0.36709338426589966
+-1Sun, 12 May 2019 21:37:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1194, loss: 0.36211615800857544
+-1Sun, 12 May 2019 21:37:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1195, loss: 0.3765679895877838
+-1Sun, 12 May 2019 21:37:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1196, loss: 0.3674454689025879
+-1Sun, 12 May 2019 21:37:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1197, loss: 0.3569328784942627
+-1Sun, 12 May 2019 21:37:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1198, loss: 0.35561513900756836
+-1Sun, 12 May 2019 21:37:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1199, loss: 0.3610103130340576
+-1Sun, 12 May 2019 21:37:44 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1200, loss: 0.3628467917442322
+-1Sun, 12 May 2019 21:37:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1201, loss: 0.351046085357666
+-1Sun, 12 May 2019 21:37:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1202, loss: 0.3709229528903961
+-1Sun, 12 May 2019 21:37:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1203, loss: 0.35431838035583496
+-1Sun, 12 May 2019 21:37:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1204, loss: 0.3587440848350525
+-1Sun, 12 May 2019 21:37:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1205, loss: 0.35162317752838135
+-1Sun, 12 May 2019 21:37:45 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1206, loss: 0.3522621989250183
+-1Sun, 12 May 2019 21:37:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1207, loss: 0.3530679941177368
+-1Sun, 12 May 2019 21:37:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1208, loss: 0.35008570551872253
+-1Sun, 12 May 2019 21:37:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1209, loss: 0.36064812541007996
+-1Sun, 12 May 2019 21:37:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1210, loss: 0.36247706413269043
+-1Sun, 12 May 2019 21:37:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1211, loss: 0.3546144366264343
+-1Sun, 12 May 2019 21:37:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1212, loss: 0.3550178110599518
+-1Sun, 12 May 2019 21:37:46 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1213, loss: 0.3518904149532318
+-1Sun, 12 May 2019 21:37:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1214, loss: 0.3514832556247711
+-1Sun, 12 May 2019 21:37:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1215, loss: 0.3596954345703125
+-1Sun, 12 May 2019 21:37:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1216, loss: 0.36660462617874146
+-1Sun, 12 May 2019 21:37:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1217, loss: 0.3457467257976532
+-1Sun, 12 May 2019 21:37:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1218, loss: 0.35840654373168945
+-1Sun, 12 May 2019 21:37:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1219, loss: 0.36203914880752563
+-1Sun, 12 May 2019 21:37:47 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1220, loss: 0.34985536336898804
+-1Sun, 12 May 2019 21:37:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1221, loss: 0.35768750309944153
+-1Sun, 12 May 2019 21:37:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1222, loss: 0.35223624110221863
+-1Sun, 12 May 2019 21:37:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1223, loss: 0.3626675009727478
+-1Sun, 12 May 2019 21:37:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1224, loss: 0.3556254208087921
+-1Sun, 12 May 2019 21:37:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1225, loss: 0.3584015667438507
+-1Sun, 12 May 2019 21:37:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1226, loss: 0.351303368806839
+-1Sun, 12 May 2019 21:37:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1227, loss: 0.35457396507263184
+-1Sun, 12 May 2019 21:37:48 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1228, loss: 0.3450801968574524
+-1Sun, 12 May 2019 21:37:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1229, loss: 0.3379851281642914
+-1Sun, 12 May 2019 21:37:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1230, loss: 0.3479149043560028
+-1Sun, 12 May 2019 21:37:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1231, loss: 0.356084942817688
+-1Sun, 12 May 2019 21:37:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1232, loss: 0.34169355034828186
+-1Sun, 12 May 2019 21:37:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1233, loss: 0.3495371639728546
+-1Sun, 12 May 2019 21:37:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1234, loss: 0.3571639060974121
+-1Sun, 12 May 2019 21:37:49 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1235, loss: 0.333955854177475
+-1Sun, 12 May 2019 21:37:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1236, loss: 0.34229227900505066
+-1Sun, 12 May 2019 21:37:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1237, loss: 0.3393004536628723
+-1Sun, 12 May 2019 21:37:50 models.py[line:104] INFO Step: 1, Epoch: 0, Iterations: 1238, loss: 0.33619505167007446

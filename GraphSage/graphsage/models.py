@@ -285,7 +285,7 @@ class SampleAndAggregate(GeneralizedModel):
             input_features: the input features for each sample of various hops away.
             dims: a list of dimensions of the hidden representations from the input layer to the
                 final layer. Length is the number of layers + 1.
-            num_samples: list of number of samples for each layer.
+            num_samples: list of number of samples for each layer. A number e.g. [25, 10]
             support_sizes: the number of nodes to gather information from for each layer.
             batch_size: the number of inputs (different for batch inputs and negative samples).
         Returns:

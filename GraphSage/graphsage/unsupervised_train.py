@@ -307,7 +307,7 @@ def train(train_data, test_data=None):
     val_adj_info = tf.assign(adj_info, minibatch.test_adj)
     for epoch in range(FLAGS.epochs):
         tEpoch = time.time()
-        logging.info('training epoch: ' + str(epoch))
+        logging.info('training epoch: ' + str(epoch + 1))
         minibatch.shuffle()
 
         iter = 0
@@ -351,24 +351,24 @@ def train(train_data, test_data=None):
                              'val_mrr=%04f, val_mrr_ema=%04f, time=%04f' % (
                                  iter, train_cost, train_mrr, train_shadow_mrr,
                                  val_cost, val_mrr, shadow_mrr, avg_time))
-                print("Iter:", '%04d' % iter,
-                      "train_loss=", "{:.5f}".format(train_cost),
-                      "train_mrr=", "{:.5f}".format(train_mrr),
-                      "train_mrr_ema=", "{:.5f}".format(train_shadow_mrr),  # exponential moving average
-                      "val_loss=", "{:.5f}".format(val_cost),
-                      "val_mrr=", "{:.5f}".format(val_mrr),
-                      "val_mrr_ema=", "{:.5f}".format(shadow_mrr),  # exponential moving average
-                      "time=", "{:.5f}".format(avg_time))
+                # print("Iter:", '%04d' % iter,
+                #       "train_loss=", "{:.5f}".format(train_cost),
+                #       "train_mrr=", "{:.5f}".format(train_mrr),
+                #       "train_mrr_ema=", "{:.5f}".format(train_shadow_mrr),  # exponential moving average
+                #       "val_loss=", "{:.5f}".format(val_cost),
+                #       "val_mrr=", "{:.5f}".format(val_mrr),
+                #       "val_mrr_ema=", "{:.5f}".format(shadow_mrr),  # exponential moving average
+                #       "time=", "{:.5f}".format(avg_time))
 
             iter += 1
             total_steps += 1
-
+            logging.info('Epochs: %04d, Max epochs: %04d, total_steps: %04d, '
+                         'max_total_steps: %04d' % (epoch, FLAGS.epochs, total_steps, FLAGS.max_total_steps))
             if total_steps > FLAGS.max_total_steps:
                 break
-
         if total_steps > FLAGS.max_total_steps:
             break
-        print('Time for one epoch training: %f' % time.time() - tEpoch)
+        print('Time for one epoch training: %f' % (time.time() - tEpoch))
     print("Optimization Finished!")
     if FLAGS.save_embeddings:
         sess.run(val_adj_info.op)

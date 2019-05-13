@@ -11,14 +11,14 @@ from decoder.models import HGCNDecoder
 from gcn.models import GCN
 
 
-
 class DecoderGCNLayer(object):
     def __init__(self, bipartite_graph_data_loader, args, device, rank):
         """For decoder layer, we can define any output dimension from GCN layer"""
         self.rank = rank
         u_attr_dimensions = bipartite_graph_data_loader.get_u_attr_dimensions()
         v_attr_dimensions = bipartite_graph_data_loader.get_v_attr_dimensions()
-        decoder_hidden_dim = args.dis_hidden
+        coder_hidfeat = args.coder_hidfeat
+        latent_hidfeat = args.latent_hidfeat
         epochs = args.epochs
         learning_rate = args.lr
         weight_decay = args.weight_decay
@@ -30,14 +30,14 @@ class DecoderGCNLayer(object):
         self.gcn_merge = GCN(v_attr_dimensions, gcn_output_dim).to(device)
         self.gcn_opposite = GCN(u_attr_dimensions, gcn_output_dim).to(device)
 
-        self.decoder_explicit = HGCNDecoder(self.gcn_explicit, gcn_output_dim, u_attr_dimensions, decoder_hidden_dim,
-                                            learning_rate, weight_decay, dropout, device)
-        self.decoder_implicit = HGCNDecoder(self.gcn_implicit, gcn_output_dim, v_attr_dimensions, decoder_hidden_dim,
-                                            learning_rate, weight_decay, dropout, device)
-        self.decoder_merge = HGCNDecoder(self.gcn_merge, gcn_output_dim, u_attr_dimensions, decoder_hidden_dim,
-                                         learning_rate, weight_decay, dropout, device)
-        self.decoder_opposite = HGCNDecoder(self.gcn_opposite, gcn_output_dim, v_attr_dimensions, decoder_hidden_dim,
-                                            learning_rate, weight_decay, dropout, device)
+        self.decoder_explicit = HGCNDecoder(self.gcn_explicit, gcn_output_dim, u_attr_dimensions, coder_hidfeat,
+                                            latent_hidfeat, learning_rate, weight_decay, dropout, device)
+        self.decoder_implicit = HGCNDecoder(self.gcn_implicit, gcn_output_dim, v_attr_dimensions, coder_hidfeat,
+                                            latent_hidfeat, learning_rate, weight_decay, dropout, device)
+        self.decoder_merge = HGCNDecoder(self.gcn_merge, gcn_output_dim, u_attr_dimensions, coder_hidfeat,
+                                         latent_hidfeat, learning_rate, weight_decay, dropout, device)
+        self.decoder_opposite = HGCNDecoder(self.gcn_opposite, gcn_output_dim, v_attr_dimensions, coder_hidfeat,
+                                            latent_hidfeat, learning_rate, weight_decay, dropout, device)
 
         self.bipartite_graph_data_loader = bipartite_graph_data_loader
         self.batch_size = bipartite_graph_data_loader.batch_size
@@ -63,6 +63,7 @@ class DecoderGCNLayer(object):
         return torch.sparse.FloatTensor(indices, values, shape)
 
     print('adversarial learning starts')
+
     def relation_learning(self):
         # explicit
         # explicit training
