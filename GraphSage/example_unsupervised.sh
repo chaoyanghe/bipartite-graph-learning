@@ -10,6 +10,7 @@ python -m graphsage.unsupervised_train \
 --max_total_steps 100000000 \
 --validate_iter 5 \
 --epochs 10 \
+--learning_rate 0.0001 \
 --dropout 0.0 \
 --weight_decay 0.5 \
 --samples_1 25 \
