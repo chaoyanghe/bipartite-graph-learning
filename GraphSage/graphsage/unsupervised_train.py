@@ -351,6 +351,8 @@ def train(train_data, test_data=None):
                              'val_mrr=%04f, val_mrr_ema=%04f, time=%04f' % (
                                  iter, train_cost, train_mrr, train_shadow_mrr,
                                  val_cost, val_mrr, shadow_mrr, avg_time))
+                logging.info('Epochs: %04d, Max epochs: %04d, total_steps: %04d, '
+                             'max_total_steps: %04d' % (epoch, FLAGS.epochs, total_steps, FLAGS.max_total_steps))
                 # print("Iter:", '%04d' % iter,
                 #       "train_loss=", "{:.5f}".format(train_cost),
                 #       "train_mrr=", "{:.5f}".format(train_mrr),
@@ -362,8 +364,6 @@ def train(train_data, test_data=None):
 
             iter += 1
             total_steps += 1
-            logging.info('Epochs: %04d, Max epochs: %04d, total_steps: %04d, '
-                         'max_total_steps: %04d' % (epoch, FLAGS.epochs, total_steps, FLAGS.max_total_steps))
             if total_steps > FLAGS.max_total_steps:
                 break
         if total_steps > FLAGS.max_total_steps:
@@ -424,9 +424,9 @@ def train(train_data, test_data=None):
                     test_steps += 1
             train_time = time.time() - start_time
             save_val_embeddings(sess, model, minibatch, FLAGS.validate_batch_size, log_dir(), mod="-test")
-            print("Total time: ", train_time + walk_time)
-            print("Walk time: ", walk_time)
-            print("Train time: ", train_time)
+            logging.info('Walk time: %04f' % walk_time)
+            logging.info('Train time: %04f' % train_time)
+            logging.info('Total time: %04f' % (train_time + walk_time))
         logging.info('############ Embedding data saved #############')
 
 

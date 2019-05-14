@@ -36,8 +36,8 @@ def parse_args():
                         help='process ID for MPI Simple AutoML')
     parser.add_argument('--coder_hidfeat', type=int, default=CODER_HIDDEN_DIMENSIONS,
                         help='Number of hidden units for encoder / decoder in VAE')
-    parser.add_argument('--latent_hidfeat', type=int, default=LATENT_DIMENSIONS,
-                        help='Number of latent units for latent representation in VAE')
+    # parser.add_argument('--latent_hidfeat', type=int, default=LATENT_DIMENSIONS,
+    #                     help='Number of latent units for latent representation in VAE')
 
     return parser.parse_args()
 

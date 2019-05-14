@@ -11,7 +11,7 @@ VALIDATE_ITER = 5  # validate the model every # iterations
 DROPOUT = 0.5
 GCN_OUTPUT_DIM = 10
 CODER_HIDDEN_DIMENSIONS = 10
-LATENT_DIMENSIONS = 8
+LATENT_DIMENSIONS = 8  # must be the same as the opposite set
 
 """Parameters in writing and loading data to / from files."""
 TRAINING_LOSS_PATH = 'metrics/experiments_results/decoder_training_loss.csv'

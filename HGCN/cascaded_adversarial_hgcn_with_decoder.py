@@ -18,8 +18,7 @@ class DecoderGCNLayer(object):
         u_attr_dimensions = bipartite_graph_data_loader.get_u_attr_dimensions()
         v_attr_dimensions = bipartite_graph_data_loader.get_v_attr_dimensions()
         coder_hidfeat = args.coder_hidfeat
-        latent_hidfeat = args.latent_hidfeat
-        epochs = args.epochs
+        # latent_hidfeat = args.latent_hidfeat
         learning_rate = args.lr
         weight_decay = args.weight_decay
         dropout = args.dropout
@@ -31,18 +30,18 @@ class DecoderGCNLayer(object):
         self.gcn_opposite = GCN(u_attr_dimensions, gcn_output_dim).to(device)
 
         self.decoder_explicit = HGCNDecoder(self.gcn_explicit, gcn_output_dim, u_attr_dimensions, coder_hidfeat,
-                                            latent_hidfeat, learning_rate, weight_decay, dropout, device)
+                                            learning_rate, weight_decay, dropout, device)
         self.decoder_implicit = HGCNDecoder(self.gcn_implicit, gcn_output_dim, v_attr_dimensions, coder_hidfeat,
-                                            latent_hidfeat, learning_rate, weight_decay, dropout, device)
+                                            learning_rate, weight_decay, dropout, device)
         self.decoder_merge = HGCNDecoder(self.gcn_merge, gcn_output_dim, u_attr_dimensions, coder_hidfeat,
-                                         latent_hidfeat, learning_rate, weight_decay, dropout, device)
+                                         learning_rate, weight_decay, dropout, device)
         self.decoder_opposite = HGCNDecoder(self.gcn_opposite, gcn_output_dim, v_attr_dimensions, coder_hidfeat,
-                                            latent_hidfeat, learning_rate, weight_decay, dropout, device)
+                                            learning_rate, weight_decay, dropout, device)
 
         self.bipartite_graph_data_loader = bipartite_graph_data_loader
         self.batch_size = bipartite_graph_data_loader.batch_size
         self.device = device
-        self.epochs = epochs
+        self.epochs = args.epochs
 
         self.batch_num_u = bipartite_graph_data_loader.get_batch_num_u()
         self.batch_num_v = bipartite_graph_data_loader.get_batch_num_v()

@@ -46,14 +46,14 @@ def _weights_init(m):
 
 
 class HGCNDecoder(nn.Module):
-    def __init__(self, netG, infeat, outfeat, coder_hidfeat, latent_hidfeat, learning_rate, weight_decay, dropout,
+    def __init__(self, netG, infeat, outfeat, coder_hidfeat, learning_rate, weight_decay, dropout,
                  device):
         super(HGCNDecoder, self).__init__()
-        self.encoder = Encoder(infeat, coder_hidfeat, latent_hidfeat, dropout).to(device)
+        self.encoder = Encoder(infeat, coder_hidfeat, outfeat, dropout).to(device)
         # These two layers are to generate the mean and standard from the hidden output from encoder
-        self.dense_mean = nn.Linear(latent_hidfeat, latent_hidfeat).to(device)
-        self.dense_stddev = nn.Linear(latent_hidfeat, latent_hidfeat).to(device)
-        self.decoder = Decoder(latent_hidfeat, coder_hidfeat, outfeat, dropout).to(device)
+        self.dense_mean = nn.Linear(outfeat, outfeat).to(device)
+        self.dense_stddev = nn.Linear(outfeat, outfeat).to(device)
+        self.decoder = Decoder(outfeat, coder_hidfeat, outfeat, dropout).to(device)
         self.encoder.apply(_weights_init)
         self.decoder.apply(_weights_init)
         self.netG = netG
@@ -103,6 +103,11 @@ class HGCNDecoder(nn.Module):
         logging.info("Step: %s, Epoch: %s, Iterations: %s, loss: %s" % (
             step, epoch, iter, loss.item()))
 
+    # extract the latent vector for input
+    def forward(self, input):
+        hidden_vec = self.encoder(input)
+        latent_vec = self._sample_latent(hidden_vec)
+        return latent_vec
 # class HGCNDecoder(object):
 #     def __init__(self, netG, infeat, outfeat, hidfeat, learning_rate, weight_decay, dropout, device):
 #         self.netD = Decoder(infeat, hidfeat, outfeat, dropout).to(device)

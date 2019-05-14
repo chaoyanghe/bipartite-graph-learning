@@ -17,15 +17,18 @@
 # for local
 # s
 rm -rf ./out
+rm -rf HGCN.log_embedding
+
 python3 ./HGCN/hgcn_main.py \
 --model decoder_gcn \
 --gpu False \
---batch_size 500 \
---epochs 1 \
+--epochs 3 \
+--batch_size 300 \
 --lr 0.0003 \
 --weight_decay 0.0005 \
---dis_hidden 32 \
 --dropout 0.5 \
---gcn_output_dim 10
+--gcn_output_dim 10 \
+--coder_hidfeat 10
+
 
 python3 ./HGCN/classification.py
