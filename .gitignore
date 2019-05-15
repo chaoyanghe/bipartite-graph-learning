@@ -9,6 +9,7 @@ __pycache__
 HGCN/gcn/__pycache__/models.cpython-36.pyc
 HGCN/gcn/__pycache__/layers.cpython-36.pyc
 HGCN/out/*
+./out/*
 GraphSage/example_data/bipartite-class_map.json
 GraphSage/example_data/bipartite-G.json
 GraphSage/example_data/bipartite-id_map.json
