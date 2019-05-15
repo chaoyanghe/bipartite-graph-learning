@@ -27,8 +27,9 @@ python3 ./HGCN/hgcn_main.py \
 --lr 0.0003 \
 --weight_decay 0.0005 \
 --dropout 0.5 \
---gcn_output_dim 128 \
---coder_hidfeat 64
+--gcn_output_dim 24 \
+--encoder_hidfeat 16 \
+--decoder_hidfeat 8
 
 
 python3 ./HGCN/classification.py

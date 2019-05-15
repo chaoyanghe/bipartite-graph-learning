@@ -10,8 +10,9 @@ HIDDEN_DIMENSIONS = 10  # hidden layer units for discriminator in GAN model
 VALIDATE_ITER = 5  # validate the model every # iterations
 DROPOUT = 0.5
 GCN_OUTPUT_DIM = 10
-CODER_HIDDEN_DIMENSIONS = 10
+ENCODER_HIDDEN_DIMENSIONS = 10
 LATENT_DIMENSIONS = 8  # must be the same as the opposite set
+DECODER_HIDDEN_DIMENSIONS = 10
 
 """Parameters in writing and loading data to / from files."""
 TRAINING_LOSS_PATH = 'metrics/experiments_results/decoder_training_loss.csv'

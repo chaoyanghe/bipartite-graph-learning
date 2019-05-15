@@ -22,6 +22,6 @@ python -m graphsage.unsupervised_train \
 --save_embeddings True \
 --base_log_dir ./log_embedding \
 --walk_len 5 \
---n_walks 5
+--n_walks 50
 
 python ./classification.py

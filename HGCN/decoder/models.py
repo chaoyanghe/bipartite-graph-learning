@@ -46,14 +46,13 @@ def _weights_init(m):
 
 
 class HGCNDecoder(nn.Module):
-    def __init__(self, netG, infeat, outfeat, coder_hidfeat, learning_rate, weight_decay, dropout,
-                 device):
+    def __init__(self, netG, infeat, outfeat, encoder_hidfeat, decoder_hidfeat, learning_rate, weight_decay, dropout, device):
         super(HGCNDecoder, self).__init__()
-        self.encoder = Encoder(infeat, coder_hidfeat, outfeat, dropout).to(device)
+        self.encoder = Encoder(infeat, encoder_hidfeat, outfeat, dropout).to(device)
         # These two layers are to generate the mean and standard from the hidden output from encoder
         self.dense_mean = nn.Linear(outfeat, outfeat).to(device)
         self.dense_stddev = nn.Linear(outfeat, outfeat).to(device)
-        self.decoder = Decoder(outfeat, coder_hidfeat, outfeat, dropout).to(device)
+        self.decoder = Decoder(outfeat, decoder_hidfeat, outfeat, dropout).to(device)
         self.encoder.apply(_weights_init)
         self.decoder.apply(_weights_init)
         self.netG = netG
