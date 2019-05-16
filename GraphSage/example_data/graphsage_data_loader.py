@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 import random
+import scipy.sparse as sp
 from networkx.algorithms.bipartite import biadjacency_matrix
 from sklearn import preprocessing
 
@@ -562,9 +563,6 @@ class GraphSageDataLoader:
             json.dump(self.label, outfile3)
 
     def get_id_map_node(self, write_to_file=False):
-        """
-        :return: dictionary
-        """
         id_map_node = self.id_map_u.copy()
         id_map_node.update(self.id_map_v)
         id_map_node['u_num'] = len(self.u_list)
@@ -572,7 +570,41 @@ class GraphSageDataLoader:
         if write_to_file:
             with open('./bipartite-id_map_node.json', 'w') as outfile:
                 json.dump(id_map_node, outfile)
-        return id_map_node
+            outfile.close()
+
+
+class GraphSageSingleGraphDataLoader:
+    def __init__(self, u_adj, u_list, u_attr, node_true):
+        self.u_adj = u_adj
+        self.u_list = u_list
+        self.u_attr = u_attr
+        self.node_true = node_true
+
+        self.adj = self.__BipartiteToSingle(u_adj)  # the adjacent connection only of set U
+
+    def get_id_map_node(self):
+        id_map_node = dict([(i, self.u_list[i]) for i in range(len(u_list))])
+        id_map_node['u_num'] = len(self.u_list)
+        with open('./bipartite-id_map_node.json', 'w') as outfile:
+            json.dump(id_map_node, outfile)
+        outfile.close()
+
+    def node_form(self):
+
+
+
+    def __BipartiteToSingle(self, graph):
+        """
+        transfer the bipartite graph to single graph
+        :param graph: sparse csr_matrix
+        :return: sparse adjacent csr_matrix
+        """
+        single_graph = graph.dot(graph.T)
+        single_graph[single_graph != 0] = 1
+        single_graph -= sp.identity(graph.shape[0])
+        return single_graph
+
+
 
 
 if __name__ == "__main__":
@@ -599,6 +631,7 @@ if __name__ == "__main__":
     u_list = bipartite_graph_data_loader.get_u_list()
     v_list = bipartite_graph_data_loader.get_v_list()
     edge_list = bipartite_graph_data_loader.get_edge_list()
+    u_adj = bipartite_graph_data_loader.get_u_adj()  # csr_matrix
 
     with open(NODE_TRUE, 'r') as file:
         node_true = file.readline()
@@ -613,22 +646,29 @@ if __name__ == "__main__":
     # edge_list = [(1, 1), (1, 3), (1, 6), (3, 3), (5, 1), (5, 6), (7, 8), (9, 6)]
     # node_true = [1, 5, 9]
 
-    logging.info('Start graphsage data loader')
-    graphsage_loader = GraphSageDataLoader(u_list, v_list, u_attr, v_attr, edge_list, node_true)
+    # define whether to use the one hop graph or two hop graph
+    bipartite_graph = False
+    if bipartite_graph:
+        logging.info('Start graphsage data loader')
+        graphsage_loader = GraphSageDataLoader(u_list, v_list, u_attr, v_attr, edge_list, node_true)
 
-    logging.info('node id map')
-    graphsage_loader.node_id_map()
+        logging.info('node id map')
+        graphsage_loader.node_id_map()
 
-    logging.info('nodes form')
-    graphsage_loader.nodes_form()
+        logging.info('nodes form')
+        graphsage_loader.nodes_form()
 
-    logging.info('link form')
-    graphsage_loader.link_form()
-    graphsage_loader.class_form()
+        logging.info('link form')
+        graphsage_loader.link_form()
+        graphsage_loader.class_form()
 
-    logging.info('writing data to file')
-    graphsage_loader.write_to_json()
-    graphsage_loader.get_id_map_node(True)
+        logging.info('writing data to file')
+        graphsage_loader.write_to_json()
+        graphsage_loader.get_id_map_node(True)
+    else:
+        logging.info('Start graphsage two hop graph loader')
+        graphsage_loader = GraphSageSingleGraphDataLoader(u_adj, u_list, u_attr, node_true)
+
 
     # logging.info('######### U adjacent matrix ##########\n' + str(u_adj))
     # logging.info('######### V adjacent matrix ##########\n' + str(v_adj))

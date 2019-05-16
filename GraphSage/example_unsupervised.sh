@@ -3,6 +3,7 @@
 rm -rf ./log_embedding/*
 rm -rf ./out/*
 
+
 python -m graphsage.unsupervised_train \
 --train_prefix ./example_data/bipartite \
 --identity_dim 16 \
