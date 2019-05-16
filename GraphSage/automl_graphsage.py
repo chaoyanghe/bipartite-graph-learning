@@ -17,7 +17,7 @@ size = comm.Get_size()
 if __name__ == "__main__":
     setproctitle.setproctitle("HGCN:" + str(rank))
 
-    logging.basicConfig(filename="./HGCN.log_embedding",
+    logging.basicConfig(filename="./Graphsage.log_embedding",
                         level=logging.INFO,
                         format=str(rank) + ' - %(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')
@@ -50,7 +50,7 @@ if __name__ == "__main__":
     (batch_size, epochs, lr, weight_decay, first_dim, dropout) = paras[rank]
 
     print("start hgcn_cmd")
-    hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/GraphSage/graphsage/unsupervised_train" \
+    hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/GraphSage/graphsage/unsupervised_train.py" \
                "--model graphsage --batch_size %d --epochs %d --learning_rate %f --weight_decay %f --dim_1 %d " \
                "--dropout %f --rank %d" % (
                    batch_size,
