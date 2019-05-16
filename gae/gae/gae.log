@@ -1,0 +1,22 @@
+Thu, 16 May 2019 13:50:49 input_data.py[line:88] INFO ######### Data loaded ###########
+Thu, 16 May 2019 13:50:49 train.py[line:60] INFO preprocessing data
+Thu, 16 May 2019 13:50:49 train.py[line:63] INFO done preprocessing data
+Thu, 16 May 2019 13:50:49 train.py[line:77] INFO create model
+Thu, 16 May 2019 13:50:49 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/sourcecode/gae/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Thu, 16 May 2019 13:50:49 deprecation.py[line:506] WARNING From /Users/apple/Documents/P4_Graph/sourcecode/gae/gae-github/gae/layers.py:79: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Thu, 16 May 2019 13:50:49 model.py[line:116] INFO Finish calculating the latent vector!!!!!!!!!
+Thu, 16 May 2019 13:50:49 model.py[line:89] INFO GCNVAE model initialized!!!!!!!!
+Thu, 16 May 2019 13:50:49 train.py[line:87] INFO optimizer
+Thu, 16 May 2019 13:50:49 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/sourcecode/gae/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Thu, 16 May 2019 13:50:50 train.py[line:103] INFO initialize session
+Thu, 16 May 2019 13:50:50 train.py[line:171] INFO train model
+Thu, 16 May 2019 13:50:50 train.py[line:175] INFO construct dictionary
+Thu, 16 May 2019 13:50:50 train.py[line:178] INFO update
+Thu, 16 May 2019 13:50:50 train.py[line:181] INFO run the model
+Thu, 16 May 2019 13:50:50 train.py[line:184] INFO average loss

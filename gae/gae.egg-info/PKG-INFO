@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: gae
+Version: 0.0.1
+Summary: Implementation of (Variational) Graph Auto-Encoders in Tensorflow
+Home-page: https://tkipf.github.io
+Author: Thomas Kipf
+Author-email: thomas.kipf@gmail.com
+License: MIT
+Download-URL: https://github.com/tkipf/gae
+Description: UNKNOWN
+Platform: UNKNOWN
+Provides-Extra: visualization
