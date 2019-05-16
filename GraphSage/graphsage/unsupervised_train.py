@@ -143,7 +143,7 @@ def __save_embedding_for_task(embedding, node_list):
     with open(id_node_map_file, 'r') as file:
         id_node_map = json.load(file)  # (key: str, value: int)
     file.close()
-    u_num = id_node_map['u_num']
+    u_num = id_node_map['u_num']  # total number of nodes in set U
     logging.info('Number of nodes in set U: ' + str(u_num))
     output = ''
     node_list_file = ''
