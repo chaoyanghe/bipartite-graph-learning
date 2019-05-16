@@ -1,8 +1,0 @@
-numpy
-tensorflow
-networkx
-scikit-learn
-scipy
-
-[visualization]
-matplotlib
