@@ -84,6 +84,7 @@ if __name__ == '__main__':
             v_idx_set.add(idx)
 
     assert len(u_idx_set & v_idx_set) == 0
+    assert ((len(u_idx_set) + len(v_idx_set)) == NUM_PAPER)
 
     print(raw_class_number_stat)
     assert len(raw_paper_id_to_idx_dict) == NUM_PAPER
@@ -106,7 +107,7 @@ if __name__ == '__main__':
         vertex0_idx = raw_paper_id_to_idx_dict.get(matches.group(1), None)
         vertex1_idx = raw_paper_id_to_idx_dict.get(matches.group(2), None)
 
-        # remove vertexes that doesnt appear in the content file
+        # record vertexes that doesnt appear in the content file
         if vertex0_idx is None:
             raw_paper_id_no_feat_set.add(matches.group(1))
             continue
