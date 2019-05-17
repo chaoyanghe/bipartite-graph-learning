@@ -49,18 +49,20 @@ dataset_str = FLAGS.dataset
 adj, features, u_list = load_data_for_tencent(FLAGS, 'cpu')  # u_list is the hash table
 
 # Store original adjacency matrix (without diagonal entries) for later
-adj_orig = adj
-adj_orig = adj_orig - sp.dia_matrix((adj_orig.diagonal()[np.newaxis, :], [0]), shape=adj_orig.shape)
-adj_orig.eliminate_zeros()
+# adj_orig = adj
+# adj_orig = adj_orig - sp.dia_matrix((adj_orig.diagonal()[np.newaxis, :], [0]), shape=adj_orig.shape)
+# adj_orig.eliminate_zeros()
 
 adj_train = adj
 
 if FLAGS.features == 0:
     features = sp.identity(features.shape[0])  # featureless
+
 logging.info('preprocessing data')
 # Some preprocessing
 adj_norm = preprocess_graph(adj)
 logging.info('done preprocessing data')
+
 # Define placeholders
 placeholders = {
     'features': tf.sparse_placeholder(tf.float32),
@@ -71,10 +73,13 @@ placeholders = {
 
 num_nodes = adj.shape[0]
 
+# feature statistics
 features = sparse_to_tuple(features.tocoo())
 num_features = features[2][1]
 features_nonzero = features[1].shape[0]
+
 logging.info('create model')
+
 # Create model
 model = None
 if model_str == 'gcn_ae':
@@ -131,39 +136,39 @@ def get_emb(vae=True):
     file1.close()
     file2.close()
 
+#
+# def get_roc_score(edges_pos, edges_neg, emb=None):
+#     if emb is None:
+#         feed_dict.update({placeholders['dropout']: 0})
+#         emb = sess.run(model.z_mean, feed_dict=feed_dict)
+#
+#     def sigmoid(x):
+#         return 1 / (1 + np.exp(-x))
+#
+#     # Predict on test set of edges
+#     adj_rec = np.dot(emb, emb.T)
+#     preds = []
+#     pos = []
+#     for e in edges_pos:
+#         preds.append(sigmoid(adj_rec[e[0], e[1]]))
+#         pos.append(adj_orig[e[0], e[1]])
+#
+#     preds_neg = []
+#     neg = []
+#     for e in edges_neg:
+#         preds_neg.append(sigmoid(adj_rec[e[0], e[1]]))
+#         neg.append(adj_orig[e[0], e[1]])
+#
+#     preds_all = np.hstack([preds, preds_neg])
+#     labels_all = np.hstack([np.ones(len(preds)), np.zeros(len(preds_neg))])
+#     roc_score = roc_auc_score(labels_all, preds_all)
+#     ap_score = average_precision_score(labels_all, preds_all)
+#
+#     return roc_score, ap_score
+#
 
-def get_roc_score(edges_pos, edges_neg, emb=None):
-    if emb is None:
-        feed_dict.update({placeholders['dropout']: 0})
-        emb = sess.run(model.z_mean, feed_dict=feed_dict)
-
-    def sigmoid(x):
-        return 1 / (1 + np.exp(-x))
-
-    # Predict on test set of edges
-    adj_rec = np.dot(emb, emb.T)
-    preds = []
-    pos = []
-    for e in edges_pos:
-        preds.append(sigmoid(adj_rec[e[0], e[1]]))
-        pos.append(adj_orig[e[0], e[1]])
-
-    preds_neg = []
-    neg = []
-    for e in edges_neg:
-        preds_neg.append(sigmoid(adj_rec[e[0], e[1]]))
-        neg.append(adj_orig[e[0], e[1]])
-
-    preds_all = np.hstack([preds, preds_neg])
-    labels_all = np.hstack([np.ones(len(preds)), np.zeros(len(preds_neg))])
-    roc_score = roc_auc_score(labels_all, preds_all)
-    ap_score = average_precision_score(labels_all, preds_all)
-
-    return roc_score, ap_score
-
-
-cost_val = []
-acc_val = []
+# cost_val = []
+# acc_val = []
 val_roc_score = []
 
 adj_label = adj_train + sp.eye(adj_train.shape[0])
