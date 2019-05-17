@@ -624,16 +624,17 @@ class GraphSageSingleGraphDataLoader:
         self.graph['nodes'] = nodes
 
     def link_form(self):
+        graph_network = nx.from_scipy_sparse_matrix(self.adj)
+        edges = list(nx.to_edgelist(graph_network))  # (source, target, weight)
         links = []
-        for i in range(len(self.u_list)):
+        for i in range(len(edges)):
+            s, t = edges[i][:2]
             temp_link = {}
-            targets = self.adj[i].indices
-            for t in range(len(targets)):
-                temp_link['source'] = self.u_list[i]
-                temp_link['target'] = int(targets[t])
-                temp_link['test_removed'] = False
-                temp_link['train_removed'] = False
-                links.append(temp_link)
+            temp_link['source'] = int(s)
+            temp_link['target'] = int(t)
+            temp_link['test_removed'] = False
+            temp_link['train_removed'] = False
+            links.append(temp_link)
         self.graph['links'] = links
 
     def class_form(self):
@@ -705,11 +706,12 @@ if __name__ == "__main__":
     node_true = node_true.strip().split('\n')
     node_true = list(map(lambda x: int(x), node_true))
 
-    # test the code
+    # # test the code
     # u_list = [1, 3, 5, 7, 9]
     # v_list = [1, 3, 6, 8]
     # u_attr = np.random.rand(5, 4).tolist()
     # v_attr = np.random.rand(4, 3).tolist()
+    # u_adj = sp.csr_matrix([[1, 1, 1, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [0, 0, 1, 0]])
     # edge_list = [(1, 1), (1, 3), (1, 6), (3, 3), (5, 1), (5, 6), (7, 8), (9, 6)]
     # node_true = [1, 5, 9]
 
