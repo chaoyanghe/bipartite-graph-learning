@@ -687,39 +687,39 @@ if __name__ == "__main__":
                         datefmt='%Y-%m-%d %A %H:%M:%S',
                         level=logging.INFO)
 
-    # load the bipartite graph data
-    NODE_LIST_PATH = "../../data/Tencent-QQ/node_list"
-    NODE_ATTR_PATH = "../../data/Tencent-QQ/node_attr"
-    NODE_LABEL_PATH = "../../data/Tencent-QQ/node_true"
-    EDGE_LIST_PATH = "../../data/Tencent-QQ/edgelist"
-    GROUP_LIST_PATH = "../../data/Tencent-QQ/group_list"
-    GROUP_ATTR_PATH = "../../data/Tencent-QQ/group_attr"
-    NODE_TRUE = "../../data/Tencent-QQ/node_true"
-    bipartite_graph_data_loader = BipartiteGraphDataLoader(100, NODE_LIST_PATH, NODE_ATTR_PATH,
-                                                           NODE_LABEL_PATH,
-                                                           EDGE_LIST_PATH,
-                                                           GROUP_LIST_PATH, GROUP_ATTR_PATH)
-    bipartite_graph_data_loader.load()
-    u_attr = bipartite_graph_data_loader.get_u_attr_array()
-    v_attr = bipartite_graph_data_loader.get_v_attr_array()
-    u_list = bipartite_graph_data_loader.get_u_list()
-    v_list = bipartite_graph_data_loader.get_v_list()
-    edge_list = bipartite_graph_data_loader.get_edge_list()
-    u_adj = bipartite_graph_data_loader.get_u_adj()  # csr_matrix
+    # # load the bipartite graph data
+    # NODE_LIST_PATH = "../../data/Tencent-QQ/node_list"
+    # NODE_ATTR_PATH = "../../data/Tencent-QQ/node_attr"
+    # NODE_LABEL_PATH = "../../data/Tencent-QQ/node_true"
+    # EDGE_LIST_PATH = "../../data/Tencent-QQ/edgelist"
+    # GROUP_LIST_PATH = "../../data/Tencent-QQ/group_list"
+    # GROUP_ATTR_PATH = "../../data/Tencent-QQ/group_attr"
+    # NODE_TRUE = "../../data/Tencent-QQ/node_true"
+    # bipartite_graph_data_loader = BipartiteGraphDataLoader(100, NODE_LIST_PATH, NODE_ATTR_PATH,
+    #                                                        NODE_LABEL_PATH,
+    #                                                        EDGE_LIST_PATH,
+    #                                                        GROUP_LIST_PATH, GROUP_ATTR_PATH)
+    # bipartite_graph_data_loader.load()
+    # u_attr = bipartite_graph_data_loader.get_u_attr_array()
+    # v_attr = bipartite_graph_data_loader.get_v_attr_array()
+    # u_list = bipartite_graph_data_loader.get_u_list()
+    # v_list = bipartite_graph_data_loader.get_v_list()
+    # edge_list = bipartite_graph_data_loader.get_edge_list()
+    # u_adj = bipartite_graph_data_loader.get_u_adj()  # csr_matrix
+    #
+    # with open(NODE_TRUE, 'r') as file:
+    #     node_true = file.readline()
+    # node_true = node_true.strip().split('\n')
+    # node_true = list(map(lambda x: int(x), node_true))
 
-    with open(NODE_TRUE, 'r') as file:
-        node_true = file.readline()
-    node_true = node_true.strip().split('\n')
-    node_true = list(map(lambda x: int(x), node_true))
-
-    # # test the code
-    # u_list = [1, 3, 5, 7, 9]
-    # v_list = [1, 3, 6, 8]
-    # u_attr = np.random.rand(5, 4).tolist()
-    # v_attr = np.random.rand(4, 3).tolist()
-    # u_adj = sp.csr_matrix([[1, 1, 1, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [0, 0, 1, 0]])
-    # edge_list = [(1, 1), (1, 3), (1, 6), (3, 3), (5, 1), (5, 6), (7, 8), (9, 6)]
-    # node_true = [1, 5, 9]
+    # test the code
+    u_list = [1, 3, 5, 7, 9]
+    v_list = [1, 3, 6, 8]
+    u_attr = np.random.rand(5, 4).tolist()
+    v_attr = np.random.rand(4, 3).tolist()
+    u_adj = sp.csr_matrix([[1, 1, 1, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [0, 0, 1, 0]])
+    edge_list = [(1, 1), (1, 3), (1, 6), (3, 3), (5, 1), (5, 6), (7, 8), (9, 6)]
+    node_true = [1, 5, 9]
 
     # define whether to use the one hop graph or two hop graph
     bipartite_graph = False
