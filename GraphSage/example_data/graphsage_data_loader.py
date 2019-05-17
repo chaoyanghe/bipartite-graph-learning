@@ -602,6 +602,7 @@ class GraphSageSingleGraphDataLoader:
         self.feature_form()
         logging.info('Write to Json')
         self.write_to_json()
+        logging.info('Done written')
 
     def get_id_map_node(self):
         self.id_map_node = dict([(i, self.u_list[i]) for i in range(len(u_list))])
