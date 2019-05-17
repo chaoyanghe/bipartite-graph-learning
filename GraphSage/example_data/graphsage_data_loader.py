@@ -623,9 +623,15 @@ class GraphSageSingleGraphDataLoader:
             nodes.append(temp_node)
         self.graph['nodes'] = nodes
 
+    def __sparse_to_tuple(self, sparse_mx):
+        if not sp.isspmatrix_coo(sparse_mx):
+            sparse_mx = sparse_mx.tocoo()
+        coords = np.vstack((sparse_mx.row, sparse_mx.col)).transpose()
+        return coords
+
     def link_form(self):
-        graph_network = nx.from_scipy_sparse_matrix(self.adj)
-        edges = list(nx.to_edgelist(graph_network))  # (source, target, weight)
+        triu = sp.triu(self.adj, 0)
+        edges = self.__sparse_to_tuple(triu)
         links = []
         for i in range(len(edges)):
             s, t = edges[i][:2]
