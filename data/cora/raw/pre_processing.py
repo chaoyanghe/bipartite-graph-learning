@@ -52,6 +52,7 @@ if __name__ == '__main__':
     # Parse content file
     #####
     raw_class_number_stat = defaultdict(int)
+    idx_to_raw_class_dict = {}
     raw_paper_id_to_idx_dict = {}
     u_idx_to_feature_vec_dict = {}
     v_idx_to_feature_vec_dict = {}
@@ -74,6 +75,7 @@ if __name__ == '__main__':
 
         # indexing raw paper ids
         idx = raw_paper_id_to_idx_dict.setdefault(raw_paper_id, len(raw_paper_id_to_idx_dict))
+        idx_to_raw_class_dict[idx] = raw_class
 
         # count number of raw groups
         raw_class_number_stat[matches.group(3)] += 1
@@ -144,9 +146,11 @@ if __name__ == '__main__':
                 raise Exception
 
             num_edges_to_delete += 1
-            print("{} Delete (raw id): {}->{}, (idx): {}->{}, (u/v): {}->{}".format(num_edges_to_delete,
+            print("{} Delete (raw id): {}->{}, (idx): {}->{}, (raw class): {}->{}, (u/v): {}->{}"
+                  .format(num_edges_to_delete,
                                                                                     matches.group(1), matches.group(2),
                                                                                     vertex0_idx, vertex1_idx,
+                          idx_to_raw_class_dict[vertex0_idx], idx_to_raw_class_dict[vertex1_idx],
                                                                                     vertex0_uv_group, vertex1_uv_group))
 
     print(raw_paper_id_no_feat_set)
