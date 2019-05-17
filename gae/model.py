@@ -111,7 +111,6 @@ class GCNModelVAE(Model):
                                           dropout=self.dropout,
                                           logging=self.logging)(self.hidden1)
 
-        # TODO: output the hidden vector z, which is the node embedding vector
         self.z = self.z_mean + tf.random_normal([self.n_samples, FLAGS.hidden2]) * tf.exp(self.z_log_std)
         logging.info('Finish calculating the latent vector!!!!!!!!!')
         self.reconstructions = InnerProductDecoder(input_dim=FLAGS.hidden2,
