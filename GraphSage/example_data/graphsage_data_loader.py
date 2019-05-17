@@ -579,19 +579,88 @@ class GraphSageSingleGraphDataLoader:
         self.u_list = u_list
         self.u_attr = u_attr
         self.node_true = node_true
+        self.id_map_node = {}
 
         self.adj = self.__BipartiteToSingle(u_adj)  # the adjacent connection only of set U
+        self.label = {}
+        self.graph = {}
+        self.graph['directed'] = False
+        self.graph['graph'] = {'name': 'bipartite graph'}
+        self.graph['multigraph'] = False
+
+    def data_loader(self):
+        logging.info('ID map node')
+        self.get_id_map_node()
+        logging.info('Nodes From')
+        self.nodes_form()
+        logging.info('Link Form')
+        self.link_form()
+        logging.info('Class Form')
+        self.class_form()
+        logging.info('Write to Json')
+        self.write_to_json()
 
     def get_id_map_node(self):
-        id_map_node = dict([(i, self.u_list[i]) for i in range(len(u_list))])
-        id_map_node['u_num'] = len(self.u_list)
+        self.id_map_node = dict([(i, self.u_list[i]) for i in range(len(u_list))])
+        self.id_map_node['u_num'] = len(self.u_list)
+
+    def nodes_form(self):
+        nodes = []
+        length = len(self.u_list)
+        for i in range(length):
+            temp_node = {}
+            temp_node['id'] = i
+            temp_node['test'] = False
+            temp_node['feature'] = self.u_attr[i]
+            if self.u_list[i] in self.node_true:
+                temp_node['label'] = [1, 0]
+            else:
+                temp_node['label'] = [0, 1]
+            if np.random.choice([0, 1], p=[0.2, 0.8]):
+                temp_node['val'] = False
+            else:
+                temp_node['val'] = True
+            nodes.append(temp_node)
+        self.graph['nodes'] = nodes
+
+    def link_form(self):
+        links = []
+        for i in range(len(self.u_list)):
+            temp_link = {}
+            targets = self.adj[i].indices
+            for t in range(len(targets)):
+                temp_link['source'] = self.u_list[i]
+                temp_link['target'] = int(targets[t])
+                temp_link['test_removed'] = False
+                temp_link['train_removed'] = False
+                links.append(temp_link)
+        self.graph['links'] = links
+
+    def class_form(self):
+        for i in range(len(self.u_list)):
+            if self.u_list[i] in self.node_true:
+                self.label[i] = [1, 0]
+            else:
+                self.label[i] = [0, 1]
+
+    def write_to_json(self):
+        with open('./bipartite-G.json', 'w') as outfile1:
+            json.dump(self.graph, outfile1)
+        outfile1.close()
+
+        length = len(self.u_list)
+        node_map_id = dict([(i, i) for i in range(length)])
+        with open('./bipartite-id_map.json', 'w') as outfile2:
+            json.dump(node_map_id, outfile2)
+        outfile2.close()
+
+        with open('./bipartite-class_map.json', 'w') as outfile3:
+            json.dump(self.label, outfile3)
+        outfile3.close()
+
         with open('./bipartite-id_map_node.json', 'w') as outfile:
-            json.dump(id_map_node, outfile)
+            json.dump(self.id_map_node, outfile)
         outfile.close()
-
-    def node_form(self):
-
-
 
     def __BipartiteToSingle(self, graph):
         """
@@ -603,8 +672,6 @@ class GraphSageSingleGraphDataLoader:
         single_graph[single_graph != 0] = 1
         single_graph -= sp.identity(graph.shape[0])
         return single_graph
-
-
 
 
 if __name__ == "__main__":
@@ -668,7 +735,7 @@ if __name__ == "__main__":
     else:
         logging.info('Start graphsage two hop graph loader')
         graphsage_loader = GraphSageSingleGraphDataLoader(u_adj, u_list, u_attr, node_true)
-
+        graphsage_loader.data_loader()
 
     # logging.info('######### U adjacent matrix ##########\n' + str(u_adj))
     # logging.info('######### V adjacent matrix ##########\n' + str(v_adj))
