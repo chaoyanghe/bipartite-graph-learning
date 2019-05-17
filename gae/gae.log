@@ -1,66 +1,10 @@
-Thu, 16 May 2019 16:12:37 bipartite_graph_data_loader.py[line:14] INFO BipartiteGraphDataLoader __init__().
-Thu, 16 May 2019 16:12:37 bipartite_graph_data_loader.py[line:21] INFO group_u_list_file_path = ./../data/Tencent-QQ/node_list
-Thu, 16 May 2019 16:12:37 bipartite_graph_data_loader.py[line:22] INFO group_u_attr_file_path = ./../data/Tencent-QQ/node_attr
-Thu, 16 May 2019 16:12:37 bipartite_graph_data_loader.py[line:23] INFO group_u_label_file_path = ./../data/Tencent-QQ/node_true
-Thu, 16 May 2019 16:12:37 bipartite_graph_data_loader.py[line:25] INFO edge_list_file_path = ./../data/Tencent-QQ/edgelist
-Thu, 16 May 2019 16:12:37 bipartite_graph_data_loader.py[line:27] INFO group_v_list_file_path = ./../data/Tencent-QQ/group_list
-Thu, 16 May 2019 16:12:37 bipartite_graph_data_loader.py[line:28] INFO group_v_attr_file_path = ./../data/Tencent-QQ/group_attr
-Thu, 16 May 2019 16:12:37 bipartite_graph_data_loader.py[line:29] INFO group_v_label_file_path = None
-Thu, 16 May 2019 16:12:37 bipartite_graph_data_loader.py[line:55] INFO BipartiteGraphDataLoader __init__(). END
-Thu, 16 May 2019 16:12:37 bipartite_graph_data_loader.py[line:73] INFO ##### generate_adjacent_matrix_feature_and_labels. START
-Thu, 16 May 2019 16:12:56 bipartite_graph_data_loader.py[line:170] INFO before merging with u_list, the len is = 1089436
-Thu, 16 May 2019 16:12:57 bipartite_graph_data_loader.py[line:178] INFO after merging with u_list, the len is = 1089436
-Thu, 16 May 2019 16:12:59 bipartite_graph_data_loader.py[line:248] INFO count_no_attribute = 89682
-Thu, 16 May 2019 16:12:59 bipartite_graph_data_loader.py[line:249] INFO count_10 = 124
-Thu, 16 May 2019 16:12:59 bipartite_graph_data_loader.py[line:250] INFO count_14 = 134
-Thu, 16 May 2019 16:12:59 bipartite_graph_data_loader.py[line:251] INFO count_15 = 18997
-Thu, 16 May 2019 16:12:59 bipartite_graph_data_loader.py[line:252] INFO count_16 = 30893
-Thu, 16 May 2019 16:12:59 bipartite_graph_data_loader.py[line:253] INFO count_17 = 40023
-Thu, 16 May 2019 16:12:59 bipartite_graph_data_loader.py[line:254] INFO count_more_than_17 = 0
-Thu, 16 May 2019 16:12:59 bipartite_graph_data_loader.py[line:255] INFO count_all = 179853
-Thu, 16 May 2019 16:12:59 bipartite_graph_data_loader.py[line:273] INFO before merging with v_list, the len is = 90047
-Thu, 16 May 2019 16:12:59 bipartite_graph_data_loader.py[line:281] INFO after merging with v_list, the len is = 90047
-Thu, 16 May 2019 16:13:02 bipartite_graph_data_loader.py[line:93] INFO raw edge_list len = 1979756
-Thu, 16 May 2019 16:13:02 bipartite_graph_data_loader.py[line:94] INFO edge_list len = 991734
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:295] INFO group U length = 619030
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:296] INFO group V length = 90044
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:100] INFO u_list len = 619030. [1, 139467, 253828, 358861, 461403, 338688, 262114, 758671, 855102, 951204, 1045871, 1140045, 1062918]
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:101] INFO v_list len = 90044. [0, 48809, 115451, 201816, 309872, 441355, 600161, 795107, 1017863, 1268422]
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:302] INFO before filter, the len is = 1089436
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:306] INFO after filter, the len is = 619030
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:302] INFO before filter, the len is = 90047
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:306] INFO after filter, the len is = 90044
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:310] INFO __generate_adjacent_matrix START
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:312] INFO u_node_list = 619030
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:313] INFO v_node_list = 90044
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:314] INFO edge_list = 991734
-Thu, 16 May 2019 16:13:03 bipartite_graph_data_loader.py[line:316] INFO start to load bipartite for u
-Thu, 16 May 2019 16:13:18 bipartite_graph_data_loader.py[line:326] INFO (619030, 90044)
-Thu, 16 May 2019 16:13:18 bipartite_graph_data_loader.py[line:329] INFO end to load bipartite for u
-Thu, 16 May 2019 16:13:18 bipartite_graph_data_loader.py[line:331] INFO start to load bipartite for u
-Thu, 16 May 2019 16:13:29 bipartite_graph_data_loader.py[line:341] INFO (90044, 619030)
-Thu, 16 May 2019 16:13:29 bipartite_graph_data_loader.py[line:344] INFO end to load bipartite for u
-Thu, 16 May 2019 16:13:30 bipartite_graph_data_loader.py[line:386] INFO u number: 619030
-Thu, 16 May 2019 16:13:30 bipartite_graph_data_loader.py[line:387] INFO u_adjacent_matrix: (619030, 90044)
-Thu, 16 May 2019 16:13:30 bipartite_graph_data_loader.py[line:390] INFO v number: 90044
-Thu, 16 May 2019 16:13:30 bipartite_graph_data_loader.py[line:391] INFO v_adjacent_matrix: (90044, 619030)
-Thu, 16 May 2019 16:13:30 bipartite_graph_data_loader.py[line:394] INFO batch_num_u = 1210
-Thu, 16 May 2019 16:13:30 bipartite_graph_data_loader.py[line:397] INFO batch_num_v = 176
-Thu, 16 May 2019 16:13:30 bipartite_graph_data_loader.py[line:120] INFO #### generate_adjacent_matrix_feature_and_labels. END
-Thu, 16 May 2019 16:13:30 input_data.py[line:74] INFO ####### Done bipartite graph loader #########
-Thu, 16 May 2019 16:13:30 input_data.py[line:79] INFO u_attr len = 619030
-Thu, 16 May 2019 16:13:30 input_data.py[line:80] INFO u_adj shape = (619030, 90044)
-Thu, 16 May 2019 16:13:30 input_data.py[line:81] INFO u_list len = 619030
-Thu, 16 May 2019 16:13:45 input_data.py[line:94] INFO ######### Data loaded ###########
-Thu, 16 May 2019 16:13:46 train.py[line:61] INFO preprocessing data
-Thu, 16 May 2019 16:14:17 train.py[line:64] INFO done preprocessing data
-Thu, 16 May 2019 16:14:19 train.py[line:81] INFO create model
-Thu, 16 May 2019 16:14:19 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
-Instructions for updating:
-Colocations handled automatically by placer.
-Thu, 16 May 2019 16:14:19 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/gae/layers.py:79: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
-Instructions for updating:
-Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-Thu, 16 May 2019 16:14:19 model.py[line:115] INFO Finish calculating the latent vector!!!!!!!!!
-Thu, 16 May 2019 16:14:19 model.py[line:89] INFO GCNVAE model initialized!!!!!!!!
-Thu, 16 May 2019 16:14:22 train.py[line:92] INFO optimizer
+Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:14] INFO BipartiteGraphDataLoader __init__().
+Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:21] INFO group_u_list_file_path = ./../data/Tencent-QQ/node_list
+Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:22] INFO group_u_attr_file_path = ./../data/Tencent-QQ/node_attr
+Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:23] INFO group_u_label_file_path = ./../data/Tencent-QQ/node_true
+Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:25] INFO edge_list_file_path = ./../data/Tencent-QQ/edgelist
+Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:27] INFO group_v_list_file_path = ./../data/Tencent-QQ/group_list
+Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:28] INFO group_v_attr_file_path = ./../data/Tencent-QQ/group_attr
+Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:29] INFO group_v_label_file_path = None
+Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:55] INFO BipartiteGraphDataLoader __init__(). END
+Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:73] INFO ##### generate_adjacent_matrix_feature_and_labels. START

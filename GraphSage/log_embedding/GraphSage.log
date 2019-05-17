@@ -1,6 +1,0 @@
-Thu, 16 May 2019 10:05:20 utils.py[line:43] INFO class map loaded
-Thu, 16 May 2019 10:05:21 utils.py[line:59] INFO bad nodes removed
-Thu, 16 May 2019 10:05:27 utils.py[line:78] INFO Normalized
-Thu, 16 May 2019 10:06:22 utils.py[line:93] INFO data all loaded
-Thu, 16 May 2019 10:06:24 unsupervised_train.py[line:440] INFO start training
-Thu, 16 May 2019 10:06:24 unsupervised_train.py[line:188] INFO edge minibatch
