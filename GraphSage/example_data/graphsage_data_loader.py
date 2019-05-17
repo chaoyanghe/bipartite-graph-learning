@@ -620,10 +620,7 @@ class GraphSageSingleGraphDataLoader:
                 temp_node['label'] = [1, 0]
             else:
                 temp_node['label'] = [0, 1]
-            if np.random.choice([0, 1], p=[0.2, 0.8]):
-                temp_node['val'] = False
-            else:
-                temp_node['val'] = True
+            temp_node['val'] = False
             nodes.append(temp_node)
         self.graph['nodes'] = nodes
 

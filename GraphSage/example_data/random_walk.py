@@ -5,9 +5,6 @@ import logging
 import argparse
 from networkx.readwrite import json_graph
 
-WALK_LEN = 2
-N_WALKS = 1
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--walk_len', type=int, default=5, help='Walk length per node')
 parser.add_argument('--n_walks', type=int, default=50, help='Walk times per node')
@@ -36,11 +33,19 @@ def run_random_walks(G, nodes, walk_len, n_walks):
 
 
 if __name__ == "__main__":
+    logging.basicConfig(filename='bipartite_graph_data_loading.log', filemode='w',
+                        format='%(asctime)s  %(filename)s : %(lineno)d : %(levelname)s  %(message)s',
+                        datefmt='%Y-%m-%d %A %H:%M:%S',
+                        level=logging.INFO)
+
     """ Run random walks """
     graph_file = './bipartite-G.json'
     out_file = './bipartite-walks.txt'
+    logging.info('loading data...')
     G_data = json.load(open(graph_file))
+    logging.info('converting to networkx')
     G = json_graph.node_link_graph(G_data)
+    logging.info('extracting nodes...')
     nodes = [n for n in G.nodes() if not G.node[n]["val"] and not G.node[n]["test"]]
     G = G.subgraph(nodes)
     print('start random walk')
