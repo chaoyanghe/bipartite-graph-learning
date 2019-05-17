@@ -18,3 +18,4 @@ GraphSage/example_data/bipartite-walks.txt
 GraphSage/example_data/bipartite-id_map_node.json
 GraphSage/log_embedding/*
 .python-version
+.DS_Store
