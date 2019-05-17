@@ -592,12 +592,14 @@ class GraphSageSingleGraphDataLoader:
     def data_loader(self):
         logging.info('ID map node')
         self.get_id_map_node()
-        logging.info('Nodes From')
+        logging.info('Nodes Form')
         self.nodes_form()
         logging.info('Link Form')
         self.link_form()
         logging.info('Class Form')
         self.class_form()
+        logging.info('Feature Form')
+        self.feature_form()
         logging.info('Write to Json')
         self.write_to_json()
 
