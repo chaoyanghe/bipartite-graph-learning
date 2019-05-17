@@ -104,6 +104,7 @@ if __name__ == '__main__':
     with open(CITES_FILE_PATH, 'r') as in_f:
         content = in_f.readlines()
 
+    num_edges_to_delete = 0
     for line in content:
         matches = re.search(CITES_LINE_RE, line)
         assert matches
@@ -127,6 +128,26 @@ if __name__ == '__main__':
             u_idx_not_appear_set.discard(vertex1_idx)
             v_idx_not_appear_set.discard(vertex0_idx)
             bipartite_edges_set.add((vertex1_idx, vertex0_idx))
+        else:
+            if vertex0_idx in u_idx_set:
+                vertex0_uv_group = 'u'
+            elif vertex0_idx in v_idx_set:
+                vertex0_uv_group = 'v'
+            else:
+                raise Exception
+
+            if vertex1_idx in u_idx_set:
+                vertex1_uv_group = 'u'
+            elif vertex0_idx in v_idx_set:
+                vertex1_uv_group = 'v'
+            else:
+                raise Exception
+
+            num_edges_to_delete += 1
+            print("{} Delete (raw id): {}->{}, (idx): {}->{}, (u/v): {}->{}".format(num_edges_to_delete,
+                                                                                    matches.group(1), matches.group(2),
+                                                                                    vertex0_idx, vertex1_idx,
+                                                                                    vertex0_uv_group, vertex1_uv_group))
 
     print(raw_paper_id_no_feat_set)
     print(len(raw_paper_id_no_feat_set))
