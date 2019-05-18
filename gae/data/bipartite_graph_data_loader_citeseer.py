@@ -7,7 +7,7 @@ from networkx.algorithms.bipartite import biadjacency_matrix
 from sklearn import preprocessing
 
 
-class BipartiteGraphDataLoaderCora:
+class BipartiteGraphDataLoaderCiteseer:
 	def __init__(self, batch_size, group_u_list_file_path, group_u_attr_file_path, group_u_label_file_path,
 				 edge_list_file_path,
 				 group_v_list_file_path, group_v_attr_file_path, group_v_label_file_path=None, device='cpu'):
@@ -357,9 +357,9 @@ if __name__ == "__main__":
 
 	GROUP_LIST_PATH = "./group_list"
 	GROUP_ATTR_PATH = "./group_attr"
-	bipartite_graph_data_loader = BipartiteGraphDataLoaderCora(3, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
-															   EDGE_LIST_PATH,
-															   GROUP_LIST_PATH, GROUP_ATTR_PATH)
+	bipartite_graph_data_loader = BipartiteGraphDataLoaderCiteseer(3, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
+																   EDGE_LIST_PATH,
+																   GROUP_LIST_PATH, GROUP_ATTR_PATH)
 	# bipartite_graph_data_loader.test()
 	bipartite_graph_data_loader.load()
 	# bipartite_graph_data_loader.plot_neighborhood_number_distribution()

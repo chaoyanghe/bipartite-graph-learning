@@ -13,7 +13,7 @@ import scipy.sparse as sp
 
 from optimizer import OptimizerAE, OptimizerVAE
 
-from input_data import load_data_for_cora
+from input_data import load_data_for_gae
 
 from model import GCNModelAE, GCNModelVAE
 from preprocessing import construct_feed_dict, sparse_to_tuple, preprocess_graph_without_tuple
@@ -42,7 +42,7 @@ model_str = FLAGS.model
 dataset_str = FLAGS.dataset
 
 # Load data
-adj, features, u_list = load_data_for_cora(FLAGS, 'cpu')  # u_list is the hash table
+adj, features, u_list = load_data_for_gae(FLAGS, 'cpu')  # u_list is the hash table
 
 if FLAGS.features == 0:
 	features = sp.identity(features.shape[0])  # featureless

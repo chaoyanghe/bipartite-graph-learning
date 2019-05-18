@@ -4,7 +4,7 @@ import pickle as pkl
 import networkx as nx
 import scipy.sparse as sp
 
-from data.bipartite_graph_data_loader_tencent import BipartiteGraphDataLoader
+from data.bipartite_graph_data_loader_tencent import BipartiteGraphDataLoaderTencent
 
 
 def parse_index_file(filename):
@@ -66,10 +66,10 @@ def load_data_for_tencent(flags, device):
     batch_size = 512
     device = 'cpu'
     # batch_size = flags.batch_size
-    bipartite_graph_data_loader = BipartiteGraphDataLoader(batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
-                                                           NODE_LABEL_PATH,
-                                                           EDGE_LIST_PATH,
-                                                           GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
+    bipartite_graph_data_loader = BipartiteGraphDataLoaderTencent(batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
+																  NODE_LABEL_PATH,
+																  EDGE_LIST_PATH,
+																  GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
     bipartite_graph_data_loader.load()
     u_attr = bipartite_graph_data_loader.get_u_attr_array()
     u_adj = bipartite_graph_data_loader.get_u_adj()

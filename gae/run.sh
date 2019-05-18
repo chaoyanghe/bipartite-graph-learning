@@ -2,4 +2,4 @@
 
 rm -rf gae.log
 
-python train.py --model gcn_vae --epochs 100
+python train.py --model gcn_vae --dataset cora --epochs 100

@@ -6,7 +6,8 @@ import networkx as nx
 import numpy as np
 import scipy.sparse as sp
 
-from data.bipartite_graph_data_loader_cora import BipartiteGraphDataLoader
+from data.bipartite_graph_data_loader_cora import BipartiteGraphDataLoaderCora
+from data.bipartite_graph_data_loader_tencent import BipartiteGraphDataLoaderTencent
 
 
 def parse_index_file(filename):
@@ -57,19 +58,35 @@ def __BipartiteToSingle(graph):
 	return single_graph
 
 
-def load_data_for_cora(flags, device):
-	NODE_LIST_PATH = "./../data/cora/node_list"
-	NODE_ATTR_PATH = "./../data/cora/node_attr"
-	NODE_LABEL_PATH = "./../data/cora/node_true"
-	EDGE_LIST_PATH = "./../data/cora/edgelist"
-	GROUP_LIST_PATH = "./../data/cora/group_list"
-	GROUP_ATTR_PATH = "./../data/cora/group_attr"
-
+def load_data_for_gae(flags, device):
 	batch_size = flags.batch_size
-	bipartite_graph_data_loader = BipartiteGraphDataLoader(batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
-														   NODE_LABEL_PATH,
-														   EDGE_LIST_PATH,
-														   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
+
+	bipartite_graph_data_loader = None
+	if flags.dataset == "cora":
+		NODE_LIST_PATH = "./../data/cora/node_list"
+		NODE_ATTR_PATH = "./../data/cora/node_attr"
+		NODE_LABEL_PATH = "./../data/cora/node_true"
+		EDGE_LIST_PATH = "./../data/cora/edgelist"
+		GROUP_LIST_PATH = "./../data/cora/group_list"
+		GROUP_ATTR_PATH = "./../data/cora/group_attr"
+
+		bipartite_graph_data_loader = BipartiteGraphDataLoaderCora(batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
+																   NODE_LABEL_PATH,
+																   EDGE_LIST_PATH,
+																   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
+	elif flags.dataset == "tencent":
+		NODE_LIST_PATH = "./../data/Tencent-QQ/node_list"
+		NODE_ATTR_PATH = "./../data/Tencent-QQ/node_attr"
+		NODE_LABEL_PATH = "./../data/Tencent-QQ/node_true"
+		EDGE_LIST_PATH = "./../data/Tencent-QQ/edgelist"
+		GROUP_LIST_PATH = "./../data/Tencent-QQ/group_list"
+		GROUP_ATTR_PATH = "./../data/Tencent-QQ/group_attr"
+
+		bipartite_graph_data_loader = BipartiteGraphDataLoaderTencent(batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
+																   NODE_LABEL_PATH,
+																   EDGE_LIST_PATH,
+																   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
+
 	bipartite_graph_data_loader.load()
 	logging.info('####### Done bipartite graph loader #########')
 	u_attr = bipartite_graph_data_loader.get_u_attr_array()  # list
@@ -79,17 +96,6 @@ def load_data_for_cora(flags, device):
 	logging.info("u_attr len = %d" % len(u_attr))
 	logging.info("u_adj shape = %s" % str(u_adj.shape))
 	logging.info("u_list len = %d" % len(u_list))
-	#print(u_attr)
-	print(u_list)
-
-	# test the code
-	# u_list = [1, 3, 5, 7, 9]
-	# v_list = [1, 3, 6, 8]
-	# u_attr = np.random.rand(5, 4).tolist()
-	# v_attr = np.random.rand(4, 3).tolist()
-	# u_adj = sp.csr_matrix([[1, 1, 1, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [0, 0, 1, 0]])
-	# edge_list = [(1, 1), (1, 3), (1, 6), (3, 3), (5, 1), (5, 6), (7, 8), (9, 6)]
-	# node_true = [1, 5, 9]
 
 	adj = __BipartiteToSingle(u_adj)
 	print(adj.shape)

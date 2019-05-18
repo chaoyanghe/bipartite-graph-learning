@@ -6,7 +6,7 @@ from networkx.algorithms.bipartite import biadjacency_matrix
 from sklearn import preprocessing
 
 
-class BipartiteGraphDataLoader:
+class BipartiteGraphDataLoaderTencent:
     def __init__(self, batch_size, group_u_list_file_path, group_u_attr_file_path, group_u_label_file_path,
                  edge_list_file_path,
                  group_v_list_file_path, group_v_attr_file_path, group_v_label_file_path=None, device='cpu'):
