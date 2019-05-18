@@ -23,6 +23,6 @@ python -m graphsage.unsupervised_train \
 --base_log_dir ./log_embedding \
 --walk_len 5 \
 --n_walks 50 \
---print_every 50
+--print_every 10
 
 python ./classification.py
