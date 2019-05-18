@@ -719,8 +719,7 @@ if __name__ == "__main__":
 
     with open(NODE_TRUE, 'r') as file:
         node_true = file.readlines()
-    node_true = node_true.strip().split('\n')
-    node_true = list(map(lambda x: int(x), node_true))
+    node_true = list(map(lambda x: int(x.strip()), node_true))
 
     # # test the code
     # u_list = [1, 3, 5, 7, 9]
