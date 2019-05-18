@@ -11,7 +11,8 @@ from networkx.algorithms.bipartite import biadjacency_matrix
 from sklearn import preprocessing
 
 
-class BipartiteGraphDataLoader:
+class BipartiteGraphDataLoaderCora:
+
     def __init__(self, batch_size, group_u_list_file_path, group_u_attr_file_path, group_u_label_file_path,
                  edge_list_file_path,
                  group_v_list_file_path, group_v_attr_file_path, group_v_label_file_path=None, device='cpu'):
@@ -77,51 +78,48 @@ class BipartiteGraphDataLoader:
     def load(self):
         logging.info("##### generate_adjacent_matrix_feature_and_labels. START")
         u_list = self.__load_u_list()
+        # print("####u_list = %d" % len(u_list))
         u_attr_dict, u_attr_array = self.__load_u_attribute(u_list)
-        #        logging.info("u_attribute = %s: %s" % (u_attr_array.shape, u_attr_array[0::100000]))  # 1089436
+        # print("####u_attr_dict = %d" % len(u_attr_dict))
 
         v_list = self.__load_v_list()
+        # print("v_list = %d" % len(v_list))
         v_attr_dict, v_attr_array = self.__load_v_attribute(v_list)
+        # print("v_attr_dict = %d" % len(v_attr_dict))
         #       logging.info("v_attribute = %s: %s" % (v_attr_array.shape, v_attr_array[0::50000]))  # 90047
 
         # choose the edge whose nodes have attribute
         f_edge_list = open(self.edge_list_file_path, 'r')
         edge_count = 0
+        # print("####u keys = %s" % u_attr_dict.keys())
+        # print("####v keys = %s" % v_attr_dict.keys())
         for l in f_edge_list:
-            items = l.strip('\n').split(" ")
-            v = int(items[0])
-            u = int(items[1])
-            edge_count += 1
-            if int(v) in v_attr_dict.keys() and int(u) in u_attr_dict.keys():
+            items = l.strip('\n').split("\t")
+            u = int(items[0])
+            v = int(items[1])
+            if v in v_attr_dict.keys() and u in u_attr_dict.keys():
+                edge_count += 1
+
                 self.edge_list.append((u, v))
 
-        logging.info("raw edge_list len = %d" % edge_count)  # 1979756
-        logging.info("edge_list len = %d" % len(self.edge_list))  # 991734
+        # print("raw edge_list len = %d" % edge_count)  # 1979756
+        # print("edge_list len = %d" % len(self.edge_list))  # 991734
 
         # load all the nodes without duplicate
-        self.u_node_list, self.v_node_list = self.__load_unique_node_in_edge_list(self.edge_list)
+        self.u_node_list = u_list
+        self.v_node_list = v_list
 
-        # sample and print several value to evaluate the correctness
-        logging.info("u_list len = %d. %s" % (len(self.u_node_list), str(self.u_node_list[0::50000])))  # 619030
-        logging.info("v_list len = %d. %s" % (len(self.v_node_list), str(self.v_node_list[0::10000])))  # 90044
+        self.u_attr_dict = u_attr_dict
+        self.v_attr_dict = v_attr_dict
 
-        # delete the nodes which do not have the attribute
-        # delete the nodes which have attribute but are not in the edge list (isolated)
-        self.u_attr_dict, self.u_attr_array = self.__filter_illegal_nodes(u_attr_dict, self.u_node_list)
-        self.v_attr_dict, self.v_attr_array = self.__filter_illegal_nodes(v_attr_dict, self.v_node_list)
-        # logging.info("u feature shape = %s" % str(self.u_attr_array.shape))
-        # logging.info("v feature shape = %s" % str(self.v_attr_array.shape))
+        self.u_attr_array = u_attr_array
+        self.v_attr_array = v_attr_array
 
         self.u_adjacent_matrix, self.v_adjacent_matrix = self.__generate_adjacent_matrix(self.u_node_list,
                                                                                          self.v_node_list,
                                                                                          self.edge_list)
-
+        # print(self.u_node_list)
         self.u_label = self.__generate_u_labels(self.u_node_list)
-
-        # for mini-batch
-        self.gernerate_mini_batch(self.u_attr_array, self.v_attr_array,
-                                  self.u_adjacent_matrix, self.v_adjacent_matrix)
-
         logging.info("#### generate_adjacent_matrix_feature_and_labels. END")
 
     def __load_u_list(self):
@@ -132,47 +130,37 @@ class BipartiteGraphDataLoader:
         return u_list
 
     def __load_u_attribute(self, u_list):
-        """ Load the node (u) attributes vector.
-            If there is no attribute vector, ignore it.
-        """
-
-        def decode_helper(s):
-            if s == "":
-                return 0
-            return float(s)
-
-        # node_list: id
-        f_u_list = open(self.group_u_list_file_path)
-        u2i_dict = {}
-        for l in f_u_list:
-            l = l.strip().split("\t")
-            u2i_dict[l[0]] = int(l[0])
-
+        u_attr = []
         f_u_attr = open(self.group_u_attr_file_path, 'r')
 
-        converters = {0: lambda s: u2i_dict[s.decode("utf-8")], 1: decode_helper, 4: decode_helper, 5: decode_helper,
-                      6: decode_helper,
-                      7: decode_helper, 8: decode_helper, 9: decode_helper, 10: decode_helper}
-
-        # This part is different from differe data.
-        # data: [[id, feature1, ..., feature10], ..., [id, feature1, ..., feature10]]
-        data = np.loadtxt(f_u_attr, delimiter='\t', converters=converters, usecols=(0, 1, 4, 5, 6, 7, 8, 9, 10))
-
+        for l in f_u_attr:
+            l = l.strip('\n').split("\t")
+            attribute_item = []
+            dimension = len(l)
+            for idx in range(dimension):
+                attribute_item.append(float(l[idx]))
+            u_attr.append(attribute_item)
+        # print("dimension = %s" % str(dimension - 1))
+        # print("u_attr = %d" % len(u_attr))
         # normalize per dim
+        u_attr_np = np.array(u_attr, dtype=np.float64, copy=False)
+
         # follow the best practice here:
         # https://github.com/soumith/talks/blob/master/2017-ICCV_Venice/How_To_Train_a_GAN.pdf
         min_max_scaler = preprocessing.MinMaxScaler(feature_range=(-1, 1))
-        data[:, 1:] = min_max_scaler.fit_transform(data[:, 1:])
+        u_attr_np[:, 1:] = min_max_scaler.fit_transform(u_attr_np[:, 1:])
 
-        data = data.tolist()
+        u_attr_np = u_attr_np.tolist()
+        # print("u_attr_np = %d" % len(u_attr_np))
 
         # attr_dict: {id : [feature1, ..., feature10]}
         temp_attr_dict = {}
-        for u_t in data:
+        for u_t in u_attr_np:
             temp_attr_dict[u_t[0]] = u_t[1:]
 
+        # print("temp_attr_dict = %d" % len(temp_attr_dict))
         # merge with the v_list
-        logging.info("before merging with u_list, the len is = %d" % len(temp_attr_dict))
+        # print("before merging with v_list, the len is = %d" % len(u_attr))
         u_attr_dict = {}
         u_attr_array = []
         for u in u_list:
@@ -180,7 +168,7 @@ class BipartiteGraphDataLoader:
                 u_attr_dict[int(u)] = temp_attr_dict[u]
                 u_attr_array.append(temp_attr_dict[u])
 
-        logging.info("after merging with u_list, the len is = %d" % len(u_attr_dict))
+        # print("after merging with u_attr_dict, the len is = %d" % len(u_attr_dict))
 
         return u_attr_dict, u_attr_array
 
@@ -193,72 +181,17 @@ class BipartiteGraphDataLoader:
 
     def __load_v_attribute(self, v_list):
         v_attr = []
-        count_no_attribute = 0
-        count_10 = 0
-        count_14 = 0
-        count_15 = 0
-        count_16 = 0
-        count_17 = 0
-        count_more_than_17 = 0
-        count_all = 0
         f_v_attr = open(self.group_v_attr_file_path, 'r')
 
         for l in f_v_attr:
-            count_all += 1
-
             l = l.strip('\n').split("\t")
-            dimension = len(l)
-
-            # skip all the nodes which do not have the attribute
-            # TODO: evaluate the performance when keep these non-attribute nodes.
-            if dimension == 1:
-                count_no_attribute += 1
-                continue
-
-            if dimension == 10:
-                count_10 += 1
-                continue
             attribute_item = []
-            if dimension >= 14:
-                for idx in range(14):
-                    if l[idx] == '':
-                        attribute_item.append(0)
-                    else:
-                        attribute_item.append(float(l[idx]))
-
-            if dimension == 14:
-                count_14 += 1
-                attribute_item.append(0)
-                attribute_item.append(0)
-                attribute_item.append(0)
-            if dimension == 15:
-                attribute_item.append(float(l[14]) if l[14] != '' else 0)
-                attribute_item.append(0)
-                attribute_item.append(0)
-                count_15 += 1
-            if dimension == 16:
-                attribute_item.append(float(l[14]) if l[14] != '' else 0)
-                attribute_item.append(float(l[15]) if l[15] != '' else 0)
-                attribute_item.append(float(0))
-                count_16 += 1
-            if dimension == 17:
-                attribute_item.append(float(l[14]) if l[14] != '' else 0)
-                attribute_item.append(float(l[15]) if l[15] != '' else 0)
-                attribute_item.append(float(l[16]) if l[16] != '' else 0)
-                count_17 += 1
-            if dimension > 17 or dimension < 10:
-                count_more_than_17 += 1
-            # logging.info(attribute_item)
+            dimension = len(l)
+            for idx in range(dimension):
+                attribute_item.append(float(l[idx]))
             v_attr.append(attribute_item)
-        logging.info("count_no_attribute = %d" % count_no_attribute)
-        logging.info("count_10 = %d" % count_10)
-        logging.info("count_14 = %d" % count_14)
-        logging.info("count_15 = %d" % count_15)
-        logging.info("count_16 = %d" % count_16)
-        logging.info("count_17 = %d" % count_17)
-        logging.info("count_more_than_17 = %d" % count_more_than_17)
-        logging.info("count_all = %d" % count_all)
-
+        # print("dimension = %s" % str(dimension - 1))
+        # print("v_attr = %d" % len(v_attr))
         # normalize per dim
         v_attr_np = np.array(v_attr, dtype=np.float64, copy=False)
 
@@ -283,23 +216,9 @@ class BipartiteGraphDataLoader:
                 v_attr_dict[int(v)] = temp_attr_dict[v]
                 v_attr_array.append(temp_attr_dict[v])
 
-        logging.info("after merging with v_list, the len is = %d" % len(v_attr_dict))
+        logging.info("after merging with v_attr_dict, the len is = %d" % len(v_attr_dict))
 
         return v_attr_dict, v_attr_array
-
-    def __load_unique_node_in_edge_list(self, edge_list):
-        u_unique_dict = {}
-        v_unique_dict = {}
-        for (u, v) in edge_list:
-            if v not in v_unique_dict.keys():
-                v_unique_dict[int(v)] = v
-
-            if u not in u_unique_dict.keys():
-                u_unique_dict[int(u)] = u
-
-        logging.info("group U length = " + str(len(u_unique_dict)))
-        logging.info("group V length = " + str(len(v_unique_dict)))
-        return [u for u in u_unique_dict.keys()], [v for v in v_unique_dict.keys()]
 
     def __filter_illegal_nodes(self, attr_dict, unique_node_list):
         ret_attr_dict = {}
@@ -350,7 +269,7 @@ class BipartiteGraphDataLoader:
         return u_adjacent_matrix_np, v_adjacent_matrix_np
 
     def plot_neighborhood_number_distribution(self):
-        count_list = np.sum(self.u_adjacent_matrix[0:100000], axis=1)
+        count_list = np.sum(self.u_adjacent_matrix, axis=1)
         u_adj_ner_count_dict = {}
         for idx in range(len(count_list)):
             neigher_num = count_list[idx]
@@ -375,48 +294,19 @@ class BipartiteGraphDataLoader:
         plt.show()
 
     def __generate_u_labels(self, u_node_list):
+        u_label_dict = {}
         f_label = open(self.group_u_label_file_path)
-        true_set = set([int(x.strip()) for x in f_label])
+        for l in f_label:
+            l = l.strip('\n').split("\t")
+            id = int(l[0])
+            label = l[1]
+            u_label_dict[id] = label
+        # print(u_label_dict)
         u_label = []
         for n in u_node_list:
-            if n in true_set:
-                u_label.append(1)
-            else:
-                u_label.append(0)
+            # print(n)
+            u_label.append(u_label_dict[n])
         return u_label
-
-    def gernerate_mini_batch(self, u_attr_array, v_attr_array, u_adjacent_matrix, v_adjacent_matrix):
-        u_num = len(u_attr_array)
-        logging.info("u number: " + str(u_num))
-        logging.info("u_adjacent_matrix: " + str(u_adjacent_matrix.shape))
-
-        v_num = len(v_attr_array)
-        logging.info("v number: " + str(v_num))
-        logging.info("v_adjacent_matrix: " + str(v_adjacent_matrix.shape))
-
-        self.batch_num_u = int(u_num / self.batch_size) + 1
-        logging.info("batch_num_u = %d" % self.batch_num_u)
-
-        self.batch_num_v = int(v_num / self.batch_size) + 1
-        logging.info("batch_num_v = %d" % self.batch_num_v)
-
-        for batch_index in range(self.batch_num_u):
-            start_index = self.batch_size * batch_index
-            end_index = self.batch_size * (batch_index + 1)
-            if batch_index == self.batch_num_u - 1:
-                end_index = u_num
-            tup = (u_attr_array[start_index:end_index], u_adjacent_matrix[start_index:end_index])
-            self.batches_u.append(tup)
-        # print(self.batches_u)
-
-        for batch_index in range(self.batch_num_v):
-            start_index = self.batch_size * batch_index
-            end_index = self.batch_size * (batch_index + 1)
-            if batch_index == self.batch_num_v - 1:
-                end_index = v_num
-            tup = (v_attr_array[start_index:end_index], v_adjacent_matrix[start_index:end_index])
-            self.batches_v.append(tup)
-        # print(self.batches_v)
 
     def get_u_attr_dimensions(self):
         return len(self.u_attr_array[0])
@@ -430,36 +320,22 @@ class BipartiteGraphDataLoader:
     def get_batch_num_v(self):
         return self.batch_num_v
 
-    def get_one_batch_group_u_with_adjacent(self, batch_index):
-        """
-        :param batch_index: batch index, iterate from batch_num_u
-        :return: Tensor
-        """
-        if batch_index >= self.batch_num_u:
-            raise Exception("batch_index is larger than the batch number")
-        (u_attr_batch, u_adaj_batch) = self.batches_u[batch_index]
-        return np.copy(u_attr_batch), np.copy(u_adaj_batch)
-
-    def get_one_batch_group_v_with_adjacent(self, batch_index):
-        """
-        :param batch_index: batch index, iterate from batch_num_v
-        :return: Tensor
-        """
-        if batch_index >= self.batch_num_v:
-            raise Exception("batch_index is larger than the batch number")
-        (v_attr_batch, v_adaj_batch) = self.batches_v[batch_index]
-        return np.copy(v_attr_batch), np.copy(v_adaj_batch)
-
     def get_u_attr_array(self):
+        """
+        :return: list
+        """
         return self.u_attr_array
 
     def get_v_attr_array(self):
         """
-        :return: numpy
+        :return: list
         """
         return self.v_attr_array
 
     def get_u_adj(self):
+        """
+        :return: sparse csr_matrix
+        """
         return self.u_adjacent_matrix
 
     def get_v_adj(self):
@@ -470,9 +346,6 @@ class BipartiteGraphDataLoader:
 
     def get_v_list(self):
         return self.v_node_list
-
-    def get_edge_list(self):
-        return self.edge_list
 
 
 class GraphSageDataLoader:
@@ -574,13 +447,14 @@ class GraphSageDataLoader:
 
 
 class GraphSageSingleGraphDataLoader:
-    def __init__(self, u_adj, u_list, u_attr, node_true):
+    def __init__(self, u_adj, u_list, u_attr, node_true, class_num):
         self.u_adj = u_adj
         self.u_list = u_list
         self.u_attr = u_attr
-        self.node_true = node_true
+        self.node_true = dict(node_true)
         self.id_map_node = {}
         self.features = []
+        self.class_num = class_num
 
         self.adj = self.__BipartiteToSingle(u_adj)  # the adjacent connection only of set U
         self.label = {}
@@ -616,10 +490,10 @@ class GraphSageSingleGraphDataLoader:
             temp_node['id'] = i
             temp_node['test'] = False
             # temp_node['feature'] = self.u_attr[i]
-            if self.u_list[i] in self.node_true:
-                temp_node['label'] = [1, 0]
-            else:
-                temp_node['label'] = [0, 1]
+            tmp = np.zeros(7)
+            classes = self.node_true[self.u_list[i]]
+            tmp[classes % 7] = 1
+            temp_node['label'] = list(tmp)
             temp_node['val'] = False
             nodes.append(temp_node)
         self.graph['nodes'] = nodes
@@ -646,10 +520,10 @@ class GraphSageSingleGraphDataLoader:
 
     def class_form(self):
         for i in range(len(self.u_list)):
-            if self.u_list[i] in self.node_true:
-                self.label[i] = [1, 0]
-            else:
-                self.label[i] = [0, 1]
+            tmp = np.zeros(7)
+            classes = self.node_true[self.u_list[i]]
+            tmp[classes % 7] = 1
+            self.label[i] = list(tmp)
 
     def feature_form(self):
         nodes_features = []
@@ -698,29 +572,30 @@ if __name__ == "__main__":
                         level=logging.INFO)
 
     # load the bipartite graph data
-    NODE_LIST_PATH = "../../data/Tencent-QQ/node_list"
-    NODE_ATTR_PATH = "../../data/Tencent-QQ/node_attr"
-    NODE_LABEL_PATH = "../../data/Tencent-QQ/node_true"
-    EDGE_LIST_PATH = "../../data/Tencent-QQ/edgelist"
-    GROUP_LIST_PATH = "../../data/Tencent-QQ/group_list"
-    GROUP_ATTR_PATH = "../../data/Tencent-QQ/group_attr"
-    NODE_TRUE = "../../data/Tencent-QQ/node_true"
-    bipartite_graph_data_loader = BipartiteGraphDataLoader(100, NODE_LIST_PATH, NODE_ATTR_PATH,
-                                                           NODE_LABEL_PATH,
-                                                           EDGE_LIST_PATH,
-                                                           GROUP_LIST_PATH, GROUP_ATTR_PATH)
+    dataset = 'cora'
+    NODE_LIST_PATH = "../../data/%s/node_list" % dataset
+    NODE_ATTR_PATH = "../../data/%s/node_attr" % dataset
+    NODE_LABEL_PATH = "../../data/%s/node_true" % dataset
+    EDGE_LIST_PATH = "../../data/%s/edgelist" % dataset
+    GROUP_LIST_PATH = "../../data/%s/group_list" % dataset
+    GROUP_ATTR_PATH = "../../data/%s/group_attr" % dataset
+    NODE_TRUE = "../../data/%s/node_true" % dataset
+    bipartite_graph_data_loader = BipartiteGraphDataLoaderCora(100, NODE_LIST_PATH, NODE_ATTR_PATH,
+                                                               NODE_LABEL_PATH,
+                                                               EDGE_LIST_PATH,
+                                                               GROUP_LIST_PATH, GROUP_ATTR_PATH)
     bipartite_graph_data_loader.load()
     u_attr = bipartite_graph_data_loader.get_u_attr_array()
     v_attr = bipartite_graph_data_loader.get_v_attr_array()
     u_list = bipartite_graph_data_loader.get_u_list()
     v_list = bipartite_graph_data_loader.get_v_list()
-    edge_list = bipartite_graph_data_loader.get_edge_list()
     u_adj = bipartite_graph_data_loader.get_u_adj()  # csr_matrix
 
     with open(NODE_TRUE, 'r') as file:
-        node_true = file.readline()
-    node_true = node_true.strip().split('\n')
-    node_true = list(map(lambda x: int(x), node_true))
+        node_true = file.readlines()
+    node_true = list(map(lambda x: x.strip().split('\t'), node_true))
+    node_true = list(map(lambda x: (int(x[0]), int(x[1])), node_true))
+    class_num = len(set(np.array(node_true)[:, 1]))
 
     # # test the code
     # u_list = [1, 3, 5, 7, 9]
@@ -731,29 +606,9 @@ if __name__ == "__main__":
     # edge_list = [(1, 1), (1, 3), (1, 6), (3, 3), (5, 1), (5, 6), (7, 8), (9, 6)]
     # node_true = [1, 5, 9]
 
-    # define whether to use the one hop graph or two hop graph
-    bipartite_graph = False
-    if bipartite_graph:
-        logging.info('Start graphsage data loader')
-        graphsage_loader = GraphSageDataLoader(u_list, v_list, u_attr, v_attr, edge_list, node_true)
-
-        logging.info('node id map')
-        graphsage_loader.node_id_map()
-
-        logging.info('nodes form')
-        graphsage_loader.nodes_form()
-
-        logging.info('link form')
-        graphsage_loader.link_form()
-        graphsage_loader.class_form()
-
-        logging.info('writing data to file')
-        graphsage_loader.write_to_json()
-        graphsage_loader.get_id_map_node(True)
-    else:
-        logging.info('Start graphsage two hop graph loader')
-        graphsage_loader = GraphSageSingleGraphDataLoader(u_adj, u_list, u_attr, node_true)
-        graphsage_loader.data_loader()
+    logging.info('Start graphsage two hop graph loader')
+    graphsage_loader = GraphSageSingleGraphDataLoader(u_adj, u_list, u_attr, node_true, class_num)
+    graphsage_loader.data_loader()
 
     # logging.info('######### U adjacent matrix ##########\n' + str(u_adj))
     # logging.info('######### V adjacent matrix ##########\n' + str(v_adj))
