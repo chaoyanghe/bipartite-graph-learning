@@ -18,7 +18,7 @@ from variational_hgcn import VariationalGCNLayer
 def parse_args():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--dataset', type=str, default='tencent', required=True)
-	parser.add_argument('--model', type=str, default='gan_gcn', choices=MODEL, required=True)
+	parser.add_argument('--model', type=str, default='gan', choices=MODEL, required=True)
 	parser.add_argument('--seed', type=int, default=RANDOM_SEED, help='Random seed.')
 	parser.add_argument('--epochs', type=int, default=EPOCHS,
 						help='Number of epochs to train.')
