@@ -36,3 +36,7 @@ Sat, 18 May 2019 00:10:49 unsupervised_train.py[line:352] INFO Iter: 0070, train
 Sat, 18 May 2019 00:10:49 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0070, max_total_steps: 100000000
 Sat, 18 May 2019 00:14:12 unsupervised_train.py[line:352] INFO Iter: 0080, train_loss=15.795763, train_mrr=0.305012, train_mrr_ema=0.268863, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=23.090209
 Sat, 18 May 2019 00:14:12 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0080, max_total_steps: 100000000
+Sat, 18 May 2019 00:19:27 unsupervised_train.py[line:352] INFO Iter: 0090, train_loss=15.426096, train_mrr=0.309222, train_mrr_ema=0.272423, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=24.011361
+Sat, 18 May 2019 00:19:27 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0090, max_total_steps: 100000000
+Sat, 18 May 2019 00:21:39 unsupervised_train.py[line:352] INFO Iter: 0100, train_loss=15.022837, train_mrr=0.330687, train_mrr_ema=0.276045, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=22.938894
+Sat, 18 May 2019 00:21:39 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0100, max_total_steps: 100000000
