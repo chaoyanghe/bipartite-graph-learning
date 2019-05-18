@@ -20,8 +20,44 @@ sh run_hgcn.sh citeseer
 ~~~
 
 
-
 # Node2Vec
+####1. run Node2Vec model on the "tencent" dataset.
+~~~
+sh run_.sh tencent
+~~~
+It may take XX minutes to get the result.
+
+####2. run GraphSAGE model on the "cora" dataset:
+~~~
+sh run_graphsage.sh cora
+~~~
+It may take XX minutes to get the result.
+
+####3. run GraphSAGE model on the "citeseer" dataset:
+~~~
+sh run_graphsage.sh citeseer
+~~~
+It may take XX minutes to get the result.
+
+
+# GCN
+####1. run GraphSAGE model on the "tencent" dataset.
+~~~
+sh run_graphsage.sh tencent
+~~~
+It may take XX minutes to get the result.
+
+####2. run GraphSAGE model on the "cora" dataset:
+~~~
+sh run_graphsage.sh cora
+~~~
+It may take XX minutes to get the result.
+
+####3. run GraphSAGE model on the "citeseer" dataset:
+~~~
+sh run_graphsage.sh citeseer
+~~~
+It may take XX minutes to get the result.
 
 
 # GraphSASE
@@ -31,17 +67,19 @@ sh run_graphsage.sh tencent
 ~~~
 It may take XX minutes to get the result.
 
-####2. run GraphSAGE model on the cora dataset:
+####2. run GraphSAGE model on the "cora" dataset:
 ~~~
 sh run_graphsage.sh cora
 ~~~
 It may take XX minutes to get the result.
 
-####3. run GraphSAGE model on the citeseer dataset:
+####3. run GraphSAGE model on the "citeseer" dataset:
 ~~~
 sh run_graphsage.sh citeseer
 ~~~
 It may take XX minutes to get the result.
+
+
 
 # one command to get all the result
 ~~~
