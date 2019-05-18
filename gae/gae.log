@@ -1,10 +1,30 @@
-Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:14] INFO BipartiteGraphDataLoader __init__().
-Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:21] INFO group_u_list_file_path = ./../data/Tencent-QQ/node_list
-Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:22] INFO group_u_attr_file_path = ./../data/Tencent-QQ/node_attr
-Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:23] INFO group_u_label_file_path = ./../data/Tencent-QQ/node_true
-Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:25] INFO edge_list_file_path = ./../data/Tencent-QQ/edgelist
-Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:27] INFO group_v_list_file_path = ./../data/Tencent-QQ/group_list
-Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:28] INFO group_v_attr_file_path = ./../data/Tencent-QQ/group_attr
-Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:29] INFO group_v_label_file_path = None
-Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:55] INFO BipartiteGraphDataLoader __init__(). END
-Fri, 17 May 2019 01:41:48 bipartite_graph_data_loader.py[line:73] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Fri, 17 May 2019 17:44:38 input_data.py[line:107] INFO ######### Data loaded ###########
+Fri, 17 May 2019 17:44:38 train.py[line:57] INFO preprocessing data
+Fri, 17 May 2019 17:44:38 train.py[line:60] INFO done preprocessing data
+Fri, 17 May 2019 17:44:38 train.py[line:74] INFO create model
+Fri, 17 May 2019 17:44:38 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Fri, 17 May 2019 17:44:38 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/gae/layers.py:79: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Fri, 17 May 2019 17:44:38 model.py[line:118] INFO Finish calculating the latent vector!!!!!!!!!
+Fri, 17 May 2019 17:44:38 model.py[line:91] INFO GCNVAE model initialized!!!!!!!!
+Fri, 17 May 2019 17:44:38 train.py[line:84] INFO optimizer
+Fri, 17 May 2019 17:44:38 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Fri, 17 May 2019 17:44:38 train.py[line:100] INFO initialize session
+Fri, 17 May 2019 17:44:38 train.py[line:131] INFO train model
+Fri, 17 May 2019 17:44:38 train.py[line:135] INFO construct dictionary
+Fri, 17 May 2019 17:44:38 train.py[line:138] INFO update
+Fri, 17 May 2019 17:44:38 train.py[line:141] INFO run the model
+Fri, 17 May 2019 17:44:38 train.py[line:144] INFO average loss
+Fri, 17 May 2019 17:44:38 train.py[line:135] INFO construct dictionary
+Fri, 17 May 2019 17:44:38 train.py[line:138] INFO update
+Fri, 17 May 2019 17:44:38 train.py[line:141] INFO run the model
+Fri, 17 May 2019 17:44:38 train.py[line:144] INFO average loss
+Fri, 17 May 2019 17:44:38 train.py[line:135] INFO construct dictionary
+Fri, 17 May 2019 17:44:38 train.py[line:138] INFO update
+Fri, 17 May 2019 17:44:38 train.py[line:141] INFO run the model
+Fri, 17 May 2019 17:44:38 train.py[line:144] INFO average loss
