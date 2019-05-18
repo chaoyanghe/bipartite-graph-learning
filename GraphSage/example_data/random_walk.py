@@ -6,6 +6,7 @@ import argparse
 from networkx.readwrite import json_graph
 
 parser = argparse.ArgumentParser()
+parser.add_argument('--dataset', type=str, default="cora", help='set the dataset string name: cora, citeseer, tencent')
 parser.add_argument('--walk_len', type=int, default=5, help='Walk length per node')
 parser.add_argument('--n_walks', type=int, default=50, help='Walk times per node')
 args = parser.parse_args()
@@ -21,6 +22,7 @@ def run_random_walks(G, nodes, walk_len, n_walks):
         for i in range(n_walks):
             curr_node = node
             for j in range(walk_len):
+                # to run this line, we must specify the networkx library version to <= 1.11
                 next_node = random.choice(G.neighbors(curr_node))
                 # self co-occurrences are useless
                 if curr_node != node:
@@ -33,14 +35,18 @@ def run_random_walks(G, nodes, walk_len, n_walks):
 
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='bipartite_graph_data_loading.log', filemode='w',
+    #dataset_name = args.dataset
+    dataset_name = "cora"
+    logging.basicConfig(filename='run_graphsage_data_loader.log', filemode='w',
                         format='%(asctime)s  %(filename)s : %(lineno)d : %(levelname)s  %(message)s',
                         datefmt='%Y-%m-%d %A %H:%M:%S',
                         level=logging.INFO)
 
     """ Run random walks """
-    graph_file = './bipartite-G.json'
-    out_file = './bipartite-walks.txt'
+    graph_file = "./" + dataset_name + "/bipartite-G.json"
+    out_file = "./" + dataset_name + "/bipartite-walks.txt"
+    print(graph_file)
+    print(out_file)
     logging.info('loading data...')
     G_data = json.load(open(graph_file))
     logging.info('converting to networkx')

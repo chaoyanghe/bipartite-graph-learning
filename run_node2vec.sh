@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
-cd ./Node2Vec/
-sh run_node2vec.sh
-cd ..
+
+#rm -r out
+# 设置库环境
+source ./set_dynamic_lib.sh
+# 运行算法
+python3 ./gen_emb.py
+python3 ./demo.py
+

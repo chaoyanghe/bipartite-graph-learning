@@ -1,1 +1,1 @@
-graphsage.emb f1 0.200000 0.72864533
+graphsage.emb f1 0.200000 0.75136797

@@ -68,3 +68,25 @@ Sat, 18 May 2019 11:24:29 unsupervised_train.py[line:375] INFO ######## Saving e
 Sat, 18 May 2019 11:24:33 unsupervised_train.py[line:129] INFO Start saving embedding for succeed tasks
 Sat, 18 May 2019 11:24:33 unsupervised_train.py[line:147] INFO Number of nodes in set U: 734
 Sat, 18 May 2019 11:24:33 unsupervised_train.py[line:429] INFO ############ Embedding data saved #############
+Sat, 18 May 2019 12:35:56 utils.py[line:43] INFO class map loaded
+Sat, 18 May 2019 12:35:56 utils.py[line:59] INFO bad nodes removed
+Sat, 18 May 2019 12:35:57 utils.py[line:78] INFO Normalized
+Sat, 18 May 2019 12:35:57 utils.py[line:93] INFO data all loaded
+Sat, 18 May 2019 12:35:57 unsupervised_train.py[line:440] INFO start training
+Sat, 18 May 2019 12:35:57 unsupervised_train.py[line:189] INFO edge minibatch
+Sat, 18 May 2019 12:35:57 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 12:35:58 unsupervised_train.py[line:199] INFO choose model
+Sat, 18 May 2019 12:35:58 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Sat, 18 May 2019 12:35:58 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Sat, 18 May 2019 12:35:58 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Sat, 18 May 2019 12:35:59 unsupervised_train.py[line:311] INFO training epoch: 1
+Sat, 18 May 2019 12:36:04 unsupervised_train.py[line:353] INFO Iter: 0000, train_loss=18.627205, train_mrr=0.271067, train_mrr_ema=0.271067, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=5.426571
+Sat, 18 May 2019 12:36:04 unsupervised_train.py[line:355] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
