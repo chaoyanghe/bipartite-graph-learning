@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+
 DATASET=$1
+rm ./out/node2vec/$DATASET
+
 source ./Node2Vec/set_dynamic_lib.sh
 python3 ./Node2Vec/gen_emb.py --dataset $DATASET
 
