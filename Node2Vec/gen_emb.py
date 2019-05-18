@@ -70,7 +70,7 @@ if __name__ == "__main__":
 	# Embedding generation
 	if (not os.path.exists(emb_file)) and os.path.exists(walk_file):
 		data = walk_file
-		binary = "./bin/pn2v_opt"
+		binary = "./Node2Vec/bin/pn2v_opt"
 		output_file = emb_file
 		emb_size = d
 		window = k
