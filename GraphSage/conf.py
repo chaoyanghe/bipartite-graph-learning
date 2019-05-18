@@ -19,6 +19,9 @@ STEP4 = 'opposite_relation'
 
 # classification
 it = 3000
-method = "hgcn"
+method = "graphsage"
 
-output_folder = "./out"
+input_folder_tencent = "./data/tencent"
+output_folder_tencent = "./out/graphsage/tencent"
+
+output_folder = "./out/graphsage"

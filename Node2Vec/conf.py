@@ -27,7 +27,7 @@ weighted = ""
 # weighted = "-weighted"
 method = "tmp"
 #local version
-input_folder = "./../data/Tencent-QQ"
+input_folder = "./../data/tencent"
 output_folder = "./out"
 #seven version
 #input_folder = "/opt/ml/disk/cdg_data"

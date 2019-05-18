@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
 	input_folder = None
 	if dataset == "tencent":
-		input_folder = "./data/" + "Tencent-QQ"
+		input_folder = "./data/" + "tencent"
 	elif dataset == "cora":
 		input_folder = "./data/" + dataset
 	elif dataset == "citeseer":

@@ -3,10 +3,20 @@
 rm -rf ./out/graphsage/*
 
 
-#pip3 install networkx==1.11
+pip3 install networkx==1.11
 
-DATASET="cora"
-echo $DATASET
+
+echo $1
+DATASET=$1
+
+if [ "$DATASET" = "" ]
+then
+   DATASET="cora"
+   echo $DATASET
+else
+   echo $DATASET
+fi
+
 
 # only execute once
 cd ./GraphSage/example_data/
@@ -38,7 +48,8 @@ python3 -m graphsage.unsupervised_train \
 
 cd ..
 
-python3 ./GraphSage/multi-classification.py --dataset cora
+
+python3 ./GraphSage/multi-classification.py --dataset $DATASET
 
 
-#pip3 install networkx==2.2
+pip3 install networkx==2.2

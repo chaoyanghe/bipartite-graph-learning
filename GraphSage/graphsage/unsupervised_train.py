@@ -138,7 +138,7 @@ def __save_embedding_for_task(embedding, node_list):
 	:param node_list: [node1, node2, ...]
 	:return:
 	"""
-	output_file = './out/'
+	output_file = './out/graphsage'
 
 	id_node_map_file = './example_data/bipartite-id_map_node.json'
 	with open(id_node_map_file, 'r') as file:

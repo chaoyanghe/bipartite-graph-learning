@@ -9,7 +9,7 @@ def parse_args():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--rank', type=int, default=-1,
 						help='process ID for MPI Simple AutoML')
-	parser.add_argument('--dataset', type=str, default="tencent",
+	parser.add_argument('--dataset', type=str, default="cora",
 						help='dataset')
 
 	return parser.parse_args()
@@ -24,13 +24,13 @@ if __name__ == "__main__":
 
 	input_folder = None
 	if dataset == "tencent":
-		input_folder = "./data/" + "Tencent-QQ"
+		input_folder = "./data/" + dataset
 	elif dataset == "cora":
 		input_folder = "./data/" + dataset
 	elif dataset == "citeseer":
 		input_folder = "./data/" + dataset
 
-	output_folder = conf.output_folder
+	output_folder = conf.output_folder + "/" + dataset
 	if rank != -1:
 		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/" + str(dataset)
 		output_folder = "/mnt/shared/home/bipartite-graph-learning/out/" + str(rank)

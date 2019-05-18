@@ -54,12 +54,12 @@ def get_the_bipartite_graph_loader(args, data_path, dataset, device):
 	print(data_path)
 	bipartite_graph_data_loader = None
 	if dataset == "tencent":
-		NODE_LIST_PATH = data_path + "data/Tencent-QQ/node_list"
-		NODE_ATTR_PATH = data_path + "data/Tencent-QQ/node_attr"
-		NODE_LABEL_PATH = data_path + "data/Tencent-QQ/node_true"
-		EDGE_LIST_PATH = data_path + "data/Tencent-QQ/edgelist"
-		GROUP_LIST_PATH = data_path + "data/Tencent-QQ/group_list"
-		GROUP_ATTR_PATH = data_path + "data/Tencent-QQ/group_attr"
+		NODE_LIST_PATH = data_path + "data/tencent/node_list"
+		NODE_ATTR_PATH = data_path + "data/tencent/node_attr"
+		NODE_LABEL_PATH = data_path + "data/tencent/node_true"
+		EDGE_LIST_PATH = data_path + "data/tencent/edgelist"
+		GROUP_LIST_PATH = data_path + "data/tencent/group_list"
+		GROUP_ATTR_PATH = data_path + "data/tencent/group_attr"
 
 		bipartite_graph_data_loader = BipartiteGraphDataLoader(args.batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
 															   NODE_LABEL_PATH,

@@ -698,13 +698,13 @@ if __name__ == "__main__":
                         level=logging.INFO)
 
     # load the bipartite graph data
-    NODE_LIST_PATH = "../../data/Tencent-QQ/node_list"
-    NODE_ATTR_PATH = "../../data/Tencent-QQ/node_attr"
-    NODE_LABEL_PATH = "../../data/Tencent-QQ/node_true"
-    EDGE_LIST_PATH = "../../data/Tencent-QQ/edgelist"
-    GROUP_LIST_PATH = "../../data/Tencent-QQ/group_list"
-    GROUP_ATTR_PATH = "../../data/Tencent-QQ/group_attr"
-    NODE_TRUE = "../../data/Tencent-QQ/node_true"
+    NODE_LIST_PATH = "../../data/tencent/node_list"
+    NODE_ATTR_PATH = "../../data/tencent/node_attr"
+    NODE_LABEL_PATH = "../../data/tencent/node_true"
+    EDGE_LIST_PATH = "../../data/tencent/edgelist"
+    GROUP_LIST_PATH = "../../data/tencent/group_list"
+    GROUP_ATTR_PATH = "../../data/tencent/group_attr"
+    NODE_TRUE = "../../data/tencent/node_true"
     bipartite_graph_data_loader = BipartiteGraphDataLoader(100, NODE_LIST_PATH, NODE_ATTR_PATH,
                                                            NODE_LABEL_PATH,
                                                            EDGE_LIST_PATH,
