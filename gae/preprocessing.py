@@ -2,6 +2,7 @@ import numpy as np
 import scipy.sparse as sp
 
 
+# https://scipy-lectures.org/advanced/scipy_sparse/coo_matrix.html
 def sparse_to_tuple(sparse_mx):
     if not sp.isspmatrix_coo(sparse_mx):
         sparse_mx = sparse_mx.tocoo()
@@ -9,7 +10,6 @@ def sparse_to_tuple(sparse_mx):
     values = sparse_mx.data
     shape = sparse_mx.shape
     return coords, values, shape
-
 
 def preprocess_graph(adj):
     adj = sp.coo_matrix(adj)
@@ -20,12 +20,22 @@ def preprocess_graph(adj):
     return sparse_to_tuple(adj_normalized)
 
 
-def construct_feed_dict(adj_normalized, adj, features, placeholders):
+def preprocess_graph_without_tuple(adj):
+    adj = sp.coo_matrix(adj)
+    adj_ = adj + sp.eye(adj.shape[0])
+    rowsum = np.array(adj_.sum(1))
+    degree_mat_inv_sqrt = sp.diags(np.power(rowsum, -0.5).flatten())
+    adj_normalized = adj_.dot(degree_mat_inv_sqrt).transpose().dot(degree_mat_inv_sqrt)
+    return adj_normalized
+
+
+def construct_feed_dict(adj_normalized, adj, features, features_nonzero, placeholders):
     # construct feed dictionary
     feed_dict = dict()
     feed_dict.update({placeholders['features']: features})
     feed_dict.update({placeholders['adj']: adj_normalized})
     feed_dict.update({placeholders['adj_orig']: adj})
+    feed_dict.update({placeholders['features_nonzero']: features_nonzero})
     return feed_dict
 
 

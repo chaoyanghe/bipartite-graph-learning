@@ -1,31 +1,27 @@
 from __future__ import division
 from __future__ import print_function
 
-import time
-import os
 import logging
+import os
+import time
 
 # Train on CPU (hide GPU) due to memory constraints
 os.environ['CUDA_VISIBLE_DEVICES'] = ""
 
 import tensorflow as tf
-import numpy as np
 import scipy.sparse as sp
-
-from sklearn.metrics import roc_auc_score
-from sklearn.metrics import average_precision_score
 
 from optimizer import OptimizerAE, OptimizerVAE
 
-from input_data import load_data, load_data_for_tencent
+from input_data import load_data_for_tencent
 
 from model import GCNModelAE, GCNModelVAE
-from preprocessing import preprocess_graph, construct_feed_dict, sparse_to_tuple, mask_test_edges
+from preprocessing import construct_feed_dict, sparse_to_tuple, preprocess_graph_without_tuple
 
 logging.basicConfig(filename="./gae.log",
-                    level=logging.INFO,
-                    format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
-                    datefmt='%a, %d %b %Y %H:%M:%S')
+					level=logging.INFO,
+					format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+					datefmt='%a, %d %b %Y %H:%M:%S')
 
 # Settings
 flags = tf.app.flags
@@ -48,162 +44,160 @@ dataset_str = FLAGS.dataset
 # Load data
 adj, features, u_list = load_data_for_tencent(FLAGS, 'cpu')  # u_list is the hash table
 
-# Store original adjacency matrix (without diagonal entries) for later
-# adj_orig = adj
-# adj_orig = adj_orig - sp.dia_matrix((adj_orig.diagonal()[np.newaxis, :], [0]), shape=adj_orig.shape)
-# adj_orig.eliminate_zeros()
-
-adj_train = adj
-
 if FLAGS.features == 0:
-    features = sp.identity(features.shape[0])  # featureless
+	features = sp.identity(features.shape[0])  # featureless
 
-logging.info('preprocessing data')
-# Some preprocessing
-adj_norm = preprocess_graph(adj)
-logging.info('done preprocessing data')
+num_features = features.shape[1]
+logging.info('num_features = %s' % str(num_features))
 
 # Define placeholders
 placeholders = {
-    'features': tf.sparse_placeholder(tf.float32),
-    'adj': tf.sparse_placeholder(tf.float32),
-    'adj_orig': tf.sparse_placeholder(tf.float32),
-    'dropout': tf.placeholder_with_default(0., shape=())
+	'features': tf.sparse_placeholder(tf.float32, name="features"),
+	'adj': tf.sparse_placeholder(tf.float32, name="adj"),
+	'adj_orig': tf.sparse_placeholder(tf.float32, name="adj_orig"),
+	'dropout': tf.placeholder_with_default(0., shape=(), name="dropout"),
+	'features_nonzero': tf.placeholder_with_default(0, shape=(), name="features_nonzero")
 }
-
-num_nodes = adj.shape[0]
-
-# feature statistics
-features = sparse_to_tuple(features.tocoo())
-num_features = features[2][1]
-features_nonzero = features[1].shape[0]
 
 logging.info('create model')
 
 # Create model
 model = None
+
 if model_str == 'gcn_ae':
-    model = GCNModelAE(placeholders, num_features, features_nonzero)
+	model = GCNModelAE(placeholders, num_features)
 elif model_str == 'gcn_vae':
-    model = GCNModelVAE(placeholders, num_features, num_nodes, features_nonzero)
+	model = GCNModelVAE(placeholders, num_features, FLAGS.batch_size)
 
 pos_weight = float(adj.shape[0] * adj.shape[0] - adj.sum()) / adj.sum()
+logging.info("pos_weight = %s" % str(pos_weight))
+
 norm = adj.shape[0] * adj.shape[0] / float((adj.shape[0] * adj.shape[0] - adj.sum()) * 2)
-logging.info('optimizer')
+logging.info("norm = %s" % str(norm))
+
 # Optimizer
+# optimizer should put before the global_variables_initializer()
+# https://stackoverflow.com/questions/47765595/tensorflow-attempting-to-use-uninitialized-value-beta1-power?rq=1
+logging.info('optimizer')
 with tf.name_scope('optimizer'):
-    if model_str == 'gcn_ae':
-        opt = OptimizerAE(preds=model.reconstructions,
-                          labels=tf.reshape(tf.sparse_tensor_to_dense(placeholders['adj_orig'],
-                                                                      validate_indices=False), [-1]),
-                          pos_weight=pos_weight,
-                          norm=norm)
-    elif model_str == 'gcn_vae':
-        opt = OptimizerVAE(preds=model.reconstructions,
-                           labels=tf.reshape(tf.sparse_tensor_to_dense(placeholders['adj_orig'],
-                                                                       validate_indices=False), [-1]),
-                           model=model, num_nodes=num_nodes,
-                           pos_weight=pos_weight,
-                           norm=norm)
+	if model_str == 'gcn_ae':
+		opt = OptimizerAE(preds=model.reconstructions,
+						  labels=tf.reshape(tf.sparse_tensor_to_dense(placeholders['adj_orig'],
+																	  validate_indices=False), [-1]),
+						  pos_weight=pos_weight,
+						  norm=norm)
+	elif model_str == 'gcn_vae':
+		opt = OptimizerVAE(preds=model.reconstructions,
+						   labels=tf.reshape(tf.sparse_tensor_to_dense(placeholders['adj_orig'],
+																	   validate_indices=False), [-1]),
+						   model=model, num_nodes=FLAGS.batch_size,
+						   pos_weight=pos_weight,
+						   norm=norm)
+
 logging.info('initialize session')
 # Initialize session
 sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
-cost_val = []
-acc_val = []
-
 
 # write the embedding to file
 def get_emb(vae=True):
-    feed_dict.update({placeholders['dropout']: 0})
-    if vae:
-        emb = sess.run(model.z, feed_dict=feed_dict)
-    else:
-        emb = sess.run(model.z_mean, feed_dict=feed_dict)
-    # TODO: check the data type of emb
-    output = ''
-    output_node_list = ''
-    output += '%d %d' % (len(u_list), len(emb[0])) + '\n'
-    output_file_path = './out/'
-    for i in range(len(emb)):
-        output_node_list += str(u_list[i]) + '\n'
-        embedding_output = [str(j) for j in emb[i]]
-        output += '%d ' % u_list[i] + ' '.join(embedding_output) + '\n'
-    with open(output_file_path + 'graphsage.emb', 'w') as file1, open(output_file_path + 'node_list', 'w') as file2:
-        file1.write(output)
-        file2.write(output_node_list)
-    file1.close()
-    file2.close()
+	feed_dict.update({placeholders['dropout']: 0})
+	if vae:
+		emb = sess.run(model.z, feed_dict=feed_dict)
+	else:
+		emb = sess.run(model.z_mean, feed_dict=feed_dict)
+	# TODO: check the data type of emb
+	output = ''
+	output_node_list = ''
+	output += '%d %d' % (len(u_list), len(emb[0])) + '\n'
+	output_file_path = './out/'
+	logging.info("len(emb) = %s" % str(len(emb)))
+	for i in range(len(emb)):
+		output_node_list += str(u_list[i]) + '\n'
+		embedding_output = [str(j) for j in emb[i]]
+		output += '%d ' % u_list[i] + ' '.join(embedding_output) + '\n'
+	with open(output_file_path + 'graphsage.emb', 'w') as file1, open(output_file_path + 'node_list', 'w') as file2:
+		file1.write(output)
+		file2.write(output_node_list)
+	file1.close()
+	file2.close()
 
-#
-# def get_roc_score(edges_pos, edges_neg, emb=None):
-#     if emb is None:
-#         feed_dict.update({placeholders['dropout']: 0})
-#         emb = sess.run(model.z_mean, feed_dict=feed_dict)
-#
-#     def sigmoid(x):
-#         return 1 / (1 + np.exp(-x))
-#
-#     # Predict on test set of edges
-#     adj_rec = np.dot(emb, emb.T)
-#     preds = []
-#     pos = []
-#     for e in edges_pos:
-#         preds.append(sigmoid(adj_rec[e[0], e[1]]))
-#         pos.append(adj_orig[e[0], e[1]])
-#
-#     preds_neg = []
-#     neg = []
-#     for e in edges_neg:
-#         preds_neg.append(sigmoid(adj_rec[e[0], e[1]]))
-#         neg.append(adj_orig[e[0], e[1]])
-#
-#     preds_all = np.hstack([preds, preds_neg])
-#     labels_all = np.hstack([np.ones(len(preds)), np.zeros(len(preds_neg))])
-#     roc_score = roc_auc_score(labels_all, preds_all)
-#     ap_score = average_precision_score(labels_all, preds_all)
-#
-#     return roc_score, ap_score
-#
 
-# cost_val = []
-# acc_val = []
-val_roc_score = []
+logging.info('preprocessing data')
+adj_norm_without_tuple = preprocess_graph_without_tuple(adj)
+adj_label_without_tuple = adj + sp.eye(adj.shape[0])
 
-adj_label = adj_train + sp.eye(adj_train.shape[0])
-adj_label = sparse_to_tuple(adj_label)
+logging.info('done preprocessing data.')
+
+
+def get_feature_batch(features, adj_batch):
+	adj_mask = adj_batch.sum(axis=0)
+	adj_mask[adj_mask >= 1] = 1
+	adj_mask = adj_mask.transpose()
+	adj_mask = sp.csr_matrix(adj_mask)
+
+	features_masked = adj_mask.multiply(features)
+
+	features_masked = sparse_to_tuple(features_masked.tocoo())
+	logging.info("features[2] = %s" % str(features_masked[2]))  # (619030, 8)
+	num_features = features_masked[2][1]
+	logging.info("num_features = %s" % str(num_features))  # 8
+	features_nonzero = features_masked[1].shape[0]
+	logging.info("features_nonzero = %s" % str(features_nonzero))  # 619030 * 8 - 4947442 = 4978
+	return features_masked, num_features, features_nonzero
+
+
+sparse_feature_batch, num_features, features_nonzero = get_feature_batch(features, adj[0:FLAGS.batch_size])
+
+node_number = adj.shape[0]
+batch_size = FLAGS.batch_size
+batch_num = int(node_number / batch_size) + 1
+logging.info("batch_num = %d" % batch_num)
+
+
 logging.info('train model')
-# Train model
 for epoch in range(FLAGS.epochs):
-    t = time.time()
-    logging.info('construct dictionary')
-    # Construct feed dictionary
-    feed_dict = construct_feed_dict(adj_norm, adj_label, features, placeholders)
-    logging.info('update')
-    feed_dict.update({placeholders['dropout']: FLAGS.dropout})
-    # Run single weight update
-    logging.info('run the model')
-    outs = sess.run([opt.opt_op, opt.cost, opt.accuracy], feed_dict=feed_dict)
+	t = time.time()
 
-    logging.info('average loss')
-    # Compute average loss
-    avg_cost = outs[1]
-    avg_accuracy = outs[2]
-    get_emb(vae=True)
-    # roc_curr, ap_curr = get_roc_score(val_edges, val_edges_false)
-    # val_roc_score.append(roc_curr)
+	hidden1 = []
+	for batch_index in range(batch_num):
+		start_index = batch_size * batch_index
+		end_index = batch_size * (batch_index + 1)
+		if batch_index == batch_num - 1:
+			end_index = node_number
 
-    # print("Epoch:", '%04d' % (epoch + 1), "train_loss=", "{:.5f}".format(avg_cost),
-    #       "train_acc=", "{:.5f}".format(avg_accuracy), "val_roc=", "{:.5f}".format(val_roc_score[-1]),
-    #       "val_ap=", "{:.5f}".format(ap_curr),
-    #       "time=", "{:.5f}".format(time.time() - t))
-    print("Epoch:", '%04d' % (epoch + 1), "train_loss=", "{:.5f}".format(avg_cost),
-          "train_acc=", "{:.5f}".format(avg_accuracy),
-          "time=", "{:.5f}".format(time.time() - t))
+		adj_norm_batch = adj_norm_without_tuple[start_index:end_index]
+		adj_norm_batch = sparse_to_tuple(adj_norm_batch)
+
+		adj_label_batch = adj_label_without_tuple[start_index:FLAGS.end_index]
+		adj_label_batch = sparse_to_tuple(adj_label_batch)
+
+		feed_dict = construct_feed_dict(adj_norm_batch, adj_label_batch, sparse_feature_batch,
+										features_nonzero, placeholders)
+		logging.info('update')
+		feed_dict.update({placeholders['dropout']: FLAGS.dropout})
+
+		# Run a batch to get the hidden1 batch vectors
+		logging.info('run the model')
+		hidden1_batch = sess.run([model.hidden1], feed_dict=feed_dict)
+		hidden1.append(hidden1_batch)
+
+	logging.info("outs = %s" % outs)
+
+	# outs = sess.run([opt.opt_op, opt.cost, opt.accuracy], feed_dict=feed_dict)
+
+	logging.info('average loss')
+	# Compute average loss
+	avg_cost = outs[1]
+	avg_accuracy = outs[2]
+
+	print("Epoch:", '%04d' % (epoch + 1), "train_loss=", "{:.5f}".format(avg_cost),
+		  "train_acc=", "{:.5f}".format(avg_accuracy),
+		  "time=", "{:.5f}".format(time.time() - t))
 
 print("Optimization Finished!")
 
-# roc_score, ap_score = get_roc_score(test_edges, test_edges_false)
-# print('Test ROC score: ' + str(roc_score))
-# print('Test AP score: ' + str(ap_score))
+logging.info("generate embedding file...")
+get_emb(vae=True)
+logging.info("end.")
