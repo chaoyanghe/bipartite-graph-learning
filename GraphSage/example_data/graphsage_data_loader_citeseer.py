@@ -471,7 +471,7 @@ if __name__ == "__main__":
                         level=logging.INFO)
 
     # load the bipartite graph data
-    dataset = 'cora'
+    dataset = 'citeseer'
     NODE_LIST_PATH = "../../data/%s/node_list" % dataset
     NODE_ATTR_PATH = "../../data/%s/node_attr" % dataset
     NODE_LABEL_PATH = "../../data/%s/node_true" % dataset

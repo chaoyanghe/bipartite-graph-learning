@@ -35,8 +35,7 @@ def run_random_walks(G, nodes, walk_len, n_walks):
 
 
 if __name__ == "__main__":
-    #dataset_name = args.dataset
-    dataset_name = "cora"
+    dataset_name = args.dataset
     logging.basicConfig(filename='run_graphsage_data_loader.log', filemode='w',
                         format='%(asctime)s  %(filename)s : %(lineno)d : %(levelname)s  %(message)s',
                         datefmt='%Y-%m-%d %A %H:%M:%S',

@@ -3,20 +3,20 @@
 rm -rf ./out/graphsage/*
 
 
-pip3 install networkx==1.11
+#pip3 install networkx==1.11
 
 DATASET="cora"
 echo $DATASET
 
 # only execute once
 cd ./GraphSage/example_data/
-sh run_graphsage_data_loader.sh cora
+sh run_graphsage_data_loader.sh $DATASET
 cd ../..
 
 
 cd ./GraphSage
 python3 -m graphsage.unsupervised_train \
---train_prefix ./example_data/cora/bipartite \
+--train_prefix ./example_data/$DATASET/bipartite \
 --base_log_dir ./log_embedding \
 --model graphsage_mean \
 --max_total_steps 100000000 \
@@ -41,4 +41,4 @@ cd ..
 python3 ./GraphSage/multi-classification.py --dataset cora
 
 
-pip3 install networkx==2.2
+#pip3 install networkx==2.2

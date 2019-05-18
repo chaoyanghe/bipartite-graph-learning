@@ -20,7 +20,7 @@ fi
 
 
 python3 random_walk.py \
---dataset cora \
+--dataset $1 \
 --walk_len 5 \
 --n_walks 50
 
