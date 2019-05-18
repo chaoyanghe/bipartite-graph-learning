@@ -29,13 +29,12 @@ def preprocess_graph_without_tuple(adj):
     return adj_normalized
 
 
-def construct_feed_dict(adj_normalized, adj, features, features_nonzero, placeholders):
+def construct_feed_dict(adj_normalized, adj, features, placeholders):
     # construct feed dictionary
     feed_dict = dict()
     feed_dict.update({placeholders['features']: features})
     feed_dict.update({placeholders['adj']: adj_normalized})
     feed_dict.update({placeholders['adj_orig']: adj})
-    feed_dict.update({placeholders['features_nonzero']: features_nonzero})
     return feed_dict
 
 
