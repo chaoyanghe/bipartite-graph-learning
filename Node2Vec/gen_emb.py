@@ -27,9 +27,10 @@ if __name__ == "__main__":
 	method = conf.method
 	input_folder = conf.input_folder + str(dataset)
 
-	output_folder = conf.output_folder + str(dataset)
-	print("output_folder = %s" % output_folder)
+	output_folder = conf.output_folder + "/" + str(dataset)
 	
+	print("output_folder = %s" % output_folder)
+
 	if not os.path.exists(output_folder):
 		os.makedirs(output_folder)
 

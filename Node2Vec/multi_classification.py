@@ -24,7 +24,7 @@ if __name__ == "__main__":
 	method = conf.method
 	input_folder = conf.input_folder + str(dataset)
 
-	output_folder = conf.output_folder + str(dataset)
+	output_folder = conf.output_folder + "/" + str(dataset)
 
 	l = conf.l
 	r = conf.r
