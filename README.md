@@ -91,6 +91,6 @@ It may take XX minutes to get the result.
 
 ## one command to get all the result
 ~~~
-
+sh run.sh
 ~~~
 
