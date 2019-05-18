@@ -63,24 +63,24 @@ def load_data_for_gae(flags, device):
 
 	bipartite_graph_data_loader = None
 	if flags.dataset == "cora":
-		NODE_LIST_PATH = "./../data/cora/node_list"
-		NODE_ATTR_PATH = "./../data/cora/node_attr"
-		NODE_LABEL_PATH = "./../data/cora/node_true"
-		EDGE_LIST_PATH = "./../data/cora/edgelist"
-		GROUP_LIST_PATH = "./../data/cora/group_list"
-		GROUP_ATTR_PATH = "./../data/cora/group_attr"
+		NODE_LIST_PATH = "./data/cora/node_list"
+		NODE_ATTR_PATH = "./data/cora/node_attr"
+		NODE_LABEL_PATH = "./data/cora/node_true"
+		EDGE_LIST_PATH = "./data/cora/edgelist"
+		GROUP_LIST_PATH = "./data/cora/group_list"
+		GROUP_ATTR_PATH = "./data/cora/group_attr"
 
 		bipartite_graph_data_loader = BipartiteGraphDataLoaderCora(batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
 																   NODE_LABEL_PATH,
 																   EDGE_LIST_PATH,
 																   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
 	elif flags.dataset == "tencent":
-		NODE_LIST_PATH = "./../data/Tencent-QQ/node_list"
-		NODE_ATTR_PATH = "./../data/Tencent-QQ/node_attr"
-		NODE_LABEL_PATH = "./../data/Tencent-QQ/node_true"
-		EDGE_LIST_PATH = "./../data/Tencent-QQ/edgelist"
-		GROUP_LIST_PATH = "./../data/Tencent-QQ/group_list"
-		GROUP_ATTR_PATH = "./../data/Tencent-QQ/group_attr"
+		NODE_LIST_PATH = "./data/Tencent-QQ/node_list"
+		NODE_ATTR_PATH = "./data/Tencent-QQ/node_attr"
+		NODE_LABEL_PATH = "./data/Tencent-QQ/node_true"
+		EDGE_LIST_PATH = "./data/Tencent-QQ/edgelist"
+		GROUP_LIST_PATH = "./data/Tencent-QQ/group_list"
+		GROUP_ATTR_PATH = "./data/Tencent-QQ/group_attr"
 
 		bipartite_graph_data_loader = BipartiteGraphDataLoaderTencent(batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
 																   NODE_LABEL_PATH,

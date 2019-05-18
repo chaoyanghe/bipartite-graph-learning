@@ -1,0 +1,445 @@
+Sat, 18 May 2019 01:45:03 bipartite_graph_data_loader_cora.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Sat, 18 May 2019 01:45:03 bipartite_graph_data_loader_cora.py[line:22] INFO group_u_list_file_path = ./data/cora/node_list
+Sat, 18 May 2019 01:45:03 bipartite_graph_data_loader_cora.py[line:23] INFO group_u_attr_file_path = ./data/cora/node_attr
+Sat, 18 May 2019 01:45:03 bipartite_graph_data_loader_cora.py[line:24] INFO group_u_label_file_path = ./data/cora/node_true
+Sat, 18 May 2019 01:45:03 bipartite_graph_data_loader_cora.py[line:26] INFO edge_list_file_path = ./data/cora/edgelist
+Sat, 18 May 2019 01:45:03 bipartite_graph_data_loader_cora.py[line:28] INFO group_v_list_file_path = ./data/cora/group_list
+Sat, 18 May 2019 01:45:03 bipartite_graph_data_loader_cora.py[line:29] INFO group_v_attr_file_path = ./data/cora/group_attr
+Sat, 18 May 2019 01:45:03 bipartite_graph_data_loader_cora.py[line:30] INFO group_v_label_file_path = None
+Sat, 18 May 2019 01:45:03 bipartite_graph_data_loader_cora.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Sat, 18 May 2019 01:45:03 bipartite_graph_data_loader_cora.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:206] INFO before merging with v_list, the len is = 326
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:214] INFO after merging with v_attr_dict, the len is = 326
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:229] INFO __generate_adjacent_matrix START
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:231] INFO u_node_list = 301
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:232] INFO v_node_list = 326
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:233] INFO edge_list = 585
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:235] INFO start to load bipartite for u
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:245] INFO (301, 326)
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:248] INFO end to load bipartite for u
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:250] INFO start to load bipartite for u
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:260] INFO (326, 301)
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:263] INFO end to load bipartite for u
+Sat, 18 May 2019 01:45:04 bipartite_graph_data_loader_cora.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Sat, 18 May 2019 01:45:04 input_data.py[line:91] INFO ####### Done bipartite graph loader #########
+Sat, 18 May 2019 01:45:04 input_data.py[line:96] INFO u_attr len = 301
+Sat, 18 May 2019 01:45:04 input_data.py[line:97] INFO u_adj shape = (301, 326)
+Sat, 18 May 2019 01:45:04 input_data.py[line:98] INFO u_list len = 301
+Sat, 18 May 2019 01:45:04 input_data.py[line:103] INFO ######### Data loaded ###########
+Sat, 18 May 2019 01:45:04 train.py[line:57] INFO preprocessing data
+Sat, 18 May 2019 01:45:04 train.py[line:60] INFO done preprocessing data
+Sat, 18 May 2019 01:45:04 train.py[line:74] INFO create model
+Sat, 18 May 2019 01:45:04 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 01:45:04 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/gae/layers.py:79: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Sat, 18 May 2019 01:45:04 model.py[line:118] INFO Finish calculating the latent vector!!!!!!!!!
+Sat, 18 May 2019 01:45:04 model.py[line:91] INFO GCNVAE model initialized!!!!!!!!
+Sat, 18 May 2019 01:45:04 train.py[line:84] INFO optimizer
+Sat, 18 May 2019 01:45:04 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Sat, 18 May 2019 01:45:04 train.py[line:100] INFO initialize session
+Sat, 18 May 2019 01:45:04 train.py[line:107] INFO train model
+Sat, 18 May 2019 01:45:04 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:04 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:04 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:04 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:04 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:04 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:04 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:04 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:04 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:04 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:04 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:04 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:04 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:04 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:04 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:05 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:05 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:05 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:05 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:06 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:06 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:06 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:06 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:07 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:07 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:07 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:07 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:08 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:08 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:08 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:08 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:09 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:09 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:09 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:09 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:09 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:09 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:09 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:09 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:09 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:09 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:09 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:09 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:09 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:09 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:09 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:09 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:09 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:09 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:09 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:09 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:09 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:09 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:09 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:09 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:09 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:09 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:09 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:09 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:09 train.py[line:120] INFO average loss
+Sat, 18 May 2019 01:45:09 train.py[line:111] INFO construct dictionary
+Sat, 18 May 2019 01:45:09 train.py[line:114] INFO update
+Sat, 18 May 2019 01:45:09 train.py[line:117] INFO run the model
+Sat, 18 May 2019 01:45:09 train.py[line:120] INFO average loss
