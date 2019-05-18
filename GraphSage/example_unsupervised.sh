@@ -5,14 +5,14 @@ rm -rf ./out/*
 
 
 python -m graphsage.unsupervised_train \
---train_prefix ./example_data/toy-ppi \
+--train_prefix ./example_data/bipartite \
 --model graphsage_mean \
 --max_total_steps 100000000 \
 --validate_iter 500000 \
 --epochs 1 \
 --learning_rate 0.0001 \
 --dropout 0.0 \
---weight_decay 0.05 \
+--weight_decay 0.0005 \
 --samples_1 25 \
 --samples_2 10 \
 --dim_1 16 \
@@ -23,6 +23,6 @@ python -m graphsage.unsupervised_train \
 --base_log_dir ./log_embedding \
 --walk_len 5 \
 --n_walks 50 \
---print_every 10
+--print_every 50
 
 python ./classification.py

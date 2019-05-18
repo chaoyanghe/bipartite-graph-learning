@@ -612,9 +612,9 @@ if __name__ == "__main__":
     GROUP_ATTR_PATH = "../../data/%s/group_attr" % dataset
     NODE_TRUE = "../../data/%s/node_true" % dataset
     bipartite_graph_data_loader = BipartiteGraphDataLoaderTencent(100, NODE_LIST_PATH, NODE_ATTR_PATH,
-                                                               NODE_LABEL_PATH,
-                                                               EDGE_LIST_PATH,
-                                                               GROUP_LIST_PATH, GROUP_ATTR_PATH)
+                                                                  NODE_LABEL_PATH,
+                                                                  EDGE_LIST_PATH,
+                                                                  GROUP_LIST_PATH, GROUP_ATTR_PATH)
     bipartite_graph_data_loader.load()
     u_attr = bipartite_graph_data_loader.get_u_attr_array()
     v_attr = bipartite_graph_data_loader.get_v_attr_array()
@@ -625,8 +625,8 @@ if __name__ == "__main__":
 
     with open(NODE_TRUE, 'r') as file:
         node_true = file.readlines()
-    node_true = list(map(lambda x:x.strip().split('\t'), node_true))
-    node_true = list(map(lambda x:(int(x[0]), int(x[1])), node_true))
+    node_true = list(map(lambda x: x.strip().split('\t'), node_true))
+    node_true = list(map(lambda x: (int(x[0]), int(x[1])), node_true))
 
     # # test the code
     # u_list = [1, 3, 5, 7, 9]
