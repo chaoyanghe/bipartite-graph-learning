@@ -14,7 +14,7 @@ import scipy.sparse as sp
 
 from optimizer import OptimizerAE, OptimizerVAE
 
-from input_data import load_data_for_tencent
+from input_data import load_data_for_cora
 
 from model import GCNModelAE, GCNModelVAE
 from preprocessing import preprocess_graph, construct_feed_dict, sparse_to_tuple
@@ -43,7 +43,7 @@ model_str = FLAGS.model
 dataset_str = FLAGS.dataset
 
 # Load data
-adj, features, u_list = load_data_for_tencent(FLAGS, 'cpu')  # u_list is the hash table
+adj, features, u_list = load_data_for_cora(FLAGS, 'cpu')  # u_list is the hash table
 
 # Store original adjacency matrix (without diagonal entries) for later
 adj_orig = adj
@@ -102,30 +102,6 @@ logging.info('initialize session')
 sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
-
-# write the embedding to file
-def get_emb(vae=True):
-	feed_dict.update({placeholders['dropout']: 0})
-	if vae:
-		emb = sess.run(model.z, feed_dict=feed_dict)
-	else:
-		emb = sess.run(model.z_mean, feed_dict=feed_dict)
-	# TODO: check the data type of emb
-	output = ''
-	output_node_list = ''
-	output += '%d %d' % (len(u_list), len(emb[0])) + '\n'
-	output_file_path = './out/'
-	for i in range(len(emb)):
-		output_node_list += str(u_list[i]) + '\n'
-		embedding_output = [str(j) for j in emb[i]]
-		output += '%d ' % u_list[i] + ' '.join(embedding_output) + '\n'
-	with open(output_file_path + 'graphsage.emb', 'w') as file1, open(output_file_path + 'node_list', 'w') as file2:
-		file1.write(output)
-		file2.write(output_node_list)
-	file1.close()
-	file2.close()
-
-
 adj_label = adj_train + sp.eye(adj_train.shape[0])
 adj_label = sparse_to_tuple(adj_label)
 logging.info('train model')
@@ -145,9 +121,30 @@ for epoch in range(FLAGS.epochs):
 	# Compute average loss
 	avg_cost = outs[1]
 	avg_accuracy = outs[2]
-	print("Epoch:", '%04d' % (epoch + 1), "train_loss=", "{:.5f}".format(avg_cost),
-		  "train_acc=", "{:.5f}".format(avg_accuracy),
-		  "time=", "{:.5f}".format(time.time() - t))
 
-get_emb(vae=True)
+	print("Epoch: %d, train_loss = %s, train_acc = %s, time cost = %s" % (
+	epoch, str(avg_cost), str(avg_accuracy), str(time.time() - t)))
+
+vae = True
+# write the embedding to file
+feed_dict = construct_feed_dict(adj_norm, adj_label, features, placeholders)
+feed_dict.update({placeholders['dropout']: 0})
+if vae:
+	emb = sess.run(model.z, feed_dict=feed_dict)
+else:
+	emb = sess.run(model.z_mean, feed_dict=feed_dict)
+# TODO: check the data type of emb
+output = ''
+output_node_list = ''
+output += '%d %d' % (len(u_list), len(emb[0])) + '\n'
+output_file_path = './out/'
+for i in range(len(emb)):
+	output_node_list += str(u_list[i]) + '\n'
+	embedding_output = [str(j) for j in emb[i]]
+	output += '%d ' % u_list[i] + ' '.join(embedding_output) + '\n'
+with open(output_file_path + 'gae.emb', 'w') as file1, open(output_file_path + 'node_list', 'w') as file2:
+	file1.write(output)
+	file2.write(output_node_list)
+file1.close()
+file2.close()
 print("Optimization Finished!")

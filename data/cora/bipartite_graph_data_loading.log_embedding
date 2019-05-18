@@ -1,0 +1,23 @@
+2019-05-17 Friday 20:10:28  bipartite_graph_data_loader_cora.py : 15 : INFO  BipartiteGraphDataLoader __init__().
+2019-05-17 Friday 20:10:28  bipartite_graph_data_loader_cora.py : 22 : INFO  group_u_list_file_path = ./node_list
+2019-05-17 Friday 20:10:28  bipartite_graph_data_loader_cora.py : 23 : INFO  group_u_attr_file_path = ./node_attr
+2019-05-17 Friday 20:10:28  bipartite_graph_data_loader_cora.py : 24 : INFO  group_u_label_file_path = ./node_true
+2019-05-17 Friday 20:10:28  bipartite_graph_data_loader_cora.py : 26 : INFO  edge_list_file_path = ./edgelist
+2019-05-17 Friday 20:10:28  bipartite_graph_data_loader_cora.py : 28 : INFO  group_v_list_file_path = ./group_list
+2019-05-17 Friday 20:10:28  bipartite_graph_data_loader_cora.py : 29 : INFO  group_v_attr_file_path = ./group_attr
+2019-05-17 Friday 20:10:28  bipartite_graph_data_loader_cora.py : 30 : INFO  group_v_label_file_path = None
+2019-05-17 Friday 20:10:28  bipartite_graph_data_loader_cora.py : 56 : INFO  BipartiteGraphDataLoader __init__(). END
+2019-05-17 Friday 20:10:28  bipartite_graph_data_loader_cora.py : 74 : INFO  ##### generate_adjacent_matrix_feature_and_labels. START
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 222 : INFO  before merging with v_list, the len is = 326
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 230 : INFO  after merging with v_attr_dict, the len is = 326
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 245 : INFO  __generate_adjacent_matrix START
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 247 : INFO  u_node_list = 301
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 248 : INFO  v_node_list = 326
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 249 : INFO  edge_list = 585
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 251 : INFO  start to load bipartite for u
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 261 : INFO  (301, 326)
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 264 : INFO  end to load bipartite for u
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 266 : INFO  start to load bipartite for u
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 276 : INFO  (326, 301)
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 279 : INFO  end to load bipartite for u
+2019-05-17 Friday 20:10:29  bipartite_graph_data_loader_cora.py : 134 : INFO  #### generate_adjacent_matrix_feature_and_labels. END

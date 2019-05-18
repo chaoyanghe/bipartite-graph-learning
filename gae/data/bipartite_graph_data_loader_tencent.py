@@ -73,7 +73,9 @@ class BipartiteGraphDataLoader:
         logging.info("##### generate_adjacent_matrix_feature_and_labels. START")
         u_list = self.__load_u_list()
         u_attr_dict, u_attr_array = self.__load_u_attribute(u_list)
-        #        logging.info("u_attribute = %s: %s" % (u_attr_array.shape, u_attr_array[0::100000]))  # 1089436
+        logging.info("u_attribute = %s: %s" % (u_attr_array, u_attr_array[0::100000]))  # 1089436
+
+        logging.info("u_attribute = %s: %s" % (u_attr_array, u_attr_array[0::100000]))
 
         v_list = self.__load_v_list()
         v_attr_dict, v_attr_array = self.__load_v_attribute(v_list)
@@ -83,7 +85,7 @@ class BipartiteGraphDataLoader:
         f_edge_list = open(self.edge_list_file_path, 'r')
         edge_count = 0
         for l in f_edge_list:
-            items = l.strip('\n').split(" ")
+            items = l.strip('\n').split("\t")
             v = int(items[0])
             u = int(items[1])
             edge_count += 1

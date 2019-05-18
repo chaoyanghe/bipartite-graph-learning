@@ -4,7 +4,7 @@ import pickle as pkl
 import networkx as nx
 import scipy.sparse as sp
 
-from gae.bipartite_graph_data_loader import BipartiteGraphDataLoader
+from data.bipartite_graph_data_loader_tencent import BipartiteGraphDataLoader
 
 
 def parse_index_file(filename):
