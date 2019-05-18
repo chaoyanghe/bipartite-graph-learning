@@ -1,0 +1,86 @@
+Fri, 17 May 2019 22:42:27 utils.py[line:43] INFO class map loaded
+Fri, 17 May 2019 22:42:27 utils.py[line:59] INFO bad nodes removed
+Fri, 17 May 2019 22:42:28 utils.py[line:78] INFO Normalized
+Fri, 17 May 2019 22:42:37 utils.py[line:93] INFO data all loaded
+Fri, 17 May 2019 22:42:37 unsupervised_train.py[line:439] INFO start training
+Fri, 17 May 2019 22:42:37 unsupervised_train.py[line:188] INFO edge minibatch
+Fri, 17 May 2019 22:42:51 deprecation.py[line:323] WARNING From /Users/apple/Documents/P1_Decentralized_Multitask/Leaf_New_2.0/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Fri, 17 May 2019 22:42:51 unsupervised_train.py[line:198] INFO choose model
+Fri, 17 May 2019 22:42:51 deprecation.py[line:506] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Fri, 17 May 2019 22:42:51 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Fri, 17 May 2019 22:42:51 deprecation.py[line:323] WARNING From /Users/apple/Documents/P1_Decentralized_Multitask/Leaf_New_2.0/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Fri, 17 May 2019 22:42:53 unsupervised_train.py[line:310] INFO training epoch: 1
+Fri, 17 May 2019 22:42:58 unsupervised_train.py[line:352] INFO Iter: 0000, train_loss=18.305443, train_mrr=0.173346, train_mrr_ema=0.173346, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=2.232186
+Fri, 17 May 2019 22:42:58 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
+Fri, 17 May 2019 22:43:05 unsupervised_train.py[line:352] INFO Iter: 0010, train_loss=17.601606, train_mrr=0.178035, train_mrr_ema=0.172943, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.817841
+Fri, 17 May 2019 22:43:05 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0010, max_total_steps: 100000000
+Fri, 17 May 2019 22:43:11 unsupervised_train.py[line:352] INFO Iter: 0020, train_loss=17.565779, train_mrr=0.188205, train_mrr_ema=0.173983, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.737615
+Fri, 17 May 2019 22:43:11 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0020, max_total_steps: 100000000
+Fri, 17 May 2019 22:43:18 unsupervised_train.py[line:352] INFO Iter: 0030, train_loss=17.448477, train_mrr=0.186749, train_mrr_ema=0.174461, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.713344
+Fri, 17 May 2019 22:43:18 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0030, max_total_steps: 100000000
+Fri, 17 May 2019 22:43:25 unsupervised_train.py[line:352] INFO Iter: 0040, train_loss=16.792341, train_mrr=0.181190, train_mrr_ema=0.175101, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.709931
+Fri, 17 May 2019 22:43:25 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0040, max_total_steps: 100000000
+Fri, 17 May 2019 22:43:32 unsupervised_train.py[line:352] INFO Iter: 0050, train_loss=16.240318, train_mrr=0.206942, train_mrr_ema=0.175777, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.712587
+Fri, 17 May 2019 22:43:32 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0050, max_total_steps: 100000000
+Fri, 17 May 2019 22:43:40 unsupervised_train.py[line:352] INFO Iter: 0060, train_loss=16.529289, train_mrr=0.196608, train_mrr_ema=0.176521, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.723098
+Fri, 17 May 2019 22:43:40 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0060, max_total_steps: 100000000
+Fri, 17 May 2019 22:43:47 unsupervised_train.py[line:352] INFO Iter: 0070, train_loss=16.377110, train_mrr=0.183026, train_mrr_ema=0.176595, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.716067
+Fri, 17 May 2019 22:43:47 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0070, max_total_steps: 100000000
+Fri, 17 May 2019 22:43:54 unsupervised_train.py[line:352] INFO Iter: 0080, train_loss=16.384647, train_mrr=0.182466, train_mrr_ema=0.176877, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.717665
+Fri, 17 May 2019 22:43:54 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0080, max_total_steps: 100000000
+Fri, 17 May 2019 22:44:03 unsupervised_train.py[line:352] INFO Iter: 0090, train_loss=16.462826, train_mrr=0.163420, train_mrr_ema=0.176539, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.739773
+Fri, 17 May 2019 22:44:03 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0090, max_total_steps: 100000000
+Fri, 17 May 2019 22:44:09 unsupervised_train.py[line:352] INFO Iter: 0100, train_loss=16.163540, train_mrr=0.176369, train_mrr_ema=0.176463, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.726955
+Fri, 17 May 2019 22:44:09 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0100, max_total_steps: 100000000
+Fri, 17 May 2019 22:44:15 unsupervised_train.py[line:352] INFO Iter: 0110, train_loss=15.786230, train_mrr=0.187067, train_mrr_ema=0.176311, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.713888
+Fri, 17 May 2019 22:44:15 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0110, max_total_steps: 100000000
+Fri, 17 May 2019 22:44:21 unsupervised_train.py[line:352] INFO Iter: 0120, train_loss=15.638908, train_mrr=0.190611, train_mrr_ema=0.177001, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.705037
+Fri, 17 May 2019 22:44:21 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0120, max_total_steps: 100000000
+Fri, 17 May 2019 22:44:30 unsupervised_train.py[line:352] INFO Iter: 0130, train_loss=15.839190, train_mrr=0.173937, train_mrr_ema=0.177660, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.720579
+Fri, 17 May 2019 22:44:30 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0130, max_total_steps: 100000000
+Fri, 17 May 2019 22:44:37 unsupervised_train.py[line:352] INFO Iter: 0140, train_loss=15.529907, train_mrr=0.181924, train_mrr_ema=0.177184, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.718247
+Fri, 17 May 2019 22:44:37 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0140, max_total_steps: 100000000
+Fri, 17 May 2019 22:44:44 unsupervised_train.py[line:352] INFO Iter: 0150, train_loss=15.439090, train_mrr=0.172494, train_mrr_ema=0.177149, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.714506
+Fri, 17 May 2019 22:44:44 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0150, max_total_steps: 100000000
+Fri, 17 May 2019 22:44:50 unsupervised_train.py[line:352] INFO Iter: 0160, train_loss=15.729548, train_mrr=0.160114, train_mrr_ema=0.176638, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.711258
+Fri, 17 May 2019 22:44:50 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0160, max_total_steps: 100000000
+Fri, 17 May 2019 22:44:56 unsupervised_train.py[line:352] INFO Iter: 0170, train_loss=15.639734, train_mrr=0.171093, train_mrr_ema=0.176495, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.705551
+Fri, 17 May 2019 22:44:56 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0170, max_total_steps: 100000000
+Fri, 17 May 2019 22:45:02 unsupervised_train.py[line:352] INFO Iter: 0180, train_loss=15.723694, train_mrr=0.183881, train_mrr_ema=0.177527, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.699160
+Fri, 17 May 2019 22:45:02 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0180, max_total_steps: 100000000
+Fri, 17 May 2019 22:45:08 unsupervised_train.py[line:352] INFO Iter: 0190, train_loss=15.345978, train_mrr=0.171428, train_mrr_ema=0.177657, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.692896
+Fri, 17 May 2019 22:45:08 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0190, max_total_steps: 100000000
+Fri, 17 May 2019 22:45:14 unsupervised_train.py[line:352] INFO Iter: 0200, train_loss=15.144165, train_mrr=0.192367, train_mrr_ema=0.177656, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.687126
+Fri, 17 May 2019 22:45:14 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0200, max_total_steps: 100000000
+Fri, 17 May 2019 22:45:20 unsupervised_train.py[line:352] INFO Iter: 0210, train_loss=15.254152, train_mrr=0.171520, train_mrr_ema=0.177947, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.682514
+Fri, 17 May 2019 22:45:20 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0210, max_total_steps: 100000000
+Fri, 17 May 2019 22:45:26 unsupervised_train.py[line:352] INFO Iter: 0220, train_loss=15.367484, train_mrr=0.178902, train_mrr_ema=0.177902, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.680045
+Fri, 17 May 2019 22:45:26 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0220, max_total_steps: 100000000
+Fri, 17 May 2019 22:45:32 unsupervised_train.py[line:352] INFO Iter: 0230, train_loss=15.410977, train_mrr=0.190867, train_mrr_ema=0.177879, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.676466
+Fri, 17 May 2019 22:45:32 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0230, max_total_steps: 100000000
+Fri, 17 May 2019 22:45:38 unsupervised_train.py[line:352] INFO Iter: 0240, train_loss=15.177648, train_mrr=0.191289, train_mrr_ema=0.178520, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.673907
+Fri, 17 May 2019 22:45:38 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0240, max_total_steps: 100000000
+Fri, 17 May 2019 22:45:45 unsupervised_train.py[line:352] INFO Iter: 0250, train_loss=15.181589, train_mrr=0.210693, train_mrr_ema=0.178460, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.671917
+Fri, 17 May 2019 22:45:45 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0250, max_total_steps: 100000000
+Fri, 17 May 2019 22:45:51 unsupervised_train.py[line:352] INFO Iter: 0260, train_loss=15.160819, train_mrr=0.169537, train_mrr_ema=0.178688, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.669353
+Fri, 17 May 2019 22:45:51 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0260, max_total_steps: 100000000
+Fri, 17 May 2019 22:45:57 unsupervised_train.py[line:352] INFO Iter: 0270, train_loss=14.883629, train_mrr=0.176540, train_mrr_ema=0.178857, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.669749
+Fri, 17 May 2019 22:45:57 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0270, max_total_steps: 100000000
+Fri, 17 May 2019 22:46:04 unsupervised_train.py[line:352] INFO Iter: 0280, train_loss=15.051065, train_mrr=0.178723, train_mrr_ema=0.178510, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.667466
+Fri, 17 May 2019 22:46:04 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0280, max_total_steps: 100000000
+Fri, 17 May 2019 22:46:10 unsupervised_train.py[line:352] INFO Iter: 0290, train_loss=15.080524, train_mrr=0.176629, train_mrr_ema=0.178401, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.665948
+Fri, 17 May 2019 22:46:10 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0290, max_total_steps: 100000000
+Fri, 17 May 2019 22:46:16 unsupervised_train.py[line:352] INFO Iter: 0300, train_loss=15.079769, train_mrr=0.183260, train_mrr_ema=0.178417, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.663298
+Fri, 17 May 2019 22:46:16 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0300, max_total_steps: 100000000
+Fri, 17 May 2019 22:46:21 unsupervised_train.py[line:352] INFO Iter: 0310, train_loss=14.974354, train_mrr=0.168197, train_mrr_ema=0.178514, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.660504
+Fri, 17 May 2019 22:46:21 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0310, max_total_steps: 100000000
+Fri, 17 May 2019 22:46:28 unsupervised_train.py[line:352] INFO Iter: 0320, train_loss=14.977690, train_mrr=0.185540, train_mrr_ema=0.179231, val_loss=17.969807, val_mrr=0.172086, val_mrr_ema=0.172086, time=0.659852
+Fri, 17 May 2019 22:46:28 unsupervised_train.py[line:354] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0320, max_total_steps: 100000000

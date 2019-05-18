@@ -345,7 +345,6 @@ def train(train_data, test_data=None):
 
             # Print results
             avg_time = (avg_time * total_steps + time.time() - t) / (total_steps + 1)
-
             if total_steps % FLAGS.print_every == 0:
                 logging.info('Iter: %04d, train_loss=%04f, train_mrr=%04f, train_mrr_ema=%04f, val_loss=%04f, '
                              'val_mrr=%04f, val_mrr_ema=%04f, time=%04f' % (
@@ -353,14 +352,14 @@ def train(train_data, test_data=None):
                                  val_cost, val_mrr, shadow_mrr, avg_time))
                 logging.info('Epochs: %04d, Max epochs: %04d, total_steps: %04d, '
                              'max_total_steps: %04d' % (epoch, FLAGS.epochs, total_steps, FLAGS.max_total_steps))
-                # print("Iter:", '%04d' % iter,
-                #       "train_loss=", "{:.5f}".format(train_cost),
-                #       "train_mrr=", "{:.5f}".format(train_mrr),
-                #       "train_mrr_ema=", "{:.5f}".format(train_shadow_mrr),  # exponential moving average
-                #       "val_loss=", "{:.5f}".format(val_cost),
-                #       "val_mrr=", "{:.5f}".format(val_mrr),
-                #       "val_mrr_ema=", "{:.5f}".format(shadow_mrr),  # exponential moving average
-                #       "time=", "{:.5f}".format(avg_time))
+                print("Iter:", '%04d' % iter,
+                      "train_loss=", "{:.5f}".format(train_cost),
+                      "train_mrr=", "{:.5f}".format(train_mrr),
+                      "train_mrr_ema=", "{:.5f}".format(train_shadow_mrr),  # exponential moving average
+                      "val_loss=", "{:.5f}".format(val_cost),
+                      "val_mrr=", "{:.5f}".format(val_mrr),
+                      "val_mrr_ema=", "{:.5f}".format(shadow_mrr),  # exponential moving average
+                      "time=", "{:.5f}".format(avg_time))
 
             iter += 1
             total_steps += 1
