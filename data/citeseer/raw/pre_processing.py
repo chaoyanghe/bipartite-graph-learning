@@ -1,10 +1,6 @@
 import re
-import numpy as np
-from collections import defaultdict
 import os.path as path
-from typing import List
 import networkx as nx
-from networkx.algorithms import bipartite
 from copy import deepcopy
 
 CONTENT_FILE_PATH = "./citeseer.content"
@@ -16,8 +12,7 @@ CONTENT_LINE_RE = r'^(\S+)((?:\s\d){3703})\s(Agents|AI|DB|IR|ML|HCI)$'
 CITES_LINE_RE = r'^(\S+)\t(\S+)$'
 NUM_FEATURE = 3703
 NUM_PAPER = 3312
-RAW_CLASS_TO_UV_MAP = {"Agents": 'u', "AI": 'v', "DB": 'v', "IR": 'v', "ML": 'u', "HCI": 'u'}
-RAW_CLASS_TO_CLASS_IN_U_DICT = {"Agents": 0, "ML": 1, "HCI": 2}
+RAW_CLASS_SET = {"Agents", "AI", "DB", "IR", "ML", "HCI"}
 V_FEATURE_CUT = 3000
 
 
@@ -47,7 +42,6 @@ if __name__ == '__main__':
     #####
     # Parse content file
     #####
-    raw_class_number_stat = defaultdict(int)
     idx_to_raw_class_dict = {}
     raw_paper_id_to_idx_dict = {}
     u_idx_to_feature_vec_dict = {}
@@ -57,6 +51,9 @@ if __name__ == '__main__':
     u_idx_to_class_dict = {}
     raw_paper_id_no_feat_set = set()  # papers doesnt appear in the content file are removed from the graph,
     #                                     as we dont know their classes
+    idx_to_intra_raw_class_idx_dicts = {k: {} for k in RAW_CLASS_SET}
+    raw_class_to_class_dict = {k: i for i, k in enumerate(RAW_CLASS_SET)}
+    print("raw_class_to_class_dict:{}".format(raw_class_to_class_dict))
 
     with open(CONTENT_FILE_PATH, 'r') as in_f:
         content = in_f.readlines()
@@ -66,21 +63,33 @@ if __name__ == '__main__':
         assert matches
 
         raw_paper_id = matches.group(1)
-        feature_vector = str_to_vec(matches.group(2))
         raw_class = matches.group(3)
 
         # indexing raw paper ids
         idx = raw_paper_id_to_idx_dict.setdefault(raw_paper_id, len(raw_paper_id_to_idx_dict))
         idx_to_raw_class_dict[idx] = raw_class
+        idx_to_intra_raw_class_idx_dicts[raw_class].setdefault(idx, len(idx_to_intra_raw_class_idx_dicts[raw_class]))
 
-        # count number of raw groups
-        raw_class_number_stat[matches.group(3)] += 1
+    print("Raw Class Counts: {}".format({rc: len(d) for rc, d in idx_to_intra_raw_class_idx_dicts.items()}))
+    assert sum([len(d) for d in idx_to_intra_raw_class_idx_dicts.values()]) == NUM_PAPER
 
-        # record feature vector according to u/v
-        if RAW_CLASS_TO_UV_MAP[raw_class] == 'u':
+    print("idx_to_intra_raw_class_idx_dicts: {}".format(idx_to_intra_raw_class_idx_dicts))
+
+    for line in content:
+        matches = re.search(CONTENT_LINE_RE, line)
+        assert matches
+
+        raw_paper_id = matches.group(1)
+        feature_vector = str_to_vec(matches.group(2))
+        raw_class = matches.group(3)
+
+        idx = raw_paper_id_to_idx_dict.get(raw_paper_id)
+
+        # record feature vector according to u/v, half split each raw class to u and v
+        if idx_to_intra_raw_class_idx_dicts[raw_class][idx] <= len(idx_to_intra_raw_class_idx_dicts[raw_class]) // 2:
             u_idx_to_feature_vec_dict[idx] = feature_vector
             u_idx_set.add(idx)
-            u_idx_to_class_dict[idx] = RAW_CLASS_TO_CLASS_IN_U_DICT[raw_class]
+            u_idx_to_class_dict[idx] = raw_class_to_class_dict[raw_class]
         else:
             v_idx_to_feature_vec_dict[idx] = feature_vector[:V_FEATURE_CUT]  # cut v feature vector to create difference
             v_idx_set.add(idx)
@@ -88,7 +97,6 @@ if __name__ == '__main__':
     assert len(u_idx_set & v_idx_set) == 0
     assert ((len(u_idx_set) + len(v_idx_set)) == NUM_PAPER)
 
-    print(raw_class_number_stat)
     assert len(raw_paper_id_to_idx_dict) == NUM_PAPER
 
     #####
@@ -149,8 +157,7 @@ if __name__ == '__main__':
                           idx_to_raw_class_dict[vertex0_idx], idx_to_raw_class_dict[vertex1_idx],
                           vertex0_uv_group, vertex1_uv_group))
 
-    print(raw_paper_id_no_feat_set)
-    print(len(raw_paper_id_no_feat_set))
+    print("raw_paper_id_no_feat_set: ({}) {}".format(len(raw_paper_id_no_feat_set), raw_paper_id_no_feat_set))
 
     # Purge the isolated vertex
     u_idx_set -= u_idx_not_appear_set
@@ -159,7 +166,7 @@ if __name__ == '__main__':
     v_idx_to_feature_vec_dict = remove_keys_from_dict(v_idx_to_feature_vec_dict, v_idx_not_appear_set)
     u_idx_to_class_dict = remove_keys_from_dict(u_idx_to_class_dict, u_idx_not_appear_set)
 
-    print(len(u_idx_set) - len(v_idx_set))
+    print("|u|-|v|: {}".format(len(u_idx_set) - len(v_idx_set)))
 
     # Assert bipartite
     B = nx.Graph()
@@ -186,7 +193,6 @@ if __name__ == '__main__':
     # Final statistics
     ####
     print("---")
-    print(len(u_idx_set))
-    print(len(v_idx_set))
-    print(len(u_idx_set) + len(v_idx_set))
-    print(len(bipartite_edges_set))
+    print("Nodes (Group U/V), Edges, Features (Group U/V), Classes (Group U/V)\n{}/{}, {}, {}/{}, {}/"
+          .format(len(u_idx_set), len(v_idx_set), len(bipartite_edges_set), NUM_FEATURE, V_FEATURE_CUT,
+                  len(RAW_CLASS_SET)))
