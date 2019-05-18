@@ -86,9 +86,9 @@ def get_the_bipartite_graph_loader(args, data_path, dataset, device):
 		GROUP_ATTR_PATH = data_path + "data/citeseer/group_attr"
 
 		bipartite_graph_data_loader = BipartiteGraphDataLoaderCiteseer(args.batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
-																   NODE_LABEL_PATH,
-																   EDGE_LIST_PATH,
-																   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
+																	   NODE_LABEL_PATH,
+																	   EDGE_LIST_PATH,
+																	   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
 
 	return bipartite_graph_data_loader
 

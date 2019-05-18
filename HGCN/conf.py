@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-MODEL = ['gan_gcn', 'decoder_gcn']
+MODEL = ['gan', 'vae', 'decoder']
 RANDOM_SEED = 42
 BATCH_SIZE = 100
 EPOCHS = 1

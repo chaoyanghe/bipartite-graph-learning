@@ -1,4 +1,3 @@
-MODEL = ['gan_gcn', 'decoder_gcn']
 RANDOM_SEED = 42
 BATCH_SIZE = 100
 EPOCHS = 1
