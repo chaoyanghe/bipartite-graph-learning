@@ -4,8 +4,8 @@ rm -rf ./log_embedding/*
 rm -rf ./out/*
 
 
-python -m graphsage.unsupervised_train \
---train_prefix ./example_data/bipartite \
+python3 -m graphsage.unsupervised_train.py \
+--train_prefix ./example_data//bipartite \
 --model graphsage_mean \
 --max_total_steps 100000000 \
 --validate_iter 500000 \
@@ -25,4 +25,4 @@ python -m graphsage.unsupervised_train \
 --n_walks 50 \
 --print_every 10
 
-python ./classification.py
+python3 ./multi-classification.py --dataset cora

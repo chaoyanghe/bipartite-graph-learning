@@ -2,11 +2,15 @@ import argparse
 import logging
 import os
 
+import conf
+
 
 def parse_args():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--rank', type=int, default=-1,
 						help='process ID for MPI Simple AutoML')
+	parser.add_argument('--dataset', type=str, default="tencent",
+						help='dataset')
 
 	return parser.parse_args()
 
@@ -14,27 +18,36 @@ def parse_args():
 if __name__ == "__main__":
 	args = parse_args()
 	rank = args.rank
+	dataset = args.dataset
 
-	# classification
-	it = 3000
-	method = "gae"
-	input_folder = "./data/cora"
-	output_folder = "./out"
+	method = conf.method
+
+	input_folder = None
+	if dataset == "tencent":
+		input_folder = "./data/" + "Tencent-QQ"
+	elif dataset == "cora":
+		input_folder = "./data/" + dataset
+	elif dataset == "citeseer":
+		input_folder = "./data/" + dataset
+
+	output_folder = conf.output_folder
 	if rank != -1:
-		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/Tencent-QQ"
+		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/" + str(dataset)
 		output_folder = "/mnt/shared/home/bipartite-graph-learning/out/" + str(rank)
 
 	if not os.path.exists(output_folder):
 		os.makedirs(output_folder)
 
-	emb_file = str(output_folder) + "/gae.emb"
+	it = conf.it
+
+	emb_file = str(output_folder) + "/graphsage.emb"
 	print(emb_file)
 
 	# the HGCN node list is smaller than the raw node list because some illegal nodes are filtered
 	hgcn_node_file = str(output_folder) + "/node_list"
 	print(hgcn_node_file)
 
-	res_file = str(output_folder) + "/gae.res"
+	res_file = str(output_folder) + "/graphsage.res"
 	f = open(res_file, "+w")
 	f.write("")
 	f.close()

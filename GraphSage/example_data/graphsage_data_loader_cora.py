@@ -533,25 +533,25 @@ class GraphSageSingleGraphDataLoader:
         self.features = np.array(nodes_features)
 
     def write_to_json(self):
-        with open('./bipartite-G.json', 'w') as outfile1:
+        with open('./cora/bipartite-G.json', 'w') as outfile1:
             json.dump(self.graph, outfile1)
         outfile1.close()
 
         length = len(self.u_list)
         node_map_id = dict([(i, i) for i in range(length)])
-        with open('./bipartite-id_map.json', 'w') as outfile2:
+        with open('./cora/bipartite-id_map.json', 'w') as outfile2:
             json.dump(node_map_id, outfile2)
         outfile2.close()
 
-        with open('./bipartite-class_map.json', 'w') as outfile3:
+        with open('./cora/bipartite-class_map.json', 'w') as outfile3:
             json.dump(self.label, outfile3)
         outfile3.close()
 
-        with open('./bipartite-id_map_node.json', 'w') as outfile:
+        with open('./cora/bipartite-id_map_node.json', 'w') as outfile:
             json.dump(self.id_map_node, outfile)
         outfile.close()
 
-        np.save('./bipartite-feats.npy', self.features)
+        np.save('./cora/bipartite-feats.npy', self.features)
 
     def __BipartiteToSingle(self, graph):
         """
