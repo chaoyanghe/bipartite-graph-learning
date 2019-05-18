@@ -1,6 +1,16 @@
 # Adversarial Learning with Graph Convolutional Networks for Unsupervised Bipartite Graph Embedding
 
 
+## Model Performance Comparision
+|                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
+| :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
+| Metrics        | F1                         | MacOS/Linux                | Only Linux (*)              | Not Finished                | Not Finished                | Not Finished                |
+| Tencent        |                            | sh run_hgcn.sh tencent vae | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | Not Finished                |
+| Cora           | 0.813461                   | sh run_hgcn.sh cora vae    | sh run_node2vec.sh cora     | Not Finished                | 0.728645                    | Not Finished                |
+| Citeseer       | 0.675909                   | sh run_hgcn.sh citeseer vae| sh run_node2vec.sh citeseer | Not Finished                | 0.739309                    | Not Finished                |
+
+
+
 # Reproducibility
 
 

@@ -99,3 +99,102 @@
 -1Sat, 18 May 2019 15:12:10 cascaded_adversarial_hgcn_with_gan.py[line:65] INFO Step 1: Explicit relation learning
 -1Sat, 18 May 2019 15:12:10 models.py[line:106] INFO Step: 1, Epoch: 0, Iterations: 0, dis loss: 1.0178120136260986, gen loss: 0.6419662237167358
 -1Sat, 18 May 2019 15:12:25 models.py[line:106] INFO Step: 1, Epoch: 0, Iterations: 100, dis loss: 1.1050481796264648, gen loss: 0.5974001884460449
+-1Sat, 18 May 2019 16:41:33 hgcn_main.py[line:119] INFO device = cpu
+-1Sat, 18 May 2019 16:41:33 bipartite_graph_data_loader_cora.py[line:15] INFO BipartiteGraphDataLoader __init__().
+-1Sat, 18 May 2019 16:41:33 bipartite_graph_data_loader_cora.py[line:22] INFO group_u_list_file_path = ./data/cora/node_list
+-1Sat, 18 May 2019 16:41:33 bipartite_graph_data_loader_cora.py[line:23] INFO group_u_attr_file_path = ./data/cora/node_attr
+-1Sat, 18 May 2019 16:41:33 bipartite_graph_data_loader_cora.py[line:24] INFO group_u_label_file_path = ./data/cora/node_true
+-1Sat, 18 May 2019 16:41:33 bipartite_graph_data_loader_cora.py[line:26] INFO edge_list_file_path = ./data/cora/edgelist
+-1Sat, 18 May 2019 16:41:33 bipartite_graph_data_loader_cora.py[line:28] INFO group_v_list_file_path = ./data/cora/group_list
+-1Sat, 18 May 2019 16:41:33 bipartite_graph_data_loader_cora.py[line:29] INFO group_v_attr_file_path = ./data/cora/group_attr
+-1Sat, 18 May 2019 16:41:33 bipartite_graph_data_loader_cora.py[line:30] INFO group_v_label_file_path = None
+-1Sat, 18 May 2019 16:41:33 bipartite_graph_data_loader_cora.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+-1Sat, 18 May 2019 16:41:33 bipartite_graph_data_loader_cora.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:211] INFO before merging with v_list, the len is = 877
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:219] INFO after merging with v_attr_dict, the len is = 877
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:234] INFO __generate_adjacent_matrix START
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:236] INFO u_node_list = 734
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:237] INFO v_node_list = 877
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:238] INFO edge_list = 1802
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:240] INFO start to load bipartite for u
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:250] INFO (734, 877)
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:253] INFO end to load bipartite for u
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:255] INFO start to load bipartite for u
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:265] INFO (877, 734)
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:268] INFO end to load bipartite for u
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:313] INFO u number: 734
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:314] INFO u_adjacent_matrix: (734, 877)
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:317] INFO v number: 877
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:318] INFO v_adjacent_matrix: (877, 734)
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:321] INFO batch_num_u = 74
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:324] INFO batch_num_v = 88
+-1Sat, 18 May 2019 16:41:34 bipartite_graph_data_loader_cora.py[line:123] INFO #### generate_adjacent_matrix_feature_and_labels. END
+-1Sat, 18 May 2019 16:41:34 cascaded_adversarial_hgcn_with_gan.py[line:28] INFO AdversarialHGCNLayer
+-1Sat, 18 May 2019 16:41:34 cascaded_adversarial_hgcn_with_gan.py[line:49] INFO AdversarialHGCNLayer
+-1Sat, 18 May 2019 16:41:34 cascaded_adversarial_hgcn_with_gan.py[line:60] INFO AdversarialHGCNLayer
+-1Sat, 18 May 2019 16:41:34 cascaded_adversarial_hgcn_with_gan.py[line:63] INFO adversarial_train
+-1Sat, 18 May 2019 16:41:34 cascaded_adversarial_hgcn_with_gan.py[line:66] INFO Step 1: Explicit relation learning
+-1Sat, 18 May 2019 16:41:34 models.py[line:106] INFO Step: 1, Epoch: 0, Iterations: 0, dis loss: 1.4767796993255615, gen loss: 0.42286959290504456
+-1Sat, 18 May 2019 16:41:43 cascaded_adversarial_hgcn_with_gan.py[line:101] INFO Step 2: Implicit relation learning
+-1Sat, 18 May 2019 16:41:43 models.py[line:106] INFO Step: 2, Epoch: 0, Iterations: 0, dis loss: 1.00034499168396, gen loss: 1.357554316520691
+-1Sat, 18 May 2019 16:41:48 cascaded_adversarial_hgcn_with_gan.py[line:136] INFO Step 3: Merge relation learning
+-1Sat, 18 May 2019 16:41:48 models.py[line:106] INFO Step: 3, Epoch: 0, Iterations: 0, dis loss: 2.3720333576202393, gen loss: 0.8140541911125183
+-1Sat, 18 May 2019 16:41:52 cascaded_adversarial_hgcn_with_gan.py[line:191] INFO start to save embedding file
+-1Sat, 18 May 2019 16:41:52 cascaded_adversarial_hgcn_with_gan.py[line:194] INFO node_num = 734
+-1Sat, 18 May 2019 16:41:52 cascaded_adversarial_hgcn_with_gan.py[line:196] INFO dimension_embedding = 1433
+-1Sat, 18 May 2019 16:41:54 cascaded_adversarial_hgcn_with_gan.py[line:222] INFO saved embedding file
+-1Sat, 18 May 2019 16:43:51 hgcn_main.py[line:119] INFO device = cpu
+-1Sat, 18 May 2019 16:43:51 bipartite_graph_data_loader_citeseer.py[line:15] INFO BipartiteGraphDataLoader __init__().
+-1Sat, 18 May 2019 16:43:51 bipartite_graph_data_loader_citeseer.py[line:22] INFO group_u_list_file_path = ./data/citeseer/node_list
+-1Sat, 18 May 2019 16:43:51 bipartite_graph_data_loader_citeseer.py[line:23] INFO group_u_attr_file_path = ./data/citeseer/node_attr
+-1Sat, 18 May 2019 16:43:51 bipartite_graph_data_loader_citeseer.py[line:24] INFO group_u_label_file_path = ./data/citeseer/node_true
+-1Sat, 18 May 2019 16:43:51 bipartite_graph_data_loader_citeseer.py[line:26] INFO edge_list_file_path = ./data/citeseer/edgelist
+-1Sat, 18 May 2019 16:43:51 bipartite_graph_data_loader_citeseer.py[line:28] INFO group_v_list_file_path = ./data/citeseer/group_list
+-1Sat, 18 May 2019 16:43:51 bipartite_graph_data_loader_citeseer.py[line:29] INFO group_v_attr_file_path = ./data/citeseer/group_attr
+-1Sat, 18 May 2019 16:43:51 bipartite_graph_data_loader_citeseer.py[line:30] INFO group_v_label_file_path = None
+-1Sat, 18 May 2019 16:43:51 bipartite_graph_data_loader_citeseer.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+-1Sat, 18 May 2019 16:43:51 bipartite_graph_data_loader_citeseer.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+-1Sat, 18 May 2019 16:43:59 hgcn_main.py[line:119] INFO device = cpu
+-1Sat, 18 May 2019 16:43:59 bipartite_graph_data_loader_citeseer.py[line:15] INFO BipartiteGraphDataLoader __init__().
+-1Sat, 18 May 2019 16:43:59 bipartite_graph_data_loader_citeseer.py[line:22] INFO group_u_list_file_path = ./data/citeseer/node_list
+-1Sat, 18 May 2019 16:43:59 bipartite_graph_data_loader_citeseer.py[line:23] INFO group_u_attr_file_path = ./data/citeseer/node_attr
+-1Sat, 18 May 2019 16:43:59 bipartite_graph_data_loader_citeseer.py[line:24] INFO group_u_label_file_path = ./data/citeseer/node_true
+-1Sat, 18 May 2019 16:43:59 bipartite_graph_data_loader_citeseer.py[line:26] INFO edge_list_file_path = ./data/citeseer/edgelist
+-1Sat, 18 May 2019 16:43:59 bipartite_graph_data_loader_citeseer.py[line:28] INFO group_v_list_file_path = ./data/citeseer/group_list
+-1Sat, 18 May 2019 16:43:59 bipartite_graph_data_loader_citeseer.py[line:29] INFO group_v_attr_file_path = ./data/citeseer/group_attr
+-1Sat, 18 May 2019 16:43:59 bipartite_graph_data_loader_citeseer.py[line:30] INFO group_v_label_file_path = None
+-1Sat, 18 May 2019 16:43:59 bipartite_graph_data_loader_citeseer.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+-1Sat, 18 May 2019 16:43:59 bipartite_graph_data_loader_citeseer.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:211] INFO before merging with v_list, the len is = 510
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:219] INFO after merging with v_attr_dict, the len is = 510
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:234] INFO __generate_adjacent_matrix START
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:236] INFO u_node_list = 613
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:237] INFO v_node_list = 510
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:238] INFO edge_list = 1000
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:240] INFO start to load bipartite for u
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:250] INFO (613, 510)
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:253] INFO end to load bipartite for u
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:255] INFO start to load bipartite for u
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:265] INFO (510, 613)
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:268] INFO end to load bipartite for u
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:313] INFO u number: 613
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:314] INFO u_adjacent_matrix: (613, 510)
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:317] INFO v number: 510
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:318] INFO v_adjacent_matrix: (510, 613)
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:321] INFO batch_num_u = 31
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:324] INFO batch_num_v = 26
+-1Sat, 18 May 2019 16:44:00 bipartite_graph_data_loader_citeseer.py[line:123] INFO #### generate_adjacent_matrix_feature_and_labels. END
+-1Sat, 18 May 2019 16:44:00 cascaded_adversarial_hgcn_with_gan.py[line:28] INFO AdversarialHGCNLayer
+-1Sat, 18 May 2019 16:44:00 cascaded_adversarial_hgcn_with_gan.py[line:49] INFO AdversarialHGCNLayer
+-1Sat, 18 May 2019 16:44:00 cascaded_adversarial_hgcn_with_gan.py[line:60] INFO AdversarialHGCNLayer
+-1Sat, 18 May 2019 16:44:00 cascaded_adversarial_hgcn_with_gan.py[line:63] INFO adversarial_train
+-1Sat, 18 May 2019 16:44:00 cascaded_adversarial_hgcn_with_gan.py[line:66] INFO Step 1: Explicit relation learning
+-1Sat, 18 May 2019 16:44:01 models.py[line:106] INFO Step: 1, Epoch: 0, Iterations: 0, dis loss: 0.9523853659629822, gen loss: 0.8906327486038208
+-1Sat, 18 May 2019 16:44:27 cascaded_adversarial_hgcn_with_gan.py[line:101] INFO Step 2: Implicit relation learning
+-1Sat, 18 May 2019 16:44:27 models.py[line:106] INFO Step: 2, Epoch: 0, Iterations: 0, dis loss: 1.9433845281600952, gen loss: 2.0345511436462402
+-1Sat, 18 May 2019 16:44:48 cascaded_adversarial_hgcn_with_gan.py[line:136] INFO Step 3: Merge relation learning
+-1Sat, 18 May 2019 16:44:49 models.py[line:106] INFO Step: 3, Epoch: 0, Iterations: 0, dis loss: 1.4824631214141846, gen loss: 0.9664376378059387
+-1Sat, 18 May 2019 16:45:09 cascaded_adversarial_hgcn_with_gan.py[line:191] INFO start to save embedding file
+-1Sat, 18 May 2019 16:45:09 cascaded_adversarial_hgcn_with_gan.py[line:194] INFO node_num = 613
+-1Sat, 18 May 2019 16:45:09 cascaded_adversarial_hgcn_with_gan.py[line:196] INFO dimension_embedding = 3703
+-1Sat, 18 May 2019 16:45:11 cascaded_adversarial_hgcn_with_gan.py[line:222] INFO saved embedding file
