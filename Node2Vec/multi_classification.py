@@ -26,6 +26,9 @@ if __name__ == "__main__":
 
 	output_folder = conf.output_folder + "/" + str(dataset)
 
+	if not os.path.exists(output_folder):
+		os.makedirs(output_folder)
+
 	l = conf.l
 	r = conf.r
 	p = conf.p

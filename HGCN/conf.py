@@ -24,5 +24,6 @@ STEP4 = 'opposite_relation'
 # classification
 it = 3000
 method = "hgcn"
-input_folder = "./data/tencent"
-output_folder = "./out"
+input_folder = "./data/"
+output_folder_HGCN_GAN = "./out/hgcn-gan"
+output_folder_HGCN_GAE = "./out/hgcn-gae"

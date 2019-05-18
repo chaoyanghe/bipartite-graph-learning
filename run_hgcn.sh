@@ -21,7 +21,7 @@ then
     --dropout 0.5 \
     --gcn_output_dim 24
 
-    python3 ./HGCN/binary_classification.py
+    python3 ./HGCN/binary_classification.py --dataset $DATASET --model $MODEL
 
 elif [ "$DATASET" = "cora" ]
 then
@@ -38,7 +38,7 @@ then
     --dropout 0.5 \
     --gcn_output_dim 24
 
-    python3 ./HGCN/multi_classification.py --dataset $DATASET
+    python3 ./HGCN/multi_classification.py --dataset $DATASET --model $MODEL
 
 elif [ "$DATASET" = "citeseer" ]
 then
@@ -55,5 +55,5 @@ then
     --dropout 0.5 \
     --gcn_output_dim 24
 
-    python3 ./HGCN/multi_classification.py --dataset $DATASET
+    python3 ./HGCN/multi_classification.py --dataset $DATASET --model $MODEL
 fi

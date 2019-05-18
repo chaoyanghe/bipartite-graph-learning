@@ -9,6 +9,7 @@ def parse_args():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--rank', type=int, default=-1,
 						help='process ID for MPI Simple AutoML')
+	parser.add_argument('--model', type=str, default='gan', required=True)
 	parser.add_argument('--dataset', type=str, default="tencent",
 						help='dataset')
 
@@ -18,22 +19,25 @@ def parse_args():
 if __name__ == "__main__":
 	args = parse_args()
 	rank = args.rank
+	model = args.model
 	dataset = args.dataset
 
 	method = conf.method
 
-	input_folder = None
-	if dataset == "tencent":
-		input_folder = "./data/" + "tencent"
-	elif dataset == "cora":
-		input_folder = "./data/" + dataset
-	elif dataset == "citeseer":
-		input_folder = "./data/" + dataset
+	input_folder = conf.input_folder + str(dataset)
 
-	output_folder = conf.output_folder
+	if model == "gan":
+		output_folder = conf.output_folder_HGCN_GAN + "/" + str(dataset)
+	elif model == "gae":
+		output_folder = conf.output_folder_HGCN_GAE + "/" + str(dataset)
+
 	if rank != -1:
 		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/" + str(dataset)
-		output_folder = "/mnt/shared/home/bipartite-graph-learning/out/" + str(rank)
+
+		if model == "gan":
+			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_gan" + str(rank)
+		elif model == "gae":
+			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_gae" + str(rank)
 
 	if not os.path.exists(output_folder):
 		os.makedirs(output_folder)
