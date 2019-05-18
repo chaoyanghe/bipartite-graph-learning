@@ -151,7 +151,7 @@ def run_exp(input_folder, emb_file, args):
 		logging.info("Loading labels from %s ..." % os.path.join(input_folder, 'node_true'))
 	node_label_file = os.path.join(input_folder, 'node_true')
 	print("node_label_file = %s" % node_label_file)
-	print("nodes_ids = %s" % node_ids)
+	#print("nodes_ids = %s" % node_ids)
 	node_labels = load_label_data(node_label_file, node_ids)
 
 	## Construct data

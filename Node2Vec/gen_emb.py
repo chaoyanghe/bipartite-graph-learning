@@ -28,7 +28,7 @@ if __name__ == "__main__":
 	input_folder = conf.input_folder + str(dataset)
 
 	output_folder = conf.output_folder + "/" + str(dataset)
-	
+
 	print("output_folder = %s" % output_folder)
 
 	if not os.path.exists(output_folder):

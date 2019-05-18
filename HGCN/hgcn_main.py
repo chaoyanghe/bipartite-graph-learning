@@ -132,15 +132,15 @@ def main():
 	# start the adversarial learning (output the embedding result into ./out directory)
 	hgcn = CascadedAdversarialHGCN(bipartite_graph_data_loader, args, device, rank)
 	print("hgcn = %s" % str(hgcn))
-	if args.model == 'gan_gcn':
+	if args.model == 'gan':
 		# start training
 		print("adversarial_learning START")
 		hgcn.adversarial_learning()
 		print("adversarial_learning END")
-	elif args.model == 'decoder_gcn':
+	elif args.model == 'decoder':
 		hgcn = DecoderGCNLayer(bipartite_graph_data_loader, args, device, rank)
 		hgcn.relation_learning()
-	elif args.model == 'vae_gcn':
+	elif args.model == 'vae':
 		layerInfo = namedtuple('LayerInfo', ['vae_hidfeat', 'gcn1_input_dim', 'gcn1_output_dim', 'gcn2_input_dim',
 											 'gcn2_output_dim'])
 		hgcn = VariationalGCNLayer(bipartite_graph_data_loader, args, device, layerInfo, rank)

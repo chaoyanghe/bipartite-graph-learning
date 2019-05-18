@@ -10,12 +10,12 @@ pip3 install -r requirements.txt
 ~~~
 
 ## Peproduciable Scripts Overview
-|                | HGCN                   | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
-| :------------- | :----------:           | -----------:                | -----------:                | -----------:                | -----------:                |
-| Platform       | MacOS/Linux            | Only Linux (*)                  | Not Finished                | Not Finished                | Not Finished            |
-| Tencent        | sh run_hgcn.sh tencent | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | Not Finished                |
-| Cora           | sh run_hgcn.sh cora    | sh run_node2vec.sh cora     | Not Finished                | Not Finished                | Not Finished                |
-| Citeseer       | sh run_hgcn.sh citeseer| sh run_node2vec.sh citeseer | Not Finished                | Not Finished                | Not Finished                |
+|                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
+| :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
+| Platform       | MacOS/Linux                | Only Linux (*)             | Only Linux (*)              | Not Finished                | Not Finished                | Not Finished                |
+| Tencent        | sh run_hgcn.sh tencent gan | sh run_hgcn.sh tencent vae | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | Not Finished                |
+| Cora           | sh run_hgcn.sh cora gan    | sh run_hgcn.sh cora vae    | sh run_node2vec.sh cora     | Not Finished                | Not Finished                | Not Finished                |
+| Citeseer       | sh run_hgcn.sh citeseer gan| sh run_hgcn.sh citeseer vae| sh run_node2vec.sh citeseer | Not Finished                | Not Finished                | Not Finished                |
 
 *: For the Node2Vec model, its binary file is only ELF 64-bit LSB executable, x86-64, for GNU/Linux.
 
