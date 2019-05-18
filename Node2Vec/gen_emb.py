@@ -20,6 +20,7 @@ def parse_args():
 
 
 if __name__ == "__main__":
+	print("gen_emb.py START")
 	args = parse_args()
 	dataset = args.dataset
 
@@ -95,3 +96,5 @@ if __name__ == "__main__":
 
 	end = time.time()
 	logging.info("Finish Embedding. Embedding Time: %d, Embedding File Path: %s" % (end - start, emb_file))
+
+	print("gen_emb.py END")
