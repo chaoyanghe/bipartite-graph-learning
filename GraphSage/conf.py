@@ -1,4 +1,3 @@
-
 MODEL = ['gan_gcn', 'decoder_gcn']
 RANDOM_SEED = 42
 BATCH_SIZE = 100
@@ -21,5 +20,5 @@ STEP4 = 'opposite_relation'
 # classification
 it = 3000
 method = "hgcn"
-input_folder = "../data/Tencent-QQ"
+
 output_folder = "./out"

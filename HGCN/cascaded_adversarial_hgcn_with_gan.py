@@ -54,6 +54,8 @@ class CascadedAdversarialHGCN(object):
         self.v_adj = bipartite_graph_data_loader.get_v_adj()
         self.u_num = len(self.u_attr)
         self.v_num = len(self.v_attr)
+        print("self.u_num = %d" % self.u_num)
+        print("self.v_num = %d" % self.v_num)
         logging.info('AdversarialHGCNLayer')
 
     def adversarial_learning(self):
@@ -162,6 +164,7 @@ class CascadedAdversarialHGCN(object):
             gcn_merge_output = self.gcn_merge(v_implicit_attr, u_adj_tensor)
             u_merge_attr = torch.cat((u_merge_attr, gcn_merge_output.detach()), 0)
 
+        print(u_merge_attr)
         self.__save_embedding_to_file(u_merge_attr.cpu().numpy(), self.bipartite_graph_data_loader.get_u_list())
 
     def __sparse_mx_to_torch_sparse_tensor(self, sparse_mx):
@@ -185,6 +188,7 @@ class CascadedAdversarialHGCN(object):
         :return:
         """
         logging.info("start to save embedding file")
+        print(gcn_merge_output)
         node_num = gcn_merge_output.shape[0]
         logging.info("node_num = %s" % node_num)
         dimension_embedding = gcn_merge_output.shape[1]

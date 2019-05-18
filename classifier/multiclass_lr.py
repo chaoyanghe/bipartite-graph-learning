@@ -32,7 +32,7 @@ def load_label_data(fname, ind):
 	for label_id in id_label_dict.keys():
 		if label_id in y.index:
 			y.loc[label_id] = id_label_dict[label_id]
-	print(y)
+	# print(y)
 	return y
 
 
