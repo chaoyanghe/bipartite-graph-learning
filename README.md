@@ -3,11 +3,21 @@
 
 # Reproducibility
 
+
+## Preparation
+~~~
+pip3 install -r requirements.txt
+~~~
+
+## Peproduciable Scripts Overview
 |                | HGCN                   | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
 | :------------- | :----------:           | -----------:                | -----------:                | -----------:                | -----------:                |
-| Tencent        | sh run_hgcn.sh tencent | sh run_hgcn.sh tencent      | Not Finished                | Not Finished                | Not Finished                |
-| Cora           | sh run_hgcn.sh cora    | Not Finished                | Not Finished                | Not Finished                | Not Finished                |
-| Citeseer       | sh run_hgcn.sh citeseer| Not Finished                | Not Finished                | Not Finished                | Not Finished                |
+| Platform       | MacOS/Linux            | Only Linux (*)                  | Not Finished                | Not Finished                | Not Finished            |
+| Tencent        | sh run_hgcn.sh tencent | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | Not Finished                |
+| Cora           | sh run_hgcn.sh cora    | sh run_node2vec.sh cora     | Not Finished                | Not Finished                | Not Finished                |
+| Citeseer       | sh run_hgcn.sh citeseer| sh run_node2vec.sh citeseer | Not Finished                | Not Finished                | Not Finished                |
+
+*: For the Node2Vec model, its binary file is only ELF 64-bit LSB executable, x86-64, for GNU/Linux.
 
 ## HGCN
 1. run HGCN model on the tencent dataset.

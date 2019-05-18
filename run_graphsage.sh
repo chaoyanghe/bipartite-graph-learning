@@ -18,7 +18,7 @@ else
 fi
 
 
-# only execute once
+## only execute once
 cd ./GraphSage/example_data/
 sh run_graphsage_data_loader.sh $DATASET
 cd ../..
@@ -26,6 +26,7 @@ cd ../..
 
 cd ./GraphSage
 python3 -m graphsage.unsupervised_train \
+--dataset $DATASET \
 --train_prefix ./example_data/$DATASET/bipartite \
 --base_log_dir ./log_embedding \
 --model graphsage_mean \

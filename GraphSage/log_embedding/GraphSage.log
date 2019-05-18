@@ -90,3 +90,126 @@ Sat, 18 May 2019 13:27:39 unsupervised_train.py[line:353] INFO Iter: 0220, train
 Sat, 18 May 2019 13:27:39 unsupervised_train.py[line:355] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0220, max_total_steps: 100000000
 Sat, 18 May 2019 13:28:06 unsupervised_train.py[line:376] INFO ######## Saving embedding data to file ##########
 Sat, 18 May 2019 13:28:10 unsupervised_train.py[line:130] INFO Start saving embedding for succeed tasks
+Sat, 18 May 2019 13:44:54 utils.py[line:43] INFO class map loaded
+Sat, 18 May 2019 13:44:54 utils.py[line:59] INFO bad nodes removed
+Sat, 18 May 2019 13:44:54 utils.py[line:78] INFO Normalized
+Sat, 18 May 2019 13:44:55 utils.py[line:93] INFO data all loaded
+Sat, 18 May 2019 13:44:55 unsupervised_train.py[line:441] INFO start training
+Sat, 18 May 2019 13:44:55 unsupervised_train.py[line:190] INFO edge minibatch
+Sat, 18 May 2019 13:44:55 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 13:44:55 unsupervised_train.py[line:200] INFO choose model
+Sat, 18 May 2019 13:44:55 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Sat, 18 May 2019 13:44:56 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Sat, 18 May 2019 13:44:56 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Sat, 18 May 2019 13:44:57 unsupervised_train.py[line:312] INFO training epoch: 1
+Sat, 18 May 2019 13:45:04 unsupervised_train.py[line:354] INFO Iter: 0000, train_loss=18.894554, train_mrr=0.237333, train_mrr_ema=0.237333, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=7.079776
+Sat, 18 May 2019 13:45:04 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
+Sat, 18 May 2019 13:45:37 unsupervised_train.py[line:354] INFO Iter: 0010, train_loss=17.713552, train_mrr=0.271403, train_mrr_ema=0.239798, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.659666
+Sat, 18 May 2019 13:45:37 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0010, max_total_steps: 100000000
+Sat, 18 May 2019 13:46:16 unsupervised_train.py[line:354] INFO Iter: 0020, train_loss=17.705988, train_mrr=0.299604, train_mrr_ema=0.242438, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.773992
+Sat, 18 May 2019 13:46:16 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0020, max_total_steps: 100000000
+Sat, 18 May 2019 13:46:58 unsupervised_train.py[line:354] INFO Iter: 0030, train_loss=16.834511, train_mrr=0.292326, train_mrr_ema=0.244897, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.906253
+Sat, 18 May 2019 13:46:58 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0030, max_total_steps: 100000000
+Sat, 18 May 2019 13:47:39 unsupervised_train.py[line:354] INFO Iter: 0040, train_loss=16.971514, train_mrr=0.310815, train_mrr_ema=0.249968, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.959349
+Sat, 18 May 2019 13:47:39 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0040, max_total_steps: 100000000
+Sat, 18 May 2019 13:48:20 unsupervised_train.py[line:354] INFO Iter: 0050, train_loss=16.179588, train_mrr=0.330187, train_mrr_ema=0.253982, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.986441
+Sat, 18 May 2019 13:48:20 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0050, max_total_steps: 100000000
+Sat, 18 May 2019 13:48:57 unsupervised_train.py[line:354] INFO Iter: 0060, train_loss=15.993050, train_mrr=0.270913, train_mrr_ema=0.257890, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.941323
+Sat, 18 May 2019 13:48:57 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0060, max_total_steps: 100000000
+Sat, 18 May 2019 13:49:35 unsupervised_train.py[line:354] INFO Iter: 0070, train_loss=16.126476, train_mrr=0.272653, train_mrr_ema=0.261504, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.922744
+Sat, 18 May 2019 13:49:35 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0070, max_total_steps: 100000000
+Sat, 18 May 2019 13:50:08 unsupervised_train.py[line:354] INFO Iter: 0080, train_loss=15.776451, train_mrr=0.289073, train_mrr_ema=0.264840, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.847225
+Sat, 18 May 2019 13:50:08 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0080, max_total_steps: 100000000
+Sat, 18 May 2019 13:50:47 unsupervised_train.py[line:354] INFO Iter: 0090, train_loss=15.300508, train_mrr=0.314669, train_mrr_ema=0.267916, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.850235
+Sat, 18 May 2019 13:50:47 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0090, max_total_steps: 100000000
+Sat, 18 May 2019 13:51:24 unsupervised_train.py[line:354] INFO Iter: 0100, train_loss=15.070523, train_mrr=0.309671, train_mrr_ema=0.271436, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.834704
+Sat, 18 May 2019 13:51:24 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0100, max_total_steps: 100000000
+Sat, 18 May 2019 13:52:04 unsupervised_train.py[line:354] INFO Iter: 0110, train_loss=15.210987, train_mrr=0.301413, train_mrr_ema=0.275346, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.846116
+Sat, 18 May 2019 13:52:04 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0110, max_total_steps: 100000000
+Sat, 18 May 2019 13:52:47 unsupervised_train.py[line:354] INFO Iter: 0120, train_loss=15.259116, train_mrr=0.299937, train_mrr_ema=0.278644, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.883869
+Sat, 18 May 2019 13:52:47 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0120, max_total_steps: 100000000
+Sat, 18 May 2019 13:53:25 unsupervised_train.py[line:354] INFO Iter: 0130, train_loss=15.139942, train_mrr=0.287707, train_mrr_ema=0.282436, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.879614
+Sat, 18 May 2019 13:53:25 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0130, max_total_steps: 100000000
+Sat, 18 May 2019 13:54:03 unsupervised_train.py[line:354] INFO Iter: 0140, train_loss=15.239860, train_mrr=0.301076, train_mrr_ema=0.286212, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.871780
+Sat, 18 May 2019 13:54:03 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0140, max_total_steps: 100000000
+Sat, 18 May 2019 13:54:55 unsupervised_train.py[line:354] INFO Iter: 0150, train_loss=15.047591, train_mrr=0.320727, train_mrr_ema=0.288786, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.961293
+Sat, 18 May 2019 13:54:55 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0150, max_total_steps: 100000000
+Sat, 18 May 2019 13:55:44 unsupervised_train.py[line:354] INFO Iter: 0160, train_loss=15.366654, train_mrr=0.293096, train_mrr_ema=0.291438, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=4.018039
+Sat, 18 May 2019 13:55:44 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0160, max_total_steps: 100000000
+Sat, 18 May 2019 13:56:33 unsupervised_train.py[line:354] INFO Iter: 0170, train_loss=14.769646, train_mrr=0.345775, train_mrr_ema=0.294506, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=4.070839
+Sat, 18 May 2019 13:56:33 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0170, max_total_steps: 100000000
+Sat, 18 May 2019 13:57:09 unsupervised_train.py[line:354] INFO Iter: 0180, train_loss=14.803747, train_mrr=0.347869, train_mrr_ema=0.297397, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=4.041731
+Sat, 18 May 2019 13:57:09 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0180, max_total_steps: 100000000
+Sat, 18 May 2019 13:57:49 unsupervised_train.py[line:354] INFO Iter: 0190, train_loss=14.693004, train_mrr=0.361687, train_mrr_ema=0.300107, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=4.041418
+Sat, 18 May 2019 13:57:49 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0190, max_total_steps: 100000000
+Sat, 18 May 2019 13:58:25 unsupervised_train.py[line:354] INFO Iter: 0200, train_loss=14.713474, train_mrr=0.332799, train_mrr_ema=0.304107, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=4.017494
+Sat, 18 May 2019 13:58:25 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0200, max_total_steps: 100000000
+Sat, 18 May 2019 13:58:57 unsupervised_train.py[line:354] INFO Iter: 0210, train_loss=14.906925, train_mrr=0.329047, train_mrr_ema=0.307008, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.981123
+Sat, 18 May 2019 13:58:57 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0210, max_total_steps: 100000000
+Sat, 18 May 2019 13:59:30 unsupervised_train.py[line:354] INFO Iter: 0220, train_loss=15.065188, train_mrr=0.326657, train_mrr_ema=0.309002, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.949839
+Sat, 18 May 2019 13:59:30 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0220, max_total_steps: 100000000
+Sat, 18 May 2019 13:59:58 unsupervised_train.py[line:377] INFO ######## Saving embedding data to file ##########
+Sat, 18 May 2019 14:00:04 unsupervised_train.py[line:131] INFO Start saving embedding for succeed tasks
+Sat, 18 May 2019 14:00:04 unsupervised_train.py[line:149] INFO Number of nodes in set U: 734
+Sat, 18 May 2019 14:13:39 utils.py[line:43] INFO class map loaded
+Sat, 18 May 2019 14:13:39 utils.py[line:59] INFO bad nodes removed
+Sat, 18 May 2019 14:13:40 utils.py[line:78] INFO Normalized
+Sat, 18 May 2019 14:13:40 utils.py[line:93] INFO data all loaded
+Sat, 18 May 2019 14:13:40 unsupervised_train.py[line:441] INFO start training
+Sat, 18 May 2019 14:13:40 unsupervised_train.py[line:190] INFO edge minibatch
+Sat, 18 May 2019 14:13:41 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 14:13:41 unsupervised_train.py[line:200] INFO choose model
+Sat, 18 May 2019 14:13:41 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Sat, 18 May 2019 14:13:41 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Sat, 18 May 2019 14:13:41 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Sat, 18 May 2019 14:13:42 unsupervised_train.py[line:312] INFO training epoch: 1
+Sat, 18 May 2019 14:13:47 unsupervised_train.py[line:354] INFO Iter: 0000, train_loss=18.928637, train_mrr=0.268781, train_mrr_ema=0.268781, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=5.259490
+Sat, 18 May 2019 14:13:47 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
+Sat, 18 May 2019 14:14:21 unsupervised_train.py[line:354] INFO Iter: 0010, train_loss=17.672108, train_mrr=0.304825, train_mrr_ema=0.267634, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.529886
+Sat, 18 May 2019 14:14:21 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0010, max_total_steps: 100000000
+Sat, 18 May 2019 14:15:01 unsupervised_train.py[line:354] INFO Iter: 0020, train_loss=17.681154, train_mrr=0.309941, train_mrr_ema=0.268133, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.746284
+Sat, 18 May 2019 14:15:01 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0020, max_total_steps: 100000000
+Sat, 18 May 2019 14:15:33 unsupervised_train.py[line:354] INFO Iter: 0030, train_loss=16.985207, train_mrr=0.276313, train_mrr_ema=0.268788, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.587120
+Sat, 18 May 2019 14:15:33 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0030, max_total_steps: 100000000
+Sat, 18 May 2019 14:16:13 unsupervised_train.py[line:354] INFO Iter: 0040, train_loss=17.106197, train_mrr=0.274409, train_mrr_ema=0.270163, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.686928
+Sat, 18 May 2019 14:16:13 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0040, max_total_steps: 100000000
+Sat, 18 May 2019 14:17:03 unsupervised_train.py[line:354] INFO Iter: 0050, train_loss=16.204933, train_mrr=0.297040, train_mrr_ema=0.272127, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.945827
+Sat, 18 May 2019 14:17:03 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0050, max_total_steps: 100000000
+Sat, 18 May 2019 14:17:38 unsupervised_train.py[line:354] INFO Iter: 0060, train_loss=16.069963, train_mrr=0.260884, train_mrr_ema=0.274150, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.859469
+Sat, 18 May 2019 14:17:38 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0060, max_total_steps: 100000000
+Sat, 18 May 2019 14:18:08 unsupervised_train.py[line:354] INFO Iter: 0070, train_loss=16.097805, train_mrr=0.290642, train_mrr_ema=0.276902, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.748180
+Sat, 18 May 2019 14:18:08 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0070, max_total_steps: 100000000
+Sat, 18 May 2019 14:18:43 unsupervised_train.py[line:354] INFO Iter: 0080, train_loss=15.717946, train_mrr=0.318647, train_mrr_ema=0.278583, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.717009
+Sat, 18 May 2019 14:18:43 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0080, max_total_steps: 100000000
+Sat, 18 May 2019 14:19:18 unsupervised_train.py[line:354] INFO Iter: 0090, train_loss=15.423696, train_mrr=0.303231, train_mrr_ema=0.280763, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.691811
+Sat, 18 May 2019 14:19:18 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0090, max_total_steps: 100000000
+Sat, 18 May 2019 14:19:56 unsupervised_train.py[line:354] INFO Iter: 0100, train_loss=15.016929, train_mrr=0.326188, train_mrr_ema=0.283753, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.704071
+Sat, 18 May 2019 14:19:56 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0100, max_total_steps: 100000000
+Sat, 18 May 2019 14:20:31 unsupervised_train.py[line:354] INFO Iter: 0110, train_loss=15.183565, train_mrr=0.349204, train_mrr_ema=0.286474, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.684624
+Sat, 18 May 2019 14:20:31 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0110, max_total_steps: 100000000
+Sat, 18 May 2019 14:21:02 unsupervised_train.py[line:354] INFO Iter: 0120, train_loss=15.173934, train_mrr=0.295225, train_mrr_ema=0.289093, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.633982
+Sat, 18 May 2019 14:21:02 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0120, max_total_steps: 100000000
+Sat, 18 May 2019 14:21:33 unsupervised_train.py[line:354] INFO Iter: 0130, train_loss=15.120960, train_mrr=0.298049, train_mrr_ema=0.291401, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.592415
+Sat, 18 May 2019 14:21:33 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0130, max_total_steps: 100000000
+Sat, 18 May 2019 14:22:10 unsupervised_train.py[line:354] INFO Iter: 0140, train_loss=15.290978, train_mrr=0.289025, train_mrr_ema=0.294303, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.600580
+Sat, 18 May 2019 14:22:10 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0140, max_total_steps: 100000000
+Sat, 18 May 2019 14:22:50 unsupervised_train.py[line:354] INFO Iter: 0150, train_loss=15.127673, train_mrr=0.303750, train_mrr_ema=0.296030, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.629090
+Sat, 18 May 2019 14:22:50 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0150, max_total_steps: 100000000
+Sat, 18 May 2019 14:23:27 unsupervised_train.py[line:354] INFO Iter: 0160, train_loss=15.380507, train_mrr=0.321699, train_mrr_ema=0.298421, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.633188
+Sat, 18 May 2019 14:23:27 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0160, max_total_steps: 100000000

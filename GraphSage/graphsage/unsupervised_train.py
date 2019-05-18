@@ -28,6 +28,7 @@ FLAGS = flags.FLAGS
 tf.app.flags.DEFINE_boolean('log_device_placement', False,
 							"""Whether to log_embedding device placement.""")
 # core params..
+flags.DEFINE_string('dataset', 'cora', 'select the dataset: cora, citeseer, tencent.')
 flags.DEFINE_string('model', 'graphsage', 'model names. See README for possible values.')
 flags.DEFINE_float('learning_rate', 0.00001, 'initial learning rate.')
 flags.DEFINE_string("model_size", "small", "Can be big or small; model specific def'ns")
@@ -138,9 +139,9 @@ def __save_embedding_for_task(embedding, node_list):
 	:param node_list: [node1, node2, ...]
 	:return:
 	"""
-	output_file = './out/graphsage'
+	output_file = './out/graphsage/' + FLAGS.dataset + "/"
 
-	id_node_map_file = './example_data/bipartite-id_map_node.json'
+	id_node_map_file = "./example_data/" + FLAGS.dataset + "/bipartite-id_map_node.json"
 	with open(id_node_map_file, 'r') as file:
 		id_node_map = json.load(file)  # (key: str, value: int)
 	file.close()
