@@ -133,6 +133,7 @@ if vae:
 	emb = sess.run(model.z, feed_dict=feed_dict)
 else:
 	emb = sess.run(model.z_mean, feed_dict=feed_dict)
+
 # TODO: check the data type of emb
 output = ''
 output_node_list = ''

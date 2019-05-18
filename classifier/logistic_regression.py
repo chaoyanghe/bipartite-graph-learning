@@ -168,13 +168,16 @@ def run_exp(input_folder, emb_file, args):
 	test_rec = {}
 	for test_size in test_ratio:
 		train_aps[test_size] = []
-		test_aps[test_size] = []
-		test_prec[test_size] = []
-		test_rec[test_size] = []
+		test_aps[test_size] = [] # aps
+		test_prec[test_size] = []  # precision
+		test_rec[test_size] = [] # recall
 		# Resplitting
 		if args.verbose:
 			logging.info("Splitting data ...")
 			print("Splitting data ...")
+		print("len_x = %d" % len(user_x))
+		print("user_y = %d" % len(user_y))
+
 		train_x, test_x, train_y, test_y = train_test_split(user_x, user_y, test_size=test_size, random_state=42)
 		del user_x, user_y
 		test_y = test_y.values
@@ -191,10 +194,11 @@ def run_exp(input_folder, emb_file, args):
 			logging.info("Start testing ...")
 			print("Start testing ...")
 
-		test_predict_prob = clf.predict_proba(test_x)[:, 1]
+		test_predict_prob = clf.predict_proba(test_x)
+		print("test_predict_prob = %s" % test_predict_prob)
+
 		s_idx = np.argsort(-test_predict_prob)
-		if args.verbose:
-			logging.info(s_idx)
+
 		rank_test = test_y[s_idx]
 		judge_n = np.sum(test_predict_prob > 0.5)
 		pos_n = np.sum(test_y == 1)
