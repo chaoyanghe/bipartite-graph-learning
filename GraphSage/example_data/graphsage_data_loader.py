@@ -579,19 +579,105 @@ class GraphSageSingleGraphDataLoader:
         self.u_list = u_list
         self.u_attr = u_attr
         self.node_true = node_true
+        self.id_map_node = {}
+        self.features = []
 
         self.adj = self.__BipartiteToSingle(u_adj)  # the adjacent connection only of set U
+        self.label = {}
+        self.graph = {}
+        self.graph['directed'] = False
+        self.graph['graph'] = {'name': 'bipartite graph'}
+        self.graph['multigraph'] = False
+
+    def data_loader(self):
+        logging.info('ID map node')
+        self.get_id_map_node()
+        logging.info('Nodes Form')
+        self.nodes_form()
+        logging.info('Link Form')
+        self.link_form()
+        logging.info('Class Form')
+        self.class_form()
+        logging.info('Feature Form')
+        self.feature_form()
+        logging.info('Write to Json')
+        self.write_to_json()
+        logging.info('Done written')
 
     def get_id_map_node(self):
-        id_map_node = dict([(i, self.u_list[i]) for i in range(len(u_list))])
-        id_map_node['u_num'] = len(self.u_list)
+        self.id_map_node = dict([(i, self.u_list[i]) for i in range(len(u_list))])
+        self.id_map_node['u_num'] = len(self.u_list)
+
+    def nodes_form(self):
+        nodes = []
+        length = len(self.u_list)
+        for i in range(length):
+            temp_node = {}
+            temp_node['id'] = i
+            temp_node['test'] = False
+            # temp_node['feature'] = self.u_attr[i]
+            if self.u_list[i] in self.node_true:
+                temp_node['label'] = [1, 0]
+            else:
+                temp_node['label'] = [0, 1]
+            temp_node['val'] = False
+            nodes.append(temp_node)
+        self.graph['nodes'] = nodes
+
+    def __sparse_to_tuple(self, sparse_mx):
+        if not sp.isspmatrix_coo(sparse_mx):
+            sparse_mx = sparse_mx.tocoo()
+        coords = np.vstack((sparse_mx.row, sparse_mx.col)).transpose()
+        return coords
+
+    def link_form(self):
+        triu = sp.triu(self.adj, 0)
+        edges = self.__sparse_to_tuple(triu)
+        links = []
+        for i in range(len(edges)):
+            s, t = edges[i][:2]
+            temp_link = {}
+            temp_link['source'] = int(s)
+            temp_link['target'] = int(t)
+            temp_link['test_removed'] = False
+            temp_link['train_removed'] = False
+            links.append(temp_link)
+        self.graph['links'] = links
+
+    def class_form(self):
+        for i in range(len(self.u_list)):
+            if self.u_list[i] in self.node_true:
+                self.label[i] = [1, 0]
+            else:
+                self.label[i] = [0, 1]
+
+    def feature_form(self):
+        nodes_features = []
+        length = len(self.u_list)
+        for i in range(length):
+            nodes_features.append(self.u_attr[i])
+        self.features = np.array(nodes_features)
+
+    def write_to_json(self):
+        with open('./bipartite-G.json', 'w') as outfile1:
+            json.dump(self.graph, outfile1)
+        outfile1.close()
+
+        length = len(self.u_list)
+        node_map_id = dict([(i, i) for i in range(length)])
+        with open('./bipartite-id_map.json', 'w') as outfile2:
+            json.dump(node_map_id, outfile2)
+        outfile2.close()
+
+        with open('./bipartite-class_map.json', 'w') as outfile3:
+            json.dump(self.label, outfile3)
+        outfile3.close()
+
         with open('./bipartite-id_map_node.json', 'w') as outfile:
-            json.dump(id_map_node, outfile)
+            json.dump(self.id_map_node, outfile)
         outfile.close()
 
-    def node_form(self):
-
-
+        np.save('./bipartite-feats.npy', self.features)
 
     def __BipartiteToSingle(self, graph):
         """
@@ -603,8 +689,6 @@ class GraphSageSingleGraphDataLoader:
         single_graph[single_graph != 0] = 1
         single_graph -= sp.identity(graph.shape[0])
         return single_graph
-
-
 
 
 if __name__ == "__main__":
@@ -638,11 +722,12 @@ if __name__ == "__main__":
     node_true = node_true.strip().split('\n')
     node_true = list(map(lambda x: int(x), node_true))
 
-    # test the code
+    # # test the code
     # u_list = [1, 3, 5, 7, 9]
     # v_list = [1, 3, 6, 8]
     # u_attr = np.random.rand(5, 4).tolist()
     # v_attr = np.random.rand(4, 3).tolist()
+    # u_adj = sp.csr_matrix([[1, 1, 1, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [0, 0, 1, 0]])
     # edge_list = [(1, 1), (1, 3), (1, 6), (3, 3), (5, 1), (5, 6), (7, 8), (9, 6)]
     # node_true = [1, 5, 9]
 
@@ -668,7 +753,7 @@ if __name__ == "__main__":
     else:
         logging.info('Start graphsage two hop graph loader')
         graphsage_loader = GraphSageSingleGraphDataLoader(u_adj, u_list, u_attr, node_true)
-
+        graphsage_loader.data_loader()
 
     # logging.info('######### U adjacent matrix ##########\n' + str(u_adj))
     # logging.info('######### V adjacent matrix ##########\n' + str(v_adj))
