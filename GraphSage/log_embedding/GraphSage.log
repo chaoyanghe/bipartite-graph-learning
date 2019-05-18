@@ -221,3 +221,10 @@ Sat, 18 May 2019 14:25:04 unsupervised_train.py[line:354] INFO Iter: 0190, train
 Sat, 18 May 2019 14:25:04 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0190, max_total_steps: 100000000
 Sat, 18 May 2019 14:25:35 unsupervised_train.py[line:354] INFO Iter: 0200, train_loss=14.818074, train_mrr=0.358068, train_mrr_ema=0.308524, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.546935
 Sat, 18 May 2019 14:25:35 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0200, max_total_steps: 100000000
+Sat, 18 May 2019 14:26:10 unsupervised_train.py[line:354] INFO Iter: 0210, train_loss=14.891071, train_mrr=0.338924, train_mrr_ema=0.310025, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.542550
+Sat, 18 May 2019 14:26:10 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0210, max_total_steps: 100000000
+Sat, 18 May 2019 14:26:42 unsupervised_train.py[line:354] INFO Iter: 0220, train_loss=15.168247, train_mrr=0.346407, train_mrr_ema=0.312839, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.527121
+Sat, 18 May 2019 14:26:42 unsupervised_train.py[line:356] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0220, max_total_steps: 100000000
+Sat, 18 May 2019 14:27:07 unsupervised_train.py[line:377] INFO ######## Saving embedding data to file ##########
+Sat, 18 May 2019 14:27:10 unsupervised_train.py[line:131] INFO Start saving embedding for succeed tasks
+Sat, 18 May 2019 14:27:10 unsupervised_train.py[line:149] INFO Number of nodes in set U: 734
