@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rm -rf ./log_run_gcn*
+
 rm -rf ./out/graphsage/*
 
 
@@ -9,6 +9,8 @@ pip install networkx==1.11
 
 echo $1
 DATASET=$1
+
+rm -rf ./log_run_gcn_$DATASET
 
 if [ "$DATASET" = "" ]
 then
