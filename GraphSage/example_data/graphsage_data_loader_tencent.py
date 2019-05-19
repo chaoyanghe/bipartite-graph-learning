@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 
 import networkx as nx
 import numpy as np
@@ -665,6 +666,9 @@ class GraphSageSingleGraphDataLoader:
         self.features = np.array(nodes_features)
 
     def write_to_json(self):
+        dir = './tencent'
+        if not os.path.exists(dir):
+            os.makedirs(dir)
         with open('./tencent/bipartite-G.json', 'w') as outfile1:
             json.dump(self.graph, outfile1)
         outfile1.close()
