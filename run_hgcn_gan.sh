@@ -16,8 +16,8 @@ then
     --dataset $DATASET \
     --model $MODEL \
     --gpu True \
-    --epochs 3 \
-    --batch_size 500 \
+    --epochs 5 \
+    --batch_size 1000 \
     --lr 0.003 \
     --weight_decay 0.001 \
     --dropout 0.4 \
