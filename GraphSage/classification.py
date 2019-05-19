@@ -24,7 +24,7 @@ if __name__ == "__main__":
 	output_folder = conf.output_folder_tencent
 	if rank != -1:
 		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/tencent"
-		output_folder = "/mnt/shared/home/bipartite-graph-learning/out/" + str(rank)
+		output_folder = "/mnt/shared/home/bipartite-graph-learning/out/graphsage/tencent/" + str(rank)
 
 	if not os.path.exists(output_folder):
 		os.makedirs(output_folder)

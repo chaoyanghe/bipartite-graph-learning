@@ -221,8 +221,8 @@ def run_exp(input_folder, emb_file, args):
 
 		# Area Under Curve of ROC (Receiver operating characteristic):
 		# https://en.wikipedia.org/wiki/Receiver_operating_characteristic
-		print("len test_predict_prob = %d" + len(test_predict_prob))
-		print("len test_y = %d" + len(test_y))
+		print("len test_predict_prob = %d" + str(len(test_predict_prob)))
+		print("len test_y = %d" + str(len(test_y)))
 		auc_s = auc(test_y, test_predict_prob)
 		logging.info("auc=%.6f" % (auc_s))
 		print("auc=%.6f" % (auc_s))

@@ -139,7 +139,7 @@ def __save_embedding_for_task(embedding, node_list):
 	:param node_list: [node1, node2, ...]
 	:return:
 	"""
-	output_file = './out/graphsage/' + FLAGS.dataset + "/"
+	output_file = './../out/graphsage/' + FLAGS.dataset + "/"
 	if not os.path.exists(output_file):
 		os.makedirs(output_file)
 
