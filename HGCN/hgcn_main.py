@@ -132,7 +132,9 @@ def main():
 	# initialization
 	# https://pytorch.org/docs/stable/notes/randomness.html
 
-	args.seed = random.randint(0, 1000000)
+	#args.seed = random.randint(0, 1000000)
+	# this seed is used for the publication reproducibility
+	args.seed = 422931
 	print("###############random seed = %s #########" % str(args.seed))
 	logging.info("###############random seed = %s #########" % str(args.seed))
 

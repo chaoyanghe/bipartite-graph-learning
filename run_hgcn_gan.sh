@@ -17,11 +17,11 @@ then
     --model $MODEL \
     --gpu True \
     --epochs 2 \
-    --batch_size 700 \
+    --batch_size 600 \
     --lr 0.0004 \
-    --weight_decay 0.001 \
-    --dropout 0.45 \
-    --gcn_output_dim 20
+    --weight_decay 0.0005 \
+    --dropout 0.4 \
+    --gcn_output_dim 16
 
     python3 ./HGCN/binary_classification.py --dataset $DATASET --model $MODEL
 
