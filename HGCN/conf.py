@@ -13,6 +13,7 @@ GCN_OUTPUT_DIM = 10
 ENCODER_HIDDEN_DIMENSIONS = 10
 LATENT_DIMENSIONS = 8  # must be the same as the opposite set
 DECODER_HIDDEN_DIMENSIONS = 10
+VAE_HIDDEN_DIMENSIONS = 16
 
 """Parameters in writing and loading data to / from files."""
 TRAINING_LOSS_PATH = 'metrics/experiments_results/decoder_training_loss.csv'
@@ -26,4 +27,4 @@ it = 3000
 method = "hgcn"
 input_folder = "./data/"
 output_folder_HGCN_GAN = "./out/hgcn-gan"
-output_folder_HGCN_GAE = "./out/hgcn-gae"
+output_folder_HGCN_VAE = "./out/hgcn-vae"

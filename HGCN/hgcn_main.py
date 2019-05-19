@@ -8,7 +8,8 @@ import torch
 from cascaded_adversarial_hgcn_with_decoder import DecoderGCNLayer
 from cascaded_adversarial_hgcn_with_gan import CascadedAdversarialHGCN
 from conf import (MODEL, RANDOM_SEED, BATCH_SIZE, EPOCHS, LEARNING_RATE,
-				  WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS, GCN_OUTPUT_DIM)
+				  WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS, GCN_OUTPUT_DIM, ENCODER_HIDDEN_DIMENSIONS,
+				  DECODER_HIDDEN_DIMENSIONS, VAE_HIDDEN_DIMENSIONS, LATENT_DIMENSIONS)
 from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
 from data.bipartite_graph_data_loader_citeseer import BipartiteGraphDataLoaderCiteseer
 from data.bipartite_graph_data_loader_cora import BipartiteGraphDataLoaderCora
@@ -38,14 +39,14 @@ def parse_args():
 						help='The output dimensions of GCN.')
 	parser.add_argument('--rank', type=int, default=-1,
 						help='process ID for MPI Simple AutoML')
-	# parser.add_argument('--encoder_hidfeat', type=int, default=ENCODER_HIDDEN_DIMENSIONS,
-	# 					help='Number of hidden units for encoder in VAE')
-	# parser.add_argument('--decoder_hidfeat', type=int, default=DECODER_HIDDEN_DIMENSIONS,
-	# 					help='Number of hidden units for decoder in VAE')
-	# parser.add_argument('--vae_hidfeat', type=int, default=VAE_HIDDEN_DIMENSIONS,
-	# 					help='Number of hidden units for latent representation in VAE')
-	# parser.add_argument('--latent_hidfeat', type=int, default=LATENT_DIMENSIONS,
-	#                     help='Number of latent units for latent representation in VAE')
+	parser.add_argument('--encoder_hidfeat', type=int, default=ENCODER_HIDDEN_DIMENSIONS,
+						help='Number of hidden units for encoder in VAE')
+	parser.add_argument('--decoder_hidfeat', type=int, default=DECODER_HIDDEN_DIMENSIONS,
+						help='Number of hidden units for decoder in VAE')
+	parser.add_argument('--vae_hidfeat', type=int, default=VAE_HIDDEN_DIMENSIONS,
+						help='Number of hidden units for latent representation in VAE')
+	parser.add_argument('--latent_hidfeat', type=int, default=LATENT_DIMENSIONS,
+	                    help='Number of latent units for latent representation in VAE')
 
 	return parser.parse_args()
 
@@ -137,10 +138,10 @@ def main():
 		print("adversarial_learning START")
 		hgcn.adversarial_learning()
 		print("adversarial_learning END")
-	elif args.model == 'decoder':
-		hgcn = DecoderGCNLayer(bipartite_graph_data_loader, args, device, rank)
-		hgcn.relation_learning()
 	elif args.model == 'vae':
+		hgcn = DecoderGCNLayer(bipartite_graph_data_loader, args, device, rank, dataset)
+		hgcn.relation_learning()
+	elif args.model == 'decoder':
 		layerInfo = namedtuple('LayerInfo', ['vae_hidfeat', 'gcn1_input_dim', 'gcn1_output_dim', 'gcn2_input_dim',
 											 'gcn2_output_dim'])
 		hgcn = VariationalGCNLayer(bipartite_graph_data_loader, args, device, layerInfo, rank)

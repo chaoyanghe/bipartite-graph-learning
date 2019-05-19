@@ -5,9 +5,9 @@
 |                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
 | :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
 | Metrics        | F1                         | F1                         | F1                          | F1                          | F1                          | F1                          |
-| Tencent        |                            | sh run_hgcn.sh tencent vae | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | Not Finished                |
-| Cora           | 0.813461                   | sh run_hgcn.sh cora vae    | sh run_node2vec.sh cora     | Not Finished                | 0.728645                    | 0.736460                    |
-| Citeseer       | 0.675909                   | sh run_hgcn.sh citeseer vae| sh run_node2vec.sh citeseer | Not Finished                | 0.739309                    | Not Finished                |
+| Tencent        |                            | sh run_hgcn.sh tencent vae | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | N/A (*)                     |
+| Cora           | 0.813461                   | 0.229441                   | sh run_node2vec.sh cora     | Not Finished                | 0.728645                    | 0.736460                    |
+| Citeseer       | 0.675909                   | sh run_hgcn.sh citeseer vae| sh run_node2vec.sh citeseer | Not Finished                | 0.739309                    | 0.574944                    |
 
 
 
@@ -23,9 +23,9 @@ pip3 install -r requirements.txt
 |                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
 | :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
 | Platform       | MacOS/Linux                | MacOS/Linux                | Only Linux (*)              | MacOS/Linux                 | MacOS/Linux                 | MacOS/Linux                |
-| Tencent        | sh run_hgcn.sh tencent gan | sh run_hgcn.sh tencent vae | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | N/A (*)                     |
-| Cora           | sh run_hgcn.sh cora gan    | sh run_hgcn.sh cora vae    | sh run_node2vec.sh cora     | Not Finished                | sh run_graphsage.sh cora    | sh run_gae.sh cora          |
-| Citeseer       | sh run_hgcn.sh citeseer gan| sh run_hgcn.sh citeseer vae| sh run_node2vec.sh citeseer | Not Finished                | sh run_graphsage.sh citeseer| sh run_gae.sh citeseer      |
+| Tencent        | sh run_hgcn_gan.sh tencent | sh run_hgcn_vae.sh tencent | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | N/A (*)                     |
+| Cora           | sh run_hgcn_gan.sh cora    | sh run_hgcn_vae.sh cora    | sh run_node2vec.sh cora     | Not Finished                | sh run_graphsage.sh cora    | sh run_gae.sh cora          |
+| Citeseer       | sh run_hgcn_gan.sh citeseer| sh run_hgcn_vae.sh citeseer| sh run_node2vec.sh citeseer | Not Finished                | sh run_graphsage.sh citeseer| sh run_gae.sh citeseer      |
 
 Only Linux (*): For the Node2Vec model, its binary file is only ELF 64-bit LSB executable, x86-64, for GNU/Linux.
 
