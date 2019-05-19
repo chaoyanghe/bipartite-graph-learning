@@ -372,7 +372,7 @@ def train(train_data, test_data=None):
 		if total_steps > FLAGS.max_total_steps:
 			break
 		print('Time for one epoch training: %f' % (time.time() - tEpoch))
-	print("Optimization Finished!")
+	print("")
 	if FLAGS.save_embeddings:
 		sess.run(val_adj_info.op)
 

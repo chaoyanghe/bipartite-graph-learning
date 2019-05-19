@@ -16,11 +16,11 @@ then
     --dataset $DATASET \
     --model $MODEL \
     --gpu False \
-    --epochs 1 \
-    --batch_size 512 \
+    --epochs 3 \
+    --batch_size 500 \
     --lr 0.0003 \
-    --weight_decay 0.0005 \
-    --dropout 0.5 \
+    --weight_decay 0.001 \
+    --dropout 0.4 \
     --gcn_output_dim 24 \
     --encoder_hidfeat 16 \
     --decoder_hidfeat 8
@@ -35,14 +35,14 @@ then
     --dataset $DATASET \
     --model $MODEL \
     --gpu False \
-    --epochs 1 \
-    --batch_size 512 \
-    --lr 0.0003 \
-    --weight_decay 0.0005 \
-    --dropout 0.5 \
+    --epochs 3 \
+    --batch_size 10 \
+    --lr 0.003 \
+    --weight_decay 0.001 \
+    --dropout 0.4 \
     --gcn_output_dim 24 \
-    --encoder_hidfeat 16 \
-    --decoder_hidfeat 8
+    --encoder_hidfeat 24 \
+    --decoder_hidfeat 24
 
     python3 ./HGCN/multi_classification.py --dataset $DATASET --model $MODEL
 
@@ -54,11 +54,11 @@ then
     --dataset $DATASET \
     --model $MODEL \
     --gpu False \
-    --epochs 1 \
-    --batch_size 512 \
+    --epochs 3 \
+    --batch_size 500 \
     --lr 0.0003 \
-    --weight_decay 0.0005 \
-    --dropout 0.5 \
+    --weight_decay 0.001 \
+    --dropout 0.4 \
     --gcn_output_dim 24 \
     --encoder_hidfeat 16 \
     --decoder_hidfeat 8

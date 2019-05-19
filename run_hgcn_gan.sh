@@ -15,12 +15,12 @@ then
     python3 ./HGCN/hgcn_main.py \
     --dataset $DATASET \
     --model $MODEL \
-    --gpu False \
-    --epochs 1 \
-    --batch_size 10 \
+    --gpu True \
+    --epochs 3 \
+    --batch_size 500 \
     --lr 0.0003 \
-    --weight_decay 0.0005 \
-    --dropout 0.5 \
+    --weight_decay 0.001 \
+    --dropout 0.4 \
     --gcn_output_dim 24
 
     python3 ./HGCN/binary_classification.py --dataset $DATASET --model $MODEL
@@ -33,7 +33,7 @@ then
     --dataset $DATASET \
     --model $MODEL \
     --gpu False \
-    --epochs 1 \
+    --epochs 3 \
     --batch_size 10 \
     --lr 0.0003 \
     --weight_decay 0.0005 \
