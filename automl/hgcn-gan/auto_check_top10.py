@@ -51,6 +51,7 @@ if __name__ == "__main__":
                                     with open(auc_file, "r") as f:
                                         for l_idx in range(3):
                                             line_three = f.readline()
+                                            print(line_three)
                                         auc_value = line_three.split(" ")[-1]
                                         str = "--batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f --rank %d" % (
                                             batch_size,
