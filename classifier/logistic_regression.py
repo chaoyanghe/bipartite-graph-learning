@@ -205,15 +205,19 @@ def run_exp(input_folder, emb_file, args):
 		# metric
 		test_precision = precision_score(test_y, test_predict_y, average="macro")
 		print("test_precision = %f" % test_precision)
+		logging.info("test_precision = %f" % test_precision)
 
 		test_recall = recall_score(test_y, test_predict_y, average="macro")
 		print("test_recall = %f" % test_recall)
+		logging.info("test_recall = %f" % test_recall)
 
 		test_macro_f1 = f1_score(test_y, test_predict_y, average="macro")
 		print("test_macro_f1 = %f" % test_macro_f1)
+		logging.info("test_macro_f1 = %f" % test_macro_f1)
 
 		test_predict_prob = clf.predict_proba(test_x)
 		print("test_predict_prob = %s" % test_predict_prob)
+		logging.info("test_predict_prob = %f" % test_predict_prob)
 
 		# Area Under Curve of ROC (Receiver operating characteristic):
 		# https://en.wikipedia.org/wiki/Receiver_operating_characteristic
