@@ -7,7 +7,7 @@
 | Metrics        | F1                         | F1                         | F1                          | F1                          | F1                          | F1                          |
 | Tencent        |                            | sh run_hgcn.sh tencent vae | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | N/A (*)                     |
 | Cora           | 0.813461                   | 0.302895                   | 0.745663                    | Not Finished                | 0.728645                    | 0.736460                    |
-| Citeseer       | 0.675909                   | 0.207148                   | 0.645093                    | Not Finished                | 0.739309                    | 0.574944                    |
+| Citeseer       | 0.675909                   | 0.207148                   | 0.645093                    | Not Finished                | 0.739309                    | 0.648640                    |
 
 
 

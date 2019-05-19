@@ -3,7 +3,7 @@
 rm -rf ./out/graphsage/*
 
 
-pip install networkx==1.11
+pip3 install networkx==1.11
 
 
 echo $1
@@ -29,7 +29,7 @@ python3 -m graphsage.unsupervised_train \
 --dataset $DATASET \
 --train_prefix ./example_data/$DATASET/bipartite \
 --base_log_dir ./log_embedding \
---model graphsage_mean \
+--model gcn \
 --max_total_steps 100000000 \
 --validate_iter 500000 \
 --epochs 1 \
@@ -50,7 +50,7 @@ python3 -m graphsage.unsupervised_train \
 cd ..
 
 
-python3 ./GraphSage/multi-classification.py --dataset $DATASET
+python3 ./GraphSage/multi-classification.py --dataset $DATASET --model $MODEL
 
 
-pip install networkx==2.2
+pip3 install networkx==2.2

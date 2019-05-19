@@ -15,7 +15,7 @@ then
     python3 ./HGCN/hgcn_main.py \
     --dataset $DATASET \
     --model $MODEL \
-    --gpu False \
+    --gpu True \
     --epochs 3 \
     --batch_size 500 \
     --lr 0.0003 \
