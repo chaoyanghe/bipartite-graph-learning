@@ -44,6 +44,7 @@ if __name__ == "__main__":
 	emb_file = os.path.join(output_folder, "./%s.emb" % (method))
 	logging.info("This is the demo for logistic regression using the embedding vectors")
 
+
 	# Performing example logistic regression
 	if os.path.exists(emb_file):
 		max_iter = 300

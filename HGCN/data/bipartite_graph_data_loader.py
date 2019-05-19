@@ -447,15 +447,21 @@ class BipartiteGraphDataLoader:
         return np.copy(v_attr_batch), np.copy(v_adaj_batch)
 
     def get_u_attr_array(self):
+        """
+        :return: list
+        """
         return self.u_attr_array
 
     def get_v_attr_array(self):
         """
-        :return: numpy
+        :return: list
         """
         return self.v_attr_array
 
     def get_u_adj(self):
+        """
+        :return: sparse csr_matrix
+        """
         return self.u_adjacent_matrix
 
     def get_v_adj(self):

@@ -12,9 +12,10 @@ from gcn.models import GCN
 
 
 class DecoderGCNLayer(object):
-    def __init__(self, bipartite_graph_data_loader, args, device, rank):
+    def __init__(self, bipartite_graph_data_loader, args, device, rank=-1, dataset="cora"):
         """For decoder layer, we can define any output dimension from GCN layer"""
         self.rank = rank
+        self.dataset = dataset
         u_attr_dimensions = bipartite_graph_data_loader.get_u_attr_dimensions()
         v_attr_dimensions = bipartite_graph_data_loader.get_v_attr_dimensions()
         encoder_hidfeat = args.encoder_hidfeat
@@ -190,9 +191,9 @@ class DecoderGCNLayer(object):
         logging.info("node_num = %s" % node_num)
         dimension_embedding = gcn_merge_output.shape[1]
         logging.info("dimension_embedding = %s" % dimension_embedding)
-        output_folder = "./out"
+        output_folder = "./out/hgcn-vae/" + str(self.dataset)
         if self.rank != -1:
-            output_folder = "/mnt/shared/home/bipartite-graph-learning/out/" + str(self.rank)
+            output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-vae/" + self.dataset + "/" + str(self.rank)
 
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)

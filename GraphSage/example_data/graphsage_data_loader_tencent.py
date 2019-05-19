@@ -1,8 +1,9 @@
+import json
 import logging
 import os
+
 import networkx as nx
 import numpy as np
-import json
 import scipy.sparse as sp
 from networkx.algorithms.bipartite import biadjacency_matrix
 from sklearn import preprocessing
@@ -87,7 +88,7 @@ class BipartiteGraphDataLoaderTencent:
         f_edge_list = open(self.edge_list_file_path, 'r')
         edge_count = 0
         for l in f_edge_list:
-            items = l.strip('\n').split("\t")
+            items = l.strip('\n').split(" ")
             v = int(items[0])
             u = int(items[1])
             edge_count += 1
@@ -477,6 +478,107 @@ class BipartiteGraphDataLoaderTencent:
     def get_v_list(self):
         return self.v_node_list
 
+    def get_edge_list(self):
+        return self.edge_list
+
+
+class GraphSageDataLoader:
+
+    def __init__(self, u_list, v_list, u_attr, v_attr, edge_list, node_true):
+        self.u_attr = u_attr
+        self.v_attr = v_attr
+        self.u_list = u_list
+        self.v_list = v_list
+        self.edge_list = edge_list
+        self.node_true = node_true
+
+        self.u_map_id = {}
+        self.id_map_u = {}
+        self.v_map_id = {}
+        self.id_map_v = {}
+        self.label = {}
+        self.node_map_id = {}
+
+        self.graph = {}
+        self.graph['directed'] = False
+        self.graph['graph'] = {'name': 'bipartite graph'}
+        self.graph['multigraph'] = False
+
+    def node_id_map(self):
+        u_list_length = len(self.u_list)
+        self.u_map_id = dict([(self.u_list[i], i) for i in range(u_list_length)])
+        self.id_map_u = dict([(i, self.u_list[i]) for i in range(u_list_length)])  # id to u
+        self.v_map_id = dict([(self.v_list[i], i + u_list_length) for i in range(len(self.v_list))])
+        self.id_map_v = dict([(i + u_list_length, self.v_list[i]) for i in range(len(self.v_list))])  # id to v
+
+    def nodes_form(self):
+        nodes = []
+        length = len(self.u_list) + len(self.v_list)
+        for i in range(length):
+            temp_node = {}
+            temp_node['id'] = i
+            temp_node['test'] = False
+            if i < len(self.u_list):
+                temp_node['feature'] = self.u_attr[i]
+                if self.id_map_u[i] in self.node_true:
+                    temp_node['label'] = [1, 0]
+                else:
+                    temp_node['label'] = [0, 1]
+            else:
+                temp_node['feature'] = self.v_attr[i - len(self.u_list)]
+                temp_node['label'] = [0, 1]
+            if np.random.choice([0, 1], p=[0.3, 0.7]):
+                temp_node['val'] = False
+            else:
+                temp_node['val'] = True
+            nodes.append(temp_node)
+        self.graph['nodes'] = nodes
+
+    def link_form(self):
+        links = []
+        for edge in self.edge_list:
+            temp_link = {}
+            temp_link['source'] = self.u_map_id[edge[0]]
+            temp_link['target'] = self.v_map_id[edge[1]]
+            temp_link['test_removed'] = False
+            temp_link['train_removed'] = False
+            links.append(temp_link)
+        self.graph['links'] = links
+
+    def class_form(self):
+        self.label = {}
+        length = len(self.u_list) + len(self.v_list)
+        for i in range(length):
+            if i < len(self.u_list):
+                if self.id_map_u[i] in self.node_true:
+                    self.label[i] = [1, 0]
+                else:
+                    self.label[i] = [0, 1]
+            else:
+                self.label[i] = [0, 1]
+
+    def write_to_json(self):
+        with open('./bipartite-G.json', 'w') as outfile1:
+            json.dump(self.graph, outfile1)
+
+        length = len(self.u_list) + len(self.v_list)
+        node_map_id = dict([(i, i) for i in range(length)])
+        with open('./bipartite-id_map.json', 'w') as outfile2:
+            json.dump(node_map_id, outfile2)
+
+        with open('./bipartite-class_map.json', 'w') as outfile3:
+            json.dump(self.label, outfile3)
+
+    def get_id_map_node(self, write_to_file=False):
+        id_map_node = self.id_map_u.copy()
+        id_map_node.update(self.id_map_v)
+        id_map_node['u_num'] = len(self.u_list)
+        id_map_node['v_num'] = len(self.v_list)
+        if write_to_file:
+            with open('./bipartite-id_map_node.json', 'w') as outfile:
+                json.dump(id_map_node, outfile)
+            outfile.close()
+
 
 class GraphSageSingleGraphDataLoader:
     def __init__(self, u_adj, u_list, u_attr, node_true):
@@ -564,6 +666,9 @@ class GraphSageSingleGraphDataLoader:
         self.features = np.array(nodes_features)
 
     def write_to_json(self):
+        dir = './tencent'
+        if not os.path.exists(dir):
+            os.makedirs(dir)
         with open('./tencent/bipartite-G.json', 'w') as outfile1:
             json.dump(self.graph, outfile1)
         outfile1.close()
@@ -625,8 +730,7 @@ if __name__ == "__main__":
 
     with open(NODE_TRUE, 'r') as file:
         node_true = file.readlines()
-    node_true = list(map(lambda x: x.strip().split('\t'), node_true))
-    node_true = list(map(lambda x: (int(x[0]), int(x[1])), node_true))
+    node_true = list(map(lambda x: int(x.strip()), node_true))
 
     # # test the code
     # u_list = [1, 3, 5, 7, 9]
@@ -637,9 +741,29 @@ if __name__ == "__main__":
     # edge_list = [(1, 1), (1, 3), (1, 6), (3, 3), (5, 1), (5, 6), (7, 8), (9, 6)]
     # node_true = [1, 5, 9]
 
-    logging.info('Start graphsage two hop graph loader')
-    graphsage_loader = GraphSageSingleGraphDataLoader(u_adj, u_list, u_attr, node_true)
-    graphsage_loader.data_loader()
+    # define whether to use the one hop graph or two hop graph
+    bipartite_graph = False
+    if bipartite_graph:
+        logging.info('Start graphsage data loader')
+        graphsage_loader = GraphSageDataLoader(u_list, v_list, u_attr, v_attr, edge_list, node_true)
+
+        logging.info('node id map')
+        graphsage_loader.node_id_map()
+
+        logging.info('nodes form')
+        graphsage_loader.nodes_form()
+
+        logging.info('link form')
+        graphsage_loader.link_form()
+        graphsage_loader.class_form()
+
+        logging.info('writing data to file')
+        graphsage_loader.write_to_json()
+        graphsage_loader.get_id_map_node(True)
+    else:
+        logging.info('Start graphsage two hop graph loader')
+        graphsage_loader = GraphSageSingleGraphDataLoader(u_adj, u_list, u_attr, node_true)
+        graphsage_loader.data_loader()
 
     # logging.info('######### U adjacent matrix ##########\n' + str(u_adj))
     # logging.info('######### V adjacent matrix ##########\n' + str(v_adj))

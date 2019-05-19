@@ -85,7 +85,7 @@ class BipartiteGraphDataLoaderTencent:
         f_edge_list = open(self.edge_list_file_path, 'r')
         edge_count = 0
         for l in f_edge_list:
-            items = l.strip('\n').split("\t")
+            items = l.strip('\n').split(" ")
             v = int(items[0])
             u = int(items[1])
             edge_count += 1

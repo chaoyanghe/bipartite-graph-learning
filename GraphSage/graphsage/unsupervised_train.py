@@ -14,7 +14,7 @@ from graphsage.models import SampleAndAggregate, SAGEInfo, Node2VecModel
 from graphsage.neigh_samplers import UniformNeighborSampler
 from graphsage.utils import load_data
 
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+# os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 
 # Set random seed
 seed = 123
@@ -56,15 +56,16 @@ flags.DEFINE_boolean('save_embeddings', True, 'whether to save embeddings for al
 flags.DEFINE_string('base_log_dir', '.', 'base directory for logging and saving embeddings')
 flags.DEFINE_integer('validate_iter', 5000, "how often to run a validation minibatch.")
 flags.DEFINE_integer('validate_batch_size', 256, "how many nodes per validation sample.")
-flags.DEFINE_integer('gpu', 1, "which gpu to use.")
+flags.DEFINE_integer('gpu', 0, "which gpu to use.")
 flags.DEFINE_integer('print_every', 50, "How often to print training info.")
 flags.DEFINE_integer('max_total_steps', 10 ** 10, "Maximum total number of iterations")
 flags.DEFINE_integer('walk_len', 5, "(Co-occur) length of one singe random walk")
 flags.DEFINE_integer('n_walks', 50, "Number of random walks start from one node")
 
-os.environ["CUDA_VISIBLE_DEVICES"] = str(FLAGS.gpu)
+# os.environ["CUDA_VISIBLE_DEVICES"] = str(FLAGS.gpu)
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
-GPU_MEM_FRACTION = 0.8
+# GPU_MEM_FRACTION = 0.8
 T0 = time.time()
 
 
@@ -139,7 +140,7 @@ def __save_embedding_for_task(embedding, node_list):
 	:param node_list: [node1, node2, ...]
 	:return:
 	"""
-	output_file = './out/graphsage/' + FLAGS.dataset + "/"
+	output_file = './../out/graphsage/' + FLAGS.dataset + "/"
 	if not os.path.exists(output_file):
 		os.makedirs(output_file)
 
@@ -157,6 +158,9 @@ def __save_embedding_for_task(embedding, node_list):
 			node_list_file += '%d' % id_node_map[str(node_list[i])] + '\n'
 			embedding_output = [str(e) for e in embedding[i]]
 			output += '%d ' % id_node_map[str(node_list[i])] + ' '.join(embedding_output) + '\n'
+
+	print("output file = %s" % output_file)
+	logging.info("output file = %s" % output_file)
 	with open(output_file + 'graphsage.emb', 'w') as file1, open(output_file + 'node_list', 'w') as file2:
 		file1.write(output)
 		file2.write(node_list_file)
@@ -285,10 +289,11 @@ def train(train_data, test_data=None):
 		raise Exception('Error: model name unrecognized.')
 	print("Time for choosing model: ", time.time() - T0)
 
-	config = tf.ConfigProto(log_device_placement=FLAGS.log_device_placement)
-	config.gpu_options.allow_growth = True
+	config = tf.ConfigProto(device_count = {'GPU': 0})
+	# config = tf.ConfigProto(log_device_placement=FLAGS.log_device_placement)
+	# config.gpu_options.allow_growth = False
 	# config.gpu_options.per_process_gpu_memory_fraction = GPU_MEM_FRACTION
-	config.allow_soft_placement = True
+	# config.allow_soft_placement = True
 
 	# Initialize session
 	sess = tf.Session(config=config)
@@ -372,7 +377,7 @@ def train(train_data, test_data=None):
 		if total_steps > FLAGS.max_total_steps:
 			break
 		print('Time for one epoch training: %f' % (time.time() - tEpoch))
-	print("Optimization Finished!")
+	print("")
 	if FLAGS.save_embeddings:
 		sess.run(val_adj_info.op)
 

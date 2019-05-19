@@ -1,0 +1,59 @@
+common:
+  algorithm: RANDOM_SEARCH
+  objectValueName: auc
+  optimizationType: MAXIMIZE
+  studyName: CascadedAdversarialHGCN
+notification:
+  ifAlarmNotification: False
+parameterConfigs:
+- discreteValues:
+  - 64
+  - 128
+  - 256
+  - 512 
+  name: batch_size
+  type: ENUM_INT
+- max: 0.01
+  min: 0.0001
+  name: lr
+  type: LOG10
+- discreteValues:
+  - 8
+  - 16
+  - 32
+  - 48
+  - 64
+  name: dis_hidden
+  type: ENUM_INT
+- discreteValues:
+  - 0.2
+  - 0.4
+  - 0.6
+  - 0.8
+  name: dropout
+  type: ENUM_FLOAT
+- max: 20
+  min: 1
+  name: epochs
+  type: INT
+- discreteValues:
+  - 0.001
+  - 0.0001
+  - 0.00001
+  - 0.0005
+  name: weight_decay
+  type: ENUM_FLOAT
+schedulerConfig:
+  parallelNum: 50
+  trialNum: 1000
+  maxConsFailNum: 20
+workerConfig:
+  runPlatform: SEVEN
+  sevenConfig:
+    cluster: dev
+    user: royrong
+  configFiles:
+  - run_hgcn.sh
+  runCmd: sh run_hgcn.sh
+  retryNum: 2
+
