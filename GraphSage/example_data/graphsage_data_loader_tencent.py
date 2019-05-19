@@ -641,6 +641,7 @@ class GraphSageSingleGraphDataLoader:
         triu = sp.triu(self.adj, 0)
         edges = self.__sparse_to_tuple(triu)
         links = []
+        print('########### number of edges: ', len(edges))
         for i in range(len(edges)):
             s, t = edges[i][:2]
             temp_link = {}
