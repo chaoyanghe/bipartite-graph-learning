@@ -12,16 +12,16 @@ if [ "$DATASET" = "tencent" ]
 then
     echo $DATASET
 
-#    python3 ./HGCN/hgcn_main.py \
-#    --dataset $DATASET \
-#    --model $MODEL \
-#    --gpu True \
-#    --epochs 3 \
-#    --batch_size 500 \
-#    --lr 0.0003 \
-#    --weight_decay 0.001 \
-#    --dropout 0.4 \
-#    --gcn_output_dim 24
+    python3 ./HGCN/hgcn_main.py \
+    --dataset $DATASET \
+    --model $MODEL \
+    --gpu True \
+    --epochs 3 \
+    --batch_size 500 \
+    --lr 0.0003 \
+    --weight_decay 0.001 \
+    --dropout 0.4 \
+    --gcn_output_dim 24
 
     python3 ./HGCN/binary_classification.py --dataset $DATASET --model $MODEL
 
