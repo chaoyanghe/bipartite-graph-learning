@@ -16,12 +16,12 @@ then
     --dataset $DATASET \
     --model $MODEL \
     --gpu True \
-    --epochs 3 \
-    --batch_size 500 \
-    --lr 0.0003 \
+    --epochs 2 \
+    --batch_size 700 \
+    --lr 0.0004 \
     --weight_decay 0.001 \
-    --dropout 0.5 \
-    --gcn_output_dim 24
+    --dropout 0.45 \
+    --gcn_output_dim 20
 
     python3 ./HGCN/binary_classification.py --dataset $DATASET --model $MODEL
 
