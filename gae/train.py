@@ -138,12 +138,16 @@ else:
 output = ''
 output_node_list = ''
 output += '%d %d' % (len(u_list), len(emb[0])) + '\n'
-output_file_path = './out/'
+output_file_path = './out/gae' + "/" + FLAGS.dataset
+
+if not os.path.exists(output_file_path):
+	os.makedirs(output_file_path)
+
 for i in range(len(emb)):
 	output_node_list += str(u_list[i]) + '\n'
 	embedding_output = [str(j) for j in emb[i]]
 	output += '%d ' % u_list[i] + ' '.join(embedding_output) + '\n'
-with open(output_file_path + 'gae.emb', 'w') as file1, open(output_file_path + 'node_list', 'w') as file2:
+with open(output_file_path + '/gae.emb', 'w') as file1, open(output_file_path + '/node_list', 'w') as file2:
 	file1.write(output)
 	file2.write(output_node_list)
 file1.close()

@@ -4,7 +4,9 @@
 DATASET=$1
 MODEL=$2
 
-rm -rf ./out/hgcn/$DATASET
+echo ./out/hgcn-$MODEL/$DATASET
+
+rm -rf ./out/hgcn-$MODEL/$DATASET
 
 if [ "$DATASET" = "tencent" ]
 then

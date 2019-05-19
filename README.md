@@ -4,9 +4,9 @@
 ## Model Performance Comparision
 |                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
 | :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
-| Metrics        | F1                         | MacOS/Linux                | Only Linux (*)              | Not Finished                | Not Finished                | Not Finished                |
+| Metrics        | F1                         | F1                         | F1                          | F1                          | F1                          | F1                          |
 | Tencent        |                            | sh run_hgcn.sh tencent vae | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | Not Finished                |
-| Cora           | 0.813461                   | sh run_hgcn.sh cora vae    | sh run_node2vec.sh cora     | Not Finished                | 0.728645                    | Not Finished                |
+| Cora           | 0.813461                   | sh run_hgcn.sh cora vae    | sh run_node2vec.sh cora     | Not Finished                | 0.728645                    | 0.736460                    |
 | Citeseer       | 0.675909                   | sh run_hgcn.sh citeseer vae| sh run_node2vec.sh citeseer | Not Finished                | 0.739309                    | Not Finished                |
 
 
@@ -22,12 +22,15 @@ pip3 install -r requirements.txt
 ## Peproduciable Scripts Overview
 |                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
 | :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
-| Platform       | MacOS/Linux                | MacOS/Linux                | Only Linux (*)              | Not Finished                | Not Finished                | Not Finished                |
-| Tencent        | sh run_hgcn.sh tencent gan | sh run_hgcn.sh tencent vae | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | Not Finished                |
-| Cora           | sh run_hgcn.sh cora gan    | sh run_hgcn.sh cora vae    | sh run_node2vec.sh cora     | Not Finished                | Not Finished                | Not Finished                |
-| Citeseer       | sh run_hgcn.sh citeseer gan| sh run_hgcn.sh citeseer vae| sh run_node2vec.sh citeseer | Not Finished                | Not Finished                | Not Finished                |
+| Platform       | MacOS/Linux                | MacOS/Linux                | Only Linux (*)              | MacOS/Linux                 | MacOS/Linux                 | MacOS/Linux                |
+| Tencent        | sh run_hgcn.sh tencent gan | sh run_hgcn.sh tencent vae | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | N/A (*)                     |
+| Cora           | sh run_hgcn.sh cora gan    | sh run_hgcn.sh cora vae    | sh run_node2vec.sh cora     | Not Finished                | sh run_graphsage.sh cora    | sh run_gae.sh cora          |
+| Citeseer       | sh run_hgcn.sh citeseer gan| sh run_hgcn.sh citeseer vae| sh run_node2vec.sh citeseer | Not Finished                | sh run_graphsage.sh citeseer| sh run_gae.sh citeseer      |
 
-*: For the Node2Vec model, its binary file is only ELF 64-bit LSB executable, x86-64, for GNU/Linux.
+Only Linux (*): For the Node2Vec model, its binary file is only ELF 64-bit LSB executable, x86-64, for GNU/Linux.
+
+N/A (*): For the GAE model, the code of the original GAE paper can not simply applied to the large-scale bipartite graph due to the memory constrain. 
+To apply GAE to the large-scale graph data is another research topic, so we don't report the result in the "Tencent" dataset. From the other datasets, we can see that our model's performance is better than the GAE model. 
 
 ## HGCN
 1. run HGCN model on the tencent dataset.

@@ -2,9 +2,12 @@ import argparse
 import logging
 import os
 
+import conf
+
 
 def parse_args():
 	parser = argparse.ArgumentParser()
+	parser.add_argument('--dataset', type=str, default='cora', required=True)
 	parser.add_argument('--rank', type=int, default=-1,
 						help='process ID for MPI Simple AutoML')
 
@@ -13,20 +16,22 @@ def parse_args():
 
 if __name__ == "__main__":
 	args = parse_args()
+	dataset = args.dataset
 	rank = args.rank
 
 	# classification
 	it = 3000
 	method = "gae"
-	input_folder = "./data/cora"
-	output_folder = "./out"
+
+	input_folder = conf.input_folder + str(dataset)
+	output_folder = conf.output_folder + "/" + str(dataset)
+
 	if rank != -1:
-		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/tencent"
-		output_folder = "/mnt/shared/home/bipartite-graph-learning/out/" + str(rank)
+		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/" + str(dataset)
+		output_folder = "/mnt/shared/home/bipartite-graph-learning/out/gae" + str(rank)
 
 	if not os.path.exists(output_folder):
 		os.makedirs(output_folder)
-
 	emb_file = str(output_folder) + "/gae.emb"
 	print(emb_file)
 
