@@ -5,8 +5,8 @@
 |                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
 | :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
 | Metrics        | F1                         | F1                         | F1                          | F1                          | F1                          | F1                          |
-| Tencent        |                            | sh run_hgcn.sh tencent vae | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | N/A (*)                     |
-| Cora           | 0.813461                   | 0.302895                   | 0.745663                    | Not Finished                | 0.728645                    | 0.736460                    |
+| Tencent        | 0.541600                   | sh run_hgcn.sh tencent vae | 0.657056                    | Not Finished                | Not Finished                | N/A (*)                     |
+| Cora           | 0.813461                   | 0.302895                   | 0.745663                    | Not Finished                | 0.686367                    | 0.736460                    |
 | Citeseer       | 0.675909                   | 0.207148                   | 0.645093                    | Not Finished                | 0.739309                    | 0.648640                    |
 
 
@@ -23,14 +23,47 @@ pip3 install -r requirements.txt
 |                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
 | :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
 | Platform       | MacOS/Linux                | MacOS/Linux                | Only Linux (*)              | MacOS/Linux                 | MacOS/Linux                 | MacOS/Linux                |
-| Tencent        | sh run_hgcn_gan.sh tencent | sh run_hgcn_vae.sh tencent | sh run_node2vec.sh tencent  | Not Finished                | Not Finished                | N/A (*)                     |
-| Cora           | sh run_hgcn_gan.sh cora    | sh run_hgcn_vae.sh cora    | sh run_node2vec.sh cora     | Not Finished                | sh run_graphsage.sh cora    | sh run_gae.sh cora          |
-| Citeseer       | sh run_hgcn_gan.sh citeseer| sh run_hgcn_vae.sh citeseer| sh run_node2vec.sh citeseer | Not Finished                | sh run_graphsage.sh citeseer| sh run_gae.sh citeseer      |
+| Tencent        | sh run_hgcn_gan.sh tencent | sh run_hgcn_vae.sh tencent | sh run_node2vec.sh tencent  | sh run_gcn.sh tencent       | sh run_graphsage.sh tencent | N/A (*)                     |
+| Cora           | sh run_hgcn_gan.sh cora    | sh run_hgcn_vae.sh cora    | sh run_node2vec.sh cora     | sh run_gcn.sh cora          | sh run_graphsage.sh cora    | sh run_gae.sh cora          |
+| Citeseer       | sh run_hgcn_gan.sh citeseer| sh run_hgcn_vae.sh citeseer| sh run_node2vec.sh citeseer | sh run_gcn.sh citeseer      | sh run_graphsage.sh citeseer| sh run_gae.sh citeseer      |
 
 Only Linux (*): For the Node2Vec model, its binary file is only ELF 64-bit LSB executable, x86-64, for GNU/Linux.
 
 N/A (*): For the GAE model, the code of the original GAE paper can not simply applied to the large-scale bipartite graph due to the memory constrain. 
 To apply GAE to the large-scale graph data is another research topic, so we don't report the result in the "Tencent" dataset. From the other datasets, we can see that our model's performance is better than the GAE model. 
+
+Background running: 
+~~~
+# HGCN (GAN)
+nohup sh run_hgcn_gan.sh tencent > log_run_hgcn_gan_tencent.txt 2>&1 &
+nohup sh run_hgcn_gan.sh cora > log_run_hgcn_gan_cora.txt 2>&1 &
+nohup sh run_hgcn_gan.sh citeseer > log_run_hgcn_gan_citeseer.txt 2>&1 &
+
+# HGCN (VAE)
+nohup sh run_hgcn_vae.sh tencent > log_run_hgcn_vae_tencent.txt 2>&1 &
+nohup sh run_hgcn_vae.sh cora > log_run_hgcn_vae_cora.txt 2>&1 &
+nohup sh run_hgcn_vae.sh citeseer > log_run_hgcn_vae_citeseer.txt 2>&1 &
+
+# Node2Vec
+nohup sh run_node2vec.sh tencent > log_run_node2vec_tencent.txt 2>&1 &
+nohup sh run_node2vec.sh cora > log_run_node2vec_cora.txt 2>&1 &
+nohup sh run_node2vec.sh citeseer > log_run_node2vec_citeseer.txt 2>&1 &
+
+# GCN
+nohup sh run_gcn.sh tencent > log_run_gcn_tencent.txt 2>&1 &
+nohup sh run_gcn.sh cora > log_run_gcn_cora.txt 2>&1 &
+nohup sh run_gcn.sh citeseer > log_run_gcn_citeseer.txt 2>&1 &
+
+# GraphSAGE
+nohup sh run_graphsage.sh tencent > log_run_graphsage_tencent.txt 2>&1 &
+nohup sh run_graphsage.sh cora > log_run_graphsage_cora.txt 2>&1 &
+nohup sh run_graphsage.sh citeseer > log_run_graphsage_citeseer.txt 2>&1 &
+
+# GAE
+nohup sh run_gae.sh cora > log_run_gae_cora.txt 2>&1 &
+nohup sh run_gae.sh citeseer > log_run_gae_citeseer.txt 2>&1 &
+
+~~~
 
 ## HGCN
 1. run HGCN model on the tencent dataset.
