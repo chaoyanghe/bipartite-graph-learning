@@ -16,9 +16,9 @@ then
     --dataset $DATASET \
     --model $MODEL \
     --gpu True \
-    --epochs 5 \
-    --batch_size 5000 \
-    --lr 0.003 \
+    --epochs 3 \
+    --batch_size 500 \
+    --lr 0.0003 \
     --weight_decay 0.001 \
     --dropout 0.5 \
     --gcn_output_dim 24
