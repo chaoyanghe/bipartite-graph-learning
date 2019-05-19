@@ -1,5 +1,6 @@
 import argparse
 import logging
+import random
 from collections import namedtuple
 
 import numpy as np
@@ -7,7 +8,7 @@ import torch
 
 from cascaded_adversarial_hgcn_with_decoder import DecoderGCNLayer
 from cascaded_adversarial_hgcn_with_gan import CascadedAdversarialHGCN
-from conf import (MODEL, RANDOM_SEED, BATCH_SIZE, EPOCHS, LEARNING_RATE,
+from conf import (MODEL, BATCH_SIZE, EPOCHS, LEARNING_RATE,
 				  WEIGHT_DECAY, DROPOUT, HIDDEN_DIMENSIONS, GCN_OUTPUT_DIM, ENCODER_HIDDEN_DIMENSIONS,
 				  DECODER_HIDDEN_DIMENSIONS, VAE_HIDDEN_DIMENSIONS, LATENT_DIMENSIONS)
 from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
@@ -21,7 +22,7 @@ def parse_args():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--dataset', type=str, default='tencent', required=True)
 	parser.add_argument('--model', type=str, default='gan', choices=MODEL, required=True)
-	parser.add_argument('--seed', type=int, default=RANDOM_SEED, help='Random seed.')
+	parser.add_argument('--seed', type=int, help='Random seed.')
 	parser.add_argument('--epochs', type=int, default=EPOCHS,
 						help='Number of epochs to train.')
 	parser.add_argument('--lr', type=float, default=LEARNING_RATE,
@@ -47,7 +48,7 @@ def parse_args():
 	parser.add_argument('--vae_hidfeat', type=int, default=VAE_HIDDEN_DIMENSIONS,
 						help='Number of hidden units for latent representation in VAE')
 	parser.add_argument('--latent_hidfeat', type=int, default=LATENT_DIMENSIONS,
-	                    help='Number of latent units for latent representation in VAE')
+						help='Number of latent units for latent representation in VAE')
 
 	return parser.parse_args()
 
@@ -100,16 +101,16 @@ def get_the_bipartite_graph_loader(args, data_path, dataset, device):
 		GROUP_ATTR_PATH = data_path + "data/pubmed/group_attr"
 
 		bipartite_graph_data_loader = BipartiteGraphDataLoaderPubMed(args.batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
-																	   NODE_LABEL_PATH,
-																	   EDGE_LIST_PATH,
-																	   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
-
+																	 NODE_LABEL_PATH,
+																	 EDGE_LIST_PATH,
+																	 GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
 
 	return bipartite_graph_data_loader
 
 
 def main():
 	args = parse_args()
+	dataset = args.dataset
 	rank = args.rank
 	print("batch_size = " + str(args.batch_size))
 	print("epochs = " + str(args.epochs))
@@ -127,6 +128,17 @@ def main():
 
 	# initialization
 	# https://pytorch.org/docs/stable/notes/randomness.html
+
+	args.seed = random.randint(0, 1000000)
+	print("###############random seed = %s #########" % str(args.seed))
+	logging.info("###############random seed = %s #########" % str(args.seed))
+	fs = open("out/hgcn/" + args.model + "/" + dataset + "/random_seed.txt", 'w')
+
+	# model_name prec 0.2 test_prec
+	wstr = "%s" % str(args.seed)
+	fs.write(wstr + "\n")
+	fs.close()
+
 	np.random.seed(args.seed)
 	torch.manual_seed(args.seed)
 
@@ -140,7 +152,6 @@ def main():
 	if rank != -1:
 		data_path = "/mnt/shared/home/bipartite-graph-learning/"
 
-	dataset = args.dataset
 	bipartite_graph_data_loader = get_the_bipartite_graph_loader(args, data_path, dataset, device)
 	bipartite_graph_data_loader.load()
 
