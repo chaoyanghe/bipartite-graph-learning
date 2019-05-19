@@ -1,6 +1,6 @@
 import logging
 
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 from networkx.algorithms.bipartite import biadjacency_matrix
@@ -269,7 +269,9 @@ class BipartiteGraphDataLoaderCora:
 		return u_adjacent_matrix_np, v_adjacent_matrix_np
 
 	def plot_neighborhood_number_distribution(self):
-		count_list = np.sum(self.u_adjacent_matrix, axis=1)
+		u_adjacent_matrix_np = self.u_adjacent_matrix.todense().A
+		count_list = np.sum(u_adjacent_matrix_np, axis=1)
+		print(count_list)
 		u_adj_ner_count_dict = {}
 		for idx in range(len(count_list)):
 			neigher_num = count_list[idx]
@@ -289,8 +291,8 @@ class BipartiteGraphDataLoaderCora:
 		plt.plot(plot_x, plot_y, color="red", linewidth=2)
 		plt.xlabel("Neighborhood Number")
 		plt.ylabel("Count")
-		plt.title("Neighborhood Number Distribution")
-		plt.axis([0, 50, 0, 5000])
+		plt.title("Neighborhood Number Distribution (Cora)")
+		plt.axis([0, 20, 0, 350])
 		plt.show()
 
 	def __generate_u_labels(self, u_node_list):
@@ -388,20 +390,20 @@ if __name__ == "__main__":
 						datefmt='%Y-%m-%d %A %H:%M:%S',
 						level=logging.INFO)
 
-	NODE_LIST_PATH = "./node_list"
-	NODE_ATTR_PATH = "./node_attr"
-	NODE_LABEL_PATH = "./node_true"
+	NODE_LIST_PATH = "./../../data/cora/node_list"
+	NODE_ATTR_PATH = "./../../data/cora/node_attr"
+	NODE_LABEL_PATH = "./../../data/cora/node_true"
 
-	EDGE_LIST_PATH = "./edgelist"
+	EDGE_LIST_PATH = "./../../data/cora/edgelist"
 
-	GROUP_LIST_PATH = "./group_list"
-	GROUP_ATTR_PATH = "./group_attr"
+	GROUP_LIST_PATH = "./../../data/cora/group_list"
+	GROUP_ATTR_PATH = "./../../data/cora/group_attr"
 	bipartite_graph_data_loader = BipartiteGraphDataLoaderCora(3, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
 															   EDGE_LIST_PATH,
 															   GROUP_LIST_PATH, GROUP_ATTR_PATH)
 	# bipartite_graph_data_loader.test()
 	bipartite_graph_data_loader.load()
-	# bipartite_graph_data_loader.plot_neighborhood_number_distribution()
+	bipartite_graph_data_loader.plot_neighborhood_number_distribution()
 	u_attr = bipartite_graph_data_loader.get_u_attr_array()
 
 # for i in range(len(u_attr)):
