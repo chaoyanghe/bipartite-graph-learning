@@ -3,7 +3,20 @@
 - [Can't run on Nell dataset #14](https://github.com/tkipf/gcn/issues/14)
 - [tkipf/gcn](https://github.com/tkipf/gcn.git)
 
-## Dataset Info DL;DR
+## My work done
+1. combine test and training sets
+    - test set contains **1000** data points
+    - training set contains **18717** data points
+1. split each class (a total of 3) evenly
+    1. about one half of the data is **node** or **U** while the other half is **group** or **V**
+    1. take the original graph and keep only the edges that connects a vertex in **U** and a vertex in **V**
+        - this means within **U** and **V**, all vertices are disconnected
+    1. remove all disconnected (isolated) nodes
+        - this leaves **13992** data points
+1. `node_{attr, list, true}` file contains only the data in set **U**
+1. `group_{attr, list}` file contains only the data in set **V**
+
+## Dataset File Format TL;DR
 - ind.dataset_str.x => the feature vectors of the training instances as scipy.sparse.csr.csr_matrix object;
 - ind.dataset_str.tx => the feature vectors of the test instances as scipy.sparse.csr.csr_matrix object;
 - ind.dataset_str.allx => the feature vectors of both labeled and unlabeled training instances
@@ -11,7 +24,7 @@
 - ind.dataset_str.y => the one-hot labels of the labeled training instances as numpy.ndarray object;
 - ind.dataset_str.ty => the one-hot labels of the test instances as numpy.ndarray object;
 - ind.dataset_str.ally => the one-hot labels for instances in ind.dataset_str.allx as numpy.ndarray object;
-- ind.dataset_str.graph => a dict in the format {index: \[index_of_neighbor_nodes]} as collections.defaultdict
+- ind.dataset_str.graph => a dict in the format `{index: [index_of_neighbor_nodes]}` as collections.defaultdict
         object;
 - ind.dataset_str.test.index => the indices of test instances in graph, for the inductive setting as list object
 
