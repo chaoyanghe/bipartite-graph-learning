@@ -52,7 +52,7 @@ cd ..
 if [ "$DATASET" = "tencent" ]
 then
     echo $DATASET
-    python3 ./GraphSage/classification.py --dataset $DATASET
+    python3 ./GraphSage/classification.py --dataset
 elif [ "$DATASET" = "cora" ]
 then
     echo $DATASET

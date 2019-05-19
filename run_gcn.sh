@@ -3,7 +3,7 @@
 rm -rf ./out/graphsage/*
 
 
-pip3 install networkx==1.11
+pip install networkx==1.11
 
 
 echo $1
@@ -53,7 +53,7 @@ cd ..
 if [ "$DATASET" = "tencent" ]
 then
     echo $DATASET
-    python3 ./GraphSage/classification.py --dataset $DATASET
+    python3 ./GraphSage/classification.py --dataset
 elif [ "$DATASET" = "cora" ]
 then
     echo $DATASET
@@ -64,4 +64,4 @@ then
     python3 ./GraphSage/multi_classification.py --dataset $DATASET
 fi
 
-pip3 install networkx==2.2
+pip install networkx==2.2
