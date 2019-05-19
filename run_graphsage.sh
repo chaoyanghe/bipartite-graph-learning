@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# pip install networkx==1.11
+pip install networkx==1.11
 
 DATASET=$1
 MODEL=$2
@@ -132,3 +132,5 @@ then
    cd ..
    python3 ./GraphSage/multi_classification.py --dataset $DATASET
 fi
+
+pip install networkx==2.2
