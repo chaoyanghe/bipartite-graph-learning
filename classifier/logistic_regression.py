@@ -217,7 +217,7 @@ def run_exp(input_folder, emb_file, args):
 
 		test_predict_prob = clf.predict_proba(test_x)
 		print("test_predict_prob = %s" % test_predict_prob)
-		logging.info("test_predict_prob = %f" % test_predict_prob)
+		# logging.info("test_predict_prob = %s" % test_predict_prob)
 
 		# Area Under Curve of ROC (Receiver operating characteristic):
 		# https://en.wikipedia.org/wiki/Receiver_operating_characteristic
