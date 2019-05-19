@@ -46,7 +46,7 @@ if __name__ == "__main__":
                         for dis_hidden in hpo_dis_hidden:
                             for dropout in hpo_dropout:
                                 paras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout)
-                                auc_file = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_gan/tencent/%d/hgcn.res.f1_precision_recall" % hpo_cnt
+                                auc_file = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-gan/tencent/%d/hgcn.res.f1_precision_recall" % hpo_cnt
                                 # print(auc_file)
                                 if os.path.exists(auc_file):
                                     with open(auc_file, "r") as f:
@@ -64,7 +64,7 @@ if __name__ == "__main__":
                                             hpo_cnt)
                                         print("auc = %s. Parameters: %s" % (auc_value, str))
                                         # read the AUC value
-                                        auc_dict[hpo_cnt] = float(auc_value[0])
+                                        auc_dict[hpo_cnt] = line_three
                                 hpo_cnt += 1
         if len(auc_dict) == 972:
             print("all genrated!")

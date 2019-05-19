@@ -23,7 +23,7 @@ def load_emb_data(fname, ind=None):
 
 def load_label_data(fname, ind):
     true_label = np.loadtxt(fname, dtype=int)
-    print("true_label = %s" % true_label)
+    # print("true_label = %s" % true_label)
     y = pd.DataFrame(np.zeros(ind.shape), index=ind, dtype=int)
     print(y)
     # cp()
@@ -112,6 +112,8 @@ def prec_rec(rank_list, K=None):
 
 
 def run_exp(input_folder, emb_file, args):
+    pure_attribute = args.pure
+
     # Load Data
     ## index
     if args.verbose:
@@ -142,10 +144,12 @@ def run_exp(input_folder, emb_file, args):
         attr_data = None
 
     ## emb
-    if args.verbose:
-        logging.info("Loading emb from %s ..." % emb_file)
-    data = load_emb_data(emb_file, node_ids)
-    print("emb_file len = %s" % data.shape[0])
+    data = None
+    if not pure_attribute:
+        if args.verbose:
+            logging.info("Loading emb from %s ..." % emb_file)
+        data = load_emb_data(emb_file, node_ids)
+        print("emb_file len = %s" % data.shape[0])
 
     ## labels
     if args.verbose:
@@ -158,7 +162,12 @@ def run_exp(input_folder, emb_file, args):
     ## Construct data
     if args.verbose:
         logging.info("Constructing data ...")
-    user_x, user_y = construct_data(data, node_labels, attr_data)
+
+    if not pure_attribute:
+        user_x, user_y = construct_data(data, node_labels, attr_data)
+    else:
+        user_x, user_y = attr_data, node_labels
+
     del data, node_labels, attr_data
     if args.verbose:
         logging.info("user: %d" % (user_y.shape[0]))
@@ -192,7 +201,7 @@ def run_exp(input_folder, emb_file, args):
             logging.info("Start training ...")
             print("Start training ...")
         clf = SGDClassifier(loss='log', alpha=args.alpha, max_iter=args.max_iter, shuffle=True, n_jobs=48,
-                            class_weight='balanced', verbose=args.verbose, tol=None)
+                            class_weight='balanced', verbose=args.verbose, tol=None, random_state=5678910)
         clf.fit(train_x, train_y)
         # Testing
         if args.verbose:
@@ -223,7 +232,11 @@ def run_exp(input_folder, emb_file, args):
             *.prec_rec: F1, PRECISION AND RECALL
         """
         fout = open(args.res_file + ".f1_precision_recall", 'w')
-        name = emb_file.split('/')[-1]
+        name = None
+        if not pure_attribute:
+            name = emb_file.split('/')[-1]
+        else:
+            name = "pure_feature"
 
         # model_name prec 0.2 test_prec
         wstr = "%s %s %f" % (name, "precision", test_size)
@@ -310,11 +323,12 @@ def main():
     parser = ArgumentParser("emb_lr", formatter_class=ArgumentDefaultsHelpFormatter, conflict_handler="resolve")
     parser.add_argument("--input_folder", required=True)
     parser.add_argument("--node_file", default="node_list")
-    parser.add_argument("--emb_file", required=True)
+    parser.add_argument("--emb_file", required=False)
     parser.add_argument("--res_file", required=True)
     parser.add_argument("--verbose", default=False, type=int)
     parser.add_argument("--max_iter", default=100, type=int)
     parser.add_argument("--alpha", default=0.005, type=float)
+    parser.add_argument("--pure", default=False, type=bool)
     args = parser.parse_args()
 
     print("input_folder = %s" % args.input_folder)

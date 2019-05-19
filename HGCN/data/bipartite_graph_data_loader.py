@@ -1,5 +1,6 @@
 import logging
 
+import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 from networkx.algorithms.bipartite import biadjacency_matrix
@@ -344,31 +345,32 @@ class BipartiteGraphDataLoader:
         logging.info("end to load bipartite for u")
         return u_adjacent_matrix_np, v_adjacent_matrix_np
 
-    #
-    # def plot_neighborhood_number_distribution(self):
-    #     count_list = np.sum(self.u_adjacent_matrix[0:100000], axis=1)
-    #     u_adj_ner_count_dict = {}
-    #     for idx in range(len(count_list)):
-    #         neigher_num = count_list[idx]
-    #         if neigher_num not in u_adj_ner_count_dict.keys():
-    #             u_adj_ner_count_dict[neigher_num] = 0
-    #         u_adj_ner_count_dict[neigher_num] += 1
-    #
-    #     logging.info(len(u_adj_ner_count_dict))
-    #     plot_x = []
-    #     plot_y = []
-    #     for neigher_num in sorted(u_adj_ner_count_dict.keys()):
-    #         if neigher_num == 0 or u_adj_ner_count_dict[neigher_num] == 0:
-    #             continue
-    #         plot_x.append(neigher_num)
-    #         plot_y.append(u_adj_ner_count_dict[neigher_num])
-    #
-    #     plt.plot(plot_x, plot_y, color="red", linewidth=2)
-    #     plt.xlabel("Neighborhood Number")
-    #     plt.ylabel("Count")
-    #     plt.title("Neighborhood Number Distribution")
-    #     plt.axis([0, 50, 0, 5000])
-    #     plt.show()
+    def plot_neighborhood_number_distribution(self):
+        u_adjacent_matrix_np = self.u_adjacent_matrix.todense().A
+        count_list = np.sum(u_adjacent_matrix_np[0:100000], axis=1)
+        print(count_list)
+        u_adj_ner_count_dict = {}
+        for idx in range(len(count_list)):
+            neigher_num = count_list[idx]
+            if neigher_num not in u_adj_ner_count_dict.keys():
+                u_adj_ner_count_dict[neigher_num] = 0
+            u_adj_ner_count_dict[neigher_num] += 1
+
+        logging.info(len(u_adj_ner_count_dict))
+        plot_x = []
+        plot_y = []
+        for neigher_num in sorted(u_adj_ner_count_dict.keys()):
+            if neigher_num == 0 or u_adj_ner_count_dict[neigher_num] == 0:
+                continue
+            plot_x.append(neigher_num)
+            plot_y.append(u_adj_ner_count_dict[neigher_num])
+
+        plt.plot(plot_x, plot_y, color="red", linewidth=2)
+        plt.xlabel("Neighborhood Number")
+        plt.ylabel("Count")
+        plt.title("Neighborhood Number Distribution (Tencent)")
+        plt.axis([0, 50, 0, 5000])
+        plt.show()
 
     def __generate_u_labels(self, u_node_list):
         f_label = open(self.group_u_label_file_path)
@@ -480,23 +482,23 @@ if __name__ == "__main__":
                         datefmt='%Y-%m-%d %A %H:%M:%S',
                         level=logging.INFO)
 
-    # NODE_LIST_PATH = "./../../data/tencent/node_list"
-    # NODE_ATTR_PATH = "./../../data/tencent/node_attr"
-    # NODE_LABEL_PATH = "./../../data/tencent/node_true"
-    #
-    # EDGE_LIST_PATH = "./../../data/tencent/edgelist"
-    #
-    # GROUP_LIST_PATH = "./../../data/tencent/group_list"
-    # GROUP_ATTR_PATH = "./../../data/tencent/group_attr"
-    # bipartite_graph_data_loader = BipartiteGraphDataLoader(3, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
-    #                                                        EDGE_LIST_PATH,
-    #                                                        GROUP_LIST_PATH, GROUP_ATTR_PATH)
-    # # bipartite_graph_data_loader.test()
-    # bipartite_graph_data_loader.load()
-    # # bipartite_graph_data_loader.plot_neighborhood_number_distribution()
-    # u_attr = bipartite_graph_data_loader.get_u_attr_array()
-    # #for i in range(len(u_attr)):
-    # print("u_attr = %s " % u_attr[0])
+    NODE_LIST_PATH = "./../../data/tencent/node_list"
+    NODE_ATTR_PATH = "./../../data/tencent/node_attr"
+    NODE_LABEL_PATH = "./../../data/tencent/node_true"
+
+    EDGE_LIST_PATH = "./../../data/tencent/edgelist"
+
+    GROUP_LIST_PATH = "./../../data/tencent/group_list"
+    GROUP_ATTR_PATH = "./../../data/tencent/group_attr"
+    bipartite_graph_data_loader = BipartiteGraphDataLoader(3, NODE_LIST_PATH, NODE_ATTR_PATH, NODE_LABEL_PATH,
+                                                           EDGE_LIST_PATH,
+                                                           GROUP_LIST_PATH, GROUP_ATTR_PATH)
+    # bipartite_graph_data_loader.test()
+    bipartite_graph_data_loader.load()
+    bipartite_graph_data_loader.plot_neighborhood_number_distribution()
+    u_attr = bipartite_graph_data_loader.get_u_attr_array()
+    # for i in range(len(u_attr)):
+    print("u_attr = %s " % u_attr[0])
 
     data = np.array([[9.51025e+05, 3.03200e+03, 1.86000e+02, 1.50900e+03, 3.00000e+01, 0.00000e+00,
                       7.00000e+00, 0.00000e+00, 1.57000e+02],

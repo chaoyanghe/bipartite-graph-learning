@@ -132,7 +132,9 @@ def main():
 	# initialization
 	# https://pytorch.org/docs/stable/notes/randomness.html
 
-	args.seed = random.randint(0, 1000000)
+	#args.seed = random.randint(0, 1000000)
+	# this seed is used for the publication reproducibility
+	args.seed = 422931
 	print("###############random seed = %s #########" % str(args.seed))
 	logging.info("###############random seed = %s #########" % str(args.seed))
 
@@ -144,9 +146,9 @@ def main():
 
 	if rank != -1:
 		if model_name == "gan":
-			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_gan/" + str(dataset) + "/" + str(rank)
+			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-gan/" + str(dataset) + "/" + str(rank)
 		elif model_name == "gae":
-			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_vae/" + str(dataset) + "/" + str(rank)
+			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-vae/" + str(dataset) + "/" + str(rank)
 
 	if not os.path.exists(output_folder):
 		os.makedirs(output_folder)

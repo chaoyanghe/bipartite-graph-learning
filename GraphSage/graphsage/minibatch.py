@@ -34,7 +34,7 @@ class EdgeMinibatchIterator(object):
 
         self.nodes = np.random.permutation(G.nodes())
         self.adj, self.deg = self.construct_adj()
-        self.test_adj = self.construct_test_adj()
+        # self.test_adj = self.construct_test_adj()
         if context_pairs is None:
             edges = G.edges()
         else:
@@ -50,7 +50,7 @@ class EdgeMinibatchIterator(object):
                 self.train_edges = self.val_edges = self.edges
 
         print(len([n for n in G.nodes() if not G.node[n]['test'] and not G.node[n]['val']]), 'train nodes')
-        print(len([n for n in G.nodes() if G.node[n]['test'] or G.node[n]['val']]), 'test nodes')
+        # print(len([n for n in G.nodes() if G.node[n]['test'] or G.node[n]['val']]), 'test nodes')
         self.val_set_size = len(self.val_edges)
 
     def _n2v_prune(self, edges):
@@ -204,7 +204,7 @@ class NodeMinibatchIterator(object):
         self.num_classes = num_classes
 
         self.adj, self.deg = self.construct_adj()
-        self.test_adj = self.construct_test_adj()
+        # self.test_adj = self.construct_test_adj()
 
         self.val_nodes = [n for n in self.G.nodes() if self.G.node[n]['val']]
         self.test_nodes = [n for n in self.G.nodes() if self.G.node[n]['test']]

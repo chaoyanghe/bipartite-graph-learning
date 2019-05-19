@@ -2,13 +2,13 @@
 
 
 ## Model Performance Comparision
-|                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
-| :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
-| Metrics        | F1 / Accuracy              | F1 / Accuracy              | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               |
-| Tencent        | 0.541600 /                 | 0.50312128 /               | 0.657056                    | Not Finished                | Not Finished                | N/A (*)                     |
-| Cora           | 0.813461 /                 | 0.302895 /                 | 0.763529                    | 0.740193                    | 0.686367                    | 0.731786                    |
-| Citeseer       | 0.673574 /                 | 0.246943 /                 | 0.645093                    | 0.596460                    | 0.621766                    | 0.603029                    |
-| PubMed         | 0.875158 / 0.874746        | 0.832246 / 0.831136        | 0.867193 / 0.868661         |  /                          | /                           | 0.822428 / 0.819980         |
+|                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         | Pure Node Attribute         |
+| :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                | -----------:                |
+| Metrics        | F1 / Accuracy              | F1 / Accuracy              | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               |
+| Tencent        | 0.627830 / 0.962272        | 0.503524 / 0.875297        | 0.591455 / 0.961049         | Not Finished                | Not Finished                | N/A (*)                     | 0.497346 / 0.881214         |
+| Cora           | 0.801590 / 0.823129        | 0.215116 / 0.285714        | 0.780201 / 0.809524         | 0.762734 / 0.782313         | 0.800763 / 0.823129         | 0.754289 / 0.782313         | 0.758143 / 0.789116         |
+| Citeseer       | 0.687996 / 0.756098        | 0.222869 / 0.349593        | 0.626968 / 0.723577         | 0.626836 / 0.715447         | 0.665325 / 0.747967         | 0.644748 / 0.731707         | 0.620755 / 0.707317         |
+| PubMed         | 0.854867 / 0.851397       | 0.822525 / 0.815270        | 0.832451 / 0.827188         | 0.843036 / 0.838361         | 0.842696 / 0.838361         | 0.828317 / 0.823091         | 0.842813 / 0.838361         |
 
 
 
@@ -40,16 +40,20 @@ Background running:
 nohup sh run_hgcn_gan.sh tencent > log_run_hgcn_gan_tencent.txt 2>&1 &
 nohup sh run_hgcn_gan.sh cora > log_run_hgcn_gan_cora.txt 2>&1 &
 nohup sh run_hgcn_gan.sh citeseer > log_run_hgcn_gan_citeseer.txt 2>&1 &
+nohup sh run_hgcn_gan.sh pubmed > log_run_hgcn_gan_pubmed.txt 2>&1 &
 
 # HGCN (VAE)
 nohup sh run_hgcn_vae.sh tencent > log_run_hgcn_vae_tencent.txt 2>&1 &
 nohup sh run_hgcn_vae.sh cora > log_run_hgcn_vae_cora.txt 2>&1 &
 nohup sh run_hgcn_vae.sh citeseer > log_run_hgcn_vae_citeseer.txt 2>&1 &
+nohup sh run_hgcn_vae.sh pubmed > log_run_hgcn_vae_pubmed.txt 2>&1 &
 
 # Node2Vec
 nohup sh run_node2vec.sh tencent > log_run_node2vec_tencent.txt 2>&1 &
 nohup sh run_node2vec.sh cora > log_run_node2vec_cora.txt 2>&1 &
 nohup sh run_node2vec.sh citeseer > log_run_node2vec_citeseer.txt 2>&1 &
+nohup sh run_node2vec.sh pubmed > log_run_node2vec_pubmed.txt 2>&1 &
+
 
 # GCN
 nohup sh run_gcn.sh tencent > log_run_gcn_tencent.txt 2>&1 &
@@ -154,4 +158,8 @@ It may take XX minutes to get the result.
 ~~~
 sh run.sh
 ~~~
+
+
+node2vec
+
 
