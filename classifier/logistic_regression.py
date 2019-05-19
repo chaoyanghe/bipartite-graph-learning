@@ -199,28 +199,30 @@ def run_exp(input_folder, emb_file, args):
 			logging.info("Start testing ...")
 			print("Start testing ...")
 
-		# f1 score
-		test_predict_y = clf.predict(test_x)
-
-		# metric
-		test_precision = precision_score(test_y, test_predict_y, average="macro")
-		print("test_precision = %f" % test_precision)
-		logging.info("test_precision = %f" % test_precision)
-
-		test_recall = recall_score(test_y, test_predict_y, average="macro")
-		print("test_recall = %f" % test_recall)
-		logging.info("test_recall = %f" % test_recall)
-
-		test_macro_f1 = f1_score(test_y, test_predict_y, average="macro")
-		print("test_macro_f1 = %f" % test_macro_f1)
-		logging.info("test_macro_f1 = %f" % test_macro_f1)
-
+		# # f1 score
+		# test_predict_y = clf.predict(test_x)
+		#
+		# # metric
+		# test_precision = precision_score(test_y, test_predict_y, average="macro")
+		# print("test_precision = %f" % test_precision)
+		# logging.info("test_precision = %f" % test_precision)
+		#
+		# test_recall = recall_score(test_y, test_predict_y, average="macro")
+		# print("test_recall = %f" % test_recall)
+		# logging.info("test_recall = %f" % test_recall)
+		#
+		# test_macro_f1 = f1_score(test_y, test_predict_y, average="macro")
+		# print("test_macro_f1 = %f" % test_macro_f1)
+		# logging.info("test_macro_f1 = %f" % test_macro_f1)
+		#
 		test_predict_prob = clf.predict_proba(test_x)
-		print("test_predict_prob = %s" % test_predict_prob)
+		# print("test_predict_prob = %s" % test_predict_prob)
 		# logging.info("test_predict_prob = %s" % test_predict_prob)
 
 		# Area Under Curve of ROC (Receiver operating characteristic):
 		# https://en.wikipedia.org/wiki/Receiver_operating_characteristic
+		print("len test_predict_prob = %d" + len(test_predict_prob))
+		print("len test_y = %d" + len(test_y))
 		auc_s = auc(test_y, test_predict_prob)
 		logging.info("auc=%.6f" % (auc_s))
 		print("auc=%.6f" % (auc_s))
