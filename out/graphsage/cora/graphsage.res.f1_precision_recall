@@ -1,0 +1,4 @@
+graphsage.emb precision 0.200000 0.74162568
+graphsage.emb recall 0.200000 0.74121158
+graphsage.emb f1_score 0.200000 0.74019274
+graphsage.emb accuracy_score 0.200000 0.76190476

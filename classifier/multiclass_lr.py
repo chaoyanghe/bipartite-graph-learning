@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 from sklearn import metrics
 from sklearn.linear_model import SGDClassifier
-from sklearn.metrics import f1_score, precision_score, recall_score
+from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
@@ -189,6 +189,9 @@ def run_exp(input_folder, emb_file, args):
 	test_macro_f1 = f1_score(test_y, test_predict_y, average="macro")
 	print("test_macro_f1 = %f" % test_macro_f1)
 
+	test_accuracy_score = accuracy_score(test_y, test_predict_y)
+	print("test_accuracy_score = %f" % test_accuracy_score)
+
 	"""
 		*.res: F1 score
 		http: // sofasofa.io / forum_main_post.php?postid = 1001112
@@ -219,6 +222,10 @@ def run_exp(input_folder, emb_file, args):
 
 	wstr = "%s %s %f" % (name, "f1_score", test_ratio)
 	wstr = wstr + " " + "%.8f" % test_macro_f1
+	fout.write(wstr + "\n")
+
+	wstr = "%s %s %f" % (name, "accuracy_score", test_ratio)
+	wstr = wstr + " " + "%.8f" % test_accuracy_score
 	fout.write(wstr + "\n")
 	fout.close()
 

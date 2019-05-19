@@ -68,7 +68,7 @@ then
    --print_every 10
 
    cd ..
-   python3 ./GraphSage/multi-classification.py --dataset $DATASET
+   python3 ./GraphSage/multi_classification.py --dataset $DATASET
 elif [ "$DATASET" = "citeseer" ]
 then
    echo $DATASET
@@ -96,5 +96,5 @@ then
    --print_every 10
 
    cd ..
-   python3 ./GraphSage/multi-classification.py --dataset $DATASET
+   python3 ./GraphSage/multi_classification.py --dataset $DATASET
 fi
