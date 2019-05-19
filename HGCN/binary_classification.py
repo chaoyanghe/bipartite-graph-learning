@@ -36,6 +36,7 @@ if __name__ == "__main__":
 		elif model == "gae":
 			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_vae/" + str(dataset) + "/" + str(rank)
 
+	print("output_folder = %s" % output_folder)
 	if not os.path.exists(output_folder):
 		os.makedirs(output_folder)
 
