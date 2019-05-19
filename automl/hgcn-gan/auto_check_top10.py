@@ -46,11 +46,12 @@ if __name__ == "__main__":
                         for dis_hidden in hpo_dis_hidden:
                             for dropout in hpo_dropout:
                                 paras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout)
-                                auc_file = "/mnt/shared/home/bipartite-graph-learning/out/%d/hgcn.res_auc" % hpo_cnt
+                                auc_file = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-gan/tencent/%d/hgcn.res.f1_precision_recall" % hpo_cnt
                                 if os.path.exists(auc_file):
                                     with open(auc_file, "r") as f:
-                                        first_line = f.readline()
-                                        auc_value = first_line.split("_")
+                                        for l_idx in range(3):
+                                            line_three = f.readline()
+                                        auc_value = line_three.split(" ")[-1]
                                         str = "--batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f --rank %d" % (
                                             batch_size,
                                             epochs,

@@ -32,9 +32,9 @@ if __name__ == "__main__":
 		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/" + str(dataset)
 
 		if model == "gan":
-			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_gan" + str(dataset) + "/" + str(rank)
+			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_gan/" + str(dataset) + "/" + str(rank)
 		elif model == "gae":
-			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_vae" + str(dataset) + "/" + str(rank)
+			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_vae/" + str(dataset) + "/" + str(rank)
 
 	if not os.path.exists(output_folder):
 		os.makedirs(output_folder)
