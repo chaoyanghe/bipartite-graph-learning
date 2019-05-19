@@ -165,7 +165,7 @@ def run_exp(input_folder, emb_file, args):
 		logging.info(user_x.shape)
 
 	# Self split
-	test_ratio = [0.9]
+	test_ratio = [0.2]
 
 	train_aps = {}
 	test_aps = {}
