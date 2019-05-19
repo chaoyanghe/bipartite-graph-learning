@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-MODEL = ['gan_gcn', 'decoder_gcn']
+MODEL = ['gan', 'vae', 'decoder']
 RANDOM_SEED = 42
 BATCH_SIZE = 100
 EPOCHS = 1
@@ -24,5 +24,6 @@ STEP4 = 'opposite_relation'
 # classification
 it = 3000
 method = "hgcn"
-input_folder = "./data/Tencent-QQ"
-output_folder = "./out"
+input_folder = "./data/"
+output_folder_HGCN_GAN = "./out/hgcn-gan"
+output_folder_HGCN_GAE = "./out/hgcn-gae"

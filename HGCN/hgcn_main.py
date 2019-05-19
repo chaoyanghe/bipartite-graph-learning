@@ -18,7 +18,7 @@ from variational_hgcn import VariationalGCNLayer
 def parse_args():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--dataset', type=str, default='tencent', required=True)
-	parser.add_argument('--model', type=str, default='gan_gcn', choices=MODEL, required=True)
+	parser.add_argument('--model', type=str, default='gan', choices=MODEL, required=True)
 	parser.add_argument('--seed', type=int, default=RANDOM_SEED, help='Random seed.')
 	parser.add_argument('--epochs', type=int, default=EPOCHS,
 						help='Number of epochs to train.')
@@ -54,12 +54,12 @@ def get_the_bipartite_graph_loader(args, data_path, dataset, device):
 	print(data_path)
 	bipartite_graph_data_loader = None
 	if dataset == "tencent":
-		NODE_LIST_PATH = data_path + "data/Tencent-QQ/node_list"
-		NODE_ATTR_PATH = data_path + "data/Tencent-QQ/node_attr"
-		NODE_LABEL_PATH = data_path + "data/Tencent-QQ/node_true"
-		EDGE_LIST_PATH = data_path + "data/Tencent-QQ/edgelist"
-		GROUP_LIST_PATH = data_path + "data/Tencent-QQ/group_list"
-		GROUP_ATTR_PATH = data_path + "data/Tencent-QQ/group_attr"
+		NODE_LIST_PATH = data_path + "data/tencent/node_list"
+		NODE_ATTR_PATH = data_path + "data/tencent/node_attr"
+		NODE_LABEL_PATH = data_path + "data/tencent/node_true"
+		EDGE_LIST_PATH = data_path + "data/tencent/edgelist"
+		GROUP_LIST_PATH = data_path + "data/tencent/group_list"
+		GROUP_ATTR_PATH = data_path + "data/tencent/group_attr"
 
 		bipartite_graph_data_loader = BipartiteGraphDataLoader(args.batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
 															   NODE_LABEL_PATH,
@@ -86,9 +86,9 @@ def get_the_bipartite_graph_loader(args, data_path, dataset, device):
 		GROUP_ATTR_PATH = data_path + "data/citeseer/group_attr"
 
 		bipartite_graph_data_loader = BipartiteGraphDataLoaderCiteseer(args.batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
-																   NODE_LABEL_PATH,
-																   EDGE_LIST_PATH,
-																   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
+																	   NODE_LABEL_PATH,
+																	   EDGE_LIST_PATH,
+																	   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
 
 	return bipartite_graph_data_loader
 
@@ -130,17 +130,17 @@ def main():
 	bipartite_graph_data_loader.load()
 
 	# start the adversarial learning (output the embedding result into ./out directory)
-	hgcn = CascadedAdversarialHGCN(bipartite_graph_data_loader, args, device, rank)
+	hgcn = CascadedAdversarialHGCN(bipartite_graph_data_loader, args, device, rank, dataset)
 	print("hgcn = %s" % str(hgcn))
-	if args.model == 'gan_gcn':
+	if args.model == 'gan':
 		# start training
 		print("adversarial_learning START")
 		hgcn.adversarial_learning()
 		print("adversarial_learning END")
-	elif args.model == 'decoder_gcn':
+	elif args.model == 'decoder':
 		hgcn = DecoderGCNLayer(bipartite_graph_data_loader, args, device, rank)
 		hgcn.relation_learning()
-	elif args.model == 'vae_gcn':
+	elif args.model == 'vae':
 		layerInfo = namedtuple('LayerInfo', ['vae_hidfeat', 'gcn1_input_dim', 'gcn1_output_dim', 'gcn2_input_dim',
 											 'gcn2_output_dim'])
 		hgcn = VariationalGCNLayer(bipartite_graph_data_loader, args, device, layerInfo, rank)

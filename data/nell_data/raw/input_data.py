@@ -56,12 +56,12 @@ def __BipartiteToSingle(graph):
 
 
 def load_data_for_tencent(flags, device):
-    NODE_LIST_PATH = "../data/Tencent-QQ/node_list"
-    NODE_ATTR_PATH = "../data/Tencent-QQ/node_attr"
-    NODE_LABEL_PATH = "../data/Tencent-QQ/node_true"
-    EDGE_LIST_PATH = "../data/Tencent-QQ/edgelist"
-    GROUP_LIST_PATH = "../data/Tencent-QQ/group_list"
-    GROUP_ATTR_PATH = "../data/Tencent-QQ/group_attr"
+    NODE_LIST_PATH = "../data/tencent/node_list"
+    NODE_ATTR_PATH = "../data/tencent/node_attr"
+    NODE_LABEL_PATH = "../data/tencent/node_true"
+    EDGE_LIST_PATH = "../data/tencent/edgelist"
+    GROUP_LIST_PATH = "../data/tencent/group_list"
+    GROUP_ATTR_PATH = "../data/tencent/group_attr"
 
     batch_size = 512
     device = 'cpu'

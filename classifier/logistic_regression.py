@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 from sklearn import metrics
 from sklearn.linear_model import SGDClassifier
+from sklearn.metrics import precision_score, recall_score, f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
@@ -116,8 +117,12 @@ def run_exp(input_folder, emb_file, args):
 	if args.verbose:
 		logging.info("Loading index from %s ..." % os.path.join(input_folder, args.node_file))
 	node_id_file = args.node_file
+
+	# if the parameters is node_list, choose the node list in the data directory,
+	# otherwise, choose from the embedding output directory
 	if args.node_file is "node_list":
 		node_id_file = os.path.join(input_folder, node_id_file)
+
 	print("node_id_file = %s" % node_id_file)
 	node_ids = load_index_data(node_id_file)
 
@@ -147,7 +152,7 @@ def run_exp(input_folder, emb_file, args):
 		logging.info("Loading labels from %s ..." % os.path.join(input_folder, 'node_true'))
 	node_label_file = os.path.join(input_folder, 'node_true')
 	print("node_label_file = %s" % node_label_file)
-	print("nodes_ids = %s" % node_ids)
+	# print("nodes_ids = %s" % node_ids)
 	node_labels = load_label_data(node_label_file, node_ids)
 
 	## Construct data
@@ -168,9 +173,9 @@ def run_exp(input_folder, emb_file, args):
 	test_rec = {}
 	for test_size in test_ratio:
 		train_aps[test_size] = []
-		test_aps[test_size] = [] # aps
+		test_aps[test_size] = []  # aps
 		test_prec[test_size] = []  # precision
-		test_rec[test_size] = [] # recall
+		test_rec[test_size] = []  # recall
 		# Resplitting
 		if args.verbose:
 			logging.info("Splitting data ...")
@@ -194,14 +199,21 @@ def run_exp(input_folder, emb_file, args):
 			logging.info("Start testing ...")
 			print("Start testing ...")
 
+		# f1 score
+		test_predict_y = clf.predict(test_x)
+
+		# metric
+		test_precision = precision_score(test_y, test_predict_y, average="macro")
+		print("test_precision = %f" % test_precision)
+
+		test_recall = recall_score(test_y, test_predict_y, average="macro")
+		print("test_recall = %f" % test_recall)
+
+		test_macro_f1 = f1_score(test_y, test_predict_y, average="macro")
+		print("test_macro_f1 = %f" % test_macro_f1)
+
 		test_predict_prob = clf.predict_proba(test_x)
 		print("test_predict_prob = %s" % test_predict_prob)
-
-		s_idx = np.argsort(-test_predict_prob)
-
-		rank_test = test_y[s_idx]
-		judge_n = np.sum(test_predict_prob > 0.5)
-		pos_n = np.sum(test_y == 1)
 
 		# Area Under Curve of ROC (Receiver operating characteristic):
 		# https://en.wikipedia.org/wiki/Receiver_operating_characteristic
@@ -211,6 +223,12 @@ def run_exp(input_folder, emb_file, args):
 		fauc = open(args.res_file + "_auc", 'w')
 		fauc.write(str(auc_s))
 		fauc.close()
+
+		s_idx = np.argsort(-test_predict_prob)
+
+		rank_test = test_y[s_idx]
+		judge_n = np.sum(test_predict_prob > 0.5)
+		pos_n = np.sum(test_y == 1)
 
 		N_list = [1000, 10000, pos_n, judge_n]
 		if args.verbose:

@@ -1,4 +1,3 @@
-MODEL = ['gan_gcn', 'decoder_gcn']
 RANDOM_SEED = 42
 BATCH_SIZE = 100
 EPOCHS = 1
@@ -19,6 +18,9 @@ STEP4 = 'opposite_relation'
 
 # classification
 it = 3000
-method = "hgcn"
+method = "graphsage"
 
-output_folder = "./out"
+input_folder_tencent = "./data/tencent"
+output_folder_tencent = "./out/graphsage/tencent"
+
+output_folder = "./out/graphsage"

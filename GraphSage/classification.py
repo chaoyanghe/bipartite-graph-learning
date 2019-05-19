@@ -2,6 +2,8 @@ import argparse
 import logging
 import os
 
+import conf
+
 
 def parse_args():
 	parser = argparse.ArgumentParser()
@@ -17,24 +19,24 @@ if __name__ == "__main__":
 
 	# classification
 	it = 3000
-	method = "gae"
-	input_folder = "./data/cora"
-	output_folder = "./out"
+	method = conf.method
+	input_folder = conf.input_folder_tencent
+	output_folder = conf.output_folder_tencent
 	if rank != -1:
-		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/Tencent-QQ"
+		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/tencent"
 		output_folder = "/mnt/shared/home/bipartite-graph-learning/out/" + str(rank)
 
 	if not os.path.exists(output_folder):
 		os.makedirs(output_folder)
 
-	emb_file = str(output_folder) + "/gae.emb"
+	emb_file = str(output_folder) + "/graphsage.emb"
 	print(emb_file)
 
 	# the HGCN node list is smaller than the raw node list because some illegal nodes are filtered
 	hgcn_node_file = str(output_folder) + "/node_list"
 	print(hgcn_node_file)
 
-	res_file = str(output_folder) + "/gae.res"
+	res_file = str(output_folder) + "/graphsage.res"
 	f = open(res_file, "+w")
 	f.write("")
 	f.close()
@@ -44,14 +46,14 @@ if __name__ == "__main__":
 	if os.path.exists(emb_file):
 		max_iter = 300
 		if rank == -1:
-			lr_cmd = "python3 ./classifier/multiclass_lr.py --verbose 0 --input_folder %s --emb_file %s --node_file %s --res_file %s --max_iter %d" % (
+			lr_cmd = "python3 ./classifier/logistic_regression.py --verbose 0 --input_folder %s --emb_file %s --node_file %s --res_file %s --max_iter %d" % (
 				input_folder,
 				emb_file,
 				hgcn_node_file,
 				res_file,
 				it)
 		else:
-			lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/classifier/multiclass_lr.py --verbose 0 --input_folder %s --emb_file %s --node_file %s --res_file %s --max_iter %d" % (
+			lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/classifier/logistic_regression.py --verbose 0 --input_folder %s --emb_file %s --node_file %s --res_file %s --max_iter %d" % (
 				input_folder,
 				emb_file,
 				hgcn_node_file,

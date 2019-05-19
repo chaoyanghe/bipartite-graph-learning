@@ -12,8 +12,9 @@ from gcn.models import GCN
 
 
 class CascadedAdversarialHGCN(object):
-    def __init__(self, bipartite_graph_data_loader, args, device, rank=-1):
+    def __init__(self, bipartite_graph_data_loader, args, device, rank=-1, dataset="cora"):
         self.rank = rank
+        self.dataset = dataset
         epochs = args.epochs
         dis_hidden_dim = args.dis_hidden
         learning_rate = args.lr
@@ -193,9 +194,9 @@ class CascadedAdversarialHGCN(object):
         logging.info("node_num = %s" % node_num)
         dimension_embedding = gcn_merge_output.shape[1]
         logging.info("dimension_embedding = %s" % dimension_embedding)
-        output_folder = "./out"
+        output_folder = "./out/hgcn-gan/" + str(self.dataset)
         if self.rank != -1:
-            output_folder = "/mnt/shared/home/bipartite-graph-learning/out/" + str(self.rank)
+            output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-gan/" + self.dataset + "/" + str(self.rank)
 
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)

@@ -77,7 +77,7 @@ if __name__ == "__main__":
     print("end hgcn_cmd")
 
     print("start lr_cmd")
-    lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/classification.py " \
+    lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/binary_classification.py " \
              "--rank %s" % rank
     os.system(lr_cmd)
     print("end lr_cmd")
