@@ -215,7 +215,7 @@ def run_exp(input_folder, emb_file, args):
 		# print("test_macro_f1 = %f" % test_macro_f1)
 		# logging.info("test_macro_f1 = %f" % test_macro_f1)
 		#
-		test_predict_prob = clf.predict_proba(test_x)
+		test_predict_prob = clf.predict_proba(test_x)[:, 1]
 		# print("test_predict_prob = %s" % test_predict_prob)
 		# logging.info("test_predict_prob = %s" % test_predict_prob)
 

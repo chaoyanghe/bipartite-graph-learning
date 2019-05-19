@@ -50,7 +50,18 @@ python3 -m graphsage.unsupervised_train \
 cd ..
 
 
-python3 ./GraphSage/multi-classification.py --dataset $DATASET --model $MODEL
-
+if [ "$DATASET" = "tencent" ]
+then
+    echo $DATASET
+    python3 ./GraphSage/classification.py --dataset $DATASET
+elif [ "$DATASET" = "cora" ]
+then
+    echo $DATASET
+    python3 ./GraphSage/multi-classification.py --dataset $DATASET
+elif [ "$DATASET" = "citeseer" ]
+then
+    echo $DATASET
+    python3 ./GraphSage/multi_classification.py --dataset $DATASET
+fi
 
 pip3 install networkx==2.2
