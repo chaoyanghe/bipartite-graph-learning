@@ -120,7 +120,7 @@ def run_exp(input_folder, emb_file, args):
 
 	# if the parameters is node_list, choose the node list in the data directory,
 	# otherwise, choose from the embedding output directory
-	if args.node_file is "node_list":
+	if args.node_file == "node_list":
 		node_id_file = os.path.join(input_folder, node_id_file)
 
 	print("node_id_file = %s" % node_id_file)
