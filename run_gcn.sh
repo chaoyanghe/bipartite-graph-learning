@@ -60,7 +60,7 @@ then
 elif [ "$DATASET" = "cora" ]
 then
     echo $DATASET
-    python3 ./GraphSage/multi-classification.py --dataset $DATASET
+    python3 ./GraphSage/multi_classification.py --dataset $DATASET
 elif [ "$DATASET" = "citeseer" ]
 then
     echo $DATASET
