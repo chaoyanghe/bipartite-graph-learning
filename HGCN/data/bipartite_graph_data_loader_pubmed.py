@@ -294,7 +294,7 @@ class BipartiteGraphDataLoaderPubMed:
         plt.xlabel("Neighborhood Number")
         plt.ylabel("Count")
         plt.title("Neighborhood Number Distribution (PubMed)")
-        plt.axis([0, 10, 0, 10000])
+        plt.axis([0, 15, 0, 4000])
         plt.show()
 
     def __generate_u_labels(self, u_node_list):
