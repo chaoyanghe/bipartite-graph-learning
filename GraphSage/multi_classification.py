@@ -22,8 +22,7 @@ if __name__ == "__main__":
 
 	method = conf.method
 
-	input_folder = "./data/"
-	input_folder = conf.input_folder + str(dataset)
+	input_folder = "./data/" + str(dataset)
 
 	output_folder = conf.output_folder + "/" + dataset
 	if rank != -1:
