@@ -28,6 +28,7 @@ if __name__ == "__main__":
 		output_folder = conf.output_folder_HGCN_GAN + "/" + str(dataset)
 	elif model == "vae":
 		output_folder = conf.output_folder_HGCN_VAE + "/" + str(dataset)
+
 	if rank != -1:
 		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/" + str(dataset)
 
