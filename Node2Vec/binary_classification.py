@@ -52,7 +52,7 @@ if __name__ == "__main__":
 	if os.path.exists(emb_file):
 		max_iter = 300
 		lr_cmd = "python3 ./classifier/logistic_regression.py --verbose 0 --input_folder %s --emb_file %s --node_file %s --res_file %s --max_iter %d" % (
-			input_folder, emb_file, hgcn_node_file, res_file, it)
+			input_folder, emb_file, "node_list", res_file, it)
 
 		os.system(lr_cmd)
 	else:
