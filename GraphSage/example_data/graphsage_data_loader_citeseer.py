@@ -433,7 +433,7 @@ class GraphSageSingleGraphDataLoader:
         self.features = np.array(nodes_features)
 
     def write_to_json(self):
-        dir = './cora'
+        dir = './citeseer'
         if not os.path.exists(dir):
             os.makedirs(dir)
         with open('./citeseer/bipartite-G.json', 'w') as outfile1:
