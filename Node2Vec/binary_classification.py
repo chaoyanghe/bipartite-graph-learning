@@ -45,8 +45,8 @@ if __name__ == "__main__":
 	logging.info("This is the demo for logistic regression using the embedding vectors")
 
 	# the HGCN node list is smaller than the raw node list because some illegal nodes are filtered
-	hgcn_node_file = str(output_folder) + "/node_list"
-	print(hgcn_node_file)
+	hgcn_node_file = str(input_folder) + "/hgcn_node_list"
+	print(str(input_folder))
 
 	# Performing example logistic regression
 	if os.path.exists(emb_file):
