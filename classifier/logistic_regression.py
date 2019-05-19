@@ -232,7 +232,11 @@ def run_exp(input_folder, emb_file, args):
             *.prec_rec: F1, PRECISION AND RECALL
         """
         fout = open(args.res_file + ".f1_precision_recall", 'w')
-        name = emb_file.split('/')[-1]
+        name = None
+        if not pure_attribute:
+            name = emb_file.split('/')[-1]
+        else:
+            name = "pure_feature"
 
         # model_name prec 0.2 test_prec
         wstr = "%s %s %f" % (name, "precision", test_size)
