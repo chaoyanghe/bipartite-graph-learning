@@ -8,6 +8,7 @@
 | Tencent        | 0.541600 /                 | 0.50312128 /               | 0.657056                    | Not Finished                | Not Finished                | N/A (*)                     |
 | Cora           | 0.813461 /                 | 0.302895 /                 | 0.763529                    | 0.740193                    | 0.686367                    | 0.731786                    |
 | Citeseer       | 0.673574 /                 | 0.246943 /                 | 0.645093                    | 0.596460                    | 0.621766                    | 0.603029                    |
+| PubMed         | 0.875158 / 0.874746        | 0.832246 / 0.831136        | 0.867193 / 0.868661         |  /                          | /                           | 0.822428 / 0.819980         |
 
 
 
@@ -26,6 +27,7 @@ pip3 install -r requirements.txt
 | Tencent        | sh run_hgcn_gan.sh tencent | sh run_hgcn_vae.sh tencent | sh run_node2vec.sh tencent  | sh run_gcn.sh tencent       | sh run_graphsage.sh tencent | N/A (*)                     |
 | Cora           | sh run_hgcn_gan.sh cora    | sh run_hgcn_vae.sh cora    | sh run_node2vec.sh cora     | sh run_gcn.sh cora          | sh run_graphsage.sh cora    | sh run_gae.sh cora          |
 | Citeseer       | sh run_hgcn_gan.sh citeseer| sh run_hgcn_vae.sh citeseer| sh run_node2vec.sh citeseer | sh run_gcn.sh citeseer      | sh run_graphsage.sh citeseer| sh run_gae.sh citeseer      |
+| PubMed         | sh run_hgcn_gan.sh pubmed  | sh run_hgcn_vae.sh pubmed  | sh run_node2vec.sh pubmed   | sh run_gcn.sh pubmed        | sh run_graphsage.sh pubmed  | sh run_gae.sh pubmed        |
 
 Only Linux (*): For the Node2Vec model, its binary file is only ELF 64-bit LSB executable, x86-64, for GNU/Linux.
 
@@ -53,15 +55,18 @@ nohup sh run_node2vec.sh citeseer > log_run_node2vec_citeseer.txt 2>&1 &
 nohup sh run_gcn.sh tencent > log_run_gcn_tencent.txt 2>&1 &
 nohup sh run_gcn.sh cora > log_run_gcn_cora.txt 2>&1 &
 nohup sh run_gcn.sh citeseer > log_run_gcn_citeseer.txt 2>&1 &
+nohup sh run_gcn.sh pubmed > log_run_gcn_pubmed.txt 2>&1 &
 
 # GraphSAGE
 nohup sh run_graphsage.sh tencent > log_run_graphsage_tencent.txt 2>&1 &
 nohup sh run_graphsage.sh cora > log_run_graphsage_cora.txt 2>&1 &
 nohup sh run_graphsage.sh citeseer > log_run_graphsage_citeseer.txt 2>&1 &
+nohup sh run_graphsage.sh pubmed > log_run_graphsage_pubmed.txt 2>&1 &
 
 # GAE
 nohup sh run_gae.sh cora > log_run_gae_cora.txt 2>&1 &
 nohup sh run_gae.sh citeseer > log_run_gae_citeseer.txt 2>&1 &
+nohup sh run_gae.sh pubmed > log_run_gae_pubmed.txt 2>&1 &
 
 ~~~
 

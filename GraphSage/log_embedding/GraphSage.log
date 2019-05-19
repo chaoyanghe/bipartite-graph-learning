@@ -783,3 +783,29 @@ Sat, 18 May 2019 23:58:29 unsupervised_train.py[line:361] INFO Iter: 0050, train
 Sat, 18 May 2019 23:58:29 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0050, max_total_steps: 100000000
 Sat, 18 May 2019 23:59:08 unsupervised_train.py[line:361] INFO Iter: 0060, train_loss=16.480326, train_mrr=0.346509, train_mrr_ema=0.320519, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.619981
 Sat, 18 May 2019 23:59:08 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0060, max_total_steps: 100000000
+Sun, 19 May 2019 01:57:31 utils.py[line:43] INFO class map loaded
+Sun, 19 May 2019 01:57:31 utils.py[line:59] INFO bad nodes removed
+Sun, 19 May 2019 01:57:31 utils.py[line:78] INFO Normalized
+Sun, 19 May 2019 01:57:36 utils.py[line:93] INFO data all loaded
+Sun, 19 May 2019 01:57:36 unsupervised_train.py[line:448] INFO start training
+Sun, 19 May 2019 01:57:36 unsupervised_train.py[line:196] INFO edge minibatch
+Sun, 19 May 2019 01:57:44 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sun, 19 May 2019 01:57:44 unsupervised_train.py[line:206] INFO choose model
+Sun, 19 May 2019 01:57:44 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Sun, 19 May 2019 01:57:44 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Sun, 19 May 2019 01:57:44 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Sun, 19 May 2019 01:57:46 unsupervised_train.py[line:319] INFO training epoch: 1
+Sun, 19 May 2019 01:57:50 unsupervised_train.py[line:361] INFO Iter: 0000, train_loss=18.971888, train_mrr=0.307729, train_mrr_ema=0.307729, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=2.638668
+Sun, 19 May 2019 01:57:50 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
+Sun, 19 May 2019 01:58:05 unsupervised_train.py[line:361] INFO Iter: 0010, train_loss=18.558462, train_mrr=0.303806, train_mrr_ema=0.305753, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=1.655590
+Sun, 19 May 2019 01:58:05 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0010, max_total_steps: 100000000
+Sun, 19 May 2019 01:58:22 unsupervised_train.py[line:361] INFO Iter: 0020, train_loss=18.876194, train_mrr=0.255871, train_mrr_ema=0.304145, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=1.647494
+Sun, 19 May 2019 01:58:22 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0020, max_total_steps: 100000000

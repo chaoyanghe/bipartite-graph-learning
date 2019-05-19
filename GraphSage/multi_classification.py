@@ -22,13 +22,7 @@ if __name__ == "__main__":
 
 	method = conf.method
 
-	input_folder = None
-	if dataset == "tencent":
-		input_folder = "./data/" + dataset
-	elif dataset == "cora":
-		input_folder = "./data/" + dataset
-	elif dataset == "citeseer":
-		input_folder = "./data/" + dataset
+	input_folder = "./data/" + str(dataset)
 
 	output_folder = conf.output_folder + "/" + dataset
 	if rank != -1:

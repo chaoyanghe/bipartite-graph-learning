@@ -16,6 +16,11 @@ then
     echo $1
     rm -rf ./citeseer/*
     python3 graphsage_data_loader_citeseer.py
+elif [ "$1" = "pubmed" ]
+then
+    echo $1
+    rm -rf ./citeseer/*
+    python3 graphsage_data_loader_pubmed.py
 fi
 
 

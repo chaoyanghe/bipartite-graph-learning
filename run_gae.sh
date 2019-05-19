@@ -15,7 +15,7 @@ then
     echo $DATASET
 
     python3 ./gae/train.py \
-    --dataset cora \
+    --dataset $DATASET \
     --model gcn_vae \
     --epochs 500 \
     --hidden1 64 \
@@ -33,11 +33,26 @@ then
 
 
     python3 ./gae/train.py \
-    --dataset citeseer \
+    --dataset $DATASET \
     --model gcn_vae \
     --epochs 500 \
     --hidden1 64 \
     --hidden2 32 \
+    --weight_decay 0.005 \
+    --dropout 0.4 \
+    --learning_rate 0.0001
+    python3 ./gae/classification.py --dataset $DATASET
+
+elif [ "$DATASET" = "pubmed" ]
+then
+    echo $DATASET
+
+    python3 ./gae/train.py \
+    --dataset $DATASET \
+    --model gcn_vae \
+    --epochs 500 \
+    --hidden1 100 \
+    --hidden2 500 \
     --weight_decay 0.005 \
     --dropout 0.4 \
     --learning_rate 0.0001

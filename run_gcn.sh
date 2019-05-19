@@ -62,6 +62,10 @@ elif [ "$DATASET" = "citeseer" ]
 then
     echo $DATASET
     python3 ./GraphSage/multi_classification.py --dataset $DATASET
+elif [ "$DATASET" = "pubmed" ]
+then
+    echo $DATASET
+    python3 ./GraphSage/multi_classification.py --dataset $DATASET
 fi
 
 pip install networkx==2.2
