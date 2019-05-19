@@ -6,6 +6,7 @@ import networkx as nx
 import numpy as np
 import scipy.sparse as sp
 
+from data.bipartite_graph_data_loader_PubMed import BipartiteGraphDataLoaderPubMed
 from data.bipartite_graph_data_loader_citeseer import BipartiteGraphDataLoaderCiteseer
 from data.bipartite_graph_data_loader_cora import BipartiteGraphDataLoaderCora
 from data.bipartite_graph_data_loader_tencent import BipartiteGraphDataLoaderTencent
@@ -96,6 +97,18 @@ def load_data_for_gae(flags, device):
 		GROUP_ATTR_PATH = "./data/tencent/group_attr"
 
 		bipartite_graph_data_loader = BipartiteGraphDataLoaderTencent(batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
+																   NODE_LABEL_PATH,
+																   EDGE_LIST_PATH,
+																   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
+	elif flags.dataset == "pubmed":
+		NODE_LIST_PATH = "./data/pubmed/node_list"
+		NODE_ATTR_PATH = "./data/pubmed/node_attr"
+		NODE_LABEL_PATH = "./data/pubmed/node_true"
+		EDGE_LIST_PATH = "./data/pubmed/edgelist"
+		GROUP_LIST_PATH = "./data/pubmed/group_list"
+		GROUP_ATTR_PATH = "./data/pubmed/group_attr"
+
+		bipartite_graph_data_loader = BipartiteGraphDataLoaderPubMed(batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
 																   NODE_LABEL_PATH,
 																   EDGE_LIST_PATH,
 																   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
