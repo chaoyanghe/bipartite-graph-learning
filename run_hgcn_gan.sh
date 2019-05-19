@@ -33,12 +33,12 @@ then
     --dataset $DATASET \
     --model $MODEL \
     --gpu False \
-    --epochs 3 \
+    --epochs 2 \
     --batch_size 10 \
-    --lr 0.0003 \
-    --weight_decay 0.0005 \
-    --dropout 0.5 \
-    --gcn_output_dim 24
+    --lr 0.0004 \
+    --weight_decay 0.001 \
+    --dropout 0.45 \
+    --gcn_output_dim 20
 
     python3 ./HGCN/multi_classification.py --dataset $DATASET --model $MODEL
 
@@ -50,12 +50,12 @@ then
     --dataset $DATASET \
     --model $MODEL \
     --gpu False \
-    --epochs 3 \
+    --epochs 2 \
     --batch_size 20 \
-    --lr 0.001 \
-    --weight_decay 0.0005 \
-    --dropout 0.5 \
-    --gcn_output_dim 24
+    --lr 0.0004 \
+    --weight_decay 0.001 \
+    --dropout 0.45 \
+    --gcn_output_dim 20
 
     python3 ./HGCN/multi_classification.py --dataset $DATASET --model $MODEL
 elif [ "$DATASET" = "pubmed" ]
@@ -66,12 +66,12 @@ then
     --dataset $DATASET \
     --model $MODEL \
     --gpu False \
-    --epochs 3 \
+    --epochs 2 \
     --batch_size 100 \
-    --lr 0.0003 \
-    --weight_decay 0.0005 \
-    --dropout 0.5 \
-    --gcn_output_dim 24
+    --lr 0.0004 \
+    --weight_decay 0.001 \
+    --dropout 0.45 \
+    --gcn_output_dim 20
 
     python3 ./HGCN/multi_classification.py --dataset $DATASET --model $MODEL
 
