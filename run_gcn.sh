@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+rm -rf ./log_run_gcn*
 rm -rf ./out/graphsage/*
 
 
