@@ -679,6 +679,7 @@ Sat, 18 May 2019 23:33:12 unsupervised_train.py[line:132] INFO Start saving embe
 Sat, 18 May 2019 23:33:12 unsupervised_train.py[line:152] INFO Number of nodes in set U: 734
 Sat, 18 May 2019 23:33:12 unsupervised_train.py[line:163] INFO output file = ./../out/graphsage/cora/
 Sat, 18 May 2019 23:33:12 unsupervised_train.py[line:438] INFO ############ Embedding data saved #############
+<<<<<<< HEAD
 Sat, 18 May 2019 23:44:26 utils.py[line:43] INFO class map loaded
 Sat, 18 May 2019 23:44:26 utils.py[line:59] INFO bad nodes removed
 Sat, 18 May 2019 23:44:27 utils.py[line:78] INFO Normalized
@@ -703,3 +704,97 @@ Sat, 18 May 2019 23:46:41 unsupervised_train.py[line:361] INFO Iter: 0000, train
 Sat, 18 May 2019 23:46:41 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
 Sun, 19 May 2019 00:02:29 unsupervised_train.py[line:361] INFO Iter: 0010, train_loss=15.616948, train_mrr=0.692479, train_mrr_ema=0.611306, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=98.148382
 Sun, 19 May 2019 00:02:29 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0010, max_total_steps: 100000000
+=======
+Sat, 18 May 2019 23:51:21 utils.py[line:43] INFO class map loaded
+Sat, 18 May 2019 23:51:21 utils.py[line:59] INFO bad nodes removed
+Sat, 18 May 2019 23:51:22 utils.py[line:78] INFO Normalized
+Sat, 18 May 2019 23:51:22 utils.py[line:93] INFO data all loaded
+Sat, 18 May 2019 23:51:22 unsupervised_train.py[line:448] INFO start training
+Sat, 18 May 2019 23:51:22 unsupervised_train.py[line:196] INFO edge minibatch
+Sat, 18 May 2019 23:51:22 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 23:51:22 unsupervised_train.py[line:206] INFO choose model
+Sat, 18 May 2019 23:53:21 utils.py[line:43] INFO class map loaded
+Sat, 18 May 2019 23:53:21 utils.py[line:59] INFO bad nodes removed
+Sat, 18 May 2019 23:53:22 utils.py[line:78] INFO Normalized
+Sat, 18 May 2019 23:53:22 utils.py[line:93] INFO data all loaded
+Sat, 18 May 2019 23:53:22 unsupervised_train.py[line:448] INFO start training
+Sat, 18 May 2019 23:53:22 unsupervised_train.py[line:196] INFO edge minibatch
+Sat, 18 May 2019 23:53:23 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 23:53:23 unsupervised_train.py[line:206] INFO choose model
+Sat, 18 May 2019 23:53:32 utils.py[line:43] INFO class map loaded
+Sat, 18 May 2019 23:53:32 utils.py[line:59] INFO bad nodes removed
+Sat, 18 May 2019 23:53:32 utils.py[line:78] INFO Normalized
+Sat, 18 May 2019 23:53:32 utils.py[line:93] INFO data all loaded
+Sat, 18 May 2019 23:53:32 unsupervised_train.py[line:448] INFO start training
+Sat, 18 May 2019 23:53:32 unsupervised_train.py[line:196] INFO edge minibatch
+Sat, 18 May 2019 23:53:33 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 23:53:33 unsupervised_train.py[line:206] INFO choose model
+Sat, 18 May 2019 23:53:51 utils.py[line:43] INFO class map loaded
+Sat, 18 May 2019 23:53:51 utils.py[line:59] INFO bad nodes removed
+Sat, 18 May 2019 23:53:51 utils.py[line:78] INFO Normalized
+Sat, 18 May 2019 23:53:51 utils.py[line:93] INFO data all loaded
+Sat, 18 May 2019 23:53:51 unsupervised_train.py[line:448] INFO start training
+Sat, 18 May 2019 23:53:51 unsupervised_train.py[line:196] INFO edge minibatch
+Sat, 18 May 2019 23:53:52 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 23:53:52 unsupervised_train.py[line:206] INFO choose model
+Sat, 18 May 2019 23:54:14 utils.py[line:43] INFO class map loaded
+Sat, 18 May 2019 23:54:14 utils.py[line:59] INFO bad nodes removed
+Sat, 18 May 2019 23:54:14 utils.py[line:78] INFO Normalized
+Sat, 18 May 2019 23:54:15 utils.py[line:93] INFO data all loaded
+Sat, 18 May 2019 23:54:15 unsupervised_train.py[line:448] INFO start training
+Sat, 18 May 2019 23:54:15 unsupervised_train.py[line:196] INFO edge minibatch
+Sat, 18 May 2019 23:54:15 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 23:54:15 unsupervised_train.py[line:206] INFO choose model
+Sat, 18 May 2019 23:54:43 utils.py[line:43] INFO class map loaded
+Sat, 18 May 2019 23:54:43 utils.py[line:59] INFO bad nodes removed
+Sat, 18 May 2019 23:54:43 utils.py[line:78] INFO Normalized
+Sat, 18 May 2019 23:54:43 utils.py[line:93] INFO data all loaded
+Sat, 18 May 2019 23:54:43 unsupervised_train.py[line:448] INFO start training
+Sat, 18 May 2019 23:54:43 unsupervised_train.py[line:196] INFO edge minibatch
+Sat, 18 May 2019 23:54:44 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 23:54:44 unsupervised_train.py[line:206] INFO choose model
+Sat, 18 May 2019 23:55:11 utils.py[line:43] INFO class map loaded
+Sat, 18 May 2019 23:55:11 utils.py[line:59] INFO bad nodes removed
+Sat, 18 May 2019 23:55:11 utils.py[line:78] INFO Normalized
+Sat, 18 May 2019 23:55:12 utils.py[line:93] INFO data all loaded
+Sat, 18 May 2019 23:55:12 unsupervised_train.py[line:448] INFO start training
+Sat, 18 May 2019 23:55:12 unsupervised_train.py[line:196] INFO edge minibatch
+Sat, 18 May 2019 23:55:12 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 23:55:12 unsupervised_train.py[line:206] INFO choose model
+Sat, 18 May 2019 23:55:25 utils.py[line:43] INFO class map loaded
+Sat, 18 May 2019 23:55:25 utils.py[line:59] INFO bad nodes removed
+Sat, 18 May 2019 23:55:25 utils.py[line:78] INFO Normalized
+Sat, 18 May 2019 23:55:25 utils.py[line:93] INFO data all loaded
+Sat, 18 May 2019 23:55:25 unsupervised_train.py[line:448] INFO start training
+Sat, 18 May 2019 23:55:25 unsupervised_train.py[line:196] INFO edge minibatch
+Sat, 18 May 2019 23:55:26 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Sat, 18 May 2019 23:55:26 unsupervised_train.py[line:206] INFO choose model
+Sat, 18 May 2019 23:55:26 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Sat, 18 May 2019 23:55:26 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Sat, 18 May 2019 23:55:26 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Sat, 18 May 2019 23:55:27 unsupervised_train.py[line:319] INFO training epoch: 1
+Sat, 18 May 2019 23:55:31 unsupervised_train.py[line:361] INFO Iter: 0000, train_loss=18.277975, train_mrr=0.317926, train_mrr_ema=0.317926, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.801939
+Sat, 18 May 2019 23:55:31 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
+>>>>>>> b65797e078936e9d3c0868f1dad1603286f1a194

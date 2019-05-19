@@ -3122,3 +3122,53 @@
 -1Sat, 18 May 2019 18:32:07 cascaded_adversarial_hgcn_with_gan.py[line:194] INFO node_num = 613
 -1Sat, 18 May 2019 18:32:07 cascaded_adversarial_hgcn_with_gan.py[line:196] INFO dimension_embedding = 3703
 -1Sat, 18 May 2019 18:32:09 cascaded_adversarial_hgcn_with_gan.py[line:222] INFO saved embedding file
+-1Sat, 18 May 2019 23:47:49 hgcn_main.py[line:120] INFO device = cpu
+-1Sat, 18 May 2019 23:47:49 bipartite_graph_data_loader_cora.py[line:15] INFO BipartiteGraphDataLoader __init__().
+-1Sat, 18 May 2019 23:47:49 bipartite_graph_data_loader_cora.py[line:22] INFO group_u_list_file_path = ./data/cora/node_list
+-1Sat, 18 May 2019 23:47:49 bipartite_graph_data_loader_cora.py[line:23] INFO group_u_attr_file_path = ./data/cora/node_attr
+-1Sat, 18 May 2019 23:47:49 bipartite_graph_data_loader_cora.py[line:24] INFO group_u_label_file_path = ./data/cora/node_true
+-1Sat, 18 May 2019 23:47:49 bipartite_graph_data_loader_cora.py[line:26] INFO edge_list_file_path = ./data/cora/edgelist
+-1Sat, 18 May 2019 23:47:49 bipartite_graph_data_loader_cora.py[line:28] INFO group_v_list_file_path = ./data/cora/group_list
+-1Sat, 18 May 2019 23:47:49 bipartite_graph_data_loader_cora.py[line:29] INFO group_v_attr_file_path = ./data/cora/group_attr
+-1Sat, 18 May 2019 23:47:49 bipartite_graph_data_loader_cora.py[line:30] INFO group_v_label_file_path = None
+-1Sat, 18 May 2019 23:47:49 bipartite_graph_data_loader_cora.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+-1Sat, 18 May 2019 23:47:49 bipartite_graph_data_loader_cora.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:211] INFO before merging with v_list, the len is = 877
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:219] INFO after merging with v_attr_dict, the len is = 877
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:234] INFO __generate_adjacent_matrix START
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:236] INFO u_node_list = 734
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:237] INFO v_node_list = 877
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:238] INFO edge_list = 1802
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:240] INFO start to load bipartite for u
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:250] INFO (734, 877)
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:253] INFO end to load bipartite for u
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:255] INFO start to load bipartite for u
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:265] INFO (877, 734)
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:268] INFO end to load bipartite for u
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:313] INFO u number: 734
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:314] INFO u_adjacent_matrix: (734, 877)
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:317] INFO v number: 877
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:318] INFO v_adjacent_matrix: (877, 734)
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:321] INFO batch_num_u = 74
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:324] INFO batch_num_v = 88
+-1Sat, 18 May 2019 23:47:50 bipartite_graph_data_loader_cora.py[line:123] INFO #### generate_adjacent_matrix_feature_and_labels. END
+-1Sat, 18 May 2019 23:47:50 cascaded_adversarial_hgcn_with_gan.py[line:28] INFO AdversarialHGCNLayer
+-1Sat, 18 May 2019 23:47:50 cascaded_adversarial_hgcn_with_gan.py[line:49] INFO AdversarialHGCNLayer
+-1Sat, 18 May 2019 23:47:50 cascaded_adversarial_hgcn_with_gan.py[line:60] INFO AdversarialHGCNLayer
+-1Sat, 18 May 2019 23:47:50 cascaded_adversarial_hgcn_with_gan.py[line:63] INFO adversarial_train
+-1Sat, 18 May 2019 23:47:50 cascaded_adversarial_hgcn_with_gan.py[line:66] INFO Step 1: Explicit relation learning
+-1Sat, 18 May 2019 23:47:50 models.py[line:106] INFO Step: 1, Epoch: 0, Iterations: 0, dis loss: 1.4767796993255615, gen loss: 0.42286959290504456
+-1Sat, 18 May 2019 23:47:56 models.py[line:106] INFO Step: 1, Epoch: 1, Iterations: 26, dis loss: 0.6319923996925354, gen loss: 1.320175051689148
+-1Sat, 18 May 2019 23:48:03 models.py[line:106] INFO Step: 1, Epoch: 2, Iterations: 52, dis loss: 0.6385801434516907, gen loss: 1.729889154434204
+-1Sat, 18 May 2019 23:48:08 cascaded_adversarial_hgcn_with_gan.py[line:101] INFO Step 2: Implicit relation learning
+-1Sat, 18 May 2019 23:48:08 models.py[line:106] INFO Step: 2, Epoch: 0, Iterations: 0, dis loss: 1.016277551651001, gen loss: 1.2716158628463745
+-1Sat, 18 May 2019 23:48:12 models.py[line:106] INFO Step: 2, Epoch: 1, Iterations: 12, dis loss: 0.4065280258655548, gen loss: 1.4998233318328857
+-1Sat, 18 May 2019 23:48:16 models.py[line:106] INFO Step: 2, Epoch: 2, Iterations: 24, dis loss: 0.40808767080307007, gen loss: 1.6045827865600586
+-1Sat, 18 May 2019 23:48:21 cascaded_adversarial_hgcn_with_gan.py[line:136] INFO Step 3: Merge relation learning
+-1Sat, 18 May 2019 23:48:21 models.py[line:106] INFO Step: 3, Epoch: 0, Iterations: 0, dis loss: 1.4917824268341064, gen loss: 0.8442802429199219
+-1Sat, 18 May 2019 23:48:26 models.py[line:106] INFO Step: 3, Epoch: 1, Iterations: 26, dis loss: 0.4411662220954895, gen loss: 1.6278517246246338
+-1Sat, 18 May 2019 23:48:33 models.py[line:106] INFO Step: 3, Epoch: 2, Iterations: 52, dis loss: 0.45241573452949524, gen loss: 1.5210535526275635
+-1Sat, 18 May 2019 23:48:35 cascaded_adversarial_hgcn_with_gan.py[line:191] INFO start to save embedding file
+-1Sat, 18 May 2019 23:48:35 cascaded_adversarial_hgcn_with_gan.py[line:194] INFO node_num = 734
+-1Sat, 18 May 2019 23:48:35 cascaded_adversarial_hgcn_with_gan.py[line:196] INFO dimension_embedding = 1433
+-1Sat, 18 May 2019 23:48:36 cascaded_adversarial_hgcn_with_gan.py[line:222] INFO saved embedding file

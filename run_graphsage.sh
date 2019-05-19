@@ -4,6 +4,12 @@
 
 DATASET=$1
 MODEL=$2
+if [ -z "$2" ]
+then
+    echo "empty model name"
+    MODEL="graphsage_mean"
+fi
+
 echo ./out/graphsage/$DATASET
 rm -rf ./out/graphsage/$DATASET
 
