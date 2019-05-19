@@ -5,9 +5,9 @@
 |                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
 | :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
 | Metrics        | F1                         | F1                         | F1                          | F1                          | F1                          | F1                          |
-| Tencent        | 0.541600                   | sh run_hgcn.sh tencent vae | 0.657056                    | Not Finished                | Not Finished                | N/A (*)                     |
+| Tencent        | 0.541600                   | ?                          | 0.657056                    | Not Finished                | Not Finished                | N/A (*)                     |
 | Cora           | 0.813461                   | 0.302895                   | 0.745663                    | Not Finished                | 0.686367                    | 0.736460                    |
-| Citeseer       | 0.675909                   | 0.207148                   | 0.645093                    | Not Finished                | 0.739309                    | 0.648640                    |
+| Citeseer       | 0.673574                   | 0.246943                   | 0.645093                    | Not Finished                | 0.739309                    | 0.648640                    |
 
 
 
