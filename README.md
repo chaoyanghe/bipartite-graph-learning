@@ -4,10 +4,10 @@
 ## Model Performance Comparision
 |                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
 | :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
-| Metrics        | F1                         | F1                         | F1                          | F1                          | F1                          | F1                          |
-| Tencent        | 0.541600                   | 0.50312128                 | 0.657056                    | Not Finished                | Not Finished                | N/A (*)                     |
-| Cora           | 0.813461                   | 0.302895                   | 0.763529                    | 0.740193                    | 0.686367                    | 0.731786                    |
-| Citeseer       | 0.673574                   | 0.246943                   | 0.645093                    | 0.596460                    | 0.621766                    | 0.603029                    |
+| Metrics        | F1 / Accuracy              | F1 / Accuracy              | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               |
+| Tencent        | 0.541600 /                 | 0.50312128 /               | 0.657056                    | Not Finished                | Not Finished                | N/A (*)                     |
+| Cora           | 0.813461 /                 | 0.302895 /                 | 0.763529                    | 0.740193                    | 0.686367                    | 0.731786                    |
+| Citeseer       | 0.673574 /                 | 0.246943 /                 | 0.645093                    | 0.596460                    | 0.621766                    | 0.603029                    |
 
 
 

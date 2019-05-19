@@ -771,3 +771,15 @@ Use tf.cast instead.
 Sat, 18 May 2019 23:55:27 unsupervised_train.py[line:319] INFO training epoch: 1
 Sat, 18 May 2019 23:55:31 unsupervised_train.py[line:361] INFO Iter: 0000, train_loss=18.277975, train_mrr=0.317926, train_mrr_ema=0.317926, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.801939
 Sat, 18 May 2019 23:55:31 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
+Sat, 18 May 2019 23:56:04 unsupervised_train.py[line:361] INFO Iter: 0010, train_loss=18.704840, train_mrr=0.276214, train_mrr_ema=0.315936, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.331289
+Sat, 18 May 2019 23:56:04 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0010, max_total_steps: 100000000
+Sat, 18 May 2019 23:56:32 unsupervised_train.py[line:361] INFO Iter: 0020, train_loss=17.774010, train_mrr=0.346843, train_mrr_ema=0.315748, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.078683
+Sat, 18 May 2019 23:56:32 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0020, max_total_steps: 100000000
+Sat, 18 May 2019 23:57:00 unsupervised_train.py[line:361] INFO Iter: 0030, train_loss=17.593010, train_mrr=0.306949, train_mrr_ema=0.314798, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.002704
+Sat, 18 May 2019 23:57:00 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0030, max_total_steps: 100000000
+Sat, 18 May 2019 23:57:43 unsupervised_train.py[line:361] INFO Iter: 0040, train_loss=16.854115, train_mrr=0.350681, train_mrr_ema=0.316302, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.318309
+Sat, 18 May 2019 23:57:43 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0040, max_total_steps: 100000000
+Sat, 18 May 2019 23:58:29 unsupervised_train.py[line:361] INFO Iter: 0050, train_loss=16.749117, train_mrr=0.373614, train_mrr_ema=0.317997, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.556485
+Sat, 18 May 2019 23:58:29 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0050, max_total_steps: 100000000
+Sat, 18 May 2019 23:59:08 unsupervised_train.py[line:361] INFO Iter: 0060, train_loss=16.480326, train_mrr=0.346509, train_mrr_ema=0.320519, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=3.619981
+Sat, 18 May 2019 23:59:08 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0060, max_total_steps: 100000000
