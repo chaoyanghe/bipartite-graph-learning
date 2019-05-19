@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-
-rm -rf ./out/graphsage/*
-
-
 pip install networkx==1.11
 
 
@@ -19,6 +15,7 @@ then
 else
    echo $DATASET
 fi
+rm -rf ./out/graphsage/$DATASET
 
 
 ## only execute once
