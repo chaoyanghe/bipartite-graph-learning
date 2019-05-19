@@ -7,6 +7,7 @@ import torch.optim as optim
 import logging
 import numpy as np
 from torch.nn import init
+import torch
 
 
 class Decoder(nn.Module):
@@ -16,7 +17,8 @@ class Decoder(nn.Module):
             nn.Linear(infeat, hidfeat),
             nn.ReLU(),
             nn.Dropout(p=dropout, inplace=True),
-            nn.Linear(hidfeat, outfeat)
+            nn.Linear(hidfeat, outfeat),
+            nn.Tanh()
         )
 
     def forward(self, input):
