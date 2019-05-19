@@ -131,28 +131,37 @@ def reduce_dim(features: np.ndarray, num_dim_kept: int):
     return reduced_features
 
 
-def save_vertices_and_attr(features: np.ndarray, u_idx_set: set, v_idx_set: set):
-    vertex_set_names = ["node", "group"]
-    vertex_sets = [u_idx_set, v_idx_set]
+def save_vertices_and_attr(u_features: np.ndarray, v_features: np.ndarray,
+                           u_idx_set: set, v_idx_set: set):
+    # U is node, V is group
 
-    for i in range(len(vertex_sets)):
-        attr_output_str = ""
-        vertices_output_str = ""
+    u_attr_output = open("../node_attr", "w")
+    u_vertices_output = open("../node_list", "w")
 
-        for vertex_idx in vertex_sets[i]:
-            # already in sorted order since all elements of vertex_sets are sets
-            attr_str = '\t'.join(map(str, features[vertex_idx]))
-            attr_output_str += "{}\t{}\n".format(vertex_idx, attr_str)
+    print("saving node_attr and node_list...")
+    for vertex_idx in u_idx_set:
+        # already in sorted order since all elements of vertex_sets are sets
+        attr_str = '\t'.join(map(str, u_features[vertex_idx]))
 
-            vertices_output_str += "{}\n".format(vertex_idx)
+        u_attr_output.write("{}\t{}\n".format(vertex_idx, attr_str))
+        u_vertices_output.write("{}\n".format(vertex_idx))
 
-        print("saving {}_attr...".format(vertex_set_names[i]))
-        with open("../{}_attr".format(vertex_set_names[i]), "w") as output_file:
-            output_file.write(attr_output_str)
+    u_attr_output.close()
+    u_vertices_output.close()
 
-        print("saving {}_list...".format(vertex_set_names[i]))
-        with open("../{}_list".format(vertex_set_names[i]), "w") as output_file:
-            output_file.write(vertices_output_str)
+    v_attr_output = open("../group_attr", "w")
+    v_vertices_output = open("../group_list", "w")
+
+    print("saving group_attr and group_list...")
+    for vertex_idx in v_idx_set:
+        # already in sorted order since all elements of vertex_sets are sets
+        attr_str = '\t'.join(map(str, v_features[vertex_idx]))
+
+        v_attr_output.write("{}\t{}\n".format(vertex_idx, attr_str))
+        v_vertices_output.write("{}\n".format(vertex_idx))
+
+    v_attr_output.close()
+    v_vertices_output.close()
 
 
 def save_edges(graph: nx.Graph):
@@ -170,18 +179,18 @@ def save_labels(labels_one_hot: np.ndarray, u_idx_set: set):
             output_file.write("{}\t{}\n".format(u_idx, labels[u_idx]))
 
 
-def print_stat(features: np.ndarray, labels_one_hot: np.ndarray, u_idx_set: set, v_idx_set: set, graph: nx.Graph):
-    filter_indices = sorted(u_idx_set.union(v_idx_set))
-    filter_features = features[filter_indices]
-    filter_labels_one_hot = labels_one_hot[filter_indices]
+def print_stat(reduced_features: np.ndarray, features: np.ndarray, labels_one_hot: np.ndarray,
+               u_idx_set: set, v_idx_set: set, graph: nx.Graph):
+    u_feat_shape = reduced_features[sorted(u_idx_set)].shape
+    v_feat_shape = features[sorted(u_idx_set)].shape
 
     print("\n============ Stats ============")
     print("|U| = {}".format(len(u_idx_set)))
     print("|V| = {}".format(len(v_idx_set)))
     print("# vertices in total: {}".format(len(graph)))
     print("# edges in total: {}".format(len(graph.edges)))
-    print("feature shape: {}".format(" * ".join(map(str, filter_features.shape))))
-    print("# total label: {}".format(len(filter_indices)))
+    print("U feature shape: {}".format(" * ".join(map(str, u_feat_shape))))
+    print("V feature shape: {}".format(" * ".join(map(str, v_feat_shape))))
 
 
 if __name__ == '__main__':
@@ -196,8 +205,8 @@ if __name__ == '__main__':
     uIdxSet, vIdxSet, dataGraph = build_graph(uIdxSet, vIdxSet, graphDict)
     reducedFeatures = reduce_dim(allFeature, num_dim_kept=numDimKept)
 
-    save_vertices_and_attr(reducedFeatures, uIdxSet, vIdxSet)
+    save_vertices_and_attr(reducedFeatures, allFeature, uIdxSet, vIdxSet)
     save_labels(labelsOneHot, uIdxSet)
     save_edges(dataGraph)
 
-    print_stat(reducedFeatures, labelsOneHot, uIdxSet, vIdxSet, dataGraph)
+    print_stat(reducedFeatures, allFeature, labelsOneHot, uIdxSet, vIdxSet, dataGraph)
