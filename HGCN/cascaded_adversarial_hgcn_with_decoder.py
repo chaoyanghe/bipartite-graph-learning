@@ -8,7 +8,7 @@ import numpy as np
 import torch
 
 from decoder.models import HGCNDecoder
-from gcn.models import GCN
+from gcn.models import GCN, GCNForVAE
 
 
 class DecoderGCNLayer(object):
@@ -25,10 +25,10 @@ class DecoderGCNLayer(object):
         dropout = args.dropout
         gcn_output_dim = args.gcn_output_dim
 
-        self.gcn_explicit = GCN(v_attr_dimensions, gcn_output_dim).to(device)
-        self.gcn_implicit = GCN(u_attr_dimensions, gcn_output_dim).to(device)
-        self.gcn_merge = GCN(v_attr_dimensions, gcn_output_dim).to(device)
-        self.gcn_opposite = GCN(u_attr_dimensions, gcn_output_dim).to(device)
+        self.gcn_explicit = GCNForVAE(v_attr_dimensions, gcn_output_dim).to(device)
+        self.gcn_implicit = GCNForVAE(u_attr_dimensions, gcn_output_dim).to(device)
+        self.gcn_merge = GCNForVAE(v_attr_dimensions, gcn_output_dim).to(device)
+        self.gcn_opposite = GCNForVAE(u_attr_dimensions, gcn_output_dim).to(device)
 
         self.decoder_explicit = HGCNDecoder(self.gcn_explicit, gcn_output_dim, u_attr_dimensions, encoder_hidfeat, decoder_hidfeat,
                                             learning_rate, weight_decay, dropout, device)
