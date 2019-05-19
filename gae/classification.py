@@ -15,6 +15,7 @@ def parse_args():
 
 
 if __name__ == "__main__":
+	print("########## classification.py (START) ################")
 	args = parse_args()
 	dataset = args.dataset
 	rank = args.rank
@@ -28,7 +29,7 @@ if __name__ == "__main__":
 
 	if rank != -1:
 		input_folder = "/mnt/shared/home/bipartite-graph-learning/data/" + str(dataset)
-		output_folder = "/mnt/shared/home/bipartite-graph-learning/out/gae" + str(rank)
+		output_folder = "/mnt/shared/home/bipartite-graph-learning/out/gae/"  + str(dataset) + "/" + str(rank)
 
 	if not os.path.exists(output_folder):
 		os.makedirs(output_folder)
@@ -81,3 +82,5 @@ if __name__ == "__main__":
 	else:
 		logging.info("No res file.")
 		exit(1)
+
+	print("########## classification.py (END) ################")
