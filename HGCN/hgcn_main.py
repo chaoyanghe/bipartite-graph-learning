@@ -6,6 +6,7 @@ from collections import namedtuple
 import numpy as np
 import torch
 
+import conf
 from cascaded_adversarial_hgcn_with_decoder import DecoderGCNLayer
 from cascaded_adversarial_hgcn_with_gan import CascadedAdversarialHGCN
 from conf import (MODEL, BATCH_SIZE, EPOCHS, LEARNING_RATE,
@@ -111,6 +112,7 @@ def get_the_bipartite_graph_loader(args, data_path, dataset, device):
 def main():
 	args = parse_args()
 	dataset = args.dataset
+	model_name = args.model
 	rank = args.rank
 	print("batch_size = " + str(args.batch_size))
 	print("epochs = " + str(args.epochs))
@@ -132,9 +134,24 @@ def main():
 	args.seed = random.randint(0, 1000000)
 	print("###############random seed = %s #########" % str(args.seed))
 	logging.info("###############random seed = %s #########" % str(args.seed))
-	fs = open("out/hgcn/" + args.model + "/" + dataset + "/random_seed.txt", 'w')
 
-	# model_name prec 0.2 test_prec
+	output_folder = None
+	if model_name == "gan":
+		output_folder = conf.output_folder_HGCN_GAN + "/" + str(dataset)
+	elif model_name == "vae":
+		output_folder = conf.output_folder_HGCN_VAE + "/" + str(dataset)
+
+	if rank != -1:
+		if model_name == "gan":
+			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_gan/" + str(dataset) + "/" + str(rank)
+		elif model_name == "gae":
+			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_vae/" + str(dataset) + "/" + str(rank)
+
+
+	seed_file = output_folder + "/random_seed.txt"
+	print(seed_file)
+	logging.info(seed_file)
+	fs = open(seed_file, 'w')
 	wstr = "%s" % str(args.seed)
 	fs.write(wstr + "\n")
 	fs.close()
