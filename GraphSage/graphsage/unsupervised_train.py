@@ -14,7 +14,7 @@ from graphsage.models import SampleAndAggregate, SAGEInfo, Node2VecModel
 from graphsage.neigh_samplers import UniformNeighborSampler
 from graphsage.utils import load_data
 
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+# os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 
 # Set random seed
 seed = 123
@@ -63,6 +63,7 @@ flags.DEFINE_integer('walk_len', 5, "(Co-occur) length of one singe random walk"
 flags.DEFINE_integer('n_walks', 50, "Number of random walks start from one node")
 
 # os.environ["CUDA_VISIBLE_DEVICES"] = str(FLAGS.gpu)
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 # GPU_MEM_FRACTION = 0.8
 T0 = time.time()
@@ -288,7 +289,7 @@ def train(train_data, test_data=None):
 		raise Exception('Error: model name unrecognized.')
 	print("Time for choosing model: ", time.time() - T0)
 
-	config = tf.ConfigProto()
+	config = tf.ConfigProto(device_count = {'GPU': 0})
 	# config = tf.ConfigProto(log_device_placement=FLAGS.log_device_placement)
 	# config.gpu_options.allow_growth = False
 	# config.gpu_options.per_process_gpu_memory_fraction = GPU_MEM_FRACTION
