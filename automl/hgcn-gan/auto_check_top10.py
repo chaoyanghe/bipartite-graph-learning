@@ -46,7 +46,6 @@ if __name__ == "__main__":
                         for dis_hidden in hpo_dis_hidden:
                             for dropout in hpo_dropout:
                                 paras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout)
-                                # / mnt / shared / home / bipartite - graph - learning / out / hgcn_gan / tencent / 127
                                 auc_file = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_gan/tencent/%d/hgcn.res.f1_precision_recall" % hpo_cnt
                                 print(auc_file)
                                 if os.path.exists(auc_file):
