@@ -5,7 +5,7 @@ import itertools
 
 randomSeed = 2019
 numDimKept = 400
-splitRate = 6 / 10
+splitRate = 1 / 2
 
 
 def load_data():
@@ -182,7 +182,7 @@ def save_labels(labels_one_hot: np.ndarray, u_idx_set: set):
 def print_stat(reduced_features: np.ndarray, features: np.ndarray, labels_one_hot: np.ndarray,
                u_idx_set: set, v_idx_set: set, graph: nx.Graph):
     u_feat_shape = reduced_features[sorted(u_idx_set)].shape
-    v_feat_shape = features[sorted(u_idx_set)].shape
+    v_feat_shape = features[sorted(v_idx_set)].shape
 
     print("\n============ Stats ============")
     print("|U| = {}".format(len(u_idx_set)))
@@ -199,8 +199,8 @@ if __name__ == '__main__':
 
     allFeature, labelsOneHot, graphDict = load_data()
 
-    # uIdxSet, vIdxSet = split_features_alt(allFeature, labelsOneHot, split_rate=splitRate)
-    uIdxSet, vIdxSet = split_features(graphDict, v_set_size=6000)
+    uIdxSet, vIdxSet = split_features_alt(allFeature, labelsOneHot, split_rate=splitRate)
+    # uIdxSet, vIdxSet = split_features(graphDict, v_set_size=6000)
 
     uIdxSet, vIdxSet, dataGraph = build_graph(uIdxSet, vIdxSet, graphDict)
     reducedFeatures = reduce_dim(allFeature, num_dim_kept=numDimKept)
