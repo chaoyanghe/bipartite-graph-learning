@@ -64,7 +64,7 @@ if __name__ == "__main__":
                                             hpo_cnt)
                                         print("auc = %s. Parameters: %s" % (auc_value, str))
                                         # read the AUC value
-                                        auc_dict[hpo_cnt] = float(auc_value[0])
+                                        auc_dict[hpo_cnt] = float(line_three)
                                 hpo_cnt += 1
         if len(auc_dict) == 972:
             print("all genrated!")
