@@ -46,16 +46,16 @@ if __name__ == "__main__":
 	(batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[rank]
 
 	# print("start hgcn_cmd")
-	# hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/hgcn_main.py --model gan --dataset tencent --gpu False --batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f --rank %d" % (
-	# 	batch_size,
-	# 	epochs,
-	# 	lr,
-	# 	weight_decay,
-	# 	dis_hidden,
-	# 	dropout,
-	# 	rank)
-	# os.system(hgcn_cmd)
-	# print("end hgcn_cmd")
+	hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/hgcn_main.py --model gan --dataset tencent --gpu False --batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f --rank %d" % (
+		batch_size,
+		epochs,
+		lr,
+		weight_decay,
+		dis_hidden,
+		dropout,
+		rank)
+	os.system(hgcn_cmd)
+	print("end hgcn_cmd")
 
 	print("start lr_cmd")
 	lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/binary_classification.py --dataset %s --model %s --rank %d" % (
