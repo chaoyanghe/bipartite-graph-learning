@@ -157,6 +157,9 @@ def __save_embedding_for_task(embedding, node_list):
 			node_list_file += '%d' % id_node_map[str(node_list[i])] + '\n'
 			embedding_output = [str(e) for e in embedding[i]]
 			output += '%d ' % id_node_map[str(node_list[i])] + ' '.join(embedding_output) + '\n'
+
+	print("output file = %s" % output_file)
+	logging.info("output file = %s" % output_file)
 	with open(output_file + 'graphsage.emb', 'w') as file1, open(output_file + 'node_list', 'w') as file2:
 		file1.write(output)
 		file2.write(node_list_file)
