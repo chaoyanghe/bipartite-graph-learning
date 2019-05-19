@@ -215,64 +215,86 @@ def run_exp(input_folder, emb_file, args):
 		print("test_macro_f1 = %f" % test_macro_f1)
 		logging.info("test_macro_f1 = %f" % test_macro_f1)
 
-		test_predict_prob = clf.predict_proba(test_x)[:, 1]
+		"""
+			*.prec_rec: F1, PRECISION AND RECALL
+		"""
+		fout = open(args.res_file + ".f1_precision_recall", 'w')
+		name = emb_file.split('/')[-1]
+
+		# model_name prec 0.2 test_prec
+		wstr = "%s %s %f" % (name, "precision", test_size)
+		wstr = wstr + " " + "%.8f" % test_precision
+		fout.write(wstr + "\n")
+
+		# model_name rec 0.2 test_rec
+		wstr = "%s %s %f" % (name, "recall", test_size)
+		wstr = wstr + " " + "%.8f" % test_recall
+		fout.write(wstr + "\n")
+
+		wstr = "%s %s %f" % (name, "f1_score", test_size)
+		wstr = wstr + " " + "%.8f" % test_macro_f1
+		fout.write(wstr + "\n")
+		fout.close()
+
+		# test_predict_prob = clf.predict_proba(test_x)[:, 1]
 		# print("test_predict_prob = %s" % test_predict_prob)
 		# logging.info("test_predict_prob = %s" % test_predict_prob)
 
-		# Area Under Curve of ROC (Receiver operating characteristic):
-		# https://en.wikipedia.org/wiki/Receiver_operating_characteristic
-		print("len test_predict_prob = %d" + str(len(test_predict_prob)))
-		print("len test_y = %d" + str(len(test_y)))
-		auc_s = auc(test_y, test_predict_prob)
-		logging.info("auc=%.6f" % (auc_s))
-		print("auc=%.6f" % (auc_s))
-		fauc = open(args.res_file + "_auc", 'w')
-		fauc.write(str(auc_s))
-		fauc.close()
+		# # Area Under Curve of ROC (Receiver operating characteristic):
+		# # https://en.wikipedia.org/wiki/Receiver_operating_characteristic
+		# print("len test_predict_prob = %d" + str(len(test_predict_prob)))
+		# print("len test_y = %d" + str(len(test_y)))
+		# auc_s = auc(test_y, test_predict_prob)
+		# logging.info("auc=%.6f" % (auc_s))
+		# print("auc=%.6f" % (auc_s))
+		# fauc = open(args.res_file + "_auc", 'w')
+		# fauc.write(str(auc_s))
+		# fauc.close()
+		#
+		# s_idx = np.argsort(-test_predict_prob)
+		#
+		# rank_test = test_y[s_idx]
+		# judge_n = np.sum(test_predict_prob > 0.5)
+		# pos_n = np.sum(test_y == 1)
+		#
+		# N_list = [1000, 10000, pos_n, judge_n]
+		# if args.verbose:
+		# 	logging.info("Test Size: %f" % (test_size))
+		# for n in N_list:
+		# 	res_test = ap(rank_test, n)
+		# 	(prec, rec) = prec_rec(rank_test, n)
+		# 	if n == 10000:
+		# 		logging.info("object_value=%.5f" % prec)
+		# 	if n > len(rank_test):
+		# 		n = "all"
+		# 	logging.info("Test AP@%s:\t%.5f\tPrec: %.5f\tRec: %.5f" % (str(n), res_test, prec, rec))
+		# 	test_aps[test_size].append(res_test)
+		# 	test_prec[test_size].append(prec)
+		# 	test_rec[test_size].append(rec)
 
-		s_idx = np.argsort(-test_predict_prob)
-
-		rank_test = test_y[s_idx]
-		judge_n = np.sum(test_predict_prob > 0.5)
-		pos_n = np.sum(test_y == 1)
-
-		N_list = [1000, 10000, pos_n, judge_n]
-		if args.verbose:
-			logging.info("Test Size: %f" % (test_size))
-		for n in N_list:
-			res_test = ap(rank_test, n)
-			(prec, rec) = prec_rec(rank_test, n)
-			if n == 10000:
-				logging.info("object_value=%.5f" % prec)
-			if n > len(rank_test):
-				n = "all"
-			logging.info("Test AP@%s:\t%.5f\tPrec: %.5f\tRec: %.5f" % (str(n), res_test, prec, rec))
-			test_aps[test_size].append(res_test)
-			test_prec[test_size].append(prec)
-			test_rec[test_size].append(rec)
-
-	# Write the evaluation result.
-	fout = open(args.res_file, 'w')
-	for ts in test_ratio:
-		name = emb_file.split('/')[-1]
-		wstr = "%s %f" % (name, ts)
-		for a in test_aps[ts]:
-			wstr = wstr + " " + "%.8f" % (a)
-		fout.write(wstr + "\n")
-	fout.close()
-	fout = open(args.res_file + ".prec_rec", 'w')
-	for ts in test_ratio:
-		name = emb_file.split('/')[-1]
-		wstr = "%s %s %f" % (name, "prec", ts)
-		for a in test_prec[ts]:
-			wstr = wstr + " " + "%.8f" % (a)
-		fout.write(wstr + "\n")
-		wstr = "%s %s %f" % (name, "rec", ts)
-		for a in test_rec[ts]:
-			wstr = wstr + " " + "%.8f" % (a)
-		fout.write(wstr + "\n")
-
-	fout.close()
+	# # Write the evaluation result.
+	# fout = open(args.res_file, 'w')
+	# for ts in test_ratio:
+	# 	name = emb_file.split('/')[-1]
+	# 	wstr = "%s %f" % (name, ts)
+	# 	for a in test_aps[ts]:
+	# 		wstr = wstr + " " + "%.8f" % (a)
+	# 	fout.write(wstr + "\n")
+	# fout.close()
+	#
+	# fout = open(args.res_file + ".prec_rec", 'w')
+	# for ts in test_ratio:
+	# 	name = emb_file.split('/')[-1]
+	# 	wstr = "%s %s %f" % (name, "prec", ts)
+	# 	for a in test_prec[ts]:
+	# 		wstr = wstr + " " + "%.8f" % (a)
+	# 	fout.write(wstr + "\n")
+	# 	wstr = "%s %s %f" % (name, "rec", ts)
+	# 	for a in test_rec[ts]:
+	# 		wstr = wstr + " " + "%.8f" % (a)
+	# 	fout.write(wstr + "\n")
+	#
+	# fout.close()
 
 
 def main():

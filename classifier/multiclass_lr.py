@@ -193,28 +193,32 @@ def run_exp(input_folder, emb_file, args):
 		*.res: F1 score
 		http: // sofasofa.io / forum_main_post.php?postid = 1001112
 	"""
-	# model_name 0.2 testaps
-	fout = open(args.res_file, 'w')
-	name = emb_file.split('/')[-1]
-	wstr = "%s %s %f" % (name, "f1", test_ratio)
-	wstr = wstr + " " + "%.8f" % test_macro_f1
-	fout.write(wstr + "\n")
-	fout.close()
+	# # model_name 0.2 testaps
+	# fout = open(args.res_file, 'w')
+	# name = emb_file.split('/')[-1]
+	# wstr = "%s %s %f" % (name, "f1", test_ratio)
+	# wstr = wstr + " " + "%.8f" % test_macro_f1
+	# fout.write(wstr + "\n")
+	# fout.close()
 
 	"""
-		*.prec_rec: PRECISION AND RECALL
+		*.prec_rec: F1, PRECISION AND RECALL
 	"""
-	fout = open(args.res_file + ".prec_rec", 'w')
+	fout = open(args.res_file + ".f1_precision_recall", 'w')
 	name = emb_file.split('/')[-1]
 
 	# model_name prec 0.2 test_prec
-	wstr = "%s %s %f" % (name, "prec", test_ratio)
+	wstr = "%s %s %f" % (name, "precision", test_ratio)
 	wstr = wstr + " " + "%.8f" % test_precision
 	fout.write(wstr + "\n")
 
 	# model_name rec 0.2 test_rec
-	wstr = "%s %s %f" % (name, "rec", test_ratio)
+	wstr = "%s %s %f" % (name, "recall", test_ratio)
 	wstr = wstr + " " + "%.8f" % test_recall
+	fout.write(wstr + "\n")
+
+	wstr = "%s %s %f" % (name, "f1_score", test_ratio)
+	wstr = wstr + " " + "%.8f" % test_macro_f1
 	fout.write(wstr + "\n")
 	fout.close()
 
