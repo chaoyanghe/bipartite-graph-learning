@@ -4457,3 +4457,43 @@
 -1Sun, 19 May 2019 01:46:31 cascaded_adversarial_hgcn_with_decoder.py[line:191] INFO node_num = 9860
 -1Sun, 19 May 2019 01:46:31 cascaded_adversarial_hgcn_with_decoder.py[line:193] INFO dimension_embedding = 500
 -1Sun, 19 May 2019 01:46:34 cascaded_adversarial_hgcn_with_decoder.py[line:219] INFO saved embedding file
+-1Sun, 19 May 2019 03:59:47 hgcn_main.py[line:136] INFO ###############random seed = 193312 #########
+-1Sun, 19 May 2019 03:59:47 hgcn_main.py[line:153] INFO ./out/hgcn-gan/pubmed/random_seed.txt
+-1Sun, 19 May 2019 04:00:51 hgcn_main.py[line:137] INFO ###############random seed = 26827 #########
+-1Sun, 19 May 2019 04:00:51 hgcn_main.py[line:156] INFO ./out/hgcn-gan/pubmed/random_seed.txt
+-1Sun, 19 May 2019 04:00:51 hgcn_main.py[line:166] INFO device = cpu
+-1Sun, 19 May 2019 04:00:51 bipartite_graph_data_loader_pubmed.py[line:15] INFO BipartiteGraphDataLoader __init__().
+-1Sun, 19 May 2019 04:00:51 bipartite_graph_data_loader_pubmed.py[line:22] INFO group_u_list_file_path = ./data/pubmed/node_list
+-1Sun, 19 May 2019 04:00:51 bipartite_graph_data_loader_pubmed.py[line:23] INFO group_u_attr_file_path = ./data/pubmed/node_attr
+-1Sun, 19 May 2019 04:00:51 bipartite_graph_data_loader_pubmed.py[line:24] INFO group_u_label_file_path = ./data/pubmed/node_true
+-1Sun, 19 May 2019 04:00:51 bipartite_graph_data_loader_pubmed.py[line:26] INFO edge_list_file_path = ./data/pubmed/edgelist
+-1Sun, 19 May 2019 04:00:51 bipartite_graph_data_loader_pubmed.py[line:28] INFO group_v_list_file_path = ./data/pubmed/group_list
+-1Sun, 19 May 2019 04:00:51 bipartite_graph_data_loader_pubmed.py[line:29] INFO group_v_attr_file_path = ./data/pubmed/group_attr
+-1Sun, 19 May 2019 04:00:51 bipartite_graph_data_loader_pubmed.py[line:30] INFO group_v_label_file_path = None
+-1Sun, 19 May 2019 04:00:51 bipartite_graph_data_loader_pubmed.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+-1Sun, 19 May 2019 04:00:51 bipartite_graph_data_loader_pubmed.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:213] INFO before merging with v_list, the len is = 3435
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:221] INFO after merging with v_attr_dict, the len is = 3435
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:236] INFO __generate_adjacent_matrix START
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:238] INFO u_node_list = 13424
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:239] INFO v_node_list = 3435
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:240] INFO edge_list = 18782
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:242] INFO start to load bipartite for u
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:252] INFO (13424, 3435)
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:255] INFO end to load bipartite for u
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:257] INFO start to load bipartite for u
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:267] INFO (3435, 13424)
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:270] INFO end to load bipartite for u
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:315] INFO u number: 13424
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:316] INFO u_adjacent_matrix: (13424, 3435)
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:319] INFO v number: 3435
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:320] INFO v_adjacent_matrix: (3435, 13424)
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:323] INFO batch_num_u = 135
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:326] INFO batch_num_v = 35
+-1Sun, 19 May 2019 04:00:54 bipartite_graph_data_loader_pubmed.py[line:123] INFO #### generate_adjacent_matrix_feature_and_labels. END
+-1Sun, 19 May 2019 04:00:54 cascaded_adversarial_hgcn_with_gan.py[line:28] INFO AdversarialHGCNLayer
+-1Sun, 19 May 2019 04:00:54 cascaded_adversarial_hgcn_with_gan.py[line:49] INFO AdversarialHGCNLayer
+-1Sun, 19 May 2019 04:00:54 cascaded_adversarial_hgcn_with_gan.py[line:60] INFO AdversarialHGCNLayer
+-1Sun, 19 May 2019 04:00:54 cascaded_adversarial_hgcn_with_gan.py[line:63] INFO adversarial_train
+-1Sun, 19 May 2019 04:00:54 cascaded_adversarial_hgcn_with_gan.py[line:66] INFO Step 1: Explicit relation learning
+-1Sun, 19 May 2019 04:00:54 models.py[line:106] INFO Step: 1, Epoch: 0, Iterations: 0, dis loss: 1.423221468925476, gen loss: 0.9295085668563843

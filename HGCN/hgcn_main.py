@@ -1,5 +1,6 @@
 import argparse
 import logging
+import os
 import random
 from collections import namedtuple
 
@@ -147,6 +148,8 @@ def main():
 		elif model_name == "gae":
 			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn_vae/" + str(dataset) + "/" + str(rank)
 
+	if not os.path.exists(output_folder):
+		os.makedirs(output_folder)
 
 	seed_file = output_folder + "/random_seed.txt"
 	print(seed_file)
