@@ -56,15 +56,15 @@ flags.DEFINE_boolean('save_embeddings', True, 'whether to save embeddings for al
 flags.DEFINE_string('base_log_dir', '.', 'base directory for logging and saving embeddings')
 flags.DEFINE_integer('validate_iter', 5000, "how often to run a validation minibatch.")
 flags.DEFINE_integer('validate_batch_size', 256, "how many nodes per validation sample.")
-flags.DEFINE_integer('gpu', 1, "which gpu to use.")
+flags.DEFINE_integer('gpu', 0, "which gpu to use.")
 flags.DEFINE_integer('print_every', 50, "How often to print training info.")
 flags.DEFINE_integer('max_total_steps', 10 ** 10, "Maximum total number of iterations")
 flags.DEFINE_integer('walk_len', 5, "(Co-occur) length of one singe random walk")
 flags.DEFINE_integer('n_walks', 50, "Number of random walks start from one node")
 
-os.environ["CUDA_VISIBLE_DEVICES"] = str(FLAGS.gpu)
+# os.environ["CUDA_VISIBLE_DEVICES"] = str(FLAGS.gpu)
 
-GPU_MEM_FRACTION = 0.8
+# GPU_MEM_FRACTION = 0.8
 T0 = time.time()
 
 
@@ -288,10 +288,11 @@ def train(train_data, test_data=None):
 		raise Exception('Error: model name unrecognized.')
 	print("Time for choosing model: ", time.time() - T0)
 
-	config = tf.ConfigProto(log_device_placement=FLAGS.log_device_placement)
-	config.gpu_options.allow_growth = True
+	config = tf.ConfigProto()
+	# config = tf.ConfigProto(log_device_placement=FLAGS.log_device_placement)
+	# config.gpu_options.allow_growth = False
 	# config.gpu_options.per_process_gpu_memory_fraction = GPU_MEM_FRACTION
-	config.allow_soft_placement = True
+	# config.allow_soft_placement = True
 
 	# Initialize session
 	sess = tf.Session(config=config)
