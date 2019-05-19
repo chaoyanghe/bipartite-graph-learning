@@ -37,7 +37,7 @@ then
     --gpu False \
     --epochs 3 \
     --batch_size 10 \
-    --lr 0.003 \
+    --lr 0.01 \
     --weight_decay 0.001 \
     --dropout 0.4 \
     --gcn_output_dim 24 \

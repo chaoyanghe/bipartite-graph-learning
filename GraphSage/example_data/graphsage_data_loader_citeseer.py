@@ -1,4 +1,5 @@
 import logging
+import os
 
 import matplotlib as plt
 import networkx as nx
@@ -432,6 +433,9 @@ class GraphSageSingleGraphDataLoader:
         self.features = np.array(nodes_features)
 
     def write_to_json(self):
+		dir = './citeseer'
+		if not os.path.exists(dir):
+			os.makedirs(dir)
         with open('./citeseer/bipartite-G.json', 'w') as outfile1:
             json.dump(self.graph, outfile1)
         outfile1.close()
