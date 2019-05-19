@@ -64,4 +64,22 @@ then
     --decoder_hidfeat 8
 
     python3 ./HGCN/multi_classification.py --dataset $DATASET --model $MODEL
+elif [ "$DATASET" = "pubmed" ]
+then
+    echo $DATASET
+
+    python3 ./HGCN/hgcn_main.py \
+    --dataset $DATASET \
+    --model $MODEL \
+    --gpu False \
+    --epochs 3 \
+    --batch_size 100 \
+    --lr 0.0003 \
+    --weight_decay 0.001 \
+    --dropout 0.4 \
+    --gcn_output_dim 24 \
+    --encoder_hidfeat 16 \
+    --decoder_hidfeat 8
+
+    python3 ./HGCN/multi_classification.py --dataset $DATASET --model $MODEL
 fi

@@ -13,6 +13,7 @@ from conf import (MODEL, RANDOM_SEED, BATCH_SIZE, EPOCHS, LEARNING_RATE,
 from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
 from data.bipartite_graph_data_loader_citeseer import BipartiteGraphDataLoaderCiteseer
 from data.bipartite_graph_data_loader_cora import BipartiteGraphDataLoaderCora
+from data.bipartite_graph_data_loader_pubmed import BipartiteGraphDataLoaderPubMed
 from variational_hgcn import VariationalGCNLayer
 
 
@@ -90,6 +91,19 @@ def get_the_bipartite_graph_loader(args, data_path, dataset, device):
 																	   NODE_LABEL_PATH,
 																	   EDGE_LIST_PATH,
 																	   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
+	elif dataset == "pubmed":
+		NODE_LIST_PATH = data_path + "data/pubmed/node_list"
+		NODE_ATTR_PATH = data_path + "data/pubmed/node_attr"
+		NODE_LABEL_PATH = data_path + "data/pubmed/node_true"
+		EDGE_LIST_PATH = data_path + "data/pubmed/edgelist"
+		GROUP_LIST_PATH = data_path + "data/pubmed/group_list"
+		GROUP_ATTR_PATH = data_path + "data/pubmed/group_attr"
+
+		bipartite_graph_data_loader = BipartiteGraphDataLoaderPubMed(args.batch_size, NODE_LIST_PATH, NODE_ATTR_PATH,
+																	   NODE_LABEL_PATH,
+																	   EDGE_LIST_PATH,
+																	   GROUP_LIST_PATH, GROUP_ATTR_PATH, device=device)
+
 
 	return bipartite_graph_data_loader
 

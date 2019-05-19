@@ -8,6 +8,7 @@
 | Tencent        | 0.541600 /                 | 0.50312128 /               | 0.657056                    | Not Finished                | Not Finished                | N/A (*)                     |
 | Cora           | 0.813461 /                 | 0.302895 /                 | 0.763529                    | 0.740193                    | 0.686367                    | 0.731786                    |
 | Citeseer       | 0.673574 /                 | 0.246943 /                 | 0.645093                    | 0.596460                    | 0.621766                    | 0.603029                    |
+| PubMed         | 0.875158 / 0.874746        | 0.832246 / 0.831136        | 0.645093                    | 0.596460                    | 0.621766                    | 0.603029                    |
 
 
 
@@ -26,6 +27,7 @@ pip3 install -r requirements.txt
 | Tencent        | sh run_hgcn_gan.sh tencent | sh run_hgcn_vae.sh tencent | sh run_node2vec.sh tencent  | sh run_gcn.sh tencent       | sh run_graphsage.sh tencent | N/A (*)                     |
 | Cora           | sh run_hgcn_gan.sh cora    | sh run_hgcn_vae.sh cora    | sh run_node2vec.sh cora     | sh run_gcn.sh cora          | sh run_graphsage.sh cora    | sh run_gae.sh cora          |
 | Citeseer       | sh run_hgcn_gan.sh citeseer| sh run_hgcn_vae.sh citeseer| sh run_node2vec.sh citeseer | sh run_gcn.sh citeseer      | sh run_graphsage.sh citeseer| sh run_gae.sh citeseer      |
+| PubMed         | sh run_hgcn_gan.sh pubmed  | sh run_hgcn_vae.sh pubmed  | sh run_node2vec.sh pubmed   | sh run_gcn.sh pubmed        | sh run_graphsage.sh pubmed  | sh run_gae.sh pubmed        |
 
 Only Linux (*): For the Node2Vec model, its binary file is only ELF 64-bit LSB executable, x86-64, for GNU/Linux.
 
