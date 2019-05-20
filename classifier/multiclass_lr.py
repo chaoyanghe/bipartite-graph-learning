@@ -188,14 +188,14 @@ def run_exp(input_folder, emb_file, args):
     test_predict_y = clf.predict(test_x)
 
     # metric
-    test_precision = precision_score(test_y, test_predict_y, average="macro")
+    test_precision = precision_score(test_y, test_predict_y, average="micro")
     print("test_precision = %f" % test_precision)
 
-    test_recall = recall_score(test_y, test_predict_y, average="macro")
+    test_recall = recall_score(test_y, test_predict_y, average="micro")
     print("test_recall = %f" % test_recall)
 
-    test_macro_f1 = f1_score(test_y, test_predict_y, average="macro")
-    print("test_macro_f1 = %f" % test_macro_f1)
+    test_micro_f1 = f1_score(test_y, test_predict_y, average="micro")
+    print("test_macro_f1 = %f" % test_micro_f1)
 
     test_accuracy_score = accuracy_score(test_y, test_predict_y)
     print("test_accuracy_score = %f" % test_accuracy_score)
@@ -233,7 +233,7 @@ def run_exp(input_folder, emb_file, args):
     fout.write(wstr + "\n")
 
     wstr = "%s %s %f" % (name, "f1_score", test_ratio)
-    wstr = wstr + " " + "%.8f" % test_macro_f1
+    wstr = wstr + " " + "%.8f" % test_micro_f1
     fout.write(wstr + "\n")
 
     wstr = "%s %s %f" % (name, "accuracy_score", test_ratio)

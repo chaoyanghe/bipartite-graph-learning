@@ -133,6 +133,7 @@ class BipartiteGraphDataLoaderCiteseer:
 		u_attr = []
 		f_u_attr = open(self.group_u_attr_file_path, 'r')
 
+		dimension = 0
 		for l in f_u_attr:
 			l = l.strip('\n').split("\t")
 			attribute_item = []
@@ -140,7 +141,7 @@ class BipartiteGraphDataLoaderCiteseer:
 			for idx in range(dimension):
 				attribute_item.append(float(l[idx]))
 			u_attr.append(attribute_item)
-		# print("dimension = %s" % str(dimension - 1))
+		print("dimension = %s" % str(dimension - 1))
 		# print("u_attr = %d" % len(u_attr))
 		# normalize per dim
 		u_attr_np = np.array(u_attr, dtype=np.float64, copy=False)
@@ -183,6 +184,7 @@ class BipartiteGraphDataLoaderCiteseer:
 		v_attr = []
 		f_v_attr = open(self.group_v_attr_file_path, 'r')
 
+		dimension = 0
 		for l in f_v_attr:
 			l = l.strip('\n').split("\t")
 			attribute_item = []
@@ -190,7 +192,7 @@ class BipartiteGraphDataLoaderCiteseer:
 			for idx in range(dimension):
 				attribute_item.append(float(l[idx]))
 			v_attr.append(attribute_item)
-		# print("dimension = %s" % str(dimension - 1))
+		print("dimension = %s" % str(dimension - 1))
 		# print("v_attr = %d" % len(v_attr))
 		# normalize per dim
 		v_attr_np = np.array(v_attr, dtype=np.float64, copy=False)

@@ -4,8 +4,9 @@
 
 
 ## Data Set
+Tencent:
 
-![tencent](docs/distribution_tencent.jpg)
+![tencent|](docs/distribution_tencent.jpg)
 ![tencent](docs/distribution_cora.jpg)
 ![tencent](docs/distribution_citeseer.jpg)
 ![tencent](docs/distribution_pubmed.jpg)
