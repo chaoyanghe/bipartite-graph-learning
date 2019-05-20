@@ -292,7 +292,7 @@ def train(train_data, test_data=None):
 
     # config = tf.ConfigProto(device_count = {'GPU': 0})
     config = tf.ConfigProto(log_device_placement=FLAGS.log_device_placement)
-    config.gpu_options.allow_growth = True
+    config.gpu_options.allow_growth = False
     config.gpu_options.per_process_gpu_memory_fraction = GPU_MEM_FRACTION
     config.allow_soft_placement = True
 
