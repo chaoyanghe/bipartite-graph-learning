@@ -68,8 +68,7 @@ if __name__ == "__main__":
                                                 line_one = f.readline()
                                                 print(line_one)
                                                 auc_value = line_one.split(" ")[-1]
-                                                str = "--epochs %d --batch_size %d --lr %f --weight_decay %f --dropout %f --gcn_output_dim %d  --encoder_hidfeat %d --decoder_hidfeat %d --rank %d" % (
-                                                    dataset_name,
+                                                str = "--epochs %d --batch_size %d --lr %f --weight_decay %f --dropout %f --gcn_output_dim %d --encoder_hidfeat %d --decoder_hidfeat %d --rank %d" % (
                                                     epochs,
                                                     batch_size,
                                                     lr,
@@ -77,7 +76,8 @@ if __name__ == "__main__":
                                                     dropout,
                                                     gcn_out_dim,
                                                     encode_hid_fea_dim,
-                                                    decoder_hid_fea_dim)
+                                                    decoder_hid_fea_dim,
+                                                    hpo_cnt)
                                                 print("auc = %s. Parameters: %s" % (auc_value, str))
                                                 # read the AUC value
                                                 auc_dict[hpo_cnt] = line_one
