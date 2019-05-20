@@ -95,7 +95,7 @@ then
    --dim_1 16 \
    --dim_2 8 \
    --neg_sample_size 20 \
-   --batch_size 1024 \
+   --batch_size 256 \
    --save_embeddings True \
    --walk_len 5 \
    --n_walks 50 \
