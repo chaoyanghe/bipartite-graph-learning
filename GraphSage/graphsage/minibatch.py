@@ -115,9 +115,12 @@ class EdgeMinibatchIterator(object):
         return adj
 
     def end(self):
-        print("batch size: %d, batch number: %d, train edges: %d" % (self.batch_size, self.batch_num, self.train_edges))
+        print('#########################')
+        print("batch size: ", self.batch_size)
+        print("batch number: ", self.batch_num)
+        print("train edges: ", len(self.train_edges))
         logging.info(
-            "batch size: %d, batch number: %d, train edges: %d" % (self.batch_size, self.batch_num, self.train_edges))
+            "batch size: %d, batch number: %d, train edges: %d" % (self.batch_size, self.batch_num, len(self.train_edges)))
         return self.batch_num * self.batch_size >= len(self.train_edges)
 
     def batch_feed_dict(self, batch_edges):

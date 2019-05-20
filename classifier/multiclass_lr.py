@@ -188,13 +188,13 @@ def run_exp(input_folder, emb_file, args):
     test_predict_y = clf.predict(test_x)
 
     # metric
-    test_precision = precision_score(test_y, test_predict_y, average="macro")
+    test_precision = precision_score(test_y, test_predict_y, average="micro")
     print("test_precision = %f" % test_precision)
 
-    test_recall = recall_score(test_y, test_predict_y, average="macro")
+    test_recall = recall_score(test_y, test_predict_y, average="micro")
     print("test_recall = %f" % test_recall)
 
-    test_micro_f1 = f1_score(test_y, test_predict_y, average="macro")
+    test_micro_f1 = f1_score(test_y, test_predict_y, average="micro")
     print("test_micro_f1 = %f" % test_micro_f1)
 
     test_accuracy_score = accuracy_score(test_y, test_predict_y)
