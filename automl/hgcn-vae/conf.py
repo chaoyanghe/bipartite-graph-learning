@@ -1,3 +1,3 @@
 
-dataset_name="cora"
+dataset_name="citeseer"
 model_name="vae"
