@@ -5,7 +5,10 @@
 
 ## Data Set
 
-![tencent](docs/distribution_tencent.png)
+![tencent](docs/distribution_tencent.jpg)
+![tencent](docs/distribution_cora.jpg)
+![tencent](docs/distribution_citeseer.jpg)
+![tencent](docs/distribution_pubmed.jpg)
 
 ## Model Performance Comparision
 |                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         | Pure Node Attribute         |
