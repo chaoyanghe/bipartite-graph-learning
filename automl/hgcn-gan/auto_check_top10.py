@@ -55,10 +55,9 @@ if __name__ == "__main__":
                                 # print(auc_file)
                                 if os.path.exists(auc_file):
                                     with open(auc_file, "r") as f:
-                                        for l_idx in range(3):
-                                            line_three = f.readline()
-                                            print(line_three)
-                                        auc_value = line_three.split(" ")[-1]
+                                        line_one = f.readline()
+                                        print(line_one)
+                                        auc_value = line_one.split(" ")[-1]
                                         str = "--batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f --rank %d" % (
                                             batch_size,
                                             epochs,
@@ -69,7 +68,7 @@ if __name__ == "__main__":
                                             hpo_cnt)
                                         print("auc = %s. Parameters: %s" % (auc_value, str))
                                         # read the AUC value
-                                        auc_dict[hpo_cnt] = line_three
+                                        auc_dict[hpo_cnt] = line_one
                                 hpo_cnt += 1
         if len(auc_dict) == 972:
             print("all genrated!")
