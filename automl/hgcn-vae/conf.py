@@ -1,3 +1,3 @@
 
-dataset_name="citeseer"
+dataset_name="pubmed"
 model_name="vae"
