@@ -1,5 +1,11 @@
 # Adversarial Learning with Graph Convolutional Networks for Unsupervised Bipartite Graph Embedding
 
+## Model Architecture
+
+
+## Data Set
+
+![tencent](docs/distribution_tencent.png)
 
 ## Model Performance Comparision
 |                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         | Pure Node Attribute         |
