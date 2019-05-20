@@ -19,7 +19,13 @@ Hyper-Parameters: --batch_size 400 --epochs 2 --lr 0.000400 --weight_decay 0.001
 
 ### For "Citeseer" Data Set:
 
+Micro F1: 0.77235772
 
+Macro F1: 0.70304816
+
+Seed: 896714
+
+Parameters: --batch_size 400 --epochs 4 --lr 0.000400 --weight_decay 0.000800 --dis_hidden 16 --dropout 0.400000
 
 
 ### For "PubMed" Data Set:
