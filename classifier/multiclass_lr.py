@@ -195,7 +195,7 @@ def run_exp(input_folder, emb_file, args):
     print("test_recall = %f" % test_recall)
 
     test_micro_f1 = f1_score(test_y, test_predict_y, average="micro")
-    print("test_macro_f1 = %f" % test_micro_f1)
+    print("test_micro_f1 = %f" % test_micro_f1)
 
     test_accuracy_score = accuracy_score(test_y, test_predict_y)
     print("test_accuracy_score = %f" % test_accuracy_score)
