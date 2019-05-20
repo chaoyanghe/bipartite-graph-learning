@@ -73,11 +73,11 @@ Parameters: --epochs 3 --batch_size 64 --lr 0.001000 --weight_decay 0.005000 --d
 #### For "PubMed" Data Set
 ~~~
 
-Micro F1: 0.84208566
+Micro F1: 0.84320298
 
-Macro F1: 0.84649850
+Macro F1: 0.84727253
 
-Seed: 720998
+Seed: 604194
 
-Parameters: --epochs 3 --batch_size 128 --lr 0.000100 --weight_decay 0.050000 --dropout 0.000000 --gcn_output_dim 32  --encoder_hidfeat 24 --decoder_hidfeat 16
+Parameters: --epochs 3 --batch_size 128 --lr 0.000100 --weight_decay 0.005000 --dropout 0.200000 --gcn_output_dim 48  --encoder_hidfeat 24 --decoder_hidfeat 16
 ~~~
