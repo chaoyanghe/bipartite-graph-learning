@@ -161,7 +161,7 @@ def main():
     if rank != -1:
         if model_name == "gan":
             output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-gan/" + str(dataset) + "/" + str(rank)
-        elif model_name == "gae":
+        elif model_name == "vae":
             output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-vae/" + str(dataset) + "/" + str(rank)
 
     if not os.path.exists(output_folder):
