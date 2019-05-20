@@ -68,7 +68,7 @@ if __name__ == "__main__":
         "gan",
         rank)
     if dataset_name != "tencent":
-        lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/classifier/multiclass_lr.py --dataset %s --model %s --rank %d" % (
+        lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/multi_classification.py --dataset %s --model %s --rank %d" % (
             dataset_name,
             "gan",
             rank)
