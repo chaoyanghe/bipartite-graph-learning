@@ -19,7 +19,6 @@ def topten(auc_dict, paras):
         (batch_size, epochs, lr, weight_decay, dropout, gcn_out_dim, encode_hid_fea_dim, decoder_hid_fea_dim) = paras[
             index]
         str = "--epochs %d --batch_size %d --lr %f --weight_decay %f --dropout %f --gcn_output_dim %d  --encoder_hidfeat %d --decoder_hidfeat %d --rank %d" % (
-            dataset_name,
             epochs,
             batch_size,
             lr,
@@ -27,7 +26,8 @@ def topten(auc_dict, paras):
             dropout,
             gcn_out_dim,
             encode_hid_fea_dim,
-            decoder_hid_fea_dim)
+            decoder_hid_fea_dim,
+            index)
         print("index = %s, auc = %s. Parameters: %s" % (index, auc, str))
         cnt += 1
         if cnt > 10:
