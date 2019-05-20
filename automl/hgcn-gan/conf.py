@@ -1,3 +1,3 @@
 
 dataset_name="pubmed"
-model_name="vae" # gan
+model_name="gan"
