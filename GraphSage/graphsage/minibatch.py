@@ -25,11 +25,6 @@ class EdgeMinibatchIterator(object):
                  placeholders, context_pairs=None, batch_size=100, max_degree=25,
                  n2v_retrain=False, fixed_n2v=False,
                  **kwargs):
-
-        logging.basicConfig(filename="./GraphSage/log_embedding/minibatch.log",
-                            level=logging.DEBUG,
-                            format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
-                            datefmt='%a, %d %b %Y %H:%M:%S')
         self.G = G
         self.nodes = G.nodes()
         self.id2idx = id2idx
@@ -115,12 +110,13 @@ class EdgeMinibatchIterator(object):
         return adj
 
     def end(self):
-        print('#########################')
-        print("batch size: ", self.batch_size)
-        print("batch number: ", self.batch_num)
-        print("train edges: ", len(self.train_edges))
         logging.info(
-            "batch size: %d, batch number: %d, train edges: %d" % (self.batch_size, self.batch_num, len(self.train_edges)))
+            "batch size: %d, batch number: %d, train edges: %d, finished: %.04f" % (
+            self.batch_size, self.batch_num, len(self.train_edges),
+            self.batch_num * self.batch_size / len(self.train_edges)))
+        print("batch size: %d, batch number: %d, train edges: %d, finished: %.04f" % (
+            self.batch_size, self.batch_num, len(self.train_edges),
+            self.batch_num * self.batch_size / len(self.train_edges)))
         return self.batch_num * self.batch_size >= len(self.train_edges)
 
     def batch_feed_dict(self, batch_edges):
