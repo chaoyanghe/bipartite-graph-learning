@@ -44,6 +44,8 @@ Parameters: --batch_size 700 --epochs 3 --lr 0.000400 --weight_decay 0.000500 --
 ~~~
 
 ## HGCN-Decoder
+
+#### For "Cora" Data Set
 ~~~
 
 Micro F1: 0.80952381
@@ -54,4 +56,16 @@ Seed: 533871
 
 Parameters: --epochs 5 --batch_size 128 --lr 0.001000 --weight_decay 0.000800 --dropout 0.200000 --gcn_output_dim 48  --encoder_hidfeat 16 --decoder_hidfeat 24
 
+~~~
+
+#### For "Citeseer" Data Set
+~~~
+
+Micro F1: 0.76422764
+
+Macro F1: 0.67623898
+
+Seed: 968358
+
+Parameters: --epochs 3 --batch_size 64 --lr 0.001000 --weight_decay 0.005000 --dropout 0.200000 --gcn_output_dim 48  --encoder_hidfeat 16 --decoder_hidfeat 16
 ~~~
