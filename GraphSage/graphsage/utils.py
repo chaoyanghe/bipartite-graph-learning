@@ -2,7 +2,7 @@ from __future__ import print_function
 
 import numpy as np
 import random
-import json
+import ujson as json
 import sys
 import os
 import logging
