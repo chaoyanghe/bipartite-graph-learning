@@ -809,3 +809,84 @@ Sun, 19 May 2019 01:58:05 unsupervised_train.py[line:361] INFO Iter: 0010, train
 Sun, 19 May 2019 01:58:05 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0010, max_total_steps: 100000000
 Sun, 19 May 2019 01:58:22 unsupervised_train.py[line:361] INFO Iter: 0020, train_loss=18.876194, train_mrr=0.255871, train_mrr_ema=0.304145, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=1.647494
 Sun, 19 May 2019 01:58:22 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0020, max_total_steps: 100000000
+Mon, 20 May 2019 00:55:40 utils.py[line:43] INFO class map loaded
+Mon, 20 May 2019 00:55:40 utils.py[line:59] INFO bad nodes removed
+Mon, 20 May 2019 00:55:40 utils.py[line:78] INFO Normalized
+Mon, 20 May 2019 00:55:41 utils.py[line:93] INFO data all loaded
+Mon, 20 May 2019 00:55:41 utils.py[line:94] INFO ########### Graph Information #############
+Mon, 20 May 2019 00:55:41 utils.py[line:95] INFO Graph Edges: 1654
+Mon, 20 May 2019 00:55:41 utils.py[line:96] INFO Graph Nodes: 734
+Mon, 20 May 2019 00:55:41 unsupervised_train.py[line:448] INFO start training
+Mon, 20 May 2019 00:55:41 unsupervised_train.py[line:196] INFO edge minibatch
+Mon, 20 May 2019 00:55:42 minibatch.py[line:56] INFO ########## Initialize minibatch ############
+Mon, 20 May 2019 00:55:42 deprecation.py[line:323] WARNING From /Users/apple/Documents/P1_Decentralized_Multitask/Leaf_New_2.0/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Mon, 20 May 2019 00:55:42 unsupervised_train.py[line:206] INFO choose model
+Mon, 20 May 2019 00:55:42 deprecation.py[line:506] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 20 May 2019 00:55:42 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Mon, 20 May 2019 00:55:43 deprecation.py[line:323] WARNING From /Users/apple/Documents/P1_Decentralized_Multitask/Leaf_New_2.0/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Mon, 20 May 2019 00:55:44 unsupervised_train.py[line:319] INFO training epoch: 1
+Mon, 20 May 2019 00:56:39 utils.py[line:43] INFO class map loaded
+Mon, 20 May 2019 00:56:39 utils.py[line:59] INFO bad nodes removed
+Mon, 20 May 2019 00:56:40 utils.py[line:78] INFO Normalized
+Mon, 20 May 2019 00:56:40 utils.py[line:93] INFO data all loaded
+Mon, 20 May 2019 00:56:40 utils.py[line:94] INFO ########### Graph Information #############
+Mon, 20 May 2019 00:56:40 utils.py[line:95] INFO Graph Edges: 1654
+Mon, 20 May 2019 00:56:40 utils.py[line:96] INFO Graph Nodes: 734
+Mon, 20 May 2019 00:56:40 unsupervised_train.py[line:448] INFO start training
+Mon, 20 May 2019 00:56:40 unsupervised_train.py[line:196] INFO edge minibatch
+Mon, 20 May 2019 00:56:41 minibatch.py[line:56] INFO ########## Initialize minibatch ############
+Mon, 20 May 2019 00:56:41 deprecation.py[line:323] WARNING From /Users/apple/Documents/P1_Decentralized_Multitask/Leaf_New_2.0/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Mon, 20 May 2019 00:56:41 unsupervised_train.py[line:206] INFO choose model
+Mon, 20 May 2019 00:56:41 deprecation.py[line:506] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 20 May 2019 00:56:42 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Mon, 20 May 2019 00:56:42 deprecation.py[line:323] WARNING From /Users/apple/Documents/P1_Decentralized_Multitask/Leaf_New_2.0/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Mon, 20 May 2019 00:56:43 unsupervised_train.py[line:319] INFO training epoch: 1
+Mon, 20 May 2019 00:56:43 minibatch.py[line:115] INFO batch size: 1024, batch number: 0, train edges: 117159, finished: 0.000000
+Mon, 20 May 2019 00:58:14 unsupervised_train.py[line:361] INFO Iter: 0000, train_loss=18.301970, train_mrr=0.322407, train_mrr_ema=0.322407, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=90.591025
+Mon, 20 May 2019 00:58:14 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
+Mon, 20 May 2019 00:58:14 minibatch.py[line:115] INFO batch size: 1024, batch number: 1, train edges: 117159, finished: 0.000009
+Mon, 20 May 2019 01:02:35 utils.py[line:43] INFO class map loaded
+Mon, 20 May 2019 01:02:35 utils.py[line:59] INFO bad nodes removed
+Mon, 20 May 2019 01:02:35 utils.py[line:78] INFO Normalized
+Mon, 20 May 2019 01:02:36 utils.py[line:93] INFO data all loaded
+Mon, 20 May 2019 01:02:36 utils.py[line:94] INFO ########### Graph Information #############
+Mon, 20 May 2019 01:02:36 utils.py[line:95] INFO Graph Edges: 1654
+Mon, 20 May 2019 01:02:36 utils.py[line:96] INFO Graph Nodes: 734
+Mon, 20 May 2019 01:02:36 unsupervised_train.py[line:448] INFO start training
+Mon, 20 May 2019 01:02:36 unsupervised_train.py[line:196] INFO edge minibatch
+Mon, 20 May 2019 01:02:37 minibatch.py[line:56] INFO ########## Initialize minibatch ############
+Mon, 20 May 2019 01:02:37 deprecation.py[line:323] WARNING From /Users/apple/Documents/P1_Decentralized_Multitask/Leaf_New_2.0/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Mon, 20 May 2019 01:02:37 unsupervised_train.py[line:206] INFO choose model
+Mon, 20 May 2019 01:02:37 deprecation.py[line:506] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 20 May 2019 01:02:37 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Mon, 20 May 2019 01:02:37 deprecation.py[line:323] WARNING From /Users/apple/Documents/P1_Decentralized_Multitask/Leaf_New_2.0/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Mon, 20 May 2019 01:02:39 unsupervised_train.py[line:319] INFO training epoch: 1
+Mon, 20 May 2019 01:02:39 minibatch.py[line:116] INFO batch size: 1024, batch number: 0, train edges: 117031, finished: 0.000000
+Mon, 20 May 2019 01:03:53 unsupervised_train.py[line:361] INFO Iter: 0000, train_loss=18.321455, train_mrr=0.305587, train_mrr_ema=0.305587, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=74.732691
+Mon, 20 May 2019 01:03:53 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
+Mon, 20 May 2019 01:03:53 minibatch.py[line:116] INFO batch size: 1024, batch number: 1, train edges: 117031, finished: 0.008750
+Mon, 20 May 2019 01:05:10 minibatch.py[line:116] INFO batch size: 1024, batch number: 2, train edges: 117031, finished: 0.017500

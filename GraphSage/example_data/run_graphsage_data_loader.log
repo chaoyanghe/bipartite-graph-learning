@@ -1,0 +1,6 @@
+2019-05-20 Monday 01:02:31  random_walk.py : 49 : INFO  loading data...
+2019-05-20 Monday 01:02:31  random_walk.py : 51 : INFO  converting to networkx
+2019-05-20 Monday 01:02:31  random_walk.py : 53 : INFO  extracting nodes...
+2019-05-20 Monday 01:02:31  random_walk.py : 57 : INFO  start random walk
+2019-05-20 Monday 01:02:31  random_walk.py : 32 : INFO  Done walks for 0 nodes
+2019-05-20 Monday 01:02:32  random_walk.py : 62 : INFO  finished random walk

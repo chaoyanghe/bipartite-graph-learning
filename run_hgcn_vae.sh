@@ -36,12 +36,12 @@ then
     --model $MODEL \
     --gpu False \
     --epochs 3 \
-    --batch_size 128 \
-    --lr 0.0001 \
-    --weight_decay 0.0005 \
-    --dropout 0.2 \
+    --batch_size 400 \
+    --lr 0.0005 \
+    --weight_decay 0.005 \
+    --dropout 0.4 \
     --gcn_output_dim 16 \
-    --encoder_hidfeat 8 \
+    --encoder_hidfeat 24 \
     --decoder_hidfeat 8
 
     python3 ./HGCN/multi_classification.py --dataset $DATASET --model $MODEL
