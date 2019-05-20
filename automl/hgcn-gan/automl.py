@@ -6,9 +6,13 @@ import psutil
 import setproctitle
 from mpi4py import MPI
 
+import conf
+
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 size = comm.Get_size()
+
+dataset_name=conf.data_name
 
 if __name__ == "__main__":
 	setproctitle.setproctitle("HGCN:" + str(rank))
@@ -46,7 +50,8 @@ if __name__ == "__main__":
 	(batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[rank]
 
 	# print("start hgcn_cmd")
-	hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/hgcn_main.py --model gan --dataset tencent --gpu False --batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f --rank %d" % (
+	hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/hgcn_main.py --model gan --dataset %s --gpu False --batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f --rank %d" % (
+		dataset_name,
 		batch_size,
 		epochs,
 		lr,
@@ -59,7 +64,7 @@ if __name__ == "__main__":
 
 	print("start lr_cmd")
 	lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/binary_classification.py --dataset %s --model %s --rank %d" % (
-		"tencent",
+		dataset_name,
 		"gan",
 		rank)
 

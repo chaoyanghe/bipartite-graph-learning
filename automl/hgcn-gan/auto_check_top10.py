@@ -1,6 +1,10 @@
 import os
 from time import sleep
 
+import conf
+
+dataset_name = conf.dataset_name
+
 
 def topten(auc_dict, paras):
     if len(auc_dict) < 10:
@@ -46,7 +50,8 @@ if __name__ == "__main__":
                         for dis_hidden in hpo_dis_hidden:
                             for dropout in hpo_dropout:
                                 paras[hpo_cnt] = (batch_size, epochs, lr, weight_decay, dis_hidden, dropout)
-                                auc_file = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-gan/tencent/%d/hgcn.res.f1_precision_recall" % hpo_cnt
+                                auc_file = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-gan/%s/%d/hgcn.res.f1_precision_recall" % (
+                                dataset_name, hpo_cnt)
                                 # print(auc_file)
                                 if os.path.exists(auc_file):
                                     with open(auc_file, "r") as f:

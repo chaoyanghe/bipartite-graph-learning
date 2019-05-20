@@ -134,7 +134,7 @@ def main():
 
 	#args.seed = random.randint(0, 1000000)
 	# this seed is used for the publication reproducibility
-	args.seed = 422931
+	args.seed = 197858
 	print("###############random seed = %s #########" % str(args.seed))
 	logging.info("###############random seed = %s #########" % str(args.seed))
 
