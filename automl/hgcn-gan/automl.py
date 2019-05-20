@@ -14,6 +14,7 @@ size = comm.Get_size()
 
 if __name__ == "__main__":
     dataset_name = conf.dataset_name
+    model_name = conf.model_name
 
     setproctitle.setproctitle("HGCN:" + str(rank))
 
@@ -50,7 +51,8 @@ if __name__ == "__main__":
     (batch_size, epochs, lr, weight_decay, dis_hidden, dropout) = paras[rank]
 
     # print("start hgcn_cmd")
-    hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/hgcn_main.py --model gan --dataset %s --gpu False --batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f --rank %d" % (
+    hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/hgcn_main.py --model %s --dataset %s --gpu False --batch_size %d --epochs %d --lr %f --weight_decay %f --dis_hidden %d --dropout %f --rank %d" % (
+        model_name,
         dataset_name,
         batch_size,
         epochs,
@@ -65,12 +67,12 @@ if __name__ == "__main__":
     print("start lr_cmd")
     lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/binary_classification.py --dataset %s --model %s --rank %d" % (
         dataset_name,
-        "gan",
+        model_name,
         rank)
     if dataset_name != "tencent":
         lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/multi_classification.py --dataset %s --model %s --rank %d" % (
             dataset_name,
-            "gan",
+            model_name,
             rank)
 
     os.system(lr_cmd)
