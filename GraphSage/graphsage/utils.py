@@ -92,7 +92,7 @@ def load_data(prefix, walk_len, n_walks, normalize=True, load_walks=False):
                 walks.append(map(conversion, line.split()))
     logging.info('data all loaded')
     logging.info('########### Graph Information #############')
-    logging.info('Graph Edges: $d' % len(G.edges()))
+    logging.info('Graph Edges: %d' % len(G.edges()))
     logging.info('Graph Nodes: %d' % len(G.nodes()))
     return G, feats, id_map, walks, class_map
 
