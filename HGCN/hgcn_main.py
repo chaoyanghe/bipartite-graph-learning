@@ -1,6 +1,7 @@
 import argparse
 import logging
 import os
+import random
 from collections import namedtuple
 
 import numpy as np
