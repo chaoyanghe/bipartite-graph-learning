@@ -1,7 +1,6 @@
 import argparse
 import logging
 import os
-import random
 from collections import namedtuple
 
 import numpy as np
@@ -146,7 +145,7 @@ def main():
     --gcn_output_dim 16
     """
     # this seed is used for the publication reproducibility
-    # args.seed = 197858
+    #args.seed = 197858
 
     args.seed = random.randint(0, 1000000)
     print("###############random seed = %s #########" % str(args.seed))
