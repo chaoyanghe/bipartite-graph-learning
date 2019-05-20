@@ -30,13 +30,13 @@ class DecoderGCNLayer(object):
         self.gcn_merge = GCNForVAE(v_attr_dimensions, gcn_output_dim).to(device)
         self.gcn_opposite = GCNForVAE(u_attr_dimensions, gcn_output_dim).to(device)
 
-        self.decoder_explicit = HGCNDecoder(self.gcn_explicit, gcn_output_dim, u_attr_dimensions, encoder_hidfeat, decoder_hidfeat,
+        self.decoder_explicit = HGCNDecoder(self.gcn_explicit, gcn_output_dim, u_attr_dimensions, decoder_hidfeat,
                                             learning_rate, weight_decay, dropout, device)
-        self.decoder_implicit = HGCNDecoder(self.gcn_implicit, gcn_output_dim, v_attr_dimensions, encoder_hidfeat, decoder_hidfeat,
+        self.decoder_implicit = HGCNDecoder(self.gcn_implicit, gcn_output_dim, v_attr_dimensions, decoder_hidfeat,
                                             learning_rate, weight_decay, dropout, device)
-        self.decoder_merge = HGCNDecoder(self.gcn_merge, gcn_output_dim, u_attr_dimensions, encoder_hidfeat, decoder_hidfeat,
+        self.decoder_merge = HGCNDecoder(self.gcn_merge, gcn_output_dim, u_attr_dimensions, decoder_hidfeat,
                                          learning_rate, weight_decay, dropout, device)
-        self.decoder_opposite = HGCNDecoder(self.gcn_opposite, gcn_output_dim, v_attr_dimensions, encoder_hidfeat, decoder_hidfeat,
+        self.decoder_opposite = HGCNDecoder(self.gcn_opposite, gcn_output_dim, v_attr_dimensions, decoder_hidfeat,
                                             learning_rate, weight_decay, dropout, device)
 
         self.bipartite_graph_data_loader = bipartite_graph_data_loader

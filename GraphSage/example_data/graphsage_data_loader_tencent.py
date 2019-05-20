@@ -6,6 +6,7 @@ import networkx as nx
 import numpy as np
 import scipy.sparse as sp
 from networkx.algorithms.bipartite import biadjacency_matrix
+from networkx.readwrite import json_graph
 from sklearn import preprocessing
 
 
@@ -641,7 +642,6 @@ class GraphSageSingleGraphDataLoader:
         triu = sp.triu(self.adj, 0)
         edges = self.__sparse_to_tuple(triu)
         links = []
-        print('########### number of edges: ', len(edges))
         for i in range(len(edges)):
             s, t = edges[i][:2]
             temp_link = {}
