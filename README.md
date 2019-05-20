@@ -89,6 +89,7 @@ nohup sh run_graphsage.sh citeseer > log_run_graphsage_citeseer.txt 2>&1 &
 nohup sh run_graphsage.sh pubmed > log_run_graphsage_pubmed.txt 2>&1 &
 
 # GAE
+nohup sh run_gae.sh tencent > log_run_gae_tencent.txt 2>&1 &
 nohup sh run_gae.sh cora > log_run_gae_cora.txt 2>&1 &
 nohup sh run_gae.sh citeseer > log_run_gae_citeseer.txt 2>&1 &
 nohup sh run_gae.sh pubmed > log_run_gae_pubmed.txt 2>&1 &
