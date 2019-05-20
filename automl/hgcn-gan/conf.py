@@ -1,1 +1,1 @@
-dataset_name="tencent"
+dataset_name="cora"
