@@ -66,7 +66,7 @@ flags.DEFINE_integer('n_walks', 50, "Number of random walks start from one node"
 os.environ["CUDA_VISIBLE_DEVICES"] = '0,1,2,3,4,5,6,7'
 # os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
-GPU_MEM_FRACTION = 0.6
+GPU_MEM_FRACTION = 0.98
 T0 = time.time()
 
 
