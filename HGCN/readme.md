@@ -29,3 +29,11 @@ Parameters: --batch_size 400 --epochs 4 --lr 0.000400 --weight_decay 0.000800 --
 
 
 ### For "PubMed" Data Set:
+
+Micro F1: 0.86219739
+
+Macro F1: 0.86478358
+
+Seed: 340324
+
+Parameters: --batch_size 700 --epochs 3 --lr 0.000400 --weight_decay 0.000500 --dis_hidden 24 --dropout 0.350000
