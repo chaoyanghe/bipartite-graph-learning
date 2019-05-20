@@ -182,39 +182,21 @@ def run_exp(input_folder, emb_file, args):
 
     # Training
     clf = SGDClassifier(loss='log', alpha=args.alpha, max_iter=args.max_iter, shuffle=True, n_jobs=48,
-                        class_weight='balanced', verbose=args.verbose, tol=None, random_state=5678910)
+                        class_weight="balanced", verbose=args.verbose, tol=None, random_state=5678910)
     clf.fit(train_x, train_y)
 
     test_predict_y = clf.predict(test_x)
 
     # metric
-    test_precision = precision_score(test_y, test_predict_y, average="micro")
-    print("test_precision = %f" % test_precision)
-
-    test_recall = recall_score(test_y, test_predict_y, average="micro")
-    print("test_recall = %f" % test_recall)
-
+    # https://scikit-learn.org/stable/modules/model_evaluation.html
+    # Note that if all labels are included, “micro”-averaging in a multiclass setting will produce precision, recall and
+    # F that are all identical to accuracy
     test_micro_f1 = f1_score(test_y, test_predict_y, average="micro")
     print("test_micro_f1 = %f" % test_micro_f1)
 
-    test_accuracy_score = accuracy_score(test_y, test_predict_y)
-    print("test_accuracy_score = %f" % test_accuracy_score)
+    test_macro_f1 = f1_score(test_y, test_predict_y, average="macro")
+    print("test_macro_f1 = %f" % test_macro_f1)
 
-    """
-        *.res: F1 score
-        http: // sofasofa.io / forum_main_post.php?postid = 1001112
-    """
-    # # model_name 0.2 testaps
-    # fout = open(args.res_file, 'w')
-    # name = emb_file.split('/')[-1]
-    # wstr = "%s %s %f" % (name, "f1", test_ratio)
-    # wstr = wstr + " " + "%.8f" % test_macro_f1
-    # fout.write(wstr + "\n")
-    # fout.close()
-
-    """
-        *.prec_rec: F1, PRECISION AND RECALL
-    """
     fout = open(args.res_file + ".f1_precision_recall", 'w')
     name = None
     if not pure_attribute:
@@ -222,22 +204,12 @@ def run_exp(input_folder, emb_file, args):
     else:
         name = "pure_feature"
 
-    # model_name prec 0.2 test_prec
-    wstr = "%s %s %f" % (name, "precision", test_ratio)
-    wstr = wstr + " " + "%.8f" % test_precision
-    fout.write(wstr + "\n")
-
-    # model_name rec 0.2 test_rec
-    wstr = "%s %s %f" % (name, "recall", test_ratio)
-    wstr = wstr + " " + "%.8f" % test_recall
-    fout.write(wstr + "\n")
-
-    wstr = "%s %s %f" % (name, "f1_score", test_ratio)
+    wstr = "%s %s %f" % (name, "micro-F1", test_ratio)
     wstr = wstr + " " + "%.8f" % test_micro_f1
     fout.write(wstr + "\n")
 
-    wstr = "%s %s %f" % (name, "accuracy_score", test_ratio)
-    wstr = wstr + " " + "%.8f" % test_accuracy_score
+    wstr = "%s %s %f" % (name, "macro-F1", test_ratio)
+    wstr = wstr + " " + "%.8f" % test_macro_f1
     fout.write(wstr + "\n")
     fout.close()
 
