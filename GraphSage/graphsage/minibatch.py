@@ -2,6 +2,7 @@ from __future__ import division
 from __future__ import print_function
 
 import logging
+
 import numpy as np
 
 np.random.seed(123)
@@ -112,8 +113,8 @@ class EdgeMinibatchIterator(object):
     def end(self):
         logging.info(
             "batch size: %d, batch number: %d, train edges: %d, finished: %.04f" % (
-            self.batch_size, self.batch_num, len(self.train_edges),
-            self.batch_num * self.batch_size / len(self.train_edges)))
+                self.batch_size, self.batch_num, len(self.train_edges),
+                self.batch_num * self.batch_size / len(self.train_edges)))
         print("batch size: %d, batch number: %d, train edges: %d, finished: %.04f" % (
             self.batch_size, self.batch_num, len(self.train_edges),
             self.batch_num * self.batch_size / len(self.train_edges)))

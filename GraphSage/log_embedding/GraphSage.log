@@ -890,3 +890,256 @@ Mon, 20 May 2019 01:03:53 unsupervised_train.py[line:361] INFO Iter: 0000, train
 Mon, 20 May 2019 01:03:53 unsupervised_train.py[line:363] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
 Mon, 20 May 2019 01:03:53 minibatch.py[line:116] INFO batch size: 1024, batch number: 1, train edges: 117031, finished: 0.008750
 Mon, 20 May 2019 01:05:10 minibatch.py[line:116] INFO batch size: 1024, batch number: 2, train edges: 117031, finished: 0.017500
+Mon, 20 May 2019 01:53:51 utils.py[line:45] INFO class map loaded
+Mon, 20 May 2019 01:53:51 utils.py[line:82] INFO Normalized
+Mon, 20 May 2019 01:53:51 utils.py[line:97] INFO data all loaded
+Mon, 20 May 2019 01:53:51 utils.py[line:98] INFO ########### Graph Information #############
+Mon, 20 May 2019 01:53:51 utils.py[line:99] INFO Graph Edges: 1654
+Mon, 20 May 2019 01:53:51 utils.py[line:100] INFO Graph Nodes: 734
+Mon, 20 May 2019 01:53:51 unsupervised_train.py[line:451] INFO start training
+Mon, 20 May 2019 01:53:51 unsupervised_train.py[line:197] INFO edge minibatch
+Mon, 20 May 2019 01:53:52 minibatch.py[line:56] INFO ########## Initialize minibatch ############
+Mon, 20 May 2019 01:53:52 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Mon, 20 May 2019 01:53:52 unsupervised_train.py[line:207] INFO choose model
+Mon, 20 May 2019 01:53:53 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 20 May 2019 01:53:53 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Mon, 20 May 2019 01:53:53 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Mon, 20 May 2019 01:53:55 unsupervised_train.py[line:320] INFO training epoch: 1
+Mon, 20 May 2019 01:53:55 minibatch.py[line:116] INFO batch size: 1024, batch number: 0, train edges: 117119, finished: 0.0000
+Mon, 20 May 2019 01:54:12 unsupervised_train.py[line:364] INFO Iter: 0000, train_loss=18.260395, train_mrr=0.340062, train_mrr_ema=0.340062, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=17.387722
+Mon, 20 May 2019 01:54:12 unsupervised_train.py[line:366] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
+Mon, 20 May 2019 01:54:12 minibatch.py[line:116] INFO batch size: 1024, batch number: 1, train edges: 117119, finished: 0.0087
+Mon, 20 May 2019 01:54:19 minibatch.py[line:116] INFO batch size: 1024, batch number: 2, train edges: 117119, finished: 0.0175
+Mon, 20 May 2019 01:54:25 minibatch.py[line:116] INFO batch size: 1024, batch number: 3, train edges: 117119, finished: 0.0262
+Mon, 20 May 2019 01:54:30 minibatch.py[line:116] INFO batch size: 1024, batch number: 4, train edges: 117119, finished: 0.0350
+Mon, 20 May 2019 01:54:37 minibatch.py[line:116] INFO batch size: 1024, batch number: 5, train edges: 117119, finished: 0.0437
+Mon, 20 May 2019 01:54:43 minibatch.py[line:116] INFO batch size: 1024, batch number: 6, train edges: 117119, finished: 0.0525
+Mon, 20 May 2019 01:54:50 minibatch.py[line:116] INFO batch size: 1024, batch number: 7, train edges: 117119, finished: 0.0612
+Mon, 20 May 2019 01:54:56 minibatch.py[line:116] INFO batch size: 1024, batch number: 8, train edges: 117119, finished: 0.0699
+Mon, 20 May 2019 01:55:04 minibatch.py[line:116] INFO batch size: 1024, batch number: 9, train edges: 117119, finished: 0.0787
+Mon, 20 May 2019 01:55:12 minibatch.py[line:116] INFO batch size: 1024, batch number: 10, train edges: 117119, finished: 0.0874
+Mon, 20 May 2019 01:55:21 unsupervised_train.py[line:364] INFO Iter: 0010, train_loss=18.724173, train_mrr=0.283971, train_mrr_ema=0.336095, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=7.856164
+Mon, 20 May 2019 01:55:21 unsupervised_train.py[line:366] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0010, max_total_steps: 100000000
+Mon, 20 May 2019 01:55:21 minibatch.py[line:116] INFO batch size: 1024, batch number: 11, train edges: 117119, finished: 0.0962
+Mon, 20 May 2019 01:55:30 minibatch.py[line:116] INFO batch size: 1024, batch number: 12, train edges: 117119, finished: 0.1049
+Mon, 20 May 2019 01:55:37 minibatch.py[line:116] INFO batch size: 1024, batch number: 13, train edges: 117119, finished: 0.1137
+Mon, 20 May 2019 01:55:46 minibatch.py[line:116] INFO batch size: 1024, batch number: 14, train edges: 117119, finished: 0.1224
+Mon, 20 May 2019 01:55:53 minibatch.py[line:116] INFO batch size: 1024, batch number: 15, train edges: 117119, finished: 0.1311
+Mon, 20 May 2019 01:56:03 minibatch.py[line:116] INFO batch size: 1024, batch number: 16, train edges: 117119, finished: 0.1399
+Mon, 20 May 2019 01:56:09 minibatch.py[line:116] INFO batch size: 1024, batch number: 17, train edges: 117119, finished: 0.1486
+Mon, 20 May 2019 01:56:19 minibatch.py[line:116] INFO batch size: 1024, batch number: 18, train edges: 117119, finished: 0.1574
+Mon, 20 May 2019 01:56:34 minibatch.py[line:116] INFO batch size: 1024, batch number: 19, train edges: 117119, finished: 0.1661
+Mon, 20 May 2019 01:56:43 minibatch.py[line:116] INFO batch size: 1024, batch number: 20, train edges: 117119, finished: 0.1749
+Mon, 20 May 2019 01:56:54 unsupervised_train.py[line:364] INFO Iter: 0020, train_loss=17.720543, train_mrr=0.332074, train_mrr_ema=0.333436, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=8.536985
+Mon, 20 May 2019 01:56:54 unsupervised_train.py[line:366] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0020, max_total_steps: 100000000
+Mon, 20 May 2019 01:56:54 minibatch.py[line:116] INFO batch size: 1024, batch number: 21, train edges: 117119, finished: 0.1836
+Mon, 20 May 2019 01:57:04 minibatch.py[line:116] INFO batch size: 1024, batch number: 22, train edges: 117119, finished: 0.1924
+Mon, 20 May 2019 01:57:11 minibatch.py[line:116] INFO batch size: 1024, batch number: 23, train edges: 117119, finished: 0.2011
+Mon, 20 May 2019 01:57:19 minibatch.py[line:116] INFO batch size: 1024, batch number: 24, train edges: 117119, finished: 0.2098
+Mon, 20 May 2019 01:57:27 minibatch.py[line:116] INFO batch size: 1024, batch number: 25, train edges: 117119, finished: 0.2186
+Mon, 20 May 2019 01:57:37 minibatch.py[line:116] INFO batch size: 1024, batch number: 26, train edges: 117119, finished: 0.2273
+Mon, 20 May 2019 01:57:49 minibatch.py[line:116] INFO batch size: 1024, batch number: 27, train edges: 117119, finished: 0.2361
+Mon, 20 May 2019 01:57:55 minibatch.py[line:116] INFO batch size: 1024, batch number: 28, train edges: 117119, finished: 0.2448
+Mon, 20 May 2019 01:58:04 minibatch.py[line:116] INFO batch size: 1024, batch number: 29, train edges: 117119, finished: 0.2536
+Mon, 20 May 2019 01:58:16 minibatch.py[line:116] INFO batch size: 1024, batch number: 30, train edges: 117119, finished: 0.2623
+Mon, 20 May 2019 01:58:27 unsupervised_train.py[line:364] INFO Iter: 0030, train_loss=17.579235, train_mrr=0.298966, train_mrr_ema=0.330708, val_loss=0inf, val_mrr=0nan, val_mrr_ema=0nan, time=8.757311
+Mon, 20 May 2019 01:58:27 unsupervised_train.py[line:366] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0030, max_total_steps: 100000000
+Mon, 20 May 2019 01:58:27 minibatch.py[line:116] INFO batch size: 1024, batch number: 31, train edges: 117119, finished: 0.2710
+Mon, 20 May 2019 01:58:34 minibatch.py[line:116] INFO batch size: 1024, batch number: 32, train edges: 117119, finished: 0.2798
+Mon, 20 May 2019 01:58:41 minibatch.py[line:116] INFO batch size: 1024, batch number: 33, train edges: 117119, finished: 0.2885
+Mon, 20 May 2019 01:58:51 minibatch.py[line:116] INFO batch size: 1024, batch number: 34, train edges: 117119, finished: 0.2973
+Mon, 20 May 2019 01:59:04 minibatch.py[line:116] INFO batch size: 1024, batch number: 35, train edges: 117119, finished: 0.3060
+Mon, 20 May 2019 01:59:14 minibatch.py[line:116] INFO batch size: 1024, batch number: 36, train edges: 117119, finished: 0.3148
+Mon, 20 May 2019 01:59:24 minibatch.py[line:116] INFO batch size: 1024, batch number: 37, train edges: 117119, finished: 0.3235
+Mon, 20 May 2019 01:59:32 minibatch.py[line:116] INFO batch size: 1024, batch number: 38, train edges: 117119, finished: 0.3322
+Mon, 20 May 2019 01:59:39 minibatch.py[line:116] INFO batch size: 1024, batch number: 39, train edges: 117119, finished: 0.3410
+Mon, 20 May 2019 01:59:57 utils.py[line:45] INFO class map loaded
+Mon, 20 May 2019 01:59:57 utils.py[line:82] INFO Normalized
+Mon, 20 May 2019 01:59:57 utils.py[line:97] INFO data all loaded
+Mon, 20 May 2019 01:59:57 utils.py[line:98] INFO ########### Graph Information #############
+Mon, 20 May 2019 01:59:57 utils.py[line:99] INFO Graph Edges: 1654
+Mon, 20 May 2019 01:59:57 utils.py[line:100] INFO Graph Nodes: 734
+Mon, 20 May 2019 01:59:57 unsupervised_train.py[line:450] INFO start training
+Mon, 20 May 2019 01:59:57 unsupervised_train.py[line:197] INFO edge minibatch
+Mon, 20 May 2019 01:59:58 minibatch.py[line:56] INFO ########## Initialize minibatch ############
+Mon, 20 May 2019 01:59:58 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Mon, 20 May 2019 01:59:58 unsupervised_train.py[line:207] INFO choose model
+Mon, 20 May 2019 01:59:58 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 20 May 2019 01:59:58 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Mon, 20 May 2019 01:59:58 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Mon, 20 May 2019 01:59:59 unsupervised_train.py[line:320] INFO training epoch: 1
+Mon, 20 May 2019 01:59:59 minibatch.py[line:116] INFO batch size: 1024, batch number: 0, train edges: 116959, finished: 0.0000
+Mon, 20 May 2019 02:00:28 utils.py[line:45] INFO class map loaded
+Mon, 20 May 2019 02:00:28 utils.py[line:82] INFO Normalized
+Mon, 20 May 2019 02:00:28 utils.py[line:97] INFO data all loaded
+Mon, 20 May 2019 02:00:28 utils.py[line:98] INFO ########### Graph Information #############
+Mon, 20 May 2019 02:00:28 utils.py[line:99] INFO Graph Edges: 1654
+Mon, 20 May 2019 02:00:28 utils.py[line:100] INFO Graph Nodes: 734
+Mon, 20 May 2019 02:00:28 unsupervised_train.py[line:450] INFO start training
+Mon, 20 May 2019 02:00:28 unsupervised_train.py[line:197] INFO edge minibatch
+Mon, 20 May 2019 02:00:29 minibatch.py[line:56] INFO ########## Initialize minibatch ############
+Mon, 20 May 2019 02:00:29 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Mon, 20 May 2019 02:00:29 unsupervised_train.py[line:207] INFO choose model
+Mon, 20 May 2019 02:00:29 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 20 May 2019 02:00:29 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Mon, 20 May 2019 02:00:29 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Mon, 20 May 2019 02:00:30 unsupervised_train.py[line:320] INFO training epoch: 1
+Mon, 20 May 2019 02:00:30 minibatch.py[line:116] INFO batch size: 1024, batch number: 0, train edges: 117191, finished: 0.0000
+Mon, 20 May 2019 02:01:17 utils.py[line:45] INFO class map loaded
+Mon, 20 May 2019 02:01:17 utils.py[line:82] INFO Normalized
+Mon, 20 May 2019 02:01:17 utils.py[line:97] INFO data all loaded
+Mon, 20 May 2019 02:01:17 utils.py[line:98] INFO ########### Graph Information #############
+Mon, 20 May 2019 02:01:17 utils.py[line:99] INFO Graph Edges: 1654
+Mon, 20 May 2019 02:01:17 utils.py[line:100] INFO Graph Nodes: 734
+Mon, 20 May 2019 02:01:17 unsupervised_train.py[line:450] INFO start training
+Mon, 20 May 2019 02:01:18 unsupervised_train.py[line:197] INFO edge minibatch
+Mon, 20 May 2019 02:01:18 minibatch.py[line:56] INFO ########## Initialize minibatch ############
+Mon, 20 May 2019 02:01:18 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Mon, 20 May 2019 02:01:18 unsupervised_train.py[line:207] INFO choose model
+Mon, 20 May 2019 02:01:18 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 20 May 2019 02:01:18 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Mon, 20 May 2019 02:01:18 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Mon, 20 May 2019 02:01:19 unsupervised_train.py[line:320] INFO training epoch: 1
+Mon, 20 May 2019 02:01:20 minibatch.py[line:116] INFO batch size: 1024, batch number: 0, train edges: 116907, finished: 0.0000
+Mon, 20 May 2019 02:01:26 unsupervised_train.py[line:363] INFO Iter: 0000, train_loss=18.266294, time=6.749897
+Mon, 20 May 2019 02:01:26 unsupervised_train.py[line:365] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
+Mon, 20 May 2019 02:01:26 minibatch.py[line:116] INFO batch size: 1024, batch number: 1, train edges: 116907, finished: 0.0088
+Mon, 20 May 2019 02:01:32 minibatch.py[line:116] INFO batch size: 1024, batch number: 2, train edges: 116907, finished: 0.0175
+Mon, 20 May 2019 02:01:43 minibatch.py[line:116] INFO batch size: 1024, batch number: 3, train edges: 116907, finished: 0.0263
+Mon, 20 May 2019 02:01:50 minibatch.py[line:116] INFO batch size: 1024, batch number: 4, train edges: 116907, finished: 0.0350
+Mon, 20 May 2019 02:01:56 minibatch.py[line:116] INFO batch size: 1024, batch number: 5, train edges: 116907, finished: 0.0438
+Mon, 20 May 2019 02:02:03 minibatch.py[line:116] INFO batch size: 1024, batch number: 6, train edges: 116907, finished: 0.0526
+Mon, 20 May 2019 02:02:11 minibatch.py[line:116] INFO batch size: 1024, batch number: 7, train edges: 116907, finished: 0.0613
+Mon, 20 May 2019 02:02:21 minibatch.py[line:116] INFO batch size: 1024, batch number: 8, train edges: 116907, finished: 0.0701
+Mon, 20 May 2019 02:02:36 minibatch.py[line:116] INFO batch size: 1024, batch number: 9, train edges: 116907, finished: 0.0788
+Mon, 20 May 2019 02:02:46 minibatch.py[line:116] INFO batch size: 1024, batch number: 10, train edges: 116907, finished: 0.0876
+Mon, 20 May 2019 02:02:53 unsupervised_train.py[line:363] INFO Iter: 0010, train_loss=18.363647, time=8.517113
+Mon, 20 May 2019 02:02:53 unsupervised_train.py[line:365] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0010, max_total_steps: 100000000
+Mon, 20 May 2019 02:02:53 minibatch.py[line:116] INFO batch size: 1024, batch number: 11, train edges: 116907, finished: 0.0964
+Mon, 20 May 2019 02:03:01 minibatch.py[line:116] INFO batch size: 1024, batch number: 12, train edges: 116907, finished: 0.1051
+Mon, 20 May 2019 02:03:12 minibatch.py[line:116] INFO batch size: 1024, batch number: 13, train edges: 116907, finished: 0.1139
+Mon, 20 May 2019 02:03:22 minibatch.py[line:116] INFO batch size: 1024, batch number: 14, train edges: 116907, finished: 0.1226
+Mon, 20 May 2019 02:03:30 minibatch.py[line:116] INFO batch size: 1024, batch number: 15, train edges: 116907, finished: 0.1314
+Mon, 20 May 2019 02:03:38 minibatch.py[line:116] INFO batch size: 1024, batch number: 16, train edges: 116907, finished: 0.1401
+Mon, 20 May 2019 02:03:45 minibatch.py[line:116] INFO batch size: 1024, batch number: 17, train edges: 116907, finished: 0.1489
+Mon, 20 May 2019 02:03:53 minibatch.py[line:116] INFO batch size: 1024, batch number: 18, train edges: 116907, finished: 0.1577
+Mon, 20 May 2019 02:04:01 minibatch.py[line:116] INFO batch size: 1024, batch number: 19, train edges: 116907, finished: 0.1664
+Mon, 20 May 2019 02:04:08 minibatch.py[line:116] INFO batch size: 1024, batch number: 20, train edges: 116907, finished: 0.1752
+Mon, 20 May 2019 02:04:17 unsupervised_train.py[line:363] INFO Iter: 0020, train_loss=17.453157, time=8.442377
+Mon, 20 May 2019 02:04:17 unsupervised_train.py[line:365] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0020, max_total_steps: 100000000
+Mon, 20 May 2019 02:04:17 minibatch.py[line:116] INFO batch size: 1024, batch number: 21, train edges: 116907, finished: 0.1839
+Mon, 20 May 2019 02:04:23 minibatch.py[line:116] INFO batch size: 1024, batch number: 22, train edges: 116907, finished: 0.1927
+Mon, 20 May 2019 02:04:30 minibatch.py[line:116] INFO batch size: 1024, batch number: 23, train edges: 116907, finished: 0.2015
+Mon, 20 May 2019 02:04:39 minibatch.py[line:116] INFO batch size: 1024, batch number: 24, train edges: 116907, finished: 0.2102
+Mon, 20 May 2019 02:04:50 minibatch.py[line:116] INFO batch size: 1024, batch number: 25, train edges: 116907, finished: 0.2190
+Mon, 20 May 2019 02:04:58 minibatch.py[line:116] INFO batch size: 1024, batch number: 26, train edges: 116907, finished: 0.2277
+Mon, 20 May 2019 02:05:05 minibatch.py[line:116] INFO batch size: 1024, batch number: 27, train edges: 116907, finished: 0.2365
+Mon, 20 May 2019 02:05:11 minibatch.py[line:116] INFO batch size: 1024, batch number: 28, train edges: 116907, finished: 0.2453
+Mon, 20 May 2019 02:05:18 minibatch.py[line:116] INFO batch size: 1024, batch number: 29, train edges: 116907, finished: 0.2540
+Mon, 20 May 2019 02:05:25 minibatch.py[line:116] INFO batch size: 1024, batch number: 30, train edges: 116907, finished: 0.2628
+Mon, 20 May 2019 02:05:31 unsupervised_train.py[line:363] INFO Iter: 0030, train_loss=17.529667, time=8.107856
+Mon, 20 May 2019 02:05:31 unsupervised_train.py[line:365] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0030, max_total_steps: 100000000
+Mon, 20 May 2019 02:05:31 minibatch.py[line:116] INFO batch size: 1024, batch number: 31, train edges: 116907, finished: 0.2715
+Mon, 20 May 2019 02:05:39 minibatch.py[line:116] INFO batch size: 1024, batch number: 32, train edges: 116907, finished: 0.2803
+Mon, 20 May 2019 02:05:46 minibatch.py[line:116] INFO batch size: 1024, batch number: 33, train edges: 116907, finished: 0.2891
+Mon, 20 May 2019 02:05:55 minibatch.py[line:116] INFO batch size: 1024, batch number: 34, train edges: 116907, finished: 0.2978
+Mon, 20 May 2019 02:06:04 minibatch.py[line:116] INFO batch size: 1024, batch number: 35, train edges: 116907, finished: 0.3066
+Mon, 20 May 2019 02:06:11 minibatch.py[line:116] INFO batch size: 1024, batch number: 36, train edges: 116907, finished: 0.3153
+Mon, 20 May 2019 02:06:23 minibatch.py[line:116] INFO batch size: 1024, batch number: 37, train edges: 116907, finished: 0.3241
+Mon, 20 May 2019 02:06:30 minibatch.py[line:116] INFO batch size: 1024, batch number: 38, train edges: 116907, finished: 0.3328
+Mon, 20 May 2019 02:06:45 utils.py[line:45] INFO class map loaded
+Mon, 20 May 2019 02:06:45 utils.py[line:82] INFO Normalized
+Mon, 20 May 2019 02:06:45 utils.py[line:97] INFO data all loaded
+Mon, 20 May 2019 02:06:45 utils.py[line:98] INFO ########### Graph Information #############
+Mon, 20 May 2019 02:06:45 utils.py[line:99] INFO Graph Edges: 1654
+Mon, 20 May 2019 02:06:45 utils.py[line:100] INFO Graph Nodes: 734
+Mon, 20 May 2019 02:06:45 unsupervised_train.py[line:454] INFO start training
+Mon, 20 May 2019 02:06:45 unsupervised_train.py[line:197] INFO edge minibatch
+Mon, 20 May 2019 02:06:46 minibatch.py[line:57] INFO ########## Initialize minibatch ############
+Mon, 20 May 2019 02:06:46 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Mon, 20 May 2019 02:06:46 unsupervised_train.py[line:207] INFO choose model
+Mon, 20 May 2019 02:06:46 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 20 May 2019 02:06:46 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Mon, 20 May 2019 02:06:46 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Mon, 20 May 2019 02:08:08 utils.py[line:45] INFO class map loaded
+Mon, 20 May 2019 02:08:08 utils.py[line:82] INFO Normalized
+Mon, 20 May 2019 02:08:08 utils.py[line:97] INFO data all loaded
+Mon, 20 May 2019 02:08:08 utils.py[line:98] INFO ########### Graph Information #############
+Mon, 20 May 2019 02:08:08 utils.py[line:99] INFO Graph Edges: 1654
+Mon, 20 May 2019 02:08:08 utils.py[line:100] INFO Graph Nodes: 734
+Mon, 20 May 2019 02:08:08 unsupervised_train.py[line:454] INFO start training
+Mon, 20 May 2019 02:08:08 unsupervised_train.py[line:197] INFO edge minibatch
+Mon, 20 May 2019 02:08:09 minibatch.py[line:57] INFO ########## Initialize minibatch ############
+Mon, 20 May 2019 02:08:09 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Mon, 20 May 2019 02:08:09 unsupervised_train.py[line:207] INFO choose model
+Mon, 20 May 2019 02:08:09 deprecation.py[line:506] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/aggregators.py:46: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 20 May 2019 02:08:09 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/12.GraphNeuralNetwork/sourcecode/bipartite-graph-learning/GraphSage/graphsage/models.py:407: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+Mon, 20 May 2019 02:08:09 deprecation.py[line:323] WARNING From /Users/chaoyanghe/Presentation/10.Federated-Learning-with-DPASGD/sourcecode/venv/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Mon, 20 May 2019 02:08:10 unsupervised_train.py[line:320] INFO training epoch: 1
+Mon, 20 May 2019 02:08:10 minibatch.py[line:117] INFO batch size: 1024, batch number: 0, train edges: 117146, finished: 0.0000
+Mon, 20 May 2019 02:08:19 unsupervised_train.py[line:364] INFO Iter: 0000, train_loss=18.324488, time=9.109466
+Mon, 20 May 2019 02:08:19 unsupervised_train.py[line:366] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0000, max_total_steps: 100000000
+Mon, 20 May 2019 02:08:19 unsupervised_train.py[line:368] INFO time_cost_total = 9.112927198410034
+Mon, 20 May 2019 02:08:19 minibatch.py[line:117] INFO batch size: 1024, batch number: 1, train edges: 117146, finished: 0.0087
+Mon, 20 May 2019 02:08:25 minibatch.py[line:117] INFO batch size: 1024, batch number: 2, train edges: 117146, finished: 0.0175
+Mon, 20 May 2019 02:08:31 minibatch.py[line:117] INFO batch size: 1024, batch number: 3, train edges: 117146, finished: 0.0262
+Mon, 20 May 2019 02:08:36 minibatch.py[line:117] INFO batch size: 1024, batch number: 4, train edges: 117146, finished: 0.0350
+Mon, 20 May 2019 02:08:42 minibatch.py[line:117] INFO batch size: 1024, batch number: 5, train edges: 117146, finished: 0.0437
+Mon, 20 May 2019 02:08:48 minibatch.py[line:117] INFO batch size: 1024, batch number: 6, train edges: 117146, finished: 0.0524
+Mon, 20 May 2019 02:08:54 minibatch.py[line:117] INFO batch size: 1024, batch number: 7, train edges: 117146, finished: 0.0612
+Mon, 20 May 2019 02:08:59 minibatch.py[line:117] INFO batch size: 1024, batch number: 8, train edges: 117146, finished: 0.0699
+Mon, 20 May 2019 02:09:07 minibatch.py[line:117] INFO batch size: 1024, batch number: 9, train edges: 117146, finished: 0.0787
+Mon, 20 May 2019 02:09:12 minibatch.py[line:117] INFO batch size: 1024, batch number: 10, train edges: 117146, finished: 0.0874
+Mon, 20 May 2019 02:09:21 unsupervised_train.py[line:364] INFO Iter: 0010, train_loss=18.285025, time=38.555892
+Mon, 20 May 2019 02:09:21 unsupervised_train.py[line:366] INFO Epochs: 0000, Max epochs: 0001, total_steps: 0010, max_total_steps: 100000000
+Mon, 20 May 2019 02:09:21 unsupervised_train.py[line:368] INFO time_cost_total = 71.06871914863586
+Mon, 20 May 2019 02:09:21 minibatch.py[line:117] INFO batch size: 1024, batch number: 11, train edges: 117146, finished: 0.0962
+Mon, 20 May 2019 02:09:27 minibatch.py[line:117] INFO batch size: 1024, batch number: 12, train edges: 117146, finished: 0.1049

@@ -24,6 +24,8 @@ def load_data(prefix, walk_len, n_walks, normalize=True, load_walks=False):
                         format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')
 
+    # time cost for default "json" library: 1005.9017460346222 seconds
+    # time cost for the optimized "ujson" library:
     G_data = json.load(open(prefix + "-G.json"))
     G = json_graph.node_link_graph(G_data)
     if isinstance(G.nodes()[0], int):
@@ -50,23 +52,25 @@ def load_data(prefix, walk_len, n_walks, normalize=True, load_walks=False):
 
     ## Remove all nodes that do not have val/test annotations
     ## (necessary because of networkx weirdness with the Reddit data)
-    broken_count = 0
-    for node in G.nodes():
-        if not 'val' in G.node[node] or not 'test' in G.node[node]:
-            G.remove_node(node)
-            broken_count += 1
-    print("Removed {:d} nodes that lacked proper annotations due to networkx versioning issues".format(broken_count))
-    logging.info('bad nodes removed')
+    # broken_count = 0
+    # # TODO:
+    # for node in G.nodes():
+    #     if not 'val' in G.node[node] or not 'test' in G.node[node]:
+    #         G.remove_node(node)
+    #         broken_count += 1
+    # print("Removed {:d} nodes that lacked proper annotations due to networkx versioning issues".format(broken_count))
+    # logging.info('bad nodes removed')
 
     ## Make sure the graph has edge train_removed annotations
     ## (some datasets might already have this..)
-    print("Loaded data.. now preprocessing..")
-    for edge in G.edges():
-        if (G.node[edge[0]]['val'] or G.node[edge[1]]['val'] or
-                G.node[edge[0]]['test'] or G.node[edge[1]]['test']):
-            G[edge[0]][edge[1]]['train_removed'] = True
-        else:
-            G[edge[0]][edge[1]]['train_removed'] = False
+    # # TODO:
+    # print("Loaded data.. now preprocessing..")
+    # for edge in G.edges():
+    #     if (G.node[edge[0]]['val'] or G.node[edge[1]]['val'] or
+    #             G.node[edge[0]]['test'] or G.node[edge[1]]['test']):
+    #         G[edge[0]][edge[1]]['train_removed'] = True
+    #     else:
+    #         G[edge[0]][edge[1]]['train_removed'] = False
 
     if normalize and not feats is None:
         from sklearn.preprocessing import StandardScaler
