@@ -1,2 +1,2 @@
 
-dataset_name="cora"
+dataset_name="citeseer"
