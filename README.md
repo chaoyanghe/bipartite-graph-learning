@@ -11,7 +11,7 @@ Tencent:
 ![tencent](docs/distribution_citeseer.jpg)
 ![tencent](docs/distribution_pubmed.jpg)
 
-## Model Performance Comparision
+## Model Performance Comparision (Micro-F1 score)
 |                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         | Pure Node Attribute         |
 | :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                | -----------:                |
 | Metrics        | F1 / Accuracy              | F1 / Accuracy              | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               |
@@ -20,6 +20,15 @@ Tencent:
 | Citeseer       | 0.687996 / 0.756098        | 0.222869 / 0.349593        | 0.626968 / 0.723577         | 0.626836 / 0.715447         | 0.665325 / 0.747967         | 0.644748 / 0.731707         | 0.620755 / 0.707317         |
 | PubMed         | 0.857186 / 0.854376        | 0.822525 / 0.815270        | 0.839086 / 0.833892         | 0.843036 / 0.838361         | 0.842696 / 0.838361          | 0.828317 / 0.823091         | 0.842813 / 0.838361         |
 
+
+## Model Performance Comparision (Macro-F1 score)
+|                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         | Pure Node Attribute         |
+| :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                | -----------:                |
+| Metrics        | F1 / Accuracy              | F1 / Accuracy              | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               | F1 / Accuracy               |
+| Tencent        | 0.639289 / 0.965502        | 0.503524 / 0.875297        | 0.607773 / 0.967153         | Not Finished                | Not Finished                | N/A (*)                     | 0.497346 / 0.881214         |
+| Cora           | 0.801590 / 0.823129        | 0.215116 / 0.285714        | 0.780201 / 0.809524         | 0.762734 / 0.782313         | 0.800763 / 0.823129         | 0.754289 / 0.782313         | 0.758143 / 0.789116         |
+| Citeseer       | 0.687996 / 0.756098        | 0.222869 / 0.349593        | 0.626968 / 0.723577         | 0.626836 / 0.715447         | 0.665325 / 0.747967         | 0.644748 / 0.731707         | 0.620755 / 0.707317         |
+| PubMed         | 0.857186 / 0.854376        | 0.822525 / 0.815270        | 0.839086 / 0.833892         | 0.843036 / 0.838361         | 0.842696 / 0.838361          | 0.828317 / 0.823091         | 0.842813 / 0.838361         |
 
 
 # Reproducibility
