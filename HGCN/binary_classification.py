@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
 		if model == "gan":
 			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-gan/" + str(dataset) + "/" + str(rank)
-		elif model == "gae":
+		elif model == "vae":
 			output_folder = "/mnt/shared/home/bipartite-graph-learning/out/hgcn-vae/" + str(dataset) + "/" + str(rank)
 
 	print("output_folder = %s" % output_folder)
