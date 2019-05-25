@@ -1,0 +1,9 @@
+CPU:
+ABCGraph on Tencent: 09:55 - 09:33 = 22 minutes
+GraphSAGE on Tencent: more than 1 day
+Node2Vec on Tencent: 10:15 - ???  = minutes
+
+GPU:
+ABCGraph on Tencent: 09:55 - 09:33 = 21 minutes
+GraphSAGE on Tencent: 03:51 - 7:19 = 208 minutes  ### 3:28（69208)  # 16:56 - 14:19 = 2:37    9:56 - 2:37 = 7:19      7:19 - 3:51 = 3:28
+Node2Vec on Tencent: 10:15 - ???  = minutes (the same as the CPU running)
