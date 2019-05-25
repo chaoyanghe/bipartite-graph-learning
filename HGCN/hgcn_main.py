@@ -145,8 +145,8 @@ def main():
     --gcn_output_dim 16
     """
     # this seed is used for the publication reproducibility
-    args.seed = 197858  # ABCGraph-Adv Tencent
-    # args.seed = 613965  # ABCGraph-Adv Cora
+    # args.seed = 197858  # ABCGraph-Adv Tencent
+    args.seed = 613965  # ABCGraph-Adv Cora
     # args.seed = 896714  # ABCGraph-Adv Citeseer
     # args.seed = 340324  # ABCGraph-Adv PubMed
     print("###############random seed = %s #########" % str(args.seed))
