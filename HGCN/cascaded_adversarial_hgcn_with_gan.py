@@ -58,6 +58,8 @@ class CascadedAdversarialHGCN(object):
         print("self.u_num = %d" % self.u_num)
         print("self.v_num = %d" % self.v_num)
         logging.info('AdversarialHGCNLayer')
+        self.f_loss = open("ABCGraph-Adv-loss.txt", "a")
+
 
     def adversarial_learning(self):
         logging.info('adversarial_train')
@@ -79,8 +81,10 @@ class CascadedAdversarialHGCN(object):
 
                 # training
                 gcn_explicit_output = self.gcn_explicit(torch.as_tensor(self.v_attr, device=self.device), u_adj_tensor)
-                self.gan_explicit.forward_backward(u_attr_tensor, gcn_explicit_output, step=1, epoch=i, iter=iter)
+                lossD, lossG = self.gan_explicit.forward_backward(u_attr_tensor, gcn_explicit_output, step=1, epoch=i, iter=iter)
+                self.f_loss.write("%s %s\n" % (lossD, lossG))
 
+        self.f_loss.write("###depth 1 finished!\n")
         # explicit inference
         u_explicit_attr = torch.FloatTensor([]).to(self.device)
         for iter in range(self.batch_num_u):
@@ -114,8 +118,10 @@ class CascadedAdversarialHGCN(object):
 
                 # training
                 gcn_implicit_output = self.gcn_implicit(u_explicit_attr, v_adj_tensor)
-                self.gan_implicit.forward_backward(v_attr_tensor, gcn_implicit_output, step=2, epoch=i, iter=iter)
+                lossD, lossG = self.gan_implicit.forward_backward(v_attr_tensor, gcn_implicit_output, step=2, epoch=i, iter=iter)
+                self.f_loss.write("%s %s\n" % (lossD, lossG))
 
+        self.f_loss.write("###depth 2 finished!\n")
         # implicit inference
         v_implicit_attr = torch.FloatTensor([]).to(self.device)
         for iter in range(self.batch_num_v):
@@ -148,7 +154,8 @@ class CascadedAdversarialHGCN(object):
                 # training
                 gcn_merge_output = self.gcn_merge(v_implicit_attr, u_adj_tensor)
                 u_input = u_explicit_attr[start_index:end_index]
-                self.gan_merge.forward_backward(u_input, gcn_merge_output, step=3, epoch=i, iter=iter)
+                lossD, lossG = self.gan_merge.forward_backward(u_input, gcn_merge_output, step=3, epoch=i, iter=iter)
+                self.f_loss.write("%s %s\n" % (lossD, lossG))
 
         u_merge_attr = torch.FloatTensor([]).to(self.device)
         for iter in range(self.batch_num_u):
@@ -165,6 +172,7 @@ class CascadedAdversarialHGCN(object):
             gcn_merge_output = self.gcn_merge(v_implicit_attr, u_adj_tensor)
             u_merge_attr = torch.cat((u_merge_attr, gcn_merge_output.detach()), 0)
 
+        self.f_loss.write("###depth 3 finished!\n")
         print(u_merge_attr)
         self.__save_embedding_to_file(u_merge_attr.cpu().numpy(), self.bipartite_graph_data_loader.get_u_list())
 

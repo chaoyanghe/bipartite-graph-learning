@@ -6,7 +6,13 @@ To set seeds of our model, please jump to the initialization code of in the hgcn
 
 ## HGCN-GAN
 #### For "Tencent" Data Set:
+~~~
+F1: 0.63928876
 
+Seed: 197858
+
+Parameters: --batch_size 500 --epochs 3 --lr 0.0003 --weight_decay 0.0005 --dis_hidden 16 --dropout 0.4
+~~~
 
 #### For "Cora" Data Set:
 
@@ -17,7 +23,7 @@ Macro F1: 0.83796866
 
 Seed: 613965
 
-Hyper-Parameters: --batch_size 400 --epochs 2 --lr 0.000400 --weight_decay 0.001000 --dis_hidden 24 --dropout 0.350000
+Parameters: --batch_size 400 --epochs 2 --lr 0.000400 --weight_decay 0.001000 --dis_hidden 24 --dropout 0.350000
 ~~~
 
 #### For "Citeseer" Data Set:
@@ -31,6 +37,7 @@ Seed: 896714
 
 Parameters: --batch_size 400 --epochs 4 --lr 0.000400 --weight_decay 0.000800 --dis_hidden 16 --dropout 0.400000
 ~~~
+
 
 #### For "PubMed" Data Set:
 ~~~

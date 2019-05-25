@@ -105,6 +105,8 @@ class GAN(object):
             logging.info("Step: %s, Epoch: %s, Iterations: %s, dis loss: %s, gen loss: %s" % (
                 step, epoch, iter, lossD.item(), lossG.item()))
         self.iteration_cnt += 1
+
+        return lossD.item(), lossG.item()
     # # validation
     # def forward(self, real_data, netG_output, iter):
     #     # output from generator, and real data
