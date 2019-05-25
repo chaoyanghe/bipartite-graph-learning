@@ -1,6 +1,7 @@
 import argparse
 import logging
 import os
+import random
 from collections import namedtuple
 
 import numpy as np
@@ -146,9 +147,11 @@ def main():
     """
     # this seed is used for the publication reproducibility
     # args.seed = 197858  # ABCGraph-Adv Tencent
-    args.seed = 613965  # ABCGraph-Adv Cora
+    # args.seed = 613965  # ABCGraph-Adv Cora
     # args.seed = 896714  # ABCGraph-Adv Citeseer
     # args.seed = 340324  # ABCGraph-Adv PubMed
+    args.seed = random.randint(0, 1000000)
+
     print("###############random seed = %s #########" % str(args.seed))
     logging.info("###############random seed = %s #########" % str(args.seed))
 
