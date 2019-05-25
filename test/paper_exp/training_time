@@ -1,5 +1,5 @@
 CPU:
-ABCGraph on Tencent: 10:23
+ABCGraph on Tencent: 10:23 - 10:38 = 23 minutes
 GraphSAGE on Tencent: more than 1 day
 Node2Vec on Tencent: 10:15 - 10:27  = 12 minutes
 VGAE on Tencent: XX
