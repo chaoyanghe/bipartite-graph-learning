@@ -372,15 +372,17 @@ class BipartiteGraphDataLoader:
         # plt.axis([0, 50, 0, 5000])
         # plt.show()
 
-        plt.figure(figsize=(10, 6))
-        plt.rc('xtick', labelsize=15)
-        plt.rc('ytick', labelsize=15)
+        plt.figure(figsize=(10, 7))
+        plt.rc('xtick', labelsize=18)
+        plt.rc('ytick', labelsize=18)
         plt.plot(plot_x, plot_y, color="red", linewidth=4)
         plt.xlabel("Nodes degree", fontsize=28)
         plt.ylabel("Count", fontsize=28)
         plt.title("Degree Distribution (Tencent)", fontsize=28)
         plt.xticks(np.arange(51, step=10), np.arange(51, step=10))
-        plt.axis([0, 50, 0, 5000])
+        ax = plt.gca()
+        ax.yaxis.get_major_formatter().set_powerlimits((0, 0))
+        plt.axis([0, 50, 0, 6000])
         plt.savefig('./distribution_tencent.eps', format='eps')
 
     def __generate_u_labels(self, u_node_list):

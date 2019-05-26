@@ -290,14 +290,14 @@ class BipartiteGraphDataLoaderCora:
             plot_x.append(neigher_num)
             plot_y.append(u_adj_ner_count_dict[neigher_num])
 
-        plt.figure(figsize=(10, 6))
-        plt.rc('xtick', labelsize=15)
-        plt.rc('ytick', labelsize=15)
+        plt.figure(figsize=(10, 7))
+        plt.rc('xtick', labelsize=18)
+        plt.rc('ytick', labelsize=18)
         plt.plot(plot_x, plot_y, color="red", linewidth=4)
         plt.xlabel("Nodes degree", fontsize=28)
         plt.ylabel("Count", fontsize=28)
         plt.title("Degree Distribution (Cora)", fontsize=28)
-        plt.xticks(np.arange(51, step=10), np.arange(51, step=10))
+        plt.xticks(np.arange(21, step=5), np.arange(21, step=5))
         plt.axis([0, 20, 0, 350])
         plt.savefig('./distribution_cora.eps', format='eps')
 
