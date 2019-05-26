@@ -376,12 +376,12 @@ class BipartiteGraphDataLoader:
         plt.rc('xtick', labelsize=15)
         plt.rc('ytick', labelsize=15)
         plt.plot(plot_x, plot_y, color="red", linewidth=4)
-        plt.xlabel("Nodes degree", fontsize=20)
-        plt.ylabel("Count", fontsize=20)
-        plt.title("Degree Distribution (Tencent)", fontsize=25)
+        plt.xlabel("Nodes degree", fontsize=28)
+        plt.ylabel("Count", fontsize=28)
+        plt.title("Degree Distribution (Tencent)", fontsize=28)
         plt.xticks(np.arange(51, step=10), np.arange(51, step=10))
         plt.axis([0, 50, 0, 5000])
-        plt.savefig('/Users/apple/Documents/P4_Graph/Figure/cora.eps', format='eps')
+        plt.savefig('./distribution_tencent.eps', format='eps')
 
     def __generate_u_labels(self, u_node_list):
         f_label = open(self.group_u_label_file_path)
