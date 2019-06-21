@@ -12,21 +12,21 @@ Tencent:
 ![tencent](docs/distribution_pubmed.jpg)
 
 ## Model Performance Comparision (Micro-F1 score)
-|                | HGCN (GAN)                 | HGCN (Decoder)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         | Pure Node Attribute         |
+|                | ABCGraph (Adversarial)     | ABBCGraph (MLP)            | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         | Pure Node Attribute         |
 | :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                | -----------:                |
 | Metrics        | F1-macro / F1-micro        | F1-macro / F1-micro        | F1-macro / F1-micro         | F1-macro / F1-micro         | F1-macro / F1-micro         | F1-macro / F1-micro         | F1-macro / F1-micro         |
 | Tencent        | 0.639289 / 0.965502        | Running                    | 0.609956 / 0.967713         | 0.528420 / 0.896612         | 0.579709 / 0.940197         | N/A (*)                     | 0.497346                    |
 | Cora           | 0.837969 / 0.863946        | 0.784115 / 0.809524        | 0.780201 / 0.809524         | 0.762734 / 0.782313         | 0.800763 / 0.823129         | 0.754289 / 0.782313         | 0.758143 / 0.789116         |
 | Citeseer       | 0.703048 / 0.772358        | 0.676239 / 0.764228        | 0.626968 / 0.723577         | 0.626836 / 0.715447         | 0.665325 / 0.747967         | 0.644748 / 0.731707         | 0.620755 / 0.707317         |
-| PubMed         | 0.864784 / 0.862197        | 0.847273 / 0.843203        | 0.839086 / 0.833892         | 0.843036 / 0.838361         | 0.842696 / 0.838361          | 0.828317 / 0.823091         | 0.842813 / 0.838361         |
+| PubMed         | 0.864784 / 0.862197        | 0.847273 / 0.843203        | 0.839086 / 0.833892         | 0.843036 / 0.838361         | 0.842696 / 0.838361         | 0.828317 / 0.823091         | 0.842813 / 0.838361         |
 
 
 ## Model Training Time Comparision (Seconds)
 |                | Tencent                    | Cora                       |     Citeseer               |     PubMed               |
 | :------------- | :----------:               | :----------:               | :----------:               | :----------:             |
 |                | CPU/GPU                    | CPU/GPU                    |     CPU/GPU                |     CPU/GPU              |
-| HGCN(GAN)      |                            |                            |
-| HGCN(Decoder)  |                            |                            |
+| ABCGraph(Adv)  |                            |                            |
+| ABCGraph(MLP)  |                            |                            |
 | Node2Vec       |                            |                            |
 | GCN            | Infinite / 5200            |                            |
 | GraphSAGE      | Infinite / 5200            |                            |
@@ -42,13 +42,13 @@ pip3 install -r requirements.txt
 ~~~
 
 ## Peproduciable Scripts Overview
-|                | HGCN (GAN)                 | HGCN (VAE)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
-| :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                |
-| Platform       | MacOS/Linux                | MacOS/Linux                | Only Linux (*)              | MacOS/Linux                 | MacOS/Linux                 | MacOS/Linux                |
-| Tencent        | sh run_hgcn_gan.sh tencent | sh run_hgcn_vae.sh tencent | sh run_node2vec.sh tencent  | sh run_gcn.sh tencent       | sh run_graphsage.sh tencent | N/A (*)                     |
-| Cora           | sh run_hgcn_gan.sh cora    | sh run_hgcn_vae.sh cora    | sh run_node2vec.sh cora     | sh run_gcn.sh cora          | sh run_graphsage.sh cora    | sh run_gae.sh cora          |
-| Citeseer       | sh run_hgcn_gan.sh citeseer| sh run_hgcn_vae.sh citeseer| sh run_node2vec.sh citeseer | sh run_gcn.sh citeseer      | sh run_graphsage.sh citeseer| sh run_gae.sh citeseer      |
-| PubMed         | sh run_hgcn_gan.sh pubmed  | sh run_hgcn_vae.sh pubmed  | sh run_node2vec.sh pubmed   | sh run_gcn.sh pubmed        | sh run_graphsage.sh pubmed  | sh run_gae.sh pubmed        |
+|                | ABCGraph (Adversarial)         | ABCGraph (MLP)                 | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         |
+| :------------- | :----------:                   | :----------:                   | -----------:                | -----------:                | -----------:                | -----------:                |
+| Platform       | MacOS/Linux                    | MacOS/Linux                    | Only Linux (*)              | MacOS/Linux                 | MacOS/Linux                 | MacOS/Linux                 |
+| Tencent        | sh run_abcgraph_adv.sh tencent | sh run_abcgraph_mlp.sh tencent | sh run_node2vec.sh tencent  | sh run_gcn.sh tencent       | sh run_graphsage.sh tencent | N/A (*)                     |
+| Cora           | sh run_abcgraph_adv.sh cora    | sh run_abcgraph_mlp.sh cora    | sh run_node2vec.sh cora     | sh run_gcn.sh cora          | sh run_graphsage.sh cora    | sh run_gae.sh cora          |
+| Citeseer       | sh run_abcgraph_adv.sh citeseer| sh run_abcgraph_mlp.sh citeseer| sh run_node2vec.sh citeseer | sh run_gcn.sh citeseer      | sh run_graphsage.sh citeseer| sh run_gae.sh citeseer      |
+| PubMed         | sh run_abcgraph_adv.sh pubmed  | sh run_abcgraph_mlp.sh pubmed  | sh run_node2vec.sh pubmed   | sh run_gcn.sh pubmed        | sh run_graphsage.sh pubmed  | sh run_gae.sh pubmed        |
 
 Only Linux (*): For the Node2Vec model, its binary file is only ELF 64-bit LSB executable, x86-64, for GNU/Linux.
 
@@ -57,17 +57,17 @@ To apply GAE to the large-scale graph data is another research topic, so we don'
 
 Background running: 
 ~~~
-# HGCN (GAN)
-nohup sh run_hgcn_gan.sh tencent > log_run_hgcn_gan_tencent.txt 2>&1 &
-nohup sh run_hgcn_gan.sh cora > log_run_hgcn_gan_cora.txt 2>&1 &
-nohup sh run_hgcn_gan.sh citeseer > log_run_hgcn_gan_citeseer.txt 2>&1 &
-nohup sh run_hgcn_gan.sh pubmed > log_run_hgcn_gan_pubmed.txt 2>&1 &
+# ABCGraph (Adversarial)
+nohup sh run_abcgraph_adv.sh tencent > log_run_abcgraph_adv_tencent.txt 2>&1 &
+nohup sh run_abcgraph_adv.sh cora > log_run_abcgraph_adv_cora.txt 2>&1 &
+nohup sh run_abcgraph_adv.sh citeseer > log_run_abcgraph_adv_citeseer.txt 2>&1 &
+nohup sh run_abcgraph_adv.sh pubmed > log_run_abcgraph_adv_pubmed.txt 2>&1 &
 
-# HGCN (VAE)
-nohup sh run_hgcn_vae.sh tencent > log_run_hgcn_vae_tencent.txt 2>&1 &
-nohup sh run_hgcn_vae.sh cora > log_run_hgcn_vae_cora.txt 2>&1 &
-nohup sh run_hgcn_vae.sh citeseer > log_run_hgcn_vae_citeseer.txt 2>&1 &
-nohup sh run_hgcn_vae.sh pubmed > log_run_hgcn_vae_pubmed.txt 2>&1 &
+# ABCGraph (MLP)
+nohup sh run_abcgraph_mlp.sh tencent > log_run_abcgraph_mlp_tencent.txt 2>&1 &
+nohup sh run_abcgraph_mlp.sh cora > log_run_abcgraph_mlp_cora.txt 2>&1 &
+nohup sh run_abcgraph_mlp.sh citeseer > log_run_abcgraph_mlp_citeseer.txt 2>&1 &
+nohup sh run_abcgraph_mlp.sh pubmed > log_run_abcgraph_mlp_pubmed.txt 2>&1 &
 
 # Node2Vec
 nohup sh run_node2vec.sh tencent > log_run_node2vec_tencent.txt 2>&1 &

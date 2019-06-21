@@ -1,6 +1,4 @@
-# coding=utf-8
-# Example script for the user classification
-# Royrong (royrong@tencent.com) 2018/10/24
+
 import logging
 import os
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter

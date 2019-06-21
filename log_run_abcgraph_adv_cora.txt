@@ -1,0 +1,48 @@
+./out/abcgraph-adv/cora
+cora
+batch_size = 400
+epochs = 2
+lr = 0.0004
+weight_decay = 0.001
+dis_hidden = 10
+dropout = 0.35
+rank = -1
+###############random seed = 604840 #########
+./out/abcgraph-adv/cora/random_seed.txt
+./
+dimension = 1433
+dimension = 1000
+self.u_num = 734
+self.v_num = 877
+abcgraph = <abcgraph_adv.ABCGraphAdversarial object at 0x10f00c860>
+adversarial_learning START
+tensor([[ 0.0787, -0.0088, -0.1032,  ..., -0.0541,  0.1484,  0.1041],
+        [ 0.1956,  0.1265, -0.2497,  ..., -0.0042,  0.2453,  0.2334],
+        [ 0.2709,  0.2397, -0.2673,  ...,  0.0560,  0.3463,  0.0182],
+        ...,
+        [ 0.2183,  0.0839, -0.3692,  ..., -0.0724,  0.3703,  0.2206],
+        [ 0.0714,  0.0171, -0.1169,  ..., -0.1190,  0.1613,  0.0592],
+        [ 0.4713,  0.2748, -0.4901,  ..., -0.1034,  0.3489,  0.2411]])
+adversarial_learning END
+/Users/apple/Documents/P4_Graph/merge_sourcecode/venv/lib/python3.6/site-packages/sklearn/preprocessing/data.py:334: DataConversionWarning: Data with input dtype int64 were all converted to float64 by MinMaxScaler.
+  return self.partial_fit(X, y)
+/Users/apple/Documents/P4_Graph/merge_sourcecode/venv/lib/python3.6/site-packages/sklearn/linear_model/stochastic_gradient.py:183: FutureWarning: max_iter and tol parameters have been added in SGDClassifier in 0.19. If max_iter is set but tol is left unset, the default value for tol in 0.19 and 0.20 will be None (which is equivalent to -infinity, so it has no effect) but will change in 0.21 to 1e-3. Specify tol to silence this warning.
+  FutureWarning)
+/Users/apple/Documents/P4_Graph/merge_sourcecode/venv/lib/python3.6/site-packages/sklearn/utils/validation.py:761: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+input_folder = ./data/cora
+emb_file = ./out/abcgraph-adv/cora/abcgraph.emb
+node_id_file = ./out/abcgraph-adv/cora/node_list
+node_id_file = ./out/abcgraph-adv/cora/node_list
+attr_data.shape = 734
+emb_file len = 734
+node_label_file = ./data/cora/node_true
+nodes_ids = Int64Index([   5,   16,   18,   21,   22,   25,   26,   28,   30,   33,
+            ...
+            1437, 1441, 1442, 1455, 1466, 1474, 1481, 1530, 1533, 1536],
+           dtype='int64', name=0, length=734)
+test_micro_f1 = 0.829932
+test_macro_f1 = 0.806256
+./out/abcgraph-adv/cora/abcgraph.emb
+./out/abcgraph-adv/cora/node_list
+./out/abcgraph-adv/cora/abcgraph.res

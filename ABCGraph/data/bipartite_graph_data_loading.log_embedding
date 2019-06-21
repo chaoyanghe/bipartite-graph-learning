@@ -1,0 +1,30 @@
+2019-05-26 Sunday 14:16:46  bipartite_graph_data_loader_pubmed.py : 15 : INFO  BipartiteGraphDataLoader __init__().
+2019-05-26 Sunday 14:16:46  bipartite_graph_data_loader_pubmed.py : 22 : INFO  group_u_list_file_path = ./../../data/pubmed/node_list
+2019-05-26 Sunday 14:16:46  bipartite_graph_data_loader_pubmed.py : 23 : INFO  group_u_attr_file_path = ./../../data/pubmed/node_attr
+2019-05-26 Sunday 14:16:46  bipartite_graph_data_loader_pubmed.py : 24 : INFO  group_u_label_file_path = ./../../data/pubmed/node_true
+2019-05-26 Sunday 14:16:46  bipartite_graph_data_loader_pubmed.py : 26 : INFO  edge_list_file_path = ./../../data/pubmed/edgelist
+2019-05-26 Sunday 14:16:46  bipartite_graph_data_loader_pubmed.py : 28 : INFO  group_v_list_file_path = ./../../data/pubmed/group_list
+2019-05-26 Sunday 14:16:46  bipartite_graph_data_loader_pubmed.py : 29 : INFO  group_v_attr_file_path = ./../../data/pubmed/group_attr
+2019-05-26 Sunday 14:16:46  bipartite_graph_data_loader_pubmed.py : 30 : INFO  group_v_label_file_path = None
+2019-05-26 Sunday 14:16:46  bipartite_graph_data_loader_pubmed.py : 56 : INFO  BipartiteGraphDataLoader __init__(). END
+2019-05-26 Sunday 14:16:46  bipartite_graph_data_loader_pubmed.py : 74 : INFO  ##### generate_adjacent_matrix_feature_and_labels. START
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 213 : INFO  before merging with v_list, the len is = 3435
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 221 : INFO  after merging with v_attr_dict, the len is = 3435
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 236 : INFO  __generate_adjacent_matrix START
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 238 : INFO  u_node_list = 13424
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 239 : INFO  v_node_list = 3435
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 240 : INFO  edge_list = 18782
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 242 : INFO  start to load bipartite for u
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 252 : INFO  (13424, 3435)
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 255 : INFO  end to load bipartite for u
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 257 : INFO  start to load bipartite for u
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 267 : INFO  (3435, 13424)
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 270 : INFO  end to load bipartite for u
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 330 : INFO  u number: 13424
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 331 : INFO  u_adjacent_matrix: (13424, 3435)
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 334 : INFO  v number: 3435
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 335 : INFO  v_adjacent_matrix: (3435, 13424)
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 338 : INFO  batch_num_u = 4475
+2019-05-26 Sunday 14:16:50  bipartite_graph_data_loader_pubmed.py : 341 : INFO  batch_num_v = 1146
+2019-05-26 Sunday 14:16:51  bipartite_graph_data_loader_pubmed.py : 123 : INFO  #### generate_adjacent_matrix_feature_and_labels. END
+2019-05-26 Sunday 14:16:51  bipartite_graph_data_loader_pubmed.py : 284 : INFO  3
