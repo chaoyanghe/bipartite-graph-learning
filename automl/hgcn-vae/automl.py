@@ -16,9 +16,9 @@ if __name__ == "__main__":
     dataset_name = conf.dataset_name
     model_name = conf.model_name
 
-    setproctitle.setproctitle("HGCN:" + str(rank))
+    setproctitle.setproctitle("ABCGraph:" + str(rank))
 
-    logging.basicConfig(filename="./HGCN.log_embedding",
+    logging.basicConfig(filename="./ABCGraph.log_embedding",
                         level=logging.INFO,
                         format=str(rank) + ' - %(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')
@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
     (batch_size, epochs, lr, weight_decay, dropout, gcn_out_dim, encode_hid_fea_dim, decoder_hid_fea_dim) = paras[rank]
 
-    hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/hgcn_main.py --model %s --dataset %s --gpu False --epochs %d --batch_size %d --lr %f --weight_decay %f --dropout %f --gcn_output_dim %d  --encoder_hidfeat %d --decoder_hidfeat %d --rank %d" % (
+    hgcn_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/ABCGraph/abcgraph_main.py --model %s --dataset %s --gpu False --epochs %d --batch_size %d --lr %f --weight_decay %f --dropout %f --gcn_output_dim %d  --encoder_hidfeat %d --decoder_hidfeat %d --rank %d" % (
         model_name,
         dataset_name,
         epochs,
@@ -72,12 +72,12 @@ if __name__ == "__main__":
     print("end hgcn_cmd")
 
     print("start lr_cmd")
-    lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/binary_classification.py --dataset %s --model %s --rank %d" % (
+    lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/ABCGraph/binary_classification.py --dataset %s --model %s --rank %d" % (
         dataset_name,
         model_name,
         rank)
     if dataset_name != "tencent":
-        lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/HGCN/multi_classification.py --dataset %s --model %s --rank %d" % (
+        lr_cmd = "/mnt/shared/etc/anaconda3/bin/python3 /mnt/shared/home/bipartite-graph-learning/ABCGraph/multi_classification.py --dataset %s --model %s --rank %d" % (
             dataset_name,
             model_name,
             rank)

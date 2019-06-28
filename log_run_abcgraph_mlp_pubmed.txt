@@ -1,0 +1,39 @@
+./out/abcgraph-mlp/pubmed
+pubmed
+batch_size = 100
+epochs = 3
+lr = 0.0003
+weight_decay = 0.001
+dis_hidden = 10
+dropout = 0.4
+rank = -1
+###############random seed = 179632 #########
+./out/abcgraph-mlp/pubmed/random_seed.txt
+./
+u dimension = 400
+v dimension = 500
+self.u_num = 13424
+self.v_num = 3435
+abcgraph = <abcgraph_adv.ABCGraphAdversarial object at 0x12eac3908>
+/Users/apple/Documents/P4_Graph/merge_sourcecode/venv/lib/python3.6/site-packages/sklearn/linear_model/stochastic_gradient.py:183: FutureWarning: max_iter and tol parameters have been added in SGDClassifier in 0.19. If max_iter is set but tol is left unset, the default value for tol in 0.19 and 0.20 will be None (which is equivalent to -infinity, so it has no effect) but will change in 0.21 to 1e-3. Specify tol to silence this warning.
+  FutureWarning)
+/Users/apple/Documents/P4_Graph/merge_sourcecode/venv/lib/python3.6/site-packages/sklearn/utils/validation.py:761: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+input_folder = ./data/pubmed
+emb_file = ./out/abcgraph-mlp/pubmed/abcgraph.emb
+node_id_file = ./out/abcgraph-mlp/pubmed/node_list
+node_id_file = ./out/abcgraph-mlp/pubmed/node_list
+attr_data.shape = 13424
+emb_file len = 13424
+node_label_file = ./data/pubmed/node_true
+nodes_ids = Int64Index([    3,     4,     5,     8,    11,    13,    14,    20,    21,
+               22,
+            ...
+            19707, 19708, 19709, 19710, 19711, 19712, 19713, 19714, 19715,
+            19716],
+           dtype='int64', name=0, length=13424)
+test_micro_f1 = 0.837616
+test_macro_f1 = 0.842707
+./out/abcgraph-mlp/pubmed/abcgraph.emb
+./out/abcgraph-mlp/pubmed/node_list
+./out/abcgraph-mlp/pubmed/abcgraph.res

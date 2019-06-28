@@ -1,3 +1,3 @@
 
 dataset_name="cora"
-model_name="gan"
+model_name="adversarial"

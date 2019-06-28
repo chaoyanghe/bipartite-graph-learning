@@ -1,4 +1,0 @@
-hgcn.emb precision 0.200000 0.81730728
-hgcn.emb recall 0.200000 0.83107642
-hgcn.emb f1_score 0.200000 0.82252471
-hgcn.emb accuracy_score 0.200000 0.81527002

@@ -8,7 +8,7 @@ def topten(auc_dict, paras):
 
     auc_dict_sorted = sorted(auc_dict.items(), key=lambda d: d[1], reverse=True)
 
-    print("HGCN. The top 10 AUC will be:")
+    print("ABCGraph. The top 10 AUC will be:")
     cnt = 0
     for (index, auc) in auc_dict_sorted:
         (batch_size, epochs, lr, weight_decay, first_dim, dropout) = paras[index]

@@ -36,7 +36,7 @@ if __name__ == "__main__":
 	emb_file = str(output_folder) + "/gae.emb"
 	print(emb_file)
 
-	# the HGCN node list is smaller than the raw node list because some illegal nodes are filtered
+	# the ABCGraph node list is smaller than the raw node list because some illegal nodes are filtered
 	hgcn_node_file = str(output_folder) + "/node_list"
 	print(hgcn_node_file)
 
