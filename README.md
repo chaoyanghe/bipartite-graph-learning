@@ -1,37 +1,4 @@
-# Adversarial Learning with Graph Convolutional Networks for Unsupervised Bipartite Graph Embedding
-
-## Model Architecture
-
-
-## Data Set
-Tencent:
-
-![tencent|](docs/distribution_tencent.jpg)
-![tencent](docs/distribution_cora.jpg)
-![tencent](docs/distribution_citeseer.jpg)
-![tencent](docs/distribution_pubmed.jpg)
-
-## Model Performance Comparision (Micro-F1 score)
-|                | ABCGraph (Adversarial)     | ABBCGraph (MLP)            | Node2Vec                    | GCN                         | GraphSAGE                   | GAE                         | Pure Node Attribute         |
-| :------------- | :----------:               | :----------:               | -----------:                | -----------:                | -----------:                | -----------:                | -----------:                |
-| Metrics        | F1-macro / F1-micro        | F1-macro / F1-micro        | F1-macro / F1-micro         | F1-macro / F1-micro         | F1-macro / F1-micro         | F1-macro / F1-micro         | F1-macro / F1-micro         |
-| Tencent        | 0.639289 / 0.965502        | Running                    | 0.609956 / 0.967713         | 0.528420 / 0.896612         | 0.579709 / 0.940197         | N/A (*)                     | 0.497346                    |
-| Cora           | 0.837969 / 0.863946        | 0.784115 / 0.809524        | 0.780201 / 0.809524         | 0.762734 / 0.782313         | 0.800763 / 0.823129         | 0.754289 / 0.782313         | 0.758143 / 0.789116         |
-| Citeseer       | 0.703048 / 0.772358        | 0.676239 / 0.764228        | 0.626968 / 0.723577         | 0.626836 / 0.715447         | 0.665325 / 0.747967         | 0.644748 / 0.731707         | 0.620755 / 0.707317         |
-| PubMed         | 0.864784 / 0.862197        | 0.847273 / 0.843203        | 0.839086 / 0.833892         | 0.843036 / 0.838361         | 0.842696 / 0.838361         | 0.828317 / 0.823091         | 0.842813 / 0.838361         |
-
-
-## Model Training Time Comparision (Seconds)
-|                | Tencent                    | Cora                       |     Citeseer               |     PubMed               |
-| :------------- | :----------:               | :----------:               | :----------:               | :----------:             |
-|                | CPU/GPU                    | CPU/GPU                    |     CPU/GPU                |     CPU/GPU              |
-| ABCGraph(Adv)  |                            |                            |
-| ABCGraph(MLP)  |                            |                            |
-| Node2Vec       |                            |                            |
-| GCN            | Infinite / 5200            |                            |
-| GraphSAGE      | Infinite / 5200            |                            |
-| GAE            | OOM / --                   |                            |
-
+# Adversarial Representation Learning on Large-Scale Bipartite Graphs
 
 # Reproducibility
 

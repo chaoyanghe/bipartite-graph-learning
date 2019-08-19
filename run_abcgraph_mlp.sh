@@ -72,7 +72,7 @@ then
     --dataset $DATASET \
     --model $MODEL \
     --gpu False \
-    --epochs 3 \
+    --epochs 10 \
     --batch_size 100 \
     --lr 0.0003 \
     --weight_decay 0.001 \
