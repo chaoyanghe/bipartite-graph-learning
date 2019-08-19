@@ -58,6 +58,7 @@ class AdversarialLearning(object):
 
         self.device = device
 
+    # loss = - w * [y * log(x) + (1 - y) * log(1 - x)]
     def _loss(self, logits, labels):
         criterion = nn.BCELoss()
         loss = criterion(logits, labels)
