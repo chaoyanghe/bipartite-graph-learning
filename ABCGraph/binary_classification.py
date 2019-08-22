@@ -23,11 +23,10 @@ if __name__ == "__main__":
 
 	wandb.init(
 		project="abcgraph",
-		name="ABCGraph-" + str(args.model) + "-" + os.getenv('WANDB_RUN_ID'),
+		name="ABCGraph-" + str(args.model) + "-" + str(os.getenv('WANDB_RUN_ID')),
 		config=args,
 		entity="automl",
 	)
-	wandb.config.update(args)  # adds all of the arguments as config variables
 
 	method = conf.method
 	input_folder = conf.input_folder + str(dataset)
