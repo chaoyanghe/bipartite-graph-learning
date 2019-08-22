@@ -8,8 +8,10 @@ echo ./out/abcgraph-$MODEL/$DATASET
 
 rm -rf ./out/abcgraph-$MODEL/$DATASET
 
-export WANDB_RESUME=allow
-export WANDB_RUN_ID='python3 -c import wandb; wandb.util.generate_id();'
+WANDB_RESUME=allow
+export WANDB_RESUME
+WANDB_RUN_ID=${python3 -c 'import wandb; wandb.util.generate_id();'}
+export WANDB_RUN_ID
 echo $WANDB_RUN_ID
 
 if [ "$DATASET" = "tencent" ]
