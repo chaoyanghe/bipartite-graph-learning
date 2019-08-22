@@ -130,7 +130,7 @@ def main():
     # name="ABCGraph-" + str(model_name) + "-" + str(ts),
     wandb.init(
         project="abcgraph",
-        name="ABCGraph-" + str(model_name),
+        name="ABCGraph-" + str(args.model) + "-" + os.getenv('WANDB_RUN_ID'),
         config=args,
         entity="automl"
     )

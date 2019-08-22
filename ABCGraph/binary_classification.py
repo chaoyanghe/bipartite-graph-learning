@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
 	wandb.init(
 		project="abcgraph",
-		name="ABCGraph-" + str(args.model),
+		name="ABCGraph-" + str(args.model) + "-" + os.getenv('WANDB_RUN_ID'),
 		config=args,
 		entity="automl",
 	)
