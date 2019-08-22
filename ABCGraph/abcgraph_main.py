@@ -6,6 +6,7 @@ import random
 import numpy as np
 import torch
 import conf
+import wandb
 
 from abcgraph_mlp import ABCGraphMLP
 from abcgraph_adv import ABCGraphAdversarial
@@ -16,6 +17,9 @@ from data.bipartite_graph_data_loader import BipartiteGraphDataLoader
 from data.bipartite_graph_data_loader_citeseer import BipartiteGraphDataLoaderCiteseer
 from data.bipartite_graph_data_loader_cora import BipartiteGraphDataLoaderCora
 from data.bipartite_graph_data_loader_pubmed import BipartiteGraphDataLoaderPubMed
+
+import calendar
+import time
 
 
 def parse_args():
@@ -110,6 +114,7 @@ def get_the_bipartite_graph_loader(args, data_path, dataset, device):
 
 def main():
     args = parse_args()
+
     dataset = args.dataset
     model_name = args.model
     rank = args.rank
@@ -120,6 +125,15 @@ def main():
     print("dis_hidden = " + str(args.dis_hidden))
     print("dropout = " + str(args.dropout))
     print("rank = " + str(rank))
+
+    ts = calendar.timegm(time.gmtime())
+    wandb.init(
+        project="abcgraph",
+        name="ABCGraph-" + str(model_name) + "-" + str(ts),
+        config=args,
+        entity="automl"
+    )
+    wandb.config.update(args)  # adds all of the arguments as config variables
 
     # log_embedding configuration
     logging.basicConfig(filename="./ABCGraph.log_embedding",
@@ -147,6 +161,7 @@ def main():
 
     print("###############random seed = %s #########" % str(args.seed))
     logging.info("###############random seed = %s #########" % str(args.seed))
+    wandb.run.summary["random-seed"] = str(args.seed)
 
     output_folder = None
     if model_name == "adv":
@@ -164,6 +179,8 @@ def main():
 
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
+
+    wandb.run.summary["output_folder"] = str(output_folder)
 
     seed_file = output_folder + "/random_seed.txt"
     print(seed_file)

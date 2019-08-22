@@ -10,6 +10,7 @@ import torch
 from adversarial.models import AdversarialLearning
 from gcn.models import GCN
 
+import wandb
 
 class ABCGraphAdversarial(object):
     def __init__(self, bipartite_graph_data_loader, args, device, rank=-1, dataset="cora"):
@@ -81,6 +82,8 @@ class ABCGraphAdversarial(object):
                                                                           epoch=i,
                                                                           iter=iter)
                 self.f_loss.write("%s %s\n" % (lossD, lossG))
+                wandb.log({"lossD": lossD, "epoch": i})
+                wandb.log({"lossG": lossG, "epoch": i})
 
         self.f_loss.write("###Depth 1 finished!\n")
         # explicit inference
@@ -120,6 +123,8 @@ class ABCGraphAdversarial(object):
                                                                           epoch=i,
                                                                           iter=iter)
                 self.f_loss.write("%s %s\n" % (lossD, lossG))
+                wandb.log({"lossD": lossD, "epoch": i})
+                wandb.log({"lossG": lossG, "epoch": i})
 
         self.f_loss.write("###Depth 2 finished!\n")
         # implicit inference
@@ -157,6 +162,8 @@ class ABCGraphAdversarial(object):
                 lossD, lossG = self.adversarial_merge.forward_backward(u_input, gcn_merge_output, step=3, epoch=i,
                                                                        iter=iter)
                 self.f_loss.write("%s %s\n" % (lossD, lossG))
+                wandb.log({"lossD": lossD, "epoch": i})
+                wandb.log({"lossG": lossG, "epoch": i})
 
         u_merge_attr = torch.FloatTensor([]).to(self.device)
         for iter in range(self.batch_num_u):
@@ -230,3 +237,4 @@ class ABCGraphAdversarial(object):
         f_emb.close()
         f_node_list.close()
         logging.info("Saved embedding file")
+        wandb.run.summary["embedding_output_folder"] = str(output_folder)

@@ -1231,3 +1231,50 @@
 -1Thu, 20 Jun 2019 23:33:42 abcgraph_mlp.py[line:184] INFO node_num = 13424
 -1Thu, 20 Jun 2019 23:33:42 abcgraph_mlp.py[line:186] INFO dimension_embedding = 400
 -1Thu, 20 Jun 2019 23:33:52 abcgraph_mlp.py[line:213] INFO Saved embedding file
+-1Wed, 21 Aug 2019 18:18:33 abcgraph_main.py[line:149] INFO ###############random seed = 207412 #########
+-1Wed, 21 Aug 2019 18:18:33 abcgraph_main.py[line:170] INFO ./out/abcgraph-adv/cora/random_seed.txt
+-1Wed, 21 Aug 2019 18:18:33 abcgraph_main.py[line:180] INFO device = cpu
+-1Wed, 21 Aug 2019 18:18:33 bipartite_graph_data_loader_cora.py[line:15] INFO BipartiteGraphDataLoader __init__().
+-1Wed, 21 Aug 2019 18:18:33 bipartite_graph_data_loader_cora.py[line:22] INFO group_u_list_file_path = ./data/cora/node_list
+-1Wed, 21 Aug 2019 18:18:33 bipartite_graph_data_loader_cora.py[line:23] INFO group_u_attr_file_path = ./data/cora/node_attr
+-1Wed, 21 Aug 2019 18:18:33 bipartite_graph_data_loader_cora.py[line:24] INFO group_u_label_file_path = ./data/cora/node_true
+-1Wed, 21 Aug 2019 18:18:33 bipartite_graph_data_loader_cora.py[line:26] INFO edge_list_file_path = ./data/cora/edgelist
+-1Wed, 21 Aug 2019 18:18:33 bipartite_graph_data_loader_cora.py[line:28] INFO group_v_list_file_path = ./data/cora/group_list
+-1Wed, 21 Aug 2019 18:18:33 bipartite_graph_data_loader_cora.py[line:29] INFO group_v_attr_file_path = ./data/cora/group_attr
+-1Wed, 21 Aug 2019 18:18:33 bipartite_graph_data_loader_cora.py[line:30] INFO group_v_label_file_path = None
+-1Wed, 21 Aug 2019 18:18:33 bipartite_graph_data_loader_cora.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+-1Wed, 21 Aug 2019 18:18:33 bipartite_graph_data_loader_cora.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:213] INFO before merging with v_list, the len is = 877
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:221] INFO after merging with v_attr_dict, the len is = 877
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:236] INFO __generate_adjacent_matrix START
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:238] INFO u_node_list = 734
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:239] INFO v_node_list = 877
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:240] INFO edge_list = 1802
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:242] INFO start to load bipartite for u
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:252] INFO (734, 877)
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:255] INFO end to load bipartite for u
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:257] INFO start to load bipartite for u
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:267] INFO (877, 734)
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:270] INFO end to load bipartite for u
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:321] INFO u number: 734
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:322] INFO u_adjacent_matrix: (734, 877)
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:325] INFO v number: 877
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:326] INFO v_adjacent_matrix: (877, 734)
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:329] INFO batch_num_u = 2
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:332] INFO batch_num_v = 3
+-1Wed, 21 Aug 2019 18:18:34 bipartite_graph_data_loader_cora.py[line:123] INFO #### generate_adjacent_matrix_feature_and_labels. END
+-1Wed, 21 Aug 2019 18:18:34 abcgraph_adv.py[line:28] INFO ABCGraphAdversarial
+-1Wed, 21 Aug 2019 18:18:34 abcgraph_adv.py[line:61] INFO adversarial_train
+-1Wed, 21 Aug 2019 18:18:34 abcgraph_adv.py[line:64] INFO ###Depth 1 starts!
+
+-1Wed, 21 Aug 2019 18:18:34 models.py[line:100] INFO Step: 1, Epoch: 0, Iterations: 0, dis loss: 1.1168904304504395, gen loss: 1.4812731742858887
+-1Wed, 21 Aug 2019 18:18:34 abcgraph_adv.py[line:103] INFO ###Depth 2 starts!
+
+-1Wed, 21 Aug 2019 18:18:34 models.py[line:100] INFO Step: 2, Epoch: 0, Iterations: 0, dis loss: 1.6247270107269287, gen loss: 0.6400060057640076
+-1Wed, 21 Aug 2019 18:18:35 abcgraph_adv.py[line:142] INFO ###Depth 3 starts!
+
+-1Wed, 21 Aug 2019 18:18:35 models.py[line:100] INFO Step: 3, Epoch: 0, Iterations: 0, dis loss: 1.1908940076828003, gen loss: 1.9519670009613037
+-1Wed, 21 Aug 2019 18:18:35 abcgraph_adv.py[line:200] INFO Start to save embedding file
+-1Wed, 21 Aug 2019 18:18:35 abcgraph_adv.py[line:203] INFO node_num = 734
+-1Wed, 21 Aug 2019 18:18:35 abcgraph_adv.py[line:205] INFO dimension_embedding = 1433
+-1Wed, 21 Aug 2019 18:18:36 abcgraph_adv.py[line:232] INFO Saved embedding file
