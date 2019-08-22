@@ -10,6 +10,7 @@ rm -rf ./out/abcgraph-$MODEL/$DATASET
 
 export WANDB_RESUME=allow
 export WANDB_RUN_ID='python3 -c import wandb; wandb.util.generate_id();'
+echo $WANDB_RUN_ID
 
 if [ "$DATASET" = "tencent" ]
 then
