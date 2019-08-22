@@ -127,7 +127,6 @@ def main():
     print("rank = " + str(rank))
 
     ts = calendar.timegm(time.gmtime())
-    # name="ABCGraph-" + str(model_name) + "-" + str(ts),
     wandb.init(
         project="abcgraph",
         name="ABCGraph-" + str(args.model) + "-" + str(os.getenv('WANDB_RUN_ID')),
