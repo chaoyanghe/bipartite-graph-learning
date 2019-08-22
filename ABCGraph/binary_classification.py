@@ -96,6 +96,8 @@ if __name__ == "__main__":
 		fout = open(os.path.join(output_folder, "result_file"), 'w')
 		fout.write("object_value=%f" % (ap))
 		fout.close()
+
+		wandb.run.summary["output_model_accuracy"] = str(ap)
 	else:
 		logging.info("No res file.")
 		exit(1)
