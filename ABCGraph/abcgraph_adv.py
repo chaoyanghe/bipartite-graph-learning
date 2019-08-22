@@ -238,3 +238,5 @@ class ABCGraphAdversarial(object):
         f_node_list.close()
         logging.info("Saved embedding file")
         wandb.run.summary["embedding_output_folder"] = str(output_folder)
+        wandb.save(os.path.join(wandb.run.dir, output_folder + '/abcgraph.emb'))
+        wandb.save(os.path.join(wandb.run.dir, output_folder + '/node_list'))
