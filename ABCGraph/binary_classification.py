@@ -3,7 +3,7 @@ import logging
 import os
 
 import ABCGraph.conf as conf
-
+import wandb
 
 def parse_args():
 	parser = argparse.ArgumentParser()
@@ -20,6 +20,14 @@ if __name__ == "__main__":
 	dataset = args.dataset
 	model = args.model
 	rank = args.rank
+
+	wandb.init(
+		project="abcgraph",
+		name="ABCGraph-" + str(args.model),
+		config=args,
+		entity="automl",
+	)
+	wandb.config.update(args)  # adds all of the arguments as config variables
 
 	method = conf.method
 	input_folder = conf.input_folder + str(dataset)

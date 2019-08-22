@@ -127,13 +127,13 @@ def main():
     print("rank = " + str(rank))
 
     ts = calendar.timegm(time.gmtime())
+    # name="ABCGraph-" + str(model_name) + "-" + str(ts),
     wandb.init(
         project="abcgraph",
-        name="ABCGraph-" + str(model_name) + "-" + str(ts),
+        name="ABCGraph-" + str(model_name),
         config=args,
         entity="automl"
     )
-    wandb.config.update(args)  # adds all of the arguments as config variables
 
     # log_embedding configuration
     logging.basicConfig(filename="./ABCGraph.log_embedding",
