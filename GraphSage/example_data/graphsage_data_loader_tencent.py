@@ -639,8 +639,8 @@ class GraphSageSingleGraphDataLoader:
         return coords
 
     def link_form(self):
-        triu = sp.triu(self.adj, 0)
-        edges = self.__sparse_to_tuple(triu)
+        # triu = sp.triu(self.adj, 0)
+        edges = self.__sparse_to_tuple(self.adj)
         links = []
         for i in range(len(edges)):
             s, t = edges[i][:2]
