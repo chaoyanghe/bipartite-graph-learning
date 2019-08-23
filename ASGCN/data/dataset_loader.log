@@ -1,0 +1,47 @@
+2019-08-21 Wednesday 15:36:11  tencent_dataset_loader.py : 22 : INFO  group_u_list_file_path = tencent/node_list
+2019-08-21 Wednesday 15:36:11  tencent_dataset_loader.py : 23 : INFO  group_u_attr_file_path = tencent/node_attr
+2019-08-21 Wednesday 15:36:11  tencent_dataset_loader.py : 24 : INFO  group_u_label_file_path = tencent/node_true
+2019-08-21 Wednesday 15:36:11  tencent_dataset_loader.py : 26 : INFO  edge_list_file_path = tencent/edgelist
+2019-08-21 Wednesday 15:36:11  tencent_dataset_loader.py : 28 : INFO  group_v_list_file_path = tencent/group_list
+2019-08-21 Wednesday 15:36:11  tencent_dataset_loader.py : 29 : INFO  group_v_attr_file_path = tencent/group_attr
+2019-08-21 Wednesday 15:36:11  tencent_dataset_loader.py : 30 : INFO  group_v_label_file_path = None
+2019-08-21 Wednesday 15:36:11  tencent_dataset_loader.py : 58 : INFO  ##### generate_adjacent_matrix_feature_and_labels. START
+2019-08-21 Wednesday 15:36:43  tencent_dataset_loader.py : 157 : INFO  before merging with u_list, the len is = 1089436
+2019-08-21 Wednesday 15:36:44  tencent_dataset_loader.py : 165 : INFO  after merging with u_list, the len is = 1089436
+2019-08-21 Wednesday 15:36:46  tencent_dataset_loader.py : 260 : INFO  before merging with v_list, the len is = 90047
+2019-08-21 Wednesday 15:36:46  tencent_dataset_loader.py : 268 : INFO  after merging with v_list, the len is = 90047
+2019-08-21 Wednesday 15:36:49  tencent_dataset_loader.py : 80 : INFO  raw edge_list len = 1979756
+2019-08-21 Wednesday 15:36:49  tencent_dataset_loader.py : 81 : INFO  edge_list len = 991734
+2019-08-21 Wednesday 15:36:50  tencent_dataset_loader.py : 282 : INFO  group U length = 619030
+2019-08-21 Wednesday 15:36:50  tencent_dataset_loader.py : 283 : INFO  group V length = 90044
+2019-08-21 Wednesday 15:36:50  tencent_dataset_loader.py : 289 : INFO  before filter, the len is = 1089436
+2019-08-21 Wednesday 15:36:50  tencent_dataset_loader.py : 293 : INFO  after filter, the len is = 619030
+2019-08-21 Wednesday 15:36:50  tencent_dataset_loader.py : 289 : INFO  before filter, the len is = 90047
+2019-08-21 Wednesday 15:36:50  tencent_dataset_loader.py : 293 : INFO  after filter, the len is = 90044
+2019-08-21 Wednesday 15:36:50  tencent_dataset_loader.py : 297 : INFO  __generate_adjacent_matrix START
+2019-08-21 Wednesday 15:36:50  tencent_dataset_loader.py : 299 : INFO  u_node_list = 619030
+2019-08-21 Wednesday 15:36:50  tencent_dataset_loader.py : 300 : INFO  v_node_list = 90044
+2019-08-21 Wednesday 15:36:50  tencent_dataset_loader.py : 301 : INFO  edge_list = 991734
+2019-08-21 Wednesday 15:36:50  tencent_dataset_loader.py : 303 : INFO  start to load bipartite for u
+2019-08-21 Wednesday 15:37:06  tencent_dataset_loader.py : 313 : INFO  (619030, 90044)
+2019-08-21 Wednesday 15:37:07  tencent_dataset_loader.py : 316 : INFO  end to load bipartite for u
+2019-08-21 Wednesday 15:37:07  tencent_dataset_loader.py : 318 : INFO  start to load bipartite for u
+2019-08-21 Wednesday 15:37:19  tencent_dataset_loader.py : 328 : INFO  (90044, 619030)
+2019-08-21 Wednesday 15:37:19  tencent_dataset_loader.py : 331 : INFO  end to load bipartite for u
+2019-08-21 Wednesday 15:37:19  tencent_dataset_loader.py : 373 : INFO  u number: 619030
+2019-08-21 Wednesday 15:37:19  tencent_dataset_loader.py : 374 : INFO  u_adjacent_matrix: (619030, 90044)
+2019-08-21 Wednesday 15:37:19  tencent_dataset_loader.py : 377 : INFO  v number: 90044
+2019-08-21 Wednesday 15:37:19  tencent_dataset_loader.py : 378 : INFO  v_adjacent_matrix: (90044, 619030)
+2019-08-21 Wednesday 15:37:19  tencent_dataset_loader.py : 381 : INFO  batch_num_u = 6191
+2019-08-21 Wednesday 15:37:19  tencent_dataset_loader.py : 384 : INFO  batch_num_v = 901
+2019-08-21 Wednesday 15:37:20  tencent_dataset_loader.py : 107 : INFO  #### generate_adjacent_matrix_feature_and_labels. END
+2019-08-21 Wednesday 15:37:20  tencent_dataset_loader.py : 627 : INFO  Start graphsage two hop graph loader
+2019-08-21 Wednesday 15:38:20  tencent_dataset_loader.py : 482 : INFO  ------ The training dataset size: 544464
+2019-08-21 Wednesday 15:38:20  tencent_dataset_loader.py : 488 : INFO  ------ The test length is 60496, the last ten numbers are [604959, 604958, 604957, 604956, 604955, 604954, 604953, 604952, 604951]
+2019-08-21 Wednesday 15:38:20  tencent_dataset_loader.py : 492 : INFO  Feature Form
+2019-08-21 Wednesday 15:38:22  tencent_dataset_loader.py : 552 : INFO  -------feature form, the length is: 544464
+2019-08-21 Wednesday 15:38:22  tencent_dataset_loader.py : 494 : INFO  Label Form
+2019-08-21 Wednesday 15:38:24  tencent_dataset_loader.py : 541 : INFO  -------label form, the length is: 544464
+2019-08-21 Wednesday 15:38:24  tencent_dataset_loader.py : 496 : INFO  Link Form
+2019-08-21 Wednesday 15:38:24  tencent_dataset_loader.py : 523 : INFO  *****the adajacent matrix shape of U: (604960, 604960)
+2019-08-21 Wednesday 15:38:24  tencent_dataset_loader.py : 503 : INFO  *******The sparse to tuple function

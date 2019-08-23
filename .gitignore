@@ -21,3 +21,12 @@ GraphSage/log_embedding/*
 .python-version
 .DS_Store
 .vscode/
+ASGCN/data/ind.tencent.allx
+ASGCN/data/ind.tencent.ally
+ASGCN/data/ind.tencent.graph
+ASGCN/data/ind.tencent.test.index
+ASGCN/data/ind.tencent.tx
+ASGCN/data/ind.tencent.ty
+ASGCN/data/ind.tencent.x
+ASGCN/data/ind.tencent.y
+

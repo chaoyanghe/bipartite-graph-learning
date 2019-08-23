@@ -7,7 +7,7 @@ import numpy as np
 import torch
 import conf
 import wandb
-
+import setproctitle
 from abcgraph_mlp import ABCGraphMLP
 from abcgraph_adv import ABCGraphAdversarial
 from conf import (MODEL, BATCH_SIZE, EPOCHS, LEARNING_RATE,
@@ -20,7 +20,8 @@ from data.bipartite_graph_data_loader_pubmed import BipartiteGraphDataLoaderPubM
 
 import calendar
 import time
-
+setproctitle.setproctitle('ABCGraph')
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -37,7 +38,7 @@ def parse_args():
                         help='Number of hidden units for discriminator in GAN model.')
     parser.add_argument('--dropout', type=float, default=DROPOUT,
                         help='Dropout rate (1 - keep probability).')
-    parser.add_argument('--gpu', type=bool, default=False,
+    parser.add_argument('--gpu', type=int, default=0,
                         help='Whether to use CPU or GPU')
     parser.add_argument('--batch_size', type=int, default=BATCH_SIZE,
                         help='batch size')

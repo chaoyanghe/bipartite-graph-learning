@@ -78,6 +78,7 @@ tf==1.0.0
 torch==1.
 tornado==6.0.2
 traitlets==4.3.2
+wandb==0.8.9
 wcwidth==0.1.7
 webencodings==0.5.1
 Werkzeug==0.15.1

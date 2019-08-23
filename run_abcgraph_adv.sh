@@ -19,7 +19,7 @@ then
     python3 ./ABCGraph/abcgraph_main.py \
     --dataset $DATASET \
     --model $MODEL \
-    --gpu False \
+    --gpu 0 \
     --epochs 3 \
     --batch_size 500 \
     --lr 0.0003 \
@@ -36,7 +36,7 @@ then
     python3 ./ABCGraph/abcgraph_main.py \
     --dataset $DATASET \
     --model $MODEL \
-    --gpu False \
+    --gpu 0 \
     --epochs 2 \
     --batch_size 400 \
     --lr 0.0004 \
@@ -53,7 +53,7 @@ then
     python3 ./ABCGraph/abcgraph_main.py \
     --dataset $DATASET \
     --model $MODEL \
-    --gpu False \
+    --gpu 0 \
     --epochs 4 \
     --batch_size 400 \
     --lr 0.0004 \
@@ -69,7 +69,7 @@ then
     python3 ./ABCGraph/abcgraph_main.py \
     --dataset $DATASET \
     --model $MODEL \
-    --gpu False \
+    --gpu 0 \
     --epochs 20 \
     --batch_size 700 \
     --lr 0.0004 \

@@ -63,4 +63,6 @@ nohup sh run_gae.sh cora > log_run_gae_cora.txt 2>&1 &
 nohup sh run_gae.sh citeseer > log_run_gae_citeseer.txt 2>&1 &
 nohup sh run_gae.sh pubmed > log_run_gae_pubmed.txt 2>&1 &
 
+# AS-GCN
+nohup python run_pubbmed.py --dataset tencent > running_asgcn.txt
 ~~~

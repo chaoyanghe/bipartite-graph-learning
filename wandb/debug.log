@@ -1,0 +1,77 @@
+2019-08-23 20:59:50,345 DEBUG   MainThread:17396 [wandb_config.py:_load_defaults():85] no defaults not found in config-defaults.yaml
+2019-08-23 20:59:50,350 DEBUG   MainThread:17396 [cmd.py:execute():722] Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb, universal_newlines=False, shell=None, istream=<valid stream>)
+2019-08-23 20:59:50,357 DEBUG   MainThread:17396 [cmd.py:execute():722] Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb, universal_newlines=False, shell=None, istream=None)
+2019-08-23 20:59:50,363 DEBUG   MainThread:17396 [cmd.py:execute():722] Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb, universal_newlines=False, shell=None, istream=None)
+2019-08-23 20:59:50,388 DEBUG   MainThread:17396 [run_manager.py:__init__():526] Initialized sync for abcgraph/lom578rn
+2019-08-23 20:59:50,394 INFO    MainThread:17396 [run_manager.py:wrap_existing_process():1091] wrapping existing process 17387
+2019-08-23 20:59:50,394 WARNING MainThread:17396 [io_wrap.py:register():103] SIGWINCH handler was not None: <Handlers.SIG_DFL: 0>
+2019-08-23 20:59:50,397 DEBUG   MainThread:17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): pypi.org:443
+2019-08-23 20:59:50,521 DEBUG   MainThread:17396 [connectionpool.py:_make_request():396] https://pypi.org:443 "GET /pypi/wandb/json HTTP/1.1" 200 33942
+2019-08-23 20:59:50,573 INFO    MainThread:17396 [run_manager.py:init_run():904] system metrics and metadata threads started
+2019-08-23 20:59:50,573 INFO    MainThread:17396 [run_manager.py:init_run():913] checking resume status, waiting at most 10 seconds
+2019-08-23 20:59:50,577 DEBUG   Thread-14 :17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-08-23 20:59:50,806 DEBUG   Thread-14 :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 215
+2019-08-23 20:59:50,811 INFO    MainThread:17396 [run_manager.py:init_run():938] upserting run before process can begin, waiting at most 10 seconds
+2019-08-23 20:59:50,819 DEBUG   Thread-15 :17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-08-23 20:59:51,108 DEBUG   Thread-15 :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 487
+2019-08-23 20:59:51,116 INFO    Thread-15 :17396 [run_manager.py:_upsert_run():1000] saving patches
+2019-08-23 20:59:51,116 DEBUG   Thread-15 :17396 [cmd.py:execute():722] Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb, universal_newlines=False, shell=None, istream=None)
+2019-08-23 20:59:51,125 DEBUG   Thread-15 :17396 [cmd.py:execute():722] Popen(['git', 'diff', '--cached', '--abbrev=40', '--full-index', '--raw'], cwd=/Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb, universal_newlines=False, shell=None, istream=None)
+2019-08-23 20:59:51,140 DEBUG   Thread-15 :17396 [cmd.py:execute():722] Popen(['git', 'version'], cwd=/Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb, universal_newlines=False, shell=None, istream=None)
+2019-08-23 20:59:51,353 INFO    Thread-3  :17396 [run_manager.py:_on_file_created():662] file/dir created: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/wandb-metadata.json
+2019-08-23 20:59:51,400 DEBUG   Thread-15 :17396 [cmd.py:execute():722] Popen(['git', 'merge-base', 'HEAD', '73fabf550ec4e145d29bc281d78ea4439996b503'], cwd=/Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb, universal_newlines=False, shell=None, istream=None)
+2019-08-23 20:59:51,413 INFO    Thread-15 :17396 [run_manager.py:_upsert_run():1002] saving pip packages
+2019-08-23 20:59:51,413 INFO    Thread-15 :17396 [run_manager.py:_upsert_run():1004] initializing streaming files api
+2019-08-23 20:59:51,414 INFO    Thread-15 :17396 [run_manager.py:_upsert_run():1011] unblocking file change observer, beginning sync with W&B servers
+2019-08-23 20:59:51,415 INFO    Thread-3  :17396 [run_manager.py:_on_file_created():662] file/dir created: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/diff.patch
+2019-08-23 20:59:51,415 INFO    Thread-3  :17396 [run_manager.py:_on_file_created():662] file/dir created: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/output.log
+2019-08-23 20:59:51,415 INFO    MainThread:17396 [run_manager.py:wrap_existing_process():1108] informing user process we are ready to proceed
+2019-08-23 20:59:51,418 INFO    MainThread:17396 [run_manager.py:_sync_etc():1212] entering loop for messages from user process
+2019-08-23 20:59:51,419 DEBUG   Thread-17 :17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-08-23 20:59:51,476 DEBUG   Thread-16 :17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-08-23 20:59:51,734 DEBUG   Thread-17 :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 46
+2019-08-23 20:59:51,738 DEBUG   Thread-16 :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 741
+2019-08-23 20:59:51,743 DEBUG   Thread-16 :17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): storage.googleapis.com:443
+2019-08-23 20:59:52,354 INFO    Thread-3  :17396 [run_manager.py:_on_file_modified():673] file/dir modified: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/diff.patch
+2019-08-23 20:59:52,354 INFO    Thread-3  :17396 [run_manager.py:_on_file_modified():673] file/dir modified: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/output.log
+2019-08-23 20:59:52,354 INFO    Thread-3  :17396 [run_manager.py:_on_file_modified():673] file/dir modified: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/config.yaml
+2019-08-23 20:59:52,365 DEBUG   Thread-3  :17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-08-23 20:59:52,611 DEBUG   Thread-3  :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 1292
+2019-08-23 20:59:52,616 INFO    Thread-3  :17396 [run_manager.py:_on_file_created():662] file/dir created: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/requirements.txt
+2019-08-23 20:59:52,616 INFO    Thread-3  :17396 [run_manager.py:_on_file_created():662] file/dir created: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/wandb-summary.json
+2019-08-23 20:59:53,357 DEBUG   Thread-18 :17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-08-23 20:59:53,358 INFO    Thread-3  :17396 [run_manager.py:_on_file_modified():673] file/dir modified: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/wandb-history.jsonl
+2019-08-23 20:59:53,358 INFO    Thread-3  :17396 [run_manager.py:_on_file_modified():673] file/dir modified: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/wandb-summary.json
+2019-08-23 20:59:53,579 DEBUG   Thread-18 :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 775
+2019-08-23 20:59:53,583 DEBUG   Thread-18 :17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): storage.googleapis.com:443
+2019-08-23 20:59:53,696 DEBUG   Thread-7  :17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-08-23 20:59:53,948 DEBUG   Thread-7  :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /files/automl/abcgraph/lom578rn/file_stream HTTP/1.1" 200 310
+2019-08-23 20:59:53,957 DEBUG   Thread-18 :17396 [connectionpool.py:_make_request():396] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/automl/abcgraph/lom578rn/___batch_archive_1.tgz?Expires=1566565253&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=VgJXfnKTFiqeLjqVGfHTA6nXD84%2BY26%2BoPmYDwS6DNLjXe%2FUHyayJOCtHXfvYUVYViyXvk6eEKlTQ9fam0UXiYAS5Qzc4Dkl8%2Bn4XO04babFWXJVyrH%2Bhek%2BcMOo0afBg5AJWdkuLUTDdEv6HIx4R20pNjRVAky7n2FZp1n2DZmIZwSZlrXB9GtD8cPBrYGgHgodo6Q3ejiMHfyGVgTmitG%2B2e8%2FOBGK97UlMvulaKK%2BkRJdE6cTzU%2FM0TbzTnQ5vN%2FlIzrr2KnDVLlK9gqBFP0Ibxt8o2bs23xyp0MU%2B5azGqGKNSzlUj53iSv%2Fe0BY8Opee50CIoraS%2FyPwTSyRA%3D%3D HTTP/1.1" 200 0
+2019-08-23 20:59:54,363 INFO    Thread-3  :17396 [run_manager.py:_on_file_modified():673] file/dir modified: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/wandb-history.jsonl
+2019-08-23 20:59:54,363 INFO    Thread-3  :17396 [run_manager.py:_on_file_modified():673] file/dir modified: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/wandb-summary.json
+2019-08-23 20:59:54,364 INFO    Thread-3  :17396 [run_manager.py:_on_file_modified():673] file/dir modified: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/output.log
+2019-08-23 20:59:56,610 DEBUG   Thread-7  :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /files/automl/abcgraph/lom578rn/file_stream HTTP/1.1" 200 310
+2019-08-23 20:59:57,383 INFO    Thread-3  :17396 [run_manager.py:_on_file_modified():673] file/dir modified: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/wandb-summary.json
+2019-08-23 20:59:57,384 INFO    Thread-3  :17396 [run_manager.py:_on_file_modified():673] file/dir modified: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/output.log
+2019-08-23 20:59:57,443 INFO    MainThread:17396 [run_manager.py:_sync_etc():1235] received message from user process: {"save_policy": {"glob": "abcgraph.emb", "policy": "live"}}
+2019-08-23 20:59:57,448 INFO    MainThread:17396 [run_manager.py:_sync_etc():1235] received message from user process: {"save_policy": {"glob": "node_list", "policy": "live"}}
+2019-08-23 20:59:57,448 INFO    MainThread:17396 [run_manager.py:_sync_etc():1235] received message from user process: {"exitcode": 0}
+2019-08-23 20:59:57,449 INFO    MainThread:17396 [run_manager.py:_sync_etc():1321] closing log streams and sending exitcode to W&B
+2019-08-23 20:59:57,450 INFO    MainThread:17396 [run_manager.py:shutdown():1018] shutting down system stats and metadata service
+2019-08-23 20:59:57,611 INFO    MainThread:17396 [run_manager.py:shutdown():1030] stopping streaming files and file change observer
+2019-08-23 20:59:58,386 INFO    Thread-3  :17396 [run_manager.py:_on_file_modified():673] file/dir modified: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/wandb-metadata.json
+2019-08-23 20:59:58,386 INFO    MainThread:17396 [run_manager.py:_on_file_created():662] file/dir created: /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/wandb/run-20190823_125949-lom578rn/wandb-events.jsonl
+2019-08-23 20:59:58,409 DEBUG   MainThread:17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-08-23 20:59:58,612 DEBUG   Thread-7  :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /files/automl/abcgraph/lom578rn/file_stream HTTP/1.1" 200 310
+2019-08-23 20:59:58,674 DEBUG   MainThread:17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 1292
+2019-08-23 20:59:59,369 DEBUG   Thread-21 :17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-08-23 20:59:59,604 DEBUG   Thread-7  :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /files/automl/abcgraph/lom578rn/file_stream HTTP/1.1" 200 310
+2019-08-23 20:59:59,608 DEBUG   Thread-21 :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 757
+2019-08-23 20:59:59,615 DEBUG   Thread-21 :17396 [connectionpool.py:_new_conn():815] Starting new HTTPS connection (1): storage.googleapis.com:443
+2019-08-23 20:59:59,817 DEBUG   Thread-7  :17396 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /files/automl/abcgraph/lom578rn/file_stream HTTP/1.1" 200 307
+2019-08-23 20:59:59,819 INFO    MainThread:17396 [run_manager.py:_sync_etc():1340] rendering summary
+2019-08-23 20:59:59,821 INFO    MainThread:17396 [run_manager.py:_sync_etc():1371] syncing files to cloud storage
+2019-08-23 21:00:00,010 DEBUG   Thread-21 :17396 [connectionpool.py:_make_request():396] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/automl/abcgraph/lom578rn/___batch_archive_2.tgz?Expires=1566565259&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=hmezuqjf20Tqfyx9HP%2FWgN5H1TxM4%2BwskJfQBNsiZbezwg5FNU2k2bQ9u5FqFqCithQq6tfh117Zzh13g1skCmYFR3eIpmINjJsWgfLbGWBeLvsEq6hiVYLHeWoaO2Sgmb2e6nU2sq4eBxRXO6Azb4nggs7oBO7NBoA8YYrVG2bnvtcfxjxYI0YAN8AQK8g0pdzgxAIxLdn8tU0zyQgALZEwBeVJIg9mZjALurFinb4LExiqQhTJ9CifZ%2BZo1GVMN14yppih7gdzv%2FOmgVSsZs8zmQHahjgP2D6ccYoxGR7QPmJFllL8493h5ka0o5%2FRdXRVsScJVTZirwig9uxVtQ%3D%3D HTTP/1.1" 200 0
+2019-08-23 21:00:09,702 DEBUG   Thread-16 :17396 [connectionpool.py:_make_request():396] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/automl/abcgraph/lom578rn/diff.patch?Expires=1566565251&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=h7O9lw2%2B6z233Zy8npPi5ogM2iAnca%2BwuGtNTysYK1FOnTHySeOzW2x8%2BEJsfwuMrNjLwrzYRTtiVXfgm2P3nJpTijtbMzd0%2FmTi24iVP18rxPbTXyZ0ilL5DUB74K9mOw6uVzOqjdFQuWBwR7hNnlcJ3EP2DLQs%2FSJimB3GWqCeigzb2c67BwcFNYOtYYIkYoaoIgYIG6UrwDu4M9JbXXyGkbRcv8SHvKf%2BCMrR5XKzsz3uy4E4qx44MXh7eD%2BTU3jfvkqSh9UlyV61kPwJpT7k6bzF8H5yOvdFxFdy%2BbnAD5Erppi3FKZsYiWM7jgOS9vDztvNBsZVW%2FtJGM29PA%3D%3D HTTP/1.1" 200 0
+2019-08-23 21:00:10,732 INFO    MainThread:17396 [run_manager.py:_sync_etc():1386] syncing complete: https://app.wandb.ai/automl/abcgraph/runs/lom578rn?apiKey=ee0b5f53d949c84cee7decbe7a629e63fb2f8408
+2019-08-23 21:00:10,732 INFO    MainThread:17396 [lom578rn:run_manager.py:_sync_etc():1386] syncing complete: https://app.wandb.ai/automl/abcgraph/runs/lom578rn?apiKey=ee0b5f53d949c84cee7decbe7a629e63fb2f8408

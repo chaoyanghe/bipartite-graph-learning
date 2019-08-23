@@ -8,7 +8,7 @@ import wandb
 def parse_args():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--dataset', type=str, default='cora', required=True)
-	parser.add_argument('--model', type=str, default='adversarial', required=True)
+	parser.add_argument('--model', type=str, default='adv', required=True)
 	parser.add_argument('--rank', type=int, default=-1,
 						help='process ID for MPI Simple AutoML')
 
@@ -31,7 +31,7 @@ if __name__ == "__main__":
 	method = conf.method
 	input_folder = conf.input_folder + str(dataset)
 	output_folder = None
-	if model == "adversarial":
+	if model == "adv":
 		output_folder = conf.output_folder_ABCGraph_adv + "/" + str(dataset)
 	elif model == "vae":
 		output_folder = conf.output_folder_ABCGraph_mlp + "/" + str(dataset)

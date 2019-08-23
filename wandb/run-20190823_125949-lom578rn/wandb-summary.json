@@ -1,0 +1,11 @@
+{
+    "random-seed": "955399",
+    "output_folder": "./out/abcgraph-adv/cora",
+    "epoch": 5,
+    "_runtime": 5.513952016830444,
+    "_timestamp": 1566565193.635155,
+    "_step": 27,
+    "lossD": 1.0423097610473633,
+    "lossG": 0.6904342770576477,
+    "embedding_output_folder": "./out/abcgraph-adv/cora"
+}
