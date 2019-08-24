@@ -64,5 +64,7 @@ nohup sh run_gae.sh citeseer > log_run_gae_citeseer.txt 2>&1 &
 nohup sh run_gae.sh pubmed > log_run_gae_pubmed.txt 2>&1 &
 
 # AS-GCN
+cd ASGCN/data
+python tencent_dataset_loader.py
 nohup python run_pubbmed.py --dataset tencent > running_asgcn.txt
 ~~~
