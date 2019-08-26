@@ -63,8 +63,10 @@ flags.DEFINE_integer('walk_len', 5, "(Co-occur) length of one singe random walk"
 flags.DEFINE_integer('n_walks', 50, "Number of random walks start from one node")
 
 # os.environ["CUDA_VISIBLE_DEVICES"] = str(FLAGS.gpu)
-os.environ["CUDA_VISIBLE_DEVICES"] = '0,1,2,3,4,5,6,7'
+# os.environ["CUDA_VISIBLE_DEVICES"] = '0,1,2,3,4,5,6,7'
 # os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+os.environ['CUDA_VISIBLE_DEVICES'] = ' '
+
 
 GPU_MEM_FRACTION = 0.9
 T0 = time.time()

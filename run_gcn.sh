@@ -19,9 +19,9 @@ rm -rf ./out/graphsage/$DATASET
 
 
 ## only execute once
-cd ./GraphSage/example_data/
-sh run_graphsage_data_loader.sh $DATASET
-cd ../..
+#cd ./GraphSage/example_data/
+#sh run_graphsage_data_loader.sh $DATASET
+#cd ../..
 
 
 cd ./GraphSage

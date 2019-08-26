@@ -33,10 +33,11 @@
         "--gcn_output_dim",
         "16"
     ],
-    "state": "running",
+    "state": "finished",
     "jobType": null,
     "mode": "run",
     "name": "ABCGraph-adv-odj8jcx6",
     "project": "abcgraph",
-    "heartbeatAt": "2019-08-26T03:17:41.744182"
+    "heartbeatAt": "2019-08-26T03:19:02.987282",
+    "exitcode": 0
 }

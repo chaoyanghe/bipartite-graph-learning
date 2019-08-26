@@ -1427,3 +1427,47 @@
 -1Mon, 26 Aug 2019 11:17:17 models.py[line:101] INFO Step: 2, Epoch: 1, Iterations: 119, dis loss: 0.828334391117096, gen loss: 1.0896161794662476
 -1Mon, 26 Aug 2019 11:17:28 models.py[line:101] INFO Step: 2, Epoch: 2, Iterations: 38, dis loss: 0.7651644945144653, gen loss: 1.4913133382797241
 -1Mon, 26 Aug 2019 11:17:38 models.py[line:101] INFO Step: 2, Epoch: 2, Iterations: 138, dis loss: 0.7494481801986694, gen loss: 1.1468292474746704
+-1Mon, 26 Aug 2019 11:17:45 abcgraph_adv.py[line:147] INFO ###Depth 3 starts!
+
+-1Mon, 26 Aug 2019 11:17:45 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 0, dis loss: 1.2359267473220825, gen loss: 0.9595881700515747
+-1Mon, 26 Aug 2019 11:17:47 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 100, dis loss: 1.036881685256958, gen loss: 1.2627995014190674
+-1Mon, 26 Aug 2019 11:17:48 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 200, dis loss: 0.9206676483154297, gen loss: 1.394483208656311
+-1Mon, 26 Aug 2019 11:17:50 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 300, dis loss: 0.8299096822738647, gen loss: 1.4688435792922974
+-1Mon, 26 Aug 2019 11:17:52 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 400, dis loss: 0.7293426394462585, gen loss: 1.6043157577514648
+-1Mon, 26 Aug 2019 11:17:53 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 500, dis loss: 0.750708818435669, gen loss: 1.386032223701477
+-1Mon, 26 Aug 2019 11:17:55 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 600, dis loss: 0.8370451927185059, gen loss: 1.0614312887191772
+-1Mon, 26 Aug 2019 11:17:56 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 700, dis loss: 0.9986282587051392, gen loss: 0.8216307759284973
+-1Mon, 26 Aug 2019 11:17:58 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 800, dis loss: 0.9607000946998596, gen loss: 0.8698871731758118
+-1Mon, 26 Aug 2019 11:18:00 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 900, dis loss: 0.9968032836914062, gen loss: 0.8764981627464294
+-1Mon, 26 Aug 2019 11:18:01 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 1000, dis loss: 1.0653529167175293, gen loss: 0.8471337556838989
+-1Mon, 26 Aug 2019 11:18:03 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 1100, dis loss: 1.1734979152679443, gen loss: 0.762653112411499
+-1Mon, 26 Aug 2019 11:18:04 models.py[line:101] INFO Step: 3, Epoch: 0, Iterations: 1200, dis loss: 1.277970790863037, gen loss: 0.7164941430091858
+-1Mon, 26 Aug 2019 11:18:06 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 61, dis loss: 1.3876829147338867, gen loss: 0.6644381880760193
+-1Mon, 26 Aug 2019 11:18:07 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 161, dis loss: 1.4093239307403564, gen loss: 0.6372377872467041
+-1Mon, 26 Aug 2019 11:18:09 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 261, dis loss: 1.3651220798492432, gen loss: 0.6668009161949158
+-1Mon, 26 Aug 2019 11:18:10 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 361, dis loss: 1.352013111114502, gen loss: 0.6669089198112488
+-1Mon, 26 Aug 2019 11:18:12 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 461, dis loss: 1.341552734375, gen loss: 0.6973148584365845
+-1Mon, 26 Aug 2019 11:18:14 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 561, dis loss: 1.3356187343597412, gen loss: 0.6967006325721741
+-1Mon, 26 Aug 2019 11:18:15 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 661, dis loss: 1.3393051624298096, gen loss: 0.6989451050758362
+-1Mon, 26 Aug 2019 11:18:17 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 761, dis loss: 1.3352720737457275, gen loss: 0.7069804668426514
+-1Mon, 26 Aug 2019 11:18:18 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 861, dis loss: 1.31233549118042, gen loss: 0.7330899238586426
+-1Mon, 26 Aug 2019 11:18:20 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 961, dis loss: 1.3383212089538574, gen loss: 0.737355649471283
+-1Mon, 26 Aug 2019 11:18:21 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 1061, dis loss: 1.2972345352172852, gen loss: 0.7368982434272766
+-1Mon, 26 Aug 2019 11:18:23 models.py[line:101] INFO Step: 3, Epoch: 1, Iterations: 1161, dis loss: 1.3112058639526367, gen loss: 0.7361539602279663
+-1Mon, 26 Aug 2019 11:18:24 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 22, dis loss: 1.3294594287872314, gen loss: 0.7067219614982605
+-1Mon, 26 Aug 2019 11:18:26 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 122, dis loss: 1.3369684219360352, gen loss: 0.7290228009223938
+-1Mon, 26 Aug 2019 11:18:27 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 222, dis loss: 1.337515115737915, gen loss: 0.7360469102859497
+-1Mon, 26 Aug 2019 11:18:29 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 322, dis loss: 1.329219937324524, gen loss: 0.7528378963470459
+-1Mon, 26 Aug 2019 11:18:30 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 422, dis loss: 1.3267602920532227, gen loss: 0.7473412156105042
+-1Mon, 26 Aug 2019 11:18:32 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 522, dis loss: 1.333316683769226, gen loss: 0.7607327699661255
+-1Mon, 26 Aug 2019 11:18:34 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 622, dis loss: 1.333389401435852, gen loss: 0.7723488211631775
+-1Mon, 26 Aug 2019 11:18:35 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 722, dis loss: 1.3179080486297607, gen loss: 0.7424091100692749
+-1Mon, 26 Aug 2019 11:18:37 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 822, dis loss: 1.3241389989852905, gen loss: 0.7569273114204407
+-1Mon, 26 Aug 2019 11:18:38 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 922, dis loss: 1.3451143503189087, gen loss: 0.7513846755027771
+-1Mon, 26 Aug 2019 11:18:40 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 1022, dis loss: 1.3488272428512573, gen loss: 0.7574095726013184
+-1Mon, 26 Aug 2019 11:18:41 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 1122, dis loss: 1.3446931838989258, gen loss: 0.7633938789367676
+-1Mon, 26 Aug 2019 11:18:43 models.py[line:101] INFO Step: 3, Epoch: 2, Iterations: 1222, dis loss: 1.342694878578186, gen loss: 0.7543417811393738
+-1Mon, 26 Aug 2019 11:18:56 abcgraph_adv.py[line:207] INFO Start to save embedding file
+-1Mon, 26 Aug 2019 11:18:56 abcgraph_adv.py[line:210] INFO node_num = 619030
+-1Mon, 26 Aug 2019 11:18:56 abcgraph_adv.py[line:212] INFO dimension_embedding = 8
+-1Mon, 26 Aug 2019 11:19:01 abcgraph_adv.py[line:239] INFO Saved embedding file

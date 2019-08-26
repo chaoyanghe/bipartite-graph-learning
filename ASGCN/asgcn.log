@@ -3103,3 +3103,136 @@ Sat, 24 Aug 2019 09:36:14 utils.py[line:94] INFO *******Name: ty
 Sat, 24 Aug 2019 09:36:14 utils.py[line:94] INFO *******Name: allx
 Sat, 24 Aug 2019 09:36:14 utils.py[line:94] INFO *******Name: ally
 Sat, 24 Aug 2019 09:36:14 utils.py[line:94] INFO *******Name: graph
+Mon, 26 Aug 2019 11:48:28 utils.py[line:94] INFO *******Name: x
+Mon, 26 Aug 2019 11:48:28 utils.py[line:94] INFO *******Name: y
+Mon, 26 Aug 2019 11:48:28 utils.py[line:94] INFO *******Name: tx
+Mon, 26 Aug 2019 11:48:28 utils.py[line:94] INFO *******Name: ty
+Mon, 26 Aug 2019 11:48:28 utils.py[line:94] INFO *******Name: allx
+Mon, 26 Aug 2019 11:48:28 utils.py[line:94] INFO *******Name: ally
+Mon, 26 Aug 2019 11:48:28 utils.py[line:94] INFO *******Name: graph
+Mon, 26 Aug 2019 11:48:28 utils.py[line:103] INFO ********test.index
+Mon, 26 Aug 2019 11:48:28 utils.py[line:121] INFO *******all loaded
+Mon, 26 Aug 2019 11:48:28 utils.py[line:128] INFO *******test preparation
+Mon, 26 Aug 2019 11:48:28 utils.py[line:134] INFO ********mask preparation
+Mon, 26 Aug 2019 11:48:28 utils.py[line:138] INFO ********y preparation
+Mon, 26 Aug 2019 11:48:28 utils.py[line:145] INFO ********load data function done
+Mon, 26 Aug 2019 11:48:28 utils.py[line:466] INFO ********data loaded!
+Mon, 26 Aug 2019 11:48:29 run_pubmed.py[line:51] INFO Shape of adj: (2708, 2708) 
+ Shape of adj_train: (1209, 32) 
+ Shape of adj_val_train: (1209, 32) 
+ Shape of features: (2708, 1433) 
+ Shape of train_features: (1209, 1433) 
+ Shape of y_train: (1208, 7) 
+ Shape of y_test: (1000, 7) 
+ Shape of test_index: 
+Mon, 26 Aug 2019 11:48:29 deprecation.py[line:323] WARNING From /anaconda3/envs/abcgraph/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Mon, 26 Aug 2019 11:48:29 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/ASGCN/sampler.py:77: multinomial (from tensorflow.python.ops.random_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.random.categorical instead.
+Mon, 26 Aug 2019 11:48:29 deprecation.py[line:506] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/ASGCN/layers.py:232: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 26 Aug 2019 11:48:29 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/ASGCN/metrics.py:25: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+Mon, 26 Aug 2019 11:48:29 deprecation.py[line:323] WARNING From /anaconda3/envs/abcgraph/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Mon, 26 Aug 2019 11:48:29 deprecation.py[line:323] WARNING From /anaconda3/envs/abcgraph/lib/python3.7/site-packages/tensorflow/python/ops/sparse_grad.py:113: to_int64 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:140] INFO ******** Start training *********
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 0
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 1
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 2
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 3
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 4
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 5
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 6
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 7
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 8
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 9
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 10
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:145] INFO Epoch: 11
+Mon, 26 Aug 2019 11:48:30 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:145] INFO Epoch: 12
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:145] INFO Epoch: 13
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:145] INFO Epoch: 14
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:145] INFO Epoch: 15
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:145] INFO Epoch: 16
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:145] INFO Epoch: 17
+Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)

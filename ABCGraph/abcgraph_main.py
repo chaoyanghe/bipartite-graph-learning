@@ -21,7 +21,7 @@ from data.bipartite_graph_data_loader_pubmed import BipartiteGraphDataLoaderPubM
 import calendar
 import time
 setproctitle.setproctitle('ABCGraph')
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['CUDA_VISIBLE_DEVICES'] = ' '
 
 def parse_args():
     parser = argparse.ArgumentParser()

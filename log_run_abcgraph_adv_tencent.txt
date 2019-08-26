@@ -13,3 +13,121 @@ dis_hidden = 10
 dropout = 0.4
 rank = -1
 
+###############random seed = 51613 #########
+./out/abcgraph-adv/tencent/random_seed.txt
+./
+self.u_num = 619030
+self.v_num = 90044
+abcgraph = <abcgraph_adv.ABCGraphAdversarial object at 0x15e8e7e10>
+adversarial_learning START
+tensor([[-0.9968, -1.0000, -1.0000,  ..., -1.0000, -1.0000, -1.0000],
+        [-0.9542, -0.9876, -1.0000,  ..., -1.0000, -1.0000, -1.0000],
+        [-0.2326, -0.7122, -0.8301,  ..., -0.8056, -0.8720, -0.8661],
+        ...,
+        [ 0.2569, -0.7766, -0.9222,  ..., -0.7041, -0.9029, -0.8922],
+        [ 0.2542, -0.7763, -0.9219,  ..., -0.7048, -0.9028, -0.8921],
+        [-0.2181, -0.7144, -0.8340,  ..., -0.8031, -0.8731, -0.8670]])
+adversarial_learning END
+
+wandb: Waiting for W&B process to finish, PID 5049
+wandb: Program ended successfully.
+wandb: Run summary:
+wandb:               random-seed 51613
+wandb:             output_folder ./out/abcgraph-adv/t...
+wandb:                     epoch 8
+wandb:                     lossD 1.3350341320037842
+wandb:                _timestamp 1566789523.4036539
+wandb:                  _runtime 740.6852242946625
+wandb:                     _step 15953
+wandb:                     lossG 0.8165417313575745
+wandb:   embedding_output_folder ./out/abcgraph-adv/t...
+wandb: Syncing 8 W&B file(s) and 0 media file(s)
+wandb: - 0.01MB of 0.01MB uploadedwandb: \ 0.01MB of 0.01MB uploadedwandb: | 0.01MB of 0.01MB uploadedwandb: / 0.01MB of 0.01MB uploadedwandb: - 0.01MB of 0.01MB uploadedwandb: \ 0.01MB of 0.01MB uploadedwandb:                                                                                
+wandb: Synced ABCGraph-adv-odj8jcx6: https://app.wandb.ai/automl/abcgraph/runs/odj8jcx6?apiKey=ee0b5f53d949c84cee7decbe7a629e63fb2f8408
+/anaconda3/envs/abcgraph/lib/python3.7/site-packages/numpy/lib/arraysetops.py:569: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  mask |= (ar1 == a)
+/anaconda3/envs/abcgraph/lib/python3.7/site-packages/sklearn/preprocessing/data.py:334: DataConversionWarning: Data with input dtype int64 were all converted to float64 by MinMaxScaler.
+  return self.partial_fit(X, y)
+/anaconda3/envs/abcgraph/lib/python3.7/site-packages/sklearn/linear_model/stochastic_gradient.py:183: FutureWarning: max_iter and tol parameters have been added in SGDClassifier in 0.19. If max_iter is set but tol is left unset, the default value for tol in 0.19 and 0.20 will be None (which is equivalent to -infinity, so it has no effect) but will change in 0.21 to 1e-3. Specify tol to silence this warning.
+  FutureWarning)
+/anaconda3/envs/abcgraph/lib/python3.7/site-packages/sklearn/utils/validation.py:761: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+input_folder = ./data/tencent
+emb_file = ./out/abcgraph-adv/tencent/abcgraph.emb
+node_id_file = ./out/abcgraph-adv/tencent/node_list
+attr_data.shape = 619030
+emb_file len = 619030
+node_label_file = ./data/tencent/node_true
+         0
+0         
+1        0
+3        0
+9        0
+11       0
+15       0
+17       0
+23       0
+25       0
+27       0
+29       0
+33       0
+37       0
+39       0
+41       0
+43       0
+49       0
+51       0
+55       0
+57       0
+59       0
+63       0
+64       0
+66       0
+70       0
+78       0
+84       0
+90       0
+100      0
+101      0
+107      0
+...     ..
+95216    0
+1269238  0
+1269246  0
+1269247  0
+1269248  0
+1269250  0
+1269251  0
+663171   0
+1269253  0
+1269254  0
+1269255  0
+480226   0
+1269256  0
+1269257  0
+1269260  0
+1269262  0
+1269265  0
+1269267  0
+352618   0
+1269270  0
+693226   0
+1269272  0
+1269273  0
+1095532  0
+1269275  0
+1269278  0
+1269282  0
+1269285  0
+1269287  0
+1269288  0
+
+[619030 rows x 1 columns]
+len_x = 619030
+user_y = 619030
+test_micro_f1 = 0.897735
+test_macro_f1 = 0.525026
+output_folder = ./out/abcgraph-adv/tencent
+./out/abcgraph-adv/tencent/abcgraph.emb
+./out/abcgraph-adv/tencent/node_list
+./out/abcgraph-adv/tencent/abcgraph.res

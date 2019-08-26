@@ -32,7 +32,7 @@ flags.DEFINE_string('sampler_device', 'cpu', 'The device for sampling: cpu or gp
 flags.DEFINE_integer('rank', 128, 'The number of nodes per layer.')  # number of adaptive sampled nodes per layer
 flags.DEFINE_integer('skip', 0, 'If use skip connection.')
 flags.DEFINE_float('var', 0.5, 'If use variance reduction.')
-os.environ["CUDA_VISIBLE_DEVICES"] = str(FLAGS.gpu)
+os.environ["CUDA_VISIBLE_DEVICES"] = ' '
 
 logging.basicConfig(filename="./asgcn.log",
                     level=logging.DEBUG,
