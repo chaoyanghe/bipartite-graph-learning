@@ -128,12 +128,12 @@ def main():
     print("rank = " + str(rank))
 
     ts = calendar.timegm(time.gmtime())
-    wandb.init(
-        project="abcgraph",
-        name="ABCGraph-" + str(args.model) + "-" + str(os.getenv('WANDB_RUN_ID')),
-        config=args,
-        entity="automl"
-    )
+    # wandb.init(
+    #     project="abcgraph",
+    #     name="ABCGraph-" + str(args.model) + "-" + str(os.getenv('WANDB_RUN_ID')),
+    #     config=args,
+    #     entity="automl"
+    # )
 
     # log_embedding configuration
     logging.basicConfig(filename="./ABCGraph.log_embedding",
@@ -161,7 +161,7 @@ def main():
 
     print("###############random seed = %s #########" % str(args.seed))
     logging.info("###############random seed = %s #########" % str(args.seed))
-    wandb.run.summary["random-seed"] = str(args.seed)
+    # wandb.run.summary["random-seed"] = str(args.seed)
 
     output_folder = None
     if model_name == "adv":
@@ -180,7 +180,7 @@ def main():
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    wandb.run.summary["output_folder"] = str(output_folder)
+    # wandb.run.summary["output_folder"] = str(output_folder)
 
     seed_file = output_folder + "/random_seed.txt"
     print(seed_file)

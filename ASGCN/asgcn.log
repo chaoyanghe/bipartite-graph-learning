@@ -3096,3 +3096,10 @@ Fri, 23 Aug 2019 20:07:01 run_pubmed.py[line:148] INFO Batch size: (256,)
 Fri, 23 Aug 2019 20:07:01 run_pubmed.py[line:148] INFO Batch size: (256,)
 Fri, 23 Aug 2019 20:07:01 run_pubmed.py[line:148] INFO Batch size: (256,)
 Fri, 23 Aug 2019 20:07:01 run_pubmed.py[line:192] INFO ******** Model ends *********
+Sat, 24 Aug 2019 09:36:14 utils.py[line:94] INFO *******Name: x
+Sat, 24 Aug 2019 09:36:14 utils.py[line:94] INFO *******Name: y
+Sat, 24 Aug 2019 09:36:14 utils.py[line:94] INFO *******Name: tx
+Sat, 24 Aug 2019 09:36:14 utils.py[line:94] INFO *******Name: ty
+Sat, 24 Aug 2019 09:36:14 utils.py[line:94] INFO *******Name: allx
+Sat, 24 Aug 2019 09:36:14 utils.py[line:94] INFO *******Name: ally
+Sat, 24 Aug 2019 09:36:14 utils.py[line:94] INFO *******Name: graph

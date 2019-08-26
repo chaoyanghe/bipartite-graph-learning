@@ -1325,3 +1325,94 @@
 -1Fri, 23 Aug 2019 20:59:53 abcgraph_adv.py[line:210] INFO node_num = 734
 -1Fri, 23 Aug 2019 20:59:53 abcgraph_adv.py[line:212] INFO dimension_embedding = 1433
 -1Fri, 23 Aug 2019 20:59:56 abcgraph_adv.py[line:239] INFO Saved embedding file
+-1Mon, 26 Aug 2019 11:06:29 abcgraph_main.py[line:163] INFO ###############random seed = 51613 #########
+-1Mon, 26 Aug 2019 11:06:29 abcgraph_main.py[line:187] INFO ./out/abcgraph-adv/tencent/random_seed.txt
+-1Mon, 26 Aug 2019 11:06:29 abcgraph_main.py[line:197] INFO device = cpu
+-1Mon, 26 Aug 2019 11:06:29 bipartite_graph_data_loader.py[line:15] INFO BipartiteGraphDataLoader __init__().
+-1Mon, 26 Aug 2019 11:06:29 bipartite_graph_data_loader.py[line:22] INFO group_u_list_file_path = ./data/tencent/node_list
+-1Mon, 26 Aug 2019 11:06:29 bipartite_graph_data_loader.py[line:23] INFO group_u_attr_file_path = ./data/tencent/node_attr
+-1Mon, 26 Aug 2019 11:06:29 bipartite_graph_data_loader.py[line:24] INFO group_u_label_file_path = ./data/tencent/node_true
+-1Mon, 26 Aug 2019 11:06:29 bipartite_graph_data_loader.py[line:26] INFO edge_list_file_path = ./data/tencent/edgelist
+-1Mon, 26 Aug 2019 11:06:29 bipartite_graph_data_loader.py[line:28] INFO group_v_list_file_path = ./data/tencent/group_list
+-1Mon, 26 Aug 2019 11:06:29 bipartite_graph_data_loader.py[line:29] INFO group_v_attr_file_path = ./data/tencent/group_attr
+-1Mon, 26 Aug 2019 11:06:29 bipartite_graph_data_loader.py[line:30] INFO group_v_label_file_path = None
+-1Mon, 26 Aug 2019 11:06:29 bipartite_graph_data_loader.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+-1Mon, 26 Aug 2019 11:06:29 bipartite_graph_data_loader.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+-1Mon, 26 Aug 2019 11:06:50 bipartite_graph_data_loader.py[line:171] INFO before merging with u_list, the len is = 1089436
+-1Mon, 26 Aug 2019 11:06:51 bipartite_graph_data_loader.py[line:179] INFO after merging with u_list, the len is = 1089436
+-1Mon, 26 Aug 2019 11:06:52 bipartite_graph_data_loader.py[line:249] INFO count_no_attribute = 89682
+-1Mon, 26 Aug 2019 11:06:52 bipartite_graph_data_loader.py[line:250] INFO count_10 = 124
+-1Mon, 26 Aug 2019 11:06:52 bipartite_graph_data_loader.py[line:251] INFO count_14 = 134
+-1Mon, 26 Aug 2019 11:06:52 bipartite_graph_data_loader.py[line:252] INFO count_15 = 18997
+-1Mon, 26 Aug 2019 11:06:52 bipartite_graph_data_loader.py[line:253] INFO count_16 = 30893
+-1Mon, 26 Aug 2019 11:06:52 bipartite_graph_data_loader.py[line:254] INFO count_17 = 40023
+-1Mon, 26 Aug 2019 11:06:52 bipartite_graph_data_loader.py[line:255] INFO count_more_than_17 = 0
+-1Mon, 26 Aug 2019 11:06:52 bipartite_graph_data_loader.py[line:256] INFO count_all = 179853
+-1Mon, 26 Aug 2019 11:06:54 bipartite_graph_data_loader.py[line:274] INFO before merging with v_list, the len is = 90047
+-1Mon, 26 Aug 2019 11:06:54 bipartite_graph_data_loader.py[line:282] INFO after merging with v_list, the len is = 90047
+-1Mon, 26 Aug 2019 11:06:57 bipartite_graph_data_loader.py[line:94] INFO raw edge_list len = 1979756
+-1Mon, 26 Aug 2019 11:06:57 bipartite_graph_data_loader.py[line:95] INFO edge_list len = 991734
+-1Mon, 26 Aug 2019 11:06:57 bipartite_graph_data_loader.py[line:296] INFO group U length = 619030
+-1Mon, 26 Aug 2019 11:06:57 bipartite_graph_data_loader.py[line:297] INFO group V length = 90044
+-1Mon, 26 Aug 2019 11:06:58 bipartite_graph_data_loader.py[line:101] INFO u_list len = 619030. [1, 139467, 253828, 358861, 461403, 338688, 262114, 758671, 855102, 951204, 1045871, 1140045, 1062918]
+-1Mon, 26 Aug 2019 11:06:58 bipartite_graph_data_loader.py[line:102] INFO v_list len = 90044. [0, 48809, 115451, 201816, 309872, 441355, 600161, 795107, 1017863, 1268422]
+-1Mon, 26 Aug 2019 11:06:58 bipartite_graph_data_loader.py[line:303] INFO before filter, the len is = 1089436
+-1Mon, 26 Aug 2019 11:06:58 bipartite_graph_data_loader.py[line:307] INFO after filter, the len is = 619030
+-1Mon, 26 Aug 2019 11:06:58 bipartite_graph_data_loader.py[line:303] INFO before filter, the len is = 90047
+-1Mon, 26 Aug 2019 11:06:58 bipartite_graph_data_loader.py[line:307] INFO after filter, the len is = 90044
+-1Mon, 26 Aug 2019 11:06:58 bipartite_graph_data_loader.py[line:311] INFO __generate_adjacent_matrix START
+-1Mon, 26 Aug 2019 11:06:58 bipartite_graph_data_loader.py[line:313] INFO u_node_list = 619030
+-1Mon, 26 Aug 2019 11:06:58 bipartite_graph_data_loader.py[line:314] INFO v_node_list = 90044
+-1Mon, 26 Aug 2019 11:06:58 bipartite_graph_data_loader.py[line:315] INFO edge_list = 991734
+-1Mon, 26 Aug 2019 11:06:58 bipartite_graph_data_loader.py[line:317] INFO start to load bipartite for u
+-1Mon, 26 Aug 2019 11:07:13 bipartite_graph_data_loader.py[line:327] INFO (619030, 90044)
+-1Mon, 26 Aug 2019 11:07:13 bipartite_graph_data_loader.py[line:330] INFO end to load bipartite for u
+-1Mon, 26 Aug 2019 11:07:13 bipartite_graph_data_loader.py[line:332] INFO start to load bipartite for u
+-1Mon, 26 Aug 2019 11:07:27 bipartite_graph_data_loader.py[line:342] INFO (90044, 619030)
+-1Mon, 26 Aug 2019 11:07:27 bipartite_graph_data_loader.py[line:345] INFO end to load bipartite for u
+-1Mon, 26 Aug 2019 11:07:27 bipartite_graph_data_loader.py[line:401] INFO u number: 619030
+-1Mon, 26 Aug 2019 11:07:27 bipartite_graph_data_loader.py[line:402] INFO u_adjacent_matrix: (619030, 90044)
+-1Mon, 26 Aug 2019 11:07:27 bipartite_graph_data_loader.py[line:405] INFO v number: 90044
+-1Mon, 26 Aug 2019 11:07:27 bipartite_graph_data_loader.py[line:406] INFO v_adjacent_matrix: (90044, 619030)
+-1Mon, 26 Aug 2019 11:07:27 bipartite_graph_data_loader.py[line:409] INFO batch_num_u = 1239
+-1Mon, 26 Aug 2019 11:07:27 bipartite_graph_data_loader.py[line:412] INFO batch_num_v = 181
+-1Mon, 26 Aug 2019 11:07:28 bipartite_graph_data_loader.py[line:121] INFO #### generate_adjacent_matrix_feature_and_labels. END
+-1Mon, 26 Aug 2019 11:07:28 abcgraph_adv.py[line:29] INFO ABCGraphAdversarial
+-1Mon, 26 Aug 2019 11:07:28 abcgraph_adv.py[line:62] INFO adversarial_train
+-1Mon, 26 Aug 2019 11:07:28 abcgraph_adv.py[line:65] INFO ###Depth 1 starts!
+
+-1Mon, 26 Aug 2019 11:07:28 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 0, dis loss: 1.0732944011688232, gen loss: 0.8010943531990051
+-1Mon, 26 Aug 2019 11:07:39 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 100, dis loss: 0.9632281064987183, gen loss: 0.770881175994873
+-1Mon, 26 Aug 2019 11:07:49 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 200, dis loss: 0.9461279511451721, gen loss: 0.7462102770805359
+-1Mon, 26 Aug 2019 11:08:00 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 300, dis loss: 0.8817108869552612, gen loss: 0.8054102063179016
+-1Mon, 26 Aug 2019 11:08:10 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 400, dis loss: 0.8335314989089966, gen loss: 0.8448110222816467
+-1Mon, 26 Aug 2019 11:08:21 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 500, dis loss: 0.7702974081039429, gen loss: 0.9393195509910583
+-1Mon, 26 Aug 2019 11:08:31 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 600, dis loss: 0.7268962264060974, gen loss: 1.0047791004180908
+-1Mon, 26 Aug 2019 11:08:42 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 700, dis loss: 0.6902517080307007, gen loss: 1.0862095355987549
+-1Mon, 26 Aug 2019 11:08:55 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 800, dis loss: 0.7190584540367126, gen loss: 1.0716707706451416
+-1Mon, 26 Aug 2019 11:09:06 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 900, dis loss: 0.7331416606903076, gen loss: 1.051212191581726
+-1Mon, 26 Aug 2019 11:09:16 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 1000, dis loss: 0.8750537633895874, gen loss: 0.9630302786827087
+-1Mon, 26 Aug 2019 11:09:27 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 1100, dis loss: 1.034195065498352, gen loss: 0.8673674464225769
+-1Mon, 26 Aug 2019 11:09:37 models.py[line:101] INFO Step: 1, Epoch: 0, Iterations: 1200, dis loss: 1.14675772190094, gen loss: 0.7970578074455261
+-1Mon, 26 Aug 2019 11:09:48 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 61, dis loss: 1.4075064659118652, gen loss: 0.7782382965087891
+-1Mon, 26 Aug 2019 11:09:58 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 161, dis loss: 1.2855074405670166, gen loss: 0.7819371223449707
+-1Mon, 26 Aug 2019 11:10:09 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 261, dis loss: 1.256000280380249, gen loss: 0.7731143236160278
+-1Mon, 26 Aug 2019 11:10:19 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 361, dis loss: 1.242063045501709, gen loss: 0.7859919667243958
+-1Mon, 26 Aug 2019 11:10:30 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 461, dis loss: 1.2330585718154907, gen loss: 0.7874543070793152
+-1Mon, 26 Aug 2019 11:10:40 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 561, dis loss: 1.192246675491333, gen loss: 0.7863883376121521
+-1Mon, 26 Aug 2019 11:10:51 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 661, dis loss: 1.1740074157714844, gen loss: 0.7958412766456604
+-1Mon, 26 Aug 2019 11:11:01 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 761, dis loss: 1.1662311553955078, gen loss: 0.8312963843345642
+-1Mon, 26 Aug 2019 11:11:13 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 861, dis loss: 1.2040104866027832, gen loss: 0.8102017641067505
+-1Mon, 26 Aug 2019 11:11:24 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 961, dis loss: 1.1255850791931152, gen loss: 0.8488268852233887
+-1Mon, 26 Aug 2019 11:11:39 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 1061, dis loss: 1.175492286682129, gen loss: 0.8542909026145935
+-1Mon, 26 Aug 2019 11:11:51 models.py[line:101] INFO Step: 1, Epoch: 1, Iterations: 1161, dis loss: 1.1272776126861572, gen loss: 0.9196540713310242
+-1Mon, 26 Aug 2019 11:12:03 models.py[line:101] INFO Step: 1, Epoch: 2, Iterations: 22, dis loss: 1.3801283836364746, gen loss: 0.782859206199646
+-1Mon, 26 Aug 2019 11:12:19 models.py[line:101] INFO Step: 1, Epoch: 2, Iterations: 122, dis loss: 1.2544474601745605, gen loss: 0.9063649773597717
+-1Mon, 26 Aug 2019 11:12:34 models.py[line:101] INFO Step: 1, Epoch: 2, Iterations: 222, dis loss: 1.2009708881378174, gen loss: 0.8620500564575195
+-1Mon, 26 Aug 2019 11:12:48 models.py[line:101] INFO Step: 1, Epoch: 2, Iterations: 322, dis loss: 1.2145347595214844, gen loss: 0.8753405809402466
+-1Mon, 26 Aug 2019 11:13:02 models.py[line:101] INFO Step: 1, Epoch: 2, Iterations: 422, dis loss: 1.2346097230911255, gen loss: 0.8597826361656189
+-1Mon, 26 Aug 2019 11:13:15 models.py[line:101] INFO Step: 1, Epoch: 2, Iterations: 522, dis loss: 1.1751317977905273, gen loss: 0.8810612559318542
+-1Mon, 26 Aug 2019 11:13:28 models.py[line:101] INFO Step: 1, Epoch: 2, Iterations: 622, dis loss: 1.1824182271957397, gen loss: 0.8908867239952087
+-1Mon, 26 Aug 2019 11:13:39 models.py[line:101] INFO Step: 1, Epoch: 2, Iterations: 722, dis loss: 1.2003135681152344, gen loss: 0.8462831377983093
+-1Mon, 26 Aug 2019 11:13:53 models.py[line:101] INFO Step: 1, Epoch: 2, Iterations: 822, dis loss: 1.16871976852417, gen loss: 0.8777095675468445
+-1Mon, 26 Aug 2019 11:14:04 models.py[line:101] INFO Step: 1, Epoch: 2, Iterations: 922, dis loss: 1.1153755187988281, gen loss: 0.94975745677948

@@ -82,8 +82,8 @@ class ABCGraphAdversarial(object):
                                                                           epoch=i,
                                                                           iter=iter)
                 self.f_loss.write("%s %s\n" % (lossD, lossG))
-                wandb.log({"lossD": lossD, "epoch": i + self.epochs*0})
-                wandb.log({"lossG": lossG, "epoch": i + self.epochs*0})
+                # wandb.log({"lossD": lossD, "epoch": i + self.epochs*0})
+                # wandb.log({"lossG": lossG, "epoch": i + self.epochs*0})
 
         self.f_loss.write("###Depth 1 finished!\n")
         # explicit inference
@@ -123,8 +123,8 @@ class ABCGraphAdversarial(object):
                                                                           epoch=i,
                                                                           iter=iter)
                 self.f_loss.write("%s %s\n" % (lossD, lossG))
-                wandb.log({"lossD": lossD, "epoch": i + self.epochs*1})
-                wandb.log({"lossG": lossG, "epoch": i + self.epochs*1})
+                # wandb.log({"lossD": lossD, "epoch": i + self.epochs*1})
+                # wandb.log({"lossG": lossG, "epoch": i + self.epochs*1})
 
         self.f_loss.write("###Depth 2 finished!\n")
         # implicit inference
@@ -162,8 +162,8 @@ class ABCGraphAdversarial(object):
                 lossD, lossG = self.adversarial_merge.forward_backward(u_input, gcn_merge_output, step=3, epoch=i,
                                                                        iter=iter)
                 self.f_loss.write("%s %s\n" % (lossD, lossG))
-                wandb.log({"lossD": lossD, "epoch": i + self.epochs*2})
-                wandb.log({"lossG": lossG, "epoch": i + self.epochs*2})
+                # wandb.log({"lossD": lossD, "epoch": i + self.epochs*2})
+                # wandb.log({"lossG": lossG, "epoch": i + self.epochs*2})
 
         u_merge_attr = torch.FloatTensor([]).to(self.device)
         for iter in range(self.batch_num_u):
@@ -237,6 +237,6 @@ class ABCGraphAdversarial(object):
         f_emb.close()
         f_node_list.close()
         logging.info("Saved embedding file")
-        wandb.run.summary["embedding_output_folder"] = str(output_folder)
-        wandb.save(os.path.join(wandb.run.dir, output_folder + '/abcgraph.emb'))
-        wandb.save(os.path.join(wandb.run.dir, output_folder + '/node_list'))
+        # wandb.run.summary["embedding_output_folder"] = str(output_folder)
+        # wandb.save(os.path.join(wandb.run.dir, output_folder + '/abcgraph.emb'))
+        # wandb.save(os.path.join(wandb.run.dir, output_folder + '/node_list'))

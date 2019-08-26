@@ -6,6 +6,7 @@ import ABCGraph.conf as conf
 import wandb
 
 def parse_args():
+
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--dataset', type=str, default='cora', required=True)
 	parser.add_argument('--model', type=str, default='adv', required=True)
@@ -21,12 +22,12 @@ if __name__ == "__main__":
 	model = args.model
 	rank = args.rank
 
-	wandb.init(
-		project="abcgraph",
-		name="ABCGraph-" + str(args.model) + "-" + str(os.getenv('WANDB_RUN_ID')),
-		config=args,
-		entity="automl",
-	)
+	# wandb.init(
+	# 	project="abcgraph",
+	# 	name="ABCGraph-" + str(args.model) + "-" + str(os.getenv('WANDB_RUN_ID')),
+	# 	config=args,
+	# 	entity="automl",
+	# )
 
 	method = conf.method
 	input_folder = conf.input_folder + str(dataset)
@@ -97,7 +98,7 @@ if __name__ == "__main__":
 		fout.write("object_value=%f" % (ap))
 		fout.close()
 
-		wandb.run.summary["output_model_accuracy"] = str(ap)
+		# wandb.run.summary["output_model_accuracy"] = str(ap)
 	else:
 		logging.info("No res file.")
 		exit(1)

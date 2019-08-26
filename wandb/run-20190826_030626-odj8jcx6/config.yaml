@@ -1,0 +1,55 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.8.9
+    is_jupyter_run: false
+batch_size:
+  desc: null
+  value: 500
+dataset:
+  desc: null
+  value: tencent
+decoder_hidfeat:
+  desc: null
+  value: 10
+dis_hidden:
+  desc: null
+  value: 10
+dropout:
+  desc: null
+  value: 0.4
+encoder_hidfeat:
+  desc: null
+  value: 10
+epochs:
+  desc: null
+  value: 3
+gcn_output_dim:
+  desc: null
+  value: 16
+gpu:
+  desc: null
+  value: 0
+latent_hidfeat:
+  desc: null
+  value: 8
+lr:
+  desc: null
+  value: 0.0003
+model:
+  desc: null
+  value: adv
+rank:
+  desc: null
+  value: -1
+seed:
+  desc: null
+  value: null
+vae_hidfeat:
+  desc: null
+  value: 16
+weight_decay:
+  desc: null
+  value: 0.0005

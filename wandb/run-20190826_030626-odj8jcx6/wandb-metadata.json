@@ -1,0 +1,42 @@
+{
+    "root": "/Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb",
+    "program": "./ABCGraph/abcgraph_main.py",
+    "git": {
+        "remote": "https://github.com/chaoyanghe/bipartite-graph-learning.git",
+        "commit": "0346dcb2ed98270eab6e13f79e3b5b4aff68bf45"
+    },
+    "email": "xiet@usc.edu",
+    "startedAt": "2019-08-26T03:06:26.828867",
+    "host": "HALCYONXIE-MB0",
+    "username": "Tian",
+    "os": "Darwin-18.7.0-x86_64-i386-64bit",
+    "python": "3.7.4",
+    "executable": "/anaconda3/envs/abcgraph/bin/python3",
+    "cpu_count": 4,
+    "args": [
+        "--dataset",
+        "tencent",
+        "--model",
+        "adv",
+        "--gpu",
+        "0",
+        "--epochs",
+        "3",
+        "--batch_size",
+        "500",
+        "--lr",
+        "0.0003",
+        "--weight_decay",
+        "0.0005",
+        "--dropout",
+        "0.4",
+        "--gcn_output_dim",
+        "16"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "ABCGraph-adv-odj8jcx6",
+    "project": "abcgraph",
+    "heartbeatAt": "2019-08-26T03:13:56.931092"
+}
