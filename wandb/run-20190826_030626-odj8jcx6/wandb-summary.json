@@ -1,10 +1,10 @@
 {
     "random-seed": "51613",
     "output_folder": "./out/abcgraph-adv/tencent",
-    "epoch": 2,
-    "lossD": 1.173591136932373,
-    "_timestamp": 1566789250.876537,
-    "_runtime": 468.1581072807312,
-    "_step": 6895,
-    "lossG": 0.8801032304763794
+    "epoch": 5,
+    "lossD": 0.7870498299598694,
+    "_timestamp": 1566789461.471988,
+    "_runtime": 678.7535581588745,
+    "_step": 8519,
+    "lossG": 1.0197404623031616
 }

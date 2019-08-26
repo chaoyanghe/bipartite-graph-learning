@@ -6,7 +6,7 @@ import random
 import numpy as np
 import torch
 import conf
-import wandb
+# import wandb
 import setproctitle
 from abcgraph_mlp import ABCGraphMLP
 from abcgraph_adv import ABCGraphAdversarial

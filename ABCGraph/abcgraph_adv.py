@@ -10,7 +10,7 @@ import torch
 from adversarial.models import AdversarialLearning
 from gcn.models import GCN
 
-import wandb
+# import wandb
 
 class ABCGraphAdversarial(object):
     def __init__(self, bipartite_graph_data_loader, args, device, rank=-1, dataset="cora"):

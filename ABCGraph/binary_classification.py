@@ -2,8 +2,8 @@ import argparse
 import logging
 import os
 
-import ABCGraph.conf as conf
-import wandb
+import conf
+# import wandb
 
 def parse_args():
 
