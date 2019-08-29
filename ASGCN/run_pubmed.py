@@ -145,7 +145,7 @@ def main(rank1, rank0):
         logging.info('Epoch: %d' % epoch)
         for batch in iterate_minibatches_listinputs([y_train, np.arange(num_train)], batchsize=256, shuffle=True):
             [y_train_batch, train_batch] = batch
-            logging.info('Batch size: {}'.format(train_batch.shape))
+            # logging.info('Batch size: {}'.format(train_batch.shape))
 
             if sum(train_batch) < 1:
                 continue
@@ -180,6 +180,7 @@ def main(rank1, rank0):
         #       "val_acc=", "{:.5f}".format(acc), "time=", "{:.5f}".format(train_time_sample[epoch]))
         print("Epoch:", '%04d' % (epoch + 1), "train_loss=", "{:.5f}".format(outs[1]), "train_acc=", "train_acc=",
               "{:.5f}".format(outs[2]), "time=", "{:.5f}".format(train_time_sample[epoch]))
+
 
     train_duration = np.mean(np.array(train_time_sample))
     # Testing

@@ -10,6 +10,7 @@ import torch
 from adversarial.models import AdversarialLearning
 from gcn.models import GCN
 
+
 # import wandb
 
 class ABCGraphAdversarial(object):
@@ -31,6 +32,8 @@ class ABCGraphAdversarial(object):
         self.gcn_implicit = GCN(u_attr_dimensions, v_attr_dimensions).to(device)
         self.gcn_merge = GCN(v_attr_dimensions, u_attr_dimensions).to(device)
         self.gcn_opposite = GCN(u_attr_dimensions, v_attr_dimensions).to(device)
+        # the fifth layer is used for experiment
+        self.gcn_five = GCN(v_attr_dimensions, u_attr_dimensions).to(device)
 
         self.adversarial_explicit = AdversarialLearning(self.gcn_explicit, u_attr_dimensions, dis_hidden_dim,
                                                         learning_rate, weight_decay, dropout, device, outfeat=1)
@@ -40,6 +43,8 @@ class ABCGraphAdversarial(object):
                                                      learning_rate, weight_decay, dropout, device, outfeat=1)
         self.adversarial_opposite = AdversarialLearning(self.gcn_opposite, v_attr_dimensions, dis_hidden_dim,
                                                         learning_rate, weight_decay, dropout, device, outfeat=1)
+        self.adversarial_five = AdversarialLearning(self.gcn_five, u_attr_dimensions, dis_hidden_dim, learning_rate,
+                                                    weight_decay, dropout, device, outfeat=1)
 
         self.bipartite_graph_data_loader = bipartite_graph_data_loader
         self.batch_size = bipartite_graph_data_loader.batch_size
@@ -85,7 +90,7 @@ class ABCGraphAdversarial(object):
                 # wandb.log({"lossD": lossD, "epoch": i + self.epochs*0})
                 # wandb.log({"lossG": lossG, "epoch": i + self.epochs*0})
 
-        self.f_loss.write("###Depth 1 finished!\n")
+
         # explicit inference
         u_explicit_attr = torch.FloatTensor([]).to(self.device)
         for iter in range(self.batch_num_u):
@@ -102,6 +107,7 @@ class ABCGraphAdversarial(object):
             gcn_explicit_output = self.gcn_explicit(torch.as_tensor(self.v_attr, device=self.device), u_adj_tensor)
             u_explicit_attr = torch.cat((u_explicit_attr, gcn_explicit_output.detach()), 0)
 
+        self.f_loss.write("###Depth 1 finished!\n")
         # implicit training
         logging.info('###Depth 2 starts!\n')
         for i in range(self.epochs):
@@ -126,7 +132,7 @@ class ABCGraphAdversarial(object):
                 # wandb.log({"lossD": lossD, "epoch": i + self.epochs*1})
                 # wandb.log({"lossG": lossG, "epoch": i + self.epochs*1})
 
-        self.f_loss.write("###Depth 2 finished!\n")
+
         # implicit inference
         v_implicit_attr = torch.FloatTensor([]).to(self.device)
         for iter in range(self.batch_num_v):
@@ -143,6 +149,7 @@ class ABCGraphAdversarial(object):
             gcn_implicit_output = self.gcn_implicit(u_explicit_attr, v_adj_tensor)
             v_implicit_attr = torch.cat((v_implicit_attr, gcn_implicit_output.detach()), 0)
 
+        self.f_loss.write("###Depth 2 finished!\n")
         # merge
         logging.info('###Depth 3 starts!\n')
         for i in range(self.epochs):
@@ -181,8 +188,87 @@ class ABCGraphAdversarial(object):
             u_merge_attr = torch.cat((u_merge_attr, gcn_merge_output.detach()), 0)
 
         self.f_loss.write("###Depth 3 finished!\n")
-        print(u_merge_attr)
-        self.__save_embedding_to_file(u_merge_attr.cpu().numpy(), self.bipartite_graph_data_loader.get_u_list())
+
+        # fourth step
+        logging.info('###Depth 4 starts!\n')
+        for i in range(self.epochs):
+            for iter in range(self.batch_num_v):
+                start_index = self.batch_size * iter
+                end_index = self.batch_size * (iter + 1)
+                if iter == self.batch_num_v - 1:
+                    end_index = self.v_num
+                v_attr_batch = v_implicit_attr[start_index:end_index]
+                v_adj_batch = self.v_adj[start_index:end_index]
+
+                # prepare the data to the tensor
+                v_attr_tensor = torch.as_tensor(v_attr_batch, dtype=torch.float, device=self.device)
+                v_adj_tensor = self.__sparse_mx_to_torch_sparse_tensor(v_adj_batch).to(device=self.device)
+
+                # training
+                gcn_fourth_output = self.gcn_opposite(u_merge_attr, v_adj_tensor)
+                lossD, lossG = self.adversarial_opposite.forward_backward(v_attr_tensor, gcn_fourth_output, step=4,
+                                                                          epoch=i,
+                                                                          iter=iter)
+                self.f_loss.write("%s %s\n" % (lossD, lossG))
+                # wandb.log({"lossD": lossD, "epoch": i + self.epochs*1})
+                # wandb.log({"lossG": lossG, "epoch": i + self.epochs*1})
+
+        v_fourth_attr = torch.FloatTensor([]).to(self.device)
+        for iter in range(self.batch_num_v):
+            start_index = self.batch_size * iter
+            end_index = self.batch_size * (iter + 1)
+            if iter == self.batch_num_v - 1:
+                end_index = self.v_num
+            v_adj_batch = self.v_adj[start_index:end_index]
+
+            # prepare the data to the tensor
+            v_adj_tensor = self.__sparse_mx_to_torch_sparse_tensor(v_adj_batch).to(device=self.device)
+
+            # inference
+            gcn_fourth_output = self.gcn_opposite(u_merge_attr, v_adj_tensor)
+            v_fourth_attr = torch.cat((v_fourth_attr, gcn_fourth_output.detach()), 0)
+        self.f_loss.write("###Depth 4 finished!\n")
+
+        # merge
+        logging.info('###Depth 5 starts!\n')
+        for i in range(self.epochs):
+            for iter in range(self.batch_num_u):
+                start_index = self.batch_size * iter
+                end_index = self.batch_size * (iter + 1)
+                if iter == self.batch_num_u - 1:
+                    end_index = self.u_num
+                u_adj_batch = self.u_adj[start_index:end_index]
+
+                # prepare the data to the tensor
+                u_adj_tensor = self.__sparse_mx_to_torch_sparse_tensor(u_adj_batch).to(device=self.device)
+
+                # training
+                gcn_five_output = self.gcn_five(v_fourth_attr, u_adj_tensor)
+                u_input = u_merge_attr[start_index:end_index]
+                lossD, lossG = self.adversarial_five.forward_backward(u_input, gcn_five_output, step=5, epoch=i,
+                                                                       iter=iter)
+                self.f_loss.write("%s %s\n" % (lossD, lossG))
+                # wandb.log({"lossD": lossD, "epoch": i + self.epochs*2})
+                # wandb.log({"lossG": lossG, "epoch": i + self.epochs*2})
+
+        u_five_attr = torch.FloatTensor([]).to(self.device)
+        for iter in range(self.batch_num_u):
+            start_index = self.batch_size * iter
+            end_index = self.batch_size * (iter + 1)
+            if iter == self.batch_num_u - 1:
+                end_index = self.u_num
+            u_adj_batch = self.u_adj[start_index:end_index]
+
+            # prepare the data to the tensor
+            u_adj_tensor = self.__sparse_mx_to_torch_sparse_tensor(u_adj_batch).to(device=self.device)
+
+            # inference
+            gcn_five_output = self.gcn_five(v_fourth_attr, u_adj_tensor)
+            u_five_attr = torch.cat((u_five_attr, gcn_five_output.detach()), 0)
+
+        self.f_loss.write("###Depth 5 finished!\n")
+
+        self.__save_embedding_to_file(u_five_attr.cpu().numpy(), self.bipartite_graph_data_loader.get_u_list())
 
     def __sparse_mx_to_torch_sparse_tensor(self, sparse_mx):
         """Convert a scipy sparse matrix to a torch sparse tensor."""

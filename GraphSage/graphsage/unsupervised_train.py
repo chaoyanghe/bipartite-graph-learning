@@ -458,8 +458,10 @@ def main(argv=None):
 
 
 if __name__ == '__main__':
+    print('*********Start Main********')
     logging.basicConfig(filename="./log_embedding/GraphSage.log",
                         level=logging.DEBUG,
                         format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S')
+    logging.info('*********Start Main********')
     tf.app.run()

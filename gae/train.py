@@ -6,7 +6,7 @@ import os
 import time
 
 # Train on CPU (hide GPU) due to memory constraints
-os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2,3,4,5,6,7'
+os.environ['CUDA_VISIBLE_DEVICES'] = ' '
 
 import tensorflow as tf
 import numpy as np
@@ -111,13 +111,11 @@ for epoch in range(FLAGS.epochs):
 	logging.info('construct dictionary')
 	# Construct feed dictionary
 	feed_dict = construct_feed_dict(adj_norm, adj_label, features, placeholders)
-	logging.info('update')
+	logging.info('The epoch is: {}'.format(epoch))
 	feed_dict.update({placeholders['dropout']: FLAGS.dropout})
 	# Run single weight update
-	logging.info('run the model')
 	outs = sess.run([opt.opt_op, opt.cost, opt.accuracy], feed_dict=feed_dict)
 
-	logging.info('average loss')
 	# Compute average loss
 	avg_cost = outs[1]
 	avg_accuracy = outs[2]

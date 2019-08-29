@@ -3236,3 +3236,350 @@ Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
 Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
 Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:145] INFO Epoch: 17
 Mon, 26 Aug 2019 11:48:31 run_pubmed.py[line:148] INFO Batch size: (256,)
+Tue, 27 Aug 2019 20:18:03 utils.py[line:96] INFO *******Name: x
+Tue, 27 Aug 2019 20:18:03 utils.py[line:96] INFO *******Name: y
+Tue, 27 Aug 2019 20:18:03 utils.py[line:96] INFO *******Name: tx
+Tue, 27 Aug 2019 20:18:03 utils.py[line:96] INFO *******Name: ty
+Tue, 27 Aug 2019 20:18:03 utils.py[line:96] INFO *******Name: allx
+Tue, 27 Aug 2019 20:18:03 utils.py[line:96] INFO *******Name: ally
+Tue, 27 Aug 2019 20:18:03 utils.py[line:96] INFO *******Name: graph
+Tue, 27 Aug 2019 20:18:03 utils.py[line:105] INFO ********test.index
+Tue, 27 Aug 2019 20:18:03 utils.py[line:123] INFO *******all loaded
+Tue, 27 Aug 2019 20:18:03 utils.py[line:130] INFO *******test preparation
+Tue, 27 Aug 2019 20:18:03 utils.py[line:136] INFO ********mask preparation
+Tue, 27 Aug 2019 20:18:03 utils.py[line:140] INFO ********y preparation
+Tue, 27 Aug 2019 20:18:03 utils.py[line:147] INFO ********load data function done
+Tue, 27 Aug 2019 20:18:03 utils.py[line:524] INFO ********data loaded!
+Tue, 27 Aug 2019 20:18:04 run_pubmed.py[line:51] INFO Shape of adj: (2708, 2708) 
+ Shape of adj_train: (1209, 32) 
+ Shape of adj_val_train: (1209, 32) 
+ Shape of features: (2708, 1433) 
+ Shape of train_features: (1209, 1433) 
+ Shape of y_train: (1208, 7) 
+ Shape of y_test: (1000, 7) 
+ Shape of test_index: 
+Tue, 27 Aug 2019 20:18:04 deprecation.py[line:323] WARNING From /anaconda3/envs/abcgraph/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Tue, 27 Aug 2019 20:18:04 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/ASGCN/sampler.py:77: multinomial (from tensorflow.python.ops.random_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.random.categorical instead.
+Tue, 27 Aug 2019 20:18:04 deprecation.py[line:506] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/ASGCN/layers.py:232: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Tue, 27 Aug 2019 20:18:04 deprecation.py[line:323] WARNING From /Users/apple/Documents/P4_Graph/merge_sourcecode/ABCGraph_Wandb/ASGCN/metrics.py:25: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+Tue, 27 Aug 2019 20:18:04 deprecation.py[line:323] WARNING From /anaconda3/envs/abcgraph/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Tue, 27 Aug 2019 20:18:04 deprecation.py[line:323] WARNING From /anaconda3/envs/abcgraph/lib/python3.7/site-packages/tensorflow/python/ops/sparse_grad.py:113: to_int64 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Tue, 27 Aug 2019 20:18:04 run_pubmed.py[line:140] INFO ******** Start training *********
+Tue, 27 Aug 2019 20:18:04 run_pubmed.py[line:145] INFO Epoch: 0
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 1
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 2
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 3
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 4
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 5
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 6
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 7
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 8
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 9
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 10
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 11
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 12
+Tue, 27 Aug 2019 20:18:05 run_pubmed.py[line:145] INFO Epoch: 13
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 14
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 15
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 16
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 17
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 18
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 19
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 20
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 21
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 22
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 23
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 24
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 25
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 26
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 27
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 28
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 29
+Tue, 27 Aug 2019 20:18:06 run_pubmed.py[line:145] INFO Epoch: 30
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 31
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 32
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 33
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 34
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 35
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 36
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 37
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 38
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 39
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 40
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 41
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 42
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 43
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 44
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 45
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 46
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 47
+Tue, 27 Aug 2019 20:18:07 run_pubmed.py[line:145] INFO Epoch: 48
+Tue, 27 Aug 2019 20:18:08 run_pubmed.py[line:145] INFO Epoch: 49
+Tue, 27 Aug 2019 20:18:08 run_pubmed.py[line:145] INFO Epoch: 50
+Tue, 27 Aug 2019 20:18:08 run_pubmed.py[line:145] INFO Epoch: 51
+Tue, 27 Aug 2019 20:18:08 run_pubmed.py[line:145] INFO Epoch: 52
+Tue, 27 Aug 2019 20:18:08 run_pubmed.py[line:145] INFO Epoch: 53
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 54
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 55
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 56
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 57
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 58
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 59
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 60
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 61
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 62
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 63
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 64
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 65
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 66
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 67
+Tue, 27 Aug 2019 20:18:17 run_pubmed.py[line:145] INFO Epoch: 68
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 69
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 70
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 71
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 72
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 73
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 74
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 75
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 76
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 77
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 78
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 79
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 80
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 81
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 82
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 83
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 84
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 85
+Tue, 27 Aug 2019 20:18:18 run_pubmed.py[line:145] INFO Epoch: 86
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 87
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 88
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 89
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 90
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 91
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 92
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 93
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 94
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 95
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 96
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 97
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 98
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 99
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 100
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 101
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 102
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 103
+Tue, 27 Aug 2019 20:18:19 run_pubmed.py[line:145] INFO Epoch: 104
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 105
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 106
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 107
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 108
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 109
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 110
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 111
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 112
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 113
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 114
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 115
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 116
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 117
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 118
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 119
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 120
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 121
+Tue, 27 Aug 2019 20:18:20 run_pubmed.py[line:145] INFO Epoch: 122
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 123
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 124
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 125
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 126
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 127
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 128
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 129
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 130
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 131
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 132
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 133
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 134
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 135
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 136
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 137
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 138
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 139
+Tue, 27 Aug 2019 20:18:21 run_pubmed.py[line:145] INFO Epoch: 140
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 141
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 142
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 143
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 144
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 145
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 146
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 147
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 148
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 149
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 150
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 151
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 152
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 153
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 154
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 155
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 156
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 157
+Tue, 27 Aug 2019 20:18:22 run_pubmed.py[line:145] INFO Epoch: 158
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 159
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 160
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 161
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 162
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 163
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 164
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 165
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 166
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 167
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 168
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 169
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 170
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 171
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 172
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 173
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 174
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 175
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 176
+Tue, 27 Aug 2019 20:18:23 run_pubmed.py[line:145] INFO Epoch: 177
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 178
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 179
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 180
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 181
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 182
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 183
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 184
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 185
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 186
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 187
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 188
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 189
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 190
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 191
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 192
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 193
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 194
+Tue, 27 Aug 2019 20:18:24 run_pubmed.py[line:145] INFO Epoch: 195
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 196
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 197
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 198
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 199
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 200
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 201
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 202
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 203
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 204
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 205
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 206
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 207
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 208
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 209
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 210
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 211
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 212
+Tue, 27 Aug 2019 20:18:25 run_pubmed.py[line:145] INFO Epoch: 213
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 214
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 215
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 216
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 217
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 218
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 219
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 220
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 221
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 222
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 223
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 224
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 225
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 226
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 227
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 228
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 229
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 230
+Tue, 27 Aug 2019 20:18:26 run_pubmed.py[line:145] INFO Epoch: 231
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 232
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 233
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 234
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 235
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 236
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 237
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 238
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 239
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 240
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 241
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 242
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 243
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 244
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 245
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 246
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 247
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 248
+Tue, 27 Aug 2019 20:18:27 run_pubmed.py[line:145] INFO Epoch: 249
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 250
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 251
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 252
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 253
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 254
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 255
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 256
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 257
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 258
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 259
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 260
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 261
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 262
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 263
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 264
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 265
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 266
+Tue, 27 Aug 2019 20:18:28 run_pubmed.py[line:145] INFO Epoch: 267
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 268
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 269
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 270
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 271
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 272
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 273
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 274
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 275
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 276
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 277
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 278
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 279
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 280
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 281
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 282
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 283
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 284
+Tue, 27 Aug 2019 20:18:29 run_pubmed.py[line:145] INFO Epoch: 285
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 286
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 287
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 288
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 289
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 290
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 291
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 292
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 293
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 294
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 295
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 296
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 297
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 298
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 299
+Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:193] INFO ******** Model ends *********
