@@ -4,6 +4,7 @@ import pickle as pkl
 import networkx as nx
 import numpy as np
 import scipy.sparse as sp
+import argparse
 from networkx.algorithms.bipartite import biadjacency_matrix
 from sklearn import preprocessing
 from collections import defaultdict
@@ -70,7 +71,7 @@ class BipartiteGraphDataLoaderTencent:
         f_edge_list = open(self.edge_list_file_path, 'r')
         edge_count = 0
         for l in f_edge_list:
-            items = l.strip('\n').split(" ")
+            items = l.strip('\n').split("\t")
             v = int(items[0])
             u = int(items[1])
             edge_count += 1
@@ -587,9 +588,15 @@ if __name__ == "__main__":
                         format='%(asctime)s  %(filename)s : %(lineno)d : %(levelname)s  %(message)s',
                         datefmt='%Y-%m-%d %A %H:%M:%S',
                         level=logging.INFO)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--dataset', type=str, default='cora', required=False)
+    args = parser.parse_args()
 
     # load the bipartite graph data
-    dataset = 'tencent'
+    if args.dataset == "tencent":
+        dataset = 'tencent'
+    else:
+        dataset = '../../data/' + args.dataset
     NODE_LIST_PATH = "%s/node_list" % dataset
     NODE_ATTR_PATH = "%s/node_attr" % dataset
     NODE_LABEL_PATH = "%s/node_true" % dataset
@@ -597,6 +604,7 @@ if __name__ == "__main__":
     GROUP_LIST_PATH = "%s/group_list" % dataset
     GROUP_ATTR_PATH = "%s/group_attr" % dataset
     NODE_TRUE = "%s/node_true" % dataset
+
     bipartite_graph_data_loader = BipartiteGraphDataLoaderTencent(100, NODE_LIST_PATH, NODE_ATTR_PATH,
                                                                   NODE_LABEL_PATH,
                                                                   EDGE_LIST_PATH,

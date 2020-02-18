@@ -1,0 +1,15 @@
+Thu, 06 Feb 2020 14:07:43 logistic_regression.py[line:48] INFO WARN: Column 2,3 in attr_data is dropped! If you do not want to drop any column, please uncomment line 39 in logistic_regression.py.
+Thu, 06 Feb 2020 14:07:43 logistic_regression.py[line:53] INFO data.shape
+Thu, 06 Feb 2020 14:08:43 logistic_regression.py[line:60] INFO Construct:
+Thu, 06 Feb 2020 15:53:04 logistic_regression.py[line:48] INFO WARN: Column 2,3 in attr_data is dropped! If you do not want to drop any column, please uncomment line 39 in logistic_regression.py.
+Thu, 06 Feb 2020 15:53:04 logistic_regression.py[line:53] INFO data.shape
+Thu, 06 Feb 2020 15:54:06 logistic_regression.py[line:60] INFO Construct:
+Thu, 06 Feb 2020 16:00:21 logistic_regression.py[line:218] INFO 0.9553010354910101, 0.6103761663939447
+Mon, 17 Feb 2020 17:03:21 logistic_regression.py[line:48] INFO WARN: Column 2,3 in attr_data is dropped! If you do not want to drop any column, please uncomment line 39 in logistic_regression.py.
+Mon, 17 Feb 2020 17:03:21 logistic_regression.py[line:53] INFO data.shape
+Mon, 17 Feb 2020 17:04:22 logistic_regression.py[line:60] INFO Construct:
+Mon, 17 Feb 2020 17:09:28 logistic_regression.py[line:218] INFO 0.9101659047219036, 0.5479365056477671
+Mon, 17 Feb 2020 17:38:05 logistic_regression.py[line:48] INFO WARN: Column 2,3 in attr_data is dropped! If you do not want to drop any column, please uncomment line 39 in logistic_regression.py.
+Mon, 17 Feb 2020 17:38:05 logistic_regression.py[line:53] INFO data.shape
+Mon, 17 Feb 2020 17:39:03 logistic_regression.py[line:60] INFO Construct:
+Mon, 17 Feb 2020 17:44:36 logistic_regression.py[line:218] INFO 0.8770172689530394, 0.5046615733750145

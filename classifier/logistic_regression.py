@@ -2,18 +2,20 @@
 import logging
 import os
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
+import warnings
+warnings.filterwarnings("ignore")
 
 import numpy as np
 import pandas as pd
 from sklearn import metrics
 from sklearn.linear_model import SGDClassifier
-from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
+from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score, roc_auc_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
 
 def load_emb_data(fname, ind=None):
-    data = pd.read_csv(fname, delimiter=" ", skiprows=2, index_col=0, header=None)
+    data = pd.read_csv(fname, delimiter=" ", skiprows=1, index_col=0, header=None)
     if ind is not None:
         data = data.reindex(ind, copy=False, fill_value=0)
     return data
@@ -48,8 +50,6 @@ def load_node_attr(fname, ind=None):
         "WARN: Column 2,3 in attr_data is dropped! If you do not want to drop any column, please uncomment line 39 in logistic_regression.py.")
     if ind is not None:
         data = data.reindex(ind, copy=False, fill_value=0)
-    # converters = {0: lambda s: u2i_dict[s.decode("utf-8")], 1: decode_helper, 4: decode_helper, 5: decode_helper, 6: decode_helper,
-    #              7: decode_helper, 8: decode_helper, 9: decode_helper, 10: decode_helper}
     logging.info("data.shape")
     trans = MinMaxScaler(feature_range=(-1, 1)).fit(data)
     # data_values = data.values / data.values.max(axis=0)
@@ -64,11 +64,6 @@ def construct_data(data, y, attr_data=None):
         data = data.merge(attr_data, how="outer", right_index=True, left_index=True)
         data.fillna(0, inplace=True)
     y = y.reindex(data.index, fill_value=0)
-    # logging.info(type(data))
-    # logging.info(data.shape)
-    # remove the embeddding to run pure LR on attributes. 32 is the embe dim.
-    # data = data.iloc[:,32:]
-    # logging.info(data.shape)
     return data, y
 
 
@@ -212,11 +207,20 @@ def run_exp(input_folder, emb_file, args):
         # metric
         test_micro_f1 = f1_score(test_y, test_predict_y, average="micro")
         print("test_micro_f1 = %f" % test_micro_f1)
-        logging.info("test_micro_f1 = %f" % test_micro_f1)
 
         test_macro_f1 = f1_score(test_y, test_predict_y, average="macro")
         print("test_macro_f1 = %f" % test_macro_f1)
-        logging.info("test_macro_f1 = %f" % test_macro_f1)
+        logging.info(str(test_micro_f1) + ', ' + str(test_macro_f1))
+
+        test_accuracy = accuracy_score(test_y, test_predict_y)
+        print("test_accuracy = %f" % test_accuracy)
+
+        test_roc_auc_score = roc_auc_score(test_y, test_predict_y)
+        print("test_roc_auc_score = %f" % test_roc_auc_score)
+
+        # test_f1 = f1_score(test_y, test_predict_y, average='binary')
+        # print('test_f1 = %f' % test_f1)
+        # logging.info("test_f1 = %f" % test_f1)
 
         """
             *.prec_rec: F1, PRECISION AND RECALL
@@ -237,67 +241,6 @@ def run_exp(input_folder, emb_file, args):
         fout.write(wstr + "\n")
         fout.close()
 
-    # test_predict_prob = clf.predict_proba(test_x)[:, 1]
-    # print("test_predict_prob = %s" % test_predict_prob)
-    # logging.info("test_predict_prob = %s" % test_predict_prob)
-
-    # # Area Under Curve of ROC (Receiver operating characteristic):
-    # # https://en.wikipedia.org/wiki/Receiver_operating_characteristic
-    # print("len test_predict_prob = %d" + str(len(test_predict_prob)))
-    # print("len test_y = %d" + str(len(test_y)))
-    # auc_s = auc(test_y, test_predict_prob)
-    # logging.info("auc=%.6f" % (auc_s))
-    # print("auc=%.6f" % (auc_s))
-    # fauc = open(args.res_file + "_auc", 'w')
-    # fauc.write(str(auc_s))
-    # fauc.close()
-    #
-    # s_idx = np.argsort(-test_predict_prob)
-    #
-    # rank_test = test_y[s_idx]
-    # judge_n = np.sum(test_predict_prob > 0.5)
-    # pos_n = np.sum(test_y == 1)
-    #
-    # N_list = [1000, 10000, pos_n, judge_n]
-    # if args.verbose:
-    # 	logging.info("Test Size: %f" % (test_size))
-    # for n in N_list:
-    # 	res_test = ap(rank_test, n)
-    # 	(prec, rec) = prec_rec(rank_test, n)
-    # 	if n == 10000:
-    # 		logging.info("object_value=%.5f" % prec)
-    # 	if n > len(rank_test):
-    # 		n = "all"
-    # 	logging.info("Test AP@%s:\t%.5f\tPrec: %.5f\tRec: %.5f" % (str(n), res_test, prec, rec))
-    # 	test_aps[test_size].append(res_test)
-    # 	test_prec[test_size].append(prec)
-    # 	test_rec[test_size].append(rec)
-
-
-# # Write the evaluation result.
-# fout = open(args.res_file, 'w')
-# for ts in test_ratio:
-# 	name = emb_file.split('/')[-1]
-# 	wstr = "%s %f" % (name, ts)
-# 	for a in test_aps[ts]:
-# 		wstr = wstr + " " + "%.8f" % (a)
-# 	fout.write(wstr + "\n")
-# fout.close()
-#
-# fout = open(args.res_file + ".prec_rec", 'w')
-# for ts in test_ratio:
-# 	name = emb_file.split('/')[-1]
-# 	wstr = "%s %s %f" % (name, "prec", ts)
-# 	for a in test_prec[ts]:
-# 		wstr = wstr + " " + "%.8f" % (a)
-# 	fout.write(wstr + "\n")
-# 	wstr = "%s %s %f" % (name, "rec", ts)
-# 	for a in test_rec[ts]:
-# 		wstr = wstr + " " + "%.8f" % (a)
-# 	fout.write(wstr + "\n")
-#
-# fout.close()
-
 
 def main():
     parser = ArgumentParser("emb_lr", formatter_class=ArgumentDefaultsHelpFormatter, conflict_handler="resolve")
@@ -317,4 +260,8 @@ def main():
 
 
 if __name__ == "__main__":
+    logging.basicConfig(filename="./layer_influence.log",
+                        level=logging.INFO,
+                        format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                        datefmt='%a, %d %b %Y %H:%M:%S')
     main()

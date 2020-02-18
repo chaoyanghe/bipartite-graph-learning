@@ -443,3 +443,2369 @@ Fri, 17 May 2019 20:29:10 train.py[line:111] INFO construct dictionary
 Fri, 17 May 2019 20:29:10 train.py[line:114] INFO update
 Fri, 17 May 2019 20:29:10 train.py[line:117] INFO run the model
 Fri, 17 May 2019 20:29:10 train.py[line:120] INFO average loss
+Wed, 29 Jan 2020 18:36:48 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Wed, 29 Jan 2020 18:36:48 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ./data/toy_dataset/node_list
+Wed, 29 Jan 2020 18:36:48 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ./data/toy_dataset/node_attr
+Wed, 29 Jan 2020 18:36:48 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ./data/toy_dataset/node_true
+Wed, 29 Jan 2020 18:36:48 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ./data/toy_dataset/edgelist
+Wed, 29 Jan 2020 18:36:48 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ./data/toy_dataset/group_list
+Wed, 29 Jan 2020 18:36:48 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ./data/toy_dataset/group_attr
+Wed, 29 Jan 2020 18:36:48 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Wed, 29 Jan 2020 18:36:48 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Wed, 29 Jan 2020 18:36:48 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Wed, 29 Jan 2020 18:37:41 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Wed, 29 Jan 2020 18:37:41 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ./data/toy_dataset/node_list
+Wed, 29 Jan 2020 18:37:41 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ./data/toy_dataset/node_attr
+Wed, 29 Jan 2020 18:37:41 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ./data/toy_dataset/node_true
+Wed, 29 Jan 2020 18:37:41 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ./data/toy_dataset/edgelist
+Wed, 29 Jan 2020 18:37:41 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ./data/toy_dataset/group_list
+Wed, 29 Jan 2020 18:37:41 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ./data/toy_dataset/group_attr
+Wed, 29 Jan 2020 18:37:41 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Wed, 29 Jan 2020 18:37:41 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Wed, 29 Jan 2020 18:37:41 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Wed, 29 Jan 2020 18:39:28 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Wed, 29 Jan 2020 18:39:28 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Wed, 29 Jan 2020 18:39:28 input_data.py[line:136] INFO u_attr len = 4
+Wed, 29 Jan 2020 18:39:28 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Wed, 29 Jan 2020 18:39:28 input_data.py[line:138] INFO u_list len = 4
+Wed, 29 Jan 2020 18:39:28 input_data.py[line:143] INFO ######### Data loaded ###########
+Wed, 29 Jan 2020 18:39:28 train.py[line:57] INFO preprocessing data
+Wed, 29 Jan 2020 18:39:28 train.py[line:60] INFO done preprocessing data
+Wed, 29 Jan 2020 18:39:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:63: The name tf.sparse_placeholder is deprecated. Please use tf.compat.v1.sparse_placeholder instead.
+
+Wed, 29 Jan 2020 18:39:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:66: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+Wed, 29 Jan 2020 18:39:28 train.py[line:74] INFO create model
+Wed, 29 Jan 2020 18:39:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:34: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+Wed, 29 Jan 2020 18:39:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/initializations.py:9: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+Wed, 29 Jan 2020 18:39:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:29: The name tf.sparse_retain is deprecated. Please use tf.sparse.retain instead.
+
+Wed, 29 Jan 2020 18:39:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:101: The name tf.sparse_tensor_dense_matmul is deprecated. Please use tf.sparse.sparse_dense_matmul instead.
+
+Wed, 29 Jan 2020 18:39:28 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:79: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Wed, 29 Jan 2020 18:39:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:36: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+Wed, 29 Jan 2020 18:39:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:36: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+Wed, 29 Jan 2020 18:39:28 train.py[line:84] INFO optimizer
+Wed, 29 Jan 2020 18:39:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:89: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+Wed, 29 Jan 2020 18:39:28 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/optimizer.py:12: calling weighted_cross_entropy_with_logits (from tensorflow.python.ops.nn_impl) with targets is deprecated and will be removed in a future version.
+Instructions for updating:
+targets is deprecated, use labels instead
+Wed, 29 Jan 2020 18:39:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/optimizer.py:13: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+Wed, 29 Jan 2020 18:39:29 train.py[line:100] INFO initialize session
+Wed, 29 Jan 2020 18:39:29 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:102: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+Wed, 29 Jan 2020 18:39:29 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:103: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+Wed, 29 Jan 2020 18:39:29 train.py[line:107] INFO train model
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 0
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 1
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 2
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 3
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 4
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 5
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 6
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 7
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 8
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 9
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 10
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 11
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 12
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 13
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 14
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 15
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 16
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 17
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 18
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 19
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 20
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 21
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 22
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 23
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 24
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 25
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 26
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 27
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 28
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 29
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 30
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 31
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 32
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 33
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 34
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 35
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 36
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 37
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 38
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 39
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 40
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 41
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 42
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 43
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 44
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 45
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 46
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 47
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 48
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 49
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 50
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 51
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 52
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 53
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 54
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 55
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 56
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 57
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 58
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 59
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 60
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 61
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 62
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 63
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 64
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 65
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 66
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 67
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 68
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 69
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 70
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 71
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 72
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 73
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 74
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 75
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 76
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 77
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 78
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 79
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 80
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 81
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 82
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 83
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 84
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 85
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 86
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 87
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 88
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 89
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 90
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 91
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 92
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 93
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 94
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 95
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 96
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 97
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 98
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 99
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 100
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 101
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 102
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 103
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 104
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 105
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 106
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 107
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 108
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 109
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 110
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 111
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 112
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 113
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 114
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 115
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 116
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 117
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 118
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 119
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 120
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 121
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 122
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 123
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 124
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 125
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 126
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 127
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 128
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 129
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 130
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 131
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 132
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 133
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 134
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 135
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 136
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 137
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 138
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 139
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 140
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 141
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 142
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 143
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 144
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 145
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 146
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 147
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 148
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 149
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 150
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 151
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 152
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 153
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 154
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 155
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 156
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 157
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 158
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 159
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 160
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 161
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 162
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 163
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 164
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 165
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 166
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 167
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 168
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 169
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 170
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 171
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 172
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 173
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 174
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 175
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 176
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 177
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 178
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 179
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 180
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 181
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 182
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 183
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 184
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 185
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 186
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 187
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 188
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 189
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 190
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 191
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 192
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 193
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 194
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 195
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 196
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 197
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 198
+Wed, 29 Jan 2020 18:39:29 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:39:29 train.py[line:114] INFO The epoch is: 199
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Wed, 29 Jan 2020 18:41:07 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Wed, 29 Jan 2020 18:41:07 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Wed, 29 Jan 2020 18:41:07 input_data.py[line:136] INFO u_attr len = 4
+Wed, 29 Jan 2020 18:41:07 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Wed, 29 Jan 2020 18:41:07 input_data.py[line:138] INFO u_list len = 4
+Wed, 29 Jan 2020 18:41:07 input_data.py[line:143] INFO ######### Data loaded ###########
+Wed, 29 Jan 2020 18:41:07 train.py[line:57] INFO preprocessing data
+Wed, 29 Jan 2020 18:41:07 train.py[line:60] INFO done preprocessing data
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:63: The name tf.sparse_placeholder is deprecated. Please use tf.compat.v1.sparse_placeholder instead.
+
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:66: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+Wed, 29 Jan 2020 18:41:07 train.py[line:74] INFO create model
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:34: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/initializations.py:9: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:29: The name tf.sparse_retain is deprecated. Please use tf.sparse.retain instead.
+
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:101: The name tf.sparse_tensor_dense_matmul is deprecated. Please use tf.sparse.sparse_dense_matmul instead.
+
+Wed, 29 Jan 2020 18:41:07 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:79: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:117: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
+
+Wed, 29 Jan 2020 18:41:07 model.py[line:118] INFO Finish calculating the latent vector!!!!!!!!!
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:36: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:36: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+Wed, 29 Jan 2020 18:41:07 model.py[line:91] INFO GCNVAE model initialized!!!!!!!!
+Wed, 29 Jan 2020 18:41:07 train.py[line:84] INFO optimizer
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:95: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+Wed, 29 Jan 2020 18:41:07 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/optimizer.py:28: calling weighted_cross_entropy_with_logits (from tensorflow.python.ops.nn_impl) with targets is deprecated and will be removed in a future version.
+Instructions for updating:
+targets is deprecated, use labels instead
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/optimizer.py:29: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+Wed, 29 Jan 2020 18:41:07 train.py[line:100] INFO initialize session
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:102: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+Wed, 29 Jan 2020 18:41:07 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:103: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+Wed, 29 Jan 2020 18:41:07 train.py[line:107] INFO train model
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 0
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 1
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 2
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 3
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 4
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 5
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 6
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 7
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 8
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 9
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 10
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 11
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 12
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 13
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 14
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 15
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 16
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 17
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 18
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 19
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 20
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 21
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 22
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 23
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 24
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 25
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 26
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 27
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 28
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 29
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 30
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 31
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 32
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 33
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 34
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 35
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 36
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 37
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 38
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 39
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 40
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 41
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 42
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 43
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 44
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 45
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 46
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 47
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 48
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 49
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 50
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 51
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 52
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 53
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 54
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 55
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 56
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 57
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 58
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 59
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 60
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 61
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 62
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 63
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 64
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 65
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 66
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 67
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 68
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 69
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 70
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 71
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 72
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 73
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 74
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 75
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 76
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 77
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 78
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 79
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 80
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 81
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 82
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 83
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 84
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 85
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 86
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 87
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 88
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 89
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 90
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 91
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 92
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 93
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 94
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 95
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 96
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 97
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 98
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 99
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 100
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 101
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 102
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 103
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 104
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 105
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 106
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 107
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 108
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 109
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 110
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 111
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 112
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 113
+Wed, 29 Jan 2020 18:41:07 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:07 train.py[line:114] INFO The epoch is: 114
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 115
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 116
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 117
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 118
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 119
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 120
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 121
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 122
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 123
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 124
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 125
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 126
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 127
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 128
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 129
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 130
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 131
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 132
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 133
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 134
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 135
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 136
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 137
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 138
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 139
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 140
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 141
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 142
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 143
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 144
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 145
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 146
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 147
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 148
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 149
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 150
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 151
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 152
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 153
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 154
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 155
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 156
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 157
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 158
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 159
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 160
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 161
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 162
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 163
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 164
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 165
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 166
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 167
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 168
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 169
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 170
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 171
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 172
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 173
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 174
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 175
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 176
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 177
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 178
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 179
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 180
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 181
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 182
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 183
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 184
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 185
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 186
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 187
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 188
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 189
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 190
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 191
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 192
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 193
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 194
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 195
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 196
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 197
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 198
+Wed, 29 Jan 2020 18:41:08 train.py[line:111] INFO construct dictionary
+Wed, 29 Jan 2020 18:41:08 train.py[line:114] INFO The epoch is: 199
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Wed, 29 Jan 2020 18:41:22 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Wed, 29 Jan 2020 18:41:22 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Wed, 29 Jan 2020 18:41:22 input_data.py[line:136] INFO u_attr len = 4
+Wed, 29 Jan 2020 18:41:22 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Wed, 29 Jan 2020 18:41:22 input_data.py[line:138] INFO u_list len = 4
+Wed, 29 Jan 2020 18:41:22 input_data.py[line:143] INFO ######### Data loaded ###########
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Wed, 29 Jan 2020 18:42:25 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Wed, 29 Jan 2020 18:42:25 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Wed, 29 Jan 2020 18:42:25 input_data.py[line:136] INFO u_attr len = 4
+Wed, 29 Jan 2020 18:42:25 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Wed, 29 Jan 2020 18:42:25 input_data.py[line:138] INFO u_list len = 4
+Wed, 29 Jan 2020 18:42:25 input_data.py[line:143] INFO ######### Data loaded ###########
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:19:17 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Thu, 30 Jan 2020 19:19:17 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Thu, 30 Jan 2020 19:19:17 input_data.py[line:136] INFO u_attr len = 4
+Thu, 30 Jan 2020 19:19:17 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Thu, 30 Jan 2020 19:19:17 input_data.py[line:138] INFO u_list len = 4
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:20:14 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Thu, 30 Jan 2020 19:20:14 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Thu, 30 Jan 2020 19:20:14 input_data.py[line:136] INFO u_attr len = 4
+Thu, 30 Jan 2020 19:20:14 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Thu, 30 Jan 2020 19:20:14 input_data.py[line:138] INFO u_list len = 4
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:22:41 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Thu, 30 Jan 2020 19:22:41 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Thu, 30 Jan 2020 19:22:41 input_data.py[line:136] INFO u_attr len = 4
+Thu, 30 Jan 2020 19:22:41 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Thu, 30 Jan 2020 19:22:41 input_data.py[line:138] INFO u_list len = 4
+Thu, 30 Jan 2020 19:29:51 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Thu, 30 Jan 2020 19:29:51 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Thu, 30 Jan 2020 19:29:51 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Thu, 30 Jan 2020 19:29:51 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Thu, 30 Jan 2020 19:29:51 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Thu, 30 Jan 2020 19:29:51 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Thu, 30 Jan 2020 19:29:51 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Thu, 30 Jan 2020 19:29:51 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Thu, 30 Jan 2020 19:29:51 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Thu, 30 Jan 2020 19:29:51 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:36:41 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Thu, 30 Jan 2020 19:36:41 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Thu, 30 Jan 2020 19:36:41 input_data.py[line:136] INFO u_attr len = 4
+Thu, 30 Jan 2020 19:36:41 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Thu, 30 Jan 2020 19:36:41 input_data.py[line:138] INFO u_list len = 4
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:47:34 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Thu, 30 Jan 2020 19:47:34 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Thu, 30 Jan 2020 19:47:34 input_data.py[line:136] INFO u_attr len = 4
+Thu, 30 Jan 2020 19:47:34 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Thu, 30 Jan 2020 19:47:34 input_data.py[line:138] INFO u_list len = 4
+Thu, 30 Jan 2020 19:47:34 input_data.py[line:148] INFO ######### Data loaded ###########
+Thu, 30 Jan 2020 19:47:34 train.py[line:60] INFO preprocessing data
+Thu, 30 Jan 2020 19:47:34 train.py[line:63] INFO done preprocessing data
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:66: The name tf.sparse_placeholder is deprecated. Please use tf.compat.v1.sparse_placeholder instead.
+
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:69: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+Thu, 30 Jan 2020 19:47:34 train.py[line:77] INFO create model
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:34: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/initializations.py:9: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:29: The name tf.sparse_retain is deprecated. Please use tf.sparse.retain instead.
+
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:101: The name tf.sparse_tensor_dense_matmul is deprecated. Please use tf.sparse.sparse_dense_matmul instead.
+
+Thu, 30 Jan 2020 19:47:34 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:79: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:117: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
+
+Thu, 30 Jan 2020 19:47:34 model.py[line:118] INFO Finish calculating the latent vector!!!!!!!!!
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:36: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:36: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+Thu, 30 Jan 2020 19:47:34 model.py[line:91] INFO GCNVAE model initialized!!!!!!!!
+Thu, 30 Jan 2020 19:47:34 train.py[line:87] INFO optimizer
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:98: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+Thu, 30 Jan 2020 19:47:34 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/optimizer.py:28: calling weighted_cross_entropy_with_logits (from tensorflow.python.ops.nn_impl) with targets is deprecated and will be removed in a future version.
+Instructions for updating:
+targets is deprecated, use labels instead
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/optimizer.py:29: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+Thu, 30 Jan 2020 19:47:34 train.py[line:103] INFO initialize session
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:105: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+Thu, 30 Jan 2020 19:47:34 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:106: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+Thu, 30 Jan 2020 19:47:34 train.py[line:110] INFO train model
+Thu, 30 Jan 2020 19:47:34 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:34 train.py[line:117] INFO The epoch is: 0
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 1
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 2
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 3
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 4
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 5
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 6
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 7
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 8
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 9
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 10
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 11
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 12
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 13
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 14
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 15
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 16
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 17
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 18
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 19
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 20
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 21
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 22
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 23
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 24
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 25
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 26
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 27
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 28
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 29
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 30
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 31
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 32
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 33
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 34
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 35
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 36
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 37
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 38
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 39
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 40
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 41
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 42
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 43
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 44
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 45
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 46
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 47
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 48
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 49
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 50
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 51
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 52
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 53
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 54
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 55
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 56
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 57
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 58
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 59
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 60
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 61
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 62
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 63
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 64
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 65
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 66
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 67
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 68
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 69
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 70
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 71
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 72
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 73
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 74
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 75
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 76
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 77
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 78
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 79
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 80
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 81
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 82
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 83
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 84
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 85
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 86
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 87
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 88
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 89
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 90
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 91
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 92
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 93
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 94
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 95
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 96
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 97
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 98
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 99
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 100
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 101
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 102
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 103
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 104
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 105
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 106
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 107
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 108
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 109
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 110
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 111
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 112
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 113
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 114
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 115
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 116
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 117
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 118
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 119
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 120
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 121
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 122
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 123
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 124
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 125
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 126
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 127
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 128
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 129
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 130
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 131
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 132
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 133
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 134
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 135
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 136
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 137
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 138
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 139
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 140
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 141
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 142
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 143
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 144
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 145
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 146
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 147
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 148
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 149
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 150
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 151
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 152
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 153
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 154
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 155
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 156
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 157
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 158
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 159
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 160
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 161
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 162
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 163
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 164
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 165
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 166
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 167
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 168
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 169
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 170
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 171
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 172
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 173
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 174
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 175
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 176
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 177
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 178
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 179
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 180
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 181
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 182
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 183
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 184
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 185
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 186
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 187
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 188
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 189
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 190
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 191
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 192
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 193
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 194
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 195
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 196
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 197
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 198
+Thu, 30 Jan 2020 19:47:35 train.py[line:114] INFO construct dictionary
+Thu, 30 Jan 2020 19:47:35 train.py[line:117] INFO The epoch is: 199
+Thu, 30 Jan 2020 19:49:05 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Thu, 30 Jan 2020 19:49:05 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Thu, 30 Jan 2020 19:49:05 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Thu, 30 Jan 2020 19:49:05 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Thu, 30 Jan 2020 19:49:05 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Thu, 30 Jan 2020 19:49:05 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Thu, 30 Jan 2020 19:49:05 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Thu, 30 Jan 2020 19:49:05 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Thu, 30 Jan 2020 19:49:05 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Thu, 30 Jan 2020 19:49:05 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:49:12 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Thu, 30 Jan 2020 19:49:12 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Thu, 30 Jan 2020 19:49:12 input_data.py[line:136] INFO u_attr len = 4
+Thu, 30 Jan 2020 19:49:12 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Thu, 30 Jan 2020 19:49:12 input_data.py[line:138] INFO u_list len = 4
+Thu, 30 Jan 2020 19:49:34 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Thu, 30 Jan 2020 19:49:34 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Thu, 30 Jan 2020 19:49:34 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Thu, 30 Jan 2020 19:49:34 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Thu, 30 Jan 2020 19:49:34 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Thu, 30 Jan 2020 19:49:34 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Thu, 30 Jan 2020 19:49:34 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Thu, 30 Jan 2020 19:49:34 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Thu, 30 Jan 2020 19:49:34 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Thu, 30 Jan 2020 19:49:34 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:49:35 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Thu, 30 Jan 2020 19:49:35 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Thu, 30 Jan 2020 19:49:35 input_data.py[line:136] INFO u_attr len = 4
+Thu, 30 Jan 2020 19:49:35 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Thu, 30 Jan 2020 19:49:35 input_data.py[line:138] INFO u_list len = 4
+Thu, 30 Jan 2020 19:54:45 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Thu, 30 Jan 2020 19:54:45 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Thu, 30 Jan 2020 19:54:45 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Thu, 30 Jan 2020 19:54:45 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Thu, 30 Jan 2020 19:54:45 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Thu, 30 Jan 2020 19:54:45 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Thu, 30 Jan 2020 19:54:45 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Thu, 30 Jan 2020 19:54:45 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Thu, 30 Jan 2020 19:54:45 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Thu, 30 Jan 2020 19:54:45 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Thu, 30 Jan 2020 19:54:59 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Thu, 30 Jan 2020 19:54:59 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Thu, 30 Jan 2020 19:54:59 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Thu, 30 Jan 2020 19:54:59 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Thu, 30 Jan 2020 19:54:59 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Thu, 30 Jan 2020 19:54:59 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Thu, 30 Jan 2020 19:54:59 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Thu, 30 Jan 2020 19:54:59 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Thu, 30 Jan 2020 19:54:59 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Thu, 30 Jan 2020 19:54:59 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Thu, 30 Jan 2020 19:55:00 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Thu, 30 Jan 2020 19:57:03 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Thu, 30 Jan 2020 19:57:03 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Thu, 30 Jan 2020 19:57:03 input_data.py[line:136] INFO u_attr len = 4
+Thu, 30 Jan 2020 19:57:03 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Thu, 30 Jan 2020 19:57:03 input_data.py[line:138] INFO u_list len = 4
+Thu, 30 Jan 2020 19:57:05 input_data.py[line:148] INFO ######### Data loaded ###########
+Thu, 30 Jan 2020 19:58:29 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Thu, 30 Jan 2020 19:58:29 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Thu, 30 Jan 2020 19:58:29 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Thu, 30 Jan 2020 19:58:29 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Thu, 30 Jan 2020 19:58:29 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Thu, 30 Jan 2020 19:58:29 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Thu, 30 Jan 2020 19:58:29 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Thu, 30 Jan 2020 19:58:29 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Thu, 30 Jan 2020 19:58:29 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Thu, 30 Jan 2020 19:58:29 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Thu, 30 Jan 2020 20:01:06 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Thu, 30 Jan 2020 20:01:10 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Thu, 30 Jan 2020 20:01:10 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Thu, 30 Jan 2020 20:01:10 input_data.py[line:136] INFO u_attr len = 4
+Thu, 30 Jan 2020 20:01:10 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Thu, 30 Jan 2020 20:01:10 input_data.py[line:138] INFO u_list len = 4
+Thu, 30 Jan 2020 20:01:13 input_data.py[line:148] INFO ######### Data loaded ###########
+Sat, 01 Feb 2020 21:46:20 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Sat, 01 Feb 2020 21:46:20 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Sat, 01 Feb 2020 21:46:20 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Sat, 01 Feb 2020 21:46:20 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Sat, 01 Feb 2020 21:46:20 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Sat, 01 Feb 2020 21:46:20 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Sat, 01 Feb 2020 21:46:20 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Sat, 01 Feb 2020 21:46:20 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Sat, 01 Feb 2020 21:46:20 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Sat, 01 Feb 2020 21:46:20 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Sat, 01 Feb 2020 21:46:24 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Sat, 01 Feb 2020 21:46:26 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Sat, 01 Feb 2020 21:46:26 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Sat, 01 Feb 2020 21:46:26 input_data.py[line:136] INFO u_attr len = 4
+Sat, 01 Feb 2020 21:46:26 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Sat, 01 Feb 2020 21:46:26 input_data.py[line:138] INFO u_list len = 4
+Sat, 01 Feb 2020 21:46:27 input_data.py[line:148] INFO ######### Data loaded ###########
+Sat, 01 Feb 2020 21:50:16 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Sat, 01 Feb 2020 21:50:16 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Sat, 01 Feb 2020 21:50:16 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Sat, 01 Feb 2020 21:50:16 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Sat, 01 Feb 2020 21:50:16 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Sat, 01 Feb 2020 21:50:16 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Sat, 01 Feb 2020 21:50:16 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Sat, 01 Feb 2020 21:50:16 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Sat, 01 Feb 2020 21:50:16 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Sat, 01 Feb 2020 21:50:16 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Sat, 01 Feb 2020 21:50:21 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Sat, 01 Feb 2020 21:50:27 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Sat, 01 Feb 2020 21:50:27 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Sat, 01 Feb 2020 21:50:27 input_data.py[line:136] INFO u_attr len = 4
+Sat, 01 Feb 2020 21:50:27 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Sat, 01 Feb 2020 21:50:27 input_data.py[line:138] INFO u_list len = 4
+Sat, 01 Feb 2020 21:50:59 input_data.py[line:148] INFO ######### Data loaded ###########
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 4
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 4
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:245] INFO (4, 2)
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 4)
+Sat, 01 Feb 2020 21:51:18 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Sat, 01 Feb 2020 21:51:19 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Sat, 01 Feb 2020 21:51:19 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Sat, 01 Feb 2020 21:51:19 input_data.py[line:136] INFO u_attr len = 4
+Sat, 01 Feb 2020 21:51:19 input_data.py[line:137] INFO u_adj shape = (4, 2)
+Sat, 01 Feb 2020 21:51:19 input_data.py[line:138] INFO u_list len = 4
+Sat, 01 Feb 2020 21:51:27 input_data.py[line:148] INFO ######### Data loaded ###########
+Mon, 03 Feb 2020 13:24:01 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Mon, 03 Feb 2020 13:24:01 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Mon, 03 Feb 2020 13:24:01 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Mon, 03 Feb 2020 13:24:01 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Mon, 03 Feb 2020 13:24:01 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Mon, 03 Feb 2020 13:24:01 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Mon, 03 Feb 2020 13:24:01 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Mon, 03 Feb 2020 13:24:01 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Mon, 03 Feb 2020 13:24:01 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Mon, 03 Feb 2020 13:24:01 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 7
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 7
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:245] INFO (7, 2)
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 7)
+Mon, 03 Feb 2020 13:24:06 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Mon, 03 Feb 2020 13:24:07 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Mon, 03 Feb 2020 13:24:07 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Mon, 03 Feb 2020 13:24:07 input_data.py[line:136] INFO u_attr len = 7
+Mon, 03 Feb 2020 13:24:07 input_data.py[line:137] INFO u_adj shape = (7, 2)
+Mon, 03 Feb 2020 13:24:07 input_data.py[line:138] INFO u_list len = 7
+Tue, 04 Feb 2020 16:46:04 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Tue, 04 Feb 2020 16:46:04 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Tue, 04 Feb 2020 16:46:04 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Tue, 04 Feb 2020 16:46:04 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Tue, 04 Feb 2020 16:46:04 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Tue, 04 Feb 2020 16:46:04 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Tue, 04 Feb 2020 16:46:04 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Tue, 04 Feb 2020 16:46:04 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Tue, 04 Feb 2020 16:46:04 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Tue, 04 Feb 2020 16:46:04 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 7
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 7
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:245] INFO (7, 2)
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 7)
+Tue, 04 Feb 2020 16:46:07 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Tue, 04 Feb 2020 16:46:09 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Tue, 04 Feb 2020 16:46:09 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Tue, 04 Feb 2020 16:46:09 input_data.py[line:136] INFO u_attr len = 7
+Tue, 04 Feb 2020 16:46:09 input_data.py[line:137] INFO u_adj shape = (7, 2)
+Tue, 04 Feb 2020 16:46:09 input_data.py[line:138] INFO u_list len = 7
+Tue, 04 Feb 2020 16:46:10 input_data.py[line:147] INFO ######### Data loaded ###########
+Tue, 04 Feb 2020 16:48:10 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Tue, 04 Feb 2020 16:48:10 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Tue, 04 Feb 2020 16:48:10 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Tue, 04 Feb 2020 16:48:10 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Tue, 04 Feb 2020 16:48:10 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Tue, 04 Feb 2020 16:48:10 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Tue, 04 Feb 2020 16:48:10 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Tue, 04 Feb 2020 16:48:10 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Tue, 04 Feb 2020 16:48:10 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Tue, 04 Feb 2020 16:48:10 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 7
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 7
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:245] INFO (7, 2)
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 7)
+Tue, 04 Feb 2020 16:48:21 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Tue, 04 Feb 2020 16:48:28 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Tue, 04 Feb 2020 16:48:28 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Tue, 04 Feb 2020 16:48:28 input_data.py[line:136] INFO u_attr len = 7
+Tue, 04 Feb 2020 16:48:28 input_data.py[line:137] INFO u_adj shape = (7, 2)
+Tue, 04 Feb 2020 16:48:28 input_data.py[line:138] INFO u_list len = 7
+Tue, 04 Feb 2020 16:50:07 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Tue, 04 Feb 2020 16:50:07 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Tue, 04 Feb 2020 16:50:07 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Tue, 04 Feb 2020 16:50:07 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Tue, 04 Feb 2020 16:50:07 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Tue, 04 Feb 2020 16:50:07 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Tue, 04 Feb 2020 16:50:07 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Tue, 04 Feb 2020 16:50:07 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Tue, 04 Feb 2020 16:50:07 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Tue, 04 Feb 2020 16:50:07 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 7
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 7
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:245] INFO (7, 2)
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 7)
+Tue, 04 Feb 2020 16:55:49 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Tue, 04 Feb 2020 16:55:52 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Tue, 04 Feb 2020 16:55:52 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Tue, 04 Feb 2020 16:55:52 input_data.py[line:136] INFO u_attr len = 7
+Tue, 04 Feb 2020 16:55:52 input_data.py[line:137] INFO u_adj shape = (7, 2)
+Tue, 04 Feb 2020 16:55:52 input_data.py[line:138] INFO u_list len = 7
+Tue, 04 Feb 2020 16:55:53 input_data.py[line:147] INFO ######### Data loaded ###########
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:22] INFO group_u_list_file_path = ../data/toy_dataset/node_list
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:23] INFO group_u_attr_file_path = ../data/toy_dataset/node_attr
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:24] INFO group_u_label_file_path = ../data/toy_dataset/node_true
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:26] INFO edge_list_file_path = ../data/toy_dataset/edgelist
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:28] INFO group_v_list_file_path = ../data/toy_dataset/group_list
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:29] INFO group_v_attr_file_path = ../data/toy_dataset/group_attr
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:30] INFO group_v_label_file_path = None
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:206] INFO before merging with v_list, the len is = 2
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:214] INFO after merging with v_attr_dict, the len is = 2
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:229] INFO __generate_adjacent_matrix START
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:231] INFO u_node_list = 7
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:232] INFO v_node_list = 2
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:233] INFO edge_list = 7
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:235] INFO start to load bipartite for u
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:245] INFO (7, 2)
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:248] INFO end to load bipartite for u
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:250] INFO start to load bipartite for u
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:260] INFO (2, 7)
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:263] INFO end to load bipartite for u
+Tue, 04 Feb 2020 16:57:32 bipartite_graph_data_loader_toy.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Tue, 04 Feb 2020 16:57:32 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Tue, 04 Feb 2020 16:57:32 input_data.py[line:136] INFO u_attr len = 7
+Tue, 04 Feb 2020 16:57:32 input_data.py[line:137] INFO u_adj shape = (7, 2)
+Tue, 04 Feb 2020 16:57:32 input_data.py[line:138] INFO u_list len = 7
+Tue, 04 Feb 2020 16:57:32 input_data.py[line:147] INFO ######### Data loaded ###########
+Tue, 04 Feb 2020 16:57:32 train.py[line:60] INFO preprocessing data
+Tue, 04 Feb 2020 16:57:32 train.py[line:63] INFO done preprocessing data
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:66: The name tf.sparse_placeholder is deprecated. Please use tf.compat.v1.sparse_placeholder instead.
+
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:69: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+Tue, 04 Feb 2020 16:57:32 train.py[line:77] INFO create model
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:34: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/initializations.py:9: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:29: The name tf.sparse_retain is deprecated. Please use tf.sparse.retain instead.
+
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:101: The name tf.sparse_tensor_dense_matmul is deprecated. Please use tf.sparse.sparse_dense_matmul instead.
+
+Tue, 04 Feb 2020 16:57:32 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:79: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:117: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
+
+Tue, 04 Feb 2020 16:57:32 model.py[line:118] INFO Finish calculating the latent vector!!!!!!!!!
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:36: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:36: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+Tue, 04 Feb 2020 16:57:32 model.py[line:91] INFO GCNVAE model initialized!!!!!!!!
+Tue, 04 Feb 2020 16:57:32 train.py[line:87] INFO optimizer
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:98: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+Tue, 04 Feb 2020 16:57:32 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/optimizer.py:28: calling weighted_cross_entropy_with_logits (from tensorflow.python.ops.nn_impl) with targets is deprecated and will be removed in a future version.
+Instructions for updating:
+targets is deprecated, use labels instead
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/optimizer.py:29: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+Tue, 04 Feb 2020 16:57:32 train.py[line:103] INFO initialize session
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:105: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+Tue, 04 Feb 2020 16:57:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/train.py:106: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+Tue, 04 Feb 2020 16:57:33 train.py[line:110] INFO train model
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 0
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 1
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 2
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 3
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 4
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 5
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 6
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 7
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 8
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 9
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 10
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 11
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 12
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 13
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 14
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 15
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 16
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 17
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 18
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 19
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 20
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 21
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 22
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 23
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 24
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 25
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 26
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 27
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 28
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 29
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 30
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 31
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 32
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 33
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 34
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 35
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 36
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 37
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 38
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 39
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 40
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 41
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 42
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 43
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 44
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 45
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 46
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 47
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 48
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 49
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 50
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 51
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 52
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 53
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 54
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 55
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 56
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 57
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 58
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 59
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 60
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 61
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 62
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 63
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 64
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 65
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 66
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 67
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 68
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 69
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 70
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 71
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 72
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 73
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 74
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 75
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 76
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 77
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 78
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 79
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 80
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 81
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 82
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 83
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 84
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 85
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 86
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 87
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 88
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 89
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 90
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 91
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 92
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 93
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 94
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 95
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 96
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 97
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 98
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 99
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 100
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 101
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 102
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 103
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 104
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 105
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 106
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 107
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 108
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 109
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 110
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 111
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 112
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 113
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 114
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 115
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 116
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 117
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 118
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 119
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 120
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 121
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 122
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 123
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 124
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 125
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 126
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 127
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 128
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 129
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 130
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 131
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 132
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 133
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 134
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 135
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 136
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 137
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 138
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 139
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 140
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 141
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 142
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 143
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 144
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 145
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 146
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 147
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 148
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 149
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 150
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 151
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 152
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 153
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 154
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 155
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 156
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 157
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 158
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 159
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 160
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 161
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 162
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 163
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 164
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 165
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 166
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 167
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 168
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 169
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 170
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 171
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 172
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 173
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 174
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 175
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 176
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 177
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 178
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 179
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 180
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 181
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 182
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 183
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 184
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 185
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 186
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 187
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 188
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 189
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 190
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 191
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 192
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 193
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 194
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 195
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 196
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 197
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 198
+Tue, 04 Feb 2020 16:57:33 train.py[line:114] INFO construct dictionary
+Tue, 04 Feb 2020 16:57:33 train.py[line:117] INFO The epoch is: 199

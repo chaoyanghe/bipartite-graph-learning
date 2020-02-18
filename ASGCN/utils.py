@@ -11,6 +11,7 @@ from scipy.linalg import qr
 from sparse_tensor_utils import *
 import json
 from networkx.readwrite import json_graph
+from input_data import load_data_for_gae
 
 
 def parse_index_file(filename):

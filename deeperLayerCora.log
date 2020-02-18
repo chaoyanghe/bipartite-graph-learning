@@ -1,0 +1,4 @@
+Mon, 17 Feb 2020 18:14:12 multiclass_lr.py[line:53] INFO WARN: Column 2,3 in attr_data is dropped! If you do not want to drop any column, please uncomment line 39 in logistic_regression.py.
+Mon, 17 Feb 2020 18:14:12 multiclass_lr.py[line:58] INFO data.shape
+Mon, 17 Feb 2020 18:14:12 multiclass_lr.py[line:65] INFO Construct:
+Mon, 17 Feb 2020 18:14:39 multiclass_lr.py[line:197] INFO 0.8365019011406845, 0.8084093017668815

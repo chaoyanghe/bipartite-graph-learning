@@ -1,6 +1,19 @@
-2019-05-20 Monday 02:08:06  random_walk.py : 49 : INFO  loading data...
-2019-05-20 Monday 02:08:06  random_walk.py : 51 : INFO  converting to networkx
-2019-05-20 Monday 02:08:06  random_walk.py : 53 : INFO  extracting nodes...
-2019-05-20 Monday 02:08:06  random_walk.py : 57 : INFO  start random walk
-2019-05-20 Monday 02:08:06  random_walk.py : 32 : INFO  Done walks for 0 nodes
-2019-05-20 Monday 02:08:06  random_walk.py : 62 : INFO  finished random walk
+2020-01-25 Saturday 22:21:32  random_walk.py : 49 : INFO  loading data...
+2020-01-25 Saturday 22:21:32  random_walk.py : 51 : INFO  converting to networkx
+2020-01-25 Saturday 22:21:33  random_walk.py : 53 : INFO  extracting nodes...
+2020-01-25 Saturday 22:21:33  random_walk.py : 57 : INFO  start random walk
+2020-01-25 Saturday 22:21:33  random_walk.py : 32 : INFO  Done walks for 0 nodes
+2020-01-25 Saturday 22:21:33  random_walk.py : 32 : INFO  Done walks for 1000 nodes
+2020-01-25 Saturday 22:21:33  random_walk.py : 32 : INFO  Done walks for 2000 nodes
+2020-01-25 Saturday 22:21:34  random_walk.py : 32 : INFO  Done walks for 3000 nodes
+2020-01-25 Saturday 22:21:34  random_walk.py : 32 : INFO  Done walks for 4000 nodes
+2020-01-25 Saturday 22:21:34  random_walk.py : 32 : INFO  Done walks for 5000 nodes
+2020-01-25 Saturday 22:21:35  random_walk.py : 32 : INFO  Done walks for 6000 nodes
+2020-01-25 Saturday 22:21:35  random_walk.py : 32 : INFO  Done walks for 7000 nodes
+2020-01-25 Saturday 22:21:35  random_walk.py : 32 : INFO  Done walks for 8000 nodes
+2020-01-25 Saturday 22:21:35  random_walk.py : 32 : INFO  Done walks for 9000 nodes
+2020-01-25 Saturday 22:21:36  random_walk.py : 32 : INFO  Done walks for 10000 nodes
+2020-01-25 Saturday 22:21:36  random_walk.py : 32 : INFO  Done walks for 11000 nodes
+2020-01-25 Saturday 22:21:36  random_walk.py : 32 : INFO  Done walks for 12000 nodes
+2020-01-25 Saturday 22:21:37  random_walk.py : 32 : INFO  Done walks for 13000 nodes
+2020-01-25 Saturday 22:21:38  random_walk.py : 62 : INFO  finished random walk

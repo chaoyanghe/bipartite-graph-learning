@@ -3583,3 +3583,388 @@ Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 297
 Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 298
 Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:145] INFO Epoch: 299
 Tue, 27 Aug 2019 20:18:30 run_pubmed.py[line:193] INFO ******** Model ends *********
+Mon, 10 Feb 2020 16:03:32 utils.py[line:96] INFO *******Name: x
+Mon, 10 Feb 2020 16:03:32 utils.py[line:96] INFO *******Name: y
+Mon, 10 Feb 2020 16:03:32 utils.py[line:96] INFO *******Name: tx
+Mon, 10 Feb 2020 16:03:32 utils.py[line:96] INFO *******Name: ty
+Mon, 10 Feb 2020 16:03:32 utils.py[line:96] INFO *******Name: allx
+Mon, 10 Feb 2020 16:03:32 utils.py[line:96] INFO *******Name: ally
+Mon, 10 Feb 2020 16:03:32 utils.py[line:96] INFO *******Name: graph
+Mon, 10 Feb 2020 16:03:32 utils.py[line:105] INFO ********test.index
+Mon, 10 Feb 2020 16:03:32 utils.py[line:123] INFO *******all loaded
+Mon, 10 Feb 2020 16:03:32 utils.py[line:130] INFO *******test preparation
+Mon, 10 Feb 2020 16:03:32 utils.py[line:136] INFO ********mask preparation
+Mon, 10 Feb 2020 16:03:32 utils.py[line:140] INFO ********y preparation
+Mon, 10 Feb 2020 16:03:32 utils.py[line:147] INFO ********load data function done
+Mon, 10 Feb 2020 16:03:32 utils.py[line:524] INFO ********data loaded!
+Mon, 10 Feb 2020 16:03:32 run_pubmed.py[line:51] INFO Shape of adj: (2708, 2708) 
+ Shape of adj_train: (1209, 32) 
+ Shape of adj_val_train: (1209, 32) 
+ Shape of features: (2708, 1433) 
+ Shape of train_features: (1209, 1433) 
+ Shape of y_train: (1208, 7) 
+ Shape of y_test: (1000, 7) 
+ Shape of test_index: 
+Mon, 10 Feb 2020 16:03:32 module_wrapper.py[line:139] WARNING From run_pubmed.py:80: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+Mon, 10 Feb 2020 16:03:32 module_wrapper.py[line:139] WARNING From run_pubmed.py:84: The name tf.sparse_placeholder is deprecated. Please use tf.compat.v1.sparse_placeholder instead.
+
+Mon, 10 Feb 2020 16:03:32 module_wrapper.py[line:139] WARNING From run_pubmed.py:90: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+Mon, 10 Feb 2020 16:03:32 module_wrapper.py[line:139] WARNING From run_pubmed.py:95: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+Mon, 10 Feb 2020 16:03:32 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/ASGCN/inits.py:15: calling RandomUniform.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+Mon, 10 Feb 2020 16:03:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/ASGCN/inits.py:17: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+Mon, 10 Feb 2020 16:03:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/ASGCN/sampler.py:77: The name tf.log is deprecated. Please use tf.math.log instead.
+
+Mon, 10 Feb 2020 16:03:32 deprecation.py[line:323] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/ASGCN/sampler.py:77: multinomial (from tensorflow.python.ops.random_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.random.categorical` instead.
+Mon, 10 Feb 2020 16:03:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/ASGCN/models.py:202: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+Mon, 10 Feb 2020 16:03:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/ASGCN/layers.py:83: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+Mon, 10 Feb 2020 16:03:32 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/ASGCN/layers.py:232: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 10 Feb 2020 16:03:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/ASGCN/layers.py:33: The name tf.sparse_tensor_dense_matmul is deprecated. Please use tf.sparse.sparse_dense_matmul instead.
+
+Mon, 10 Feb 2020 16:03:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/ASGCN/models.py:63: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+Mon, 10 Feb 2020 16:03:32 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/ASGCN/models.py:63: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+Mon, 10 Feb 2020 16:03:32 deprecation.py[line:323] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/ASGCN/metrics.py:25: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+Mon, 10 Feb 2020 16:03:33 module_wrapper.py[line:139] WARNING From run_pubmed.py:111: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+Mon, 10 Feb 2020 16:03:33 module_wrapper.py[line:139] WARNING From run_pubmed.py:116: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+Mon, 10 Feb 2020 16:03:33 module_wrapper.py[line:139] WARNING From run_pubmed.py:126: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+Mon, 10 Feb 2020 16:03:33 module_wrapper.py[line:139] WARNING From run_pubmed.py:131: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:140] INFO ******** Start training *********
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:145] INFO Epoch: 0
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:145] INFO Epoch: 1
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:145] INFO Epoch: 2
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:145] INFO Epoch: 3
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:145] INFO Epoch: 4
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:145] INFO Epoch: 5
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:145] INFO Epoch: 6
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:145] INFO Epoch: 7
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:145] INFO Epoch: 8
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:145] INFO Epoch: 9
+Mon, 10 Feb 2020 16:03:33 run_pubmed.py[line:145] INFO Epoch: 10
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 11
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 12
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 13
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 14
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 15
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 16
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 17
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 18
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 19
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 20
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 21
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 22
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 23
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 24
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 25
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 26
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 27
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 28
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 29
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 30
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 31
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 32
+Mon, 10 Feb 2020 16:03:34 run_pubmed.py[line:145] INFO Epoch: 33
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 34
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 35
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 36
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 37
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 38
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 39
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 40
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 41
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 42
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 43
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 44
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 45
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 46
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 47
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 48
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 49
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 50
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 51
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 52
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 53
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 54
+Mon, 10 Feb 2020 16:03:35 run_pubmed.py[line:145] INFO Epoch: 55
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 56
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 57
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 58
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 59
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 60
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 61
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 62
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 63
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 64
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 65
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 66
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 67
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 68
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 69
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 70
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 71
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 72
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 73
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 74
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 75
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 76
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 77
+Mon, 10 Feb 2020 16:03:36 run_pubmed.py[line:145] INFO Epoch: 78
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 79
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 80
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 81
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 82
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 83
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 84
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 85
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 86
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 87
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 88
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 89
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 90
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 91
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 92
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 93
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 94
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 95
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 96
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 97
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 98
+Mon, 10 Feb 2020 16:03:37 run_pubmed.py[line:145] INFO Epoch: 99
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 100
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 101
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 102
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 103
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 104
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 105
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 106
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 107
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 108
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 109
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 110
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 111
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 112
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 113
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 114
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 115
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 116
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 117
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 118
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 119
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 120
+Mon, 10 Feb 2020 16:03:38 run_pubmed.py[line:145] INFO Epoch: 121
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 122
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 123
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 124
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 125
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 126
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 127
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 128
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 129
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 130
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 131
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 132
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 133
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 134
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 135
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 136
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 137
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 138
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 139
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 140
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 141
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 142
+Mon, 10 Feb 2020 16:03:39 run_pubmed.py[line:145] INFO Epoch: 143
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 144
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 145
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 146
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 147
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 148
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 149
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 150
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 151
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 152
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 153
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 154
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 155
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 156
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 157
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 158
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 159
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 160
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 161
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 162
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 163
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 164
+Mon, 10 Feb 2020 16:03:40 run_pubmed.py[line:145] INFO Epoch: 165
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 166
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 167
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 168
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 169
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 170
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 171
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 172
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 173
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 174
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 175
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 176
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 177
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 178
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 179
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 180
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 181
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 182
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 183
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 184
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 185
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 186
+Mon, 10 Feb 2020 16:03:41 run_pubmed.py[line:145] INFO Epoch: 187
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 188
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 189
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 190
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 191
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 192
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 193
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 194
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 195
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 196
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 197
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 198
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 199
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 200
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 201
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 202
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 203
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 204
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 205
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 206
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 207
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 208
+Mon, 10 Feb 2020 16:03:42 run_pubmed.py[line:145] INFO Epoch: 209
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 210
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 211
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 212
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 213
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 214
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 215
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 216
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 217
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 218
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 219
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 220
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 221
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 222
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 223
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 224
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 225
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 226
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 227
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 228
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 229
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 230
+Mon, 10 Feb 2020 16:03:43 run_pubmed.py[line:145] INFO Epoch: 231
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 232
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 233
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 234
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 235
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 236
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 237
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 238
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 239
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 240
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 241
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 242
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 243
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 244
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 245
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 246
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 247
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 248
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 249
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 250
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 251
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 252
+Mon, 10 Feb 2020 16:03:44 run_pubmed.py[line:145] INFO Epoch: 253
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 254
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 255
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 256
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 257
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 258
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 259
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 260
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 261
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 262
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 263
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 264
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 265
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 266
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 267
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 268
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 269
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 270
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 271
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 272
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 273
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 274
+Mon, 10 Feb 2020 16:03:45 run_pubmed.py[line:145] INFO Epoch: 275
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 276
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 277
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 278
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 279
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 280
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 281
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 282
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 283
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 284
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 285
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 286
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 287
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 288
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 289
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 290
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 291
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 292
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 293
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 294
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 295
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 296
+Mon, 10 Feb 2020 16:03:46 run_pubmed.py[line:145] INFO Epoch: 297
+Mon, 10 Feb 2020 16:03:47 run_pubmed.py[line:145] INFO Epoch: 298
+Mon, 10 Feb 2020 16:03:47 run_pubmed.py[line:145] INFO Epoch: 299
+Mon, 10 Feb 2020 16:03:47 run_pubmed.py[line:193] INFO ******** Model ends *********
+Mon, 10 Feb 2020 16:07:47 utils.py[line:96] INFO *******Name: x
+Mon, 10 Feb 2020 17:16:52 utils.py[line:96] INFO *******Name: x
+Mon, 10 Feb 2020 17:16:52 utils.py[line:96] INFO *******Name: y
+Mon, 10 Feb 2020 17:16:52 utils.py[line:96] INFO *******Name: tx
+Mon, 10 Feb 2020 17:16:52 utils.py[line:96] INFO *******Name: ty
+Mon, 10 Feb 2020 17:16:52 utils.py[line:96] INFO *******Name: allx
+Mon, 10 Feb 2020 17:16:52 utils.py[line:96] INFO *******Name: ally
+Mon, 10 Feb 2020 17:16:52 utils.py[line:96] INFO *******Name: graph
+Mon, 10 Feb 2020 17:18:37 utils.py[line:105] INFO ********test.index
+Mon, 10 Feb 2020 17:18:37 utils.py[line:123] INFO *******all loaded
+Mon, 10 Feb 2020 18:15:30 utils.py[line:130] INFO *******test preparation
+Mon, 10 Feb 2020 18:15:30 utils.py[line:136] INFO ********mask preparation
+Mon, 10 Feb 2020 18:15:31 utils.py[line:140] INFO ********y preparation
+Mon, 10 Feb 2020 18:15:31 utils.py[line:147] INFO ********load data function done

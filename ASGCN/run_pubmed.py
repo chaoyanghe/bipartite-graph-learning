@@ -166,7 +166,7 @@ def main(rank1, rank0):
         train_time_sample.append(time.time() - t1)
         train_time.append(time.time() - t1 - sample_time)
         # Validation
-        # TODO for large scale matrix, this evaluation method needs to bbe rewritten!!!!!!!!
+        # TODO for large scale matrix, this evaluation method needs to be rewritten!!!!!!!!
 
         # cost, acc, duration = evaluate(test_features, test_supports, test_probs, y_test, [], placeholders)
         # acc_val.append(acc)

@@ -132,6 +132,8 @@ def save_val_embeddings(sess, model, minibatch_iter, size, out_dir, mod=""):
     np.save(out_dir + name + mod + ".npy", val_embeddings)
     with open(out_dir + name + mod + ".txt", "w") as fp:
         fp.write("\n".join(map(str, nodes)))
+
+    logging.info("val_embedding shape {}; nodes shape {}".format(val_embeddings.shape, len(nodes)))
     logging.info('Start saving embedding for succeed tasks')
     __save_embedding_for_task(val_embeddings, nodes)
 

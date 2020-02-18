@@ -1,0 +1,107 @@
+Mon, 10 Feb 2020 18:04:27 bipartite_graph_data_loader_cora.py[line:15] INFO BipartiteGraphDataLoader __init__().
+Mon, 10 Feb 2020 18:04:27 bipartite_graph_data_loader_cora.py[line:22] INFO group_u_list_file_path = ./data/cora/node_list
+Mon, 10 Feb 2020 18:04:27 bipartite_graph_data_loader_cora.py[line:23] INFO group_u_attr_file_path = ./data/cora/node_attr
+Mon, 10 Feb 2020 18:04:27 bipartite_graph_data_loader_cora.py[line:24] INFO group_u_label_file_path = ./data/cora/node_true
+Mon, 10 Feb 2020 18:04:27 bipartite_graph_data_loader_cora.py[line:26] INFO edge_list_file_path = ./data/cora/edgelist
+Mon, 10 Feb 2020 18:04:27 bipartite_graph_data_loader_cora.py[line:28] INFO group_v_list_file_path = ./data/cora/group_list
+Mon, 10 Feb 2020 18:04:27 bipartite_graph_data_loader_cora.py[line:29] INFO group_v_attr_file_path = ./data/cora/group_attr
+Mon, 10 Feb 2020 18:04:27 bipartite_graph_data_loader_cora.py[line:30] INFO group_v_label_file_path = None
+Mon, 10 Feb 2020 18:04:27 bipartite_graph_data_loader_cora.py[line:56] INFO BipartiteGraphDataLoader __init__(). END
+Mon, 10 Feb 2020 18:04:27 bipartite_graph_data_loader_cora.py[line:74] INFO ##### generate_adjacent_matrix_feature_and_labels. START
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:206] INFO before merging with v_list, the len is = 789
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:214] INFO after merging with v_attr_dict, the len is = 789
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:229] INFO __generate_adjacent_matrix START
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:231] INFO u_node_list = 1312
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:232] INFO v_node_list = 789
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:233] INFO edge_list = 2314
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:235] INFO start to load bipartite for u
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:245] INFO (1312, 789)
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:248] INFO end to load bipartite for u
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:250] INFO start to load bipartite for u
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:260] INFO (789, 1312)
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:263] INFO end to load bipartite for u
+Mon, 10 Feb 2020 18:04:28 bipartite_graph_data_loader_cora.py[line:118] INFO #### generate_adjacent_matrix_feature_and_labels. END
+Mon, 10 Feb 2020 18:04:28 input_data.py[line:131] INFO ####### Done bipartite graph loader #########
+Mon, 10 Feb 2020 18:04:28 input_data.py[line:136] INFO u_attr len = 1312
+Mon, 10 Feb 2020 18:04:28 input_data.py[line:137] INFO u_adj shape = (1312, 789)
+Mon, 10 Feb 2020 18:04:28 input_data.py[line:138] INFO u_list len = 1312
+Mon, 10 Feb 2020 18:04:28 input_data.py[line:144] INFO ######### Data loaded ###########
+Mon, 10 Feb 2020 18:04:28 train.py[line:60] INFO preprocessing data
+Mon, 10 Feb 2020 18:04:28 train.py[line:63] INFO done preprocessing data
+Mon, 10 Feb 2020 18:04:28 module_wrapper.py[line:139] WARNING From ./gae/train.py:66: The name tf.sparse_placeholder is deprecated. Please use tf.compat.v1.sparse_placeholder instead.
+
+Mon, 10 Feb 2020 18:04:28 module_wrapper.py[line:139] WARNING From ./gae/train.py:69: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+Mon, 10 Feb 2020 18:04:28 train.py[line:77] INFO create model
+Mon, 10 Feb 2020 18:04:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:34: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+Mon, 10 Feb 2020 18:04:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/initializations.py:9: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+Mon, 10 Feb 2020 18:04:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:29: The name tf.sparse_retain is deprecated. Please use tf.sparse.retain instead.
+
+Mon, 10 Feb 2020 18:04:28 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:101: The name tf.sparse_tensor_dense_matmul is deprecated. Please use tf.sparse.sparse_dense_matmul instead.
+
+Mon, 10 Feb 2020 18:04:28 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/layers.py:79: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Mon, 10 Feb 2020 18:04:29 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:117: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
+
+Mon, 10 Feb 2020 18:04:29 model.py[line:118] INFO Finish calculating the latent vector!!!!!!!!!
+Mon, 10 Feb 2020 18:04:29 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:36: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+Mon, 10 Feb 2020 18:04:29 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/model.py:36: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+Mon, 10 Feb 2020 18:04:29 model.py[line:91] INFO GCNVAE model initialized!!!!!!!!
+Mon, 10 Feb 2020 18:04:29 train.py[line:87] INFO optimizer
+Mon, 10 Feb 2020 18:04:29 module_wrapper.py[line:139] WARNING From ./gae/train.py:98: The name tf.sparse_tensor_to_dense is deprecated. Please use tf.sparse.to_dense instead.
+
+Mon, 10 Feb 2020 18:04:29 deprecation.py[line:506] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/optimizer.py:28: calling weighted_cross_entropy_with_logits (from tensorflow.python.ops.nn_impl) with targets is deprecated and will be removed in a future version.
+Instructions for updating:
+targets is deprecated, use labels instead
+Mon, 10 Feb 2020 18:04:29 module_wrapper.py[line:139] WARNING From /Users/tian/Documents/P4_Graph/merge_sourcecode/ABCGraph_deeperLayers_revise/gae/optimizer.py:29: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+Mon, 10 Feb 2020 18:04:29 train.py[line:103] INFO initialize session
+Mon, 10 Feb 2020 18:04:29 module_wrapper.py[line:139] WARNING From ./gae/train.py:105: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+Mon, 10 Feb 2020 18:04:29 module_wrapper.py[line:139] WARNING From ./gae/train.py:106: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+Mon, 10 Feb 2020 18:04:29 train.py[line:110] INFO train model
+Mon, 10 Feb 2020 18:04:29 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:29 train.py[line:117] INFO The epoch is: 0
+Mon, 10 Feb 2020 18:04:30 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:30 train.py[line:117] INFO The epoch is: 1
+Mon, 10 Feb 2020 18:04:30 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:30 train.py[line:117] INFO The epoch is: 2
+Mon, 10 Feb 2020 18:04:30 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:30 train.py[line:117] INFO The epoch is: 3
+Mon, 10 Feb 2020 18:04:30 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:30 train.py[line:117] INFO The epoch is: 4
+Mon, 10 Feb 2020 18:04:30 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:30 train.py[line:117] INFO The epoch is: 5
+Mon, 10 Feb 2020 18:04:31 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:31 train.py[line:117] INFO The epoch is: 6
+Mon, 10 Feb 2020 18:04:31 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:31 train.py[line:117] INFO The epoch is: 7
+Mon, 10 Feb 2020 18:04:31 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:31 train.py[line:117] INFO The epoch is: 8
+Mon, 10 Feb 2020 18:04:31 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:31 train.py[line:117] INFO The epoch is: 9
+Mon, 10 Feb 2020 18:04:31 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:31 train.py[line:117] INFO The epoch is: 10
+Mon, 10 Feb 2020 18:04:31 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:31 train.py[line:117] INFO The epoch is: 11
+Mon, 10 Feb 2020 18:04:31 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:31 train.py[line:117] INFO The epoch is: 12
+Mon, 10 Feb 2020 18:04:32 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:32 train.py[line:117] INFO The epoch is: 13
+Mon, 10 Feb 2020 18:04:32 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:32 train.py[line:117] INFO The epoch is: 14
+Mon, 10 Feb 2020 18:04:32 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:32 train.py[line:117] INFO The epoch is: 15
+Mon, 10 Feb 2020 18:04:32 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:32 train.py[line:117] INFO The epoch is: 16
+Mon, 10 Feb 2020 18:04:32 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:32 train.py[line:117] INFO The epoch is: 17
+Mon, 10 Feb 2020 18:04:32 train.py[line:114] INFO construct dictionary
+Mon, 10 Feb 2020 18:04:32 train.py[line:117] INFO The epoch is: 18
+Mon, 10 Feb 2020 18:04:32 train.py[line:114] INFO construct dictionary

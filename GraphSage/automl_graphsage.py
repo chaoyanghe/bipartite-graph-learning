@@ -15,7 +15,7 @@ rank = comm.Get_rank()
 size = comm.Get_size()
 
 if __name__ == "__main__":
-    setproctitle.setproctitle("ABCGraph:" + str(rank))
+    setproctitle.setproctitle("BGNN:" + str(rank))
 
     logging.basicConfig(filename="./Graphsage.log_embedding",
                         level=logging.INFO,

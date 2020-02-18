@@ -2,18 +2,20 @@
 import logging
 import os
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
+import warnings
+warnings.filterwarnings("ignore")
 
 import numpy as np
 import pandas as pd
 from sklearn import metrics
 from sklearn.linear_model import SGDClassifier
-from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score
+from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score, roc_auc_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
 
 def load_emb_data(fname, ind=None):
-    data = pd.read_csv(fname, delimiter=" ", skiprows=2, index_col=0, header=None)
+    data = pd.read_csv(fname, delimiter=" ", skiprows=1, index_col=0, header=None)
     if ind is not None:
         data = data.reindex(ind, copy=False, fill_value=0)
     return data
@@ -153,8 +155,6 @@ def run_exp(input_folder, emb_file, args):
     if args.verbose:
         logging.info("Loading labels from %s ..." % os.path.join(input_folder, 'node_true'))
     node_label_file = os.path.join(input_folder, 'node_true')
-    print("node_label_file = %s" % node_label_file)
-    print("nodes_ids = %s" % node_ids)
     node_labels = load_label_data(node_label_file, node_ids)
 
     # Construct data
@@ -194,6 +194,13 @@ def run_exp(input_folder, emb_file, args):
 
     test_macro_f1 = f1_score(test_y, test_predict_y, average="macro")
     print("test_macro_f1 = %f" % test_macro_f1)
+    logging.info(str(test_micro_f1) + ', ' + str(test_macro_f1))
+
+    test_accuracy = accuracy_score(test_y, test_predict_y)
+    print("multiclass test_accuracy = %f" % test_accuracy)
+
+    # test_roc_auc_score = roc_auc_score(test_y, test_predict_y, average='macro')
+    # print('multiclass test_roc_auc_score = %f' % test_roc_auc_score)
 
     fout = open(args.res_file + ".f1_precision_recall", 'w')
     name = None
@@ -230,4 +237,8 @@ def main():
 
 
 if __name__ == "__main__":
+    logging.basicConfig(filename="./deeperLayerCora.log",
+                        level=logging.INFO,
+                        format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                        datefmt='%a, %d %b %Y %H:%M:%S')
     main()
